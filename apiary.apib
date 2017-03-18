@@ -8,14 +8,38 @@ Reddiful is a simple API allowing consumers to view reddit metadata
 ## Subreddit Collection [/subreddits/{subreddit}]
 + Parameters
     + subreddit (string) - name of the subreddit
-    
+
++ Attributes
+    + name: news (string) - subreddit name
+    + count_subscribers (number) - number of subscribers to subreddit
+    + count_visitors (number) - number of visitors to subreddit
+    + moderators (array) - list of moderators of subreddit
+    + sidebar_info (string) - subreddit rules, links, descriptions
+    + tabs: new, gilded, promoted (array) - tabs in a subreddit
 ### List All Subreddits [GET]
 
 + Response 200 (application/json)
 
         [
             {
-                "question": "Favourite programming language?",
+                "name": "news",
+                "count_subscribers": 13366459,
+                "count_visitors": 7501
+                "moderators":[
+                    "luster",
+                    "ani625",
+                    "CandyManCan"
+                ],
+                "sidebar_info": " real news articles, primarily but not exclusively, news relating to the United State ,
+                "tabs": [
+                    "New",
+                    "Gilded",
+                    "Promoted",
+                    "Hot"
+                ]
+            },
+            {
+                "subreddit": "aww",
                 "published_at": "2015-08-05T08:40:51.620Z",
                 "choices": [
                     {
