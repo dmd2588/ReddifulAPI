@@ -11,4 +11,4 @@ Install docker
 From the project's root directory run:
 `docker-compose up`
 
-The api is running locally on port `8080`
+The api is running locally on port `80`
