@@ -1,0 +1,30 @@
+{
+  "name": "ReddifulAPI",
+  "version": "0.0.1",
+  "description": "API Phase 1 for Final Project",
+  "main": "main.jsx",
+  "scripts": {
+    "test": "echo \"Error: no frontend test specified\" && exit 1",
+    "build": "webpack",
+    "start": "docker-compose up"
+  },
+  "repository": {
+  "type": "git",
+  "url": "git://github.com/dmd2588/ReddifulAPI.git"
+  },
+  "author": "team name",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-env": "^1.2.2",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-bootstrap": "^0.30.8"
+  }
+}
