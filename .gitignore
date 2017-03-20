@@ -90,3 +90,17 @@ ENV/
 
 # Vim swap files
 *.swp
+
+#From Previous projects
+__pycache__
+.coverage
+.DS_Store
+.pylintrc
+*.pyc
+*.swp
+netflix-tests
+Icon?
+
+#Frontend and webpack exclusions
+node_modules
+static/bundle.js
