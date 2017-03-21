@@ -1,11 +1,11 @@
 import React from 'react'
 
-var About = React.createClass({
+var Posts = React.createClass({
         render: function() {
           return (
-            <div><h2>About</h2></div>
+            <div><h2>Posts</h2></div>
           )
         }
 });
 
-export default About;
+export default Posts;

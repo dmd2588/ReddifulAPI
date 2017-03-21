@@ -1,11 +1,11 @@
 import React from 'react'
 
-var About = React.createClass({
+var Users = React.createClass({
         render: function() {
           return (
-            <div><h2>About</h2></div>
+            <div><h2>Users</h2></div>
           )
         }
 });
 
-export default About;
+export default Users;

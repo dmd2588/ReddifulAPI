@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import NavBarAPI from './NavBarAPI.jsx';
-import ModelPage from './ModelPage.jsx';
-
-import Home from './Home.jsx';
+import Users from './Users.jsx';
 import About from './About.jsx';
+import Subreddits from './Subreddits.jsx';
+import Posts from './Posts.jsx';
+import Comments from './Comments.jsx';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -21,26 +23,16 @@ var App = React.createClass({
         }
       });
 export default App;
-/*
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
-
-const About = () => (
-  <div>
-    <h2>About</h2>
-  </div>
-)
-*/
 
 ReactDOM.render(   
     <Router>
        <div>
         <Route path="/" component={App}/>
         <Route path="/about" component={About}/>
-        <Route path="/modelPage" component={ModelPage}/>
+        <Route path="/users" component={Users}/>
+        <Route path="/subreddits" component={Subreddits}/>
+        <Route path="/posts" component={Posts}/>
+        <Route path="/comments" component={Comments}/>
 
         </div>
     </Router> ,

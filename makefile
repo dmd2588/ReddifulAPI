@@ -14,5 +14,8 @@ build:
 watch:
 	webpack --progress --colors --watch
 
+dev_build:
+	node_modules/.bin/webpack-dev-server -d --watch --inline --content-base www/
+
 test:
 	@echo TODO add tests
