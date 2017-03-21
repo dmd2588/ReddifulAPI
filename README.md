@@ -1,6 +1,7 @@
 # ReddifulAPI
 
 We're going to be using AWS to host our website and React
+website: reddifulAPI.me
 
 ## Setup
 
