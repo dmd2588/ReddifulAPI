@@ -7,6 +7,12 @@ import { NavItem } from 'react-bootstrap';
 import { DropdownButton } from 'react-bootstrap';
 import { MenuItem } from 'react-bootstrap';
 
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
 function handleSelect(selectedKey) {
   alert('selected ' + selectedKey);
 }
@@ -22,14 +28,20 @@ const navbarInstance = (
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">React-Bootstrap</a>
+            <a href="#">Reddiful</a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <NavItem eventKey={1} href="#">Link</NavItem>
-          <NavItem eventKey={2} href="#">Link</NavItem>
+          <NavItem><Link to="/">Home</Link></NavItem>
+          <NavItem><Link to="/about">About</Link></NavItem>
+          <NavItem><Link to="/users">Users</Link></NavItem>
+          <NavItem><Link to="/subreddits">Subreddits</Link></NavItem>
+          <NavItem><Link to="/posts">Posts</Link></NavItem>
+          <NavItem><Link to="/comments">Comments</Link></NavItem>
+
         </Nav>
       </Navbar>
+      
     );
 
 var NavBarAPI = React.createClass({

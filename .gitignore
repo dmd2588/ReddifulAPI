@@ -103,4 +103,4 @@ Icon?
 
 #Frontend and webpack exclusions
 node_modules
-static/bundle.js
+dist/bundle.js
