@@ -6,12 +6,14 @@ import About from './About.jsx';
 import Subreddits from './Subreddits.jsx';
 import Posts from './Posts.jsx';
 import Comments from './Comments.jsx';
+import Home from './Home.jsx';
 
 import {
   BrowserRouter as Router,
   Route,
   Link,
-  hashHistory
+  hashHistory,
+  Redirect
 } from 'react-router-dom'
 
 
@@ -33,7 +35,9 @@ ReactDOM.render(
         <Route path="/subreddits" component={Subreddits}/>
         <Route path="/posts" component={Posts}/>
         <Route path="/comments" component={Comments}/>
+        <Route path="/home" component={Home}/>
 
+        <Redirect from="/" to="/home"/>
         </div>
     </Router> ,
   document.getElementById('content')
