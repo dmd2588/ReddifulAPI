@@ -28,11 +28,11 @@ const navbarInstance = (
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">Reddiful</a>
+            <a href="/">Reddiful</a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <NavItem><Link to="/">Home</Link></NavItem>
+          <NavItem><Link to="/home">Home</Link></NavItem>
           <NavItem><Link to="/about">About</Link></NavItem>
           <NavItem><Link to="/users">Users</Link></NavItem>
           <NavItem><Link to="/subreddits">Subreddits</Link></NavItem>
