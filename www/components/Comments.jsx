@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import MyGrid from './MyGrid.jsx';
 
 var Comments = React.createClass({
         render: function() {
           return (
-            <div><h2>Comments</h2></div>
+            <MyGrid/>
           )
         }
 });
