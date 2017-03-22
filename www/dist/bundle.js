@@ -17550,7 +17550,7 @@ var navbarInstance = _react2.default.createElement(
       null,
       _react2.default.createElement(
         'a',
-        { href: '#' },
+        { href: '/' },
         'Reddiful'
       )
     )

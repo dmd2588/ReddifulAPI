@@ -28,7 +28,7 @@ const navbarInstance = (
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">Reddiful</a>
+            <a href="/">Reddiful</a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>

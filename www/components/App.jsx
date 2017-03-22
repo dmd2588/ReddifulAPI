@@ -36,7 +36,6 @@ ReactDOM.render(
         <Route path="/posts" component={Posts}/>
         <Route path="/comments" component={Comments}/>
         <Route path="/home" component={Home}/>
-
         <Redirect from="/" to="/home"/>
         </div>
     </Router> ,
