@@ -17410,7 +17410,7 @@ _reactDom2.default.render(_react2.default.createElement(
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+		value: true
 });
 
 var _react = __webpack_require__(0);
@@ -17420,19 +17420,79 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var About = _react2.default.createClass({
-  displayName: 'About',
+		displayName: 'About',
 
-  render: function render() {
-    return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(
-        'h2',
-        null,
-        'About'
-      )
-    );
-  }
+		render: function render() {
+				return _react2.default.createElement(
+						'div',
+						null,
+						_react2.default.createElement(
+								'h2',
+								null,
+								'About'
+						),
+						_react2.default.createElement(
+								'h3',
+								null,
+								'Team Name Presents: Reddiful API'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'David Du, Johnny Knoebel, Thomas Lam, Jeremy Lim, Austin Middleton, Shea Rozmiarek'
+						),
+						_react2.default.createElement(
+								'h3',
+								null,
+								'Introduction'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'This is an analytical compilation of reddit. Problems. Use cases.'
+						),
+						_react2.default.createElement(
+								'h3',
+								null,
+								'Design'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Restful API'
+						),
+						_react2.default.createElement(
+								'h3',
+								null,
+								'Tools'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'For our front-end, we are going to be using React. For our back-end, we are going to be using Python and Flask.'
+						),
+						_react2.default.createElement(
+								'h3',
+								null,
+								'Hosting'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'We are using AWS for our hosting service'
+						),
+						_react2.default.createElement(
+								'h3',
+								null,
+								'Other'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Diagram 1'
+						)
+				);
+		}
 });
 
 exports.default = About;

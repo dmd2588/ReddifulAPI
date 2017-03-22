@@ -9,10 +9,10 @@ status:
 	git status
 
 build:
-	webpack --progress --colors
+	node_modules/.bin/webpack --progress --colors
 
 watch:
-	webpack --progress --colors --watch
+	node_modules/.bin/webpack --progress --colors --watch
 
 dev_build:
 	node_modules/.bin/webpack-dev-server -d --watch --inline --content-base www/
