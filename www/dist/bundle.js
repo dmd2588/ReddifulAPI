@@ -18786,7 +18786,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 								'p',
 								null,
-								'This is an analytical compilation of reddit. Problems. Use cases.'
+								'This is an analytical compilation of Reddit. We are providing a top-level view of Reddit. We\'re showing summary data and the relationships between all the information on Reddit. This can be used for anything from data analysis of information like the "toxicity" of a subreddit to creating personas of certain groups of people to better market products to that demographic.'
 						),
 						_react2.default.createElement(
 								'h3',
@@ -18796,7 +18796,97 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 								'p',
 								null,
-								'Restful API'
+								'We are using Restful API to design our project. For the structure, we used UML to plan out how the models would look and interact with one another. First, we have four models we are working with: Subreddits, Users, Posts, and Comments.'
+						),
+						_react2.default.createElement(
+								'h4',
+								null,
+								'Relationships'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'User'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'The User and Subreddit have a 1 to many relationship where for each user, there are many subreddits that they are subscribed to. The User and Post have a 1 to many relationship as well since each user has many (if any) posts. Similarly, the User and Comment have a 1 to many relationship.'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'Subreddit'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Placeholder'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'Post'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Placeholder'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'Comment'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Placeholder'
+						),
+						_react2.default.createElement(
+								'h4',
+								null,
+								'Attributes and Methods'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'User>'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Placeholder'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'Subreddit'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Placeholder'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'Comment'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Placeholder'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'Comment'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Placeholder'
 						),
 						_react2.default.createElement(
 								'h3',
@@ -18816,7 +18906,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 								'p',
 								null,
-								'We are using AWS for our hosting service'
+								'We are using AWS for our hosting service.'
 						),
 						_react2.default.createElement(
 								'h3',
