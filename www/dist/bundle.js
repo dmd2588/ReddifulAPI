@@ -18894,9 +18894,84 @@ var About = _react2.default.createClass({
 								'Tools'
 						),
 						_react2.default.createElement(
+								'h4',
+								null,
+								'Front-end'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'Libraries and Tools'
+						),
+						_react2.default.createElement(
 								'p',
 								null,
-								'For our front-end, we are going to be using React. For our back-end, we are going to be using Python and Flask.'
+								'React and Bootstrap are the primary UI elements. Bootstrap is the react-bootstrap library that has compatibility with via react components. Other front-end libraries in use is react-toolbox for the grid cards and for the grid layout the react-bootstrap layout components. The front end is compiled from ES6 JSX files using webpack via Babel translator from jsx to a bundle.js file that contains the entirety of the page content and frontend libraries for deployment. Flask is the webserver that serves up the all of the frontend files. PostCSS is a dependency used by react-toolbox for its themes.'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'Front-end Tool Configurations'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Webpack is configured via the webpack.config.js file which specifies where the entrypoint of the application files is and where the compiled final distribution javascript file should be located. The current webpack file is configured to compile jsx via Babel to ES2015, and css via Postcss. The package.json file contains the dependency information for both the development and production front-end libraries as well as ways to build and run the application via npm. Run npm install - to install dependecies. Run npm build run - to compile the JSX files and run the application on the docker webserver. The makefile contains ways to build/compile the application via -  make build.'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'Front-end Structure'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Starting from the root directory, www/ folder contains all of the front-end code. Within this folder there is the index.html file which is the main html file that is served by the webserver. The components/ folder contains all of the JSX files that will compose into the application. Each .jsx file is a single component. The App.jsx file is the react component main entry point into the application. It is the file that will render all other components and is the root of the web application front-end logic; linking the .jsx to the index.html page. All other components are as stated.'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'Running Frontend'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Running the front-end can be done after compilation/build of the application. Running the application is done by using the command - docker-compose up which runs the application on a flask server locally at localhost:80 or alternatively by running - make dev_build will run a node server at localhost:8080'
+						),
+						_react2.default.createElement(
+								'h4',
+								null,
+								'Backend'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'Back-end Structure'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Starting from the root of the application. The reddiful/ folder contains the api.py files that compose the back-end api of the application. The api.py file is the main entry point for the flask webserver. This file aso contains all of the routes that will be used for the API backend call to retrieve data to be displayed in the front-end. In the app/ folder is the test.py and model.py files. Model unit tests which test the validitiy for the db data is in the test.py file. SQLAlchemy is used for mapping the database rows to a python object, this is defined in the model.py file.'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'Python and Flask'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								'For setting up python and flask please see below for the Docker setup, as the docker container freezes the dependencies for these. Python is used for the back-end logic. Flask is the webserver that is used to serve up the application. In order to run flask manually the following commands must be given from the root directory export FLASK_APP=reddiful/api.py - and then the command - flask run - to actually run the application. Alternatively running - docker-compose up - will run the application via the docker file. For the python back-end api specifications please see the Design section above or the apiary documentation at http://docs.reddiful.apiary.io/ . In addition the apiary documentation itself can be loaded into apiary using the apiary.apib file that is found in the repo.'
+						),
+						_react2.default.createElement(
+								'h5',
+								null,
+								'Docker'
+						),
+						_react2.default.createElement(
+								'p',
+								null,
+								' Docker container is used to install the preliminary dependecies for the back-end. Please see above for installing the front-end dependecies via npm. The docker container is used to ensure that all back-end dependencies are the same for every environment. The docker configuration for the installation of said dependencies is done in the Dockerfile file. This specifies the OS and other installation software. The docker-compose.yml file is the file that defines and initiates the webserver using flask.'
 						),
 						_react2.default.createElement(
 								'h3',
