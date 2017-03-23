@@ -43,7 +43,7 @@ var About = React.createClass({
 			 <p>These models define the majority of characteristics, but we are thinking of defining a separate model for the trophies in the user profiles. This is because each trophy has several attributes and will be more easily represented in a separate model from the user. After defining several characteristics, we scraped some data and found that certain attributes would be infeasible while other, new ones could be added. This allowed us to redefine several attributes to more accurately reflect the information provided by the Reddit API.</p>
 			 <p>While defining the attributes for the models, we also took a look at the relationships between each of those models. By observing the interaction on Reddit, we were able to condense them into the relationships and attributes that you see below.</p>
 			 <Accordion>
-				<Panel header = "Models" eventKey = "1" bsStyle = "danger">
+				<Panel header = "Models" eventKey = "1">
 				 <p>The models represent different aspects of Reddit that make up most of the information seen on the site.</p>
 					<h5><b>User</b></h5>
 					 <p>The users represent the people on the site. They can explore the different subreddits, interact with others, and communicate their ideas. They are able to form new groups (subreddits), start new conversations (posts), and contribute to existing ones (comments). Reddit would not have any worth without the users to keep giving ideas. Organizing user information can be used to observe different trends like the relationship between different interests in subreddits.</p>
@@ -54,7 +54,7 @@ var About = React.createClass({
 					<h5><b>Comment</b></h5>
 					 <p>Comments are generally short blurbs that hopefully contribute to the conversation, whether by questioning an idea or making a witty remark. Combined with posts, they can be used to answer questions, challenge ideas, or entertain other users. When looking at the types of comments posted, there are trends that can be observed. For example, there are several users that are dedicated to doing specific things, like AWildSketchAppeared - he mostly replies with sketches reflecting a previous comment or post. Other comments maybe have similarities in the type of response; the gaming subreddit usually contains comments that are reactionary to the post and don't generally provide some insight into the deeper meaning of life.</p>
 				</Panel>
-				<Panel header = "Relationships" eventKey = "2" bsStyle = "danger">
+				<Panel header = "Relationships" eventKey = "2">
 				 <p>There are many relationships between the different models. The way they interact helps organize the transmission of information between different entities.</p>
 					<h5><b>User</b></h5>
 					 <p>The User and Subreddit have a many to many relationship where for each user, there are many subreddits that they are subscribed to, and for each subreddit, there are many users subscribed to it. With the current information given to us, we are currently focusing on the relationship between the moderators and the subreddit, since getting the information like the subreddits that a user is subscribed to and the users subscribed to a particular subreddit are both things that we cannot access. The User and Post have a 1 to many relationship as well since each user has many (if any) posts. Similarly, the User and Comment have a 1 to many relationship.</p>
@@ -63,7 +63,7 @@ var About = React.createClass({
 					<h5><b>Post</b></h5>
 					 <p>Posts have a 1 to many relationship with Comments: each post has many comments (hopefully), while each comment can only belong to one post.</p>
 				</Panel>
-				<Panel header = "Attributes and Methods" eventKey = "3" bsStyle = "danger">
+				<Panel header = "Attributes and Methods" eventKey = "3">
 				 <p>Several attributes and methods to access those attributes help define each model. Some are foreign keys in other models that help relate them back to each other.</p>
 					<h5><b>User</b></h5>
 					 <p>The user has several attributes that can be listed. First, there are two identifiers: the name (username itself), and the ID (a unique ID number that can be used to find the user). In addition, if the user allows it, the email will be displayed as well. Finally, the user has comment and link karma as well as the created time.</p>
@@ -81,7 +81,7 @@ var About = React.createClass({
 			<Panel header = "Tools" bsStyle = "info">
 			 <p>This section describes the tools and resources we used to both help design the site and to make it easier on the eyes.</p>
 			 <Accordion>
-			    <Panel header = "Front-end" eventKey = "1" bsStyle = "danger">
+			    <Panel header = "Front-end" eventKey = "1">
 				 <p>These tools help the site look better and feel better to use.</p>
 					<h5><b>Libraries and Tools</b></h5>
 					 <p>React and Bootstrap are the primary UI elements. Bootstrap is the react-bootstrap library that has compatibility with via react components. Other front-end libraries in use is react-toolbox for the grid cards and for the grid layout the react-bootstrap layout components. The front end is compiled from ES6 JSX files using webpack via Babel translator from jsx to a bundle.js file that contains the entirety of the page content and frontend libraries for deployment. Flask is the webserver that serves up the all of the frontend files. PostCSS is a dependency used by react-toolbox for its themes.</p>
@@ -92,7 +92,7 @@ var About = React.createClass({
 					<h5><b>Running Frontend</b></h5>
 					 <p>Running the front-end can be done after compilation/build of the application. Running the application is done by using the command - docker-compose up which runs the application on a flask server locally at localhost:80 or alternatively by running - make dev_build will run a node server at localhost:8080</p>
 				</Panel>
-			    <Panel header = "Backend" eventKey = "2" bsStyle = "danger">
+			    <Panel header = "Backend" eventKey = "2">
 				 <p>These tools set up the site so that it runs smoothly and doesn't break (hopefully).</p>
 					<h5><b>Back-end Structure</b></h5>
 					 <p>Starting from the root of the application. The reddiful/ folder contains the api.py files that compose the back-end api of the application. The api.py file is the main entry point for the flask webserver. This file aso contains all of the routes that will be used for the API backend call to retrieve data to be displayed in the front-end. In the app/ folder is the test.py and model.py files. Model unit tests which test the validitiy for the db data is in the test.py file. SQLAlchemy is used for mapping the database rows to a python object, this is defined in the model.py file.</p>
