@@ -207,9 +207,61 @@ var About = React.createClass({
                                 <td>About.jsx</td>
                                 <td>Defines the About page with the Technical Report</td>
                               </tr>
+							  <tr>
+                                <td>CommentDetails.jsx</td>
+                                <td>Defines the links between comments and other models</td>
+                              </tr>
                               <tr>
                                 <td>Comments.jsx</td>
                                 <td>Defines the Reddit Comments page</td>
+                              </tr>
+							  <tr>
+                                <td>Details.jsx</td>
+                                <td>Allows linking to other models</td>
+                              </tr>
+							  <tr>
+                                <td>Home.jsx</td>
+                                <td>Defines the Home page</td>
+                              </tr>
+							  <tr>
+                                <td>NavBarAPI.jsx</td>
+                                <td>Defines the Navigation Bar and the links to other pages</td>
+                              </tr>
+							  <tr>
+                                <td>PostDetails.jsx</td>
+                                <td>Defines the links between posts and other models</td>
+                              </tr>
+							  <tr>
+                                <td>Posts.jsx</td>
+                                <td>Defines the Reddit Posts page</td>
+                              </tr>
+							  <tr>
+                                <td>RfCard.jsx</td>
+                                <td>TODO</td>
+                              </tr>
+							  <tr>
+                                <td>RfGrid.jsx</td>
+                                <td>TODO</td>
+                              </tr>
+							  <tr>
+                                <td>SortFilter.jsx</td>
+                                <td>Defines the filtering and sorting box for each model</td>
+                              </tr>
+							  <tr>
+                                <td>SubredditDetails.jsx</td>
+                                <td>Defines the links between subreddits and other models</td>
+                              </tr>
+							  <tr>
+                                <td>Subreddits.jsx</td>
+                                <td>Defines the Reddit Subreddit page</td>
+                              </tr>
+							  <tr>
+                                <td>UserDetail.jsx</td>
+                                <td>Defines the links between users and other models</td>
+                              </tr>
+							  <tr>
+                                <td>Users.jsx</td>
+                                <td>Defines the Reddit Users page</td>
                               </tr>
                             </tbody>
                         </Table>
