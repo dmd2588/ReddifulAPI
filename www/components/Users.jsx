@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card';
 import { Button } from 'react-toolbox/lib/button';
-import { Grid, Row, Col, FormGroup, ControlLabel, FormControl, HelpBlock, Panel} from 'react-bootstrap';
+import { Grid, Row, Col} from 'react-bootstrap';
+import SortFilter from './SortFilter.jsx'
 
 var moment = require('moment');
 var userData = [{"name": "batman_jr", "created": 1405828618.0, "link_karma": 335, "comment_karma": 190, "id": "hh8mr", "email": "None"}, {"name": "poizan42", "created": 1331171212.0, "link_karma": 768, "comment_karma": 25419, "id": "74344", "email": "poizan@poizan.dk"}, {"name": "Ooer", "created": 1287044616.0, "link_karma": 18834, "comment_karma": 56852, "id": "4fer6", "email": "ooer@live.com"}];
@@ -17,28 +18,7 @@ export default function Users () {
       <Row>
         <Col sm={12} md={3}>
           <div>
-            <Panel header="Filtering and Sorting">
-                <FormGroup controlId="filterText">
-                  <ControlLabel>Filter Text</ControlLabel>
-                  <FormControl componentClass="input" type="text" placeholder="Search" />
-                </FormGroup>
-        	    <FormGroup controlId="filterSelect">
-        	      <ControlLabel>Filter by Attribute</ControlLabel>
-        	      <FormControl componentClass="select">
-        	        <option value="name">Name</option>
-        	        <option value="link_karma">Link Karma</option>
-        	        <option value="comment_karma">Comment Karma</option>
-        	      </FormControl>
-        	    </FormGroup>
-        	    <FormGroup controlId="sortSelect">
-        	      <ControlLabel>Sort by Attribute</ControlLabel>
-        	      <FormControl componentClass="select">
-        	        <option value="name">Name</option>
-        	        <option value="link_karma">Link Karma</option>
-        	        <option value="comment_karma">Comment Karma</option>
-        	      </FormControl>
-        	    </FormGroup>
-            </Panel>
+            <SortFilter />
           </div>
         </Col>
         <Col sm={12} md={9}>
