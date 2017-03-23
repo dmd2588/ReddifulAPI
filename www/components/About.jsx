@@ -1,5 +1,6 @@
 import React from 'react'
 import {PageHeader, Panel, Accordion, Well, Jumbotron,ListGroupItem, ListGroup} from 'react-bootstrap';
+import TiArrowDown from 'react-icons/lib/ti/arrow-down';
 var About = React.createClass({
 		getInitialState() {
 			return {
@@ -34,10 +35,10 @@ var About = React.createClass({
               <br/>
                 
             <PageHeader>Technical Report</PageHeader>
-			<Panel header = "Introduction" bsStyle = "info">
+			<Panel header = {<h3>Introduction       <TiArrowDown\></h3>} bsStyle = "info">
 			 <p>This is an analytical compilation of Reddit. We are providing a top-level view of Reddit, and we are showing summary data and the relationships for most of the information on Reddit. This can be used for anything from data analysis of information like the "toxicity" of a subreddit to creating personas of certain groups of people to better market products to that demographic.</p>
 			</Panel>
-			<Panel header = "Design" bsStyle = "info">
+			<Panel header = {<h3>Design             <TiArrowDown\></h3>} bsStyle = "info">
 			 <p>We are using the Reddit API to define our models and attributes. For the structure, we first used UML to plan out how the models would look and interact with one another. We have four models we are working with: Subreddits, Users, Posts, and Comments.</p>
 			 <p>These models define the majority of characteristics, but we are thinking of defining a separate model for the trophies in the user profiles. This is because each trophy has several attributes and will be more easily represented in a separate model from the user. After defining several characteristics, we scraped some data and found that certain attributes would be infeasible while other, new ones could be added. This allowed us to redefine several attributes to more accurately reflect the information provided by the Reddit API.</p>
 			 <p>While defining the attributes for the models, we also took a look at the relationships between each of those models. By observing the interaction on Reddit, we were able to condense them into the relationships and attributes that you see below.</p>
@@ -77,7 +78,7 @@ var About = React.createClass({
 				</Panel>
 			 </Accordion>
 			</Panel>
-			<Panel header = "Tools" bsStyle = "info">
+			<Panel header = {<h3>Tools              <TiArrowDown\></h3>} bsStyle = "info">
 			 <p>This section describes the tools and resources we used to both help design the site and to make it easier on the eyes.</p>
 			 <Accordion>
 			    <Panel header = "Front-end" eventKey = "1">
@@ -102,8 +103,10 @@ var About = React.createClass({
 				</Panel>
 			 </Accordion>
 			</Panel>
-			<Panel header = "Hosting" bsStyle = "info">
-			 <p>For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a 8 GiB Elastic Block Store volume associated with it.  Amazon lists websites and applications as use cases for this type so it was a good fit for our goals.  It's also free tier eligible which allowed us to host our application on AWS for free for up to a year.  An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap.  To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file.  The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.</p>
+			<Panel header = {<h3>Hosting            <TiArrowDown\></h3>} bsStyle = "info">
+			 <p>For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.</p>
+			<p>To set up an ec2 instance you navigate to the ec2 dashboard from the aws console and click launch instace.  You'll first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon's 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It's also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.</p>
+			<p>An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.</p>
 			</Panel>
 			</div>
           )
