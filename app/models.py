@@ -5,7 +5,7 @@ from sqlalchemy.sql.schema import Table
 
 Base = declarative_base()
 
-user_sub_table = Table('association', Base.metadata,
+user_sub_table = Table('users_subs', Base.metadata,
                        Column('user_id', Integer, ForeignKey('users.id')),
                        Column('sub_id', Integer, ForeignKey('subreddits.id')))
 
@@ -173,11 +173,10 @@ class Comment(Base):
     subreddit_id = Column(String, ForeignKey('subreddits.id'))
     sub = relationship("Subreddit", back_populates="comments")
     
-    def __init__(self, id, body, score, created, created, gilded, edited, link_id, subreddit_id, author_id):
+    def __init__(self, id, body, score, created, gilded, edited, link_id, subreddit_id, author_id):
         self.id = id
         self.body = body
         self.score = score
-        self.created = created
         self.created = created
         self.gilded = gilded
         self.edited = edited
