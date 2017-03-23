@@ -188,7 +188,7 @@ var About = React.createClass({
 			<Panel header = "Diagrams & Other" bsStyle = "info">
 			 <Accordion>
 				<Panel header = {<h4>UML Diagram <FaAngleDown/></h4>} eventKey = "1">
-				
+					<img src="/dist/images/UML.jpg" height="1573" width="306"></img>
 				</Panel>
 				<Panel header = {<h4>Table of Components <FaAngleDown/></h4>} eventKey = "2">
 				
