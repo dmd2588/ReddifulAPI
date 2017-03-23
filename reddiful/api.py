@@ -16,3 +16,7 @@ def serve_api(path):
 @app.route('/<path:path>')
 def serve_index(path):
     return flask.send_from_directory('../www', 'index.html')
+
+@app.route('/')
+def serve_root():
+    return flask.send_from_directory('../www', 'index.html')
