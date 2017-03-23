@@ -1,11 +1,30 @@
 import React from 'react'
-
+import {PageHeader, Panel, Accordion, Well, Jumbotron,ListGroupItem, ListGroup} from 'react-bootstrap';
 var About = React.createClass({
         render: function() {
           return (
-            <div><h2>About</h2>
-			<h3>Team Name Presents: Reddiful API</h3>
-			<p>David Du, Johnny Knoebel, Thomas Lam, Jeremy Lim, Austin Middleton, Shea Rozmiarek</p>
+              <div>
+            <PageHeader>About</PageHeader>
+                 <Jumbotron>
+            <h1>Team Name Presents: <small>Reddiful API</small></h1>
+    <p>By: David Du, Johnny Knoebel, Thomas Lam, Jeremy Lim, Austin Middleton, Shea Rozmiarek</p>
+              </Jumbotron>
+              <hr/>
+              
+              <ListGroup>
+              <h3>Github Stats - <a href="docs.reddiful.apiary.io">Apiary API</a> - <a href="https://github.com/dmd2588/ReddifulAPI/issues">GitHubIssueTracker</a> -  <a href="https://github.com/dmd2588/ReddifulAPI/">Github Repo</a></h3> 
+                <ListGroupItem>total no. of commits: 55</ListGroupItem>
+                <ListGroupItem>total no. of issues: 17</ListGroupItem>
+                <ListGroupItem>total no. of unit tests: 13</ListGroupItem>
+             </ListGroup>
+              <Panel header={ <h3>Data</h3>}>
+                  Link to the source here: <a href="https://www.reddit.com/dev/api/">Reddit API</a>
+                  <h4>Data Collection Process</h4>
+                  <p></p>
+              </Panel>
+              <br/>
+                
+                 <PageHeader>Technical Report</PageHeader>
 			<h3>Introduction</h3>
 			 <p>This is an analytical compilation of Reddit. We are providing a top-level view of Reddit. We're showing summary data and the relationships between all the information on Reddit. This can be used for anything from data analysis of information like the "toxicity" of a subreddit to creating personas of certain groups of people to better market products to that demographic.</p>
 			<h3>Design</h3>
