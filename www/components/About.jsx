@@ -38,24 +38,24 @@ var About = React.createClass({
 						<p>No. Issues: 0</p>
 						<p>No. Unit Tests: 0</p>
 					</Col>
-				    <Col lg={4}>
-					    <img src="https://placeimg.com/310/310/people" height="310" width="310"></img>
-					    <h3>Thomas Lam</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
-						<p>Responsibilities: stuff</p>
-						<p>No. Commits: 0</p>
-						<p>No. Issues: 0</p>
+					<Col lg={4}>
+						<img src="/dist/images/Thomas.jpg" height="360" width="360"></img>
+						<h3>Thomas Lam</h3>
+						<p>I'm a Junior CS Major from Cypress, Texas.</p>
+						<p>Responsibilities: Data Collection, Front-end and Back-end bug fixes</p>
+						<p>No. Commits: 12</p>
+						<p>No. Issues: 2</p>
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				</Row>
 			    <Row className="show-grid">
 				    <Col lg={4}>
-					    <img src="https://placeimg.com/310/310/people" height="310" width="310"></img>
+					    <img src="/dist/images/Jeremy.jpeg" height="310" width="310"></img>
 					    <h3>Jeremy Lim</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
-						<p>Responsibilities: stuff</p>
-						<p>No. Commits: 0</p>
-						<p>No. Issues: 0</p>
+						<p>Computer Science Major. Likes books and Battlestar Galatica. Hobby is to read online web novels.</p>
+						<p>Responsibilities: Front-end boilerplate code, Coordination, Coding React Components</p>
+						<p>No. Commits: 16</p>
+						<p>No. Issues: 5</p>
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				    <Col lg={4}>

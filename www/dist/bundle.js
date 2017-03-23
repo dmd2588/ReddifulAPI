@@ -34958,7 +34958,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							_reactBootstrap.Col,
 							{ lg: 4 },
-							_react2.default.createElement('img', { src: 'https://placeimg.com/310/310/people', height: '310', width: '310' }),
+							_react2.default.createElement('img', { src: '/dist/images/Thomas.jpg', height: '360', width: '360' }),
 							_react2.default.createElement(
 								'h3',
 								null,
@@ -34967,22 +34967,22 @@ var About = _react2.default.createClass({
 							_react2.default.createElement(
 								'p',
 								null,
-								'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.'
+								'I\'m a Junior CS Major from Cypress, Texas.'
 							),
 							_react2.default.createElement(
 								'p',
 								null,
-								'Responsibilities: stuff'
+								'Responsibilities: Data Collection, Front-end and Back-end bug fixes'
 							),
 							_react2.default.createElement(
 								'p',
 								null,
-								'No. Commits: 0'
+								'No. Commits: 12'
 							),
 							_react2.default.createElement(
 								'p',
 								null,
-								'No. Issues: 0'
+								'No. Issues: 2'
 							),
 							_react2.default.createElement(
 								'p',
@@ -34997,7 +34997,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							_reactBootstrap.Col,
 							{ lg: 4 },
-							_react2.default.createElement('img', { src: 'https://placeimg.com/310/310/people', height: '310', width: '310' }),
+							_react2.default.createElement('img', { src: '/dist/images/Jeremy.jpeg', height: '310', width: '310' }),
 							_react2.default.createElement(
 								'h3',
 								null,
@@ -35006,22 +35006,22 @@ var About = _react2.default.createClass({
 							_react2.default.createElement(
 								'p',
 								null,
-								'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.'
+								'Computer Science Major. Likes books and Battlestar Galatica. Hobby is to read online web novels.'
 							),
 							_react2.default.createElement(
 								'p',
 								null,
-								'Responsibilities: stuff'
+								'Responsibilities: Front-end boilerplate code, Coordination, Coding React Components'
 							),
 							_react2.default.createElement(
 								'p',
 								null,
-								'No. Commits: 0'
+								'No. Commits: 16'
 							),
 							_react2.default.createElement(
 								'p',
 								null,
-								'No. Issues: 0'
+								'No. Issues: 5'
 							),
 							_react2.default.createElement(
 								'p',
