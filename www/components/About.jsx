@@ -25,8 +25,8 @@ var About = React.createClass({
 					    <h3>David Du</h3>
 						<p>I'm a junior majoring in Computer Science. I like to game, which is closely related to why I want to go into the game development industry.</p>
 						<p>Responsibilities: Documentation, Front-end</p>
-						<p>No. Commits: 0</p>
-						<p>No. Issues: 0</p>
+						<p>No. Commits: 30</p>
+						<p>No. Issues: 4</p>
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				    <Col lg={4}>
@@ -34,8 +34,8 @@ var About = React.createClass({
 					    <h3>Johnny Knoebel</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
 						<p>Responsibilities: stuff</p>
-						<p>No. Commits: 0</p>
-						<p>No. Issues: 0</p>
+						<p>No. Commits: 2</p>
+						<p>No. Issues: 2</p>
 						<p>No. Unit Tests: 0</p>
 					</Col>
 					<Col lg={4}>
@@ -54,8 +54,8 @@ var About = React.createClass({
 					    <h3>Jeremy Lim</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
 						<p>Responsibilities: stuff</p>
-						<p>No. Commits: 0</p>
-						<p>No. Issues: 0</p>
+						<p>No. Commits: 16</p>
+						<p>No. Issues: 7</p>
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				    <Col lg={4}>
@@ -63,8 +63,8 @@ var About = React.createClass({
 					    <h3>Austin Middleton</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
 						<p>Responsibilities: stuff</p>
-						<p>No. Commits: 0</p>
-						<p>No. Issues: 0</p>
+						<p>No. Commits: 31</p>
+						<p>No. Issues: 6</p>
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				    <Col lg={4}>
@@ -72,8 +72,8 @@ var About = React.createClass({
 					    <h3>Shea Rozmiarek</h3>
 						<p>I'm a junior CS major from Liberty Hill, Texas. I love to game and pet fluffy animals.</p>
 						<p>Responsibilities: Front-end</p>
-						<p>No. Commits: 2</p>
-						<p>No. Issues: 1</p>
+						<p>No. Commits: 5</p>
+						<p>No. Issues: 2</p>
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				</Row>
