@@ -20,7 +20,7 @@ class User(Base):
     email = Column(String)
     posts = relationship("Post", back_populates="users")
     comments = relationship("Comment", back_populates="users")
-    subs = relationship("Subreddit", secondary=user_sub_table)
+    subreddits = relationship("Subreddit", secondary=user_sub_table)
     
     def __init__(self, id, name, link_karma, comment_karma, created, email):
         self.id = id
