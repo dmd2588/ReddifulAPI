@@ -7,6 +7,7 @@ import About from './About.jsx';
 import Subreddits from './Subreddits.jsx';
 import SubredditDetails from './SubredditDetails.jsx';
 import Posts from './Posts.jsx';
+import PostDetails from './PostDetails.jsx';
 import Comments from './Comments.jsx';
 import Home from './Home.jsx';
 
@@ -32,6 +33,8 @@ ReactDOM.render(
         <Route path="/subreddits/detail/:subreddit_id" component={SubredditDetails}/>
 
         <Route exact path="/posts" component={Posts}/>
+        <Route path="/posts/detail/:post_id" component={PostDetails}/>
+
         <Route exact path="/comments" component={Comments}/>
       </div>
     </Router>,
