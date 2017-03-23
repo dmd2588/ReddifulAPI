@@ -12,7 +12,7 @@ export default function Users () {
       return {
         title: s.display_name,
         subtitle: 'Created: ' + moment(new Date(s.created * 1000)).format('LL'),
-        link: '/subreddits'
+        link: '/subreddits/detail/' + s.id
       }
     })
   })

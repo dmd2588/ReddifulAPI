@@ -5,6 +5,7 @@ import Users from './Users.jsx';
 import UserDetail from './UserDetail.jsx';
 import About from './About.jsx';
 import Subreddits from './Subreddits.jsx';
+import SubredditDetails from './SubredditDetails.jsx';
 import Posts from './Posts.jsx';
 import Comments from './Comments.jsx';
 import Home from './Home.jsx';
@@ -28,6 +29,8 @@ ReactDOM.render(
         <Route path="/users/detail/:user_id" component={UserDetail}/>
         
         <Route exact path="/subreddits" component={Subreddits}/>
+        <Route path="/subreddits/detail/:subreddit_id" component={SubredditDetails}/>
+
         <Route exact path="/posts" component={Posts}/>
         <Route exact path="/comments" component={Comments}/>
       </div>
