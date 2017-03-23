@@ -21,7 +21,7 @@ var About = React.createClass({
 			<Grid>
 			    <Row className="show-grid">
 				    <Col lg={4}>
-					    <img src="/images/David.jpg" height="360" width="360"></img>
+					    <img src="/dist/images/David.jpg" height="310" width="310"></img>
 					    <h3>David Du</h3>
 						<p>I'm a junior majoring in Computer Science. I like to game, which is closely related to why I want to go into the game development industry.</p>
 						<p>Responsibilities: Documentation, Front-end</p>
@@ -30,7 +30,7 @@ var About = React.createClass({
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				    <Col lg={4}>
-					    <img src="https://placeimg.com/360/360/people" height="360" width="360"></img>
+					    <img src="https://placeimg.com/310/310/people" height="310" width="310"></img>
 					    <h3>Johnny Knoebel</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
 						<p>Responsibilities: stuff</p>
@@ -39,7 +39,7 @@ var About = React.createClass({
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				    <Col lg={4}>
-					    <img src="https://placeimg.com/360/360/people" height="360" width="360"></img>
+					    <img src="https://placeimg.com/310/310/people" height="310" width="310"></img>
 					    <h3>Thomas Lam</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
 						<p>Responsibilities: stuff</p>
@@ -50,7 +50,7 @@ var About = React.createClass({
 				</Row>
 			    <Row className="show-grid">
 				    <Col lg={4}>
-					    <img src="https://placeimg.com/360/360/people" height="360" width="360"></img>
+					    <img src="https://placeimg.com/310/310/people" height="310" width="310"></img>
 					    <h3>Jeremy Lim</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
 						<p>Responsibilities: stuff</p>
@@ -59,7 +59,7 @@ var About = React.createClass({
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				    <Col lg={4}>
-					    <img src="https://placeimg.com/360/360/people" height="360" width="360"></img>
+					    <img src="https://placeimg.com/310/310/people" height="310" width="310"></img>
 					    <h3>Austin Middleton</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
 						<p>Responsibilities: stuff</p>
@@ -68,7 +68,7 @@ var About = React.createClass({
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				    <Col lg={4}>
-					    <img src="/images/Shea.jpeg" height="360" width="360"></img>
+					    <img src="/dist/images/Shea.jpeg" height="310" width="310"></img>
 					    <h3>Shea Rozmiarek</h3>
 						<p>I'm a junior CS major from Liberty Hill, Texas. I love to game and pet fluffy animals.</p>
 						<p>Responsibilities: Front-end</p>
