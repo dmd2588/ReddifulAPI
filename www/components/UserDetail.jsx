@@ -12,9 +12,9 @@ class UserDetail extends React.Component {
             break;
         }
     }
-    var created = new Date(0);
-    created.setUTCSeconds(row.created);
     if (row) {
+        var created = new Date(0);
+        created.setUTCSeconds(row.created);
         return (
             <div>
               <h2>User Detail</h2>

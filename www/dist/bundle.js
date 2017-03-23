@@ -19703,9 +19703,9 @@ var UserDetail = function (_React$Component) {
                     break;
                 }
             }
-            var created = new Date(0);
-            created.setUTCSeconds(row.created);
             if (row) {
+                var created = new Date(0);
+                created.setUTCSeconds(row.created);
                 return _react2.default.createElement(
                     "div",
                     null,
