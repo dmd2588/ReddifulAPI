@@ -10,7 +10,7 @@ export default function Users () {
     cards: getUsers().map(u => {
       return {
         title: u.name,
-        subtitle: 'Joined: ' + moment(new Date(u.created)).format('LL'),
+        subtitle: 'Joined: ' + moment(new Date(u.created * 1000)).format('LL'),
         link: '/users/detail/' + u.id
       }
     })
