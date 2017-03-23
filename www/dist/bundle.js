@@ -19664,7 +19664,7 @@ exports.default = Subreddits;
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -19681,36 +19681,92 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var userData = [{ "name": "batman_jr", "created": 1405828618.0, "link_karma": 335, "comment_karma": 190, "id": "hh8mr", "email": "None" }, { "name": "poizan42", "created": 1331171212.0, "link_karma": 768, "comment_karma": 25419, "id": "74344", "email": "poizan@poizan.dk" }, { "name": "Ooer", "created": 1287044616.0, "link_karma": 18834, "comment_karma": 56852, "id": "4fer6", "email": "ooer@live.com" }];
+
 var UserDetail = function (_React$Component) {
-  _inherits(UserDetail, _React$Component);
+    _inherits(UserDetail, _React$Component);
 
-  function UserDetail() {
-    _classCallCheck(this, UserDetail);
+    function UserDetail() {
+        _classCallCheck(this, UserDetail);
 
-    return _possibleConstructorReturn(this, (UserDetail.__proto__ || Object.getPrototypeOf(UserDetail)).apply(this, arguments));
-  }
-
-  _createClass(UserDetail, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'h2',
-          null,
-          'User Detail'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          this.props.match.params.user_id
-        )
-      );
+        return _possibleConstructorReturn(this, (UserDetail.__proto__ || Object.getPrototypeOf(UserDetail)).apply(this, arguments));
     }
-  }]);
 
-  return UserDetail;
+    _createClass(UserDetail, [{
+        key: "render",
+        value: function render() {
+            var user_id = this.props.match.params.user_id;
+            var row = undefined;
+            for (var ind in userData) {
+                if (userData[ind].id == user_id) {
+                    row = userData[ind];
+                    break;
+                }
+            }
+            var created = new Date(0);
+            created.setUTCSeconds(row.created);
+            if (row) {
+                return _react2.default.createElement(
+                    "div",
+                    null,
+                    _react2.default.createElement(
+                        "h2",
+                        null,
+                        "User Detail"
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "Name: ",
+                        row.name
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "Link Karma: ",
+                        row.link_karma
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "Comment Karma: ",
+                        row.comment_karma
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "Email: ",
+                        row.email
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "Created: ",
+                        created.toString()
+                    )
+                );
+            } else {
+                return _react2.default.createElement(
+                    "div",
+                    null,
+                    _react2.default.createElement(
+                        "h2",
+                        null,
+                        "User Detail"
+                    ),
+                    _react2.default.createElement(
+                        "p",
+                        null,
+                        "No user with user_id ",
+                        user_id,
+                        " found."
+                    )
+                );
+            }
+        }
+    }]);
+
+    return UserDetail;
 }(_react2.default.Component);
 
 exports.default = UserDetail;
