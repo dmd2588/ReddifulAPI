@@ -207,7 +207,7 @@ export function getCommentRelated(comment_id) {
 }
 
 export function getPosts () {
-  return comments
+  return posts
 }
 
 export function getPostRelated(post_id) {
