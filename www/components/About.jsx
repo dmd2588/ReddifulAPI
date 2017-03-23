@@ -26,7 +26,7 @@ var About = React.createClass({
                 
                  <PageHeader>Technical Report</PageHeader>
 			<h3>Introduction</h3>
-			 <p>This is an analytical compilation of Reddit. We are providing a top-level view of Reddit. We're showing summary data and the relationships between all the information on Reddit. This can be used for anything from data analysis of information like the "toxicity" of a subreddit to creating personas of certain groups of people to better market products to that demographic.</p>
+			 <p>This is an analytical compilation of Reddit. We are providing a top-level view of Reddit, and we are showing summary data and the relationships for most of the information on Reddit. This can be used for anything from data analysis of information like the "toxicity" of a subreddit to creating personas of certain groups of people to better market products to that demographic.</p>
 			<h3>Design</h3>
 			 <p>We are using the Reddit API to define our models and attributes. For the structure, we first used UML to plan out how the models would look and interact with one another. We have four models we are working with: Subreddits, Users, Posts, and Comments.</p>
 			 <p>These models define the majority of characteristics, but we are thinking of defining a separate model for the trophies in the user profiles. This is because each trophy has several attributes and will be more easily represented in a separate model from the user. After defining several characteristics, we scraped some data and found that certain attributes would be infeasible while other, new ones could be added. This allowed us to redefine several attributes to more accurately reflect the information provided by the Reddit API.</p>
@@ -44,7 +44,7 @@ var About = React.createClass({
 				<h4>Relationships</h4>
 				 <p>There are many relationships between the different models. The way they interact helps organize the transmission of information between different entities.</p>
 					<h5><b>User</b></h5>
-					 <p>The User and Subreddit have a many to many relationship where for each user, there are many subreddits that they are subscribed to, and for each subreddit, there are many users subscribed to it. The User and Post have a 1 to many relationship as well since each user has many (if any) posts. Similarly, the User and Comment have a 1 to many relationship.</p>
+					 <p>The User and Subreddit have a many to many relationship where for each user, there are many subreddits that they are subscribed to, and for each subreddit, there are many users subscribed to it. With the current information given to us, we are currently focusing on the relationship between the moderators and the subreddit, since getting the information like the subreddits that a user is subscribed to and the users subscribed to a particular subreddit are both things that we cannot access. The User and Post have a 1 to many relationship as well since each user has many (if any) posts. Similarly, the User and Comment have a 1 to many relationship.</p>
 					<h5><b>Subreddit</b></h5>
 					 <p>The Subreddit and Post have a 1 to many relationship: each subreddit has many posts (hopefully), while each post can only belong to one subreddit (but can be crossposted elsewhere). For our relationship model, we're focusing on the 1 to many relationship. Subreddits also have a 1 to many relationship with comments: comments store the ID of the subreddit that they exist in.</p>
 					<h5><b>Post</b></h5>
@@ -62,7 +62,9 @@ var About = React.createClass({
 					 <p>The comments are pretty straightforward. For most, you will have an author and a body as the commentor and the comment, respectively. In this case, the author is a foreign key related back to the user's unique ID. Second, there is an ID for both the comment, the link, and the subreddit. The ID for the comment is the unique ID similar to those seen in the previous models. The link ID is the foreign key relating back to the ID of the post. Similarly, the subreddit ID is the foreign key relating back to the ID of the subreddit. The one different attribute is the edited attribute. This allows you to see if a comment has been edited or not. The rest of the attributes are similar to other attributes: the creation time, whether or not it is gilded, and the score or karma of the comment.</p>
 					 <p>Similarly to posts, comments can also be deleted or have a deleted commentor, so the sections will be substituted with [deleted].</p>
 			<h3>Tools</h3>
+			 <p>This section describes the tools and resources we used to both help design the site and to make it easier on the eyes.</p>
 			    <h4>Front-end</h4>
+				 <p>These tools help the site look better and feel better to use.</p>
 					<h5><b>Libraries and Tools</b></h5>
 					 <p>React and Bootstrap are the primary UI elements. Bootstrap is the react-bootstrap library that has compatibility with via react components. Other front-end libraries in use is react-toolbox for the grid cards and for the grid layout the react-bootstrap layout components. The front end is compiled from ES6 JSX files using webpack via Babel translator from jsx to a bundle.js file that contains the entirety of the page content and frontend libraries for deployment. Flask is the webserver that serves up the all of the frontend files. PostCSS is a dependency used by react-toolbox for its themes.</p>
 					<h5><b>Front-end Tool Configurations</b></h5>
@@ -72,6 +74,7 @@ var About = React.createClass({
 					<h5><b>Running Frontend</b></h5>
 					 <p>Running the front-end can be done after compilation/build of the application. Running the application is done by using the command - docker-compose up which runs the application on a flask server locally at localhost:80 or alternatively by running - make dev_build will run a node server at localhost:8080</p>
 			    <h4>Backend</h4>
+				 <p>These tools set up the site so that it runs smoothly and doesn't break (hopefully).</p>
 					<h5><b>Back-end Structure</b></h5>
 					 <p>Starting from the root of the application. The reddiful/ folder contains the api.py files that compose the back-end api of the application. The api.py file is the main entry point for the flask webserver. This file aso contains all of the routes that will be used for the API backend call to retrieve data to be displayed in the front-end. In the app/ folder is the test.py and model.py files. Model unit tests which test the validitiy for the db data is in the test.py file. SQLAlchemy is used for mapping the database rows to a python object, this is defined in the model.py file.</p>
 					<h5><b>Python and Flask</b></h5>
@@ -80,8 +83,6 @@ var About = React.createClass({
 					 <p> Docker container is used to install the preliminary dependecies for the back-end. Please see above for installing the front-end dependecies via npm. The docker container is used to ensure that all back-end dependencies are the same for every environment. The docker configuration for the installation of said dependencies is done in the Dockerfile file. This specifies the OS and other installation software. The docker-compose.yml file is the file that defines and initiates the webserver using flask.</p>
 			<h3>Hosting</h3>
 			 <p>For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a 8 GiB Elastic Block Store volume associated with it.  Amazon lists websites and applications as use cases for this type so it was a good fit for our goals.  It's also free tier eligible which allowed us to host our application on AWS for free for up to a year.  An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap.  To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file.  The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.</p>
-			<h3>Other</h3>
-			 <p>Diagram 1</p>
 			</div>
           )
         }
