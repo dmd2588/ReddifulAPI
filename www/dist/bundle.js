@@ -35168,6 +35168,19 @@ var About = _react2.default.createClass({
 					'Data was scraped for the chosen examples using PRAW\'s built in classes for each model as well as GET requests to the api endpoints because not all the attributes we wanted were available through the wrapper\'s built in classes.  The example data was stored as lists of dictionaries and dumped as json to be used in the front end.'
 				)
 			),
+			_react2.default.createElement(
+				_reactBootstrap.Panel,
+				{ header: _react2.default.createElement(
+						'h3',
+						null,
+						'Tools'
+					) },
+				_react2.default.createElement(
+					'p',
+					null,
+					'Used React and Bootstrap for main frontend. Webpack to compile ES6 jsx files. Babel to translate ES6 to javascript. React-toolbox, modernize, material-ui for touch up components. Docker used to manage back-end dependencies. Python for the back-end logic. Flask as the api logic server. Makefile to encode the workflow. Gunicorn for the flask webserver.For more info see the Tools section of the Technical Report below.'
+				)
+			),
 			_react2.default.createElement('br', null),
 			_react2.default.createElement(
 				_reactBootstrap.PageHeader,
