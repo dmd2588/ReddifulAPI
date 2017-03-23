@@ -34781,9 +34781,17 @@ var _Posts = __webpack_require__(343);
 
 var _Posts2 = _interopRequireDefault(_Posts);
 
+var _PostDetails = __webpack_require__(988);
+
+var _PostDetails2 = _interopRequireDefault(_PostDetails);
+
 var _Comments = __webpack_require__(340);
 
 var _Comments2 = _interopRequireDefault(_Comments);
+
+var _CommentDetails = __webpack_require__(987);
+
+var _CommentDetails2 = _interopRequireDefault(_CommentDetails);
 
 var _Home = __webpack_require__(341);
 
@@ -34807,7 +34815,9 @@ _reactDom2.default.render(_react2.default.createElement(
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/subreddits', component: _Subreddits2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/subreddits/detail/:subreddit_id', component: _SubredditDetails2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/posts', component: _Posts2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/comments', component: _Comments2.default })
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/posts/detail/:post_id', component: _PostDetails2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/comments', component: _Comments2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/comments/detail/:comment_id', component: _CommentDetails2.default })
   )
 ), document.getElementById('content'));
 
@@ -34870,9 +34880,226 @@ var About = _react2.default.createClass({
 					)
 				),
 				_react2.default.createElement(
-					'p',
+					_reactBootstrap.Grid,
 					null,
-					'By: David Du, Johnny Knoebel, Thomas Lam, Jeremy Lim, Austin Middleton, Shea Rozmiarek'
+					_react2.default.createElement(
+						_reactBootstrap.Row,
+						{ className: 'show-grid' },
+						_react2.default.createElement(
+							_reactBootstrap.Col,
+							{ lg: 4 },
+							_react2.default.createElement('img', { src: '/dist/images/David.jpg', height: '310', width: '310' }),
+							_react2.default.createElement(
+								'h3',
+								null,
+								'David Du'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'I\'m a junior majoring in Computer Science. I like to game, which is closely related to why I want to go into the game development industry.'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'Responsibilities: Documentation, Front-end'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Commits: 0'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Issues: 0'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Unit Tests: 0'
+							)
+						),
+						_react2.default.createElement(
+							_reactBootstrap.Col,
+							{ lg: 4 },
+							_react2.default.createElement('img', { src: 'https://placeimg.com/310/310/people', height: '310', width: '310' }),
+							_react2.default.createElement(
+								'h3',
+								null,
+								'Johnny Knoebel'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'Responsibilities: stuff'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Commits: 0'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Issues: 0'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Unit Tests: 0'
+							)
+						),
+						_react2.default.createElement(
+							_reactBootstrap.Col,
+							{ lg: 4 },
+							_react2.default.createElement('img', { src: 'https://placeimg.com/310/310/people', height: '310', width: '310' }),
+							_react2.default.createElement(
+								'h3',
+								null,
+								'Thomas Lam'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'Responsibilities: stuff'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Commits: 0'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Issues: 0'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Unit Tests: 0'
+							)
+						)
+					),
+					_react2.default.createElement(
+						_reactBootstrap.Row,
+						{ className: 'show-grid' },
+						_react2.default.createElement(
+							_reactBootstrap.Col,
+							{ lg: 4 },
+							_react2.default.createElement('img', { src: 'https://placeimg.com/310/310/people', height: '310', width: '310' }),
+							_react2.default.createElement(
+								'h3',
+								null,
+								'Jeremy Lim'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'Responsibilities: stuff'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Commits: 0'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Issues: 0'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Unit Tests: 0'
+							)
+						),
+						_react2.default.createElement(
+							_reactBootstrap.Col,
+							{ lg: 4 },
+							_react2.default.createElement('img', { src: 'https://placeimg.com/310/310/people', height: '310', width: '310' }),
+							_react2.default.createElement(
+								'h3',
+								null,
+								'Austin Middleton'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'Responsibilities: stuff'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Commits: 0'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Issues: 0'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Unit Tests: 0'
+							)
+						),
+						_react2.default.createElement(
+							_reactBootstrap.Col,
+							{ lg: 4 },
+							_react2.default.createElement('img', { src: '/dist/images/Shea.jpeg', height: '310', width: '310' }),
+							_react2.default.createElement(
+								'h3',
+								null,
+								'Shea Rozmiarek'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'I\'m a junior CS major from Liberty Hill, Texas. I love to game and pet fluffy animals.'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'Responsibilities: Front-end'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Commits: 2'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Issues: 1'
+							),
+							_react2.default.createElement(
+								'p',
+								null,
+								'No. Unit Tests: 0'
+							)
+						)
+					)
 				)
 			),
 			_react2.default.createElement('hr', null),
@@ -34935,7 +35162,27 @@ var About = _react2.default.createClass({
 					null,
 					'Data Collection Process'
 				),
-				_react2.default.createElement('p', null)
+				_react2.default.createElement(
+					'p',
+					null,
+					'For the example models used in the first phase of the project, data was scraped using the Reddit API.  The official reddit git repository lists several ',
+					_react2.default.createElement(
+						'a',
+						{ href: 'https://github.com/reddit/reddit/wiki/API-Wrappers' },
+						'wrappers for the API'
+					),
+					'.  For the scraper written for our project, PRAW, a python wrapper around the API was used.'
+				),
+				_react2.default.createElement(
+					'p',
+					null,
+					'In order to keep the example data set at three examples for each model as well as having linked examples, the data was gathered in a specific way.  Three subreddits were chosen and from each of those subreddits one of the moderators was chosen and for each of those moderators their most recent comment was chosen and for each comment the submission it resided in was chosen.'
+				),
+				_react2.default.createElement(
+					'p',
+					null,
+					'Data was scraped for the chosen examples using PRAW\'s built in classes for each model as well as GET requests to the api endpoints because not all the attributes we wanted were available through the wrapper\'s built in classes.  The example data was stored as lists of dictionaries and dumped as json to be used in the front end.'
+				)
 			),
 			_react2.default.createElement('br', null),
 			_react2.default.createElement(
@@ -34970,7 +35217,7 @@ var About = _react2.default.createClass({
 				_react2.default.createElement(
 					'p',
 					null,
-					'This is an analytical compilation of Reddit. We are providing a top-level view of Reddit, and we are showing summary data and the relationships for most of the information on Reddit. This can be used for anything from data analysis of information like the "toxicity" of a subreddit to creating personas of certain groups of people to better market products to that demographic.'
+					'This is an analytical compilation of Reddit. We are providing a top-level view of Reddit. This top level view includes metadata, summary data and the relationships for most of the top information on Reddit. Since Reddit has a vast variety of content it can be hard for a user to explore Reddit in an succinct manner from a top down approach. This API allows for a quick browse, with supplemented analytics to concisely explore the range of content that Reddit fields. This can be used for anything from data analysis of information like the "toxicity" of a subreddit to creating personas of certain groups of people to better market products to that demographic.'
 				)
 			),
 			_react2.default.createElement(
@@ -35403,19 +35650,50 @@ var About = _react2.default.createClass({
 				_reactBootstrap.Panel,
 				{ header: 'Hosting', bsStyle: 'info' },
 				_react2.default.createElement(
-					'p',
+					_reactBootstrap.Accordion,
 					null,
-					'For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.'
-				),
-				_react2.default.createElement(
-					'p',
-					null,
-					'To set up an ec2 instance you navigate to the ec2 dashboard from the aws console and click launch instace.  You will first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon\'s 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It is also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.'
-				),
-				_react2.default.createElement(
-					'p',
-					null,
-					'An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.'
+					_react2.default.createElement(
+						_reactBootstrap.Panel,
+						{ header: _react2.default.createElement(
+								'h4',
+								null,
+								'Choice                 ',
+								_react2.default.createElement(_angleDown2.default, null)
+							), eventKey: '1' },
+						_react2.default.createElement(
+							'p',
+							null,
+							'For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.'
+						)
+					),
+					_react2.default.createElement(
+						_reactBootstrap.Panel,
+						{ header: _react2.default.createElement(
+								'h4',
+								null,
+								'Set-up                 ',
+								_react2.default.createElement(_angleDown2.default, null)
+							), eventKey: '2' },
+						_react2.default.createElement(
+							'p',
+							null,
+							'To set up an ec2 instance you navigate to the ec2 dashboard from the aws console and click launch instace.  You will first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon\'s 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It is also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.'
+						)
+					),
+					_react2.default.createElement(
+						_reactBootstrap.Panel,
+						{ header: _react2.default.createElement(
+								'h4',
+								null,
+								'Accessibility          ',
+								_react2.default.createElement(_angleDown2.default, null)
+							), eventKey: '3' },
+						_react2.default.createElement(
+							'p',
+							null,
+							'An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.'
+						)
+					)
 				)
 			)
 		);
@@ -35462,7 +35740,7 @@ function Comments() {
           return u.id === c.author;
         }).name,
         subtitle: 'Commented: ' + (0, _moment2.default)(new Date(c.created * 1000)).format('LL'),
-        link: '/comments'
+        link: '/comments/detail/' + c.id
       };
     })
   });
@@ -35712,7 +35990,7 @@ function Posts() {
         subtitle: 'Author: ' + ((0, _api.getUsers)().find(function (u) {
           return u.id === p.author;
         }) || {}).name,
-        link: '/posts'
+        link: '/posts/detail/' + p.id
       };
     })
   });
@@ -65747,6 +66025,102 @@ var FaAngleDown = function FaAngleDown(props) {
 
 exports.default = FaAngleDown;
 module.exports = exports['default'];
+
+/***/ }),
+/* 987 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = CommentDetails;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Details = __webpack_require__(984);
+
+var _Details2 = _interopRequireDefault(_Details);
+
+var _api = __webpack_require__(57);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function CommentDetails(props) {
+  var comment = (0, _api.getComments)().find(function (c) {
+    return c.id === props.match.params.comment_id;
+  });
+  var author = (0, _api.getUsers)().find(function (u) {
+    return u.id === comment.author;
+  }) || {};
+  var post = (0, _api.getPosts)().find(function (p) {
+    return p.id === comment.link_id;
+  }) || {};
+
+  return (0, _Details2.default)({
+    title: 'Comment',
+    details: {
+      'Author': author.name,
+      'Post': post.title,
+      'Created': new Date(comment.created * 1000).toDateString(),
+      'Edited': comment.edited ? 'Yes' : 'No',
+      'Gilds': comment.gilded,
+      'Score': comment.score,
+      'Body': comment.body
+    }
+  });
+}
+
+/***/ }),
+/* 988 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = PostDetails;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Details = __webpack_require__(984);
+
+var _Details2 = _interopRequireDefault(_Details);
+
+var _api = __webpack_require__(57);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function PostDetails(props) {
+  var post = (0, _api.getPosts)().find(function (p) {
+    return p.id === props.match.params.post_id;
+  });
+  var author = (0, _api.getUsers)().find(function (u) {
+    return u.id === post.author;
+  }) || {};
+  var subreddit = (0, _api.getSubreddits)().find(function (s) {
+    return s.id === post.subreddit_id;
+  }) || {};
+
+  return (0, _Details2.default)({
+    title: 'Post - ' + post.title,
+    details: {
+      'Title': post.title,
+      'Score': post.score,
+      'Subreddit': subreddit.display_name || 'NOT_FOUND - FIXME',
+      'Author': author.name,
+      'Created': new Date(post.created * 1000).toDateString()
+    }
+  });
+}
 
 /***/ })
 /******/ ]);

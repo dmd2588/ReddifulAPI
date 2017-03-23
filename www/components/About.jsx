@@ -1,5 +1,6 @@
 import React from 'react'
 import {PageHeader, Panel, Accordion, Well, Jumbotron,ListGroupItem, ListGroup} from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import FaAngleDown from 'react-icons/lib/fa/angle-down';
 var About = React.createClass({
 		getInitialState() {
@@ -17,12 +18,71 @@ var About = React.createClass({
             <PageHeader>About</PageHeader>
               <Jumbotron>
             <h1>Team Name Presents: <small>Reddiful API</small></h1>
-			 <p>By: David Du, Johnny Knoebel, Thomas Lam, Jeremy Lim, Austin Middleton, Shea Rozmiarek</p>
+			<Grid>
+			    <Row className="show-grid">
+				    <Col lg={4}>
+					    <img src="/dist/images/David.jpg" height="310" width="310"></img>
+					    <h3>David Du</h3>
+						<p>I'm a junior majoring in Computer Science. I like to game, which is closely related to why I want to go into the game development industry.</p>
+						<p>Responsibilities: Documentation, Front-end</p>
+						<p>No. Commits: 0</p>
+						<p>No. Issues: 0</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				    <Col lg={4}>
+					    <img src="https://placeimg.com/310/310/people" height="310" width="310"></img>
+					    <h3>Johnny Knoebel</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
+						<p>Responsibilities: stuff</p>
+						<p>No. Commits: 0</p>
+						<p>No. Issues: 0</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				    <Col lg={4}>
+					    <img src="https://placeimg.com/310/310/people" height="310" width="310"></img>
+					    <h3>Thomas Lam</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
+						<p>Responsibilities: stuff</p>
+						<p>No. Commits: 0</p>
+						<p>No. Issues: 0</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				</Row>
+			    <Row className="show-grid">
+				    <Col lg={4}>
+					    <img src="https://placeimg.com/310/310/people" height="310" width="310"></img>
+					    <h3>Jeremy Lim</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
+						<p>Responsibilities: stuff</p>
+						<p>No. Commits: 0</p>
+						<p>No. Issues: 0</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				    <Col lg={4}>
+					    <img src="https://placeimg.com/310/310/people" height="310" width="310"></img>
+					    <h3>Austin Middleton</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
+						<p>Responsibilities: stuff</p>
+						<p>No. Commits: 0</p>
+						<p>No. Issues: 0</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				    <Col lg={4}>
+					    <img src="/dist/images/Shea.jpeg" height="310" width="310"></img>
+					    <h3>Shea Rozmiarek</h3>
+						<p>I'm a junior CS major from Liberty Hill, Texas. I love to game and pet fluffy animals.</p>
+						<p>Responsibilities: Front-end</p>
+						<p>No. Commits: 2</p>
+						<p>No. Issues: 1</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				</Row>
+			</Grid>
               </Jumbotron>
               <hr/>
-              
+
               <ListGroup>
-              <h3>Github Stats - <a href="docs.reddiful.apiary.io">Apiary API</a> - <a href="https://github.com/dmd2588/ReddifulAPI/issues">GitHubIssueTracker</a> -  <a href="https://github.com/dmd2588/ReddifulAPI/">Github Repo</a></h3> 
+              <h3>Github Stats - <a href="docs.reddiful.apiary.io">Apiary API</a> - <a href="https://github.com/dmd2588/ReddifulAPI/issues">GitHubIssueTracker</a> -  <a href="https://github.com/dmd2588/ReddifulAPI/">Github Repo</a></h3>
                 <ListGroupItem>total no. of commits: 55</ListGroupItem>
                 <ListGroupItem>total no. of issues: 17</ListGroupItem>
                 <ListGroupItem>total no. of unit tests: 13</ListGroupItem>
@@ -30,16 +90,18 @@ var About = React.createClass({
               <Panel header={ <h3>Data</h3>}>
                   Link to the source here: <a href="https://www.reddit.com/dev/api/">Reddit API</a>
                   <h4>Data Collection Process</h4>
-                  <p></p>
+                  <p>For the example models used in the first phase of the project, data was scraped using the Reddit API.  The official reddit git repository lists several <a href="https://github.com/reddit/reddit/wiki/API-Wrappers">wrappers for the API</a>.  For the scraper written for our project, PRAW, a python wrapper around the API was used.</p>
+                  <p>In order to keep the example data set at three examples for each model as well as having linked examples, the data was gathered in a specific way.  Three subreddits were chosen and from each of those subreddits one of the moderators was chosen and for each of those moderators their most recent comment was chosen and for each comment the submission it resided in was chosen.</p>
+                  <p>Data was scraped for the chosen examples using PRAW's built in classes for each model as well as GET requests to the api endpoints because not all the attributes we wanted were available through the wrapper's built in classes.  The example data was stored as lists of dictionaries and dumped as json to be used in the front end.</p>
               </Panel>
               <br/>
-                
+
             <PageHeader>Technical Report</PageHeader>
 			<h3>Group Name: <small>Team Name</small></h3>
             <h3>Members: <small>David Du, Johnny Knoebel, Thomas Lam, Jeremy Lim, Austin Middleton, Shea Rozmiarek</small></h3>
             <br/>
 			<Panel header = "Introduction" bsStyle = "info">
-			 <p>This is an analytical compilation of Reddit. We are providing a top-level view of Reddit, and we are showing summary data and the relationships for most of the information on Reddit. This can be used for anything from data analysis of information like the "toxicity" of a subreddit to creating personas of certain groups of people to better market products to that demographic.</p>
+			 <p>This is an analytical compilation of Reddit. We are providing a top-level view of Reddit. This top level view includes metadata, summary data and the relationships for most of the top information on Reddit. Since Reddit has a vast variety of content it can be hard for a user to explore Reddit in an succinct manner from a top down approach. This API allows for a quick browse, with supplemented analytics to concisely explore the range of content that Reddit fields. This can be used for anything from data analysis of information like the "toxicity" of a subreddit to creating personas of certain groups of people to better market products to that demographic.</p>
 			</Panel>
 			<Panel header = "Design" bsStyle = "info">
 			 <p>We are using the Reddit API to define our models and attributes. For the structure, we first used UML to plan out how the models would look and interact with one another. We have four models we are working with: Subreddits, Users, Posts, and Comments.</p>
@@ -107,9 +169,17 @@ var About = React.createClass({
 			 </Accordion>
 			</Panel>
 			<Panel header = "Hosting" bsStyle = "info">
-			 <p>For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.</p>
-			<p>To set up an ec2 instance you navigate to the ec2 dashboard from the aws console and click launch instace.  You will first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon's 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It is also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.</p>
-			<p>An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.</p>
+			 <Accordion>
+				<Panel header = {<h4>Choice                 <FaAngleDown/></h4>} eventKey = "1">
+				 <p>For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.</p>
+				</Panel>
+				<Panel header = {<h4>Set-up                 <FaAngleDown/></h4>} eventKey = "2">
+				 <p>To set up an ec2 instance you navigate to the ec2 dashboard from the aws console and click launch instace.  You will first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon's 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It is also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.</p>
+				</Panel>
+				<Panel header = {<h4>Accessibility          <FaAngleDown/></h4>} eventKey = "3">
+				 <p>An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.</p>
+				</Panel>
+			 </Accordion>
 			</Panel>
 			</div>
           )
