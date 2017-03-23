@@ -244,7 +244,7 @@ export function getPostRelated(post_id) {
 }
 
 export function getSubreddits () {
-  return comments
+  return subreddits
 }
 
 export function getSubredditRelated(subreddit_id) {
