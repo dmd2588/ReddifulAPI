@@ -34965,7 +34965,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							_reactBootstrap.Col,
 							{ lg: 4 },
-							_react2.default.createElement('img', { src: '/dist/images/Thomas.jpg', height: '360', width: '360' }),
+							_react2.default.createElement('img', { src: '/dist/images/Thomas.jpg', className: 'img-responsive center-block' }),
 							_react2.default.createElement(
 								'h3',
 								null,

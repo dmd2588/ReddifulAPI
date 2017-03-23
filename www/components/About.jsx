@@ -39,7 +39,7 @@ var About = React.createClass({
 						<p>No. Unit Tests: 0</p>
 					</Col>
 					<Col lg={4}>
-						<img src="/dist/images/Thomas.jpg" height="360" width="360"></img>
+						<img src="/dist/images/Thomas.jpg" className="img-responsive center-block"></img>
 						<h3>Thomas Lam</h3>
 						<p>I'm a Junior CS Major from Cypress, Texas.</p>
 						<p>Responsibilities: Data Collection, Front-end and Back-end bug fixes</p>
