@@ -25,6 +25,12 @@ const users = [
   }
 ]
 
+const moderators = [
+  {'user_id': 'hh8mr', 'sr_id': '3imv0'},
+  {'user_id': '74344', 'sr_id': '2tex6'},
+  {'user_id': '4fer6', 'sr_id': '2qh55'}
+]
+
 const subreddits = [
   {
     'accounts_active': 921,
