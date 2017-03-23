@@ -12,7 +12,8 @@ RUN pip3 install --upgrade pip
 RUN pip install\
     Flask\
     eventlet\
-    gunicorn
+    gunicorn\
+    SQLAlchemy
 
 ENV PYTHONPATH=/var/reddiful/
 
