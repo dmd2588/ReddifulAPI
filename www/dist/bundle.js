@@ -35362,74 +35362,160 @@ function Users() {
       'Users'
     ),
     _react2.default.createElement(
-      _reactBootstrap.Grid,
+      _reactBootstrap.Row,
       null,
       _react2.default.createElement(
-        _reactBootstrap.Row,
-        { className: 'show-grid' },
+        _reactBootstrap.Col,
+        { sm: 12, md: 3 },
         _react2.default.createElement(
-          _reactBootstrap.Col,
-          { sm: 6, md: 3 },
+          'div',
+          null,
           _react2.default.createElement(
-            _card.Card,
-            { style: { width: '250px' } },
-            _react2.default.createElement(_card.CardTitle, {
-              avatar: 'https://placeimg.com/80/80/animals',
-              title: userData[0].name,
-              subtitle: "Joined: " + moment(dates[0]).format("LL")
-            }),
-            _react2.default.createElement(_card.CardMedia, {
-              aspectRatio: 'wide',
-              image: 'https://placeimg.com/800/450/nature'
-            }),
+            _reactBootstrap.Panel,
+            { header: 'Filtering and Sorting' },
             _react2.default.createElement(
-              _card.CardActions,
-              null,
-              _react2.default.createElement(_button.Button, { href: "/users/detail/" + userData[0].id, label: 'Details' })
+              _reactBootstrap.FormGroup,
+              { controlId: 'filterText' },
+              _react2.default.createElement(
+                _reactBootstrap.ControlLabel,
+                null,
+                'Filter Text'
+              ),
+              _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'text', placeholder: 'Search' })
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.FormGroup,
+              { controlId: 'filterSelect' },
+              _react2.default.createElement(
+                _reactBootstrap.ControlLabel,
+                null,
+                'Filter by Attribute'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.FormControl,
+                { componentClass: 'select' },
+                _react2.default.createElement(
+                  'option',
+                  { value: 'name' },
+                  'Name'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'link_karma' },
+                  'Link Karma'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'comment_karma' },
+                  'Comment Karma'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.FormGroup,
+              { controlId: 'sortSelect' },
+              _react2.default.createElement(
+                _reactBootstrap.ControlLabel,
+                null,
+                'Sort by Attribute'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.FormControl,
+                { componentClass: 'select' },
+                _react2.default.createElement(
+                  'option',
+                  { value: 'name' },
+                  'Name'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'link_karma' },
+                  'Link Karma'
+                ),
+                _react2.default.createElement(
+                  'option',
+                  { value: 'comment_karma' },
+                  'Comment Karma'
+                )
+              )
             )
           )
-        ),
+        )
+      ),
+      _react2.default.createElement(
+        _reactBootstrap.Col,
+        { sm: 12, md: 9 },
         _react2.default.createElement(
-          _reactBootstrap.Col,
-          { sm: 6, md: 3 },
+          _reactBootstrap.Grid,
+          null,
           _react2.default.createElement(
-            _card.Card,
-            { style: { width: '250px' } },
-            _react2.default.createElement(_card.CardTitle, {
-              avatar: 'https://placeimg.com/80/80/animals',
-              title: userData[1].name,
-              subtitle: "Joined: " + moment(dates[1]).format("LL")
-            }),
-            _react2.default.createElement(_card.CardMedia, {
-              aspectRatio: 'wide',
-              image: 'https://placeimg.com/800/450/nature'
-            }),
+            _reactBootstrap.Row,
+            { className: 'show-grid' },
             _react2.default.createElement(
-              _card.CardActions,
-              null,
-              _react2.default.createElement(_button.Button, { href: "/users/detail/" + userData[1].id, label: 'Details' })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Col,
-          { sm: 6, md: 3 },
-          _react2.default.createElement(
-            _card.Card,
-            { style: { width: '250px' } },
-            _react2.default.createElement(_card.CardTitle, {
-              avatar: 'https://placeimg.com/80/80/animals',
-              title: userData[2].name,
-              subtitle: "Joined: " + moment(dates[2]).format("LL")
-            }),
-            _react2.default.createElement(_card.CardMedia, {
-              aspectRatio: 'wide',
-              image: 'https://placeimg.com/800/450/nature'
-            }),
+              _reactBootstrap.Col,
+              { sm: 6, md: 3 },
+              _react2.default.createElement(
+                _card.Card,
+                { style: { width: '250px' } },
+                _react2.default.createElement(_card.CardTitle, {
+                  avatar: 'https://placeimg.com/80/80/animals',
+                  title: userData[0].name,
+                  subtitle: "Joined: " + moment(dates[0]).format("LL")
+                }),
+                _react2.default.createElement(_card.CardMedia, {
+                  aspectRatio: 'wide',
+                  image: 'https://placeimg.com/800/450/nature'
+                }),
+                _react2.default.createElement(
+                  _card.CardActions,
+                  null,
+                  _react2.default.createElement(_button.Button, { href: "/users/detail/" + userData[0].id, label: 'Details' })
+                )
+              )
+            ),
             _react2.default.createElement(
-              _card.CardActions,
-              null,
-              _react2.default.createElement(_button.Button, { href: "/users/detail/" + userData[2].id, label: 'Details' })
+              _reactBootstrap.Col,
+              { sm: 6, md: 3 },
+              _react2.default.createElement(
+                _card.Card,
+                { style: { width: '250px' } },
+                _react2.default.createElement(_card.CardTitle, {
+                  avatar: 'https://placeimg.com/80/80/animals',
+                  title: userData[1].name,
+                  subtitle: "Joined: " + moment(dates[1]).format("LL")
+                }),
+                _react2.default.createElement(_card.CardMedia, {
+                  aspectRatio: 'wide',
+                  image: 'https://placeimg.com/800/450/nature'
+                }),
+                _react2.default.createElement(
+                  _card.CardActions,
+                  null,
+                  _react2.default.createElement(_button.Button, { href: "/users/detail/" + userData[1].id, label: 'Details' })
+                )
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Col,
+              { sm: 6, md: 3 },
+              _react2.default.createElement(
+                _card.Card,
+                { style: { width: '250px' } },
+                _react2.default.createElement(_card.CardTitle, {
+                  avatar: 'https://placeimg.com/80/80/animals',
+                  title: userData[2].name,
+                  subtitle: "Joined: " + moment(dates[2]).format("LL")
+                }),
+                _react2.default.createElement(_card.CardMedia, {
+                  aspectRatio: 'wide',
+                  image: 'https://placeimg.com/800/450/nature'
+                }),
+                _react2.default.createElement(
+                  _card.CardActions,
+                  null,
+                  _react2.default.createElement(_button.Button, { href: "/users/detail/" + userData[2].id, label: 'Details' })
+                )
+              )
             )
           )
         )
