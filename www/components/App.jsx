@@ -16,28 +16,22 @@ import {
   Redirect
 } from 'react-router-dom'
 
-
-var App = React.createClass({
-        render: function() {
-          return (
-              <NavBarAPI/>
-          )
-        }
-      });
-export default App;
-
-ReactDOM.render(   
+ReactDOM.render(
     <Router>
        <div>
-        <Route path="/" component={App}/>
-        <Route path="/about" component={About}/>
-        <Route path="/users" component={Users}/>
-        <Route path="/subreddits" component={Subreddits}/>
-        <Route path="/posts" component={Posts}/>
-        <Route path="/comments" component={Comments}/>
-        <Route path="/home" component={Home}/>
-        <Redirect from="/" to="/home"/>
-        </div>
-    </Router> ,
-  document.getElementById('content')
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/home" component={Home}/>
+        <Route exact path="/about" component={About}/>
+        <Route exact path="/users" component={Users}/>
+        <Route exact path="/subreddits" component={Subreddits}/>
+        <Route exact path="/posts" component={Posts}/>
+        <Route exact path="/comments" component={Comments}/>
+      </div>
+    </Router>,
+    document.getElementById('content')
+);
+
+ReactDOM.render(
+    <NavBarAPI/>,
+    document.getElementById('nav')
 );

@@ -6,6 +6,12 @@ logging.getLogger().setLevel(logging.INFO)
 app = flask.Flask(__name__)
 
 @app.route('/')
+@app.route('/about')
+@app.route('/users')
+@app.route('/subreddits')
+@app.route('/posts')
+@app.route('/comments')
+@app.route('/home')
 def serve_index():
     return flask.send_from_directory('../www', 'index.html')
 

@@ -17,13 +17,6 @@ function handleSelect(selectedKey) {
   alert('selected ' + selectedKey);
 }
 
-//Change these into imports
-//var Navbar = ReactBootstrap.Navbar,
-//Nav = ReactBootstrap.Nav,
-//NavItem = ReactBootstrap.NavItem,
-//DropdownButton = ReactBootstrap.DropdownButton,
-//MenuItem = ReactBootstrap.MenuItem;
-
 const navbarInstance = (
       <Navbar>
         <Navbar.Header>
@@ -32,16 +25,16 @@ const navbarInstance = (
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <NavItem><Link to="/home">Home</Link></NavItem>
-          <NavItem><Link to="/about">About</Link></NavItem>
-          <NavItem><Link to="/users">Users</Link></NavItem>
-          <NavItem><Link to="/subreddits">Subreddits</Link></NavItem>
-          <NavItem><Link to="/posts">Posts</Link></NavItem>
-          <NavItem><Link to="/comments">Comments</Link></NavItem>
+          <NavItem href="/home">Home</NavItem>
+          <NavItem href="/about">About</NavItem>
+          <NavItem href="/users">Users</NavItem>
+          <NavItem href="/subreddits">Subreddit</NavItem>
+          <NavItem href="/posts">Posts</NavItem>
+          <NavItem href="/comments">Comments</NavItem>
 
         </Nav>
       </Navbar>
-      
+
     );
 
 var NavBarAPI = React.createClass({
@@ -53,5 +46,3 @@ var NavBarAPI = React.createClass({
 });
 
 export default NavBarAPI;
-   
-
