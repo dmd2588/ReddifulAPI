@@ -107,7 +107,7 @@ var About = React.createClass({
 			 <p>This is an analytical compilation of Reddit. We are providing a top-level view of Reddit. This top level view includes metadata, summary data and the relationships for most of the top information on Reddit. Since Reddit has a vast variety of content it can be hard for a user to explore Reddit in an succinct manner from a top down approach. This API allows for a quick browse, with supplemented analytics to concisely explore the range of content that Reddit fields. This can be used for anything from data analysis of information like the "toxicity" of a subreddit to creating personas of certain groups of people to better market products to that demographic.</p>
 			</Panel>
 			<Panel header = "Design" bsStyle = "info">
-			 <p>We are using the Reddit API to define our models and attributes. For the structure, we first used UML to plan out how the models would look and interact with one another. We have four models we are working with: Subreddits, Users, Posts, and Comments.</p>
+			 <p>We are using the Reddit API to define our models and attributes. For the structure, we first used UML to plan out how the models would look and interact with one another. We have four models we are working with: Subreddits, Users, Posts, and Comments. For the UML diagram see at the end of the report in the Diagrams section.</p>
 			 <p>These models define the majority of characteristics, but we are thinking of defining a separate model for the trophies in the user profiles. This is because each trophy has several attributes and will be more easily represented in a separate model from the user. After defining several characteristics, we scraped some data and found that certain attributes would be infeasible while other, new ones could be added. This allowed us to redefine several attributes to more accurately reflect the information provided by the Reddit API.</p>
 			 <p>While defining the attributes for the models, we also took a look at the relationships between each of those models. By observing the interaction on Reddit, we were able to condense them into the relationships and attributes that you see below.</p>
 			 <Accordion>
@@ -181,6 +181,17 @@ var About = React.createClass({
 				</Panel>
 				<Panel header = {<h4>Accessibility          <FaAngleDown/></h4>} eventKey = "3">
 				 <p>An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.</p>
+				</Panel>
+			 </Accordion>
+			</Panel>
+			
+			<Panel header = "Diagrams & Other" bsStyle = "info">
+			 <Accordion>
+				<Panel header = {<h4>UML Diagram <FaAngleDown/></h4>} eventKey = "1">
+				
+				</Panel>
+				<Panel header = {<h4>Table of Components <FaAngleDown/></h4>} eventKey = "2">
+				
 				</Panel>
 			 </Accordion>
 			</Panel>

@@ -35223,7 +35223,7 @@ var About = _react2.default.createClass({
 				_react2.default.createElement(
 					'p',
 					null,
-					'We are using the Reddit API to define our models and attributes. For the structure, we first used UML to plan out how the models would look and interact with one another. We have four models we are working with: Subreddits, Users, Posts, and Comments.'
+					'We are using the Reddit API to define our models and attributes. For the structure, we first used UML to plan out how the models would look and interact with one another. We have four models we are working with: Subreddits, Users, Posts, and Comments. For the UML diagram see at the end of the report in the Diagrams section.'
 				),
 				_react2.default.createElement(
 					'p',
@@ -35691,6 +35691,26 @@ var About = _react2.default.createClass({
 							'An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.'
 						)
 					)
+				)
+			),
+			_react2.default.createElement(
+				_reactBootstrap.Panel,
+				{ header: 'Diagrams & Other', bsStyle: 'info' },
+				_react2.default.createElement(
+					_reactBootstrap.Accordion,
+					null,
+					_react2.default.createElement(_reactBootstrap.Panel, { header: _react2.default.createElement(
+							'h4',
+							null,
+							'UML Diagram ',
+							_react2.default.createElement(_angleDown2.default, null)
+						), eventKey: '1' }),
+					_react2.default.createElement(_reactBootstrap.Panel, { header: _react2.default.createElement(
+							'h4',
+							null,
+							'Table of Components ',
+							_react2.default.createElement(_angleDown2.default, null)
+						), eventKey: '2' })
 				)
 			)
 		);
