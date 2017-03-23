@@ -10,8 +10,14 @@ export default function CommentDetails (props) {
   return Detail({
     title: 'Comment',
     details: {
-      'Author': author.name,
-      'Post': post.title,
+      'Author': {
+        name: author.name,
+        link: '/users/detail/' + author.id
+      },
+      'Post': {
+        name: post.title,
+        link: '/posts/detail/' + post.id
+      },
       'Created': new Date(comment.created * 1000).toDateString(),
       'Edited': comment.edited ? 'Yes' : 'No',
       'Gilds': comment.gilded,

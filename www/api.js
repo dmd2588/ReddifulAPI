@@ -274,3 +274,7 @@ export function getSubredditRelated(subreddit_id) {
   }
   return dat;
 }
+
+export function getModerators() {
+  return moderators
+}
