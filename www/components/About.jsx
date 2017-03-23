@@ -1,6 +1,6 @@
 import React from 'react'
 import {PageHeader, Panel, Accordion, Well, Jumbotron,ListGroupItem, ListGroup} from 'react-bootstrap';
-import FaAngleDown from 'react-icons/lib/fa/angle-down;
+import FaAngleDown from 'react-icons/lib/fa/angle-down';
 var About = React.createClass({
 		getInitialState() {
 			return {
