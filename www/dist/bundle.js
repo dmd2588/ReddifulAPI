@@ -34773,6 +34773,10 @@ var _Subreddits = __webpack_require__(346);
 
 var _Subreddits2 = _interopRequireDefault(_Subreddits);
 
+var _SubredditDetails = __webpack_require__(985);
+
+var _SubredditDetails2 = _interopRequireDefault(_SubredditDetails);
+
 var _Posts = __webpack_require__(343);
 
 var _Posts2 = _interopRequireDefault(_Posts);
@@ -34801,6 +34805,7 @@ _reactDom2.default.render(_react2.default.createElement(
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/users', component: _Users2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { path: '/users/detail/:user_id', component: _UserDetail2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/subreddits', component: _Subreddits2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { path: '/subreddits/detail/:subreddit_id', component: _SubredditDetails2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/posts', component: _Posts2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/comments', component: _Comments2.default })
   )
@@ -34825,9 +34830,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactBootstrap = __webpack_require__(66);
 
-var _arrowDown = __webpack_require__(593);
+var _angleDown = __webpack_require__(986);
 
-var _arrowDown2 = _interopRequireDefault(_arrowDown);
+var _angleDown2 = _interopRequireDefault(_angleDown);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34961,12 +34966,7 @@ var About = _react2.default.createClass({
 			_react2.default.createElement('br', null),
 			_react2.default.createElement(
 				_reactBootstrap.Panel,
-				{ header: _react2.default.createElement(
-						'h3',
-						null,
-						'Introduction       ',
-						_react2.default.createElement(_arrowDown2.default, null)
-					), bsStyle: 'info' },
+				{ header: 'Introduction', bsStyle: 'info' },
 				_react2.default.createElement(
 					'p',
 					null,
@@ -34975,12 +34975,7 @@ var About = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				_reactBootstrap.Panel,
-				{ header: _react2.default.createElement(
-						'h3',
-						null,
-						'Design             ',
-						_react2.default.createElement(_arrowDown2.default, null)
-					), bsStyle: 'info' },
+				{ header: 'Design', bsStyle: 'info' },
 				_react2.default.createElement(
 					'p',
 					null,
@@ -35001,7 +34996,12 @@ var About = _react2.default.createClass({
 					null,
 					_react2.default.createElement(
 						_reactBootstrap.Panel,
-						{ header: 'Models', eventKey: '1' },
+						{ header: _react2.default.createElement(
+								'h4',
+								null,
+								'Models ',
+								_react2.default.createElement(_angleDown2.default, null)
+							), eventKey: '1' },
 						_react2.default.createElement(
 							'p',
 							null,
@@ -35066,7 +35066,12 @@ var About = _react2.default.createClass({
 					),
 					_react2.default.createElement(
 						_reactBootstrap.Panel,
-						{ header: 'Relationships', eventKey: '2' },
+						{ header: _react2.default.createElement(
+								'h4',
+								null,
+								'Relationships ',
+								_react2.default.createElement(_angleDown2.default, null)
+							), eventKey: '2' },
 						_react2.default.createElement(
 							'p',
 							null,
@@ -35117,7 +35122,12 @@ var About = _react2.default.createClass({
 					),
 					_react2.default.createElement(
 						_reactBootstrap.Panel,
-						{ header: 'Attributes and Methods', eventKey: '3' },
+						{ header: _react2.default.createElement(
+								'h4',
+								null,
+								'Attributes and Methods ',
+								_react2.default.createElement(_angleDown2.default, null)
+							), eventKey: '3' },
 						_react2.default.createElement(
 							'p',
 							null,
@@ -35194,12 +35204,7 @@ var About = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				_reactBootstrap.Panel,
-				{ header: _react2.default.createElement(
-						'h3',
-						null,
-						'Tools              ',
-						_react2.default.createElement(_arrowDown2.default, null)
-					), bsStyle: 'info' },
+				{ header: 'Tools', bsStyle: 'info' },
 				_react2.default.createElement(
 					'p',
 					null,
@@ -35210,7 +35215,12 @@ var About = _react2.default.createClass({
 					null,
 					_react2.default.createElement(
 						_reactBootstrap.Panel,
-						{ header: 'Front-end', eventKey: '1' },
+						{ header: _react2.default.createElement(
+								'h4',
+								null,
+								'Front-end ',
+								_react2.default.createElement(_angleDown2.default, null)
+							), eventKey: '1' },
 						_react2.default.createElement(
 							'p',
 							null,
@@ -35242,7 +35252,24 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							'p',
 							null,
-							'Webpack is configured via the webpack.config.js file which specifies where the entrypoint of the application files is and where the compiled final distribution javascript file should be located. The current webpack file is configured to compile jsx via Babel to ES2015, and css via Postcss. The package.json file contains the dependency information for both the development and production front-end libraries as well as ways to build and run the application via npm. Run npm install - to install dependecies. Run npm build run - to compile the JSX files and run the application on the docker webserver. The makefile contains ways to build/compile the application via -  make build.'
+							'Webpack is configured via the webpack.config.js file which specifies where the entrypoint of the application files is and where the compiled final distribution javascript file should be located. The current webpack file is configured to compile jsx via Babel to ES2015, and css via Postcss. The package.json file contains the dependency information for both the development and production front-end libraries as well as ways to build and run the application via npm. Run ',
+							_react2.default.createElement(
+								'code',
+								null,
+								'npm install'
+							),
+							' to install dependecies. Run ',
+							_react2.default.createElement(
+								'code',
+								null,
+								'npm build run'
+							),
+							' to compile the JSX files and run the application on the docker webserver. The makefile contains ways to build/compile the application via: ',
+							_react2.default.createElement(
+								'code',
+								null,
+								'make build'
+							)
 						),
 						_react2.default.createElement(
 							'h5',
@@ -35270,12 +35297,40 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							'p',
 							null,
-							'Running the front-end can be done after compilation/build of the application. Running the application is done by using the command - docker-compose up which runs the application on a flask server locally at localhost:80 or alternatively by running - make dev_build will run a node server at localhost:8080'
+							'Running the front-end can be done after compilation/build of the application. Running the application is done by using the command ',
+							_react2.default.createElement(
+								'code',
+								null,
+								'docker-compose up'
+							),
+							' which runs the application on a flask server locally at ',
+							_react2.default.createElement(
+								'b',
+								null,
+								'localhost:80'
+							),
+							' or alternatively by running ',
+							_react2.default.createElement(
+								'code',
+								null,
+								'make dev_build'
+							),
+							' will run a node server at ',
+							_react2.default.createElement(
+								'b',
+								null,
+								'localhost:8080'
+							)
 						)
 					),
 					_react2.default.createElement(
 						_reactBootstrap.Panel,
-						{ header: 'Backend', eventKey: '2' },
+						{ header: _react2.default.createElement(
+								'h4',
+								null,
+								'Back-end ',
+								_react2.default.createElement(_angleDown2.default, null)
+							), eventKey: '2' },
 						_react2.default.createElement(
 							'p',
 							null,
@@ -35307,7 +35362,25 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							'p',
 							null,
-							'For setting up python and flask please see below for the Docker setup, as the docker container freezes the dependencies for these. Python is used for the back-end logic. Flask is the webserver that is used to serve up the application. In order to run flask manually the following commands must be given from the root directory export FLASK_APP=reddiful/api.py - and then the command - flask run - to actually run the application. Alternatively running - docker-compose up - will run the application via the docker file. For the python back-end api specifications please see the Design section above or the apiary documentation at http://docs.reddiful.apiary.io/ . In addition the apiary documentation itself can be loaded into apiary using the apiary.apib file that is found in the repo.'
+							'For setting up python and flask please see below for the Docker setup, as the docker container freezes the dependencies for these. Python is used for the back-end logic. Flask is the webserver that is used to serve up the application. In order to run flask manually the following commands must be given from the root directory ',
+							_react2.default.createElement(
+								'code',
+								null,
+								'export FLASK_APP=reddiful/api.py '
+							),
+							' and then the command ',
+							_react2.default.createElement(
+								'code',
+								null,
+								'flask run '
+							),
+							' to actually run the application. Alternatively running ',
+							_react2.default.createElement(
+								'code',
+								null,
+								' docker-compose up '
+							),
+							' will run the application via the docker file. For the python back-end api specifications please see the Design section above or the apiary documentation at http://docs.reddiful.apiary.io/ . In addition the apiary documentation itself can be loaded into apiary using the apiary.apib file that is found in the repo.'
 						),
 						_react2.default.createElement(
 							'h5',
@@ -35328,12 +35401,7 @@ var About = _react2.default.createClass({
 			),
 			_react2.default.createElement(
 				_reactBootstrap.Panel,
-				{ header: _react2.default.createElement(
-						'h3',
-						null,
-						'Hosting            ',
-						_react2.default.createElement(_arrowDown2.default, null)
-					), bsStyle: 'info' },
+				{ header: 'Hosting', bsStyle: 'info' },
 				_react2.default.createElement(
 					'p',
 					null,
@@ -35342,7 +35410,7 @@ var About = _react2.default.createClass({
 				_react2.default.createElement(
 					'p',
 					null,
-					'To set up an ec2 instance you navigate to the ec2 dashboard from the aws console and click launch instace.  You\'ll first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon\'s 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It\'s also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.'
+					'To set up an ec2 instance you navigate to the ec2 dashboard from the aws console and click launch instace.  You will first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon\'s 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It is also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.'
 				),
 				_react2.default.createElement(
 					'p',
@@ -35802,7 +35870,7 @@ function Users() {
       return {
         title: s.display_name,
         subtitle: 'Created: ' + (0, _moment2.default)(new Date(s.created * 1000)).format('LL'),
-        link: '/subreddits'
+        link: '/subreddits/detail/' + s.id
       };
     })
   });
@@ -35816,114 +35884,37 @@ function Users() {
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+exports.default = UserDetail;
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Details = __webpack_require__(984);
+
+var _Details2 = _interopRequireDefault(_Details);
+
 var _api = __webpack_require__(57);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var UserDetail = function (_React$Component) {
-    _inherits(UserDetail, _React$Component);
-
-    function UserDetail() {
-        _classCallCheck(this, UserDetail);
-
-        return _possibleConstructorReturn(this, (UserDetail.__proto__ || Object.getPrototypeOf(UserDetail)).apply(this, arguments));
+function UserDetail(props) {
+  var user = (0, _api.getUsers)().find(function (u) {
+    return u.id === props.match.params.user_id;
+  });
+  return (0, _Details2.default)({
+    title: 'User - ' + user.name,
+    details: {
+      'Name': user.name,
+      'Link Karma': user.link_karma,
+      'Comment Karma': user.comment_karma,
+      'Email': user.email,
+      'Created': new Date(user.created * 1000).toDateString()
     }
-
-    _createClass(UserDetail, [{
-        key: 'render',
-        value: function render() {
-            var userData = (0, _api.getUsers)();
-            var user_id = this.props.match.params.user_id;
-            var row = undefined;
-            console.log((0, _api.getUserRelated)(user_id));
-            for (var ind in userData) {
-                if (userData[ind].id == user_id) {
-                    row = userData[ind];
-                    break;
-                }
-            }
-            if (row) {
-                var created = new Date(0);
-                created.setUTCSeconds(row.created);
-                return _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(
-                        'h2',
-                        null,
-                        'User Detail'
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        null,
-                        'Name: ',
-                        row.name
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        null,
-                        'Link Karma: ',
-                        row.link_karma
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        null,
-                        'Comment Karma: ',
-                        row.comment_karma
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        null,
-                        'Email: ',
-                        row.email
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        null,
-                        'Created: ',
-                        created.toString()
-                    )
-                );
-            } else {
-                return _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(
-                        'h2',
-                        null,
-                        'User Detail'
-                    ),
-                    _react2.default.createElement(
-                        'p',
-                        null,
-                        'No user with user_id ',
-                        user_id,
-                        ' found.'
-                    )
-                );
-            }
-        }
-    }]);
-
-    return UserDetail;
-}(_react2.default.Component);
-
-exports.default = UserDetail;
+  });
+}
 
 /***/ }),
 /* 348 */
@@ -59249,44 +59240,7 @@ module.exports = ReactMount.renderSubtreeIntoContainer;
 /* 590 */,
 /* 591 */,
 /* 592 */,
-/* 593 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactIconBase = __webpack_require__(1);
-
-var _reactIconBase2 = _interopRequireDefault(_reactIconBase);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var TiArrowDown = function TiArrowDown(props) {
-    return _react2.default.createElement(
-        _reactIconBase2.default,
-        _extends({ viewBox: '0 0 40 40' }, props),
-        _react2.default.createElement(
-            'g',
-            null,
-            _react2.default.createElement('path', { d: 'm27.8 22.2c-0.6-0.7-1.7-0.7-2.3 0l-3.8 3.8v-12.7c0-0.9-0.8-1.6-1.7-1.6s-1.7 0.7-1.7 1.6v12.7l-3.8-3.8c-0.6-0.7-1.7-0.7-2.3 0s-0.7 1.7 0 2.3l7.8 7.9 7.8-7.9c0.7-0.6 0.7-1.7 0-2.3z' })
-        )
-    );
-};
-
-exports.default = TiArrowDown;
-module.exports = exports['default'];
-
-/***/ }),
+/* 593 */,
 /* 594 */,
 /* 595 */,
 /* 596 */,
@@ -65677,6 +65631,122 @@ module.exports = function(module) {
 
 module.exports = __webpack_require__(338);
 
+
+/***/ }),
+/* 984 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Details;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Details(props) {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'h2',
+      null,
+      props.title
+    ),
+    Object.keys(props.details).map(function (title) {
+      return _react2.default.createElement(
+        'p',
+        { key: Math.random().toString(16).substr(2) },
+        title,
+        ': ',
+        props.details[title]
+      );
+    })
+  );
+}
+
+/***/ }),
+/* 985 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = SubredditDetails;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Details = __webpack_require__(984);
+
+var _Details2 = _interopRequireDefault(_Details);
+
+var _api = __webpack_require__(57);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function SubredditDetails(props) {
+  var subreddit = (0, _api.getSubreddits)().find(function (s) {
+    return s.id === props.match.params.subreddit_id;
+  });
+  return (0, _Details2.default)({
+    title: 'Subreddit - ' + subreddit.display_name,
+    details: {
+      'Name': subreddit.display_name,
+      'Title': subreddit.title,
+      'Subscribers': subreddit.subscribers,
+      'Created': new Date(subreddit.created * 1000).toDateString()
+    }
+  });
+}
+
+/***/ }),
+/* 986 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactIconBase = __webpack_require__(1);
+
+var _reactIconBase2 = _interopRequireDefault(_reactIconBase);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var FaAngleDown = function FaAngleDown(props) {
+    return _react2.default.createElement(
+        _reactIconBase2.default,
+        _extends({ viewBox: '0 0 40 40' }, props),
+        _react2.default.createElement(
+            'g',
+            null,
+            _react2.default.createElement('path', { d: 'm31 16.4q0 0.3-0.2 0.5l-10.4 10.4q-0.3 0.3-0.5 0.3t-0.6-0.3l-10.4-10.4q-0.2-0.2-0.2-0.5t0.2-0.5l1.2-1.1q0.2-0.2 0.5-0.2t0.5 0.2l8.8 8.8 8.7-8.8q0.3-0.2 0.5-0.2t0.6 0.2l1.1 1.1q0.2 0.2 0.2 0.5z' })
+        )
+    );
+};
+
+exports.default = FaAngleDown;
+module.exports = exports['default'];
 
 /***/ })
 /******/ ]);
