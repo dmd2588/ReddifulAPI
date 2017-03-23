@@ -10258,33 +10258,17 @@ function RfGrid(props) {
           _react2.default.createElement(
             _reactBootstrap.Row,
             { className: 'show-grid' },
-            _react2.default.createElement(
-              _reactBootstrap.Col,
-              { sm: 6, md: 3 },
-              _react2.default.createElement(_RfCard2.default, {
-                title: props.cards[0].title,
-                subtitle: props.cards[0].subtitle,
-                link: props.cards[0].link
-              })
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Col,
-              { sm: 6, md: 3 },
-              _react2.default.createElement(_RfCard2.default, {
-                title: props.cards[1].title,
-                subtitle: props.cards[1].subtitle,
-                link: props.cards[1].link
-              })
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Col,
-              { sm: 6, md: 3 },
-              _react2.default.createElement(_RfCard2.default, {
-                title: props.cards[2].title,
-                subtitle: props.cards[2].subtitle,
-                link: props.cards[2].link
-              })
-            )
+            props.cards.map(function (c) {
+              return _react2.default.createElement(
+                _reactBootstrap.Col,
+                { sm: 6, md: 3, key: Math.random().toString(16).substr(2) },
+                _react2.default.createElement(_RfCard2.default, {
+                  title: c.title,
+                  subtitle: c.subtitle,
+                  link: c.link
+                })
+              );
+            })
           )
         )
       )
@@ -34907,12 +34891,12 @@ var About = _react2.default.createClass({
 							_react2.default.createElement(
 								'p',
 								null,
-								'No. Commits: 0'
+								'No. Commits: 30'
 							),
 							_react2.default.createElement(
 								'p',
 								null,
-								'No. Issues: 0'
+								'No. Issues: 4'
 							),
 							_react2.default.createElement(
 								'p',
@@ -34942,12 +34926,12 @@ var About = _react2.default.createClass({
 							_react2.default.createElement(
 								'p',
 								null,
-								'No. Commits: 0'
+								'No. Commits: 2'
 							),
 							_react2.default.createElement(
 								'p',
 								null,
-								'No. Issues: 0'
+								'No. Issues: 2'
 							),
 							_react2.default.createElement(
 								'p',
@@ -34958,7 +34942,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							_reactBootstrap.Col,
 							{ lg: 4 },
-							_react2.default.createElement('img', { src: '/dist/images/Thomas.jpg', height: '360', width: '360' }),
+							_react2.default.createElement('img', { src: '/dist/images/Thomas.jpg', className: 'img-responsive center-block' }),
 							_react2.default.createElement(
 								'h3',
 								null,
@@ -35021,7 +35005,7 @@ var About = _react2.default.createClass({
 							_react2.default.createElement(
 								'p',
 								null,
-								'No. Issues: 5'
+								'No. Issues: 7'
 							),
 							_react2.default.createElement(
 								'p',
@@ -35051,12 +35035,12 @@ var About = _react2.default.createClass({
 							_react2.default.createElement(
 								'p',
 								null,
-								'No. Commits: 0'
+								'No. Commits: 31'
 							),
 							_react2.default.createElement(
 								'p',
 								null,
-								'No. Issues: 0'
+								'No. Issues: 6'
 							),
 							_react2.default.createElement(
 								'p',
@@ -35086,12 +35070,12 @@ var About = _react2.default.createClass({
 							_react2.default.createElement(
 								'p',
 								null,
-								'No. Commits: 2'
+								'No. Commits: 5'
 							),
 							_react2.default.createElement(
 								'p',
 								null,
-								'No. Issues: 1'
+								'No. Issues: 2'
 							),
 							_react2.default.createElement(
 								'p',
@@ -36019,12 +36003,16 @@ var _button = __webpack_require__(333);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function RfCard(props) {
+  var maxLength = 20;
+  var title = props.title;
+  if (props.title.length > maxLength) title = title.substr(0, maxLength) + '...';
+
   return _react2.default.createElement(
     _card.Card,
     { style: { width: '250px' } },
     _react2.default.createElement(_card.CardTitle, {
       avatar: 'https://placeimg.com/80/80/animals',
-      title: props.title,
+      title: title,
       subtitle: props.subtitle
     }),
     _react2.default.createElement(_card.CardMedia, {
