@@ -1,6 +1,5 @@
 import React from 'react'
 import {PageHeader, Panel, Accordion, Well, Jumbotron,ListGroupItem, ListGroup} from 'react-bootstrap';
-import TiIconPack from 'react-icons/lib/ti';
 var About = React.createClass({
 		getInitialState() {
 			return {
@@ -84,7 +83,7 @@ var About = React.createClass({
 			    <Panel header = "Front-end" eventKey = "1">
 				 <p>These tools help the site look better and feel better to use.</p>
 					<h5><b>Libraries and Tools</b></h5>
-					 <p>React and Bootstrap are the primary UI elements. Bootstrap is the react-bootstrap library that has compatibility with via react components. Other front-end libraries in use is react-toolbox for the grid cards and for the grid layout the react-bootstrap layout components. The front end is compiled from ES6 JSX files using webpack via Babel translator from jsx to a bundle.js file that contains the entirety of the page content and frontend libraries for deployment. Flask is the webserver that serves up the all of the frontend files. PostCSS is a dependency used by react-toolbox for its themes.</p>
+					 <p>React and Bootstrap are the primary UI elements. Bootstrap is the react-bootstrap library that has compatibility with via react components. This allowed us to format our information in a more organized way; for example, we used Boostrap to format this page. Other front-end libraries in use is react-toolbox for the grid cards and for the grid layout the react-bootstrap layout components. The front end is compiled from ES6 JSX files using webpack via Babel translator from jsx to a bundle.js file that contains the entirety of the page content and frontend libraries for deployment. Flask is the webserver that serves up the all of the frontend files. PostCSS is a dependency used by react-toolbox for its themes.</p>
 					<h5><b>Front-end Tool Configurations</b></h5>
 					 <p>Webpack is configured via the webpack.config.js file which specifies where the entrypoint of the application files is and where the compiled final distribution javascript file should be located. The current webpack file is configured to compile jsx via Babel to ES2015, and css via Postcss. The package.json file contains the dependency information for both the development and production front-end libraries as well as ways to build and run the application via npm. Run npm install - to install dependecies. Run npm build run - to compile the JSX files and run the application on the docker webserver. The makefile contains ways to build/compile the application via -  make build.</p>
 					<h5><b>Front-end Structure</b></h5>
