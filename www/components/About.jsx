@@ -1,6 +1,6 @@
 import React from 'react'
 import {PageHeader, Panel, Accordion, Well, Jumbotron,ListGroupItem, ListGroup} from 'react-bootstrap';
-import TiArrowDown from 'react-icons/lib/ti/arrow-down';
+import FaAngleDown from 'react-icons/lib/fa/angle-down;
 var About = React.createClass({
 		getInitialState() {
 			return {
@@ -35,15 +35,15 @@ var About = React.createClass({
               <br/>
                 
             <PageHeader>Technical Report</PageHeader>
-			<Panel header = {<h3>Introduction       <TiArrowDown/></h3>} bsStyle = "info">
+			<Panel header = "Introduction" bsStyle = "info">
 			 <p>This is an analytical compilation of Reddit. We are providing a top-level view of Reddit, and we are showing summary data and the relationships for most of the information on Reddit. This can be used for anything from data analysis of information like the "toxicity" of a subreddit to creating personas of certain groups of people to better market products to that demographic.</p>
 			</Panel>
-			<Panel header = {<h3>Design             <TiArrowDown/></h3>} bsStyle = "info">
+			<Panel header = "Design" bsStyle = "info">
 			 <p>We are using the Reddit API to define our models and attributes. For the structure, we first used UML to plan out how the models would look and interact with one another. We have four models we are working with: Subreddits, Users, Posts, and Comments.</p>
 			 <p>These models define the majority of characteristics, but we are thinking of defining a separate model for the trophies in the user profiles. This is because each trophy has several attributes and will be more easily represented in a separate model from the user. After defining several characteristics, we scraped some data and found that certain attributes would be infeasible while other, new ones could be added. This allowed us to redefine several attributes to more accurately reflect the information provided by the Reddit API.</p>
 			 <p>While defining the attributes for the models, we also took a look at the relationships between each of those models. By observing the interaction on Reddit, we were able to condense them into the relationships and attributes that you see below.</p>
 			 <Accordion>
-				<Panel header = "Models" eventKey = "1">
+				<Panel header = {<h4>Models                 <FaAngleDown/></h4>} eventKey = "1">
 				 <p>The models represent different aspects of Reddit that make up most of the information seen on the site.</p>
 					<h5><b>User</b></h5>
 					 <p>The users represent the people on the site. They can explore the different subreddits, interact with others, and communicate their ideas. They are able to form new groups (subreddits), start new conversations (posts), and contribute to existing ones (comments). Reddit would not have any worth without the users to keep giving ideas. Organizing user information can be used to observe different trends like the relationship between different interests in subreddits.</p>
@@ -54,7 +54,7 @@ var About = React.createClass({
 					<h5><b>Comment</b></h5>
 					 <p>Comments are generally short blurbs that hopefully contribute to the conversation, whether by questioning an idea or making a witty remark. Combined with posts, they can be used to answer questions, challenge ideas, or entertain other users. When looking at the types of comments posted, there are trends that can be observed. For example, there are several users that are dedicated to doing specific things, like AWildSketchAppeared - he mostly replies with sketches reflecting a previous comment or post. Other comments maybe have similarities in the type of response; the gaming subreddit usually contains comments that are reactionary to the post and don't generally provide some insight into the deeper meaning of life.</p>
 				</Panel>
-				<Panel header = "Relationships" eventKey = "2">
+				<Panel header = {<h4>Relationships          <FaAngleDown/></h4>} eventKey = "2">
 				 <p>There are many relationships between the different models. The way they interact helps organize the transmission of information between different entities.</p>
 					<h5><b>User</b></h5>
 					 <p>The User and Subreddit have a many to many relationship where for each user, there are many subreddits that they are subscribed to, and for each subreddit, there are many users subscribed to it. With the current information given to us, we are currently focusing on the relationship between the moderators and the subreddit, since getting the information like the subreddits that a user is subscribed to and the users subscribed to a particular subreddit are both things that we cannot access. The User and Post have a 1 to many relationship as well since each user has many (if any) posts. Similarly, the User and Comment have a 1 to many relationship.</p>
@@ -63,7 +63,7 @@ var About = React.createClass({
 					<h5><b>Post</b></h5>
 					 <p>Posts have a 1 to many relationship with Comments: each post has many comments (hopefully), while each comment can only belong to one post.</p>
 				</Panel>
-				<Panel header = "Attributes and Methods" eventKey = "3">
+				<Panel header = {<h4>Attributes and Methods <FaAngleDown/></h4>} eventKey = "3">
 				 <p>Several attributes and methods to access those attributes help define each model. Some are foreign keys in other models that help relate them back to each other.</p>
 					<h5><b>User</b></h5>
 					 <p>The user has several attributes that can be listed. First, there are two identifiers: the name (username itself), and the ID (a unique ID number that can be used to find the user). In addition, if the user allows it, the email will be displayed as well. Finally, the user has comment and link karma as well as the created time.</p>
@@ -78,10 +78,10 @@ var About = React.createClass({
 				</Panel>
 			 </Accordion>
 			</Panel>
-			<Panel header = {<h3>Tools              <TiArrowDown/></h3>} bsStyle = "info">
+			<Panel header = "Tools" bsStyle = "info">
 			 <p>This section describes the tools and resources we used to both help design the site and to make it easier on the eyes.</p>
 			 <Accordion>
-			    <Panel header = "Front-end" eventKey = "1">
+			    <Panel header = {<h4>Front-end              <FaAngleDown/></h4>} eventKey = "1">
 				 <p>These tools help the site look better and feel better to use.</p>
 					<h5><b>Libraries and Tools</b></h5>
 					 <p>React and Bootstrap are the primary UI elements. Bootstrap is the react-bootstrap library that has compatibility with via react components. This allowed us to format our information in a more organized way; for example, we used Boostrap to format this page. Other front-end libraries in use is react-toolbox for the grid cards and for the grid layout the react-bootstrap layout components. The front end is compiled from ES6 JSX files using webpack via Babel translator from jsx to a bundle.js file that contains the entirety of the page content and frontend libraries for deployment. Flask is the webserver that serves up the all of the frontend files. PostCSS is a dependency used by react-toolbox for its themes.</p>
@@ -92,7 +92,7 @@ var About = React.createClass({
 					<h5><b>Running Frontend</b></h5>
 					 <p>Running the front-end can be done after compilation/build of the application. Running the application is done by using the command - docker-compose up which runs the application on a flask server locally at localhost:80 or alternatively by running - make dev_build will run a node server at localhost:8080</p>
 				</Panel>
-			    <Panel header = "Backend" eventKey = "2">
+			    <Panel header = {<h4>Back-end               <FaAngleDown/></h4>} eventKey = "2">
 				 <p>These tools set up the site so that it runs smoothly and doesn't break (hopefully).</p>
 					<h5><b>Back-end Structure</b></h5>
 					 <p>Starting from the root of the application. The reddiful/ folder contains the api.py files that compose the back-end api of the application. The api.py file is the main entry point for the flask webserver. This file aso contains all of the routes that will be used for the API backend call to retrieve data to be displayed in the front-end. In the app/ folder is the test.py and model.py files. Model unit tests which test the validitiy for the db data is in the test.py file. SQLAlchemy is used for mapping the database rows to a python object, this is defined in the model.py file.</p>
@@ -103,9 +103,9 @@ var About = React.createClass({
 				</Panel>
 			 </Accordion>
 			</Panel>
-			<Panel header = {<h3>Hosting            <TiArrowDown/></h3>} bsStyle = "info">
+			<Panel header = "Hosting" bsStyle = "info">
 			 <p>For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.</p>
-			<p>To set up an ec2 instance you navigate to the ec2 dashboard from the aws console and click launch instace.  You'll first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon's 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It's also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.</p>
+			<p>To set up an ec2 instance you navigate to the ec2 dashboard from the aws console and click launch instace.  You will first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon's 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It is also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.</p>
 			<p>An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.</p>
 			</Panel>
 			</div>
