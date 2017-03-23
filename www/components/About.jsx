@@ -1,5 +1,6 @@
 import React from 'react'
 import {PageHeader, Panel, Accordion, Well, Jumbotron,ListGroupItem, ListGroup} from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import FaAngleDown from 'react-icons/lib/fa/angle-down';
 var About = React.createClass({
 		getInitialState() {
@@ -17,7 +18,66 @@ var About = React.createClass({
             <PageHeader>About</PageHeader>
               <Jumbotron>
             <h1>Team Name Presents: <small>Reddiful API</small></h1>
-			 <p>By: David Du, Johnny Knoebel, Thomas Lam, Jeremy Lim, Austin Middleton, Shea Rozmiarek</p>
+			<Grid>
+			    <Row className="show-grid">
+				    <Col lg={4}>
+					    <img src="/images/David.jpg" height="360" width="360"></img>
+					    <h3>David Du</h3>
+						<p>I'm a junior majoring in Computer Science. I like to game, which is closely related to why I want to go into the game development industry.</p>
+						<p>Responsibilities: Documentation, Front-end</p>
+						<p>No. Commits: 0</p>
+						<p>No. Issues: 0</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				    <Col lg={4}>
+					    <img src="https://placeimg.com/360/360/people" height="360" width="360"></img>
+					    <h3>Johnny Knoebel</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
+						<p>Responsibilities: stuff</p>
+						<p>No. Commits: 0</p>
+						<p>No. Issues: 0</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				    <Col lg={4}>
+					    <img src="https://placeimg.com/360/360/people" height="360" width="360"></img>
+					    <h3>Thomas Lam</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
+						<p>Responsibilities: stuff</p>
+						<p>No. Commits: 0</p>
+						<p>No. Issues: 0</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				</Row>
+			    <Row className="show-grid">
+				    <Col lg={4}>
+					    <img src="https://placeimg.com/360/360/people" height="360" width="360"></img>
+					    <h3>Jeremy Lim</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
+						<p>Responsibilities: stuff</p>
+						<p>No. Commits: 0</p>
+						<p>No. Issues: 0</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				    <Col lg={4}>
+					    <img src="https://placeimg.com/360/360/people" height="360" width="360"></img>
+					    <h3>Austin Middleton</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
+						<p>Responsibilities: stuff</p>
+						<p>No. Commits: 0</p>
+						<p>No. Issues: 0</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				    <Col lg={4}>
+					    <img src="/images/Shea.jpeg" height="360" width="360"></img>
+					    <h3>Shea Rozmiarek</h3>
+						<p>I'm a junior CS major from Liberty Hill, Texas. I love to game and pet fluffy animals.</p>
+						<p>Responsibilities: Front-end</p>
+						<p>No. Commits: 2</p>
+						<p>No. Issues: 1</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				</Row>
+			</Grid>
               </Jumbotron>
               <hr/>
 
