@@ -35699,18 +35699,93 @@ var About = _react2.default.createClass({
 				_react2.default.createElement(
 					_reactBootstrap.Accordion,
 					null,
-					_react2.default.createElement(_reactBootstrap.Panel, { header: _react2.default.createElement(
-							'h4',
-							null,
-							'UML Diagram ',
-							_react2.default.createElement(_angleDown2.default, null)
-						), eventKey: '1' }),
-					_react2.default.createElement(_reactBootstrap.Panel, { header: _react2.default.createElement(
-							'h4',
-							null,
-							'Table of Components ',
-							_react2.default.createElement(_angleDown2.default, null)
-						), eventKey: '2' })
+					_react2.default.createElement(
+						_reactBootstrap.Panel,
+						{ header: _react2.default.createElement(
+								'h4',
+								null,
+								'UML Diagram ',
+								_react2.default.createElement(_angleDown2.default, null)
+							), eventKey: '1' },
+						_react2.default.createElement('img', { src: '/dist/images/UML.jpg', height: '1573', width: '306' })
+					),
+					_react2.default.createElement(
+						_reactBootstrap.Panel,
+						{ header: _react2.default.createElement(
+								'h4',
+								null,
+								'Table of Components ',
+								_react2.default.createElement(_angleDown2.default, null)
+							), eventKey: '2' },
+						_react2.default.createElement(
+							_reactBootstrap.Table,
+							{ responsive: true },
+							_react2.default.createElement(
+								'thead',
+								null,
+								_react2.default.createElement(
+									'tr',
+									null,
+									_react2.default.createElement(
+										'th',
+										null,
+										'Component File'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Description'
+									)
+								)
+							),
+							_react2.default.createElement(
+								'tbody',
+								null,
+								_react2.default.createElement(
+									'tr',
+									null,
+									_react2.default.createElement(
+										'td',
+										null,
+										'App.jsx'
+									),
+									_react2.default.createElement(
+										'td',
+										null,
+										'Application entrypoint, contains the page Routing logic'
+									)
+								),
+								_react2.default.createElement(
+									'tr',
+									null,
+									_react2.default.createElement(
+										'td',
+										null,
+										'About.jsx'
+									),
+									_react2.default.createElement(
+										'td',
+										null,
+										'Defines the About page with the Technical Report'
+									)
+								),
+								_react2.default.createElement(
+									'tr',
+									null,
+									_react2.default.createElement(
+										'td',
+										null,
+										'Comments.jsx'
+									),
+									_react2.default.createElement(
+										'td',
+										null,
+										'Defines the Reddit Comments page'
+									)
+								)
+							)
+						)
+					)
 				)
 			)
 		);

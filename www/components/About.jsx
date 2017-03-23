@@ -1,6 +1,6 @@
 import React from 'react'
 import {PageHeader, Panel, Accordion, Well, Jumbotron,ListGroupItem, ListGroup} from 'react-bootstrap';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Table} from 'react-bootstrap';
 import FaAngleDown from 'react-icons/lib/fa/angle-down';
 var About = React.createClass({
 		getInitialState() {
@@ -191,7 +191,28 @@ var About = React.createClass({
 					<img src="/dist/images/UML.jpg" height="1573" width="306"></img>
 				</Panel>
 				<Panel header = {<h4>Table of Components <FaAngleDown/></h4>} eventKey = "2">
-				
+				        <Table responsive>
+                            <thead>
+                              <tr>
+                                <th>Component File</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>App.jsx</td>
+                                <td>Application entrypoint, contains the page Routing logic</td>
+                              </tr>
+                              <tr>
+                                <td>About.jsx</td>
+                                <td>Defines the About page with the Technical Report</td>
+                              </tr>
+                              <tr>
+                                <td>Comments.jsx</td>
+                                <td>Defines the Reddit Comments page</td>
+                              </tr>
+                            </tbody>
+                        </Table>
 				</Panel>
 			 </Accordion>
 			</Panel>
