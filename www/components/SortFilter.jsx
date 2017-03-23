@@ -1,7 +1,10 @@
 import React from 'react';
 import { FormGroup, ControlLabel, FormControl, Panel} from 'react-bootstrap';
 
-export default function SortFilter () {
+export default function SortFilter (props) {
+  var makeOption = function(x) {
+    return <option key={x} value={x}>{x}</option>;
+  };
   return (
     <Panel header="Filtering and Sorting">
         <FormGroup controlId="filterText">
@@ -11,17 +14,13 @@ export default function SortFilter () {
       <FormGroup controlId="filterSelect">
         <ControlLabel>Filter by Attribute</ControlLabel>
         <FormControl componentClass="select">
-          <option value="name">Name</option>
-          <option value="link_karma">Link Karma</option>
-          <option value="comment_karma">Comment Karma</option>
+            {props.select_values.map(makeOption)}
         </FormControl>
       </FormGroup>
       <FormGroup controlId="sortSelect">
         <ControlLabel>Sort by Attribute</ControlLabel>
         <FormControl componentClass="select">
-          <option value="name">Name</option>
-          <option value="link_karma">Link Karma</option>
-          <option value="comment_karma">Comment Karma</option>
+            {props.select_values.map(makeOption)}
         </FormControl>
       </FormGroup>
     </Panel>

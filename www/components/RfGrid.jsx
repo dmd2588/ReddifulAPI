@@ -12,7 +12,7 @@ function RfGrid (props) {
       <Row>
         <Col sm={12} md={3}>
           <div>
-            <SortFilter />
+            <SortFilter select_values={props.select_values}/>
           </div>
         </Col>
         <Col sm={12} md={9}>
