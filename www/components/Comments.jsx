@@ -11,7 +11,7 @@ export default function Comments () {
       return {
         title: getUsers().find(u => u.id === c.author).name,
         subtitle: 'Commented: ' + moment(new Date(c.created * 1000)).format('LL'),
-        link: '/comments'
+        link: '/comments/detail/' + c.id
       }
     })
   })
