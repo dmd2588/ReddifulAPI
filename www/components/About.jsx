@@ -169,9 +169,17 @@ var About = React.createClass({
 			 </Accordion>
 			</Panel>
 			<Panel header = "Hosting" bsStyle = "info">
-			 <p>For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.</p>
-			<p>To set up an ec2 instance you navigate to the ec2 dashboard from the aws console and click launch instace.  You will first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon's 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It is also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.</p>
-			<p>An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.</p>
+			 <Accordion>
+				<Panel header = {<h4>Choice                 <FaAngleDown/></h4>} eventKey = "1">
+				 <p>For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.</p>
+				</Panel>
+				<Panel header = {<h4>Set-up                 <FaAngleDown/></h4>} eventKey = "2">
+				 <p>To set up an ec2 instance you navigate to the ec2 dashboard from the aws console and click launch instace.  You will first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon's 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It is also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.</p>
+				</Panel>
+				<Panel header = {<h4>Accessibility          <FaAngleDown/></h4>} eventKey = "3">
+				 <p>An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.</p>
+				</Panel>
+			 </Accordion>
 			</Panel>
 			</div>
           )
