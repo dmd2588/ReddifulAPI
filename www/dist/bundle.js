@@ -16540,9 +16540,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.getUsers = getUsers;
+exports.getUserRelated = getUserRelated;
 exports.getComments = getComments;
+exports.getCommentRelated = getCommentRelated;
 exports.getPosts = getPosts;
+exports.getPostRelated = getPostRelated;
 exports.getSubreddits = getSubreddits;
+exports.getSubredditRelated = getSubredditRelated;
 var users = [{
   'comment_karma': 190,
   'created': 1405828618.0,
@@ -16592,26 +16596,41 @@ var subreddits = [{
 }];
 
 var posts = [{
-  'author': 'batman_jr',
-  'id': '5th7sz',
-  'over_18': false,
-  'score': 1,
-  'title': 'Test',
-  'url': 'https://www.reddit.com/r/FireEmblemHeroesTest/comments/5th7sz/test/'
+  "subreddit_id": "3imxi",
+  "selftext": "Test Text",
+  "is_self": true,
+  "id": "5th7sz",
+  "gilded": 0,
+  "title": "Test",
+  "url": "https://www.reddit.com/r/FireEmblemHeroesTest/comments/5th7sz/test/",
+  "author": "hh8mr",
+  "created": 1486872624.0,
+  "score": 1,
+  "over_18": false
 }, {
-  'author': 'FallBlue',
-  'id': '60h6ga',
-  'over_18': false,
-  'score': 637,
-  'title': 'TIL that Greenland is actually part of North America, is ruled by Denmark, and is icier than Iceland.',
-  'url': 'https://www.britannica.com/place/Greenland'
+  "subreddit_id": "2tex6",
+  "selftext": "",
+  "is_self": false,
+  "id": "60on5c",
+  "gilded": 0,
+  "title": "existentialSort",
+  "url": "https://i.redd.it/gdoviw37hsmy.jpg",
+  "author": "74344",
+  "created": 1490143051.0,
+  "score": 760,
+  "over_18": false
 }, {
-  'author': 'bigfatlittlefat',
-  'id': '60nyom',
-  'over_18': false,
-  'score': 55,
-  'title': 'What is the worst thing someone did to your boardgame?',
-  'url': 'https://www.reddit.com/r/boardgames/comments/60nyom/what_is_the_worst_thing_someone_did_to_your/'
+  "subreddit_id": "2qmjp",
+  "selftext": "Hey everyone!\\n\\nThis Friday there will be 8 people at my place including me, all of us have played board games before, and i am excited to introduce **Captain Sonar**. This will be my first play as well, but i think i know the rules. The thing is, 8 people is a lot to manage. Im worried that i might mess up some rules. I want the game to run as smoothly as possible since its not often that i get 8 players. Are there any commonly missed rules or any advice that you guys can give me?\\n\\nAlso did you all enjoy the game? What did you think about it? How was your experience?",
+  "is_self": true,
+  "id": "60tlfl",
+  "gilded": 0,
+  "title": "Planning on getting Captain Sonar to the table with the full 8-players. Would love some advice",
+  "url": "https://www.reddit.com/r/boardgames/comments/60tlfl/planning_on_getting_captain_sonar_to_the_table/",
+  "author": "4fer6",
+  "created": 1490203502.0,
+  "score": 15,
+  "over_18": false
 }];
 
 var comments = [{
@@ -16621,7 +16640,7 @@ var comments = [{
   'edited': false,
   'gilded': 0,
   'id': 'deaw2vi',
-  'link_id': 't3_5th7sz',
+  'link_id': '5th7sz',
   'score': 1,
   'subreddit_id': '3imxi'
 }, {
@@ -16631,7 +16650,7 @@ var comments = [{
   'edited': false,
   'gilded': 0,
   'id': 'df9c4sc',
-  'link_id': 't3_60on5c',
+  'link_id': '60on5c',
   'score': 2,
   'subreddit_id': '2tex6'
 }, {
@@ -16641,7 +16660,7 @@ var comments = [{
   'edited': false,
   'gilded': 0,
   'id': 'df9cfop',
-  'link_id': 't3_60tlfl',
+  'link_id': '60tlfl',
   'score': 5,
   'subreddit_id': '2qmjp'
 }];
@@ -16650,16 +16669,139 @@ function getUsers() {
   return users;
 }
 
+function getUserRelated(user_id) {
+  var dat = { 'subreddits': [],
+    'posts': [],
+    'comments': [] };
+  for (var i in moderators) {
+    if (moderators[i].user_id == user_id) {
+      for (var j in subreddits) {
+        if (subreddits[j].id == moderators[i].sr_id) {
+          dat.subreddits.push(subreddits[j]);
+        }
+      }
+    }
+  }
+  for (var i in posts) {
+    if (posts[i].author == user_id) {
+      dat.posts.push(posts[i]);
+    }
+  }
+  for (var i in comments) {
+    if (comments[i].author == user_id) {
+      dat.comments.push(comments[i]);
+    }
+  }
+  return dat;
+}
+
 function getComments() {
   return comments;
+}
+
+function getCommentRelated(comment_id) {
+  var dat = { 'subreddits': [],
+    'posts': [],
+    'users': [] };
+  var user_id = '';
+  var post_id = '';
+  var subreddit_id = '';
+  for (var i in comments) {
+    if (comments[i].id == comment_id) {
+      user_id = comment[i].author;
+      post_id = comment[i].link_id;
+      subreddit_id = comment[i].subreddit_id;
+      break;
+    }
+  }
+  for (var i in users) {
+    if (users[i].id == user_id) {
+      dat.users.push(users[i]);
+      break;
+    }
+  }
+  for (var i in posts) {
+    if (posts[i].id == post_id) {
+      dat.posts.push(posts[i]);
+      break;
+    }
+  }
+  for (var i in subreddits) {
+    if (subreddits[i].id == subreddit_id) {
+      dat.subreddits.push(subreddits[i]);
+      break;
+    }
+  }
+  return dat;
 }
 
 function getPosts() {
   return comments;
 }
 
+function getPostRelated(post_id) {
+  var dat = { 'subreddits': [],
+    'comments': [],
+    'users': [] };
+  var user_id = '';
+  var subreddit_id = '';
+  for (var i in posts) {
+    if (posts[i].id == post_id) {
+      user_id = posts[i].author;
+      subreddit_id = posts[i].subreddit_id;
+      break;
+    }
+  }
+  for (var i in users) {
+    if (users[i].id == user_id) {
+      dat.users.push(users[i]);
+      break;
+    }
+  }
+  for (var i in comments) {
+    if (comments[i].link_id == post_id) {
+      dat.comments.push(comments[i]);
+    }
+  }
+  for (var i in subreddits) {
+    if (subreddits[i].id == subreddit_id) {
+      dat.subreddits.push(subreddits[i]);
+      break;
+    }
+  }
+  return dat;
+}
+
 function getSubreddits() {
   return comments;
+}
+
+function getSubredditRelated(subreddit_id) {
+  var dat = { 'posts': [],
+    'comments': [],
+    'users': [] };
+  var user_id = '';
+  var subreddit_id = '';
+  for (var i in moderators) {
+    if (moderators[i].sr_id == subreddit_id) {
+      for (var j in users) {
+        if (users[j].id == moderators[i].user_id) {
+          dat.users.push(users[j]);
+        }
+      }
+    }
+  }
+  for (var i in comments) {
+    if (comments[i].subreddit_id == subreddit_id) {
+      dat.comments.push(comments[i]);
+    }
+  }
+  for (var i in posts) {
+    if (posts[i].subreddit_id == subreddit_id) {
+      dat.posts.push(posts[i]);
+    }
+  }
+  return dat;
 }
 
 /***/ }),
@@ -35594,6 +35736,7 @@ var UserDetail = function (_React$Component) {
             var userData = (0, _api.getUsers)();
             var user_id = this.props.match.params.user_id;
             var row = undefined;
+            console.log((0, _api.getUserRelated)(user_id));
             for (var ind in userData) {
                 if (userData[ind].id == user_id) {
                     row = userData[ind];

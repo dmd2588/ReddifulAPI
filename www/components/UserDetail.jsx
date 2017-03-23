@@ -1,11 +1,12 @@
 import React from 'react';
-import { getUsers } from '../api.js'
+import { getUsers, getUserRelated } from '../api.js'
 
 class UserDetail extends React.Component {
   render() {
     var userData = getUsers()
     var user_id = this.props.match.params.user_id;
     var row = undefined;
+    console.log(getUserRelated(user_id));
     for (var ind in userData) {
         if (userData[ind].id == user_id) {
             row = userData[ind];
