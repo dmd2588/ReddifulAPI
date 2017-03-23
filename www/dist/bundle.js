@@ -35381,7 +35381,7 @@ function Users() {
                 null,
                 'Filter Text'
               ),
-              _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'text', placeholder: 'Search' })
+              _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'input', type: 'text', placeholder: 'Search' })
             ),
             _react2.default.createElement(
               _reactBootstrap.FormGroup,

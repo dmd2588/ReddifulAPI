@@ -20,7 +20,7 @@ export default function Users () {
             <Panel header="Filtering and Sorting">
                 <FormGroup controlId="filterText">
                   <ControlLabel>Filter Text</ControlLabel>
-                  <FormControl componentClass="text" placeholder="Search" />
+                  <FormControl componentClass="input" type="text" placeholder="Search" />
                 </FormGroup>
         	    <FormGroup controlId="filterSelect">
         	      <ControlLabel>Filter by Attribute</ControlLabel>
