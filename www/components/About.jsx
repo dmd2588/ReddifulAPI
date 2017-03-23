@@ -1,5 +1,7 @@
 import React from 'react'
 import {PageHeader, Panel, Accordion, Well, Jumbotron,ListGroupItem, ListGroup} from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
+import FaAngleDown from 'react-icons/lib/fa/angle-down';
 var About = React.createClass({
 		getInitialState() {
 			return {
@@ -16,12 +18,71 @@ var About = React.createClass({
             <PageHeader>About</PageHeader>
               <Jumbotron>
             <h1>Team Name Presents: <small>Reddiful API</small></h1>
-			 <p>By: David Du, Johnny Knoebel, Thomas Lam, Jeremy Lim, Austin Middleton, Shea Rozmiarek</p>
+			<Grid>
+			    <Row className="show-grid">
+				    <Col lg={4}>
+					    <img src="/dist/images/David.jpg" height="310" width="310"></img>
+					    <h3>David Du</h3>
+						<p>I'm a junior majoring in Computer Science. I like to game, which is closely related to why I want to go into the game development industry.</p>
+						<p>Responsibilities: Documentation, Front-end</p>
+						<p>No. Commits: 30</p>
+						<p>No. Issues: 4</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				    <Col lg={4}>
+					    <img src="https://placeimg.com/310/310/people" height="310" width="310"></img>
+					    <h3>Johnny Knoebel</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
+						<p>Responsibilities: stuff</p>
+						<p>No. Commits: 2</p>
+						<p>No. Issues: 2</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+					<Col lg={4}>
+						<img src="/dist/images/Thomas.jpg" className="img-responsive center-block"></img>
+						<h3>Thomas Lam</h3>
+						<p>I'm a Junior CS Major from Cypress, Texas.</p>
+						<p>Responsibilities: Data Collection, Front-end and Back-end bug fixes</p>
+						<p>No. Commits: 12</p>
+						<p>No. Issues: 2</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				</Row>
+			    <Row className="show-grid">
+				    <Col lg={4}>
+					    <img src="/dist/images/Jeremy.jpeg" height="310" width="310"></img>
+					    <h3>Jeremy Lim</h3>
+						<p>Computer Science Major. Likes books and Battlestar Galatica. Hobby is to read online web novels.</p>
+						<p>Responsibilities: Front-end boilerplate code, Coordination, Coding React Components</p>
+						<p>No. Commits: 16</p>
+						<p>No. Issues: 7</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				    <Col lg={4}>
+					    <img src="https://placeimg.com/310/310/people" height="310" width="310"></img>
+					    <h3>Austin Middleton</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
+						<p>Responsibilities: stuff</p>
+						<p>No. Commits: 31</p>
+						<p>No. Issues: 6</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				    <Col lg={4}>
+					    <img src="/dist/images/Shea.jpeg" height="310" width="310"></img>
+					    <h3>Shea Rozmiarek</h3>
+						<p>I'm a junior CS major from Liberty Hill, Texas. I love to game and pet fluffy animals.</p>
+						<p>Responsibilities: Front-end</p>
+						<p>No. Commits: 5</p>
+						<p>No. Issues: 2</p>
+						<p>No. Unit Tests: 0</p>
+					</Col>
+				</Row>
+			</Grid>
               </Jumbotron>
               <hr/>
-              
+
               <ListGroup>
-              <h3>Github Stats - <a href="docs.reddiful.apiary.io">Apiary API</a> - <a href="https://github.com/dmd2588/ReddifulAPI/issues">GitHubIssueTracker</a> -  <a href="https://github.com/dmd2588/ReddifulAPI/">Github Repo</a></h3> 
+              <h3>Github Stats - <a href="docs.reddiful.apiary.io">Apiary API</a> - <a href="https://github.com/dmd2588/ReddifulAPI/issues">GitHubIssueTracker</a> -  <a href="https://github.com/dmd2588/ReddifulAPI/">Github Repo</a></h3>
                 <ListGroupItem>total no. of commits: 55</ListGroupItem>
                 <ListGroupItem>total no. of issues: 17</ListGroupItem>
                 <ListGroupItem>total no. of unit tests: 13</ListGroupItem>
@@ -29,20 +90,28 @@ var About = React.createClass({
               <Panel header={ <h3>Data</h3>}>
                   Link to the source here: <a href="https://www.reddit.com/dev/api/">Reddit API</a>
                   <h4>Data Collection Process</h4>
-                  <p></p>
+                  <p>For the example models used in the first phase of the project, data was scraped using the Reddit API.  The official reddit git repository lists several <a href="https://github.com/reddit/reddit/wiki/API-Wrappers">wrappers for the API</a>.  For the scraper written for our project, PRAW, a python wrapper around the API was used.</p>
+                  <p>In order to keep the example data set at three examples for each model as well as having linked examples, the data was gathered in a specific way.  Three subreddits were chosen and from each of those subreddits one of the moderators was chosen and for each of those moderators their most recent comment was chosen and for each comment the submission it resided in was chosen.</p>
+                  <p>Data was scraped for the chosen examples using PRAW's built in classes for each model as well as GET requests to the api endpoints because not all the attributes we wanted were available through the wrapper's built in classes.  The example data was stored as lists of dictionaries and dumped as json to be used in the front end.</p>
+              </Panel>
+               <Panel header={ <h3>Tools</h3>}>
+                  <p>Used React and Bootstrap for main frontend. Webpack to compile ES6 jsx files. Babel to translate ES6 to javascript. React-toolbox, modernize, material-ui for touch up components. Docker used to manage back-end dependencies. Python for the back-end logic. Flask as the api logic server. Makefile to encode the workflow. Gunicorn for the flask webserver.For more info see the Tools section of the Technical Report below.</p>
               </Panel>
               <br/>
-                
+
             <PageHeader>Technical Report</PageHeader>
+			<h3>Group Name: <small>Team Name</small></h3>
+            <h3>Members: <small>David Du, Johnny Knoebel, Thomas Lam, Jeremy Lim, Austin Middleton, Shea Rozmiarek</small></h3>
+            <br/>
 			<Panel header = "Introduction" bsStyle = "info">
-			 <p>This is an analytical compilation of Reddit. We are providing a top-level view of Reddit, and we are showing summary data and the relationships for most of the information on Reddit. This can be used for anything from data analysis of information like the "toxicity" of a subreddit to creating personas of certain groups of people to better market products to that demographic.</p>
+			 <p>This is an analytical compilation of Reddit. We are providing a top-level view of Reddit. This top level view includes metadata, summary data and the relationships for most of the top information on Reddit. Since Reddit has a vast variety of content it can be hard for a user to explore Reddit in an succinct manner from a top down approach. This API allows for a quick browse, with supplemented analytics to concisely explore the range of content that Reddit fields. This can be used for anything from data analysis of information like the "toxicity" of a subreddit to creating personas of certain groups of people to better market products to that demographic.</p>
 			</Panel>
 			<Panel header = "Design" bsStyle = "info">
-			 <p>We are using the Reddit API to define our models and attributes. For the structure, we first used UML to plan out how the models would look and interact with one another. We have four models we are working with: Subreddits, Users, Posts, and Comments.</p>
+			 <p>We are using the Reddit API to define our models and attributes. For the structure, we first used UML to plan out how the models would look and interact with one another. We have four models we are working with: Subreddits, Users, Posts, and Comments. For the UML diagram see at the end of the report in the Diagrams section.</p>
 			 <p>These models define the majority of characteristics, but we are thinking of defining a separate model for the trophies in the user profiles. This is because each trophy has several attributes and will be more easily represented in a separate model from the user. After defining several characteristics, we scraped some data and found that certain attributes would be infeasible while other, new ones could be added. This allowed us to redefine several attributes to more accurately reflect the information provided by the Reddit API.</p>
 			 <p>While defining the attributes for the models, we also took a look at the relationships between each of those models. By observing the interaction on Reddit, we were able to condense them into the relationships and attributes that you see below.</p>
 			 <Accordion>
-				<Panel header = "Models" eventKey = "1">
+				<Panel header = {<h4>Models <FaAngleDown/></h4>} eventKey = "1">
 				 <p>The models represent different aspects of Reddit that make up most of the information seen on the site.</p>
 					<h5><b>User</b></h5>
 					 <p>The users represent the people on the site. They can explore the different subreddits, interact with others, and communicate their ideas. They are able to form new groups (subreddits), start new conversations (posts), and contribute to existing ones (comments). Reddit would not have any worth without the users to keep giving ideas. Organizing user information can be used to observe different trends like the relationship between different interests in subreddits.</p>
@@ -53,7 +122,7 @@ var About = React.createClass({
 					<h5><b>Comment</b></h5>
 					 <p>Comments are generally short blurbs that hopefully contribute to the conversation, whether by questioning an idea or making a witty remark. Combined with posts, they can be used to answer questions, challenge ideas, or entertain other users. When looking at the types of comments posted, there are trends that can be observed. For example, there are several users that are dedicated to doing specific things, like AWildSketchAppeared - he mostly replies with sketches reflecting a previous comment or post. Other comments maybe have similarities in the type of response; the gaming subreddit usually contains comments that are reactionary to the post and don't generally provide some insight into the deeper meaning of life.</p>
 				</Panel>
-				<Panel header = "Relationships" eventKey = "2">
+				<Panel header = {<h4>Relationships <FaAngleDown/></h4>} eventKey = "2">
 				 <p>There are many relationships between the different models. The way they interact helps organize the transmission of information between different entities.</p>
 					<h5><b>User</b></h5>
 					 <p>The User and Subreddit have a many to many relationship where for each user, there are many subreddits that they are subscribed to, and for each subreddit, there are many users subscribed to it. With the current information given to us, we are currently focusing on the relationship between the moderators and the subreddit, since getting the information like the subreddits that a user is subscribed to and the users subscribed to a particular subreddit are both things that we cannot access. The User and Post have a 1 to many relationship as well since each user has many (if any) posts. Similarly, the User and Comment have a 1 to many relationship.</p>
@@ -62,7 +131,7 @@ var About = React.createClass({
 					<h5><b>Post</b></h5>
 					 <p>Posts have a 1 to many relationship with Comments: each post has many comments (hopefully), while each comment can only belong to one post.</p>
 				</Panel>
-				<Panel header = "Attributes and Methods" eventKey = "3">
+				<Panel header = {<h4>Attributes and Methods <FaAngleDown/></h4>} eventKey = "3">
 				 <p>Several attributes and methods to access those attributes help define each model. Some are foreign keys in other models that help relate them back to each other.</p>
 					<h5><b>User</b></h5>
 					 <p>The user has several attributes that can be listed. First, there are two identifiers: the name (username itself), and the ID (a unique ID number that can be used to find the user). In addition, if the user allows it, the email will be displayed as well. Finally, the user has comment and link karma as well as the created time.</p>
@@ -80,30 +149,51 @@ var About = React.createClass({
 			<Panel header = "Tools" bsStyle = "info">
 			 <p>This section describes the tools and resources we used to both help design the site and to make it easier on the eyes.</p>
 			 <Accordion>
-			    <Panel header = "Front-end" eventKey = "1">
+			    <Panel header = {<h4>Front-end <FaAngleDown/></h4>} eventKey = "1">
 				 <p>These tools help the site look better and feel better to use.</p>
 					<h5><b>Libraries and Tools</b></h5>
-					 <p>React and Bootstrap are the primary UI elements. Bootstrap is the react-bootstrap library that has compatibility with via react components. This allowed us to format our information in a more organized way; for example, we used Boostrap to format this page. Other front-end libraries in use is react-toolbox for the grid cards and for the grid layout the react-bootstrap layout components. The front end is compiled from ES6 JSX files using webpack via Babel translator from jsx to a bundle.js file that contains the entirety of the page content and frontend libraries for deployment. Flask is the webserver that serves up the all of the frontend files. PostCSS is a dependency used by react-toolbox for its themes.</p>
+					 <p>React and Bootstrap are the primary UI elements. Bootstrap is the react-bootstrap library that has compatibility with via react components. This allowed us to format our information in a more organized way; for example, we used Boostrap to format this page. Other front-end libraries in use is react-toolbox for the grid cards and for the grid layout the react-bootstrap layout components. The front end is compiled from ES6 JSX files using webpack via Babel translator from jsx to a bundle.js file that contains the entirety of the page content and frontend libraries for deployment. Flask is the webserver that serves up the all of the frontend files. PostCSS is a dependency used by react-toolbox for its themes. The UI is supplemented with icons from react-icons which allows us to use material design icons without the hassle of installing and configuring them. The Moments css library is used to supplement the fonts on the details page and grid of cards.</p>
 					<h5><b>Front-end Tool Configurations</b></h5>
-					 <p>Webpack is configured via the webpack.config.js file which specifies where the entrypoint of the application files is and where the compiled final distribution javascript file should be located. The current webpack file is configured to compile jsx via Babel to ES2015, and css via Postcss. The package.json file contains the dependency information for both the development and production front-end libraries as well as ways to build and run the application via npm. Run npm install - to install dependecies. Run npm build run - to compile the JSX files and run the application on the docker webserver. The makefile contains ways to build/compile the application via -  make build.</p>
+                    <p>Webpack is configured via the webpack.config.js file which specifies where the entrypoint of the application files is and where the compiled final distribution javascript file should be located. The current webpack file is configured to compile jsx via Babel to ES2015, and css via Postcss. The package.json file contains the dependency information for both the development and production front-end libraries as well as ways to build and run the application via npm. Run <code>npm install</code> to install dependecies. Run <code>npm build run</code> to compile the JSX files and run the application on the docker webserver. The makefile contains ways to build/compile the application via: <code>make build</code></p>
 					<h5><b>Front-end Structure</b></h5>
-			         <p>Starting from the root directory, www/ folder contains all of the front-end code. Within this folder there is the index.html file which is the main html file that is served by the webserver. The components/ folder contains all of the JSX files that will compose into the application. Each .jsx file is a single component. The App.jsx file is the react component main entry point into the application. It is the file that will render all other components and is the root of the web application front-end logic; linking the .jsx to the index.html page. All other components are as stated.</p>
+			         <p>Starting from the root directory, www/ folder contains all of the front-end code. Within this folder there is the index.html file which is the main html file that is served by the webserver. The components/ folder contains all of the JSX files that will compose into the application. Each .jsx file is a single component. The App.jsx file is the react component main entry point into the application. It is the file that will render all other components and is the root of the web application front-end logic; linking the .jsx to the index.html page. All other components are as stated. For example. RFGrid.jsx holds the grid component and NavBarAPI.jsx holds the navbar component for our application</p>
 					<h5><b>Running Frontend</b></h5>
-					 <p>Running the front-end can be done after compilation/build of the application. Running the application is done by using the command - docker-compose up which runs the application on a flask server locally at localhost:80 or alternatively by running - make dev_build will run a node server at localhost:8080</p>
+                    <p>Running the front-end can be done after compilation/build of the application. Running the application is done by using the command <code>docker-compose up</code> which runs the application on a flask server locally at <b>localhost:80</b> or alternatively by running <code>make dev_build</code> will run a node server at <b>localhost:8080</b></p>
 				</Panel>
-			    <Panel header = "Backend" eventKey = "2">
+			    <Panel header = {<h4>Back-end <FaAngleDown/></h4>} eventKey = "2">
 				 <p>These tools set up the site so that it runs smoothly and doesn't break (hopefully).</p>
 					<h5><b>Back-end Structure</b></h5>
 					 <p>Starting from the root of the application. The reddiful/ folder contains the api.py files that compose the back-end api of the application. The api.py file is the main entry point for the flask webserver. This file aso contains all of the routes that will be used for the API backend call to retrieve data to be displayed in the front-end. In the app/ folder is the test.py and model.py files. Model unit tests which test the validitiy for the db data is in the test.py file. SQLAlchemy is used for mapping the database rows to a python object, this is defined in the model.py file.</p>
 					<h5><b>Python and Flask</b></h5>
-					 <p>For setting up python and flask please see below for the Docker setup, as the docker container freezes the dependencies for these. Python is used for the back-end logic. Flask is the webserver that is used to serve up the application. In order to run flask manually the following commands must be given from the root directory export FLASK_APP=reddiful/api.py - and then the command - flask run - to actually run the application. Alternatively running - docker-compose up - will run the application via the docker file. For the python back-end api specifications please see the Design section above or the apiary documentation at http://docs.reddiful.apiary.io/ . In addition the apiary documentation itself can be loaded into apiary using the apiary.apib file that is found in the repo.</p>
+                    <p>For setting up python and flask please see below for the Docker setup, as the docker container freezes the dependencies for these. Python is used for the back-end logic. Flask is the webserver that is used to serve up the application. In order to run flask manually the following commands must be given from the root directory <code>export FLASK_APP=reddiful/api.py </code> and then the command <code>flask run </code> to actually run the application. Alternatively running <code> docker-compose up </code> will run the application via the docker file. For the python back-end api specifications please see the Design section above or the apiary documentation at http://docs.reddiful.apiary.io/ . In addition the apiary documentation itself can be loaded into apiary using the apiary.apib file that is found in the repo.</p>
 					<h5><b>Docker</b></h5>
 					 <p> Docker container is used to install the preliminary dependecies for the back-end. Please see above for installing the front-end dependecies via npm. The docker container is used to ensure that all back-end dependencies are the same for every environment. The docker configuration for the installation of said dependencies is done in the Dockerfile file. This specifies the OS and other installation software. The docker-compose.yml file is the file that defines and initiates the webserver using flask.</p>
 				</Panel>
 			 </Accordion>
 			</Panel>
 			<Panel header = "Hosting" bsStyle = "info">
-			 <p>For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a 8 GiB Elastic Block Store volume associated with it.  Amazon lists websites and applications as use cases for this type so it was a good fit for our goals.  It's also free tier eligible which allowed us to host our application on AWS for free for up to a year.  An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap.  To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file.  The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.</p>
+			 <Accordion>
+				<Panel header = {<h4>Choice                 <FaAngleDown/></h4>} eventKey = "1">
+				 <p>For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.</p>
+				</Panel>
+				<Panel header = {<h4>Set-up                 <FaAngleDown/></h4>} eventKey = "2">
+				 <p>To set up an ec2 instance you navigate to the ec2 dashboard from the aws console and click launch instace.  You will first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon's 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It is also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.</p>
+				</Panel>
+				<Panel header = {<h4>Accessibility          <FaAngleDown/></h4>} eventKey = "3">
+				 <p>An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.</p>
+				</Panel>
+			 </Accordion>
+			</Panel>
+			
+			<Panel header = "Diagrams & Other" bsStyle = "info">
+			 <Accordion>
+				<Panel header = {<h4>UML Diagram <FaAngleDown/></h4>} eventKey = "1">
+				
+				</Panel>
+				<Panel header = {<h4>Table of Components <FaAngleDown/></h4>} eventKey = "2">
+				
+				</Panel>
+			 </Accordion>
 			</Panel>
 			</div>
           )

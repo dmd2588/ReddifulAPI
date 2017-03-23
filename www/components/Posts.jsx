@@ -11,7 +11,7 @@ export default function Posts () {
       return {
         title: p.title,
         subtitle: 'Author: ' + (getUsers().find(u => u.id === p.author) || {}).name,
-        link: '/posts'
+        link: '/posts/detail/' + p.id
       }
     })
   })
