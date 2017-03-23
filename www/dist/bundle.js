@@ -18938,7 +18938,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 								'p',
 								null,
-								'The models represent different aspects of Reddit that make up most of the information seen on '
+								'The models represent different aspects of Reddit that make up most of the information seen on the site.'
 						),
 						_react2.default.createElement(
 								'h5',
@@ -18949,7 +18949,11 @@ var About = _react2.default.createClass({
 										'User'
 								)
 						),
-						_react2.default.createElement('p', null),
+						_react2.default.createElement(
+								'p',
+								null,
+								'The users represent the people on the site. They can explore the different subreddits, interact with others, and communicate their ideas. They are able to form new groups (subreddits), start new conversations (posts), and contribute to existing ones (comments). Reddit would not have any worth without the users to keep giving ideas. Organizing user information can be used to observe different trends like the relationship between different interests in subreddits.'
+						),
 						_react2.default.createElement(
 								'h5',
 								null,
@@ -18959,7 +18963,11 @@ var About = _react2.default.createClass({
 										'Subreddit'
 								)
 						),
-						_react2.default.createElement('p', null),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Subreddits are groups of any number of users that have come together and found a common interest. By organizing like-minding people into a group, it allows for meaningful (or not) discussion on a topic that everyone present is interested in. Compiling this information introduces the opportunity to observe group trends anywhere from what kind of language is used to the activity per user.'
+						),
 						_react2.default.createElement(
 								'h5',
 								null,
@@ -18969,7 +18977,11 @@ var About = _react2.default.createClass({
 										'Post'
 								)
 						),
-						_react2.default.createElement('p', null),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Posts ask questions, discuss topics, and introduce ideas. There is so much information out there that bringing it into a concentrated form of a post can clarify things that would otherwise have gone unnoticed to most of the population. Looking at the posts can bring light to the kind of information that users in a subreddit may want to express; for example, are there more questions being asked or is everyone trying to bring their own idea out into the open? What kind of information is important to the users of Reddit?'
+						),
 						_react2.default.createElement(
 								'h5',
 								null,
@@ -18979,7 +18991,11 @@ var About = _react2.default.createClass({
 										'Comment'
 								)
 						),
-						_react2.default.createElement('p', null),
+						_react2.default.createElement(
+								'p',
+								null,
+								'Comments are generally short blurbs that hopefully contribute to the conversation, whether by questioning an idea or making a witty remark. Combined with posts, they can be used to answer questions, challenge ideas, or entertain other users. When looking at the types of comments posted, there are trends that can be observed. For example, there are several users that are dedicated to doing specific things, like AWildSketchAppeared - he mostly replies with sketches reflecting a previous comment or post. Other comments maybe have similarities in the type of response; the gaming subreddit usually contains comments that are reactionary to the post and don\'t generally provide some insight into the deeper meaning of life.'
+						),
 						_react2.default.createElement(
 								'h4',
 								null,
@@ -19121,7 +19137,11 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 								'h5',
 								null,
-								'Libraries and Tools'
+								_react2.default.createElement(
+										'b',
+										null,
+										'Libraries and Tools'
+								)
 						),
 						_react2.default.createElement(
 								'p',
@@ -19131,7 +19151,11 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 								'h5',
 								null,
-								'Front-end Tool Configurations'
+								_react2.default.createElement(
+										'b',
+										null,
+										'Front-end Tool Configurations'
+								)
 						),
 						_react2.default.createElement(
 								'p',
@@ -19141,7 +19165,11 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 								'h5',
 								null,
-								'Front-end Structure'
+								_react2.default.createElement(
+										'b',
+										null,
+										'Front-end Structure'
+								)
 						),
 						_react2.default.createElement(
 								'p',
@@ -19151,7 +19179,11 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 								'h5',
 								null,
-								'Running Frontend'
+								_react2.default.createElement(
+										'b',
+										null,
+										'Running Frontend'
+								)
 						),
 						_react2.default.createElement(
 								'p',
@@ -19166,7 +19198,11 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 								'h5',
 								null,
-								'Back-end Structure'
+								_react2.default.createElement(
+										'b',
+										null,
+										'Back-end Structure'
+								)
 						),
 						_react2.default.createElement(
 								'p',
@@ -19176,7 +19212,11 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 								'h5',
 								null,
-								'Python and Flask'
+								_react2.default.createElement(
+										'b',
+										null,
+										'Python and Flask'
+								)
 						),
 						_react2.default.createElement(
 								'p',
@@ -19186,7 +19226,11 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 								'h5',
 								null,
-								'Docker'
+								_react2.default.createElement(
+										'b',
+										null,
+										'Docker'
+								)
 						),
 						_react2.default.createElement(
 								'p',
@@ -19201,7 +19245,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 								'p',
 								null,
-								'We are using AWS for our hosting service.'
+								'For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a 8 GiB Elastic Block Store volume associated with it.  Amazon lists websites and applications as use cases for this type so it was a good fit for our goals.  It\'s also free tier eligible which allowed us to host our application on AWS for free for up to a year.  An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap.  To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file.  The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.'
 						),
 						_react2.default.createElement(
 								'h3',
