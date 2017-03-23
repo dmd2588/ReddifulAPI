@@ -1,40 +1,17 @@
 import React from 'react';
-import { getUsers, getUserRelated } from '../api.js'
+import Detail from './Details.jsx'
+import { getUsers } from '../api.js'
 
-class UserDetail extends React.Component {
-  render() {
-    var userData = getUsers()
-    var user_id = this.props.match.params.user_id;
-    var row = undefined;
-    console.log(getUserRelated(user_id));
-    for (var ind in userData) {
-        if (userData[ind].id == user_id) {
-            row = userData[ind];
-            break;
-        }
+export default function UserDetail (props) {
+  const user = getUsers().find(u => u.id === props.match.params.user_id)
+  return Detail({
+    title: 'User - ' + user.name,
+    details: {
+      'Name': user.name,
+      'Link Karma': user.link_karma,
+      'Comment Karma': user.comment_karma,
+      'Email': user.email,
+      'Created': new Date(user.created * 1000).toDateString()
     }
-    if (row) {
-        var created = new Date(0);
-        created.setUTCSeconds(row.created);
-        return (
-            <div>
-              <h2>User Detail</h2>
-              <p>Name: {row.name}</p>
-              <p>Link Karma: {row.link_karma}</p>
-              <p>Comment Karma: {row.comment_karma}</p>
-              <p>Email: {row.email}</p>
-              <p>Created: {created.toString()}</p>
-            </div>
-        )
-    } else {
-        return (
-            <div>
-              <h2>User Detail</h2>
-              <p>No user with user_id {user_id} found.</p>
-            </div>
-        )
-    }
-  }
+  })
 }
-
-export default UserDetail;
