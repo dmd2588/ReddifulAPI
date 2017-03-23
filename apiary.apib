@@ -96,14 +96,15 @@ Reddiful is a simple API allowing consumers to view reddit metadata
     + post (string) - title of the post
 
 + Attributes
-    + author (string) - author of the post (foreign key to name in Users)
+    + author_id (string) - author of the post (foreign key to name in Users)
     + created (number) - time of creation
     + gilded (number) - number of times this post is gilded
     + id (string) - unique ID of this post
-    + self (boolean) - is this a text post
+    + self_post (boolean) - is this a text post
     + nsfw (boolean) - is this post nsfw
     + score (number) - karma count of this post
-    + selftext (string) - text of the post is it's a self post
+    + self_text (string) - text of the post is it's a self post
+    + subreddit_id (string) - unique ID of the overall subreddit (foreign key to ID of Subreddit)
     + title: me_irl (string) - title of the post
     + url (string) - URL linking to where you go when you click the title
 
@@ -113,38 +114,41 @@ Reddiful is a simple API allowing consumers to view reddit metadata
 
         [
             {
-                "author": "batman_jr",
+                "author_id": "hh8mr",
                 "created": 1486872624,
                 "gilded": 0,
                 "id": "5th7sz",
-                "self": True,
+                "self_post": True,
                 "nsfw": False,
                 "score": 1,
-                "selftext": "Test Text",
+                "self_text": "Test Text",
+                "subreddit_id": "t5_3imxi",
                 "title": "Test",
                 "url": "https://www.reddit.com/r/FireEmblemHeroesTest/comments/5th7sz/test/"
             },
             {
-                "author": "Euthy",
+                "author_id": "74344",
                 "created": 1490143051,
                 "gilded": 0,
                 "id": "60on5c",
-                "self": False,
+                "self_post": False,
                 "nsfw": False,
                 "score": 756,
-                "selftext": "",
+                "self_text": "",
+                "subreddit_id": "t5_2tex6",
                 "title": "existentialSort",
                 "url": "https://i.redd.it/gdoviw37hsmy.jpg"
             },
             {
-                "author": "Mtard31",
+                "author_id": "4fer6",
                 "created": 1490203502,
                 "gilded": 0,
                 "id": "60tlfl",
-                "self": True,
+                "self_post": True,
                 "nsfw": False,
                 "score": 13,
-                "selftext": "Hey everyone!\n\nThis Friday there will be 8 people at my place including me, all of us have played board games before, and i am excited to introduce **Captain Sonar**. This will be my first play as well, but i think i know the rules. The thing is, 8 people is a lot to manage. Im worried that i might mess up some rules. I want the game to run as smoothly as possible since its not often that i get 8 players. Are there any commonly missed rules or any advice that you guys can give me?\n\nAlso did you all enjoy the game? What did you think about it? How was your experience?",
+                "self_text": "Hey everyone!\n\nThis Friday there will be 8 people at my place including me, all of us have played board games before, and i am excited to introduce **Captain Sonar**. This will be my first play as well, but i think i know the rules. The thing is, 8 people is a lot to manage. Im worried that i might mess up some rules. I want the game to run as smoothly as possible since its not often that i get 8 players. Are there any commonly missed rules or any advice that you guys can give me?\n\nAlso did you all enjoy the game? What did you think about it? How was your experience?",
+                "subreddit_id": "t5_2qmjp",
                 "title": "Planning on getting Captain Sonar to the table with the full 8-players. Would love some advice",
                 "url": "https://www.reddit.com/r/boardgames/comments/60tlfl/planning_on_getting_captain_sonar_to_the_table/"
             }
@@ -155,7 +159,7 @@ Reddiful is a simple API allowing consumers to view reddit metadata
     + comment (string) - body of the comment
 
 + Attributes
-    + author (string) - author of the comment (foreign key to ID of User)
+    + author_id (string) - author of the comment (foreign key to ID of User)
     + body: this is a comment (string) - body of the comment
     + created (string) - time of the comment's post
     + gilded (number) - number of times this comment is gilded
@@ -173,7 +177,7 @@ Reddiful is a simple API allowing consumers to view reddit metadata
 
         [
             {
-                "author": "hh8mr",
+                "author_id": "hh8mr",
                 "body": "comment 2",
                 "created": 1488274311,
                 "gilded": 0,
@@ -183,7 +187,7 @@ Reddiful is a simple API allowing consumers to view reddit metadata
                 "subreddit_id": "3imxi"
             },
             {
-                "author": "74344",
+                "author_id": "74344",
                 "body": "> Despite claiming ownership, Canada provides no medical or social services to any of the inhabitants of Hans Island.\n\nYou could also say that they do provide medical and social services to all the inhabitants though.",
                 "created": 1490098110,
                 "gilded": 0,
@@ -193,7 +197,7 @@ Reddiful is a simple API allowing consumers to view reddit metadata
                 "subreddit_id": "2qqjc"
             },
             {
-                "author": "4fer6",
+                "author_id": "4fer6",
                 "body": "Spilled a glass of diet Pepsi all over Cash 'n' Guns (first time playing). It was of course an accident and they immediately offered to help clean them, and failing that buy me the game again.\n\nThankfully, because it was diet (no sugar) the cards were able to be saved and now you couldn't tell it ever happened.",
                 "created": 1490146785,
                 "gilded": 0,
