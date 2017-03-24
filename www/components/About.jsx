@@ -79,25 +79,23 @@ var About = React.createClass({
           </Grid>
         </Jumbotron>
         <hr />
-             
-              <ListGroup>
-              <h3>Github Stats - <a href="http://docs.reddiful.apiary.io">Apiary API</a> - <a href="https://github.com/dmd2588/idb/issues">GitHubIssueTracker</a> -  <a href="https://github.com/dmd2588/idb/">Github Repo</a></h3>
-                <ListGroupItem>total no. of commits: 55</ListGroupItem>
-                <ListGroupItem>total no. of issues: 17</ListGroupItem>
-                <ListGroupItem>total no. of unit tests: 13</ListGroupItem>
-             </ListGroup>
-              <Panel header={ <h3>Data</h3>}>
-                  Link to the source here: <a href="https://www.reddit.com/dev/api/">Reddit API</a>
-                  <h4>Data Collection Process</h4>
-                  <p>For the example models used in the first phase of the project, data was scraped using the Reddit API.  The official reddit git repository lists several <a href="https://github.com/reddit/reddit/wiki/API-Wrappers">wrappers for the API</a>.  For the scraper written for our project, PRAW, a python wrapper around the API was used.</p>
-                  <p>In order to keep the example data set at three examples for each model as well as having linked examples, the data was gathered in a specific way.  Three subreddits were chosen and from each of those subreddits one of the moderators was chosen and for each of those moderators their most recent comment was chosen and for each comment the submission it resided in was chosen.</p>
-                  <p>Data was scraped for the chosen examples using PRAW's built in classes for each model as well as GET requests to the API endpoints because not all the attributes we wanted were available through the wrapper's built in classes.  The example data was stored as lists of dictionaries and dumped as json to be used in the front end.</p>
-              </Panel>
-               <Panel header={ <h3>Tools</h3>}>
-                  <p>Used React and Bootstrap for main frontend. Webpack to compile ES6 jsx files. Babel to translate ES6 to javascript. React-toolbox, modernize, material-ui for touch up components. Docker used to manage back-end dependencies. Python for the back-end logic. Flask as the API logic server. Makefile to encode the workflow. Gunicorn for the flask webserver. For more info see the Tools section of the Technical Report below.</p>
-              </Panel>
-              <br/>
-
+        <ListGroup>
+          <h3>Github Stats - <a href='http://docs.reddiful.apiary.io'>Apiary API</a> - <a href='https://github.com/dmd2588/idb/issues'>GitHubIssueTracker</a> - <a href='https://github.com/dmd2588/idb/'>Github Repo</a></h3>
+          <ListGroupItem>total no. of commits: 151</ListGroupItem>
+          <ListGroupItem>total no. of issues: 27</ListGroupItem>
+          <ListGroupItem>total no. of unit tests: 10</ListGroupItem>
+        </ListGroup>
+        <Panel header={<h3>Data</h3>}>
+                  Link to the source here: <a href='https://www.reddit.com/dev/api/'>Reddit API</a>
+          <h4>Data Collection Process</h4>
+          <p>For the example models used in the first phase of the project, data was scraped using the Reddit API.  The official reddit git repository lists several <a href='https://github.com/reddit/reddit/wiki/API-Wrappers'>wrappers for the API</a>.  For the scraper written for our project, PRAW, a python wrapper around the API was used.</p>
+          <p>In order to keep the example data set at three examples for each model as well as having linked examples, the data was gathered in a specific way.  Three subreddits were chosen and from each of those subreddits one of the moderators was chosen and for each of those moderators their most recent comment was chosen and for each comment the submission it resided in was chosen.</p>
+          <p>Data was scraped for the chosen examples using PRAW's built in classes for each model as well as GET requests to the API endpoints because not all the attributes we wanted were available through the wrapper's built in classes.  The example data was stored as lists of dictionaries and dumped as json to be used in the front end.</p>
+        </Panel>
+        <Panel header={<h3>Tools</h3>}>
+          <p>Used React and Bootstrap for main frontend. Webpack to compile ES6 jsx files. Babel to translate ES6 to javascript. React-toolbox, modernize, material-ui for touch up components. Docker used to manage back-end dependencies. Python for the back-end logic. Flask as the API logic server. Makefile to encode the workflow. Gunicorn for the flask webserver. For more info see the Tools section of the Technical Report below.</p>
+        </Panel>
+        <br />
         <PageHeader>Technical Report</PageHeader>
         <h3>Group Name: <small>Team Name</small></h3>
         <h3>Members: <small>David Du, Johnny Knoebel, Thomas Lam, Jeremy Lim, Austin Middleton, Shea Rozmiarek</small></h3>

@@ -35091,7 +35091,7 @@ var About = _react2.default.createClass({
             { href: 'https://github.com/dmd2588/idb/issues' },
             'GitHubIssueTracker'
           ),
-          ' -  ',
+          ' - ',
           _react2.default.createElement(
             'a',
             { href: 'https://github.com/dmd2588/idb/' },
@@ -35101,17 +35101,17 @@ var About = _react2.default.createClass({
         _react2.default.createElement(
           _reactBootstrap.ListGroupItem,
           null,
-          'total no. of commits: 55'
+          'total no. of commits: 151'
         ),
         _react2.default.createElement(
           _reactBootstrap.ListGroupItem,
           null,
-          'total no. of issues: 17'
+          'total no. of issues: 27'
         ),
         _react2.default.createElement(
           _reactBootstrap.ListGroupItem,
           null,
-          'total no. of unit tests: 13'
+          'total no. of unit tests: 10'
         )
       ),
       _react2.default.createElement(
