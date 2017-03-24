@@ -60,7 +60,7 @@ const subreddits = [
 
 const posts = [
    {
-      "subreddit_id":"3imxi",
+      "subreddit_id":"3imv0",
       "selftext":"Test Text",
       "is_self":true,
       "id":"5th7sz",
@@ -86,7 +86,7 @@ const posts = [
       "over_18":false
    },
    {
-      "subreddit_id":"2qmjp",
+      "subreddit_id":"2qh55",
       "selftext":"Hey everyone!\\n\\nThis Friday there will be 8 people at my place including me, all of us have played board games before, and i am excited to introduce **Captain Sonar**. This will be my first play as well, but i think i know the rules. The thing is, 8 people is a lot to manage. Im worried that i might mess up some rules. I want the game to run as smoothly as possible since its not often that i get 8 players. Are there any commonly missed rules or any advice that you guys can give me?\\n\\nAlso did you all enjoy the game? What did you think about it? How was your experience?",
       "is_self":true,
       "id":"60tlfl",
@@ -110,7 +110,7 @@ const comments = [
     'id': 'deaw2vi',
     'link_id': '5th7sz',
     'score': 1,
-    'subreddit_id': '3imxi'
+    'subreddit_id': '3imv0'
   },
   {
     'author': '74344',
@@ -132,7 +132,7 @@ const comments = [
     'id': 'df9cfop',
     'link_id': '60tlfl',
     'score': 5,
-    'subreddit_id': '2qmjp'
+    'subreddit_id': '2qh55'
   }
 ]
 
