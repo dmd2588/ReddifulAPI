@@ -237,11 +237,11 @@ var About = React.createClass({
                               </tr>
 							  <tr>
                                 <td>RfCard.jsx</td>
-                                <td>TODO</td>
+                                <td>Defines the Card component that represents each instance in the Grid</td>
                               </tr>
 							  <tr>
                                 <td>RfGrid.jsx</td>
-                                <td>TODO</td>
+                                <td>Defines the Grid that displays the Cards, takes a list of json object instances to display into Cards</td>
                               </tr>
 							  <tr>
                                 <td>SortFilter.jsx</td>
