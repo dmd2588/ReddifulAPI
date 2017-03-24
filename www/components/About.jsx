@@ -82,7 +82,7 @@ var About = React.createClass({
               <hr/>
 
               <ListGroup>
-              <h3>Github Stats - <a href="docs.reddiful.apiary.io">Apiary API</a> - <a href="https://github.com/dmd2588/ReddifulAPI/issues">GitHubIssueTracker</a> -  <a href="https://github.com/dmd2588/ReddifulAPI/">Github Repo</a></h3>
+              <h3>Github Stats - <a href="docs.reddiful.apiary.io">Apiary API</a> - <a href="https://github.com/dmd2588/idb/issues">GitHubIssueTracker</a> -  <a href="https://github.com/dmd2588/idb/">Github Repo</a></h3>
                 <ListGroupItem>total no. of commits: 55</ListGroupItem>
                 <ListGroupItem>total no. of issues: 17</ListGroupItem>
                 <ListGroupItem>total no. of unit tests: 13</ListGroupItem>

@@ -35010,7 +35010,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							_reactBootstrap.Col,
 							{ lg: 4 },
-							_react2.default.createElement('img', { src: 'https://placeimg.com/310/310/people', height: '310', width: '310' }),
+							_react2.default.createElement('img', { src: '/dist/images/austinm.jpg', height: '310', width: '310' }),
 							_react2.default.createElement(
 								'h3',
 								null,
@@ -35019,17 +35019,17 @@ var About = _react2.default.createClass({
 							_react2.default.createElement(
 								'p',
 								null,
-								'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.'
+								'I am an avid rock climber with an interest in peer-to-peer tech'
 							),
 							_react2.default.createElement(
 								'p',
 								null,
-								'Responsibilities: stuff'
+								'Responsibilities: Flask, Docker, and some React components'
 							),
 							_react2.default.createElement(
 								'p',
 								null,
-								'No. Commits: 31'
+								'No. Commits: 36'
 							),
 							_react2.default.createElement(
 								'p',
@@ -35096,13 +35096,13 @@ var About = _react2.default.createClass({
 					' - ',
 					_react2.default.createElement(
 						'a',
-						{ href: 'https://github.com/dmd2588/ReddifulAPI/issues' },
+						{ href: 'https://github.com/dmd2588/idb/issues' },
 						'GitHubIssueTracker'
 					),
 					' -  ',
 					_react2.default.createElement(
 						'a',
-						{ href: 'https://github.com/dmd2588/ReddifulAPI/' },
+						{ href: 'https://github.com/dmd2588/idb/' },
 						'Github Repo'
 					)
 				),
