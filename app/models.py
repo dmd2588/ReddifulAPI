@@ -12,7 +12,8 @@ from sqlalchemy.sql.schema import Table
 
 Base = declarative_base()
 
-#association table for the many-to-many relationship between User and Subreddit
+# association table for the many-to-many relationship between User and
+# Subreddit
 user_sub_table = Table('users_subs', Base.metadata,
                        Column('user_id', Integer, ForeignKey('users.id')),
                        Column('sub_id', Integer, ForeignKey('subreddits.id')))
@@ -20,6 +21,7 @@ user_sub_table = Table('users_subs', Base.metadata,
 # ------------
 # User
 # ------------
+
 
 class User(Base):
     __tablename__ = 'users'
@@ -51,7 +53,6 @@ class User(Base):
         self.comment_karma = attr["comment_karma"]
         self.created = attr["created"]
         self.email = attr["email"]
-
 
     def getID(self):
         """
@@ -92,6 +93,7 @@ class User(Base):
 # ------------
 # Subreddit
 # ------------
+
 
 class Subreddit(Base):
     __tablename__ = 'subreddits'
@@ -163,6 +165,7 @@ class Subreddit(Base):
 # ------------
 # Post
 # ------------
+
 
 class Post(Base):
     __tablename__ = 'posts'
@@ -280,6 +283,7 @@ class Post(Base):
 # Comment
 # ------------
 
+
 class Comment(Base):
     __tablename__ = 'comments'
 
@@ -373,4 +377,3 @@ class Comment(Base):
         returns ID of the comment's subreddit
         """
         return self.subreddit_id
- 
