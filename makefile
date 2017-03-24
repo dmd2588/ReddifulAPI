@@ -47,7 +47,7 @@ status:
 	git status
 
 build:
-	node_modules/.bin/webpack --progress --colors
+	node_modules/.bin/standard && node_modules/.bin/webpack --progress --colors
 
 watch:
 	node_modules/.bin/webpack --progress --colors --watch

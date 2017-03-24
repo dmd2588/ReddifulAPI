@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react' //eslint-disable-line
 import Detail from './Details.jsx'
 import { getSubreddits, getModerators, getUsers } from '../api.js'
 

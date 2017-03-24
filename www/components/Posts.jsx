@@ -1,5 +1,4 @@
-import React from 'react'
-import moment from 'moment'
+import React from 'react' // eslint-disable-line
 import RfGrid from './RfGrid.jsx'
 import { getPosts, getUsers } from '../api.js'
 
