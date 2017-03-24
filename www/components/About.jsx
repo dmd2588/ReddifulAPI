@@ -24,8 +24,8 @@ var About = React.createClass({
                 <h3>David Du</h3>
                 <p>I'm a junior majoring in Computer Science. I like to game, which is closely related to why I want to go into the game development industry.</p>
                 <p>Responsibilities: Documentation, Front-end</p>
-                <p>No. Commits: 37</p>
-                <p>No. Issues: 8</p>
+                <p>No. Commits: 38</p>
+                <p>No. Issues: 9</p>
                 <p>No. Unit Tests: 0</p>
               </Col>
               <Col lg={4}>
@@ -43,7 +43,7 @@ var About = React.createClass({
                 <p>I'm a Junior CS Major from Cypress, Texas.</p>
                 <p>Responsibilities: Data Collection, Front-end and Back-end bug fixes</p>
                 <p>No. Commits: 14</p>
-                <p>No. Issues: 4</p>
+                <p>No. Issues: 5</p>
                 <p>No. Unit Tests: 0</p>
               </Col>
             </Row>
@@ -62,8 +62,8 @@ var About = React.createClass({
                 <h3>Austin Middleton</h3>
                 <p>I am an avid rock climber with an interest in peer-to-peer tech</p>
                 <p>Responsibilities: Flask, Docker, and some React components</p>
-                <p>No. Commits: 38</p>
-                <p>No. Issues: 7</p>
+                <p>No. Commits: 40</p>
+                <p>No. Issues: 8</p>
                 <p>No. Unit Tests: 0</p>
               </Col>
               <Col lg={4}>
@@ -82,8 +82,8 @@ var About = React.createClass({
 
         <ListGroup>
           <h3>Github Stats - <a href='docs.reddiful.apiary.io'>Apiary API</a> - <a href='https://github.com/dmd2588/idb/issues'>GitHubIssueTracker</a> - <a href='https://github.com/dmd2588/idb/'>Github Repo</a></h3>
-          <ListGroupItem>total no. of commits: 148</ListGroupItem>
-          <ListGroupItem>total no. of issues: 26</ListGroupItem>
+          <ListGroupItem>total no. of commits: 151</ListGroupItem>
+          <ListGroupItem>total no. of issues: 27</ListGroupItem>
           <ListGroupItem>total no. of unit tests: 10</ListGroupItem>
         </ListGroup>
         <Panel header={<h3>Data</h3>}>
