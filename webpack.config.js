@@ -1,11 +1,12 @@
-var webpack = require('webpack');  
-module.exports = {  
+const path = require('path')
+
+module.exports = {
   entry: [
-    "./www/components/App.jsx"
+    './www/components/App.jsx'
   ],
   output: {
-    path: __dirname + '/www/dist',
-    filename: "bundle.js"
+    path: path.join(__dirname, '/www/dist'),
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -17,25 +18,25 @@ module.exports = {
         },
         exclude: [/node_modules/, /bower_components/]
       },
-         {
+      {
         test: /\.css$/,
         use: [
-          "style-loader",
+          'style-loader',
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               modules: true,
               sourceMap: true,
               importLoaders: 1,
-              localIdentName: "[name]--[local]--[hash:base64:8]"
+              localIdentName: '[name]--[local]--[hash:base64:8]'
             }
           },
-          "postcss-loader" // has separate config, see postcss.config.js nearby
+          'postcss-loader' // has separate config, see postcss.config.js nearby
         ]
       }
     ]
   },
-    
+
   plugins: [
   ]
-};
+}
