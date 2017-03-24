@@ -30,13 +30,13 @@ var About = React.createClass({
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				    <Col lg={4}>
-					    <img src="https://placeimg.com/310/310/people" height="310" width="310"></img>
+					    <img src="/dist/images/Johnny.jpg" height="310" width="310"></img>
 					    <h3>Johnny Knoebel</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
-						<p>Responsibilities: stuff</p>
-						<p>No. Commits: 2</p>
+						<p>I'm a junior majoring in Computer Science. I enjoy watching TV, video games, and making Pylint happy.</p>
+						<p>Responsibilities: Models, Unit Tests</p>
+						<p>No. Commits: 13</p>
 						<p>No. Issues: 2</p>
-						<p>No. Unit Tests: 0</p>
+						<p>No. Unit Tests: 10</p>
 					</Col>
 					<Col lg={4}>
 						<img src="/dist/images/Thomas.jpg" className="img-responsive center-block"></img>
