@@ -25,8 +25,8 @@ var About = React.createClass({
 					    <h3>David Du</h3>
 						<p>I'm a junior majoring in Computer Science. I like to game, which is closely related to why I want to go into the game development industry.</p>
 						<p>Responsibilities: Documentation, Front-end</p>
-						<p>No. Commits: 30</p>
-						<p>No. Issues: 4</p>
+						<p>No. Commits: 37</p>
+						<p>No. Issues: 8</p>
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				    <Col lg={4}>
@@ -34,7 +34,7 @@ var About = React.createClass({
 					    <h3>Johnny Knoebel</h3>
 						<p>I'm a junior majoring in Computer Science. I enjoy watching TV, video games, and making Pylint happy.</p>
 						<p>Responsibilities: Models, Unit Tests</p>
-						<p>No. Commits: 13</p>
+						<p>No. Commits: 10</p>
 						<p>No. Issues: 2</p>
 						<p>No. Unit Tests: 10</p>
 					</Col>
@@ -43,8 +43,8 @@ var About = React.createClass({
 						<h3>Thomas Lam</h3>
 						<p>I'm a Junior CS Major from Cypress, Texas.</p>
 						<p>Responsibilities: Data Collection, Front-end and Back-end bug fixes</p>
-						<p>No. Commits: 12</p>
-						<p>No. Issues: 2</p>
+						<p>No. Commits: 14</p>
+						<p>No. Issues: 4</p>
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				</Row>
@@ -54,8 +54,8 @@ var About = React.createClass({
 					    <h3>Jeremy Lim</h3>
 						<p>Computer Science Major. Likes books and Battlestar Galatica. Hobby is to read online web novels.</p>
 						<p>Responsibilities: Front-end boilerplate code, Coordination, Coding React Components</p>
-						<p>No. Commits: 16</p>
-						<p>No. Issues: 7</p>
+						<p>No. Commits: 23</p>
+						<p>No. Issues: 9</p>
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				    <Col lg={4}>
@@ -63,8 +63,8 @@ var About = React.createClass({
 					    <h3>Austin Middleton</h3>
 						<p>I am an avid rock climber with an interest in peer-to-peer tech</p>
 						<p>Responsibilities: Flask, Docker, and some React components</p>
-						<p>No. Commits: 36</p>
-						<p>No. Issues: 6</p>
+						<p>No. Commits: 38</p>
+						<p>No. Issues: 7</p>
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				    <Col lg={4}>
@@ -73,7 +73,7 @@ var About = React.createClass({
 						<p>I'm a junior CS major from Liberty Hill, Texas. I love to game and pet fluffy animals.</p>
 						<p>Responsibilities: Front-end</p>
 						<p>No. Commits: 5</p>
-						<p>No. Issues: 2</p>
+						<p>No. Issues: 4</p>
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				</Row>
@@ -83,9 +83,9 @@ var About = React.createClass({
 
               <ListGroup>
               <h3>Github Stats - <a href="docs.reddiful.apiary.io">Apiary API</a> - <a href="https://github.com/dmd2588/idb/issues">GitHubIssueTracker</a> -  <a href="https://github.com/dmd2588/idb/">Github Repo</a></h3>
-                <ListGroupItem>total no. of commits: 55</ListGroupItem>
-                <ListGroupItem>total no. of issues: 17</ListGroupItem>
-                <ListGroupItem>total no. of unit tests: 13</ListGroupItem>
+                <ListGroupItem>total no. of commits: 148</ListGroupItem>
+                <ListGroupItem>total no. of issues: 26</ListGroupItem>
+                <ListGroupItem>total no. of unit tests: 10</ListGroupItem>
              </ListGroup>
               <Panel header={ <h3>Data</h3>}>
                   Link to the source here: <a href="https://www.reddit.com/dev/api/">Reddit API</a>
