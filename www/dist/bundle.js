@@ -7351,7 +7351,7 @@ var subreddits = [{
 }];
 
 var posts = [{
-  "subreddit_id": "3imxi",
+  "subreddit_id": "3imv0",
   "selftext": "Test Text",
   "is_self": true,
   "id": "5th7sz",
@@ -7375,7 +7375,7 @@ var posts = [{
   "score": 760,
   "over_18": false
 }, {
-  "subreddit_id": "2qmjp",
+  "subreddit_id": "2qh55",
   "selftext": "Hey everyone!\\n\\nThis Friday there will be 8 people at my place including me, all of us have played board games before, and i am excited to introduce **Captain Sonar**. This will be my first play as well, but i think i know the rules. The thing is, 8 people is a lot to manage. Im worried that i might mess up some rules. I want the game to run as smoothly as possible since its not often that i get 8 players. Are there any commonly missed rules or any advice that you guys can give me?\\n\\nAlso did you all enjoy the game? What did you think about it? How was your experience?",
   "is_self": true,
   "id": "60tlfl",
@@ -7397,7 +7397,7 @@ var comments = [{
   'id': 'deaw2vi',
   'link_id': '5th7sz',
   'score': 1,
-  'subreddit_id': '3imxi'
+  'subreddit_id': '3imv0'
 }, {
   'author': '74344',
   'body': 'Your submission has been removed.\n\nViolation of Rules #2: \n\nNo rehosting allowed without explicit permission, unless it is obvious that the host allows it. Rehosting for the purposes of offering a direct link to an image is allowed in the comments.\n\n\n\nIf you feel that it has been removed in error, please [message us](http://www.reddit.com/message/compose?to=%2Fr%2Fprogrammerhumor) so that we may review it.',
@@ -7417,7 +7417,7 @@ var comments = [{
   'id': 'df9cfop',
   'link_id': '60tlfl',
   'score': 5,
-  'subreddit_id': '2qmjp'
+  'subreddit_id': '2qh55'
 }];
 
 function getUsers() {
@@ -35090,7 +35090,7 @@ var About = _react2.default.createClass({
 					'Github Stats - ',
 					_react2.default.createElement(
 						'a',
-						{ href: 'docs.reddiful.apiary.io' },
+						{ href: 'http://docs.reddiful.apiary.io' },
 						'Apiary API'
 					),
 					' - ',
@@ -35159,7 +35159,7 @@ var About = _react2.default.createClass({
 				_react2.default.createElement(
 					'p',
 					null,
-					'Data was scraped for the chosen examples using PRAW\'s built in classes for each model as well as GET requests to the api endpoints because not all the attributes we wanted were available through the wrapper\'s built in classes.  The example data was stored as lists of dictionaries and dumped as json to be used in the front end.'
+					'Data was scraped for the chosen examples using PRAW\'s built in classes for each model as well as GET requests to the API endpoints because not all the attributes we wanted were available through the wrapper\'s built in classes.  The example data was stored as lists of dictionaries and dumped as json to be used in the front end.'
 				)
 			),
 			_react2.default.createElement(
@@ -35172,7 +35172,7 @@ var About = _react2.default.createClass({
 				_react2.default.createElement(
 					'p',
 					null,
-					'Used React and Bootstrap for main frontend. Webpack to compile ES6 jsx files. Babel to translate ES6 to javascript. React-toolbox, modernize, material-ui for touch up components. Docker used to manage back-end dependencies. Python for the back-end logic. Flask as the api logic server. Makefile to encode the workflow. Gunicorn for the flask webserver.For more info see the Tools section of the Technical Report below.'
+					'Used React and Bootstrap for main frontend. Webpack to compile ES6 jsx files. Babel to translate ES6 to javascript. React-toolbox, modernize, material-ui for touch up components. Docker used to manage back-end dependencies. Python for the back-end logic. Flask as the API logic server. Makefile to encode the workflow. Gunicorn for the flask webserver. For more info see the Tools section of the Technical Report below.'
 				)
 			),
 			_react2.default.createElement('br', null),
@@ -35217,17 +35217,17 @@ var About = _react2.default.createClass({
 				_react2.default.createElement(
 					'p',
 					null,
-					'We are using the Reddit API to define our models and attributes. For the structure, we first used UML to plan out how the models would look and interact with one another. We have four models we are working with: Subreddits, Users, Posts, and Comments. For the UML diagram see at the end of the report in the Diagrams section.'
+					'We are using the Reddit API to define our models and attributes. For the structure, we first used UML to plan how the models would look and interact with one another. We have four models we are working with: Subreddits, Users, Posts, and Comments. For the UML diagram see at the end of the report in the Diagrams section.'
 				),
 				_react2.default.createElement(
 					'p',
 					null,
-					'These models define the majority of characteristics, but we are thinking of defining a separate model for the trophies in the user profiles. This is because each trophy has several attributes and will be more easily represented in a separate model from the user. After defining several characteristics, we scraped some data and found that certain attributes would be infeasible while other, new ones could be added. This allowed us to redefine several attributes to more accurately reflect the information provided by the Reddit API.'
+					'These models define most of the characteristics, but we are thinking of defining a separate model for the trophies in the user profiles. This is because each trophy has several attributes and will be more easily represented in a separate model from the user. After defining several characteristics, we scraped some data and found that certain attributes would be infeasible while other, new ones could be added. This allowed us to redefine several attributes to more accurately reflect the information provided by the Reddit API.'
 				),
 				_react2.default.createElement(
 					'p',
 					null,
-					'While defining the attributes for the models, we also took a look at the relationships between each of those models. By observing the interaction on Reddit, we were able to condense them into the relationships and attributes that you see below.'
+					'While defining the attributes for the models, we also looked at the relationships between each of those models. By observing the interaction on Reddit, we could condense them into the relationships and attributes that you see below.'
 				),
 				_react2.default.createElement(
 					_reactBootstrap.Accordion,
@@ -35257,7 +35257,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							'p',
 							null,
-							'The users represent the people on the site. They can explore the different subreddits, interact with others, and communicate their ideas. They are able to form new groups (subreddits), start new conversations (posts), and contribute to existing ones (comments). Reddit would not have any worth without the users to keep giving ideas. Organizing user information can be used to observe different trends like the relationship between different interests in subreddits.'
+							'The users represent the people on the site. They can explore the different subreddits, interact with others, and communicate their ideas. They can form new groups (subreddits), start new conversations (posts), and contribute to existing ones (comments). Reddit would not have any worth without the users to keep giving ideas. Organizing user information can be used to observe different trends like the relationship between different interests in subreddits.'
 						),
 						_react2.default.createElement(
 							'h5',
@@ -35327,7 +35327,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							'p',
 							null,
-							'The User and Subreddit have a many to many relationship where for each user, there are many subreddits that they are subscribed to, and for each subreddit, there are many users subscribed to it. With the current information given to us, we are currently focusing on the relationship between the moderators and the subreddit, since getting the information like the subreddits that a user is subscribed to and the users subscribed to a particular subreddit are both things that we cannot access. The User and Post have a 1 to many relationship as well since each user has many (if any) posts. Similarly, the User and Comment have a 1 to many relationship.'
+							'The User and Subreddit have a many to many relationship where for each user, there are many subreddits that they are subscribed to, and for each subreddit, there are many users subscribed to it. With the current information given to us, we are currently focusing on the relationship between the moderators and the subreddit, since getting the information like the subreddits that a user is subscribed to and the users subscribed to a subreddit are both things that we cannot access. The User and Post have a 1 to many relationship as well since each user has many (if any) posts. Similarly, the User and Comment have a 1 to many relationship.'
 						),
 						_react2.default.createElement(
 							'h5',
@@ -35411,7 +35411,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							'p',
 							null,
-							'Each post has several different attributes and defining characteristics. First, the author of the post is a foreign key going to the ID of the poster. The post itself has a unique ID similar to how subreddits and users have unique IDs. In addition, posts have a field for the created time. Several defining characteristcs are the gilded, self, and nsfw booleans. These attributes are true/false booleans that check if the post is gilded, nsfw, or is a text post (self). If it is a post with self = true, then it will have information in the selftext attribute that contains the string with the text in the post. If not, it will be an empty string. The title of a post is the title that you see as a headline, and the score represents the karma of the post. Finally, there is a field for the URL which links you to where you go when you click on the title: whether it be the comments section if it\'s a self post, or the imgur, gfycat, etc. if it is not a self post.'
+							'Each post has several different attributes and defining characteristics. First, the author of the post is a foreign key going to the ID of the poster. The post itself has a unique ID similar to how subreddits and users have unique IDs. In addition, posts have a field for the created time. Several defining characteristics are the gilded, self, and nsfw booleans. These attributes are true/false booleans that check if the post is gilded, nsfw, or is a text post (self). If it is a post with self = true, then it will have information in the selftext attribute that contains the string with the text in the post. If not, it will be an empty string. The title of a post is the title that you see as a headline, and the score represents the karma of the post. Finally, there is a field for the URL which links you to where you go when you click on the title: whether it be the comments section if it\'s a self post, or the imgur, gfycat, etc. if it is not a self post.'
 						),
 						_react2.default.createElement(
 							'p',
@@ -35430,12 +35430,12 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							'p',
 							null,
-							'The comments are pretty straightforward. For most, you will have an author and a body as the commentor and the comment, respectively. In this case, the author is a foreign key related back to the user\'s unique ID. Second, there is an ID for both the comment, the link, and the subreddit. The ID for the comment is the unique ID similar to those seen in the previous models. The link ID is the foreign key relating back to the ID of the post. Similarly, the subreddit ID is the foreign key relating back to the ID of the subreddit. The one different attribute is the edited attribute. This allows you to see if a comment has been edited or not. The rest of the attributes are similar to other attributes: the creation time, whether or not it is gilded, and the score or karma of the comment.'
+							'The comments are pretty straightforward. For most, you will have an author and a body as the commenter and the comment, respectively. In this case, the author is a foreign key related back to the user\'s unique ID. Second, there is an ID for both the comment, the link, and the subreddit. The ID for the comment is the unique ID similar to those seen in the previous models. The link ID is the foreign key relating back to the ID of the post. Similarly, the subreddit ID is the foreign key relating back to the ID of the subreddit. The one different attribute is the edited attribute. This allows you to see if a comment has been edited or not. The rest of the attributes are similar to other attributes: the creation time, whether or not it is gilded, and the score or karma of the comment.'
 						),
 						_react2.default.createElement(
 							'p',
 							null,
-							'Similarly to posts, comments can also be deleted or have a deleted commentor, so the sections will be substituted with [deleted].'
+							'Similarly to posts, comments can also be deleted or have a deleted commenter, so the sections will be substituted with [deleted].'
 						)
 					)
 				)
@@ -35496,13 +35496,13 @@ var About = _react2.default.createClass({
 								null,
 								'npm install'
 							),
-							' to install dependecies. Run ',
+							' to install dependencies. Run ',
 							_react2.default.createElement(
 								'code',
 								null,
 								'npm build run'
 							),
-							' to compile the JSX files and run the application on the docker webserver. The makefile contains ways to build/compile the application via: ',
+							' to compile the JSX files and run the application on the Docker webserver. The makefile contains ways to build/compile the application via: ',
 							_react2.default.createElement(
 								'code',
 								null,
@@ -35521,7 +35521,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							'p',
 							null,
-							'Starting from the root directory, www/ folder contains all of the front-end code. Within this folder there is the index.html file which is the main html file that is served by the webserver. The components/ folder contains all of the JSX files that will compose into the application. Each .jsx file is a single component. The App.jsx file is the react component main entry point into the application. It is the file that will render all other components and is the root of the web application front-end logic; linking the .jsx to the index.html page. All other components are as stated. For example. RFGrid.jsx holds the grid component and NavBarAPI.jsx holds the navbar component for our application'
+							'Starting from the root directory, www/ folder contains all the front-end code. Within this folder there is the index.html file which is the main html file that is served by the webserver. The components/ folder contains all of the JSX files that will compose into the application. Each .jsx file is a single component. The App.jsx file is the react component main entry point into the application. It is the file that will render all other components and is the root of the web application front-end logic; linking the .jsx to the index.html page. All other components are as stated. For example. RFGrid.jsx holds the grid component and NavBarAPI.jsx holds the navbar component for our application'
 						),
 						_react2.default.createElement(
 							'h5',
@@ -35586,7 +35586,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							'p',
 							null,
-							'Starting from the root of the application. The reddiful/ folder contains the api.py files that compose the back-end api of the application. The api.py file is the main entry point for the flask webserver. This file aso contains all of the routes that will be used for the API backend call to retrieve data to be displayed in the front-end. In the app/ folder is the test.py and model.py files. Model unit tests which test the validitiy for the db data is in the test.py file. SQLAlchemy is used for mapping the database rows to a python object, this is defined in the model.py file.'
+							'Starting from the root of the application. The reddiful/ folder contains the api.py files that compose the back-end API of the application. The api.py file is the main entry point for the flask webserver. This file also contains all of the routes that will be used for the API backend call to retrieve data to be displayed in the front-end. In the app/ folder is the test.py and model.py files. Model unit tests which test the validity for the db data is in the test.py file. SQLAlchemy is used for mapping the database rows to a python object, this is defined in the model.py file.'
 						),
 						_react2.default.createElement(
 							'h5',
@@ -35600,7 +35600,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							'p',
 							null,
-							'For setting up python and flask please see below for the Docker setup, as the docker container freezes the dependencies for these. Python is used for the back-end logic. Flask is the webserver that is used to serve up the application. In order to run flask manually the following commands must be given from the root directory ',
+							'For setting up python and flask please see below for the Docker setup, as the Docker container freezes the dependencies for these. Python is used for the back-end logic. Flask is the webserver that is used to serve up the application. In order to run flask manually the following commands must be given from the root directory ',
 							_react2.default.createElement(
 								'code',
 								null,
@@ -35618,7 +35618,7 @@ var About = _react2.default.createClass({
 								null,
 								' docker-compose up '
 							),
-							' will run the application via the docker file. For the python back-end api specifications please see the Design section above or the apiary documentation at http://docs.reddiful.apiary.io/ . In addition the apiary documentation itself can be loaded into apiary using the apiary.apib file that is found in the repo.'
+							' will run the application via the Docker file. For the python back-end API specifications please see the Design section above or the apiary documentation at http://docs.reddiful.apiary.io/ . In addition the apiary documentation itself can be loaded into apiary using the apiary.apib file that is found in the repo.'
 						),
 						_react2.default.createElement(
 							'h5',
@@ -35632,7 +35632,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							'p',
 							null,
-							' Docker container is used to install the preliminary dependecies for the back-end. Please see above for installing the front-end dependecies via npm. The docker container is used to ensure that all back-end dependencies are the same for every environment. The docker configuration for the installation of said dependencies is done in the Dockerfile file. This specifies the OS and other installation software. The docker-compose.yml file is the file that defines and initiates the webserver using flask.'
+							' Docker container is used to install the preliminary dependencies for the back-end. Please see above for installing the front-end dependencies via npm. The docker container is used to ensure that all back-end dependencies are the same for every environment. The Docker configuration for the installation of said dependencies is done in the Dockerfile file. This specifies the OS and other installation software. The docker-compose.yml file is the file that defines and initiates the webserver using flask.'
 						)
 					)
 				)
@@ -35668,7 +35668,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							'p',
 							null,
-							'To set up an ec2 instance you navigate to the ec2 dashboard from the aws console and click launch instace.  You will first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon\'s 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It is also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.'
+							'To set up an ec2 instance you navigate to the ec2 dashboard from the AWS console and click launch instance.  You will first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon\'s 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It is also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.'
 						)
 					),
 					_react2.default.createElement(
@@ -35682,7 +35682,7 @@ var About = _react2.default.createClass({
 						_react2.default.createElement(
 							'p',
 							null,
-							'An elastic IPv4 IP was allocated and assigned to the instance and added to the dns record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instace, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and runing docker with the settings we have in the repo.'
+							'An elastic IPv4 IP was allocated and assigned to the instance and added to the DNS record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instance, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and running Docker with the settings we have in the repo.'
 						)
 					)
 				)
