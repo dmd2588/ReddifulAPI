@@ -1,6 +1,6 @@
 import React from 'react'
 import {PageHeader, Panel, Accordion, Well, Jumbotron,ListGroupItem, ListGroup} from 'react-bootstrap';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Table} from 'react-bootstrap';
 import FaAngleDown from 'react-icons/lib/fa/angle-down';
 var About = React.createClass({
 		getInitialState() {
@@ -118,7 +118,7 @@ var About = React.createClass({
 					<h5><b>Subreddit</b></h5>
 					 <p>Subreddits are groups of any number of users that have come together and found a common interest. By organizing like-minding people into a group, it allows for meaningful (or not) discussion on a topic that everyone present is interested in. Compiling this information introduces the opportunity to observe group trends anywhere from what kind of language is used to the activity per user.</p>
 					<h5><b>Post</b></h5>
-					 <p>Posts ask questions, discuss topics, and introduce ideas. There is so much information out there that bringing it into a concentrated form of a post can clarify things that would otherwise have gone unnoticed to most of the population. Looking at the posts can bring light to the kind of information that users in a subreddit may want to express; for example, are there more questions being asked or is everyone trying to bring their own idea out into the open? What kind of information is important to the users of Reddit?</p>
+					 <p>Posts ask questions, discuss topics, and introduce ideas. There is so much information out there that bringing it into a concentrated form of a post can clarify things that would otherwise have gone unnoticed to most of the population. Looking at posts can bring light to the way users communicate information within a subreddit; for example, are there more questions being asked or is everyone trying to bring their own idea out into the open? What kind of information is important to the users of Reddit?</p>
 					<h5><b>Comment</b></h5>
 					 <p>Comments are generally short blurbs that hopefully contribute to the conversation, whether by questioning an idea or making a witty remark. Combined with posts, they can be used to answer questions, challenge ideas, or entertain other users. When looking at the types of comments posted, there are trends that can be observed. For example, there are several users that are dedicated to doing specific things, like AWildSketchAppeared - he mostly replies with sketches reflecting a previous comment or post. Other comments maybe have similarities in the type of response; the gaming subreddit usually contains comments that are reactionary to the post and don't generally provide some insight into the deeper meaning of life.</p>
 				</Panel>
@@ -152,9 +152,9 @@ var About = React.createClass({
 			    <Panel header = {<h4>Front-end <FaAngleDown/></h4>} eventKey = "1">
 				 <p>These tools help the site look better and feel better to use.</p>
 					<h5><b>Libraries and Tools</b></h5>
-					 <p>React and Bootstrap are the primary UI elements. Bootstrap is the react-bootstrap library that has compatibility with via react components. This allowed us to format our information in a more organized way; for example, we used Boostrap to format this page. Other front-end libraries in use is react-toolbox for the grid cards and for the grid layout the react-bootstrap layout components. The front end is compiled from ES6 JSX files using webpack via Babel translator from jsx to a bundle.js file that contains the entirety of the page content and frontend libraries for deployment. Flask is the webserver that serves up the all of the frontend files. PostCSS is a dependency used by react-toolbox for its themes. The UI is supplemented with icons from react-icons which allows us to use material design icons without the hassle of installing and configuring them. The Moments css library is used to supplement the fonts on the details page and grid of cards.</p>
+					 <p>React and Bootstrap are the primary UI elements. Bootstrap is the react-bootstrap library that has compatibility with via react components. This allowed us to format our information in a more organized way; for example, we used Bootstrap to format this page. Other front-end libraries in use is react-toolbox for the grid cards and for the grid layout the react-bootstrap layout components. The front end is compiled from ES6 JSX files using webpack via Babel translator from jsx to a bundle.js file that contains the entirety of the page content and frontend libraries for deployment. Flask is the webserver that serves up the all of the frontend files. PostCSS is a dependency used by react-toolbox for its themes. The UI is supplemented with icons from react-icons which allows us to use material design icons without the hassle of installing and configuring them. The Moments CSS library is used to supplement the fonts on the details page and grid of cards.</p>
 					<h5><b>Front-end Tool Configurations</b></h5>
-                    <p>Webpack is configured via the webpack.config.js file which specifies where the entrypoint of the application files is and where the compiled final distribution javascript file should be located. The current webpack file is configured to compile jsx via Babel to ES2015, and css via Postcss. The package.json file contains the dependency information for both the development and production front-end libraries as well as ways to build and run the application via npm. Run <code>npm install</code> to install dependecies. Run <code>npm build run</code> to compile the JSX files and run the application on the docker webserver. The makefile contains ways to build/compile the application via: <code>make build</code></p>
+                    <p>Webpack is configured via the webpack.config.js file which specifies where the entrypoint of the application files is and where the compiled final distribution javascript file should be located. The current webpack file is configured to compile jsx via Babel to ES2015, and CSS via Postcss. The package.json file contains the dependency information for both the development and production front-end libraries as well as ways to build and run the application via npm. Run <code>npm install</code> to install dependecies. Run <code>npm build run</code> to compile the JSX files and run the application on the docker webserver. The makefile contains ways to build/compile the application via: <code>make build</code></p>
 					<h5><b>Front-end Structure</b></h5>
 			         <p>Starting from the root directory, www/ folder contains all of the front-end code. Within this folder there is the index.html file which is the main html file that is served by the webserver. The components/ folder contains all of the JSX files that will compose into the application. Each .jsx file is a single component. The App.jsx file is the react component main entry point into the application. It is the file that will render all other components and is the root of the web application front-end logic; linking the .jsx to the index.html page. All other components are as stated. For example. RFGrid.jsx holds the grid component and NavBarAPI.jsx holds the navbar component for our application</p>
 					<h5><b>Running Frontend</b></h5>
@@ -191,7 +191,80 @@ var About = React.createClass({
 					<img src="/dist/images/UML.jpg" height="1573" width="306"></img>
 				</Panel>
 				<Panel header = {<h4>Table of Components <FaAngleDown/></h4>} eventKey = "2">
-				
+				        <Table responsive>
+                            <thead>
+                              <tr>
+                                <th>Component File</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>App.jsx</td>
+                                <td>Application entrypoint, contains the page Routing logic</td>
+                              </tr>
+                              <tr>
+                                <td>About.jsx</td>
+                                <td>Defines the About page with the Technical Report</td>
+                              </tr>
+							  <tr>
+                                <td>CommentDetails.jsx</td>
+                                <td>Defines the links between comments and other models</td>
+                              </tr>
+                              <tr>
+                                <td>Comments.jsx</td>
+                                <td>Defines the Reddit Comments page</td>
+                              </tr>
+							  <tr>
+                                <td>Details.jsx</td>
+                                <td>Allows linking to other models</td>
+                              </tr>
+							  <tr>
+                                <td>Home.jsx</td>
+                                <td>Defines the Home page</td>
+                              </tr>
+							  <tr>
+                                <td>NavBarAPI.jsx</td>
+                                <td>Defines the Navigation Bar and the links to other pages</td>
+                              </tr>
+							  <tr>
+                                <td>PostDetails.jsx</td>
+                                <td>Defines the links between posts and other models</td>
+                              </tr>
+							  <tr>
+                                <td>Posts.jsx</td>
+                                <td>Defines the Reddit Posts page</td>
+                              </tr>
+							  <tr>
+                                <td>RfCard.jsx</td>
+                                <td>TODO</td>
+                              </tr>
+							  <tr>
+                                <td>RfGrid.jsx</td>
+                                <td>TODO</td>
+                              </tr>
+							  <tr>
+                                <td>SortFilter.jsx</td>
+                                <td>Defines the filtering and sorting box for each model</td>
+                              </tr>
+							  <tr>
+                                <td>SubredditDetails.jsx</td>
+                                <td>Defines the links between subreddits and other models</td>
+                              </tr>
+							  <tr>
+                                <td>Subreddits.jsx</td>
+                                <td>Defines the Reddit Subreddit page</td>
+                              </tr>
+							  <tr>
+                                <td>UserDetail.jsx</td>
+                                <td>Defines the links between users and other models</td>
+                              </tr>
+							  <tr>
+                                <td>Users.jsx</td>
+                                <td>Defines the Reddit Users page</td>
+                              </tr>
+                            </tbody>
+                        </Table>
 				</Panel>
 			 </Accordion>
 			</Panel>

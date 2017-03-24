@@ -12,8 +12,14 @@ export default function PostDetails (props) {
     details: {
       'Title': post.title,
       'Score': post.score,
-      'Subreddit': subreddit.display_name || 'NOT_FOUND - FIXME',
-      'Author': author.name,
+      'Subreddit': {
+        name: subreddit.display_name || 'NOT_FOUND - FIXME',
+        link: '/subreddits/detail/' + subreddit.id
+      },
+      'Author': {
+        name: author.name,
+        link: '/users/detail/' + author.id
+      },
       'Created': new Date(post.created * 1000).toDateString()
     }
   })
