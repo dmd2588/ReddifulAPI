@@ -59,11 +59,11 @@ var About = React.createClass({
 						<p>No. Unit Tests: 0</p>
 					</Col>
 				    <Col lg={4}>
-					    <img src="https://placeimg.com/310/310/people" height="310" width="310"></img>
+					    <img src="/dist/images/austinm.jpg" height="310" width="310"></img>
 					    <h3>Austin Middleton</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet purus id elementum egestas. Donec congue justo sit amet neque pulvinar tincidunt.</p>
-						<p>Responsibilities: stuff</p>
-						<p>No. Commits: 31</p>
+						<p>I am an avid rock climber with an interest in peer-to-peer tech</p>
+						<p>Responsibilities: Flask, Docker, and some React components</p>
+						<p>No. Commits: 36</p>
 						<p>No. Issues: 6</p>
 						<p>No. Unit Tests: 0</p>
 					</Col>
