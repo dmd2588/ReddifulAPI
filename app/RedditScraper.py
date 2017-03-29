@@ -100,7 +100,7 @@ class RedditScraper:
                                     "body": comment.body,
                                     "body_html": comment.body_html,
                                     "author_id": author_id,
-                                    "link_id": comment.link_id,
+                                    "link_id": comment.link_id[3:],
                                     "score": comment.score,
                                     "subreddit_id": comment.subreddit.id,
                                     "gilded": comment.gilded,
@@ -126,7 +126,6 @@ class RedditScraper:
         if not self.containsSubreddit(subreddit.id):
             self.addSubreddit(subreddit)
             self.scrapeMods(subreddit, time_period)
-
 
     def scrapeUserComments(self, user, time_period, num_comments): 
         for comment in user.comments.top(time_period, limit = num_comments):
@@ -158,20 +157,27 @@ class RedditScraper:
 
             # Check to see if submission author is already added
             if submission.author is not None and not self.containsUser(submission.author.id):
-                self.scrapeUser(submission.author, time_period, num_submissions)
+                self.scrapeUser(submission.author, time_period, 1)
 
             # Add the submission's subreddit if not already in
             subreddit = submission.subreddit;
             self.scrapeSubreddit(subreddit, time_period)
 
-            # TODO: get top comments
+            # Loop through top level comments
+            submission.comment_sort = 'top'
+            submission.comment_limit = 2
+            submission.comments.replace_more(limit=0)
+            for comment in submission.comments:
+                if not self.containsComment(comment.id):
+                    self.addComment(comment)
+
         pprint.pprint(self.mods_table)
         pprint.pprint(self.users_table)
         pprint.pprint(self.subreddits_table)
-        # pprint.pprint(self.comments_table)
-        # pprint.pprint(self.submissions_table)
-        # pprint.pprint(self.trophies_table)
-        # pprint.pprint(self.trophies_association_table)
+        pprint.pprint(self.comments_table)
+        pprint.pprint(self.submissions_table)
+        pprint.pprint(self.trophies_table)
+        pprint.pprint(self.trophies_association_table)
 
 def main():
    scraper = RedditScraper(config.CLIENT, config.SECRET, config.PASS, config.USER_AGENT, config.NAME)
