@@ -74,6 +74,8 @@ class RedditScraper:
                                  "link_karma": user.link_karma,
                                  "created": user.created,
                                  "created_utc": user.created_utc,
+                                 "is_gold": user.is_gold,
+                                 "verified": user.verified,
                                  "_fetched": user._fetched})
         return
 
