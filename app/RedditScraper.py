@@ -60,15 +60,14 @@ class RedditScraper:
                                        "preview": submission.preview,
                                        "thumbnail": submission.thumbnail,
                                        "url": submission.url,
-                                       "author_id": author_id,
                                        "over_18": submission.over_18,
                                        "is_self": submission.is_self,
                                        "selftext": submission.selftext,
                                        "gilded": submission.gilded,
                                        "created": submission.created,
                                        "created_utc": submission.created_utc,
-                                       "subreddit_id": submission.subreddit_id,
-                                       "_fetched": submission._fetched})
+                                       "author_id": author_id,
+                                       "subreddit_id": submission.subreddit_id})
         return
 
     def addUser(self, user):
@@ -79,8 +78,7 @@ class RedditScraper:
                                  "created": user.created,
                                  "created_utc": user.created_utc,
                                  "is_gold": user.is_gold,
-                                 "verified": user.verified,
-                                 "_fetched": user._fetched})
+                                 "verified": user.verified})
         return
 
     def addSubreddit(self, subreddit):
@@ -92,8 +90,7 @@ class RedditScraper:
                                       "created": subreddit.created,
                                       "created_utc": subreddit.created_utc,
                                       "icon_img": subreddit.icon_img,
-                                      "banner_img": subreddit.banner_img,
-                                      "_fetched": subreddit._fetched})
+                                      "banner_img": subreddit.banner_img})
         return
 
     def addComment(self, comment):
@@ -105,13 +102,12 @@ class RedditScraper:
                                     "created_utc": comment.created_utc,
                                     "body": comment.body,
                                     "body_html": comment.body_html,
-                                    "author_id": author_id,
-                                    "link_id": comment.link_id[3:],
                                     "score": comment.score,
-                                    "subreddit_id": comment.subreddit.id,
                                     "gilded": comment.gilded,
                                     "edited": comment.edited,
-                                    "_fetched": comment._fetched})
+                                    "author_id": author_id,
+                                    "link_id": comment.link_id,
+                                    "subreddit_id": comment.subreddit.id})
         return
 
     def scrapeTrophies(self, user): 
@@ -171,7 +167,7 @@ class RedditScraper:
 
             # Loop through top level comments
             submission.comment_sort = 'top'
-            submission.comment_limit = 2
+            submission.comment_limit = 1
             submission.comments.replace_more(limit=0)
             for comment in submission.comments:
                 if not self.containsComment(comment.id):
@@ -179,13 +175,13 @@ class RedditScraper:
                     if comment.author is not None:
                         self.scrapeUser(comment.author, time_period, 1)
 
-        # pprint.pprint(self.mods_table)
-        # pprint.pprint(self.users_table)
-        # pprint.pprint(self.subreddits_table)
-        # pprint.pprint(self.comments_table)
-        # pprint.pprint(self.submissions_table)
-        # pprint.pprint(self.trophies_table)
-        # pprint.pprint(self.trophies_association_table)
+        pprint.pprint(self.mods_table)
+        pprint.pprint(self.users_table)
+        pprint.pprint(self.subreddits_table)
+        pprint.pprint(self.comments_table)
+        pprint.pprint(self.submissions_table)
+        pprint.pprint(self.trophies_table)
+        pprint.pprint(self.trophies_association_table)
 
 def main():
    scraper = RedditScraper(config.CLIENT, config.SECRET, config.PASS, config.USER_AGENT, config.NAME)
