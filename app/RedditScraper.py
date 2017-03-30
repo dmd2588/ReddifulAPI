@@ -55,6 +55,10 @@ class RedditScraper:
         self.submissions_table.append({"id": submission.id, 
                                        "title": submission.title,
                                        "score": submission.score,
+                                       "upvote_ratio": submission.upvote_ratio, 
+                                       "num_comments": submission.num_comments,
+                                       "preview": submission.preview,
+                                       "thumbnail": submission.thumbnail,
                                        "url": submission.url,
                                        "author_id": author_id,
                                        "over_18": submission.over_18,
@@ -172,18 +176,20 @@ class RedditScraper:
             for comment in submission.comments:
                 if not self.containsComment(comment.id):
                     self.addComment(comment)
+                    if comment.author is not None:
+                        self.scrapeUser(comment.author, time_period, 1)
 
-        pprint.pprint(self.mods_table)
-        pprint.pprint(self.users_table)
-        pprint.pprint(self.subreddits_table)
-        pprint.pprint(self.comments_table)
-        pprint.pprint(self.submissions_table)
-        pprint.pprint(self.trophies_table)
-        pprint.pprint(self.trophies_association_table)
+        # pprint.pprint(self.mods_table)
+        # pprint.pprint(self.users_table)
+        # pprint.pprint(self.subreddits_table)
+        # pprint.pprint(self.comments_table)
+        # pprint.pprint(self.submissions_table)
+        # pprint.pprint(self.trophies_table)
+        # pprint.pprint(self.trophies_association_table)
 
 def main():
    scraper = RedditScraper(config.CLIENT, config.SECRET, config.PASS, config.USER_AGENT, config.NAME)
-   scraper.scrape(3, 'week')
+   scraper.scrape(1, 'week')
 
 if __name__ == "__main__":
     main()
