@@ -1,5 +1,5 @@
 import React from 'react'
-import { PageHeader, ButtonGroup, Button, DropdownButton, MenuItem, Panel, Accordion, Jumbotron, ListGroupItem, ListGroup, Grid, Row, Col, Table } from 'react-bootstrap'
+import { PageHeader, ButtonGroup, ButtonToolbar, Button, Panel, Accordion, Jumbotron, ListGroupItem, ListGroup, Grid, Row, Col, Table } from 'react-bootstrap'
 import FaAngleDown from 'react-icons/lib/fa/angle-down'
 var About = React.createClass({
   getInitialState () {
@@ -97,33 +97,38 @@ var About = React.createClass({
         </Panel>
         <br />
         <PageHeader>Technical Report</PageHeader>
-        <Accordion>
-          <Panel header={<h2>Table of Contents <FaAngleDown /></h2>} eventKey='1'>
+        <Button onClick={() => this.setState({ open: !this.state.open })}>
+          Table of Contents <FaAngleDown />
+        </Button>
+        <Panel collapsible expanded={this.state.open}>
+          <ButtonToolbar>
+            <Button bsSize='sm'>Introduction</Button>
             <ButtonGroup vertical>
-              <Button>Introduction</Button>
-              <DropdownButton title='Design' id='bg-vertical-dropdown-1'>
-                <MenuItem eventKey='1'>Design Introduction</MenuItem>
-                <MenuItem eventKey='2'>Models</MenuItem>
-                <MenuItem eventKey='3'>Relationships</MenuItem>
-                <MenuItem eventKey='4'>Attributes and Methods</MenuItem>
-              </DropdownButton>
-              <DropdownButton title='Tools' id='bg-vertical-dropdown-2'>
-                <MenuItem eventKey='1'>Tools Introduction</MenuItem>
-                <MenuItem eventKey='2'>Front-end</MenuItem>
-                <MenuItem eventKey='3'>Back-end</MenuItem>
-              </DropdownButton>
-              <DropdownButton title='Hosting' id='bg-vertical-dropdown-3'>
-                <MenuItem eventKey='1'>Choice</MenuItem>
-                <MenuItem eventKey='2'>Set-up</MenuItem>
-                <MenuItem eventKey='3'>Accessibility</MenuItem>
-              </DropdownButton>
-              <DropdownButton title='Diagrams and Other' id='bg-vertical-dropdown-4'>
-                <MenuItem eventKey='1'>UML Diagram</MenuItem>
-                <MenuItem eventKey='2'>Table of Components</MenuItem>
-              </DropdownButton>
+              <Button bsSize='sm'>Design</Button>
+              <Button bsSize='sm'>Models</Button>
+              <Button bsSize='sm'>Relationships</Button>
+              <Button bsSize='sm'>Attributes and Models</Button>
             </ButtonGroup>
-          </Panel>
-        </Accordion>
+            <ButtonGroup vertical>
+              <Button bsSize='sm'>Tools</Button>
+              <Button bsSize='sm'>Front-end</Button>
+              <Button bsSize='sm'>Back-end</Button>
+              <Button bsSize='sm' disabled>-----</Button>
+            </ButtonGroup>
+            <ButtonGroup vertical>
+              <Button bsSize='sm'>Hosting</Button>
+              <Button bsSize='sm'>Choice</Button>
+              <Button bsSize='sm'>Set-up</Button>
+              <Button bsSize='sm'>Accessibility</Button>
+            </ButtonGroup>
+            <ButtonGroup vertical>
+              <Button bsSize='sm'>Diagrams and Other</Button>
+              <Button bsSize='sm'>UML Diagram</Button>
+              <Button bsSize='sm'>Table of Components</Button>
+              <Button bsSize='sm' disabled>-----</Button>
+            </ButtonGroup>
+          </ButtonToolbar>
+        </Panel>
         <h3>Group Name: <small>Team Name</small></h3>
         <h3>Members: <small>David Du, Johnny Knoebel, Thomas Lam, Jeremy Lim, Austin Middleton, Shea Rozmiarek</small></h3>
         <br />

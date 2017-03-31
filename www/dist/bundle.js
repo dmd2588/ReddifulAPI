@@ -34734,6 +34734,8 @@ var About = _react2.default.createClass({
   },
 
   render: function render() {
+    var _this = this;
+
     return _react2.default.createElement(
       'div',
       null,
@@ -35080,99 +35082,118 @@ var About = _react2.default.createClass({
         'Technical Report'
       ),
       _react2.default.createElement(
-        _reactBootstrap.Accordion,
-        null,
+        _reactBootstrap.Button,
+        { onClick: function onClick() {
+            return _this.setState({ open: !_this.state.open });
+          } },
+        'Table of Contents ',
+        _react2.default.createElement(_angleDown2.default, null)
+      ),
+      _react2.default.createElement(
+        _reactBootstrap.Panel,
+        { collapsible: true, expanded: this.state.open },
         _react2.default.createElement(
-          _reactBootstrap.Panel,
-          { header: _react2.default.createElement(
-              'h2',
-              null,
-              'Table of Contents ',
-              _react2.default.createElement(_angleDown2.default, null)
-            ), eventKey: '1' },
+          _reactBootstrap.ButtonToolbar,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Button,
+            { bsSize: 'sm' },
+            'Introduction'
+          ),
           _react2.default.createElement(
             _reactBootstrap.ButtonGroup,
             { vertical: true },
             _react2.default.createElement(
               _reactBootstrap.Button,
-              null,
-              'Introduction'
+              { bsSize: 'sm' },
+              'Design'
             ),
             _react2.default.createElement(
-              _reactBootstrap.DropdownButton,
-              { title: 'Design', id: 'bg-vertical-dropdown-1' },
-              _react2.default.createElement(
-                _reactBootstrap.MenuItem,
-                { eventKey: '1' },
-                'Design Introduction'
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.MenuItem,
-                { eventKey: '2' },
-                'Models'
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.MenuItem,
-                { eventKey: '3' },
-                'Relationships'
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.MenuItem,
-                { eventKey: '4' },
-                'Attributes and Methods'
-              )
+              _reactBootstrap.Button,
+              { bsSize: 'sm' },
+              'Models'
             ),
             _react2.default.createElement(
-              _reactBootstrap.DropdownButton,
-              { title: 'Tools', id: 'bg-vertical-dropdown-2' },
-              _react2.default.createElement(
-                _reactBootstrap.MenuItem,
-                { eventKey: '1' },
-                'Tools Introduction'
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.MenuItem,
-                { eventKey: '2' },
-                'Front-end'
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.MenuItem,
-                { eventKey: '3' },
-                'Back-end'
-              )
+              _reactBootstrap.Button,
+              { bsSize: 'sm' },
+              'Relationships'
             ),
             _react2.default.createElement(
-              _reactBootstrap.DropdownButton,
-              { title: 'Hosting', id: 'bg-vertical-dropdown-3' },
-              _react2.default.createElement(
-                _reactBootstrap.MenuItem,
-                { eventKey: '1' },
-                'Choice'
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.MenuItem,
-                { eventKey: '2' },
-                'Set-up'
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.MenuItem,
-                { eventKey: '3' },
-                'Accessibility'
-              )
+              _reactBootstrap.Button,
+              { bsSize: 'sm' },
+              'Attributes and Models'
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.ButtonGroup,
+            { vertical: true },
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { bsSize: 'sm' },
+              'Tools'
             ),
             _react2.default.createElement(
-              _reactBootstrap.DropdownButton,
-              { title: 'Diagrams and Other', id: 'bg-vertical-dropdown-4' },
-              _react2.default.createElement(
-                _reactBootstrap.MenuItem,
-                { eventKey: '1' },
-                'UML Diagram'
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.MenuItem,
-                { eventKey: '2' },
-                'Table of Components'
-              )
+              _reactBootstrap.Button,
+              { bsSize: 'sm' },
+              'Front-end'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { bsSize: 'sm' },
+              'Back-end'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { bsSize: 'sm', disabled: true },
+              '-----'
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.ButtonGroup,
+            { vertical: true },
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { bsSize: 'sm' },
+              'Hosting'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { bsSize: 'sm' },
+              'Choice'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { bsSize: 'sm' },
+              'Set-up'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { bsSize: 'sm' },
+              'Accessibility'
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.ButtonGroup,
+            { vertical: true },
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { bsSize: 'sm' },
+              'Diagrams and Other'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { bsSize: 'sm' },
+              'UML Diagram'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { bsSize: 'sm' },
+              'Table of Components'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { bsSize: 'sm', disabled: true },
+              '-----'
             )
           )
         )
