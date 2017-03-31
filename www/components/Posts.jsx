@@ -4,7 +4,6 @@ import { getPosts, getUsers } from '../api.js'
 import SortFilter from './SortFilter.jsx'
 import ReactPaginate from 'react-paginate';
 import { Grid, Row, Col } from 'react-bootstrap'
-
                           
 export default class Posts extends React.Component {
    constructor(props) {
@@ -37,6 +36,11 @@ export default class Posts extends React.Component {
         console.log("API dismount Posts");
     }
     
+    
+  handlePageClick(data){
+      console.log("Click");
+  };
+    
     render(){
         return(
              <div>
@@ -55,8 +59,7 @@ export default class Posts extends React.Component {
                 <Col xs={6} md={4}>
                 </Col>
                      <Col xs={6} md={4}>
-           
-                     <ReactPaginate previousLabel={"previous"}
+            <ReactPaginate previousLabel={"previous"}
                        nextLabel={"next"}
                        breakLabel={<a href="">...</a>}
                        breakClassName={"break-me"}
@@ -67,12 +70,13 @@ export default class Posts extends React.Component {
                        containerClassName={"pagination"}
                        subContainerClassName={"pages pagination"}
                        activeClassName={"active"} />
+                   
                             </Col>
                              <Col xs={6} md={4}>
                 </Col>
                 </Row>
                 
-               
+           
           </div>
        )
     }

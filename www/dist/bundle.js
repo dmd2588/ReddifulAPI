@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "3c76d40671af68353821"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1fc79ce40c1c03bf4ec5"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -8130,7 +8130,8 @@ function getComments() {
 // }
 
 function getPosts() {
-  return posts;
+  var copyPosts = posts.slice();
+  return posts.concat(copyPosts);
 }
 
 // export function getPostRelated (post_id) {
@@ -37382,6 +37383,11 @@ var Posts = function (_React$Component) {
         key: 'componentWillUnmount',
         value: function componentWillUnmount() {
             console.log("API dismount Posts");
+        }
+    }, {
+        key: 'handlePageClick',
+        value: function handlePageClick(data) {
+            console.log("Click");
         }
     }, {
         key: 'render',
