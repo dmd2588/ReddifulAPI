@@ -207,7 +207,7 @@ export function getComments () {
 // }
 
 export function getPosts () {
-  var copyPosts = posts.slice();
+  var copyPosts = posts.slice()
   return posts.concat(copyPosts)
 }
 

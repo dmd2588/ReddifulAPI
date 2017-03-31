@@ -4,41 +4,24 @@ import RfGrid from './RfGrid.jsx'
 import { getUsers } from '../api.js'
 
 var myp = {
-    title: 'Users',
-    select_values: Object.keys(getUsers()[0]),
-    cards: getUsers().map(u => {
-      return {
-        title: u.name,
-        subtitle: 'Joined: ' + moment(new Date(u.created * 1000)).format('LL'),
-        link: '/users/detail/' + u.id
-      }
-    })
-  };
+  title: 'Users',
+  select_values: Object.keys(getUsers()[0]),
+  cards: getUsers().map(u => {
+    return {
+      title: u.name,
+      subtitle: 'Joined: ' + moment(new Date(u.created * 1000)).format('LL'),
+      link: '/users/detail/' + u.id
+    }
+  })
+}
 
 export default class Users extends React.Component {
-   constructor(props) {
-    super(props);
-    this.state = {data: myp};
+  constructor (props) {
+    super(props)
+    this.state = {data: myp}
   }
-    
-      loadDataFromServer(options){
-        //Make request here using options
-        var myp = {
-            title: 'Posts',
-            select_values: Object.keys(getPosts()[0]),
-            cards: getPosts().map(p => {
-                return {
-                    title: p.title,
-                    subtitle: 'Author: ' + (getUsers().find(u => u.id === p.author) || {}).name,
-                    link: '/posts/detail/' + p.id
-                }
-            })
-        };
-        
-        return myp 
-    }
-    
-    render(){
-        return<RfGrid data={this.state.data} />
-    }
+
+  render () {
+    return <RfGrid data={this.state.data} />
+  }
 }

@@ -1,5 +1,5 @@
 import React from 'react' //eslint-disable-line
-import { FormGroup, ControlLabel, FormControl, Panel, Button } from 'react-bootstrap'
+import {FormGroup, ControlLabel, FormControl, Panel} from 'react-bootstrap'
 
 export default function SortFilter (props) {
   var makeOption = function (x) {
@@ -23,7 +23,6 @@ export default function SortFilter (props) {
           {props.select_values.map(makeOption)}
         </FormControl>
       </FormGroup>
-      
     </Panel>
   )
 }
