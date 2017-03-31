@@ -35274,107 +35274,113 @@ var About = _react2.default.createClass({
         _reactBootstrap.Panel,
         { collapsible: true, expanded: this.state.open },
         _react2.default.createElement(
-          _reactBootstrap.ButtonToolbar,
+          _reactBootstrap.ListGroup,
           null,
           _react2.default.createElement(
-            _reactBootstrap.Button,
-            { bsSize: 'sm' },
+            _reactBootstrap.ListGroupItem,
+            null,
             'Introduction'
           ),
           _react2.default.createElement(
-            _reactBootstrap.ButtonGroup,
-            { vertical: true },
+            _reactBootstrap.ListGroupItem,
+            null,
             _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm' },
+              'p',
+              null,
               'Design'
             ),
             _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm' },
-              'Models'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm' },
-              'Relationships'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm' },
-              'Attributes and Models'
+              'ul',
+              null,
+              _react2.default.createElement(
+                'li',
+                null,
+                'Models'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Relationships'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Attributes and Methods'
+              )
             )
           ),
           _react2.default.createElement(
-            _reactBootstrap.ButtonGroup,
-            { vertical: true },
+            _reactBootstrap.ListGroupItem,
+            null,
             _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm' },
+              'p',
+              null,
               'Tools'
             ),
             _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm' },
-              'Front-end'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm' },
-              'Back-end'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm', disabled: true },
-              '-----'
+              'ul',
+              null,
+              _react2.default.createElement(
+                'li',
+                null,
+                'Front-end'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Back-end'
+              )
             )
           ),
           _react2.default.createElement(
-            _reactBootstrap.ButtonGroup,
-            { vertical: true },
+            _reactBootstrap.ListGroupItem,
+            null,
             _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm' },
+              'p',
+              null,
               'Hosting'
             ),
             _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm' },
-              'Choice'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm' },
-              'Set-up'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm' },
-              'Accessibility'
+              'ul',
+              null,
+              _react2.default.createElement(
+                'li',
+                null,
+                'Choice'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Set-up'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Accessibility'
+              )
             )
           ),
           _react2.default.createElement(
-            _reactBootstrap.ButtonGroup,
-            { vertical: true },
+            _reactBootstrap.ListGroupItem,
+            null,
             _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm' },
+              'p',
+              null,
               'Diagrams and Other'
             ),
             _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm' },
-              'UML Diagram'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm' },
-              'Table of Components'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsSize: 'sm', disabled: true },
-              '-----'
+              'ul',
+              null,
+              _react2.default.createElement(
+                'li',
+                null,
+                'UML Diagram'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Table of Components'
+              )
             )
           )
         )

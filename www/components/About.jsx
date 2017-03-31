@@ -1,5 +1,5 @@
 import React from 'react'
-import { PageHeader, ButtonGroup, ButtonToolbar, Button, Panel, Accordion, Jumbotron, ListGroupItem, ListGroup, Grid, Row, Col, Table } from 'react-bootstrap'
+import { PageHeader, Button, Panel, Accordion, Jumbotron, ListGroupItem, ListGroup, Grid, Row, Col, Table } from 'react-bootstrap'
 import FaAngleDown from 'react-icons/lib/fa/angle-down'
 var About = React.createClass({
   getInitialState () {
@@ -101,33 +101,39 @@ var About = React.createClass({
           Table of Contents <FaAngleDown />
         </Button>
         <Panel collapsible expanded={this.state.open}>
-          <ButtonToolbar>
-            <Button bsSize='sm'>Introduction</Button>
-            <ButtonGroup vertical>
-              <Button bsSize='sm'>Design</Button>
-              <Button bsSize='sm'>Models</Button>
-              <Button bsSize='sm'>Relationships</Button>
-              <Button bsSize='sm'>Attributes and Models</Button>
-            </ButtonGroup>
-            <ButtonGroup vertical>
-              <Button bsSize='sm'>Tools</Button>
-              <Button bsSize='sm'>Front-end</Button>
-              <Button bsSize='sm'>Back-end</Button>
-              <Button bsSize='sm' disabled>-----</Button>
-            </ButtonGroup>
-            <ButtonGroup vertical>
-              <Button bsSize='sm'>Hosting</Button>
-              <Button bsSize='sm'>Choice</Button>
-              <Button bsSize='sm'>Set-up</Button>
-              <Button bsSize='sm'>Accessibility</Button>
-            </ButtonGroup>
-            <ButtonGroup vertical>
-              <Button bsSize='sm'>Diagrams and Other</Button>
-              <Button bsSize='sm'>UML Diagram</Button>
-              <Button bsSize='sm'>Table of Components</Button>
-              <Button bsSize='sm' disabled>-----</Button>
-            </ButtonGroup>
-          </ButtonToolbar>
+          <ListGroup>
+            <ListGroupItem>Introduction</ListGroupItem>
+            <ListGroupItem>
+              <p>Design</p>
+              <ul>
+                <li>Models</li>
+                <li>Relationships</li>
+                <li>Attributes and Methods</li>
+              </ul>
+            </ListGroupItem>
+            <ListGroupItem>
+              <p>Tools</p>
+              <ul>
+                <li>Front-end</li>
+                <li>Back-end</li>
+              </ul>
+            </ListGroupItem>
+            <ListGroupItem>
+              <p>Hosting</p>
+              <ul>
+                <li>Choice</li>
+                <li>Set-up</li>
+                <li>Accessibility</li>
+              </ul>
+            </ListGroupItem>
+            <ListGroupItem>
+              <p>Diagrams and Other</p>
+              <ul>
+                <li>UML Diagram</li>
+                <li>Table of Components</li>
+              </ul>
+            </ListGroupItem>
+          </ListGroup>
         </Panel>
         <h3>Group Name: <small>Team Name</small></h3>
         <h3>Members: <small>David Du, Johnny Knoebel, Thomas Lam, Jeremy Lim, Austin Middleton, Shea Rozmiarek</small></h3>
