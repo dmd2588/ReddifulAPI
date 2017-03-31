@@ -20,6 +20,24 @@ export default class Users extends React.Component {
     super(props);
     this.state = {data: myp};
   }
+    
+      loadDataFromServer(options){
+        //Make request here using options
+        var myp = {
+            title: 'Posts',
+            select_values: Object.keys(getPosts()[0]),
+            cards: getPosts().map(p => {
+                return {
+                    title: p.title,
+                    subtitle: 'Author: ' + (getUsers().find(u => u.id === p.author) || {}).name,
+                    link: '/posts/detail/' + p.id
+                }
+            })
+        };
+        
+        return myp 
+    }
+    
     render(){
         return<RfGrid data={this.state.data} />
     }

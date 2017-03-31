@@ -10,12 +10,6 @@ function RfGrid(props) {
     <div>
       <h2>{props.data.title}</h2>
       <Row>
-        <Col sm={12} md={3}>
-          <div>
-            <SortFilter select_values={props.data.select_values} />
-          </div>
-        </Col>
-        <Col sm={12} md={9}>
           <Grid>
             <Row className='show-grid'>
               {props.data.cards.map(c => (
@@ -29,7 +23,6 @@ function RfGrid(props) {
               ))}
             </Row>
           </Grid>
-        </Col>
       </Row>
       
         </div>

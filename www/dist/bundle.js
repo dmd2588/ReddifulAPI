@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "73fc0e5a0805ab3d22cb"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3c76d40671af68353821"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -10876,35 +10876,22 @@ function RfGrid(props) {
       _reactBootstrap.Row,
       null,
       _react2.default.createElement(
-        _reactBootstrap.Col,
-        { sm: 12, md: 3 },
+        _reactBootstrap.Grid,
+        null,
         _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(_SortFilter2.default, { select_values: props.data.select_values })
-        )
-      ),
-      _react2.default.createElement(
-        _reactBootstrap.Col,
-        { sm: 12, md: 9 },
-        _react2.default.createElement(
-          _reactBootstrap.Grid,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Row,
-            { className: 'show-grid' },
-            props.data.cards.map(function (c) {
-              return _react2.default.createElement(
-                _reactBootstrap.Col,
-                { sm: 6, md: 3, key: Math.random().toString(16).substr(2) },
-                _react2.default.createElement(_RfCard2.default, {
-                  title: c.title,
-                  subtitle: c.subtitle,
-                  link: c.link
-                })
-              );
-            })
-          )
+          _reactBootstrap.Row,
+          { className: 'show-grid' },
+          props.data.cards.map(function (c) {
+            return _react2.default.createElement(
+              _reactBootstrap.Col,
+              { sm: 6, md: 3, key: Math.random().toString(16).substr(2) },
+              _react2.default.createElement(_RfCard2.default, {
+                title: c.title,
+                subtitle: c.subtitle,
+                link: c.link
+              })
+            );
+          })
         )
       )
     )
@@ -36020,6 +36007,104 @@ var About = _react2.default.createClass({
         'Technical Report'
       ),
       _react2.default.createElement(
+        _reactBootstrap.Accordion,
+        null,
+        _react2.default.createElement(
+          _reactBootstrap.Panel,
+          { header: _react2.default.createElement(
+              'h2',
+              null,
+              'Table of Contents ',
+              _react2.default.createElement(_angleDown2.default, null)
+            ), eventKey: '1' },
+          _react2.default.createElement(
+            _reactBootstrap.ButtonGroup,
+            { vertical: true },
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              null,
+              'Introduction'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.DropdownButton,
+              { title: 'Design', id: 'bg-vertical-dropdown-1' },
+              _react2.default.createElement(
+                _reactBootstrap.MenuItem,
+                { eventKey: '1' },
+                'Design Introduction'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.MenuItem,
+                { eventKey: '2' },
+                'Models'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.MenuItem,
+                { eventKey: '3' },
+                'Relationships'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.MenuItem,
+                { eventKey: '4' },
+                'Attributes and Methods'
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.DropdownButton,
+              { title: 'Tools', id: 'bg-vertical-dropdown-2' },
+              _react2.default.createElement(
+                _reactBootstrap.MenuItem,
+                { eventKey: '1' },
+                'Tools Introduction'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.MenuItem,
+                { eventKey: '2' },
+                'Front-end'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.MenuItem,
+                { eventKey: '3' },
+                'Back-end'
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.DropdownButton,
+              { title: 'Hosting', id: 'bg-vertical-dropdown-3' },
+              _react2.default.createElement(
+                _reactBootstrap.MenuItem,
+                { eventKey: '1' },
+                'Choice'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.MenuItem,
+                { eventKey: '2' },
+                'Set-up'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.MenuItem,
+                { eventKey: '3' },
+                'Accessibility'
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.DropdownButton,
+              { title: 'Diagrams and Other', id: 'bg-vertical-dropdown-4' },
+              _react2.default.createElement(
+                _reactBootstrap.MenuItem,
+                { eventKey: '1' },
+                'UML Diagram'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.MenuItem,
+                { eventKey: '2' },
+                'Table of Components'
+              )
+            )
+          )
+        )
+      ),
+      _react2.default.createElement(
         'h3',
         null,
         'Group Name: ',
@@ -37200,7 +37285,7 @@ function PostDetails(props) {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -37215,6 +37300,16 @@ var _RfGrid2 = _interopRequireDefault(_RfGrid);
 
 var _api = __webpack_require__(34);
 
+var _SortFilter = __webpack_require__(350);
+
+var _SortFilter2 = _interopRequireDefault(_SortFilter);
+
+var _reactPaginate = __webpack_require__(599);
+
+var _reactPaginate2 = _interopRequireDefault(_reactPaginate);
+
+var _reactBootstrap = __webpack_require__(65);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37224,50 +37319,99 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // eslint-disable-line
 
 
-var myp = {
-  title: 'Posts',
-  select_values: Object.keys((0, _api.getPosts)()[0]),
-  cards: (0, _api.getPosts)().map(function (p) {
-    return {
-      title: p.title,
-      subtitle: 'Author: ' + ((0, _api.getUsers)().find(function (u) {
-        return u.id === p.author;
-      }) || {}).name,
-      link: '/posts/detail/' + p.id
-    };
-  })
-};
-
 var Posts = function (_React$Component) {
-  _inherits(Posts, _React$Component);
+    _inherits(Posts, _React$Component);
 
-  function Posts(props) {
-    _classCallCheck(this, Posts);
+    function Posts(props) {
+        _classCallCheck(this, Posts);
 
-    var _this = _possibleConstructorReturn(this, (Posts.__proto__ || Object.getPrototypeOf(Posts)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Posts.__proto__ || Object.getPrototypeOf(Posts)).call(this, props));
 
-    _this.state = { data: myp };
-    return _this;
-  }
-
-  _createClass(Posts, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      console.log("API call Posts");
+        _this.state = { data: { title: '', select_values: [], cards: [] } };
+        return _this;
     }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      console.log("API dismount Posts");
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(_RfGrid2.default, { data: this.state.data });
-    }
-  }]);
 
-  return Posts;
+    _createClass(Posts, [{
+        key: 'loadDataFromServer',
+        value: function loadDataFromServer(options) {
+            //Make request here using options
+            var myp = {
+                title: 'Posts',
+                select_values: Object.keys((0, _api.getPosts)()[0]),
+                cards: (0, _api.getPosts)().map(function (p) {
+                    return {
+                        title: p.title,
+                        subtitle: 'Author: ' + ((0, _api.getUsers)().find(function (u) {
+                            return u.id === p.author;
+                        }) || {}).name,
+                        link: '/posts/detail/' + p.id
+                    };
+                })
+            };
+
+            return myp;
+        }
+    }, {
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.setState({ data: this.loadDataFromServer() });
+            console.log("API call Posts");
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            console.log("API dismount Posts");
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    _reactBootstrap.Row,
+                    null,
+                    _react2.default.createElement(
+                        _reactBootstrap.Col,
+                        { sm: 12, md: 3 },
+                        _react2.default.createElement(_SortFilter2.default, { select_values: this.state.data.select_values })
+                    ),
+                    _react2.default.createElement(
+                        _reactBootstrap.Col,
+                        { sm: 12, md: 9 },
+                        _react2.default.createElement(_RfGrid2.default, { data: this.state.data })
+                    )
+                ),
+                _react2.default.createElement(
+                    _reactBootstrap.Row,
+                    null,
+                    _react2.default.createElement(_reactBootstrap.Col, { xs: 6, md: 4 }),
+                    _react2.default.createElement(
+                        _reactBootstrap.Col,
+                        { xs: 6, md: 4 },
+                        _react2.default.createElement(_reactPaginate2.default, { previousLabel: "previous",
+                            nextLabel: "next",
+                            breakLabel: _react2.default.createElement(
+                                'a',
+                                { href: '' },
+                                '...'
+                            ),
+                            breakClassName: "break-me",
+                            pageCount: 5,
+                            marginPagesDisplayed: 2,
+                            pageRangeDisplayed: 5,
+                            onPageChange: this.handlePageClick,
+                            containerClassName: "pagination",
+                            subContainerClassName: "pages pagination",
+                            activeClassName: "active" })
+                    ),
+                    _react2.default.createElement(_reactBootstrap.Col, { xs: 6, md: 4 })
+                )
+            );
+        }
+    }]);
+
+    return Posts;
 }(_react2.default.Component);
 
 exports.default = Posts;
@@ -37577,7 +37721,7 @@ function UserDetail(props) {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -37606,37 +37750,57 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var myp = {
-  title: 'Users',
-  select_values: Object.keys((0, _api.getUsers)()[0]),
-  cards: (0, _api.getUsers)().map(function (u) {
-    return {
-      title: u.name,
-      subtitle: 'Joined: ' + (0, _moment2.default)(new Date(u.created * 1000)).format('LL'),
-      link: '/users/detail/' + u.id
-    };
-  })
+    title: 'Users',
+    select_values: Object.keys((0, _api.getUsers)()[0]),
+    cards: (0, _api.getUsers)().map(function (u) {
+        return {
+            title: u.name,
+            subtitle: 'Joined: ' + (0, _moment2.default)(new Date(u.created * 1000)).format('LL'),
+            link: '/users/detail/' + u.id
+        };
+    })
 };
 
 var Users = function (_React$Component) {
-  _inherits(Users, _React$Component);
+    _inherits(Users, _React$Component);
 
-  function Users(props) {
-    _classCallCheck(this, Users);
+    function Users(props) {
+        _classCallCheck(this, Users);
 
-    var _this = _possibleConstructorReturn(this, (Users.__proto__ || Object.getPrototypeOf(Users)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Users.__proto__ || Object.getPrototypeOf(Users)).call(this, props));
 
-    _this.state = { data: myp };
-    return _this;
-  }
-
-  _createClass(Users, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(_RfGrid2.default, { data: this.state.data });
+        _this.state = { data: myp };
+        return _this;
     }
-  }]);
 
-  return Users;
+    _createClass(Users, [{
+        key: 'loadDataFromServer',
+        value: function loadDataFromServer(options) {
+            //Make request here using options
+            var myp = {
+                title: 'Posts',
+                select_values: Object.keys(getPosts()[0]),
+                cards: getPosts().map(function (p) {
+                    return {
+                        title: p.title,
+                        subtitle: 'Author: ' + ((0, _api.getUsers)().find(function (u) {
+                            return u.id === p.author;
+                        }) || {}).name,
+                        link: '/posts/detail/' + p.id
+                    };
+                })
+            };
+
+            return myp;
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(_RfGrid2.default, { data: this.state.data });
+        }
+    }]);
+
+    return Users;
 }(_react2.default.Component);
 
 exports.default = Users;
