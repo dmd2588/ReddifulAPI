@@ -103,4 +103,5 @@ Icon?
 
 #Frontend and webpack exclusions
 node_modules
-
+dist/*hot-update.json
+dist/*hot-update.js

@@ -3,8 +3,7 @@ import moment from 'moment'
 import RfGrid from './RfGrid.jsx'
 import { getUsers } from '../api.js'
 
-export default function Users () {
-  return RfGrid({
+var myp = {
     title: 'Users',
     select_values: Object.keys(getUsers()[0]),
     cards: getUsers().map(u => {
@@ -14,5 +13,14 @@ export default function Users () {
         link: '/users/detail/' + u.id
       }
     })
-  })
+  };
+
+export default class Users extends React.Component {
+   constructor(props) {
+    super(props);
+    this.state = {data: myp};
+  }
+    render(){
+        return<RfGrid data={this.state.data} />
+    }
 }

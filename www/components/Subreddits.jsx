@@ -3,8 +3,7 @@ import moment from 'moment'
 import RfGrid from './RfGrid.jsx'
 import { getSubreddits } from '../api.js'
 
-export default function Users () {
-  return RfGrid({
+var myp = {
     title: 'Subreddits',
     select_values: Object.keys(getSubreddits()[0]),
     cards: getSubreddits().map(s => {
@@ -15,5 +14,15 @@ export default function Users () {
         link: '/subreddits/detail/' + s.id
       }
     })
-  })
+  };
+
+export default class Subreddits extends React.Component {
+   constructor(props) {
+    super(props);
+    this.state = {data: myp};
+  }
+    render(){
+        return<RfGrid data={this.state.data} />
+    }
 }
+

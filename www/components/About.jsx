@@ -24,7 +24,7 @@ var About = React.createClass({
                 <h3>David Du</h3>
                 <p>I'm a junior majoring in Computer Science. I like to game, which is closely related to why I want to go into the game development industry.</p>
                 <p>Responsibilities: Documentation, Front-end</p>
-                <p>No. Commits: 38</p>
+                <p>No. Commits: 39</p>
                 <p>No. Issues: 9</p>
                 <p>No. Unit Tests: 0</p>
               </Col>
@@ -53,7 +53,7 @@ var About = React.createClass({
                 <h3>Jeremy Lim</h3>
                 <p>Computer Science Major. Likes books and Battlestar Galatica. Hobby is to read online web novels.</p>
                 <p>Responsibilities: Front-end boilerplate code, Coordination, Coding React Components</p>
-                <p>No. Commits: 23</p>
+                <p>No. Commits: 25</p>
                 <p>No. Issues: 9</p>
                 <p>No. Unit Tests: 0</p>
               </Col>
@@ -81,12 +81,12 @@ var About = React.createClass({
         <hr />
         <ListGroup>
           <h3>Github Stats - <a href='http://docs.reddiful.apiary.io'>Apiary API</a> - <a href='https://github.com/dmd2588/idb/issues'>GitHubIssueTracker</a> - <a href='https://github.com/dmd2588/idb/'>Github Repo</a></h3>
-          <ListGroupItem>total no. of commits: 151</ListGroupItem>
+          <ListGroupItem>total no. of commits: 155</ListGroupItem>
           <ListGroupItem>total no. of issues: 27</ListGroupItem>
           <ListGroupItem>total no. of unit tests: 10</ListGroupItem>
         </ListGroup>
         <Panel header={<h3>Data</h3>}>
-                  Link to the source here: <a href='https://www.reddit.com/dev/api/'>Reddit API</a>
+          Link to the source here: <a href='https://www.reddit.com/dev/api/'>Reddit API</a>
           <h4>Data Collection Process</h4>
           <p>For the example models used in the first phase of the project, data was scraped using the Reddit API.  The official reddit git repository lists several <a href='https://github.com/reddit/reddit/wiki/API-Wrappers'>wrappers for the API</a>.  For the scraper written for our project, PRAW, a python wrapper around the API was used.</p>
           <p>In order to keep the example data set at three examples for each model as well as having linked examples, the data was gathered in a specific way.  Three subreddits were chosen and from each of those subreddits one of the moderators was chosen and for each of those moderators their most recent comment was chosen and for each comment the submission it resided in was chosen.</p>
