@@ -5,6 +5,17 @@ export default function SortFilter (props) {
   var makeOption = function (x) {
     return <option key={x} value={x}>{x}</option>
   }
+
+  var onApply = function () {
+    let sortSelect = ''
+    let filterSelect = ''
+    let filterText = ''
+    console.log('clicked')
+    console.log(sortSelect.value)
+    console.log(filterSelect.value)
+    console.log(filterText.value)
+    props.updateGrid()
+  }
   return (
     <Panel header='Filtering and Sorting'>
       <FormGroup controlId='filterText'>
@@ -23,7 +34,7 @@ export default function SortFilter (props) {
           {props.select_values.map(makeOption)}
         </FormControl>
       </FormGroup>
-      <Button>Apply</Button>
+      <Button type='submit' onClick={onApply}>Apply</Button>
 
     </Panel>
   )

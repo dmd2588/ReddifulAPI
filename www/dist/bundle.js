@@ -10615,6 +10615,7 @@ var RfGrid = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (RfGrid.__proto__ || Object.getPrototypeOf(RfGrid)).call(this, props));
 
     _this.state = { data: { title: '', select_values: [], cards: [] } };
+    _this.loadDataFromServer = _this.props.loadDataFromServer;
     return _this;
   }
 
@@ -10626,12 +10627,20 @@ var RfGrid = function (_React$Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.setState({ data: this.props.loadDataFromServer() });
+      this.updateGrid();
       console.log('API call Data Finished');
+    }
+  }, {
+    key: 'updateGrid',
+    value: function updateGrid(options) {
+      this.setState({ data: this.loadDataFromServer() });
+      console.log('Updating Grid');
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
         'div',
         null,
@@ -10646,7 +10655,9 @@ var RfGrid = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { sm: 12, md: 3 },
-            _react2.default.createElement(_SortFilter2.default, { select_values: this.state.data.select_values })
+            _react2.default.createElement(_SortFilter2.default, { select_values: this.state.data.select_values, updateGrid: function updateGrid(ops) {
+                return _this2.updateGrid(ops);
+              } })
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
@@ -36804,6 +36815,17 @@ function SortFilter(props) {
       x
     );
   };
+
+  var onApply = function onApply() {
+    var sortSelect = '';
+    var filterSelect = '';
+    var filterText = '';
+    console.log('clicked');
+    console.log(sortSelect.value);
+    console.log(filterSelect.value);
+    console.log(filterText.value);
+    props.updateGrid();
+  };
   return _react2.default.createElement(
     _reactBootstrap.Panel,
     { header: 'Filtering and Sorting' },
@@ -36847,7 +36869,7 @@ function SortFilter(props) {
     ),
     _react2.default.createElement(
       _reactBootstrap.Button,
-      null,
+      { type: 'submit', onClick: onApply },
       'Apply'
     )
   );

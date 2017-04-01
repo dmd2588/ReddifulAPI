@@ -8,14 +8,20 @@ export default class RfGrid extends React.Component {
   constructor (props) {
     super(props)
     this.state = {data: {title: '', select_values: [], cards: []}}
+    this.loadDataFromServer = this.props.loadDataFromServer
   }
   handlePageClick (data) {
     console.log('Click')
   };
 
   componentDidMount () {
-    this.setState({data: this.props.loadDataFromServer()})
+    this.updateGrid()
     console.log('API call Data Finished')
+  }
+
+  updateGrid (options) {
+    this.setState({data: this.loadDataFromServer()})
+    console.log('Updating Grid')
   }
   render () {
     return (
@@ -23,7 +29,7 @@ export default class RfGrid extends React.Component {
         <h2>{this.state.data.title}</h2>
         <Row>
           <Col sm={12} md={3}>
-            <SortFilter select_values={this.state.data.select_values} />
+            <SortFilter select_values={this.state.data.select_values} updateGrid={ops => this.updateGrid(ops)} />
           </Col>
           <Col sm={12} md={9}>
             <Grid fluid>
