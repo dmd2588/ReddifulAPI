@@ -1,6 +1,7 @@
 import React from 'react' //eslint-disable-line
 import { Card, CardMedia, CardTitle, CardActions } from 'react-toolbox/lib/card'
 import { Button } from 'react-toolbox/lib/button'
+import cardStyles from './rfCardStyles.css'
 
 export default function RfCard (props) {
   const maxLength = 20
@@ -8,19 +9,21 @@ export default function RfCard (props) {
   if (props.title.length > maxLength) title = title.substr(0, maxLength) + '...'
 
   return (
-    <Card style={{width: '250px'}}>
-      <CardTitle
-        avatar='https://placeimg.com/80/80/animals'
-        title={title}
-        subtitle={props.subtitle}
+    <div className={cardStyles.rfCard}>
+      <Card style={{width: '250px'}}>
+        <CardTitle
+          avatar='https://placeimg.com/80/80/animals'
+          title={title}
+          subtitle={props.subtitle}
       />
-      <CardMedia
-        aspectRatio='wide'
-        image='https://placeimg.com/800/450/nature'
+        <CardMedia
+          aspectRatio='wide'
+          image='https://placeimg.com/800/450/nature'
       />
-      <CardActions>
-        <Button href={props.link} label='Details' />
-      </CardActions>
-    </Card>
+        <CardActions>
+          <Button href={props.link} label='Details' />
+        </CardActions>
+      </Card>
+    </div>
   )
 }
