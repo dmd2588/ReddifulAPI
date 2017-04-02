@@ -1,4 +1,5 @@
 import praw
+from praw.models import MoreComments
 import datetime
 import pprint
 import json
@@ -76,19 +77,11 @@ class RedditScraper:
         return
 
     def addUser(self, user):
-        """
-        if not hasattr(user, 'id'):
-            redditor_id = '[banned]'
-            redditor = '[banned]'
-        else:
-            redditor_id = user.id
-            redditor = user.name
-        """
         if not hasattr(user, 'id'):
             if user.is_suspended:
                 print 'SUSPENDED : ' + user.name
                 pprint.pprint(vars(user))
-                return
+            return
         row = {"redditor_id": user.id,
                "name": user.name,
                "comment_karma": user.comment_karma,
@@ -127,8 +120,6 @@ class RedditScraper:
     def addComment(self, comment):
         author_id = '[deleted]'
         author = '[deleted]'
-        subreddit = comment.subreddit.display_name
-        subreddit_id = comment.subreddit.id
         if comment.author is not None:
             if not hasattr(comment.author, 'id'):
                 author_id = '[banned]'
@@ -136,18 +127,26 @@ class RedditScraper:
             else:
                 author_id = comment.author.id
                 author = comment.author.name
+        if comment.edited:
+            edited = datetime.datetime.fromtimestamp(comment.edited)
+        else:
+            edited = datetime.datetime.fromtimestamp(comment.created_utc)
         row = {"comment_id": comment.id,
                "created_utc": datetime.datetime.fromtimestamp(comment.created_utc),
                "body": comment.body,
                "body_html": comment.body_html,
                "score": comment.score,
                "gilded": comment.gilded,
-               "edited": comment.edited,
+               "edited": edited,
                "author": author,
-               "subreddit": subreddit,
                "author_id": author_id,
-               "link_id": comment.link_id,
-               "subreddit_id": subreddit.id}
+               "link_id": comment.submission.id}
+        columns = row.keys()
+        values = [row[column] for column in columns]
+        insert_statement = 'insert into "Comments" (%s) values %s ON CONFLICT(comment_id) DO UPDATE SET (%s) = %s;'
+        insert_statement = self.cur.mogrify(insert_statement, (AsIs(','.join(columns)), tuple(values), AsIs(','.join(columns)), tuple(values)))
+        self.cur.execute(insert_statement)
+        self.conn.commit()
         return
 
     def scrapeTrophies(self, user):
@@ -167,17 +166,25 @@ class RedditScraper:
     def scrapeComments(self):
         self.cur.execute('SELECT submission_id FROM "Submissions"')
         rows = self.cur.fetchall()
+        count = 0
         for row in rows:
             submission = self.reddit.submission(row[0])
-            print submission.title + " ----------- /r/" + submission.subreddit.display_name
-            print "----------------------------"
+            print str(count) + ": " + submission.title
             submission.comment_sort = 'top'
-            submission.comment_limit = 10
+            submission.comment_limit = 3
             submission.comments.replace_more(limit=0)
+            comment_count = 0
             for comment in submission.comments:
+                if comment_count == 3:
+                    break
+                if isinstance(comment, MoreComments):
+                    continue
                 self.addComment(comment)
-                if comment.author is not None:
+                if comment.author is not None and hasattr(comment.author, 'id'):
                     self.addUser(comment.author)
+                comment_count = comment_count + 1
+            count = count + 1
+            print "----------------------------"
 
     def scrapeMods(self):
         self.cur.execute("""
@@ -185,7 +192,6 @@ SELECT sr.display_name
 FROM "Subreddits" sr
 LEFT JOIN "Mods" m ON sr.subreddit_id = m.subreddit_id
 GROUP BY sr.display_name HAVING count(m.redditor_id) = 0""")
-
         rows = self.cur.fetchall()
         for row in rows:
             subreddit = self.reddit.subreddit(row[0])
@@ -268,7 +274,8 @@ def main():
    # scraper.scrapeUsers()
    # scraper.scrapeMods()
    # scraper.updateSubreddits()
-   scraper.updateUsers()
+   # scraper.updateUsers()
+   # scraper.scrapeComments()
 
 if __name__ == "__main__":
     main()
