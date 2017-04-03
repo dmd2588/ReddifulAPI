@@ -7712,8 +7712,6 @@ function getUsers(callback) {
   _axios2.default.get('/api/users/').then(function (res) {
     return callback(res.data);
   });
-  // .then()
-  // return users
 }
 
 // export function getUserRelated (user_id) {
@@ -10929,7 +10927,10 @@ var RfGrid = function (_React$Component) {
   }, {
     key: 'updateGrid',
     value: function updateGrid(options) {
-      this.setState({ data: this.loadDataFromServer() });
+      var self = this;
+      this.loadDataFromServer(function (newData) {
+        self.setState({ data: newData });
+      });
       console.log('Updating Grid');
     }
   }, {
@@ -38693,50 +38694,34 @@ var Users = function (_React$Component) {
   function Users() {
     _classCallCheck(this, Users);
 
-    var _this = _possibleConstructorReturn(this, (Users.__proto__ || Object.getPrototypeOf(Users)).call(this));
-
-    _this.state = {
-      users: [{}]
-    };
-    return _this;
+    return _possibleConstructorReturn(this, (Users.__proto__ || Object.getPrototypeOf(Users)).apply(this, arguments));
   }
 
   _createClass(Users, [{
-    key: 'updateUsers',
-    value: function updateUsers(newUsers) {
-      this.setState({
-        users: newUsers
-      });
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      (0, _api.getUsers)(this.updateUsers.bind(this));
-    }
-  }, {
     key: 'loadDataFromServer',
-    value: function loadDataFromServer(options) {
-      // Make request here using options
-      var myp = {
-        title: 'Users',
-        select_values: Object.keys(this.state.users[0]),
-        cards: this.state.users.map(function (u) {
-          return {
-            title: u.name,
-            subtitle: 'Joined: ' + (0, _moment2.default)(new Date(u.created * 1000)).format('LL'),
-            link: '/users/detail/' + u.id
-          };
-        })
-      };
+    value: function loadDataFromServer(callback) {
+      (0, _api.getUsers)(function (users) {
+        var myp = {
+          title: 'Users',
+          select_values: Object.keys(users[0]),
+          cards: users.map(function (u) {
+            return {
+              title: u.name,
+              subtitle: 'Joined: ' + (0, _moment2.default)(new Date(u.created * 1000)).format('LL'),
+              link: '/users/detail/' + u.id
+            };
+          })
+        };
 
-      return myp;
+        callback(myp);
+      });
     }
   }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      return _react2.default.createElement(_RfGrid2.default, { key: this.state.users, loadDataFromServer: function loadDataFromServer(ops) {
+      return _react2.default.createElement(_RfGrid2.default, { loadDataFromServer: function loadDataFromServer(ops) {
           return _this2.loadDataFromServer(ops);
         } });
     }
