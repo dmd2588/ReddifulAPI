@@ -20,7 +20,10 @@ export default class RfGrid extends React.Component {
   }
 
   updateGrid (options) {
-    this.setState({data: this.loadDataFromServer()})
+    var self = this
+    this.loadDataFromServer(function (newData) {
+      self.setState({data: newData})
+    })
     console.log('Updating Grid')
   }
   render () {
