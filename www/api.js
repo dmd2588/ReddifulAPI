@@ -1,29 +1,4 @@
-const users = [
-  {
-    'comment_karma': 190,
-    'created': 1405828618.0,
-    'email': 'None',
-    'id': 'hh8mr',
-    'link_karma': 335,
-    'name': 'batman_jr'
-  },
-  {
-    'comment_karma': 25418,
-    'created': 1331171212.0,
-    'email': 'poizan@poizan.dk',
-    'id': '74344',
-    'link_karma': 768,
-    'name': 'poizan42'
-  },
-  {
-    'comment_karma': 56846,
-    'created': 1287044616.0,
-    'email': 'ooer@live.com',
-    'id': '4fer6',
-    'link_karma': 18834,
-    'name': 'Ooer'
-  }
-]
+import axios from 'axios'
 
 const moderators = [
   {'user_id': 'hh8mr', 'sr_id': '3imv0'},
@@ -136,8 +111,9 @@ const comments = [
   }
 ]
 
-export function getUsers () {
-  return users
+export function getUsers (callback) {
+  axios.get('/api/users/')
+  .then(res => callback(res.data))
 }
 
 // export function getUserRelated (user_id) {
