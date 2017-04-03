@@ -35385,7 +35385,9 @@ var About = _react2.default.createClass({
                 null,
                 _react2.default.createElement(
                   'a',
-                  { href: '#models' },
+                  { href: '#models', onClick: function onClick() {
+                      return _this.setState({ open1: true });
+                    } },
                   'Models'
                 )
               ),
@@ -35394,7 +35396,9 @@ var About = _react2.default.createClass({
                 null,
                 _react2.default.createElement(
                   'a',
-                  { href: '#relationships' },
+                  { href: '#relationships', onClick: function onClick() {
+                      return _this.setState({ open2: true });
+                    } },
                   'Relationships'
                 )
               ),
@@ -35403,7 +35407,9 @@ var About = _react2.default.createClass({
                 null,
                 _react2.default.createElement(
                   'a',
-                  { href: '#attributes' },
+                  { href: '#attributes', onClick: function onClick() {
+                      return _this.setState({ open3: true });
+                    } },
                   'Attributes and Methods'
                 )
               )
@@ -35429,7 +35435,9 @@ var About = _react2.default.createClass({
                 null,
                 _react2.default.createElement(
                   'a',
-                  { href: '#front' },
+                  { href: '#front', onClick: function onClick() {
+                      return _this.setState({ open4: true });
+                    } },
                   'Front-end'
                 )
               ),
@@ -35438,7 +35446,9 @@ var About = _react2.default.createClass({
                 null,
                 _react2.default.createElement(
                   'a',
-                  { href: '#back' },
+                  { href: '#back', onClick: function onClick() {
+                      return _this.setState({ open5: true });
+                    } },
                   'Back-end'
                 )
               )
@@ -35464,7 +35474,9 @@ var About = _react2.default.createClass({
                 null,
                 _react2.default.createElement(
                   'a',
-                  { href: '#choice' },
+                  { href: '#choice', onClick: function onClick() {
+                      return _this.setState({ open6: true });
+                    } },
                   'Choice'
                 )
               ),
@@ -35473,7 +35485,9 @@ var About = _react2.default.createClass({
                 null,
                 _react2.default.createElement(
                   'a',
-                  { href: '#setup' },
+                  { href: '#setup', onClick: function onClick() {
+                      return _this.setState({ open7: true });
+                    } },
                   'Set-up'
                 )
               ),
@@ -35482,7 +35496,9 @@ var About = _react2.default.createClass({
                 null,
                 _react2.default.createElement(
                   'a',
-                  { href: '#accessibility' },
+                  { href: '#accessibility', onClick: function onClick() {
+                      return _this.setState({ open8: true });
+                    } },
                   'Accessibility'
                 )
               )
@@ -35508,7 +35524,9 @@ var About = _react2.default.createClass({
                 null,
                 _react2.default.createElement(
                   'a',
-                  { href: '#uml' },
+                  { onClick: function onClick() {
+                      return _this.setState({ open9: true });
+                    }, href: '#uml' },
                   'UML Diagram'
                 )
               ),
@@ -35517,7 +35535,9 @@ var About = _react2.default.createClass({
                 null,
                 _react2.default.createElement(
                   'a',
-                  { href: '#tablec' },
+                  { href: '#tablec', onClick: function onClick() {
+                      return _this.setState({ open0: true });
+                    } },
                   'Table of Components'
                 )
               )
@@ -35574,213 +35594,218 @@ var About = _react2.default.createClass({
           'While defining the attributes for the models, we also looked at the relationships between each of those models. By observing the interaction on Reddit, we could condense them into the relationships and attributes that you see below.'
         ),
         _react2.default.createElement(
-          _reactBootstrap.Accordion,
-          null,
+          _reactBootstrap.Button,
+          { id: 'models', onClick: function onClick() {
+              return _this.setState({ open1: !_this.state.open1 });
+            } },
+          'Models ',
+          _react2.default.createElement(_angleDown2.default, null)
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Panel,
+          { collapsible: true, expanded: this.state.open1 },
           _react2.default.createElement(
-            _reactBootstrap.Panel,
-            { id: 'models', header: _react2.default.createElement(
-                'h4',
-                null,
-                'Models ',
-                _react2.default.createElement(_angleDown2.default, null)
-              ), eventKey: '1' },
+            'p',
+            null,
+            'The models represent different aspects of Reddit that make up most of the information seen on the site.'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
             _react2.default.createElement(
-              'p',
+              'b',
               null,
-              'The models represent different aspects of Reddit that make up most of the information seen on the site.'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'User'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'The users represent the people on the site. They can explore the different subreddits, interact with others, and communicate their ideas. They can form new groups (subreddits), start new conversations (posts), and contribute to existing ones (comments). Reddit would not have any worth without the users to keep giving ideas. Organizing user information can be used to observe different trends like the relationship between different interests in subreddits.'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Subreddit'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Subreddits are groups of any number of users that have come together and found a common interest. By organizing like-minding people into a group, it allows for meaningful (or not) discussion on a topic that everyone present is interested in. Compiling this information introduces the opportunity to observe group trends anywhere from what kind of language is used to the activity per user.'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Post'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Posts ask questions, discuss topics, and introduce ideas. There is so much information out there that bringing it into a concentrated form of a post can clarify things that would otherwise have gone unnoticed to most of the population. Looking at posts can bring light to the way users communicate information within a subreddit; for example, are there more questions being asked or is everyone trying to bring their own idea out into the open? What kind of information is important to the users of Reddit?'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Comment'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Comments are generally short blurbs that hopefully contribute to the conversation, whether by questioning an idea or making a witty remark. Combined with posts, they can be used to answer questions, challenge ideas, or entertain other users. When looking at the types of comments posted, there are trends that can be observed. For example, there are several users that are dedicated to doing specific things, like AWildSketchAppeared - he mostly replies with sketches reflecting a previous comment or post. Other comments maybe have similarities in the type of response; the gaming subreddit usually contains comments that are reactionary to the post and don\'t generally provide some insight into the deeper meaning of life.'
+              'User'
             )
           ),
           _react2.default.createElement(
-            _reactBootstrap.Panel,
-            { id: 'relationships', header: _react2.default.createElement(
-                'h4',
-                null,
-                'Relationships ',
-                _react2.default.createElement(_angleDown2.default, null)
-              ), eventKey: '2' },
+            'p',
+            null,
+            'The users represent the people on the site. They can explore the different subreddits, interact with others, and communicate their ideas. They can form new groups (subreddits), start new conversations (posts), and contribute to existing ones (comments). Reddit would not have any worth without the users to keep giving ideas. Organizing user information can be used to observe different trends like the relationship between different interests in subreddits.'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
             _react2.default.createElement(
-              'p',
+              'b',
               null,
-              'There are many relationships between the different models. The way they interact helps organize the transmission of information between different entities.'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'User'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'The User and Subreddit have a many to many relationship where for each user, there are many subreddits that they are subscribed to, and for each subreddit, there are many users subscribed to it. With the current information given to us, we are currently focusing on the relationship between the moderators and the subreddit, since getting the information like the subreddits that a user is subscribed to and the users subscribed to a subreddit are both things that we cannot access. The User and Post have a 1 to many relationship as well since each user has many (if any) posts. Similarly, the User and Comment have a 1 to many relationship.'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Subreddit'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'The Subreddit and Post have a 1 to many relationship: each subreddit has many posts (hopefully), while each post can only belong to one subreddit (but can be crossposted elsewhere). For our relationship model, we\'re focusing on the 1 to many relationship. Subreddits also have a 1 to many relationship with comments: comments store the ID of the subreddit that they exist in.'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Post'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Posts have a 1 to many relationship with Comments: each post has many comments (hopefully), while each comment can only belong to one post.'
+              'Subreddit'
             )
           ),
           _react2.default.createElement(
-            _reactBootstrap.Panel,
-            { id: 'attributes', header: _react2.default.createElement(
-                'h4',
-                null,
-                'Attributes and Methods ',
-                _react2.default.createElement(_angleDown2.default, null)
-              ), eventKey: '3' },
+            'p',
+            null,
+            'Subreddits are groups of any number of users that have come together and found a common interest. By organizing like-minding people into a group, it allows for meaningful (or not) discussion on a topic that everyone present is interested in. Compiling this information introduces the opportunity to observe group trends anywhere from what kind of language is used to the activity per user.'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
             _react2.default.createElement(
-              'p',
+              'b',
               null,
-              'Several attributes and methods to access those attributes help define each model. Some are foreign keys in other models that help relate them back to each other.'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'User'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'The user has several attributes that can be listed. First, there are two identifiers: the name (username itself), and the ID (a unique ID number that can be used to find the user). In addition, if the user allows it, the email will be displayed as well. Finally, the user has comment and link karma as well as the created time.'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Subreddit'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Subreddits are defined similarly to a user: they each have a display name and a unique ID. In addition, it also has a creation time. Adding to this, subreddits also have a title that can be modified to more concretely describe what it is about. Finally, for statistics on users in each subreddit, there are attributes listing the accounts active on the subreddit and the number of total subscribers for that subreddit.'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Post'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Each post has several different attributes and defining characteristics. First, the author of the post is a foreign key going to the ID of the poster. The post itself has a unique ID similar to how subreddits and users have unique IDs. In addition, posts have a field for the created time. Several defining characteristics are the gilded, self, and nsfw booleans. These attributes are true/false booleans that check if the post is gilded, nsfw, or is a text post (self). If it is a post with self = true, then it will have information in the selftext attribute that contains the string with the text in the post. If not, it will be an empty string. The title of a post is the title that you see as a headline, and the score represents the karma of the post. Finally, there is a field for the URL which links you to where you go when you click on the title: whether it be the comments section if it\'s a self post, or the imgur, gfycat, etc. if it is not a self post.'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'There are cases when the post exists and the poster has since deleted the account or vice versa. In each case, the deleted portion is replaced with a default user called [deleted] or just the \'[deleted]\' string. In addition, if a post does not conform with the guidelines of a subreddit, a moderator can delete the content.'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Comment'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'The comments are pretty straightforward. For most, you will have an author and a body as the commenter and the comment, respectively. In this case, the author is a foreign key related back to the user\'s unique ID. Second, there is an ID for both the comment, the link, and the subreddit. The ID for the comment is the unique ID similar to those seen in the previous models. The link ID is the foreign key relating back to the ID of the post. Similarly, the subreddit ID is the foreign key relating back to the ID of the subreddit. The one different attribute is the edited attribute. This allows you to see if a comment has been edited or not. The rest of the attributes are similar to other attributes: the creation time, whether or not it is gilded, and the score or karma of the comment.'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Similarly to posts, comments can also be deleted or have a deleted commenter, so the sections will be substituted with [deleted].'
+              'Post'
             )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Posts ask questions, discuss topics, and introduce ideas. There is so much information out there that bringing it into a concentrated form of a post can clarify things that would otherwise have gone unnoticed to most of the population. Looking at posts can bring light to the way users communicate information within a subreddit; for example, are there more questions being asked or is everyone trying to bring their own idea out into the open? What kind of information is important to the users of Reddit?'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
+            _react2.default.createElement(
+              'b',
+              null,
+              'Comment'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Comments are generally short blurbs that hopefully contribute to the conversation, whether by questioning an idea or making a witty remark. Combined with posts, they can be used to answer questions, challenge ideas, or entertain other users. When looking at the types of comments posted, there are trends that can be observed. For example, there are several users that are dedicated to doing specific things, like AWildSketchAppeared - he mostly replies with sketches reflecting a previous comment or post. Other comments maybe have similarities in the type of response; the gaming subreddit usually contains comments that are reactionary to the post and don\'t generally provide some insight into the deeper meaning of life.'
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Button,
+          { id: 'relationships', onClick: function onClick() {
+              return _this.setState({ open2: !_this.state.open2 });
+            } },
+          'Relationships ',
+          _react2.default.createElement(_angleDown2.default, null)
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Panel,
+          { collapsible: true, expanded: this.state.open2 },
+          _react2.default.createElement(
+            'p',
+            null,
+            'There are many relationships between the different models. The way they interact helps organize the transmission of information between different entities.'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
+            _react2.default.createElement(
+              'b',
+              null,
+              'User'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'The User and Subreddit have a many to many relationship where for each user, there are many subreddits that they are subscribed to, and for each subreddit, there are many users subscribed to it. With the current information given to us, we are currently focusing on the relationship between the moderators and the subreddit, since getting the information like the subreddits that a user is subscribed to and the users subscribed to a subreddit are both things that we cannot access. The User and Post have a 1 to many relationship as well since each user has many (if any) posts. Similarly, the User and Comment have a 1 to many relationship.'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
+            _react2.default.createElement(
+              'b',
+              null,
+              'Subreddit'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'The Subreddit and Post have a 1 to many relationship: each subreddit has many posts (hopefully), while each post can only belong to one subreddit (but can be crossposted elsewhere). For our relationship model, we\'re focusing on the 1 to many relationship. Subreddits also have a 1 to many relationship with comments: comments store the ID of the subreddit that they exist in.'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
+            _react2.default.createElement(
+              'b',
+              null,
+              'Post'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Posts have a 1 to many relationship with Comments: each post has many comments (hopefully), while each comment can only belong to one post.'
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Button,
+          { id: 'attributes', onClick: function onClick() {
+              return _this.setState({ open3: !_this.state.open3 });
+            } },
+          'Attributes and Methods ',
+          _react2.default.createElement(_angleDown2.default, null)
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Panel,
+          { collapsible: true, expanded: this.state.open3 },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Several attributes and methods to access those attributes help define each model. Some are foreign keys in other models that help relate them back to each other.'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
+            _react2.default.createElement(
+              'b',
+              null,
+              'User'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'The user has several attributes that can be listed. First, there are two identifiers: the name (username itself), and the ID (a unique ID number that can be used to find the user). In addition, if the user allows it, the email will be displayed as well. Finally, the user has comment and link karma as well as the created time.'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
+            _react2.default.createElement(
+              'b',
+              null,
+              'Subreddit'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Subreddits are defined similarly to a user: they each have a display name and a unique ID. In addition, it also has a creation time. Adding to this, subreddits also have a title that can be modified to more concretely describe what it is about. Finally, for statistics on users in each subreddit, there are attributes listing the accounts active on the subreddit and the number of total subscribers for that subreddit.'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
+            _react2.default.createElement(
+              'b',
+              null,
+              'Post'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Each post has several different attributes and defining characteristics. First, the author of the post is a foreign key going to the ID of the poster. The post itself has a unique ID similar to how subreddits and users have unique IDs. In addition, posts have a field for the created time. Several defining characteristics are the gilded, self, and nsfw booleans. These attributes are true/false booleans that check if the post is gilded, nsfw, or is a text post (self). If it is a post with self = true, then it will have information in the selftext attribute that contains the string with the text in the post. If not, it will be an empty string. The title of a post is the title that you see as a headline, and the score represents the karma of the post. Finally, there is a field for the URL which links you to where you go when you click on the title: whether it be the comments section if it\'s a self post, or the imgur, gfycat, etc. if it is not a self post.'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'There are cases when the post exists and the poster has since deleted the account or vice versa. In each case, the deleted portion is replaced with a default user called [deleted] or just the \'[deleted]\' string. In addition, if a post does not conform with the guidelines of a subreddit, a moderator can delete the content.'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
+            _react2.default.createElement(
+              'b',
+              null,
+              'Comment'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'The comments are pretty straightforward. For most, you will have an author and a body as the commenter and the comment, respectively. In this case, the author is a foreign key related back to the user\'s unique ID. Second, there is an ID for both the comment, the link, and the subreddit. The ID for the comment is the unique ID similar to those seen in the previous models. The link ID is the foreign key relating back to the ID of the post. Similarly, the subreddit ID is the foreign key relating back to the ID of the subreddit. The one different attribute is the edited attribute. This allows you to see if a comment has been edited or not. The rest of the attributes are similar to other attributes: the creation time, whether or not it is gilded, and the score or karma of the comment.'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Similarly to posts, comments can also be deleted or have a deleted commenter, so the sections will be substituted with [deleted].'
           )
         )
       ),
@@ -35793,191 +35818,193 @@ var About = _react2.default.createClass({
           'This section describes the tools and resources we used to both help design the site and to make it easier on the eyes.'
         ),
         _react2.default.createElement(
-          _reactBootstrap.Accordion,
-          null,
+          _reactBootstrap.Button,
+          { id: 'front', onClick: function onClick() {
+              return _this.setState({ open4: !_this.state.open4 });
+            } },
+          'Front-end ',
+          _react2.default.createElement(_angleDown2.default, null)
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Panel,
+          { collapsible: true, expanded: this.state.open4 },
           _react2.default.createElement(
-            _reactBootstrap.Panel,
-            { id: 'front', header: _react2.default.createElement(
-                'h4',
-                null,
-                'Front-end ',
-                _react2.default.createElement(_angleDown2.default, null)
-              ), eventKey: '1' },
+            'p',
+            null,
+            'These tools help the site look better and feel better to use.'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
             _react2.default.createElement(
-              'p',
+              'b',
               null,
-              'These tools help the site look better and feel better to use.'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Libraries and Tools'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'React and Bootstrap are the primary UI elements. Bootstrap is the react-bootstrap library that has compatibility with via react components. This allowed us to format our information in a more organized way; for example, we used Bootstrap to format this page. Other front-end libraries in use is react-toolbox for the grid cards and for the grid layout the react-bootstrap layout components. The front end is compiled from ES6 JSX files using webpack via Babel translator from jsx to a bundle.js file that contains the entirety of the page content and frontend libraries for deployment. Flask is the webserver that serves up the all of the frontend files. PostCSS is a dependency used by react-toolbox for its themes. The UI is supplemented with icons from react-icons which allows us to use material design icons without the hassle of installing and configuring them. The Moments CSS library is used to supplement the fonts on the details page and grid of cards.'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Front-end Tool Configurations'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Webpack is configured via the webpack.config.js file which specifies where the entrypoint of the application files is and where the compiled final distribution javascript file should be located. The current webpack file is configured to compile jsx via Babel to ES2015, and CSS via Postcss. The package.json file contains the dependency information for both the development and production front-end libraries as well as ways to build and run the application via npm. Run ',
-              _react2.default.createElement(
-                'code',
-                null,
-                'npm install'
-              ),
-              ' to install dependencies. Run ',
-              _react2.default.createElement(
-                'code',
-                null,
-                'npm build run'
-              ),
-              ' to compile the JSX files and run the application on the Docker webserver. The makefile contains ways to build/compile the application via: ',
-              _react2.default.createElement(
-                'code',
-                null,
-                'make build'
-              )
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Front-end Structure'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Starting from the root directory, www/ folder contains all the front-end code. Within this folder there is the index.html file which is the main html file that is served by the webserver. The components/ folder contains all of the JSX files that will compose into the application. Each .jsx file is a single component. The App.jsx file is the react component main entry point into the application. It is the file that will render all other components and is the root of the web application front-end logic; linking the .jsx to the index.html page. All other components are as stated. For example. RFGrid.jsx holds the grid component and NavBarAPI.jsx holds the navbar component for our application'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Running Frontend'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Running the front-end can be done after compilation/build of the application. Running the application is done by using the command ',
-              _react2.default.createElement(
-                'code',
-                null,
-                'docker-compose up'
-              ),
-              ' which runs the application on a flask server locally at ',
-              _react2.default.createElement(
-                'b',
-                null,
-                'localhost:80'
-              ),
-              ' or alternatively by running ',
-              _react2.default.createElement(
-                'code',
-                null,
-                'make dev_build'
-              ),
-              ' will run a node server at ',
-              _react2.default.createElement(
-                'b',
-                null,
-                'localhost:8080'
-              )
+              'Libraries and Tools'
             )
           ),
           _react2.default.createElement(
-            _reactBootstrap.Panel,
-            { id: 'back', header: _react2.default.createElement(
-                'h4',
-                null,
-                'Back-end ',
-                _react2.default.createElement(_angleDown2.default, null)
-              ), eventKey: '2' },
+            'p',
+            null,
+            'React and Bootstrap are the primary UI elements. Bootstrap is the react-bootstrap library that has compatibility with via react components. This allowed us to format our information in a more organized way; for example, we used Bootstrap to format this page. Other front-end libraries in use is react-toolbox for the grid cards and for the grid layout the react-bootstrap layout components. The front end is compiled from ES6 JSX files using webpack via Babel translator from jsx to a bundle.js file that contains the entirety of the page content and frontend libraries for deployment. Flask is the webserver that serves up the all of the frontend files. PostCSS is a dependency used by react-toolbox for its themes. The UI is supplemented with icons from react-icons which allows us to use material design icons without the hassle of installing and configuring them. The Moments CSS library is used to supplement the fonts on the details page and grid of cards.'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
             _react2.default.createElement(
-              'p',
+              'b',
               null,
-              'These tools set up the site so that it runs smoothly and doesn\'t break (hopefully).'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Back-end Structure'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Starting from the root of the application. The reddiful/ folder contains the api.py files that compose the back-end API of the application. The api.py file is the main entry point for the flask webserver. This file also contains all of the routes that will be used for the API backend call to retrieve data to be displayed in the front-end. In the app/ folder is the test.py and model.py files. Model unit tests which test the validity for the db data is in the test.py file. SQLAlchemy is used for mapping the database rows to a python object, this is defined in the model.py file.'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Python and Flask'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'For setting up python and flask please see below for the Docker setup, as the Docker container freezes the dependencies for these. Python is used for the back-end logic. Flask is the webserver that is used to serve up the application. In order to run flask manually the following commands must be given from the root directory ',
-              _react2.default.createElement(
-                'code',
-                null,
-                'export FLASK_APP=reddiful/api.py '
-              ),
-              ' and then the command ',
-              _react2.default.createElement(
-                'code',
-                null,
-                'flask run '
-              ),
-              ' to actually run the application. Alternatively running ',
-              _react2.default.createElement(
-                'code',
-                null,
-                ' docker-compose up '
-              ),
-              ' will run the application via the Docker file. For the python back-end API specifications please see the Design section above or the apiary documentation at http://docs.reddiful.apiary.io/ . In addition the apiary documentation itself can be loaded into apiary using the apiary.apib file that is found in the repo.'
-            ),
-            _react2.default.createElement(
-              'h5',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'Docker'
-              )
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              ' Docker container is used to install the preliminary dependencies for the back-end. Please see above for installing the front-end dependencies via npm. The docker container is used to ensure that all back-end dependencies are the same for every environment. The Docker configuration for the installation of said dependencies is done in the Dockerfile file. This specifies the OS and other installation software. The docker-compose.yml file is the file that defines and initiates the webserver using flask.'
+              'Front-end Tool Configurations'
             )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Webpack is configured via the webpack.config.js file which specifies where the entrypoint of the application files is and where the compiled final distribution javascript file should be located. The current webpack file is configured to compile jsx via Babel to ES2015, and CSS via Postcss. The package.json file contains the dependency information for both the development and production front-end libraries as well as ways to build and run the application via npm. Run ',
+            _react2.default.createElement(
+              'code',
+              null,
+              'npm install'
+            ),
+            ' to install dependencies. Run ',
+            _react2.default.createElement(
+              'code',
+              null,
+              'npm build run'
+            ),
+            ' to compile the JSX files and run the application on the Docker webserver. The makefile contains ways to build/compile the application via: ',
+            _react2.default.createElement(
+              'code',
+              null,
+              'make build'
+            )
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
+            _react2.default.createElement(
+              'b',
+              null,
+              'Front-end Structure'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Starting from the root directory, www/ folder contains all the front-end code. Within this folder there is the index.html file which is the main html file that is served by the webserver. The components/ folder contains all of the JSX files that will compose into the application. Each .jsx file is a single component. The App.jsx file is the react component main entry point into the application. It is the file that will render all other components and is the root of the web application front-end logic; linking the .jsx to the index.html page. All other components are as stated. For example. RFGrid.jsx holds the grid component and NavBarAPI.jsx holds the navbar component for our application'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
+            _react2.default.createElement(
+              'b',
+              null,
+              'Running Frontend'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Running the front-end can be done after compilation/build of the application. Running the application is done by using the command ',
+            _react2.default.createElement(
+              'code',
+              null,
+              'docker-compose up'
+            ),
+            ' which runs the application on a flask server locally at ',
+            _react2.default.createElement(
+              'b',
+              null,
+              'localhost:80'
+            ),
+            ' or alternatively by running ',
+            _react2.default.createElement(
+              'code',
+              null,
+              'make dev_build'
+            ),
+            ' will run a node server at ',
+            _react2.default.createElement(
+              'b',
+              null,
+              'localhost:8080'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Button,
+          { id: 'back', onClick: function onClick() {
+              return _this.setState({ open5: !_this.state.open5 });
+            } },
+          'Back-end ',
+          _react2.default.createElement(_angleDown2.default, null)
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Panel,
+          { collapsible: true, expanded: this.state.open5 },
+          _react2.default.createElement(
+            'p',
+            null,
+            'These tools set up the site so that it runs smoothly and doesn\'t break (hopefully).'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
+            _react2.default.createElement(
+              'b',
+              null,
+              'Back-end Structure'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Starting from the root of the application. The reddiful/ folder contains the api.py files that compose the back-end API of the application. The api.py file is the main entry point for the flask webserver. This file also contains all of the routes that will be used for the API backend call to retrieve data to be displayed in the front-end. In the app/ folder is the test.py and model.py files. Model unit tests which test the validity for the db data is in the test.py file. SQLAlchemy is used for mapping the database rows to a python object, this is defined in the model.py file.'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
+            _react2.default.createElement(
+              'b',
+              null,
+              'Python and Flask'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'For setting up python and flask please see below for the Docker setup, as the Docker container freezes the dependencies for these. Python is used for the back-end logic. Flask is the webserver that is used to serve up the application. In order to run flask manually the following commands must be given from the root directory ',
+            _react2.default.createElement(
+              'code',
+              null,
+              'export FLASK_APP=reddiful/api.py '
+            ),
+            ' and then the command ',
+            _react2.default.createElement(
+              'code',
+              null,
+              'flask run '
+            ),
+            ' to actually run the application. Alternatively running ',
+            _react2.default.createElement(
+              'code',
+              null,
+              ' docker-compose up '
+            ),
+            ' will run the application via the Docker file. For the python back-end API specifications please see the Design section above or the apiary documentation at http://docs.reddiful.apiary.io/ . In addition the apiary documentation itself can be loaded into apiary using the apiary.apib file that is found in the repo.'
+          ),
+          _react2.default.createElement(
+            'h5',
+            null,
+            _react2.default.createElement(
+              'b',
+              null,
+              'Docker'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            ' Docker container is used to install the preliminary dependencies for the back-end. Please see above for installing the front-end dependencies via npm. The docker container is used to ensure that all back-end dependencies are the same for every environment. The Docker configuration for the installation of said dependencies is done in the Dockerfile file. This specifies the OS and other installation software. The docker-compose.yml file is the file that defines and initiates the webserver using flask.'
           )
         )
       ),
@@ -35985,49 +36012,54 @@ var About = _react2.default.createClass({
         _reactBootstrap.Panel,
         { id: 'hosting', header: 'Hosting', bsStyle: 'info' },
         _react2.default.createElement(
-          _reactBootstrap.Accordion,
-          null,
+          _reactBootstrap.Button,
+          { id: 'choice', onClick: function onClick() {
+              return _this.setState({ open6: !_this.state.open6 });
+            } },
+          'Choice ',
+          _react2.default.createElement(_angleDown2.default, null)
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Panel,
+          { collapsible: true, expanded: this.state.open6 },
           _react2.default.createElement(
-            _reactBootstrap.Panel,
-            { id: 'choice', header: _react2.default.createElement(
-                'h4',
-                null,
-                'Choice ',
-                _react2.default.createElement(_angleDown2.default, null)
-              ), eventKey: '1' },
-            _react2.default.createElement(
-              'p',
-              null,
-              'For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.'
-            )
-          ),
+            'p',
+            null,
+            'For hosting we decided to go with Amazon Web Services (AWS) since a couple of us were familiar with it.  We set up a single t2.micro ec2 instance in US-West-2B to host our application.'
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Button,
+          { id: 'setup', onClick: function onClick() {
+              return _this.setState({ open7: !_this.state.open7 });
+            } },
+          'Set-up ',
+          _react2.default.createElement(_angleDown2.default, null)
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Panel,
+          { collapsible: true, expanded: this.state.open7 },
           _react2.default.createElement(
-            _reactBootstrap.Panel,
-            { id: 'setup', header: _react2.default.createElement(
-                'h4',
-                null,
-                'Set-up ',
-                _react2.default.createElement(_angleDown2.default, null)
-              ), eventKey: '2' },
-            _react2.default.createElement(
-              'p',
-              null,
-              'To set up an ec2 instance you navigate to the ec2 dashboard from the AWS console and click launch instance.  You will first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon\'s 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It is also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.'
-            )
-          ),
+            'p',
+            null,
+            'To set up an ec2 instance you navigate to the ec2 dashboard from the AWS console and click launch instance.  You will first have to select which machine image you would like the instance to be set to.  The machine image contains the configuration for the operating system as well as preinstalled software.  Our instance was configured with Amazon\'s 64 bit Linux AMI.  Next you have to select the instance type which we selected t2.micro for.  The t2.micro instance is a low cost general purpose instance type that has 1 vCPU, 1 GiB of memory, and a default 8 GiB Elastic Block Store volume associated with it. Amazon lists websites and applications as use cases for this type so it was a good fit for our goals. It is also free tier eligible which allowed us to host our application on AWS for free for up to a year.  At this point the instance is ready to launch.'
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Button,
+          { id: 'accessibility', onClick: function onClick() {
+              return _this.setState({ open8: !_this.state.open8 });
+            } },
+          'Accessibility ',
+          _react2.default.createElement(_angleDown2.default, null)
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Panel,
+          { collapsible: true, expanded: this.state.open8 },
           _react2.default.createElement(
-            _reactBootstrap.Panel,
-            { id: 'accessibility', header: _react2.default.createElement(
-                'h4',
-                null,
-                'Accessibility ',
-                _react2.default.createElement(_angleDown2.default, null)
-              ), eventKey: '3' },
-            _react2.default.createElement(
-              'p',
-              null,
-              'An elastic IPv4 IP was allocated and assigned to the instance and added to the DNS record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instance, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and running Docker with the settings we have in the repo.'
-            )
+            'p',
+            null,
+            'An elastic IPv4 IP was allocated and assigned to the instance and added to the DNS record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instance, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and running Docker with the settings we have in the repo.'
           )
         )
       ),
@@ -36035,273 +36067,275 @@ var About = _react2.default.createClass({
         _reactBootstrap.Panel,
         { id: 'diagrams', header: 'Diagrams & Other', bsStyle: 'info' },
         _react2.default.createElement(
-          _reactBootstrap.Accordion,
-          null,
+          _reactBootstrap.Button,
+          { id: 'uml', onClick: function onClick() {
+              return _this.setState({ open9: !_this.state.open9 });
+            } },
+          'UML Diagram ',
+          _react2.default.createElement(_angleDown2.default, null)
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Panel,
+          { collapsible: true, expanded: this.state.open9 },
+          _react2.default.createElement('img', { src: '/dist/images/UML.jpg', height: '1573', width: '306' })
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Button,
+          { id: 'tablec', onClick: function onClick() {
+              return _this.setState({ open0: !_this.state.open0 });
+            } },
+          'Table of Components ',
+          _react2.default.createElement(_angleDown2.default, null)
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Panel,
+          { collapsible: true, expanded: this.state.open0 },
           _react2.default.createElement(
-            _reactBootstrap.Panel,
-            { id: 'uml', header: _react2.default.createElement(
-                'h4',
-                null,
-                'UML Diagram ',
-                _react2.default.createElement(_angleDown2.default, null)
-              ), eventKey: '1' },
-            _react2.default.createElement('img', { src: '/dist/images/UML.jpg', height: '1573', width: '306' })
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Panel,
-            { id: 'tablec', header: _react2.default.createElement(
-                'h4',
-                null,
-                'Table of Components ',
-                _react2.default.createElement(_angleDown2.default, null)
-              ), eventKey: '2' },
+            _reactBootstrap.Table,
+            { responsive: true },
             _react2.default.createElement(
-              _reactBootstrap.Table,
-              { responsive: true },
+              'thead',
+              null,
               _react2.default.createElement(
-                'thead',
+                'tr',
                 null,
                 _react2.default.createElement(
-                  'tr',
+                  'th',
                   null,
-                  _react2.default.createElement(
-                    'th',
-                    null,
-                    'Component File'
-                  ),
-                  _react2.default.createElement(
-                    'th',
-                    null,
-                    'Description'
-                  )
+                  'Component File'
+                ),
+                _react2.default.createElement(
+                  'th',
+                  null,
+                  'Description'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'tbody',
+              null,
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'App.jsx'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'Application entrypoint, contains the page Routing logic'
                 )
               ),
               _react2.default.createElement(
-                'tbody',
+                'tr',
                 null,
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'App.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Application entrypoint, contains the page Routing logic'
-                  )
+                  'About.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'About.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Defines the About page with the Technical Report'
-                  )
+                  'Defines the About page with the Technical Report'
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'CommentDetails.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'CommentDetails.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Defines the links between comments and other models'
-                  )
+                  'Defines the links between comments and other models'
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'Comments.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Comments.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Defines the Reddit Comments page'
-                  )
+                  'Defines the Reddit Comments page'
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'Details.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Details.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Allows linking to other models'
-                  )
+                  'Allows linking to other models'
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'Home.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Home.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Defines the Home page'
-                  )
+                  'Defines the Home page'
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'NavBarAPI.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'NavBarAPI.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Defines the Navigation Bar and the links to other pages'
-                  )
+                  'Defines the Navigation Bar and the links to other pages'
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'PostDetails.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'PostDetails.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Defines the links between posts and other models'
-                  )
+                  'Defines the links between posts and other models'
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'Posts.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Posts.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Defines the Reddit Posts page'
-                  )
+                  'Defines the Reddit Posts page'
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'RfCard.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'RfCard.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Defines the Card component that represents each instance in the Grid'
-                  )
+                  'Defines the Card component that represents each instance in the Grid'
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'RfGrid.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'RfGrid.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Defines the Grid that displays the Cards, takes a list of json object instances to display into Cards'
-                  )
+                  'Defines the Grid that displays the Cards, takes a list of json object instances to display into Cards'
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'SortFilter.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'SortFilter.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Defines the filtering and sorting box for each model'
-                  )
+                  'Defines the filtering and sorting box for each model'
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'SubredditDetails.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'SubredditDetails.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Defines the links between subreddits and other models'
-                  )
+                  'Defines the links between subreddits and other models'
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'Subreddits.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Subreddits.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Defines the Reddit Subreddit page'
-                  )
+                  'Defines the Reddit Subreddit page'
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'UserDetail.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'UserDetail.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Defines the links between users and other models'
-                  )
+                  'Defines the links between users and other models'
+                )
+              ),
+              _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'Users.jsx'
                 ),
                 _react2.default.createElement(
-                  'tr',
+                  'td',
                   null,
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Users.jsx'
-                  ),
-                  _react2.default.createElement(
-                    'td',
-                    null,
-                    'Defines the Reddit Users page'
-                  )
+                  'Defines the Reddit Users page'
                 )
               )
             )
