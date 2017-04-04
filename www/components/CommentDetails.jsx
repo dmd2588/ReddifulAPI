@@ -1,28 +1,52 @@
 import React from 'react' //eslint-disable-line
 import Detail from './Details.jsx'
-import { getUsers, getPosts, getComments } from '../api.js'
+import { getUserByID, getPostByID, getCommentByID } from '../api.js'
 
-export default function CommentDetails (props) {
-  const comment = getComments().find(c => c.id === props.match.params.comment_id)
-  const author = getUsers().find(u => u.id === comment.author) || {}
-  const post = getPosts().find(p => p.id === comment.link_id) || {}
-
-  return Detail({
-    title: 'Comment',
-    details: {
-      'Author': {
-        name: author.name,
-        link: '/users/detail/' + author.id
-      },
-      'Post': {
-        name: post.title,
-        link: '/posts/detail/' + post.id
-      },
-      'Created': new Date(comment.created * 1000).toDateString(),
-      'Edited': comment.edited ? 'Yes' : 'No',
-      'Gilds': comment.gilded,
-      'Score': comment.score,
-      'Body': comment.body
+export default class CommentDetails extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      comment_id: props.match.params.comment_id,
+      comment: {},
+      author: {},
+      post: {}
     }
-  })
+  }
+
+  componentDidMount () {
+    var self = this
+    getCommentByID(function (comment) {
+      getUserByID(function (author) {
+        getPostByID(function (post) {
+          self.setState({
+            comment_id: self.state.comment_id,
+            comment: comment,
+            author: author,
+            post: post
+          })
+        }, comment.link_id)
+      }, comment.author)
+    }, this.state.comment_id)
+  }
+
+  render () {
+    return Detail({
+      title: 'Comment',
+      details: {
+        'Author': {
+          name: this.state.author.name,
+          link: '/users/detail/' + this.state.author.id
+        },
+        'Post': {
+          name: this.state.post.title,
+          link: '/posts/detail/' + this.state.post.id
+        },
+        'Created': new Date(this.state.comment.created * 1000).toDateString(),
+        'Edited': this.state.comment.edited ? 'Yes' : 'No',
+        'Gilds': this.state.comment.gilded,
+        'Score': this.state.comment.score,
+        'Body': this.state.comment.body
+      }
+    })
+  }
 }

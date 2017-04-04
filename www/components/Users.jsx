@@ -4,7 +4,7 @@ import RfGrid from './RfGrid.jsx'
 import { getUsers } from '../api.js'
 
 export default class Users extends React.Component {
-  loadDataFromServer (callback) {
+  loadDataFromServer (callback, options) {
     getUsers(function (users) {
       var myp = {
         title: 'Users',
@@ -19,7 +19,7 @@ export default class Users extends React.Component {
       }
 
       callback(myp)
-    })
+    }, options)
   }
 
   render () {

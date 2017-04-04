@@ -3,21 +3,24 @@ import RfGrid from './RfGrid.jsx'
 import { getPosts, getUsers } from '../api.js'
 
 export default class Posts extends React.Component {
-  loadDataFromServer (options) {
-        // Make request here using options
-    var myp = {
-      title: 'Posts',
-      select_values: Object.keys(getPosts()[0]),
-      cards: getPosts().map(p => {
-        return {
-          title: p.title,
-          subtitle: 'Author: ' + (getUsers().find(u => u.id === p.author) || {}).name,
-          link: '/posts/detail/' + p.id
+  loadDataFromServer (callback, options) {
+    getPosts(function (posts) {
+      getUsers(function (users) {
+        var myp = {
+          title: 'Posts',
+          select_values: Object.keys(posts[0]),
+          cards: posts.map(p => {
+            return {
+              title: p.title,
+              subtitle: 'Author: ' + (users.find(u => u.id === p.author) || {}).name,
+              link: '/posts/detail/' + p.id
+            }
+          })
         }
-      })
-    }
 
-    return myp
+        callback(myp)
+      })
+    }, options)
   }
 
   render () {

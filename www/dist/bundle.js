@@ -7602,9 +7602,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.getUsers = getUsers;
+exports.getUserByID = getUserByID;
 exports.getComments = getComments;
+exports.getCommentByID = getCommentByID;
 exports.getPosts = getPosts;
+exports.getPostByID = getPostByID;
 exports.getSubreddits = getSubreddits;
+exports.getSubredditByID = getSubredditByID;
 exports.getModerators = getModerators;
 
 var _axios = __webpack_require__(346);
@@ -7615,101 +7619,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var moderators = [{ 'user_id': 'hh8mr', 'sr_id': '3imv0' }, { 'user_id': '74344', 'sr_id': '2tex6' }, { 'user_id': '4fer6', 'sr_id': '2qh55' }];
 
-var subreddits = [{
-  'accounts_active': 921,
-  'created': 1484806197.0,
-  'display_name': 'FireEmblemHeroes',
-  'id': '3imv0',
-  'subscribers': 52790,
-  'title': "Fire Emblem Heroes - Nintendo's Latest Mobile Game"
-}, {
-  'accounts_active': 603,
-  'created': 1327266711.0,
-  'display_name': 'ProgrammerHumor',
-  'id': '2tex6',
-  'subscribers': 199848,
-  'title': 'Programmer Humor'
-}, {
-  'accounts_active': 1338,
-  'created': 1201275191.0,
-  'display_name': 'food',
-  'id': '2qh55',
-  'subscribers': 10979227,
-  'title': 'food'
-}];
+function getUsers(callback, options) {
+  _axios2.default.get('/api/users').then(function (res) {
+    return callback(res.data);
+  });
+}
 
-var posts = [{
-  'subreddit_id': '3imv0',
-  'selftext': 'Test Text',
-  'is_self': true,
-  'id': '5th7sz',
-  'gilded': 0,
-  'title': 'Test',
-  'url': 'https://www.reddit.com/r/FireEmblemHeroesTest/comments/5th7sz/test/',
-  'author': 'hh8mr',
-  'created': 1486872624.0,
-  'score': 1,
-  'over_18': false
-}, {
-  'subreddit_id': '2tex6',
-  'selftext': '',
-  'is_self': false,
-  'id': '60on5c',
-  'gilded': 0,
-  'title': 'existentialSort',
-  'url': 'https://i.redd.it/gdoviw37hsmy.jpg',
-  'author': '74344',
-  'created': 1490143051.0,
-  'score': 760,
-  'over_18': false
-}, {
-  'subreddit_id': '2qh55',
-  'selftext': 'Hey everyone!\\n\\nThis Friday there will be 8 people at my place including me, all of us have played board games before, and i am excited to introduce **Captain Sonar**. This will be my first play as well, but i think i know the rules. The thing is, 8 people is a lot to manage. Im worried that i might mess up some rules. I want the game to run as smoothly as possible since its not often that i get 8 players. Are there any commonly missed rules or any advice that you guys can give me?\\n\\nAlso did you all enjoy the game? What did you think about it? How was your experience?',
-  'is_self': true,
-  'id': '60tlfl',
-  'gilded': 0,
-  'title': 'Planning on getting Captain Sonar to the table with the full 8-players. Would love some advice',
-  'url': 'https://www.reddit.com/r/boardgames/comments/60tlfl/planning_on_getting_captain_sonar_to_the_table/',
-  'author': '4fer6',
-  'created': 1490203502.0,
-  'score': 15,
-  'over_18': false
-}];
-
-var comments = [{
-  'author': 'hh8mr',
-  'body': 'comment 2',
-  'created': 1488274311.0,
-  'edited': false,
-  'gilded': 0,
-  'id': 'deaw2vi',
-  'link_id': '5th7sz',
-  'score': 1,
-  'subreddit_id': '3imv0'
-}, {
-  'author': '74344',
-  'body': 'Your submission has been removed.\n\nViolation of Rules #2: \n\nNo rehosting allowed without explicit permission, unless it is obvious that the host allows it. Rehosting for the purposes of offering a direct link to an image is allowed in the comments.\n\n\n\nIf you feel that it has been removed in error, please [message us](http://www.reddit.com/message/compose?to=%2Fr%2Fprogrammerhumor) so that we may review it.',
-  'created': 1490217634.0,
-  'edited': false,
-  'gilded': 0,
-  'id': 'df9c4sc',
-  'link_id': '60on5c',
-  'score': 2,
-  'subreddit_id': '2tex6'
-}, {
-  'author': '4fer6',
-  'body': 'Some random advice for running a good first game with 8 players.\n\n* As /u/raiden001 has stated, add the house rule that Captains must clearly state "Heading X" for every command. They must also wait for an OK from Engineer and First Mate before issuing another order.\n\n* Sit the players so the Captain is sat near or opposite the enemy Radio Operator. This will give the Radio Op a chance.\n\n* Double check all players are using the correct board and correct site of board. This seems obvious, but a little mistake like this will break the game and cause great frustration.\n\n* I would rate difficulty of each role in the following order (from most challenging to least challenging); Radio Op, Captain, Engineer, First Mate. Try to assign roles based on peoples comfort, and make sure the Radio Ops can hear the enemy Captain okay.\n\nCommonly missed rules;\n\n* You can\'t cross over your own path (like snake).\n\n* You can\'t use a system if any of the corresponding symbols are currently broken by engineer\n\n* You must check that you can use a system before calling stop\n',
-  'created': 1490218064.0,
-  'edited': false,
-  'gilded': 0,
-  'id': 'df9cfop',
-  'link_id': '60tlfl',
-  'score': 5,
-  'subreddit_id': '2qh55'
-}];
-
-function getUsers(callback) {
-  _axios2.default.get('/api/users/').then(function (res) {
+function getUserByID(callback, ID) {
+  _axios2.default.get('/api/users/' + ID).then(function (res) {
     return callback(res.data);
   });
 }
@@ -7740,8 +7657,16 @@ function getUsers(callback) {
 //   return dat
 // }
 
-function getComments() {
-  return comments;
+function getComments(callback, options) {
+  _axios2.default.get('/api/comments').then(function (res) {
+    return callback(res.data);
+  });
+}
+
+function getCommentByID(callback, ID) {
+  _axios2.default.get('/api/comments/' + ID).then(function (res) {
+    return callback(res.data);
+  });
 }
 
 // export function getCommentRelated (comment_id) {
@@ -7780,9 +7705,16 @@ function getComments() {
 //   return dat
 // }
 
-function getPosts() {
-  var copyPosts = posts.slice();
-  return posts.concat(copyPosts);
+function getPosts(callback, options) {
+  _axios2.default.get('/api/posts').then(function (res) {
+    return callback(res.data);
+  });
+}
+
+function getPostByID(callback, ID) {
+  _axios2.default.get('/api/posts/' + ID).then(function (res) {
+    return callback(res.data);
+  });
 }
 
 // export function getPostRelated (post_id) {
@@ -7818,8 +7750,16 @@ function getPosts() {
 //   return dat
 // }
 
-function getSubreddits() {
-  return subreddits;
+function getSubreddits(callback, options) {
+  _axios2.default.get('/api/subreddits').then(function (res) {
+    return callback(res.data);
+  });
+}
+
+function getSubredditByID(callback, ID) {
+  _axios2.default.get('/api/subreddits/' + ID).then(function (res) {
+    return callback(res.data);
+  });
 }
 
 // export function getSubredditRelated (subreddit_id) {
@@ -7850,8 +7790,8 @@ function getSubreddits() {
 //   return dat
 // }
 
-function getModerators() {
-  return moderators;
+function getModerators(callback, options) {
+  callback(moderators);
 }
 
 /***/ }),
@@ -37892,7 +37832,8 @@ exports.default = About;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = CommentDetails;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
 
@@ -37906,37 +37847,75 @@ var _api = __webpack_require__(35);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//eslint-disable-line
-function CommentDetails(props) {
-  var comment = (0, _api.getComments)().find(function (c) {
-    return c.id === props.match.params.comment_id;
-  });
-  var author = (0, _api.getUsers)().find(function (u) {
-    return u.id === comment.author;
-  }) || {};
-  var post = (0, _api.getPosts)().find(function (p) {
-    return p.id === comment.link_id;
-  }) || {};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  return (0, _Details2.default)({
-    title: 'Comment',
-    details: {
-      'Author': {
-        name: author.name,
-        link: '/users/detail/' + author.id
-      },
-      'Post': {
-        name: post.title,
-        link: '/posts/detail/' + post.id
-      },
-      'Created': new Date(comment.created * 1000).toDateString(),
-      'Edited': comment.edited ? 'Yes' : 'No',
-      'Gilds': comment.gilded,
-      'Score': comment.score,
-      'Body': comment.body
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //eslint-disable-line
+
+
+var CommentDetails = function (_React$Component) {
+  _inherits(CommentDetails, _React$Component);
+
+  function CommentDetails(props) {
+    _classCallCheck(this, CommentDetails);
+
+    var _this = _possibleConstructorReturn(this, (CommentDetails.__proto__ || Object.getPrototypeOf(CommentDetails)).call(this, props));
+
+    _this.state = {
+      comment_id: props.match.params.comment_id,
+      comment: {},
+      author: {},
+      post: {}
+    };
+    return _this;
+  }
+
+  _createClass(CommentDetails, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var self = this;
+      (0, _api.getCommentByID)(function (comment) {
+        (0, _api.getUserByID)(function (author) {
+          (0, _api.getPostByID)(function (post) {
+            self.setState({
+              comment_id: self.state.comment_id,
+              comment: comment,
+              author: author,
+              post: post
+            });
+          }, comment.link_id);
+        }, comment.author);
+      }, this.state.comment_id);
     }
-  });
-}
+  }, {
+    key: 'render',
+    value: function render() {
+      return (0, _Details2.default)({
+        title: 'Comment',
+        details: {
+          'Author': {
+            name: this.state.author.name,
+            link: '/users/detail/' + this.state.author.id
+          },
+          'Post': {
+            name: this.state.post.title,
+            link: '/posts/detail/' + this.state.post.id
+          },
+          'Created': new Date(this.state.comment.created * 1000).toDateString(),
+          'Edited': this.state.comment.edited ? 'Yes' : 'No',
+          'Gilds': this.state.comment.gilded,
+          'Score': this.state.comment.score,
+          'Body': this.state.comment.body
+        }
+      });
+    }
+  }]);
+
+  return CommentDetails;
+}(_react2.default.Component);
+
+exports.default = CommentDetails;
 
 /***/ }),
 /* 366 */
@@ -37985,23 +37964,26 @@ var Users = function (_React$Component) {
 
   _createClass(Users, [{
     key: 'loadDataFromServer',
-    value: function loadDataFromServer(options) {
-      // Make request here using options
-      var myp = {
-        title: 'Comments',
-        select_values: Object.keys((0, _api.getComments)()[0]),
-        cards: (0, _api.getComments)().map(function (c) {
-          return {
-            title: (0, _api.getUsers)().find(function (u) {
-              return u.id === c.author;
-            }).name,
-            subtitle: 'Commented: ' + (0, _moment2.default)(new Date(c.created * 1000)).format('LL'),
-            link: '/comments/detail/' + c.id
+    value: function loadDataFromServer(callback, options) {
+      (0, _api.getComments)(function (comments) {
+        (0, _api.getUsers)(function (users) {
+          var myp = {
+            title: 'Comments',
+            select_values: Object.keys(comments[0]),
+            cards: comments.map(function (c) {
+              return {
+                title: users.find(function (u) {
+                  return u.id === c.author;
+                }).name,
+                subtitle: 'Commented: ' + (0, _moment2.default)(new Date(c.created * 1000)).format('LL'),
+                link: '/comments/detail/' + c.id
+              };
+            })
           };
-        })
-      };
 
-      return myp;
+          callback(myp);
+        });
+      }, options);
     }
   }, {
     key: 'render',
@@ -38234,7 +38216,8 @@ exports.default = NavBarAPI;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = PostDetails;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
 
@@ -38248,35 +38231,73 @@ var _api = __webpack_require__(35);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// eslint-disable-line
-function PostDetails(props) {
-  var post = (0, _api.getPosts)().find(function (p) {
-    return p.id === props.match.params.post_id;
-  });
-  var author = (0, _api.getUsers)().find(function (u) {
-    return u.id === post.author;
-  }) || {};
-  var subreddit = (0, _api.getSubreddits)().find(function (s) {
-    return s.id === post.subreddit_id;
-  }) || {};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  return (0, _Details2.default)({
-    title: 'Post - ' + post.title,
-    details: {
-      'Title': post.title,
-      'Score': post.score,
-      'Subreddit': {
-        name: subreddit.display_name || 'NOT_FOUND - FIXME',
-        link: '/subreddits/detail/' + subreddit.id
-      },
-      'Author': {
-        name: author.name,
-        link: '/users/detail/' + author.id
-      },
-      'Created': new Date(post.created * 1000).toDateString()
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // eslint-disable-line
+
+
+var PostDetails = function (_React$Component) {
+  _inherits(PostDetails, _React$Component);
+
+  function PostDetails(props) {
+    _classCallCheck(this, PostDetails);
+
+    var _this = _possibleConstructorReturn(this, (PostDetails.__proto__ || Object.getPrototypeOf(PostDetails)).call(this, props));
+
+    _this.state = {
+      post_id: props.match.params.post_id,
+      post: {},
+      author: {},
+      subreddit: {}
+    };
+    return _this;
+  }
+
+  _createClass(PostDetails, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var self = this;
+      (0, _api.getPostByID)(function (post) {
+        (0, _api.getUserByID)(function (author) {
+          (0, _api.getSubredditByID)(function (subreddit) {
+            self.setState({
+              post_id: self.state.post_id,
+              post: post,
+              author: author,
+              subreddit: subreddit
+            });
+          }, post.subreddit_id);
+        }, post.author);
+      }, this.state.post_id);
     }
-  });
-}
+  }, {
+    key: 'render',
+    value: function render() {
+      return (0, _Details2.default)({
+        title: 'Post - ' + this.state.post.title,
+        details: {
+          'Title': this.state.post.title,
+          'Score': this.state.post.score,
+          'Subreddit': {
+            name: this.state.subreddit.display_name || 'NOT_FOUND - FIXME',
+            link: '/subreddits/detail/' + this.state.subreddit.id
+          },
+          'Author': {
+            name: this.state.author.name,
+            link: '/users/detail/' + this.state.author.id
+          },
+          'Created': new Date(this.state.post.created * 1000).toDateString()
+        }
+      });
+    }
+  }]);
+
+  return PostDetails;
+}(_react2.default.Component);
+
+exports.default = PostDetails;
 
 /***/ }),
 /* 370 */
@@ -38321,23 +38342,26 @@ var Posts = function (_React$Component) {
 
   _createClass(Posts, [{
     key: 'loadDataFromServer',
-    value: function loadDataFromServer(options) {
-      // Make request here using options
-      var myp = {
-        title: 'Posts',
-        select_values: Object.keys((0, _api.getPosts)()[0]),
-        cards: (0, _api.getPosts)().map(function (p) {
-          return {
-            title: p.title,
-            subtitle: 'Author: ' + ((0, _api.getUsers)().find(function (u) {
-              return u.id === p.author;
-            }) || {}).name,
-            link: '/posts/detail/' + p.id
+    value: function loadDataFromServer(callback, options) {
+      (0, _api.getPosts)(function (posts) {
+        (0, _api.getUsers)(function (users) {
+          var myp = {
+            title: 'Posts',
+            select_values: Object.keys(posts[0]),
+            cards: posts.map(function (p) {
+              return {
+                title: p.title,
+                subtitle: 'Author: ' + (users.find(function (u) {
+                  return u.id === p.author;
+                }) || {}).name,
+                link: '/posts/detail/' + p.id
+              };
+            })
           };
-        })
-      };
 
-      return myp;
+          callback(myp);
+        });
+      }, options);
     }
   }, {
     key: 'render',
@@ -38513,7 +38537,8 @@ function SortFilter(props) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = SubredditDetails;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
 
@@ -38527,32 +38552,71 @@ var _api = __webpack_require__(35);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//eslint-disable-line
-function SubredditDetails(props) {
-  var subreddit = (0, _api.getSubreddits)().find(function (s) {
-    return s.id === props.match.params.subreddit_id;
-  });
-  var modUserId = (0, _api.getModerators)().find(function (r) {
-    return r.sr_id === subreddit.id;
-  }).user_id;
-  var modUser = (0, _api.getUsers)().find(function (u) {
-    return u.id === modUserId;
-  });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  return (0, _Details2.default)({
-    title: 'Subreddit - ' + subreddit.display_name,
-    details: {
-      'Name': subreddit.display_name,
-      'Title': subreddit.title,
-      'Subscribers': subreddit.subscribers,
-      'Moderator': {
-        name: modUser.name,
-        link: '/users/detail/' + modUser.id
-      },
-      'Created': new Date(subreddit.created * 1000).toDateString()
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //eslint-disable-line
+
+
+var SubredditDetails = function (_React$Component) {
+  _inherits(SubredditDetails, _React$Component);
+
+  function SubredditDetails(props) {
+    _classCallCheck(this, SubredditDetails);
+
+    var _this = _possibleConstructorReturn(this, (SubredditDetails.__proto__ || Object.getPrototypeOf(SubredditDetails)).call(this, props));
+
+    _this.state = {
+      subreddit_id: props.match.params.subreddit_id,
+      subreddit: {},
+      modUser: {}
+    };
+    return _this;
+  }
+
+  _createClass(SubredditDetails, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var self = this;
+      (0, _api.getSubredditByID)(function (subreddit) {
+        (0, _api.getModerators)(function (mods) {
+          var modUserId = mods.find(function (r) {
+            return r.sr_id === subreddit.id;
+          }).user_id;
+          (0, _api.getUserByID)(function (user) {
+            self.setState({
+              subreddit_id: self.state.subreddit_id,
+              subreddit: subreddit,
+              modUser: user
+            });
+          }, modUserId);
+        });
+      }, this.state.subreddit_id);
     }
-  });
-}
+  }, {
+    key: 'render',
+    value: function render() {
+      return (0, _Details2.default)({
+        title: 'Subreddit - ' + this.state.subreddit.display_name,
+        details: {
+          'Name': this.state.subreddit.display_name,
+          'Title': this.state.subreddit.title,
+          'Subscribers': this.state.subreddit.subscribers,
+          'Moderator': {
+            name: this.state.modUser.name,
+            link: '/users/detail/' + this.state.modUser.id
+          },
+          'Created': new Date(this.state.subreddit.created * 1000).toDateString()
+        }
+      });
+    }
+  }]);
+
+  return SubredditDetails;
+}(_react2.default.Component);
+
+exports.default = SubredditDetails;
 
 /***/ }),
 /* 374 */
@@ -38601,22 +38665,23 @@ var Subreddits = function (_React$Component) {
 
   _createClass(Subreddits, [{
     key: 'loadDataFromServer',
-    value: function loadDataFromServer(options) {
-      // Make request here using options
-      var myp = {
-        title: 'Subreddits',
-        select_values: Object.keys((0, _api.getSubreddits)()[0]),
-        cards: (0, _api.getSubreddits)().map(function (s) {
-          console.log('S', s.display_name, s);
-          return {
-            title: s.display_name,
-            subtitle: 'Created: ' + (0, _moment2.default)(new Date(s.created * 1000)).format('LL'),
-            link: '/subreddits/detail/' + s.id
-          };
-        })
-      };
+    value: function loadDataFromServer(callback, options) {
+      (0, _api.getSubreddits)(function (subreddits) {
+        var myp = {
+          title: 'Subreddits',
+          select_values: Object.keys(subreddits[0]),
+          cards: subreddits.map(function (s) {
+            console.log('S', s.display_name, s);
+            return {
+              title: s.display_name,
+              subtitle: 'Created: ' + (0, _moment2.default)(new Date(s.created * 1000)).format('LL'),
+              link: '/subreddits/detail/' + s.id
+            };
+          })
+        };
 
-      return myp;
+        callback(myp);
+      }, options);
     }
   }, {
     key: 'render',
@@ -38644,7 +38709,8 @@ exports.default = Subreddits;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = UserDetail;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
 
@@ -38658,33 +38724,75 @@ var _api = __webpack_require__(35);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//eslint-disable-line
-function UserDetail(props) {
-  var user = (0, _api.getUsers)().find(function (u) {
-    return u.id === props.match.params.user_id;
-  });
-  var modSubId = (0, _api.getModerators)().find(function (r) {
-    return r.user_id === user.id;
-  }).sr_id;
-  var modSub = modSubId ? (0, _api.getSubreddits)().find(function (s) {
-    return s.id === modSubId;
-  }) : {} || {};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  return (0, _Details2.default)({
-    title: 'User - ' + user.name,
-    details: {
-      'Name': user.name,
-      'Link Karma': user.link_karma,
-      'Comment Karma': user.comment_karma,
-      'Email': user.email,
-      'Moderator of': {
-        name: modSub.display_name,
-        link: '/subreddits/detail/' + modSub.id
-      },
-      'Created': new Date(user.created * 1000).toDateString()
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //eslint-disable-line
+
+
+var UserDetail = function (_React$Component) {
+  _inherits(UserDetail, _React$Component);
+
+  function UserDetail(props) {
+    _classCallCheck(this, UserDetail);
+
+    var _this = _possibleConstructorReturn(this, (UserDetail.__proto__ || Object.getPrototypeOf(UserDetail)).call(this, props));
+
+    _this.state = {
+      user_id: props.match.params.user_id,
+      user: {},
+      modSub: {}
+    };
+    return _this;
+  }
+
+  _createClass(UserDetail, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var self = this;
+      (0, _api.getUserByID)(function (user) {
+        (0, _api.getModerators)(function (mods) {
+          var modSubId = mods.find(function (r) {
+            return r.user_id === user.id;
+          }).sr_id;
+          (0, _api.getSubreddits)(function (subreddits) {
+            var modSub = modSubId ? subreddits.find(function (s) {
+              return s.id === modSubId;
+            }) : {} || {};
+            self.setState({
+              user_id: self.state.user_id,
+              user: user,
+              modSub: modSub
+            });
+          });
+        });
+      }, self.state.user_id);
     }
-  });
-}
+  }, {
+    key: 'render',
+    value: function render() {
+      return (0, _Details2.default)({
+        title: 'User - ' + this.state.user.name,
+        details: {
+          'Name': this.state.user.name,
+          'Link Karma': this.state.user.link_karma,
+          'Comment Karma': this.state.user.comment_karma,
+          'Email': this.state.user.email,
+          'Moderator of': {
+            name: this.state.modSub.display_name,
+            link: '/subreddits/detail/' + this.state.modSub.id
+          },
+          'Created': new Date(this.state.user.created * 1000).toDateString()
+        }
+      });
+    }
+  }]);
+
+  return UserDetail;
+}(_react2.default.Component);
+
+exports.default = UserDetail;
 
 /***/ }),
 /* 376 */
@@ -38733,7 +38841,7 @@ var Users = function (_React$Component) {
 
   _createClass(Users, [{
     key: 'loadDataFromServer',
-    value: function loadDataFromServer(callback) {
+    value: function loadDataFromServer(callback, options) {
       (0, _api.getUsers)(function (users) {
         var myp = {
           title: 'Users',
@@ -38748,7 +38856,7 @@ var Users = function (_React$Component) {
         };
 
         callback(myp);
-      });
+      }, options);
     }
   }, {
     key: 'render',
