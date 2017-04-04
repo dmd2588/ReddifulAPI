@@ -5,8 +5,8 @@ import { getComments, getUsers } from '../api.js'
 
 export default class Users extends React.Component {
   loadDataFromServer (callback, options) {
-    getComments(function (comments) {
-      getUsers(function (users) {
+    getComments(options, function (comments) {
+      getUsers({}, function (users) {
         var myp = {
           title: 'Comments',
           select_values: Object.keys(comments[0]),
@@ -21,7 +21,7 @@ export default class Users extends React.Component {
 
         callback(myp)
       })
-    }, options)
+    })
   }
 
   render () {

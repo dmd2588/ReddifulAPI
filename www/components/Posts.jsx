@@ -4,8 +4,8 @@ import { getPosts, getUsers } from '../api.js'
 
 export default class Posts extends React.Component {
   loadDataFromServer (callback, options) {
-    getPosts(function (posts) {
-      getUsers(function (users) {
+    getPosts(options, function (posts) {
+      getUsers({}, function (users) {
         var myp = {
           title: 'Posts',
           select_values: Object.keys(posts[0]),
@@ -20,7 +20,7 @@ export default class Posts extends React.Component {
 
         callback(myp)
       })
-    }, options)
+    })
   }
 
   render () {

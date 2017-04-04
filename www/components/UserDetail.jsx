@@ -14,10 +14,10 @@ export default class UserDetail extends React.Component {
 
   componentDidMount () {
     var self = this
-    getUserByID(function (user) {
-      getModerators(function (mods) {
+    getUserByID(self.state.user_id, function (user) {
+      getModerators({}, function (mods) {
         var modSubId = mods.find(r => r.user_id === user.id).sr_id
-        getSubreddits(function (subreddits) {
+        getSubreddits({}, function (subreddits) {
           var modSub = modSubId ? subreddits.find(s => s.id === modSubId) : {} || {}
           self.setState({
             user_id: self.state.user_id,
@@ -26,7 +26,7 @@ export default class UserDetail extends React.Component {
           })
         })
       })
-    }, self.state.user_id)
+    })
   }
 
   render () {

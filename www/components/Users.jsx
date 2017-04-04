@@ -5,7 +5,7 @@ import { getUsers } from '../api.js'
 
 export default class Users extends React.Component {
   loadDataFromServer (callback, options) {
-    getUsers(function (users) {
+    getUsers(options, function (users) {
       var myp = {
         title: 'Users',
         select_values: Object.keys(users[0]),
@@ -19,7 +19,7 @@ export default class Users extends React.Component {
       }
 
       callback(myp)
-    }, options)
+    })
   }
 
   render () {

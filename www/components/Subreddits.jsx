@@ -5,7 +5,7 @@ import { getSubreddits } from '../api.js'
 
 export default class Subreddits extends React.Component {
   loadDataFromServer (callback, options) {
-    getSubreddits(function (subreddits) {
+    getSubreddits(options, function (subreddits) {
       var myp = {
         title: 'Subreddits',
         select_values: Object.keys(subreddits[0]),
@@ -20,7 +20,7 @@ export default class Subreddits extends React.Component {
       }
 
       callback(myp)
-    }, options)
+    })
   }
   render () {
     return <RfGrid loadDataFromServer={ops => this.loadDataFromServer(ops)} />

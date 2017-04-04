@@ -6,12 +6,12 @@ const moderators = [
   {'user_id': '4fer6', 'sr_id': '2qh55'}
 ]
 
-export function getUsers (callback, options) {
+export function getUsers (options, callback) {
   axios.get('/api/users')
   .then(res => callback(res.data))
 }
 
-export function getUserByID (callback, ID) {
+export function getUserByID (ID, callback) {
   axios.get('/api/users/' + ID)
   .then(res => callback(res.data))
 }
@@ -42,12 +42,12 @@ export function getUserByID (callback, ID) {
 //   return dat
 // }
 
-export function getComments (callback, options) {
+export function getComments (options, callback) {
   axios.get('/api/comments')
   .then(res => callback(res.data))
 }
 
-export function getCommentByID (callback, ID) {
+export function getCommentByID (ID, callback) {
   axios.get('/api/comments/' + ID)
   .then(res => callback(res.data))
 }
@@ -88,12 +88,12 @@ export function getCommentByID (callback, ID) {
 //   return dat
 // }
 
-export function getPosts (callback, options) {
+export function getPosts (options, callback) {
   axios.get('/api/posts')
   .then(res => callback(res.data))
 }
 
-export function getPostByID (callback, ID) {
+export function getPostByID (ID, callback) {
   axios.get('/api/posts/' + ID)
   .then(res => callback(res.data))
 }
@@ -131,12 +131,12 @@ export function getPostByID (callback, ID) {
 //   return dat
 // }
 
-export function getSubreddits (callback, options) {
+export function getSubreddits (options, callback) {
   axios.get('/api/subreddits')
   .then(res => callback(res.data))
 }
 
-export function getSubredditByID (callback, ID) {
+export function getSubredditByID (ID, callback) {
   axios.get('/api/subreddits/' + ID)
   .then(res => callback(res.data))
 }
@@ -169,6 +169,6 @@ export function getSubredditByID (callback, ID) {
 //   return dat
 // }
 
-export function getModerators (callback, options) {
+export function getModerators (options, callback) {
   callback(moderators)
 }

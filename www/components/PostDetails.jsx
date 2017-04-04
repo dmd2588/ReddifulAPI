@@ -15,18 +15,18 @@ export default class PostDetails extends React.Component {
 
   componentDidMount () {
     var self = this
-    getPostByID(function (post) {
-      getUserByID(function (author) {
-        getSubredditByID(function (subreddit) {
+    getPostByID(this.state.post_id, function (post) {
+      getUserByID(post.author, function (author) {
+        getSubredditByID(post.subreddit_id, function (subreddit) {
           self.setState({
             post_id: self.state.post_id,
             post: post,
             author: author,
             subreddit: subreddit
           })
-        }, post.subreddit_id)
-      }, post.author)
-    }, this.state.post_id)
+        })
+      })
+    })
   }
 
   render () {
