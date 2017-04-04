@@ -2,12 +2,6 @@ from models import Comment, Post, Subreddit, User
 from decimal import Decimal
 import sqlalchemy, json, datetime
 
-host = 'reddifuldb.crm7c57xrfke.us-west-2.rds.amazonaws.com'
-db = 'reddifuldb'
-user = 'reddiful'
-password = 'iY6I3fsv'
-port = '5432'
-url = 'postgresql://{}:{}@{}:{}/{}'
 url = url.format(user, password, host, port, db)
 
 # The return value of create_engine() is our connection object

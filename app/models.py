@@ -47,7 +47,7 @@ class User(Base):
         assert isinstance(attr["name"], str)
         assert isinstance(attr["link_karma"], int) and attr["link_karma"] >= 0
         assert isinstance(attr["comment_karma"], int) and attr["comment_karma"] >= 0
-        assert isinstance(attr["created_utc_utc"], datetime)
+        assert isinstance(attr["created_utc"], datetime)
         assert isinstance(attr["is_gold"], bool)
         assert isinstance(attr["verified"], bool)
         self.redditor_id = attr["redditor_id"]
