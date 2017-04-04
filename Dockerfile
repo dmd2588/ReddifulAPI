@@ -13,7 +13,8 @@ RUN pip install\
     Flask\
     eventlet\
     gunicorn\
-    SQLAlchemy
+    SQLAlchemy\
+	psycopg2    
 
 ENV PYTHONPATH=/var/reddiful/
 
