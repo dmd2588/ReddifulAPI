@@ -9,14 +9,15 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey, DateTime, Float, JSON
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql.schema import Table
+from datetime import datetime
 
 Base = declarative_base()
 
 # association table for the many-to-many relationship between User and
 # Subreddit
 mods_table = Table('Mods', Base.metadata,
-                       Column('redditor_id', Integer, ForeignKey('Redditors.id')),
-                       Column('subreddit_id', Integer, ForeignKey('Subreddits.id')))
+                       Column('redditor_id', Integer, ForeignKey('Redditors.redditor_id')),
+                       Column('subreddit_id', Integer, ForeignKey('Subreddits.subreddit_id')))
 
 # ------------
 # User
@@ -33,8 +34,8 @@ class User(Base):
     created_utc = Column(DateTime)
     is_gold = Column(Boolean)
     verified = Column(Boolean)
-    posts = relationship("Post", back_populates="Redditors")
-    comments = relationship("Comment", back_populates="Redditors")
+    posts = relationship("Post", back_populates="user")
+    comments = relationship("Comment", back_populates="user")
     subreddits = relationship("Subreddit", secondary=mods_table)
 
     def __init__(self, **attr):
@@ -42,13 +43,13 @@ class User(Base):
         creates a User with given attributes
         """
 
-        assert attr["redditor_id"] is str
-        assert attr["name"] is str
-        assert attr["link_karma"] >= 0 and attr["link_karma"] is int
-        assert attr["comment_karma"] >= 0 and attr["comment_karma"] is int
-        assert attr["created_utc_utc"] is datetime
-        assert attr["is_gold"] is bool
-        assert attr["verified"] is bool
+        assert isinstance(attr["redditor_id"], str)
+        assert isinstance(attr["name"], str)
+        assert isinstance(attr["link_karma"], int) and attr["link_karma"] >= 0
+        assert isinstance(attr["comment_karma"], int) and attr["comment_karma"] >= 0
+        assert isinstance(attr["created_utc_utc"], datetime)
+        assert isinstance(attr["is_gold"], bool)
+        assert isinstance(attr["verified"], bool)
         self.redditor_id = attr["redditor_id"]
         self.name = attr["name"]
         self.link_karma = attr["link_karma"]
@@ -115,22 +116,22 @@ class Subreddit(Base):
     created_utc = Column(DateTime)
     icon_img = Column(String)
     banner_img = Column(String)
-    posts = relationship("Post", back_populates="Subreddits")
-    comments = relationship("Comments", back_populates="Subreddits")
+    posts = relationship("Post", back_populates="sub")
+    comments = relationship("Comment", back_populates="sub")
     users = relationship("User", secondary=mods_table)
 
     def __init__(self, **attr):
         """
         creates a Subreddit with given attributes
         """
-        assert attr["subreddit_id"] is str
-        assert attr["display_name"] is str
-        assert attr["subscribers"] >= 0 and attr["subscribers"] is int
-        assert attr["accounts_active"] >= 0 and attr["accounts_active"] is int
-        assert attr["created_utc"] is datetime
-        assert attr["title"] is str
-        assert attr["icon_img"] is str
-        assert attr["banner_img"] is str
+        assert isinstance(attr["subreddit_id"], str)
+        assert isinstance(attr["display_name"], str)
+        assert isinstance(attr["subscribers"], int) and attr["subscribers"] >= 0
+        assert isinstance(attr["accounts_active"], int) and attr["accounts_active"] >= 0
+        assert isinstance(attr["created_utc"], datetime)
+        assert isinstance(attr["title"], str)
+        assert isinstance(attr["icon_img"], str)
+        assert isinstance(attr["banner_img"], str)
 
         self.subreddit_id = attr["subreddit_id"]
         self.display_name = attr["display_name"]
@@ -213,33 +214,33 @@ class Post(Base):
     author = Column(String)
     subreddit = Column(String)
 
-    comments = relationship("Comment", back_populates="Submission")
-    subreddit_id = Column(String, ForeignKey('Subreddits.id'))
-    sub = relationship("Subreddit", back_populates="Submissions")
-    author_id = Column(String, ForeignKey('Redditors.id'))
-    user = relationship("User", back_populates="Submissions")
+    comments = relationship("Comment", back_populates="post")
+    subreddit_id = Column(String, ForeignKey('Subreddits.subreddit_id'))
+    sub = relationship("Subreddit", back_populates="posts")
+    author_id = Column(String, ForeignKey('Redditors.redditor_id'))
+    user = relationship("User", back_populates="posts")
 
     def __init__(self, **attr):
         """
         creates a Post with the given attributes
         """
-        assert attr["submission_id"] is str
-        assert attr["title"] is str
-        assert attr["url"] is str
-        assert attr["score"] >= 0 and attr["score"] is int
-        assert attr["created_utc"] is datetime
-        assert attr["over_18"] is bool
-        assert attr["is_self"] is bool
-        assert attr["selftext"]is str
-        assert attr["gilded"] >= 0 and attr["gilded"] is int
-        assert attr["subreddit_id"] is str
-        assert attr["author_id"] is str
-        assert attr["upvote_ratio"] is float
-        assert attr["num_comments"] is int
-        assert attr["preview"] is JSON
-        assert attr["thumbnail"] is str
-        assert attr["author"] is str
-        assert attr["subreddit"] is str
+        assert isinstance(attr["submission_id"], str)
+        assert isinstance(attr["title"], str)
+        assert isinstance(attr["url"], str)
+        assert isinstance(attr["score"], int) and attr["score"] >= 0
+        assert isinstance(attr["created_utc"], datetime)
+        assert isinstance(attr["over_18"], bool)
+        assert isinstance(attr["is_self"], bool)
+        assert isinstance(attr["selftext"], str)
+        assert isinstance(attr["gilded"], int) and attr["gilded"] >= 0
+        assert isinstance(attr["subreddit_id"], str)
+        assert isinstance(attr["author_id"], str)
+        assert isinstance(attr["upvote_ratio"], float)
+        assert isinstance(attr["num_comments"], int)
+        assert isinstance(attr["preview"], str)
+        assert isinstance(attr["thumbnail"], str)
+        assert isinstance(attr["author"], str)
+        assert isinstance(attr["subreddit"], str)
 
         self.submission_id = attr["submission_id"]
         self.title = attr["title"]
@@ -377,28 +378,28 @@ class Comment(Base):
     gilded = Column(Integer)
     edited = Column(DateTime)
     author = Column(String)
-    link_id = Column(String, ForeignKey('Submissions.id'))
-    post = relationship("Post", back_populates="Comments")
-    author_id = Column(String, ForeignKey('Redditors.id'))
-    user = relationship("User", back_populates="Comments")
-    subreddit_id = Column(String, ForeignKey('Subreddits.id'))
-    sub = relationship("Subreddit", back_populates="Comments")
+    link_id = Column(String, ForeignKey('Submissions.submission_id'))
+    post = relationship("Post", back_populates="comments")
+    author_id = Column(String, ForeignKey('Redditors.redditor_id'))
+    user = relationship("User", back_populates="comments")
+    subreddit_id = Column(String, ForeignKey('Subreddits.subreddit_id'))
+    sub = relationship("Subreddit", back_populates="comments")
 
     def __init__(self, **attr):
         """
         creates a Comment with the given attributes
         """
-        assert attr["comment_id"] is str
-        assert attr["body"] is str
-        assert attr["body_html"] is str
-        assert attr["score"] >= 0 and attr["score"] is int
-        assert attr["created_utc"] is datetime
-        assert attr["edited"] is datetime
-        assert attr["gilded"] >= 0 and attr["gilded"] is int
-        assert attr["author"] is str
-        assert attr["link_id"] is str
-        assert attr["subreddit_id"] is str
-        assert attr["author_id"] is str
+        assert isinstance(attr["comment_id"], str)
+        assert isinstance(attr["body"], str)
+        assert isinstance(attr["body_html"], str)
+        assert isinstance(attr["score"], int) and attr["score"] >= 0
+        assert isinstance(attr["created_utc"], datetime)
+        assert isinstance(attr["edited"], datetime)
+        assert isinstance(attr["gilded"], int) and attr["gilded"] >= 0
+        assert isinstance(attr["author"], str)
+        assert isinstance(attr["link_id"], str)
+        assert isinstance(attr["subreddit_id"], str)
+        assert isinstance(attr["author_id"], str)
 
         self.comment_id = attr["comment_id"]
         self.body = attr["body"]
