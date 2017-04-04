@@ -4,13 +4,15 @@ import RfCard from './RfCard.jsx'
 import SortFilter from './SortFilter.jsx'
 import ReactPaginate from 'react-paginate'
 
+
 export default class RfGrid extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {data: {title: '', select_values: [], cards: []}}
+    this.state = {data: {title: '', select_values: [], cards: []}, pageCount: 5}
     this.loadDataFromServer = this.props.loadDataFromServer
   }
   handlePageClick (data) {
+    this
     console.log('Click')
   };
 
@@ -20,7 +22,7 @@ export default class RfGrid extends React.Component {
   }
 
   updateGrid (options) {
-    this.setState({data: this.loadDataFromServer()})
+    this.setState({data: this.loadDataFromServer()}, this.state.pageCount: 5)
     console.log('Updating Grid')
   }
   render () {
@@ -47,6 +49,7 @@ export default class RfGrid extends React.Component {
             </Grid>
           </Col>
         </Row>
+      
         <ReactPaginate previousLabel={'previous'}
           nextLabel={'next'}
           breakLabel={<a href=''>...</a>}
