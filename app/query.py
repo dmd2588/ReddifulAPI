@@ -1,11 +1,10 @@
 from models import Comment, Post, Subreddit, User
 from decimal import Decimal
 import sqlalchemy, json, datetime
-
-url = url.format(user, password, host, port, db)
+import os
 
 # The return value of create_engine() is our connection object
-con = sqlalchemy.create_engine(url, client_encoding='utf8')
+con = sqlalchemy.create_engine(os.environ['DB_URL'], client_encoding='utf8')
 
 # We then bind the connection to MetaData()
 meta = sqlalchemy.MetaData(bind=con, reflect=True)

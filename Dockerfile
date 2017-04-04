@@ -16,7 +16,6 @@ RUN pip install\
     SQLAlchemy\
 	psycopg2    
 
-ENV PYTHONPATH=/var/reddiful/
-
 EXPOSE 8080
-ENTRYPOINT ["gunicorn", "--access-logfile", "-", "--error-logfile", "-", "-b", "0.0.0.0:8080", "--reload", "--worker-class", "eventlet","app.api:app"]
+WORKDIR /var/reddiful/app
+ENTRYPOINT ["gunicorn", "--access-logfile", "-", "--error-logfile", "-", "-b", "0.0.0.0:8080", "--reload", "--worker-class", "eventlet","api:app"]
