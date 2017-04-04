@@ -14,10 +14,12 @@ export default class SubredditDetails extends React.Component {
 
   componentDidMount () {
     var self = this
-    getSubredditByID(this.state.subreddit_id, function (subreddit) {
-      getModerators({}, function (mods) {
-        var modUserId = mods.find(r => r.sr_id === subreddit.id).user_id
-        getUserByID(modUserId, function (user) {
+    getSubredditByID(this.state.subreddit_id).then(function (res) {
+      var subreddit = res.data
+      getModerators({}, function (res) {
+        var modUserId = res.find(r => r.sr_id === subreddit.id).user_id
+        getUserByID(modUserId).then(function (res) {
+          var user = res.data
           self.setState({
             subreddit_id: self.state.subreddit_id,
             subreddit: subreddit,

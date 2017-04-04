@@ -7619,176 +7619,37 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var moderators = [{ 'user_id': 'hh8mr', 'sr_id': '3imv0' }, { 'user_id': '74344', 'sr_id': '2tex6' }, { 'user_id': '4fer6', 'sr_id': '2qh55' }];
 
-function getUsers(options, callback) {
-  _axios2.default.get('/api/users').then(function (res) {
-    return callback(res.data);
-  });
+function getUsers(options) {
+  return _axios2.default.get('/api/users');
 }
 
-function getUserByID(ID, callback) {
-  _axios2.default.get('/api/users/' + ID).then(function (res) {
-    return callback(res.data);
-  });
+function getUserByID(ID) {
+  return _axios2.default.get('/api/users/' + ID);
 }
-
-// export function getUserRelated (user_id) {
-//   var dat = {'subreddits': [],
-//     'posts': [],
-//     'comments': []}
-//   for (var i in moderators) {
-//     if (moderators[i].user_id == user_id) {
-//       for (var j in subreddits) {
-//         if (subreddits[j].id == moderators[i].sr_id) {
-//           dat.subreddits.push(subreddits[j])
-//         }
-//       }
-//     }
-//   }
-//   for (var i in posts) {
-//     if (posts[i].author == user_id) {
-//       dat.posts.push(posts[i])
-//     }
-//   }
-//   for (var i in comments) {
-//     if (comments[i].author == user_id) {
-//       dat.comments.push(comments[i])
-//     }
-//   }
-//   return dat
-// }
 
 function getComments(options, callback) {
-  _axios2.default.get('/api/comments').then(function (res) {
-    return callback(res.data);
-  });
+  return _axios2.default.get('/api/comments');
 }
 
-function getCommentByID(ID, callback) {
-  _axios2.default.get('/api/comments/' + ID).then(function (res) {
-    return callback(res.data);
-  });
+function getCommentByID(ID) {
+  return _axios2.default.get('/api/comments/' + ID);
 }
 
-// export function getCommentRelated (comment_id) {
-//   var dat = {'subreddits': [],
-//     'posts': [],
-//     'users': []}
-//   var user_id = ''
-//   var post_id = ''
-//   var subreddit_id = ''
-//   for (var i in comments) {
-//     if (comments[i].id == comment_id) {
-//       user_id = comment[i].author
-//       post_id = comment[i].link_id
-//       subreddit_id = comment[i].subreddit_id
-//       break
-//     }
-//   }
-//   for (var i in users) {
-//     if (users[i].id == user_id) {
-//       dat.users.push(users[i])
-//       break
-//     }
-//   }
-//   for (var i in posts) {
-//     if (posts[i].id == post_id) {
-//       dat.posts.push(posts[i])
-//       break
-//     }
-//   }
-//   for (var i in subreddits) {
-//     if (subreddits[i].id == subreddit_id) {
-//       dat.subreddits.push(subreddits[i])
-//       break
-//     }
-//   }
-//   return dat
-// }
-
-function getPosts(options, callback) {
-  _axios2.default.get('/api/posts').then(function (res) {
-    return callback(res.data);
-  });
+function getPosts(options) {
+  return _axios2.default.get('/api/posts');
 }
 
-function getPostByID(ID, callback) {
-  _axios2.default.get('/api/posts/' + ID).then(function (res) {
-    return callback(res.data);
-  });
+function getPostByID(ID) {
+  return _axios2.default.get('/api/posts/' + ID);
 }
 
-// export function getPostRelated (post_id) {
-//   var dat = {'subreddits': [],
-//     'comments': [],
-//     'users': []}
-//   var user_id = ''
-//   var subreddit_id = ''
-//   for (var i in posts) {
-//     if (posts[i].id == post_id) {
-//       user_id = posts[i].author
-//       subreddit_id = posts[i].subreddit_id
-//       break
-//     }
-//   }
-//   for (var i in users) {
-//     if (users[i].id == user_id) {
-//       dat.users.push(users[i])
-//       break
-//     }
-//   }
-//   for (var i in comments) {
-//     if (comments[i].link_id == post_id) {
-//       dat.comments.push(comments[i])
-//     }
-//   }
-//   for (var i in subreddits) {
-//     if (subreddits[i].id == subreddit_id) {
-//       dat.subreddits.push(subreddits[i])
-//       break
-//     }
-//   }
-//   return dat
-// }
-
-function getSubreddits(options, callback) {
-  _axios2.default.get('/api/subreddits').then(function (res) {
-    return callback(res.data);
-  });
+function getSubreddits(options) {
+  return _axios2.default.get('/api/subreddits');
 }
 
-function getSubredditByID(ID, callback) {
-  _axios2.default.get('/api/subreddits/' + ID).then(function (res) {
-    return callback(res.data);
-  });
+function getSubredditByID(ID) {
+  return _axios2.default.get('/api/subreddits/' + ID);
 }
-
-// export function getSubredditRelated (subreddit_id) {
-//   var dat = {'posts': [],
-//     'comments': [],
-//     'users': []}
-//   var user_id = ''
-//   var subreddit_id = ''
-//   for (var i in moderators) {
-//     if (moderators[i].sr_id == subreddit_id) {
-//       for (var j in users) {
-//         if (users[j].id == moderators[i].user_id) {
-//           dat.users.push(users[j])
-//         }
-//       }
-//     }
-//   }
-//   for (var i in comments) {
-//     if (comments[i].subreddit_id == subreddit_id) {
-//       dat.comments.push(comments[i])
-//     }
-//   }
-//   for (var i in posts) {
-//     if (posts[i].subreddit_id == subreddit_id) {
-//       dat.posts.push(posts[i])
-//     }
-//   }
-//   return dat
-// }
 
 function getModerators(options, callback) {
   callback(moderators);
@@ -10868,7 +10729,7 @@ var RfGrid = function (_React$Component) {
     key: 'updateGrid',
     value: function updateGrid(options) {
       var self = this;
-      this.loadDataFromServer(function (newData) {
+      this.loadDataFromServer(options, function (newData) {
         self.setState({ data: newData });
       });
       console.log('Updating Grid');
@@ -37875,9 +37736,12 @@ var CommentDetails = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var self = this;
-      (0, _api.getCommentByID)(this.state.comment_id, function (comment) {
-        (0, _api.getUserByID)(comment.author, function (author) {
-          (0, _api.getPostByID)(comment.link_id, function (post) {
+      (0, _api.getCommentByID)(this.state.comment_id).then(function (res) {
+        var comment = res.data;
+        (0, _api.getUserByID)(comment.author).then(function (res) {
+          var author = res.data;
+          (0, _api.getPostByID)(comment.link_id).then(function (res) {
+            var post = res.data;
             self.setState({
               comment_id: self.state.comment_id,
               comment: comment,
@@ -37964,9 +37828,11 @@ var Users = function (_React$Component) {
 
   _createClass(Users, [{
     key: 'loadDataFromServer',
-    value: function loadDataFromServer(callback, options) {
-      (0, _api.getComments)(options, function (comments) {
-        (0, _api.getUsers)({}, function (users) {
+    value: function loadDataFromServer(options, callback) {
+      (0, _api.getComments)(options).then(function (res) {
+        var comments = res.data;
+        (0, _api.getUsers)({}).then(function (res) {
+          var users = res.data;
           var myp = {
             title: 'Comments',
             select_values: Object.keys(comments[0]),
@@ -37990,8 +37856,8 @@ var Users = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      return _react2.default.createElement(_RfGrid2.default, { loadDataFromServer: function loadDataFromServer(ops) {
-          return _this2.loadDataFromServer(ops);
+      return _react2.default.createElement(_RfGrid2.default, { loadDataFromServer: function loadDataFromServer(ops, callback) {
+          return _this2.loadDataFromServer(ops, callback);
         } });
     }
   }]);
@@ -38259,9 +38125,12 @@ var PostDetails = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var self = this;
-      (0, _api.getPostByID)(this.state.post_id, function (post) {
-        (0, _api.getUserByID)(post.author, function (author) {
-          (0, _api.getSubredditByID)(post.subreddit_id, function (subreddit) {
+      (0, _api.getPostByID)(this.state.post_id).then(function (res) {
+        var post = res.data;
+        (0, _api.getUserByID)(post.author).then(function (res) {
+          var author = res.data;
+          (0, _api.getSubredditByID)(post.subreddit_id).then(function (res) {
+            var subreddit = res.data;
             self.setState({
               post_id: self.state.post_id,
               post: post,
@@ -38342,9 +38211,11 @@ var Posts = function (_React$Component) {
 
   _createClass(Posts, [{
     key: 'loadDataFromServer',
-    value: function loadDataFromServer(callback, options) {
-      (0, _api.getPosts)(options, function (posts) {
-        (0, _api.getUsers)({}, function (users) {
+    value: function loadDataFromServer(options, callback) {
+      (0, _api.getPosts)(options).then(function (res) {
+        var posts = res.data;
+        (0, _api.getUsers)({}).then(function (res) {
+          var users = res.data;
           var myp = {
             title: 'Posts',
             select_values: Object.keys(posts[0]),
@@ -38371,8 +38242,8 @@ var Posts = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_RfGrid2.default, { loadDataFromServer: function loadDataFromServer(ops) {
-            return _this2.loadDataFromServer(ops);
+        _react2.default.createElement(_RfGrid2.default, { loadDataFromServer: function loadDataFromServer(ops, callback) {
+            return _this2.loadDataFromServer(ops, callback);
           } })
       );
     }
@@ -38579,12 +38450,14 @@ var SubredditDetails = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var self = this;
-      (0, _api.getSubredditByID)(this.state.subreddit_id, function (subreddit) {
-        (0, _api.getModerators)({}, function (mods) {
-          var modUserId = mods.find(function (r) {
+      (0, _api.getSubredditByID)(this.state.subreddit_id).then(function (res) {
+        var subreddit = res.data;
+        (0, _api.getModerators)({}, function (res) {
+          var modUserId = res.find(function (r) {
             return r.sr_id === subreddit.id;
           }).user_id;
-          (0, _api.getUserByID)(modUserId, function (user) {
+          (0, _api.getUserByID)(modUserId).then(function (res) {
+            var user = res.data;
             self.setState({
               subreddit_id: self.state.subreddit_id,
               subreddit: subreddit,
@@ -38665,8 +38538,9 @@ var Subreddits = function (_React$Component) {
 
   _createClass(Subreddits, [{
     key: 'loadDataFromServer',
-    value: function loadDataFromServer(callback, options) {
-      (0, _api.getSubreddits)(options, function (subreddits) {
+    value: function loadDataFromServer(options, callback) {
+      (0, _api.getSubreddits)(options).then(function (res) {
+        var subreddits = res.data;
         var myp = {
           title: 'Subreddits',
           select_values: Object.keys(subreddits[0]),
@@ -38688,8 +38562,8 @@ var Subreddits = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      return _react2.default.createElement(_RfGrid2.default, { loadDataFromServer: function loadDataFromServer(ops) {
-          return _this2.loadDataFromServer(ops);
+      return _react2.default.createElement(_RfGrid2.default, { loadDataFromServer: function loadDataFromServer(ops, callback) {
+          return _this2.loadDataFromServer(ops, callback);
         } });
     }
   }]);
@@ -38751,13 +38625,14 @@ var UserDetail = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var self = this;
-      (0, _api.getUserByID)(self.state.user_id, function (user) {
-        (0, _api.getModerators)({}, function (mods) {
-          var modSubId = mods.find(function (r) {
+      (0, _api.getUserByID)(self.state.user_id).then(function (res) {
+        var user = res.data;
+        (0, _api.getModerators)({}, function (res) {
+          var modSubId = res.find(function (r) {
             return r.user_id === user.id;
           }).sr_id;
-          (0, _api.getSubreddits)({}, function (subreddits) {
-            var modSub = modSubId ? subreddits.find(function (s) {
+          (0, _api.getSubreddits)({}).then(function (res) {
+            var modSub = modSubId ? res.data.find(function (s) {
               return s.id === modSubId;
             }) : {} || {};
             self.setState({
@@ -38841,8 +38716,9 @@ var Users = function (_React$Component) {
 
   _createClass(Users, [{
     key: 'loadDataFromServer',
-    value: function loadDataFromServer(callback, options) {
-      (0, _api.getUsers)(options, function (users) {
+    value: function loadDataFromServer(options, callback) {
+      (0, _api.getUsers)(options).then(function (res) {
+        var users = res.data;
         var myp = {
           title: 'Users',
           select_values: Object.keys(users[0]),
@@ -38863,8 +38739,8 @@ var Users = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      return _react2.default.createElement(_RfGrid2.default, { loadDataFromServer: function loadDataFromServer(ops) {
-          return _this2.loadDataFromServer(ops);
+      return _react2.default.createElement(_RfGrid2.default, { loadDataFromServer: function loadDataFromServer(ops, callback) {
+          return _this2.loadDataFromServer(ops, callback);
         } });
     }
   }]);

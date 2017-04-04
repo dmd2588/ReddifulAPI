@@ -14,11 +14,12 @@ export default class UserDetail extends React.Component {
 
   componentDidMount () {
     var self = this
-    getUserByID(self.state.user_id, function (user) {
-      getModerators({}, function (mods) {
-        var modSubId = mods.find(r => r.user_id === user.id).sr_id
-        getSubreddits({}, function (subreddits) {
-          var modSub = modSubId ? subreddits.find(s => s.id === modSubId) : {} || {}
+    getUserByID(self.state.user_id).then(function (res) {
+      var user = res.data
+      getModerators({}, function (res) {
+        var modSubId = res.find(r => r.user_id === user.id).sr_id
+        getSubreddits({}).then(function (res) {
+          var modSub = modSubId ? res.data.find(s => s.id === modSubId) : {} || {}
           self.setState({
             user_id: self.state.user_id,
             user: user,

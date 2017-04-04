@@ -4,9 +4,11 @@ import RfGrid from './RfGrid.jsx'
 import { getComments, getUsers } from '../api.js'
 
 export default class Users extends React.Component {
-  loadDataFromServer (callback, options) {
-    getComments(options, function (comments) {
-      getUsers({}, function (users) {
+  loadDataFromServer (options, callback) {
+    getComments(options).then(function (res) {
+      var comments = res.data
+      getUsers({}).then(function (res) {
+        var users = res.data
         var myp = {
           title: 'Comments',
           select_values: Object.keys(comments[0]),
@@ -25,6 +27,6 @@ export default class Users extends React.Component {
   }
 
   render () {
-    return <RfGrid loadDataFromServer={ops => this.loadDataFromServer(ops)} />
+    return <RfGrid loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
   }
 }

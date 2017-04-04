@@ -15,9 +15,12 @@ export default class CommentDetails extends React.Component {
 
   componentDidMount () {
     var self = this
-    getCommentByID(this.state.comment_id, function (comment) {
-      getUserByID(comment.author, function (author) {
-        getPostByID(comment.link_id, function (post) {
+    getCommentByID(this.state.comment_id).then(function (res) {
+      var comment = res.data
+      getUserByID(comment.author).then(function (res) {
+        var author = res.data
+        getPostByID(comment.link_id).then(function (res) {
+          var post = res.data
           self.setState({
             comment_id: self.state.comment_id,
             comment: comment,

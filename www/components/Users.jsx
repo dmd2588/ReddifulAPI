@@ -4,8 +4,9 @@ import RfGrid from './RfGrid.jsx'
 import { getUsers } from '../api.js'
 
 export default class Users extends React.Component {
-  loadDataFromServer (callback, options) {
-    getUsers(options, function (users) {
+  loadDataFromServer (options, callback) {
+    getUsers(options).then(function (res) {
+      var users = res.data
       var myp = {
         title: 'Users',
         select_values: Object.keys(users[0]),
@@ -23,6 +24,6 @@ export default class Users extends React.Component {
   }
 
   render () {
-    return <RfGrid loadDataFromServer={ops => this.loadDataFromServer(ops)} />
+    return <RfGrid loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
   }
 }
