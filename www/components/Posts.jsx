@@ -7,7 +7,7 @@ export default class Posts extends React.Component {
         // Make request here using options
     var myp = {
       title: 'Posts',
-      select_values: Object.keys(getPosts()[0]),
+      select_values: ['score', 'gilded', 'title', 'num_comments', 'author'],
       cards: getPosts().map(p => {
         return {
           title: p.title,
@@ -23,7 +23,7 @@ export default class Posts extends React.Component {
   render () {
     return (
       <div>
-        <RfGrid loadDataFromServer={ops => this.loadDataFromServer(ops)} />
+        <RfGrid filterOptions={[{name: 'is_self', value: false}]} loadDataFromServer={ops => this.loadDataFromServer(ops)} />
       </div>
     )
   }

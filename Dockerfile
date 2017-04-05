@@ -18,4 +18,4 @@ RUN pip install\
 ENV PYTHONPATH=/var/reddiful/
 
 EXPOSE 8080
-ENTRYPOINT ["gunicorn", "--access-logfile", "-", "--error-logfile", "-", "-b", "0.0.0.0:8080", "--reload", "--worker-class", "eventlet","reddiful.api:app"]
+ENTRYPOINT ["gunicorn", "--access-logfile", "-", "--error-logfile", "-", "-b", "0.0.0.0:8080", "--reload", "--worker-class", "eventlet","app.api:app"]

@@ -8,7 +8,7 @@ export default class Users extends React.Component {
         // Make request here using options
     var myp = {
       title: 'Users',
-      select_values: Object.keys(getUsers()[0]),
+      select_values: ['name', 'comment_karma', 'link_karma', 'created_utc'],
       cards: getUsers().map(u => {
         return {
           title: u.name,
@@ -21,6 +21,6 @@ export default class Users extends React.Component {
     return myp
   }
   render () {
-    return <RfGrid loadDataFromServer={ops => this.loadDataFromServer(ops)} />
+    return <RfGrid filterOptions={[{name: 'is_gold', value: false}, {name: 'verfied', value: false}]} loadDataFromServer={ops => this.loadDataFromServer(ops)} />
   }
 }

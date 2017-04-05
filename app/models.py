@@ -6,17 +6,18 @@
 # pylint: disable = too-many-instance-attributes
 
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey, DateTime, Float, JSON
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql.schema import Table
+from datetime import datetime
 
 Base = declarative_base()
 
 # association table for the many-to-many relationship between User and
 # Subreddit
-user_sub_table = Table('users_subs', Base.metadata,
-                       Column('user_id', Integer, ForeignKey('users.id')),
-                       Column('sub_id', Integer, ForeignKey('subreddits.id')))
+mods_table = Table('Mods', Base.metadata,
+                       Column('redditor_id', Integer, ForeignKey('Redditors.redditor_id')),
+                       Column('subreddit_id', Integer, ForeignKey('Subreddits.subreddit_id')))
 
 # ------------
 # User
@@ -24,41 +25,44 @@ user_sub_table = Table('users_subs', Base.metadata,
 
 
 class User(Base):
-    __tablename__ = 'users'
+    __tablename__ = 'Redditors'
 
-    user_id = Column(String, primary_key=True)
+    redditor_id = Column(String, primary_key=True)
     name = Column(String)
     link_karma = Column(Integer)
     comment_karma = Column(Integer)
-    created = Column(Integer)
-    email = Column(String)
-    posts = relationship("Post", back_populates="users")
-    comments = relationship("Comment", back_populates="users")
-    subreddits = relationship("Subreddit", secondary=user_sub_table)
+    created_utc = Column(DateTime)
+    is_gold = Column(Boolean)
+    verified = Column(Boolean)
+    posts = relationship("Post", back_populates="user")
+    comments = relationship("Comment", back_populates="user")
+    subreddits = relationship("Subreddit", secondary=mods_table)
 
     def __init__(self, **attr):
         """
         creates a User with given attributes
         """
 
-        assert attr["id"] is str
-        assert attr["name"] is str
-        assert attr["link_karma"] >= 0 and attr["link_karma"] is int
-        assert attr["comment_karma"] >= 0 and attr["comment_karma"] is int
-        assert attr["created"] >= 0 and attr["created"] is int
-        assert attr["email"] is str
-        self.user_id = attr["id"]
+        assert isinstance(attr["redditor_id"], str)
+        assert isinstance(attr["name"], str)
+        assert isinstance(attr["link_karma"], int) and attr["link_karma"] >= 0
+        assert isinstance(attr["comment_karma"], int) and attr["comment_karma"] >= 0
+        assert isinstance(attr["created_utc_utc"], datetime)
+        assert isinstance(attr["is_gold"], bool)
+        assert isinstance(attr["verified"], bool)
+        self.redditor_id = attr["redditor_id"]
         self.name = attr["name"]
         self.link_karma = attr["link_karma"]
         self.comment_karma = attr["comment_karma"]
-        self.created = attr["created"]
-        self.email = attr["email"]
+        self.created_utc = attr["created_utc"]
+        self.is_gold = attr["is_gold"]
+        self.verified = attr["verified"]
 
     def getID(self):
         """
         returns ID of the user
         """
-        return self.user_id
+        return self.redditor_id
 
     def getName(self):
         """
@@ -82,13 +86,19 @@ class User(Base):
         """
         returns time created of the user
         """
-        return self.created
+        return self.created_utc
 
-    def getEmail(self):
+    def isGilded(self):
         """
-        returns email of the user
+        returns if the user is gilded
         """
-        return self.email
+        return self.is_gold
+
+    def isVerified(self):
+        """
+        returns if the user is verified
+        """
+        return self.verified
 
 # ------------
 # Subreddit
@@ -96,41 +106,47 @@ class User(Base):
 
 
 class Subreddit(Base):
-    __tablename__ = 'subreddits'
+    __tablename__ = 'Subreddits'
 
-    sub_id = Column(String, primary_key=True)
+    subreddit_id = Column(String, primary_key=True)
     display_name = Column(String)
     subscribers = Column(Integer)
     accounts_active = Column(Integer)
     title = Column(String)
-    created = Column(Integer)
-    posts = relationship("Post", back_populates="subreddits")
-    comments = relationship("Comments", back_populates="subreddits")
-    users = relationship("User", secondary=user_sub_table)
+    created_utc = Column(DateTime)
+    icon_img = Column(String)
+    banner_img = Column(String)
+    posts = relationship("Post", back_populates="sub")
+    comments = relationship("Comment", back_populates="sub")
+    users = relationship("User", secondary=mods_table)
 
     def __init__(self, **attr):
         """
         creates a Subreddit with given attributes
         """
-        assert attr["id"] is str
-        assert attr["display_name"] is str
-        assert attr["subscribers"] >= 0 and attr["subscribers"] is int
-        assert attr["accounts_active"] >= 0 and attr["accounts_active"] is int
-        assert attr["created"] >= 0 and attr["created"] is int
-        assert attr["title"] is str
+        assert isinstance(attr["subreddit_id"], str)
+        assert isinstance(attr["display_name"], str)
+        assert isinstance(attr["subscribers"], int) and attr["subscribers"] >= 0
+        assert isinstance(attr["accounts_active"], int) and attr["accounts_active"] >= 0
+        assert isinstance(attr["created_utc"], datetime)
+        assert isinstance(attr["title"], str)
+        assert isinstance(attr["icon_img"], str)
+        assert isinstance(attr["banner_img"], str)
 
-        self.sub_id = attr["id"]
+        self.subreddit_id = attr["subreddit_id"]
         self.display_name = attr["display_name"]
         self.subscribers = attr["subscribers"]
         self.accounts_active = attr["accounts_active"]
-        self.created = attr["created"]
+        self.created_utc = attr["created_utc"]
         self.title = attr["title"]
+        self.icon_img = attr["icon_img"]
+        self.banner_img = attr["banner_img"]
 
     def getID(self):
         """
         returns ID of the subreddit
         """
-        return self.sub_id
+        return self.subreddit_id
 
     def getName(self):
         """
@@ -160,7 +176,19 @@ class Subreddit(Base):
         """
         returns the time created of the subreddit
         """
-        return self.created
+        return self.created_utc
+
+    def getIconImg(self):
+        """
+        returns the url of the icon image of the subreddit
+        """
+        return self.icon_img
+
+    def getBannerImg(self):
+        """
+        returns the url of the banner image of the subreddit
+        """
+        return self.banner_img
 
 # ------------
 # Post
@@ -168,56 +196,75 @@ class Subreddit(Base):
 
 
 class Post(Base):
-    __tablename__ = 'posts'
+    __tablename__ = 'Submissions'
 
-    post_id = Column(String, primary_key=True)
+    submission_id = Column(String, primary_key=True)
     title = Column(String)
     url = Column(String)
     score = Column(Integer)
-    nsfw = Column(Boolean)
-    self_post = Column(Boolean)
-    self_text = Column(String)
-    created = Column(Integer)
+    over_18 = Column(Boolean)
+    is_self = Column(Boolean)
+    selftext = Column(String)
+    created_utc = Column(DateTime)
     gilded = Column(Integer)
-    comments = relationship("Comment", back_populates="posts")
-    subreddit_id = Column(String, ForeignKey('subreddits.id'))
+    upvote_ratio = Column(Float)
+    num_comments = Column(Integer)
+    preview = Column(JSON)
+    thumbnail = Column(String)
+    author = Column(String)
+    subreddit = Column(String)
+
+    comments = relationship("Comment", back_populates="post")
+    subreddit_id = Column(String, ForeignKey('Subreddits.subreddit_id'))
     sub = relationship("Subreddit", back_populates="posts")
-    author_id = Column(String, ForeignKey('users.id'))
-    author = relationship("User", back_populates="posts")
+    author_id = Column(String, ForeignKey('Redditors.redditor_id'))
+    user = relationship("User", back_populates="posts")
 
     def __init__(self, **attr):
         """
         creates a Post with the given attributes
         """
-        assert attr["id"] is str
-        assert attr["title"] is str
-        assert attr["url"] is str
-        assert attr["score"] >= 0 and attr["score"] is int
-        assert attr["created"] >= 0 and attr["created"] is int
-        assert attr["nsfw"] is bool
-        assert attr["self_post"] is bool
-        assert attr["self_text"]is str
-        assert attr["gilded"] >= 0 and attr["gilded"] is int
-        assert attr["subreddit_id"] is str
-        assert attr["author_id"] is str
+        assert isinstance(attr["submission_id"], str)
+        assert isinstance(attr["title"], str)
+        assert isinstance(attr["url"], str)
+        assert isinstance(attr["score"], int) and attr["score"] >= 0
+        assert isinstance(attr["created_utc"], datetime)
+        assert isinstance(attr["over_18"], bool)
+        assert isinstance(attr["is_self"], bool)
+        assert isinstance(attr["selftext"], str)
+        assert isinstance(attr["gilded"], int) and attr["gilded"] >= 0
+        assert isinstance(attr["subreddit_id"], str)
+        assert isinstance(attr["author_id"], str)
+        assert isinstance(attr["upvote_ratio"], float)
+        assert isinstance(attr["num_comments"], int)
+        assert isinstance(attr["preview"], str)
+        assert isinstance(attr["thumbnail"], str)
+        assert isinstance(attr["author"], str)
+        assert isinstance(attr["subreddit"], str)
 
-        self.post_id = attr["id"]
+        self.submission_id = attr["submission_id"]
         self.title = attr["title"]
         self.url = attr["url"]
         self.score = attr["score"]
-        self.created = attr["created"]
-        self.nsfw = attr["nsfw"]
-        self.self_post = attr["self_post"]
-        self.self_text = attr["self_text"]
+        self.created_utc = attr["created_utc"]
+        self.over_18 = attr["over_18"]
+        self.is_self = attr["is_self"]
+        self.selftext = attr["selftext"]
         self.gilded = attr["gilded"]
         self.subreddit_id = attr["subreddit_id"]
         self.author_id = attr["author_id"]
+        self.upvote_ratio = attr["upvote_ratio"]
+        self.num_comments = attr["num_comments"]
+        self.preview = attr["preview"]
+        self.thumbnail = attr["thumbnail"]
+        self.author = attr["author"]
+        self.subreddit = attr["subreddit"]
 
     def getID(self):
         """
         returns ID of the post
         """
-        return self.post_id
+        return self.submission_id
 
     def getTitle(self):
         """
@@ -237,35 +284,47 @@ class Post(Base):
         """
         return self.score
 
-    def isNSFW(self):
+    def isOver_18(self):
         """
-        returns if the post is NSFW
+        returns if the post is over_18
         """
-        return self.nsfw
+        return self.over_18
 
     def isText(self):
         """
         returns if the post is a self-post (text only)
         """
-        return self.self_post
+        return self.is_self
 
     def getText(self):
         """
         returns the text of the post if it is a self-post
         """
-        return self.self_text
+        return self.selftext
 
     def getTime(self):
         """
         returns the time created of the post
         """
-        return self.created
+        return self.created_utc
 
     def getGilded(self):
         """
         returns how many times the post was gilded
         """
         return self.gilded
+
+    def getSubreddit(self):
+        """
+        returns name of the post's subreddit
+        """
+        return self.subreddit
+
+    def getAuthor(self):
+        """
+        returns username of the post's author
+        """
+        return self.author
 
     def getSubredditID(self):
         """
@@ -275,9 +334,33 @@ class Post(Base):
 
     def getAuthorID(self):
         """
-        returns ID of the post
+        returns ID of the post's author
         """
         return self.author_id
+
+    def getUpvoteRatio(self):
+        """
+        returns the upvote ratio of the post
+        """
+        return self.upvote_ratio
+
+    def getNumComments(self):
+        """
+        returns number of comments of the post
+        """
+        return self.num_comments
+
+    def getPreview(self):
+        """
+        returns JSON of the preview of the post
+        """
+        return self.preview
+
+    def getThumbnail(self):
+        """
+        returns the url of the thumbnail of the post
+        """
+        return self.thumbnail
 
 # ------------
 # Comment
@@ -285,41 +368,47 @@ class Post(Base):
 
 
 class Comment(Base):
-    __tablename__ = 'comments'
+    __tablename__ = 'Comments'
 
     comment_id = Column(String, primary_key=True)
     body = Column(String)
+    body_html = Column(String)
     score = Column(Integer)
-    created = Column(String)
+    created_utc = Column(DateTime)
     gilded = Column(Integer)
-    edited = Column(Boolean)
-    link_id = Column(String, ForeignKey('posts.id'))
+    edited = Column(DateTime)
+    author = Column(String)
+    link_id = Column(String, ForeignKey('Submissions.submission_id'))
     post = relationship("Post", back_populates="comments")
-    author_id = Column(String, ForeignKey('users.id'))
-    author = relationship("User", back_populates="comments")
-    subreddit_id = Column(String, ForeignKey('subreddits.id'))
+    author_id = Column(String, ForeignKey('Redditors.redditor_id'))
+    user = relationship("User", back_populates="comments")
+    subreddit_id = Column(String, ForeignKey('Subreddits.subreddit_id'))
     sub = relationship("Subreddit", back_populates="comments")
 
     def __init__(self, **attr):
         """
         creates a Comment with the given attributes
         """
-        assert attr["id"] is str
-        assert attr["body"] is str
-        assert attr["score"] >= 0 and attr["score"] is int
-        assert attr["created"] >= 0 and attr["created"] is int
-        assert attr["edited"] is bool
-        assert attr["gilded"] >= 0 and attr["gilded"] is int
-        assert attr["link_id"] is str
-        assert attr["subreddit_id"] is str
-        assert attr["author_id"] is str
+        assert isinstance(attr["comment_id"], str)
+        assert isinstance(attr["body"], str)
+        assert isinstance(attr["body_html"], str)
+        assert isinstance(attr["score"], int) and attr["score"] >= 0
+        assert isinstance(attr["created_utc"], datetime)
+        assert isinstance(attr["edited"], datetime)
+        assert isinstance(attr["gilded"], int) and attr["gilded"] >= 0
+        assert isinstance(attr["author"], str)
+        assert isinstance(attr["link_id"], str)
+        assert isinstance(attr["subreddit_id"], str)
+        assert isinstance(attr["author_id"], str)
 
-        self.comment_id = attr["id"]
+        self.comment_id = attr["comment_id"]
         self.body = attr["body"]
+        self.body_html = attr["body_html"]
         self.score = attr["score"]
-        self.created = attr["created"]
+        self.created_utc = attr["created_utc"]
         self.gilded = attr["gilded"]
         self.edited = attr["edited"]
+        self.author= attr["author"]
         self.link_id = attr["link_id"]
         self.subreddit_id = attr["subreddit_id"]
         self.author_id = attr["author_id"]
@@ -336,6 +425,12 @@ class Comment(Base):
         """
         return self.body
 
+    def getHTML(self):
+        """
+        returns the html representation of the body
+        """
+        return self.body_html
+
     def getKarma(self):
         """
         returns karma of the comment
@@ -346,7 +441,7 @@ class Comment(Base):
         """
         returns time created of the comment
         """
-        return self.created
+        return self.created_utc
 
     def getGilded(self):
         """
@@ -354,11 +449,17 @@ class Comment(Base):
         """
         return self.gilded
 
-    def isEdited(self):
+    def getEdited(self):
         """
-        returns if the comment was edited
+        returns when the comment was edited
         """
         return self.edited
+
+    def getAuthor(self):
+        """
+        returns the username of the author of the comment
+        """
+        return self.author
 
     def getLinkID(self):
         """
@@ -370,7 +471,7 @@ class Comment(Base):
         """
         returns ID of the comment's author
         """
-        return self.user_id
+        return self.redditor_id
 
     def getSubredditID(self):
         """

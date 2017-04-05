@@ -1,4 +1,5 @@
 import praw
+from praw.models import MoreComments
 import datetime
 import pprint
 import json
@@ -7,7 +8,7 @@ import psycopg2
 from psycopg2.extensions import AsIs
 
 class RedditScraper:
-    def __init__(self, client, secret, password, ua, name, db_name, db_pass, db_host, db):
+    def __init__(self, client, secret, ua, db_name, db_pass, db_host, db):
         self.users_table = []
         self.subreddits_table = []
         self.comments_table = []
@@ -17,9 +18,7 @@ class RedditScraper:
         self.mods_table = []
         self.reddit = praw.Reddit(client_id = client,
                                   client_secret = secret,
-                                  password = password,
-                                  user_agent = ua,
-                                  username = name)
+                                  user_agent = ua)
 
         self.conn = psycopg2.connect(dbname=db, user=db_name, password=db_pass, host=db_host)
         self.cur = self.conn.cursor()
@@ -42,8 +41,12 @@ class RedditScraper:
         subreddit = submission.subreddit.display_name
         subreddit_id = submission.subreddit.id
         if submission.author is not None:
-            author_id = submission.author.id
-            author = submission.author.name
+            if not hasattr(submission.author, 'id'):
+                author_id = '[banned]'
+                author = '[banned]'
+            else:
+                author_id = submission.author.id
+                author = submission.author.name
         preview = {}
         if hasattr(submission, 'preview'):
             preview = submission.preview
@@ -74,6 +77,11 @@ class RedditScraper:
         return
 
     def addUser(self, user):
+        if not hasattr(user, 'id'):
+            if user.is_suspended:
+                print 'SUSPENDED : ' + user.name
+                pprint.pprint(vars(user))
+            return
         row = {"redditor_id": user.id,
                "name": user.name,
                "comment_karma": user.comment_karma,
@@ -84,8 +92,8 @@ class RedditScraper:
 
         columns = row.keys()
         values = [row[column] for column in columns]
-        insert_statement = 'insert into "Redditors" (%s) values %s ON CONFLICT(redditor_id) DO NOTHING ;'
-        insert_statement = self.cur.mogrify(insert_statement, (AsIs(','.join(columns)), tuple(values)))
+        insert_statement = 'insert into "Redditors" (%s) values %s ON CONFLICT(redditor_id) DO UPDATE SET (%s) = %s ;'
+        insert_statement = self.cur.mogrify(insert_statement, (AsIs(','.join(columns)), tuple(values), AsIs(','.join(columns)), tuple(values)))
         self.cur.execute(insert_statement)
         self.conn.commit()
 
@@ -103,27 +111,42 @@ class RedditScraper:
 
         columns = row.keys()
         values = [row[column] for column in columns]
-        insert_statement = 'insert into "Subreddits" (%s) values %s ON CONFLICT(subreddit_id) DO NOTHING ;'
-        insert_statement = self.cur.mogrify(insert_statement, (AsIs(','.join(columns)), tuple(values)))
+        insert_statement = 'insert into "Subreddits" (%s) values %s ON CONFLICT(subreddit_id) DO UPDATE SET (%s) = %s;'
+        insert_statement = self.cur.mogrify(insert_statement, (AsIs(','.join(columns)), tuple(values), AsIs(','.join(columns)), tuple(values)))
         self.cur.execute(insert_statement)
         self.conn.commit()
         return
 
     def addComment(self, comment):
-        author_id = 'None'
+        author_id = '[deleted]'
+        author = '[deleted]'
         if comment.author is not None:
-            author_id = comment.author.id
-        self.comments_table.append({"id": comment.id,
-                                    "created": comment.created,
-                                    "created_utc": comment.created_utc,
-                                    "body": comment.body,
-                                    "body_html": comment.body_html,
-                                    "score": comment.score,
-                                    "gilded": comment.gilded,
-                                    "edited": comment.edited,
-                                    "author_id": author_id,
-                                    "link_id": comment.link_id,
-                                    "subreddit_id": comment.subreddit.id})
+            if not hasattr(comment.author, 'id'):
+                author_id = '[banned]'
+                author = '[banned]'
+            else:
+                author_id = comment.author.id
+                author = comment.author.name
+        if comment.edited:
+            edited = datetime.datetime.fromtimestamp(comment.edited)
+        else:
+            edited = datetime.datetime.fromtimestamp(comment.created_utc)
+        row = {"comment_id": comment.id,
+               "created_utc": datetime.datetime.fromtimestamp(comment.created_utc),
+               "body": comment.body,
+               "body_html": comment.body_html,
+               "score": comment.score,
+               "gilded": comment.gilded,
+               "edited": edited,
+               "author": author,
+               "author_id": author_id,
+               "link_id": comment.submission.id}
+        columns = row.keys()
+        values = [row[column] for column in columns]
+        insert_statement = 'insert into "Comments" (%s) values %s ON CONFLICT(comment_id) DO UPDATE SET (%s) = %s;'
+        insert_statement = self.cur.mogrify(insert_statement, (AsIs(','.join(columns)), tuple(values), AsIs(','.join(columns)), tuple(values)))
+        self.cur.execute(insert_statement)
+        self.conn.commit()
         return
 
     def scrapeTrophies(self, user):
@@ -140,8 +163,35 @@ class RedditScraper:
                                                     "trophy_name": data["name"],
                                                     "description": data["description"]})
 
+    def scrapeComments(self):
+        self.cur.execute('SELECT submission_id FROM "Submissions"')
+        rows = self.cur.fetchall()
+        count = 0
+        for row in rows:
+            submission = self.reddit.submission(row[0])
+            print str(count) + ": " + submission.title
+            submission.comment_sort = 'top'
+            submission.comment_limit = 3
+            submission.comments.replace_more(limit=0)
+            comment_count = 0
+            for comment in submission.comments:
+                if comment_count == 3:
+                    break
+                if isinstance(comment, MoreComments):
+                    continue
+                self.addComment(comment)
+                if comment.author is not None and hasattr(comment.author, 'id'):
+                    self.addUser(comment.author)
+                comment_count = comment_count + 1
+            count = count + 1
+            print "----------------------------"
+
     def scrapeMods(self):
-        self.cur.execute('SELECT display_name FROM "Subreddits"')
+        self.cur.execute("""
+SELECT sr.display_name
+FROM "Subreddits" sr
+LEFT JOIN "Mods" m ON sr.subreddit_id = m.subreddit_id
+GROUP BY sr.display_name HAVING count(m.redditor_id) = 0""")
         rows = self.cur.fetchall()
         for row in rows:
             subreddit = self.reddit.subreddit(row[0])
@@ -158,20 +208,31 @@ class RedditScraper:
             print "----------------------------"
 
     def scrapeUsers(self):
-        self.cur.execute('SELECT author FROM "Submissions" GROUP BY author')
+        self.cur.execute("""
+SELECT author FROM "Submissions"
+WHERE author NOT IN (SELECT name FROM "Redditors") AND author <> '[banned]' AND  author <> '[deleted]'
+GROUP BY author
+ORDER BY author
+        """)
         rows = self.cur.fetchall()
+        count = 0
         for row in rows:
             redditor = self.reddit.redditor(row[0])
-            print redditor.name
+            print str(count) + ": " + redditor.name
+            print "---------------------"
             self.addUser(redditor)
+            count = count + 1
 
     def scrapeSubreddits(self):
-        self.cur.execute('SELECT subreddit FROM "Submissions" GROUP BY subreddit')
+        self.cur.execute('SELECT subreddit FROM "Submissions" WHERE subreddit NOT IN (SELECT display_name FROM "Subreddits" GROUP BY display_name) GROUP BY subreddit')
         rows = self.cur.fetchall()
+        count = 0
         for row in rows:
             subreddit = self.reddit.subreddit(row[0])
-            print subreddit.title
+            print str(count) + ": " + subreddit.display_name
+            print "---------------------"
             self.addSubreddit(subreddit)
+            count = count + 1
 
     def scrapeSubmissions(self, num_submissions, time_period):
         """
@@ -179,16 +240,42 @@ class RedditScraper:
         """
         count = 0
         for submission in self.reddit.subreddit('all').top(time_period, limit = num_submissions):
+            print str(count) + ": " + submission.title + " " + submission.subreddit.display_name
+            print "---------------------"
             self.addSubmission(submission)
             count = count + 1
-            print count
+
+    def updateSubreddits(self):
+        self.cur.execute('SELECT display_name FROM "Subreddits"')
+        rows = self.cur.fetchall()
+        count = 0
+        for row in rows:
+            subreddit = self.reddit.subreddit(row[0])
+            print str(count) + ": " + subreddit.display_name
+            print "---------------------"
+            self.addSubreddit(subreddit)
+            count = count + 1
+
+    def updateUsers(self):
+        self.cur.execute('SELECT name FROM "Redditors" ORDER BY name')
+        rows = self.cur.fetchall()
+        count = 0
+        for row in rows:
+            redditor = self.reddit.redditor(row[0])
+            print str(count) + ": " + redditor.name
+            self.addUser(redditor)
+            print "---------------------"
+            count = count + 1
 
 def main():
-   scraper = RedditScraper(config.CLIENT, config.SECRET, config.PASS, config.USER_AGENT, config.NAME, config.DB_NAME, config.DB_PASS, config.DB_HOST, config.DB)
-   # scraper.scrapeSubmissions(300, 'week')
+   scraper = RedditScraper(config.CLIENT, config.SECRET, config.USER_AGENT, config.DB_NAME, config.DB_PASS, config.DB_HOST, config.DB)
+   # scraper.scrapeSubmissions(1000, 'month')
    # scraper.scrapeSubreddits()
    # scraper.scrapeUsers()
    # scraper.scrapeMods()
+   # scraper.updateSubreddits()
+   # scraper.updateUsers()
+   # scraper.scrapeComments()
 
 if __name__ == "__main__":
     main()

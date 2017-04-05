@@ -8,7 +8,7 @@ export default class Subreddits extends React.Component {
         // Make request here using options
     var myp = {
       title: 'Subreddits',
-      select_values: Object.keys(getSubreddits()[0]),
+      select_values: ['title', 'accounts_active', 'subscribers', 'created_utc', 'dispay_name'],
       cards: getSubreddits().map(s => {
         console.log('S', s.display_name, s)
         return {
@@ -22,6 +22,6 @@ export default class Subreddits extends React.Component {
     return myp
   }
   render () {
-    return <RfGrid loadDataFromServer={ops => this.loadDataFromServer(ops)} />
+    return <RfGrid filterOptions={[]} loadDataFromServer={ops => this.loadDataFromServer(ops)} />
   }
 }

@@ -8,7 +8,7 @@ export default class Users extends React.Component {
         // Make request here using options
     var myp = {
       title: 'Comments',
-      select_values: Object.keys(getComments()[0]),
+      select_values: ['score', 'gilded', 'author', 'timestamp', 'create_utc'],
       cards: getComments().map(c => {
         return {
           title: getUsers().find(u => u.id === c.author).name,
@@ -21,6 +21,6 @@ export default class Users extends React.Component {
     return myp
   }
   render () {
-    return <RfGrid loadDataFromServer={ops => this.loadDataFromServer(ops)} />
+    return <RfGrid filterOptions={[]} loadDataFromServer={ops => this.loadDataFromServer(ops)} />
   }
 }
