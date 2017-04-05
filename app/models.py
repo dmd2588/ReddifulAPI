@@ -117,7 +117,6 @@ class Subreddit(Base):
     icon_img = Column(String)
     banner_img = Column(String)
     posts = relationship("Post", back_populates="sub")
-    comments = relationship("Comment", back_populates="sub")
     users = relationship("User", secondary=mods_table)
 
     def __init__(self, **attr):
@@ -382,8 +381,6 @@ class Comment(Base):
     post = relationship("Post", back_populates="comments")
     author_id = Column(String, ForeignKey('Redditors.redditor_id'))
     user = relationship("User", back_populates="comments")
-    subreddit_id = Column(String, ForeignKey('Subreddits.subreddit_id'))
-    sub = relationship("Subreddit", back_populates="comments")
 
     def __init__(self, **attr):
         """
@@ -472,9 +469,3 @@ class Comment(Base):
         returns ID of the comment's author
         """
         return self.redditor_id
-
-    def getSubredditID(self):
-        """
-        returns ID of the comment's subreddit
-        """
-        return self.subreddit_id

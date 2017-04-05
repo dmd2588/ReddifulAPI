@@ -62,8 +62,11 @@ def getUsersPageCount(per_page = 25):
 
 def getUser(user_id):
     session = Session()
-    query = session.query(User),filter(User.redditor_id == user_id)
-    return [row2dict(r) for r in query.all()]
+    query = session.query(User).filter(User.redditor_id == user_id)
+    row = query.first()
+    if row :
+        return row2dict(row)
+    return {}
 
 def key2col_post(k):
     if k == "title":
@@ -100,7 +103,7 @@ def key2col_post(k):
         return Post.subreddit
     return None
 
-def getPosts(order_by = "submission_id", desc = False, **attr):
+def getPosts(order_by = "submission_id", desc = False, page = 1, per_page = 25, **attr):
     session = Session()
     query = session.query(Post)
     for k, v in attr.items():
@@ -121,7 +124,10 @@ def getPostsPageCount(per_page = 25):
 def getPost(post_id):
     session = Session()
     query = session.query(Post).filter(Post.submission_id == post_id)
-    return [row2dict(r) for r in result]
+    row = query.first()
+    if row :
+        return row2dict(row)
+    return {}
 
 def key2col_comment(k):
     if k == "body":
@@ -140,13 +146,11 @@ def key2col_comment(k):
         return Comment.author
     if k == "link_id":
         return Comment.link_id
-    if k == "subreddit_id":
-        return Comment.subreddit_id
     if k == "author_id":
         return Comment.author_id
     return None
 
-def getComments(order_by = "comment_id", desc = False, **attr):
+def getComments(order_by = "comment_id", desc = False, page = 1, per_page = 25, **attr):
     session = Session()
     query = session.query(Comment)
     for k, v in attr.items():
@@ -167,7 +171,10 @@ def getCommentsPageCount(per_page = 25):
 def getComment(comment_id):
     session = Session()
     query = session.query(Comment).filter(Comment.comment_id == comment_id)
-    return [row2dict(r) for r in query.all()]
+    row = query.first()
+    if row :
+        return row2dict(row)
+    return {}
 
 def key2col_sub(k):
     if k == "display_name":
@@ -186,10 +193,10 @@ def key2col_sub(k):
         return Subreddit.banner_img
     return None
 
-def getSubs(order_by = "subreddit_id", desc = False, **attr):
+def getSubs(order_by = "subreddit_id", desc = False, page = 1, per_page = 25, **attr):
     session = Session()
     query = session.query(Subreddit)
-    for k, v in attr.items:
+    for k, v in attr.items():
         col = key2col_sub(k)
         if col:
             query = query.filter(col == v)
@@ -207,6 +214,9 @@ def getSubsPageCount(per_page = 25):
 def getSub(subreddit_id):
     session = Session()
     query = session.query(Subreddit).filter(Subreddit.subreddit_id == subreddit_id)
-    return [row2dict(r) for r in query.all()]
+    row = query.first()
+    if row :
+        return row2dict(row)
+    return {}
 
 
