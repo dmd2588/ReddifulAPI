@@ -1,6 +1,7 @@
 import React from 'react' //eslint-disable-line
 import Detail from './Details.jsx'
-import { getSubredditByID, getModerators, getUserByID } from '../api.js'
+// import { getSubredditByID, getModerators, getUserByID } from '../api.js'
+import { getSubredditByID } from '../api.js'
 
 export default class SubredditDetails extends React.Component {
   constructor (props) {
@@ -10,23 +11,30 @@ export default class SubredditDetails extends React.Component {
       subreddit: {},
       modUser: {}
     }
+    console.log(props.match.params.subreddit_id)
   }
 
   componentDidMount () {
     var self = this
     getSubredditByID(this.state.subreddit_id).then(function (res) {
       var subreddit = res.data
-      getModerators({}, function (res) {
-        var modUserId = res.find(r => r.sr_id === subreddit.id).user_id
-        getUserByID(modUserId).then(function (res) {
-          var user = res.data
-          self.setState({
-            subreddit_id: self.state.subreddit_id,
-            subreddit: subreddit,
-            modUser: user
-          })
-        })
+
+      self.setState({
+        subreddit_id: self.state.subreddit_id,
+        subreddit: subreddit,
+        modUser: 'undefined'
       })
+     // getModerators({}, function (res) {
+        // var modUserId = res.find(r => r.sr_id === subreddit.id).user_id
+       // getUserByID(modUserId).then(function (res) {
+        //  var user = res.data
+        //  self.setState({
+        //    subreddit_id: self.state.subreddit_id,
+        //    subreddit: subreddit,
+        //    modUser: user
+        //  })
+       // })
+     // })
     })
   }
 
@@ -38,10 +46,15 @@ export default class SubredditDetails extends React.Component {
         'Title': this.state.subreddit.title,
         'Subscribers': this.state.subreddit.subscribers,
         'Moderator': {
-          name: this.state.modUser.name,
-          link: '/users/detail/' + this.state.modUser.id
+          name: 'undefined',
+          link: '/users/detail/' + undefined
         },
-        'Created': new Date(this.state.subreddit.created * 1000).toDateString()
+        // 'Moderator': {
+        //  name: this.state.modUser.name,
+        //  link: '/users/detail/' + this.state.modUser.id
+        // },
+
+        'Created': this.state.subreddit.created_utc
       }
     })
   }

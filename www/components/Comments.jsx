@@ -13,10 +13,14 @@ export default class Users extends React.Component {
           title: 'Comments',
           select_values: ['score', 'gilded', 'author', 'timestamp', 'create_utc'],
           cards: comments.map(c => {
+              // var commentUserMatch = (typeof users.find(u => u.redditor_id === c.author_id) === 'undefined');
+              // console.log(users.find(u => u.redditor_id === "10brol"))
+            var commentUserMatch = users.find(u => u.redditor_id === c.author_id)
+            console.log(commentUserMatch)
             return {
-              title: users.find(u => u.id === c.author).name,
+              title: '',
               subtitle: 'Commented: ' + moment(new Date(c.created * 1000)).format('LL'),
-              link: '/comments/detail/' + c.id
+              link: '/comments/detail/' + c.comment_id
             }
           })
         }

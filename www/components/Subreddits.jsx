@@ -11,11 +11,11 @@ export default class Subreddits extends React.Component {
         title: 'Subreddits',
         select_values: ['title', 'accounts_active', 'subscribers', 'created_utc', 'dispay_name'],
         cards: subreddits.map(s => {
-          console.log('S', s.display_name, s)
+          // console.log('S', s.display_name, s)
           return {
             title: s.display_name,
             subtitle: 'Created: ' + moment(new Date(s.created * 1000)).format('LL'),
-            link: '/subreddits/detail/' + s.id
+            link: '/subreddits/detail/' + s.subreddit_id
           }
         })
       }

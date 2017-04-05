@@ -4,7 +4,6 @@ import {FormGroup, ControlLabel, FormControl, Panel, Button, Checkbox} from 'rea
 export default class SortFilter extends React.Component {
   constructor (props) {
     super(props)
-
     if (this.props.filterOptions.length !== 0) {
       this.state = Object.assign.apply(Object, this.props.filterOptions.map(function (c) {
         var temp = {}
@@ -14,17 +13,21 @@ export default class SortFilter extends React.Component {
     } else {
       this.state = {}
     }
-
-    this.handleChange = this.handleChange.bind(this)
+    console.log(this.state)
+    // this.handleChange = this.handleChange.bind(this)
   }
 
   makeOption (x) {
     return <option key={x} value={x}>{x}</option>
   }
 
-  handleChange (evt) {
+  handleChange (name, evt) {
+    // console.log(uniqueName)
+    console.log(name)
     console.log(evt.target.checked)
-    this.setState({ selfPost: evt.target.checked })
+    var temp = {}
+    temp[name] = evt.target.checked
+    this.setState(temp)
   }
 
   onApply () {
@@ -47,11 +50,12 @@ export default class SortFilter extends React.Component {
         </FormGroup>
         <ControlLabel>Filter by Attribute</ControlLabel>
 
-        {this.props.filterOptions.map(c => (
-          <Checkbox key={Math.random().toString(16).substr(2)} checked={this.state[c.name]} onChange={this.handleChange} >
-            {c.name}
-          </Checkbox>
-              ))}
+        {this.props.filterOptions.map(c => {
+          return (
+            <Checkbox label={c.name} key={Math.random().toString(16).substr(2)} checked={this.state[c.name]} onChange={(e) => this.handleChange(c.name, e)} >
+              {c.name}
+            </Checkbox>)
+        })}
 
         <FormGroup controlId='sortSelect'>
           <ControlLabel>Sort by Attribute</ControlLabel>

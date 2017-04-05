@@ -15,7 +15,7 @@ export default class Posts extends React.Component {
             return {
               title: p.title,
               subtitle: 'Author: ' + (users.find(u => u.id === p.author) || {}).name,
-              link: '/posts/detail/' + p.id
+              link: '/posts/detail/' + p.submission_id
             }
           })
         }

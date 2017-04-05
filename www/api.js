@@ -7,6 +7,7 @@ const moderators = [
 ]
 
 export function getUsers (options) {
+   // ?page=2&sortOrder=Desc&sortOn=link_karma'
   return axios.get('/api/users')
 }
 

@@ -7799,6 +7799,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var moderators = [{ 'user_id': 'hh8mr', 'sr_id': '3imv0' }, { 'user_id': '74344', 'sr_id': '2tex6' }, { 'user_id': '4fer6', 'sr_id': '2qh55' }];
 
 function getUsers(options) {
+  // ?page=2&sortOrder=Desc&sortOn=link_karma'
   return _axios2.default.get('/api/users');
 }
 
@@ -11179,7 +11180,7 @@ var RfGrid = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (RfGrid.__proto__ || Object.getPrototypeOf(RfGrid)).call(this, props));
 
-    _this.state = { data: { title: '', select_values: [], cards: [] }, pageCount: 5 };
+    _this.state = { data: { title: '', select_values: [], cards: [] }, pageCount: 5, currentPage: 1 };
     _this.loadDataFromServer = _this.props.loadDataFromServer;
     return _this;
   }
@@ -11188,6 +11189,8 @@ var RfGrid = function (_React$Component) {
     key: 'handlePageClick',
     value: function handlePageClick(data) {
       console.log('Click');
+      console.log(data.selected);
+      // this.updateGrid({currentPage: data.selected});
     }
   }, {
     key: 'componentDidMount',
@@ -11258,7 +11261,7 @@ var RfGrid = function (_React$Component) {
             '...'
           ),
           breakClassName: 'break-me',
-          pageCount: 5,
+          pageCount: this.state.pageCount,
           marginPagesDisplayed: 2,
           pageRangeDisplayed: 5,
           onPageChange: this.handlePageClick,
@@ -40457,7 +40460,7 @@ var CommentDetails = function (_React$Component) {
       var self = this;
       (0, _api.getCommentByID)(this.state.comment_id).then(function (res) {
         var comment = res.data;
-        (0, _api.getUserByID)(comment.author).then(function (res) {
+        (0, _api.getUserByID)(comment.author_id).then(function (res) {
           var author = res.data;
           (0, _api.getPostByID)(comment.link_id).then(function (res) {
             var post = res.data;
@@ -40556,12 +40559,16 @@ var Users = function (_React$Component) {
             title: 'Comments',
             select_values: ['score', 'gilded', 'author', 'timestamp', 'create_utc'],
             cards: comments.map(function (c) {
+              // var commentUserMatch = (typeof users.find(u => u.redditor_id === c.author_id) === 'undefined');
+              // console.log(users.find(u => u.redditor_id === "10brol"))
+              var commentUserMatch = users.find(function (u) {
+                return u.redditor_id === c.author_id;
+              });
+              console.log(commentUserMatch);
               return {
-                title: users.find(function (u) {
-                  return u.id === c.author;
-                }).name,
+                title: '',
                 subtitle: 'Commented: ' + (0, _moment2.default)(new Date(c.created * 1000)).format('LL'),
-                link: '/comments/detail/' + c.id
+                link: '/comments/detail/' + c.comment_id
               };
             })
           };
@@ -40952,7 +40959,7 @@ var PostDetails = function (_React$Component) {
             name: this.state.author.name,
             link: '/users/detail/' + this.state.author.id
           },
-          'Created': new Date(this.state.post.created * 1000).toDateString()
+          'Created': this.state.post.create_utc
         }
       });
     }
@@ -41020,7 +41027,7 @@ var Posts = function (_React$Component) {
                 subtitle: 'Author: ' + (users.find(function (u) {
                   return u.id === p.author;
                 }) || {}).name,
-                link: '/posts/detail/' + p.id
+                link: '/posts/detail/' + p.submission_id
               };
             })
           };
@@ -41150,8 +41157,8 @@ var SortFilter = function (_React$Component) {
     } else {
       _this.state = {};
     }
-
-    _this.handleChange = _this.handleChange.bind(_this);
+    console.log(_this.state);
+    // this.handleChange = this.handleChange.bind(this)
     return _this;
   }
 
@@ -41166,9 +41173,13 @@ var SortFilter = function (_React$Component) {
     }
   }, {
     key: 'handleChange',
-    value: function handleChange(evt) {
+    value: function handleChange(name, evt) {
+      // console.log(uniqueName)
+      console.log(name);
       console.log(evt.target.checked);
-      this.setState({ selfPost: evt.target.checked });
+      var temp = {};
+      temp[name] = evt.target.checked;
+      this.setState(temp);
     }
   }, {
     key: 'onApply',
@@ -41209,7 +41220,9 @@ var SortFilter = function (_React$Component) {
         this.props.filterOptions.map(function (c) {
           return _react2.default.createElement(
             _reactBootstrap.Checkbox,
-            { key: Math.random().toString(16).substr(2), checked: _this2.state[c.name], onChange: _this2.handleChange },
+            { label: c.name, key: Math.random().toString(16).substr(2), checked: _this2.state[c.name], onChange: function onChange(e) {
+                return _this2.handleChange(c.name, e);
+              } },
             c.name
           );
         }),
@@ -41272,6 +41285,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //eslint-disable-line
 
+// import { getSubredditByID, getModerators, getUserByID } from '../api.js'
+
 
 var SubredditDetails = function (_React$Component) {
   _inherits(SubredditDetails, _React$Component);
@@ -41286,6 +41301,7 @@ var SubredditDetails = function (_React$Component) {
       subreddit: {},
       modUser: {}
     };
+    console.log(props.match.params.subreddit_id);
     return _this;
   }
 
@@ -41295,19 +41311,23 @@ var SubredditDetails = function (_React$Component) {
       var self = this;
       (0, _api.getSubredditByID)(this.state.subreddit_id).then(function (res) {
         var subreddit = res.data;
-        (0, _api.getModerators)({}, function (res) {
-          var modUserId = res.find(function (r) {
-            return r.sr_id === subreddit.id;
-          }).user_id;
-          (0, _api.getUserByID)(modUserId).then(function (res) {
-            var user = res.data;
-            self.setState({
-              subreddit_id: self.state.subreddit_id,
-              subreddit: subreddit,
-              modUser: user
-            });
-          });
+
+        self.setState({
+          subreddit_id: self.state.subreddit_id,
+          subreddit: subreddit,
+          modUser: 'undefined'
         });
+        // getModerators({}, function (res) {
+        // var modUserId = res.find(r => r.sr_id === subreddit.id).user_id
+        // getUserByID(modUserId).then(function (res) {
+        //  var user = res.data
+        //  self.setState({
+        //    subreddit_id: self.state.subreddit_id,
+        //    subreddit: subreddit,
+        //    modUser: user
+        //  })
+        // })
+        // })
       });
     }
   }, {
@@ -41320,10 +41340,15 @@ var SubredditDetails = function (_React$Component) {
           'Title': this.state.subreddit.title,
           'Subscribers': this.state.subreddit.subscribers,
           'Moderator': {
-            name: this.state.modUser.name,
-            link: '/users/detail/' + this.state.modUser.id
+            name: 'undefined',
+            link: '/users/detail/' + undefined
           },
-          'Created': new Date(this.state.subreddit.created * 1000).toDateString()
+          // 'Moderator': {
+          //  name: this.state.modUser.name,
+          //  link: '/users/detail/' + this.state.modUser.id
+          // },
+
+          'Created': this.state.subreddit.created_utc
         }
       });
     }
@@ -41388,11 +41413,11 @@ var Subreddits = function (_React$Component) {
           title: 'Subreddits',
           select_values: ['title', 'accounts_active', 'subscribers', 'created_utc', 'dispay_name'],
           cards: subreddits.map(function (s) {
-            console.log('S', s.display_name, s);
+            // console.log('S', s.display_name, s)
             return {
               title: s.display_name,
               subtitle: 'Created: ' + (0, _moment2.default)(new Date(s.created * 1000)).format('LL'),
-              link: '/subreddits/detail/' + s.id
+              link: '/subreddits/detail/' + s.subreddit_id
             };
           })
         };
@@ -41460,6 +41485,7 @@ var UserDetail = function (_React$Component) {
       user: {},
       modSub: {}
     };
+    console.log(props.match.params.user_id);
     return _this;
   }
 
@@ -41469,18 +41495,15 @@ var UserDetail = function (_React$Component) {
       var self = this;
       (0, _api.getUserByID)(self.state.user_id).then(function (res) {
         var user = res.data;
+        console.log(user);
         (0, _api.getModerators)({}, function (res) {
-          var modSubId = res.find(function (r) {
-            return r.user_id === user.id;
-          }).sr_id;
+          // var modSubId = res.find(r => r.user_id === user.id).sr_id
           (0, _api.getSubreddits)({}).then(function (res) {
-            var modSub = modSubId ? res.data.find(function (s) {
-              return s.id === modSubId;
-            }) : {} || {};
+            // var modSub = modSubId ? res.data.find(s => s.id === modSubId) : {} || {}
             self.setState({
               user_id: self.state.user_id,
               user: user,
-              modSub: modSub
+              modSub: undefined // modSub
             });
           });
         });
@@ -41497,10 +41520,15 @@ var UserDetail = function (_React$Component) {
           'Comment Karma': this.state.user.comment_karma,
           'Email': this.state.user.email,
           'Moderator of': {
-            name: this.state.modSub.display_name,
-            link: '/subreddits/detail/' + this.state.modSub.id
+            name: 'undefined',
+            link: '/subreddits/detail/' + undefined
           },
-          'Created': new Date(this.state.user.created * 1000).toDateString()
+          // 'Moderator of': {
+          //  name: this.state.modSub.display_name,
+          //  link: '/subreddits/detail/' + this.state.modSub.id
+          // }
+
+          'Created': this.state.user.created_utc
         }
       });
     }
@@ -41568,7 +41596,7 @@ var Users = function (_React$Component) {
             return {
               title: u.name,
               subtitle: 'Joined: ' + (0, _moment2.default)(new Date(u.created * 1000)).format('LL'),
-              link: '/users/detail/' + u.id
+              link: '/users/detail/' + u.redditor_id
             };
           })
         };
@@ -41581,7 +41609,7 @@ var Users = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      return _react2.default.createElement(_RfGrid2.default, { filterOptions: [{ name: 'is_gold', value: false }], loadDataFromServer: function loadDataFromServer(ops, callback) {
+      return _react2.default.createElement(_RfGrid2.default, { filterOptions: [{ name: 'is_gold', value: false }, { name: 'verified', value: false }], loadDataFromServer: function loadDataFromServer(ops, callback) {
           return _this2.loadDataFromServer(ops, callback);
         } });
     }
