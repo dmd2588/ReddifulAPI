@@ -32,7 +32,7 @@ endif
 
 .pylintrc:
 	$(PYLINT) --disable=locally-disabled --reports=no --generate-rcfile > $@
-	
+
 IDB1.html: app/models.py
 	pydoc3 -w app/models.py
 	cp models.html IDB1.html
@@ -65,6 +65,6 @@ pylint:
 test-client: build
 
 test-server: pylint
-	python3 apptest/test_http.py
+	python3 app/tests/test_http.py
 
 test: test-client test-server
