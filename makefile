@@ -46,8 +46,8 @@ status:
 	git remote -v
 	git status
 
-build:
-	node_modules/.bin/standard && node_modules/.bin/webpack --progress --colors
+build: standard
+	node_modules/.bin/webpack --progress --colors
 
 watch:
 	node_modules/.bin/webpack --progress --colors --watch
@@ -55,6 +55,12 @@ watch:
 dev_build:
 	node_modules/.bin/webpack-dev-server -d --watch --inline --content-base www/
 
-test:
+standard:
 	node_modules/.bin/standard
-	make build
+
+test-client: build
+
+test-server:
+	python3 apptest/test_http.py
+
+test: test-client test-server
