@@ -7,9 +7,8 @@ node_js:
 python:
   - 3.5
 install:
-  - pip install -r requirements.txt
+  - pip3 install -r requirements.txt
   - npm install
   - docker-compose up -d
 script:
   - make test
-  - make build
