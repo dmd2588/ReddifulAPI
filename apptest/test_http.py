@@ -1,6 +1,7 @@
 import unittest, requests
 
-API_URL = 'http://localhost/api'
+HOST_URL = 'http://localhost'
+API_URL = HOST_URL + '/api'
 
 class TestUsers(unittest.TestCase):
 
@@ -114,6 +115,26 @@ class TestSubreddits(unittest.TestCase):
         resp = requests.get(API_URL + "/subreddits/foobar")
         self.assertEqual(resp.status_code, 404)
         self.assertEqual(resp.headers['content-length'], '0')
+
+class TestWebPages(unittest.TestCase):
+  
+    urls = [
+      HOST_URL + '/users',
+      HOST_URL + '/posts',
+      HOST_URL + '/comments',
+      HOST_URL + '/subreddits',
+      HOST_URL + '/users/foobar',
+      HOST_URL + '/posts/foobar',
+      HOST_URL + '/comments/foobar',
+      HOST_URL + '/subreddits/foobar',
+    ]
+    
+    def test_getwebpages(self):
+        for url in TestWebPages.urls:
+            resp = requests.get(url)
+            self.assertEqual(resp.status_code, 200)
+            self.assertEqual(resp.headers['content-type'], 'text/html; charset=utf-8')
+            self.assertNotEqual(resp.headers['content-length'], '0')
 
 if __name__ == "__main__":
   unittest.main()
