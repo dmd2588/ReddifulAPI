@@ -1,5 +1,4 @@
 import React from 'react' //eslint-disable-line
-import moment from 'moment'
 import RfGrid from './RfGrid.jsx'
 import { getSubreddits } from '../api.js'
 

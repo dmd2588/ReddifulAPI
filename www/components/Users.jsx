@@ -1,5 +1,4 @@
 import React from 'react' //eslint-disable-line
-import moment from 'moment'
 import RfGrid from './RfGrid.jsx'
 import { getUsers } from '../api.js'
 
@@ -13,7 +12,7 @@ export default class Users extends React.Component {
         cards: users.map(u => {
           return {
             title: u.name,
-            subtitle: 'Joined: ' +u.created_utc,
+            subtitle: 'Joined: ' + u.created_utc,
             link: '/users/detail/' + u.redditor_id
           }
         })

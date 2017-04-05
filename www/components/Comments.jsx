@@ -1,5 +1,4 @@
 import React from 'react' //eslint-disable-line
-import moment from 'moment'
 import RfGrid from './RfGrid.jsx'
 import { getComments, getUsers } from '../api.js'
 

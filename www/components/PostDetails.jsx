@@ -44,11 +44,11 @@ export default class PostDetails extends React.Component {
           name: this.state.subreddit.display_name || 'NOT_FOUND - FIXME',
           link: '/subreddits/detail/' + this.state.subreddit.subreddit_id
         },
-          'Author': {
+        'Author': {
           name: this.state.author.name,
           link: '/users/detail/' + this.state.author.redditor_id
         },
-        
+
         'Created': this.state.post.created_utc
       }
     })

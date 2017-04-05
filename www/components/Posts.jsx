@@ -7,7 +7,7 @@ export default class Posts extends React.Component {
     getPosts(options).then(function (res) {
       var posts = res.data
       getUsers({}).then(function (res) {
-        var users = res.data
+        // var users = res.data
         var myp = {
           title: 'Posts',
           select_values: ['score', 'gilded', 'title', 'num_comments', 'author'],
