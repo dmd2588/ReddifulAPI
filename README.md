@@ -1,4 +1,4 @@
-# ReddifulAPI [![Build Status](https://travis-ci.org/dmd2588/idb.svg?branch=master)](https://travis-ci.org/dmd2588/idb) 
+# ReddifulAPI [![Build Status](https://travis-ci.org/dmd2588/idb.svg?branch=master)](https://travis-ci.org/dmd2588/idb)
 
 [Website](http://reddifulapi.me/)
 
@@ -17,6 +17,14 @@ Set the `DB_URL` environment variable to the database the API should connect to
 
 To bundle the client jsx files, run:
 `make build`
+
+## Testing
+
+`make test` will run the client and server tests
+`make test-client` will just run the client tests
+`make test-server` will just run the server tests
+
+The server tests require that the API is running
 
 ## Running
 
