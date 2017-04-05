@@ -4,6 +4,10 @@ import json
 import logging
 import flask
 import query
+import unittest
+from io import StringIO
+from tests.test_http import TestUsers
+from tests.test_models import TestModels
 
 logging.getLogger().setLevel(logging.INFO)
 
@@ -11,6 +15,10 @@ app = flask.Flask(__name__)
 
 DEFAULT_HEADERS = {
     'Content-Type': 'application/json; charset=utf-8'
+}
+
+TEXT_HEADER = {
+    'Content-Type': 'text/plain'
 }
 
 
@@ -30,6 +38,14 @@ def createJson(r):
 def serve_statics(path):
     return flask.send_from_directory('../www/dist/', path)
 
+@app.route('/api/tests')
+def serve_tests():
+    test_output = StringIO()
+    integration_suite = unittest.TestLoader().loadTestsFromTestCase(TestUsers)
+    models_suite = unittest.TestLoader().loadTestsFromTestCase(TestModels)
+    all_tests = unittest.TestSuite([integration_suite, models_suite])
+    unittest.TextTestRunner(stream=test_output, verbosity=2).run(all_tests)
+    return test_output.getvalue(), 200, TEXT_HEADER
 
 @app.route('/api/users')
 def serve_user_list():
