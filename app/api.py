@@ -33,7 +33,7 @@ def serve_statics(path):
 
 @app.route('/api/users')
 def serve_user_list():
-    return createJson(query.getUsers()), 200, DEFAULT_HEADERS
+    return createJson(query.getUsers()[0]), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/users/<string:user_id>')
@@ -46,7 +46,7 @@ def serve_user(user_id):
 
 @app.route('/api/posts')
 def serve_post_list():
-    return createJson(query.getPosts()), 200, DEFAULT_HEADERS
+    return createJson(query.getPosts()[0]), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/posts/<string:post_id>')
@@ -59,7 +59,7 @@ def serve_post(post_id):
 
 @app.route('/api/comments')
 def serve_comment_list():
-    return createJson(query.getComments()), 200, DEFAULT_HEADERS
+    return createJson(query.getComments()[0]), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/comments/<string:comment_id>')
@@ -72,7 +72,7 @@ def serve_comment(comment_id):
 
 @app.route('/api/subreddits')
 def serve_subreddit_list():
-    return createJson(query.getSubs()), 200, DEFAULT_HEADERS
+    return createJson(query.getSubs()[0]), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/subreddits/<string:subreddit_id>')
