@@ -6,8 +6,8 @@ import flask
 import unittest
 from io import StringIO
 import app.query as query
-from tests.test_http import TestUsers
-from tests.test_models import TestModels
+from app.tests.test_http import TestUsers
+from app.tests.test_models import TestModels
 
 logging.getLogger().setLevel(logging.INFO)
 

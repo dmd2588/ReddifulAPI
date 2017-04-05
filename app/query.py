@@ -1,6 +1,6 @@
 import math
 import os
-from models import Comment, Post, Subreddit, User
+from app.models import Comment, Post, Subreddit, User
 import sqlalchemy
 from sqlalchemy.orm.session import sessionmaker
 
