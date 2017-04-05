@@ -6,6 +6,10 @@ const moderators = [
   {'user_id': '4fer6', 'sr_id': '2qh55'}
 ]
 
+export function getTests () {
+  return axios.get('/api/tests')
+}
+
 export function getUsers (options) {
    // ?page=2&sortOrder=Desc&sortOn=link_karma'
   return axios.get('/api/users')
