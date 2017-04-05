@@ -6,3 +6,4 @@ psycopg2
 requests
 autopep8
 pep8
+pylint
