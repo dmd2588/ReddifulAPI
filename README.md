@@ -1,24 +1,34 @@
-# ReddifulAPI
+# ReddifulAPI [![Build Status](https://travis-ci.org/dmd2588/idb.svg?branch=master)](https://travis-ci.org/dmd2588/idb)
 
-We're going to be using AWS to host our website and React
+[Website](http://reddifulapi.me/)
 
-website: reddifulAPI.me
+[Apiary](http://docs.reddiful.apiary.io/)
 
 ## Setup
 
-Install docker
+Install docker and nodejs
+
+To install the client side dependencies run:
+`npm install`
+
+Set the `DB_URL` environment variable to the database the API should connect to
+
+## Building
+
+To bundle the client jsx files, run:
+`make build`
+
+## Testing
+
+`make test` will run the client and server tests
+`make test-client` will just run the client tests
+`make test-server` will just run the server tests
+
+The server tests require that the API is running
 
 ## Running
 
-From the project's root directory run:
+To start the API run:
 `docker-compose up`
 
 The api is running locally on port `80`
-
-## Install Dependencies
-From the project's root directory run:
-`npm install`
-
-## Build files - the bundle.js from the jsx files
-From project root directory:
-`make build`

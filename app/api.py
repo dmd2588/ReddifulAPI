@@ -1,7 +1,6 @@
 import flask
 import logging
 import json
-import dummydata as dummydata
 import query
 import datetime
 import decimal
@@ -9,6 +8,10 @@ import decimal
 logging.getLogger().setLevel(logging.INFO)
 
 app = flask.Flask(__name__)
+
+DEFAULT_HEADERS = {
+  'Content-Type': 'application/json; charset=utf-8'
+}
 
 def alchemyencoder(obj):
     """JSON encoder function for SQLAlchemy special classes."""
@@ -26,47 +29,47 @@ def serve_statics(path):
 
 @app.route('/api/users')
 def serve_user_list():
-    return createJson(query.getUsers())
+    return createJson(query.getUsers()), 200, DEFAULT_HEADERS
 
 @app.route('/api/users/<string:user_id>')
 def serve_user(user_id):
     u = query.getUser(user_id)
     if not u:
         return '', 404
-    return createJson(u)
+    return createJson(u), 200, DEFAULT_HEADERS
 
 @app.route('/api/posts')
 def serve_post_list():
-    return createJson(query.getPosts())
+    return createJson(query.getPosts()), 200, DEFAULT_HEADERS
 
 @app.route('/api/posts/<string:post_id>')
 def serve_post(post_id):
     p = query.getPost(post_id)
     if not p:
         return '', 404
-    return createJson(p)
+    return createJson(p), 200, DEFAULT_HEADERS
 
 @app.route('/api/comments')
 def serve_comment_list():
-    return createJson(query.getComments())
+    return createJson(query.getComments()), 200, DEFAULT_HEADERS
 
 @app.route('/api/comments/<string:comment_id>')
 def serve_comment(comment_id):
     c = query.getComment(comment_id)
     if not c:
         return '', 404
-    return createJson(c)
+    return createJson(c), 200, DEFAULT_HEADERS
 
 @app.route('/api/subreddits')
 def serve_subreddit_list():
-    return createJson(query.getSubs())
+    return createJson(query.getSubs()), 200, DEFAULT_HEADERS
 
 @app.route('/api/subreddits/<string:subreddit_id>')
 def serve_subreddit(subreddit_id):
     s = query.getSub(subreddit_id)
     if not s:
         return '', 404
-    return createJson(s)
+    return createJson(s), 200, DEFAULT_HEADERS
 
 
 

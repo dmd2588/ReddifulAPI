@@ -9,12 +9,8 @@ RUN apt-get install -y python3-pip
 RUN pip3 install --upgrade pip
 
 #the upgrade version of pip runs as `pip` NOT `pip3`
-RUN pip install\
-    Flask\
-    eventlet\
-    gunicorn\
-    SQLAlchemy\
-	psycopg2    
+ADD requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 EXPOSE 8080
 WORKDIR /var/reddiful/app
