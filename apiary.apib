@@ -123,8 +123,8 @@ Reddiful is a simple API allowing consumers to view reddit metadata
     + thumbnail (string) - thumbnail of the post
     + author (string) - name of the author of the post
     + subreddit (string) - name of the overall subreddit
-    + author_id (string) - unique ID of the author of the post
-    + subreddit_id (string) - unique ID of the overall subreddit
+    + author_id (string) - unique ID of the author of the post (foreign key to author)
+    + subreddit_id (string) - unique ID of the overall subreddit (foreign key to subreddit)
 
 ### List All Posts [GET]
 
@@ -192,18 +192,19 @@ Reddiful is a simple API allowing consumers to view reddit metadata
         
 ## Comment Collection [/comments/{comment}]
 + Parameters
-    + comment (string) - body of the comment
+    + comment_id (string) - unique ID of this comment
 
 + Attributes
-    + author_id (string) - author of the comment (foreign key to ID of User)
+    + comment_id (string) - unique ID of this comment
     + body: this is a comment (string) - body of the comment
-    + created (string) - time of the comment's post
-    + edited (boolean) - was this comment edited
-    + gilded (number) - number of times this comment is gilded
-    + id (string) - unique ID of this comment
-    + link_id (string) - unique ID of the overall post (foreign key to ID of Post)
+    + body_html (string) - html representation of the body of the comment
     + score (number) - karma of the comment
-    + subreddit_id (string) - unique ID of the overall subreddit (foreign key to ID of Subreddit)
+    + created_utc: '2015-05-05 20:20:20' (string) - time of the comment's post
+    + gilded (number) - number of times this comment is gilded
+    + edited (boolean) - was this comment edited
+    + author (string) - name of the author of the comment
+    + link_id (string) - unique ID of the overall post (foreign key to Post)
+    + author_id (string) - unique ID of the author of the comment (foreign key to User)
     
     
     
@@ -214,36 +215,39 @@ Reddiful is a simple API allowing consumers to view reddit metadata
 
         [
             {
-                "author_id": "hh8mr",
+                "comment_id": "deaw2vi",
                 "body": "comment 2",
-                "created": 1488274311,
-                "edited": False,
-                "gilded": 0,
-                "id": "deaw2vi",
-                "link_id": "t3_5th7sz",
+                "body_html": "placeholder1",
                 "score": 1,
-                "subreddit_id": "3imxi"
+                "created_utc": "2014-04-04 04:04:04",
+                "gilded": 0,
+                "edited": False,
+                "author": "batman_jr",
+                "link_id": "t3_5th7sz",
+                "author_id": "hh8mr"
             },
             {
-                "author_id": "74344",
+                "comment_id": "df7d781",
                 "body": "> Despite claiming ownership, Canada provides no medical or social services to any of the inhabitants of Hans Island.\n\nYou could also say that they do provide medical and social services to all the inhabitants though.",
-                "created": 1490098110,
-                "edited": False,
-                "gilded": 0,
-                "id": "df7d781",
-                "link_id": "t3_60h6ga",
+                "body_html": "placeholder2",
                 "score": 2,
-                "subreddit_id": "2qqjc"
+                "created_utc": "2013-03-03 03:03:03",
+                "gilded": 0,
+                "edited": False,
+                "author": "poizan42",
+                "link_id": "t3_60h6ga",
+                "author_id": "74344"
             },
             {
-                "author_id": "4fer6",
+                "comment_id": "df8425r",
                 "body": "Spilled a glass of diet Pepsi all over Cash 'n' Guns (first time playing). It was of course an accident and they immediately offered to help clean them, and failing that buy me the game again.\n\nThankfully, because it was diet (no sugar) the cards were able to be saved and now you couldn't tell it ever happened.",
-                "created": 1490146785,
-                "edited": False,
-                "gilded": 0,
-                "id": "df8425r",
-                "link_id": "t3_60nyom",
+                "body_html": "placeholder3",
                 "score": 3,
-                "subreddit_id": "2qmjp"
+                "created_utc": "2012-02-02 02:02:02",
+                "gilded": 0,
+                "edited": False,
+                "author": "Ooer",
+                "link_id": "t3_60nyom",
+                "author_id": "4fer6"
             }
         ]
