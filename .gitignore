@@ -95,7 +95,6 @@ ENV/
 __pycache__
 .coverage
 .DS_Store
-.pylintrc
 *.pyc
 *.swp
 netflix-tests

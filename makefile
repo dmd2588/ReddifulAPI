@@ -58,9 +58,13 @@ dev_build:
 standard:
 	node_modules/.bin/standard
 
+pylint:
+	pylint --ignore query.py,models.py,RedditScraper.py app
+	pep8 --exclude models.py,query.py,RedditScraper.py app
+
 test-client: build
 
-test-server:
+test-server: pylint
 	python3 apptest/test_http.py
 
 test: test-client test-server
