@@ -1,26 +1,53 @@
 import React from 'react' // eslint-disable-line
 import Detail from './Details.jsx'
-import { getPosts, getUsers, getSubreddits } from '../api.js'
+import { getPostByID, getUserByID, getSubredditByID } from '../api.js'
 
-export default function PostDetails (props) {
-  const post = getPosts().find(p => p.id === props.match.params.post_id)
-  const author = getUsers().find(u => u.id === post.author) || {}
-  const subreddit = getSubreddits().find(s => s.id === post.subreddit_id) || {}
-
-  return Detail({
-    title: 'Post - ' + post.title,
-    details: {
-      'Title': post.title,
-      'Score': post.score,
-      'Subreddit': {
-        name: subreddit.display_name || 'NOT_FOUND - FIXME',
-        link: '/subreddits/detail/' + subreddit.id
-      },
-      'Author': {
-        name: author.name,
-        link: '/users/detail/' + author.id
-      },
-      'Created': new Date(post.created * 1000).toDateString()
+export default class PostDetails extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      post_id: props.match.params.post_id,
+      post: {},
+      author: {},
+      subreddit: {}
     }
-  })
+  }
+
+  componentDidMount () {
+    var self = this
+    getPostByID(this.state.post_id).then(function (res) {
+      var post = res.data
+      getUserByID(post.author).then(function (res) {
+        var author = res.data
+        getSubredditByID(post.subreddit_id).then(function (res) {
+          var subreddit = res.data
+          self.setState({
+            post_id: self.state.post_id,
+            post: post,
+            author: author,
+            subreddit: subreddit
+          })
+        })
+      })
+    })
+  }
+
+  render () {
+    return Detail({
+      title: 'Post - ' + this.state.post.title,
+      details: {
+        'Title': this.state.post.title,
+        'Score': this.state.post.score,
+        'Subreddit': {
+          name: this.state.subreddit.display_name || 'NOT_FOUND - FIXME',
+          link: '/subreddits/detail/' + this.state.subreddit.id
+        },
+        'Author': {
+          name: this.state.author.name,
+          link: '/users/detail/' + this.state.author.id
+        },
+        'Created': new Date(this.state.post.created * 1000).toDateString()
+      }
+    })
+  }
 }

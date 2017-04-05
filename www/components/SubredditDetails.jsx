@@ -1,23 +1,48 @@
 import React from 'react' //eslint-disable-line
 import Detail from './Details.jsx'
-import { getSubreddits, getModerators, getUsers } from '../api.js'
+import { getSubredditByID, getModerators, getUserByID } from '../api.js'
 
-export default function SubredditDetails (props) {
-  const subreddit = getSubreddits().find(s => s.id === props.match.params.subreddit_id)
-  const modUserId = getModerators().find(r => r.sr_id === subreddit.id).user_id
-  const modUser = getUsers().find(u => u.id === modUserId)
-
-  return Detail({
-    title: 'Subreddit - ' + subreddit.display_name,
-    details: {
-      'Name': subreddit.display_name,
-      'Title': subreddit.title,
-      'Subscribers': subreddit.subscribers,
-      'Moderator': {
-        name: modUser.name,
-        link: '/users/detail/' + modUser.id
-      },
-      'Created': new Date(subreddit.created * 1000).toDateString()
+export default class SubredditDetails extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      subreddit_id: props.match.params.subreddit_id,
+      subreddit: {},
+      modUser: {}
     }
-  })
+  }
+
+  componentDidMount () {
+    var self = this
+    getSubredditByID(this.state.subreddit_id).then(function (res) {
+      var subreddit = res.data
+      getModerators({}, function (res) {
+        var modUserId = res.find(r => r.sr_id === subreddit.id).user_id
+        getUserByID(modUserId).then(function (res) {
+          var user = res.data
+          self.setState({
+            subreddit_id: self.state.subreddit_id,
+            subreddit: subreddit,
+            modUser: user
+          })
+        })
+      })
+    })
+  }
+
+  render () {
+    return Detail({
+      title: 'Subreddit - ' + this.state.subreddit.display_name,
+      details: {
+        'Name': this.state.subreddit.display_name,
+        'Title': this.state.subreddit.title,
+        'Subscribers': this.state.subreddit.subscribers,
+        'Moderator': {
+          name: this.state.modUser.name,
+          link: '/users/detail/' + this.state.modUser.id
+        },
+        'Created': new Date(this.state.subreddit.created * 1000).toDateString()
+      }
+    })
+  }
 }
