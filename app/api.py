@@ -84,7 +84,7 @@ def serve_subreddit(subreddit_id):
 
 
 @app.route('/<path:path>')
-def serve_index(_):
+def serve_index(path):
     return flask.send_from_directory('../www', 'index.html')
 
 
