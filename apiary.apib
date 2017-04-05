@@ -121,8 +121,10 @@ Reddiful is a simple API allowing consumers to view reddit metadata
     + num_comments (number) - number of comments
     + preview (string) - preview in JSON form
     + thumbnail (string) - thumbnail of the post
-    + author (string) - unique ID of the author of the post
-    + subreddit (string) - unique ID of the overall subreddit
+    + author (string) - name of the author of the post
+    + subreddit (string) - name of the overall subreddit
+    + author_id (string) - unique ID of the author of the post
+    + subreddit_id (string) - unique ID of the overall subreddit
 
 ### List All Posts [GET]
 
@@ -143,7 +145,9 @@ Reddiful is a simple API allowing consumers to view reddit metadata
                 "num_comments": 50,
                 "preview": "Test Text",
                 "thumbnail": "thumbnail1.jpg",
-                "author": "hh8mr",
+                "author": "batman_jr",
+                "subreddit": "FireEmblemHeroes",
+                "author_id": "hh8mr",
                 "subreddit": "t5_3imxi"
             },
             {
@@ -160,6 +164,8 @@ Reddiful is a simple API allowing consumers to view reddit metadata
                 "num_comments": 55,
                 "preview": "link1.jpg",
                 "thumbnail": "thumbnail2.jpg",
+                "author": "poizan42",
+                "subreddit": "ProgrammerHumor",
                 "author": "74344",
                 "subreddit": "t5_2tex6"
             },
@@ -177,6 +183,8 @@ Reddiful is a simple API allowing consumers to view reddit metadata
                 "num_comments": 66,
                 "preview": "Hey everyone!\n\nThis Friday there will be 8 people at my place including me,",
                 "thumbnail": "thumbnail3.jpg",
+                "author": "Ooer",
+                "subreddit": "BoardGame",
                 "author": "4fer6",
                 "subreddit": "t5_2qmjp"
             }
