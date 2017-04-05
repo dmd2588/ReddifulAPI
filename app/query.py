@@ -1,11 +1,13 @@
 from models import Comment, Post, Subreddit, User
 from decimal import Decimal
-import sqlalchemy, json, datetime
+import sqlalchemy, json, datetime, math
 from sqlalchemy.orm.session import sessionmaker
+
 import os
 
 # The return value of create_engine() is our connection object
 con = sqlalchemy.create_engine(os.environ['DB_URL'], client_encoding='utf8')
+
 
 # We then bind the connection to MetaData()
 meta = sqlalchemy.MetaData(bind=con, reflect=True)
@@ -52,6 +54,11 @@ def getUsers(order_by = "redditor_id", desc = False, page = 1, per_page = 25, **
     else:
         query = query.order_by(order_by)
     return [row2dict(r) for r in query.offset((page-1)*per_page).limit(per_page)]
+
+def getUsersPageCount(per_page = 25):
+    session = Session()
+    query = session.query(User)
+    return int(math.ceil(len(list(query)) / 25))
 
 def getUser(user_id):
     session = Session()
@@ -106,6 +113,11 @@ def getPosts(order_by = "submission_id", desc = False, **attr):
         query = query.order_by(order_by)
     return [row2dict(r) for r in query.offset((page-1)*per_page).limit(per_page)]
 
+def getPostsPageCount(per_page = 25):
+    session = Session()
+    query = session.query(Post)
+    return int(math.ceil(len(list(query)) / 25))
+
 def getPost(post_id):
     session = Session()
     query = session.query(Post).filter(Post.submission_id == post_id)
@@ -147,6 +159,11 @@ def getComments(order_by = "comment_id", desc = False, **attr):
         query = query.order_by(order_by)
     return [row2dict(r) for r in query.offset((page-1)*per_page).limit(per_page)]
 
+def getCommentsPageCount(per_page = 25):
+    session = Session()
+    query = session.query(Comment)
+    return int(math.ceil(len(list(query)) / 25))
+
 def getComment(comment_id):
     session = Session()
     query = session.query(Comment).filter(Comment.comment_id == comment_id)
@@ -182,7 +199,14 @@ def getSubs(order_by = "subreddit_id", desc = False, **attr):
         query = query.order_by(order_by)
     return [row2dict(r) for r in query.offset((page-1)*per_page).limit(per_page)]
 
+def getSubsPageCount(per_page = 25):
+    session = Session()
+    query = session.query(Subreddit)
+    return int(math.ceil(len(list(query)) / 25))
+
 def getSub(subreddit_id):
     session = Session()
     query = session.query(Subreddit).filter(Subreddit.subreddit_id == subreddit_id)
     return [row2dict(r) for r in query.all()]
+
+
