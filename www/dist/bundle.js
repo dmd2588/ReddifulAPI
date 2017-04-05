@@ -39582,6 +39582,32 @@ var About = _react2.default.createClass({
               null,
               _react2.default.createElement(
                 'a',
+                { href: '#database' },
+                'Database'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.ListGroupItem,
+            null,
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: '#api' },
+                'API'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.ListGroupItem,
+            null,
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'a',
                 { href: '#diagrams' },
                 'Diagrams and Other'
               )
@@ -39823,7 +39849,7 @@ var About = _react2.default.createClass({
           _react2.default.createElement(
             'p',
             null,
-            'The user has several attributes that can be listed. First, there are two identifiers: the name (username itself), and the ID (a unique ID number that can be used to find the user). In addition, if the user allows it, the email will be displayed as well. Finally, the user has comment and link karma as well as the created time.'
+            'The user has several attributes that can be listed. First, there are two identifiers: the name (username itself), and the ID (a unique ID number that can be used to find the user). In addition, the user has comment and link karma as well as the created time. Finally, we check to see if the user is gilded and/or verified. Gilded will return true only if the user is currently gilded, and a user is verified if Reddit has confirmed the ID of a celebrity.'
           ),
           _react2.default.createElement(
             'h5',
@@ -39837,7 +39863,7 @@ var About = _react2.default.createClass({
           _react2.default.createElement(
             'p',
             null,
-            'Subreddits are defined similarly to a user: they each have a display name and a unique ID. In addition, it also has a creation time. Adding to this, subreddits also have a title that can be modified to more concretely describe what it is about. Finally, for statistics on users in each subreddit, there are attributes listing the accounts active on the subreddit and the number of total subscribers for that subreddit.'
+            'Subreddits are defined similarly to a user: they each have a display name and a unique ID. In addition, it also has a creation time. Adding to this, subreddits also have a title that can be modified to more concretely describe what it is about. Furthermore, for statistics on users in each subreddit, there are attributes listing the accounts active on the subreddit and the number of total subscribers for that subreddit. Finally, there are two attributes holding the image links for the icon and the banner of the subreddit.'
           ),
           _react2.default.createElement(
             'h5',
@@ -39851,7 +39877,7 @@ var About = _react2.default.createClass({
           _react2.default.createElement(
             'p',
             null,
-            'Each post has several different attributes and defining characteristics. First, the author of the post is a foreign key going to the ID of the poster. The post itself has a unique ID similar to how subreddits and users have unique IDs. In addition, posts have a field for the created time. Several defining characteristics are the gilded, self, and nsfw booleans. These attributes are true/false booleans that check if the post is gilded, nsfw, or is a text post (self). If it is a post with self = true, then it will have information in the selftext attribute that contains the string with the text in the post. If not, it will be an empty string. The title of a post is the title that you see as a headline, and the score represents the karma of the post. Finally, there is a field for the URL which links you to where you go when you click on the title: whether it be the comments section if it\'s a self post, or the imgur, gfycat, etc. if it is not a self post.'
+            'Each post has several different attributes and defining characteristics. First, The post itself has a unique ID similar to how subreddits and users have unique IDs. In addition, posts have a field for the created time. Several defining characteristics are the gilded, self, and nsfw booleans. These attributes are true/false booleans that check if the post is gilded, over_18, or is a text post (self). If it is a post with self = true, then it will have information in the selftext attribute that contains the string with the text in the post. If not, it will be an empty string. The title of a post is the title that you see as a headline, and the score represents the karma of the post. Next, there is a field for the URL which links you to where you go when you click on the title: whether it be the comments section if it\'s a self post, or the imgur, gfycat, etc. if it is not a self post. For each post, there is an upvote ratio that shows how "likeable" a certain post is. Similarly, there is a number of comments to show how many people have decided to discuss or add on to the post. There is a preview of the post, which shows a JSON preview of what the post will look like, and there is a thumbnail with a picture (or not) of the post. Finally, there are sections relating to users and subreddits. There are fields for the author and subreddit which aren\'t foreign keys but just show the name of each. Also, there are fields for the author and subreddit IDs which are foreign keys.'
           ),
           _react2.default.createElement(
             'p',
@@ -39870,7 +39896,7 @@ var About = _react2.default.createClass({
           _react2.default.createElement(
             'p',
             null,
-            'The comments are pretty straightforward. For most, you will have an author and a body as the commenter and the comment, respectively. In this case, the author is a foreign key related back to the user\'s unique ID. Second, there is an ID for both the comment, the link, and the subreddit. The ID for the comment is the unique ID similar to those seen in the previous models. The link ID is the foreign key relating back to the ID of the post. Similarly, the subreddit ID is the foreign key relating back to the ID of the subreddit. The one different attribute is the edited attribute. This allows you to see if a comment has been edited or not. The rest of the attributes are similar to other attributes: the creation time, whether or not it is gilded, and the score or karma of the comment.'
+            'The comments are pretty straightforward. For most, you will have an author and a body as the commenter and the comment, respectively. For the body, there is an additional attribute showing the html version of the body. In this case, the author id is a foreign key related back to the user\'s unique ID and the author is just the name of the commentor. Second, there is an ID for both the comment and the link. The ID for the comment is the unique ID similar to those seen in the previous models. The link ID is the foreign key relating back to the ID of the post. The one different attribute is the edited attribute. This allows you to see if a comment has been edited or not. The rest of the attributes are similar to other attributes: the creation time, whether or not it is gilded, and the score or karma of the comment.'
           ),
           _react2.default.createElement(
             'p',
@@ -40131,6 +40157,24 @@ var About = _react2.default.createClass({
             null,
             'An elastic IPv4 IP was allocated and assigned to the instance and added to the DNS record on namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instance, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from github and running Docker with the settings we have in the repo.'
           )
+        )
+      ),
+      _react2.default.createElement(
+        _reactBootstrap.Panel,
+        { id: 'database', header: 'Database', bsStyle: 'info' },
+        _react2.default.createElement(
+          'p',
+          null,
+          'Placeholder'
+        )
+      ),
+      _react2.default.createElement(
+        _reactBootstrap.Panel,
+        { id: 'api', header: 'API', bsStyle: 'info' },
+        _react2.default.createElement(
+          'p',
+          null,
+          'Placeholder'
         )
       ),
       _react2.default.createElement(
