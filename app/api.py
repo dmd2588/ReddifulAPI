@@ -3,9 +3,9 @@ import decimal
 import json
 import logging
 import flask
-import query
 import unittest
 from io import StringIO
+import app.query as query
 from tests.test_http import TestUsers
 from tests.test_models import TestModels
 
@@ -38,6 +38,7 @@ def createJson(r):
 def serve_statics(path):
     return flask.send_from_directory('../www/dist/', path)
 
+
 @app.route('/api/tests')
 def serve_tests():
     test_output = StringIO()
@@ -46,6 +47,7 @@ def serve_tests():
     all_tests = unittest.TestSuite([integration_suite, models_suite])
     unittest.TextTestRunner(stream=test_output, verbosity=2).run(all_tests)
     return test_output.getvalue(), 200, TEXT_HEADER
+
 
 @app.route('/api/users')
 def serve_user_list():

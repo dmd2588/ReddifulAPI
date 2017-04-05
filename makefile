@@ -59,8 +59,8 @@ standard:
 	node_modules/.bin/standard
 
 pylint:
-	pylint --ignore query.py,models.py,RedditScraper.py app
-	pep8 --exclude models.py,query.py,RedditScraper.py app
+	pylint --ignore query.py,models.py,RedditScraper.py,test_models.py,test_http.py app
+	pep8 --exclude models.py,query.py,RedditScraper.py,test_models.py,test_http.py app
 
 test-client: build
 
