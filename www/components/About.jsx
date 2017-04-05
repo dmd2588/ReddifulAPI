@@ -1,6 +1,8 @@
 import React from 'react'
 import { PageHeader, Button, Panel, Jumbotron, ListGroupItem, ListGroup, Grid, Row, Col, Table } from 'react-bootstrap'
 import FaAngleDown from 'react-icons/lib/fa/angle-down'
+// import Link from 'react-scroll'
+
 var About = React.createClass({
   getInitialState () {
     return {
