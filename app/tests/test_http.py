@@ -16,7 +16,25 @@ class TestUsers(unittest.TestCase):
         self.assertEqual(type(users), list)
         self.assertGreater(len(users), 0)
         for u in users:
-          self.assertSetEqual(set(u.keys()), TestUsers.properties)
+            self.assertSetEqual(set(u.keys()), TestUsers.properties)
+
+    def test_get_all_range(self):
+        resp1 = requests.get(API_URL + "/users?page=1&per_page=2")
+        self.assertEqual(resp1.status_code, 200)
+        self.assertEqual(resp1.headers['content-type'], 'application/json; charset=utf-8')
+        users1 = resp1.json()
+        self.assertEqual(type(users1), list)
+        self.assertEqual(len(users1), 2)
+        for u in users1:
+            self.assertSetEqual(set(u.keys()), TestUsers.properties)
+
+        resp2 = requests.get(API_URL + "/users?page=2&per_page=1")
+        self.assertEqual(resp2.status_code, 200)
+        self.assertEqual(resp2.headers['content-type'], 'application/json; charset=utf-8')
+        users2 = resp2.json()
+        self.assertEqual(type(users2), list)
+        self.assertEqual(len(users2), 1)
+        self.assertDictEqual(users2[0], users1[1])
 
     def test_get_specific(self):
         resp = requests.get(API_URL + "/users/lcaru")
@@ -45,6 +63,24 @@ class TestComments(unittest.TestCase):
         self.assertGreater(len(comments), 0)
         for c in comments:
           self.assertSetEqual(set(c.keys()), TestComments.properties)
+
+    def test_get_all_range(self):
+        resp1 = requests.get(API_URL + "/comments?page=1&per_page=2")
+        self.assertEqual(resp1.status_code, 200)
+        self.assertEqual(resp1.headers['content-type'], 'application/json; charset=utf-8')
+        comments1 = resp1.json()
+        self.assertEqual(type(comments1), list)
+        self.assertEqual(len(comments1), 2)
+        for u in comments1:
+            self.assertSetEqual(set(u.keys()), TestComments.properties)
+
+        resp2 = requests.get(API_URL + "/comments?page=2&per_page=1")
+        self.assertEqual(resp2.status_code, 200)
+        self.assertEqual(resp2.headers['content-type'], 'application/json; charset=utf-8')
+        comments2 = resp2.json()
+        self.assertEqual(type(comments2), list)
+        self.assertEqual(len(comments2), 1)
+        self.assertDictEqual(comments2[0], comments1[1])
 
     def test_get_specific(self):
         resp = requests.get(API_URL + "/comments/dezhft9")
@@ -75,6 +111,24 @@ class TestPosts(unittest.TestCase):
         for p in posts:
           self.assertSetEqual(set(p.keys()), TestPosts.properties)
 
+    def test_get_all_range(self):
+        resp1 = requests.get(API_URL + "/posts?page=1&per_page=2")
+        self.assertEqual(resp1.status_code, 200)
+        self.assertEqual(resp1.headers['content-type'], 'application/json; charset=utf-8')
+        posts1 = resp1.json()
+        self.assertEqual(type(posts1), list)
+        self.assertEqual(len(posts1), 2)
+        for u in posts1:
+            self.assertSetEqual(set(u.keys()), TestPosts.properties)
+
+        resp2 = requests.get(API_URL + "/posts?page=2&per_page=1")
+        self.assertEqual(resp2.status_code, 200)
+        self.assertEqual(resp2.headers['content-type'], 'application/json; charset=utf-8')
+        posts2 = resp2.json()
+        self.assertEqual(type(posts2), list)
+        self.assertEqual(len(posts2), 1)
+        self.assertDictEqual(posts2[0], posts1[1])
+
     def test_get_specific(self):
         resp = requests.get(API_URL + "/posts/5zmhoe")
         self.assertEqual(resp.status_code, 200)
@@ -101,7 +155,25 @@ class TestSubreddits(unittest.TestCase):
         self.assertEqual(type(subreddits), list)
         self.assertGreater(len(subreddits), 0)
         for r in subreddits:
-          self.assertSetEqual(set(r.keys()), TestSubreddits.properties)
+            self.assertSetEqual(set(r.keys()), TestSubreddits.properties)
+
+    def test_get_all_range(self):
+        resp1 = requests.get(API_URL + "/subreddits?page=1&per_page=2")
+        self.assertEqual(resp1.status_code, 200)
+        self.assertEqual(resp1.headers['content-type'], 'application/json; charset=utf-8')
+        subreddits1 = resp1.json()
+        self.assertEqual(type(subreddits1), list)
+        self.assertEqual(len(subreddits1), 2)
+        for u in subreddits1:
+            self.assertSetEqual(set(u.keys()), TestSubreddits.properties)
+
+        resp2 = requests.get(API_URL + "/subreddits?page=2&per_page=1")
+        self.assertEqual(resp2.status_code, 200)
+        self.assertEqual(resp2.headers['content-type'], 'application/json; charset=utf-8')
+        subreddits2 = resp2.json()
+        self.assertEqual(type(subreddits2), list)
+        self.assertEqual(len(subreddits2), 1)
+        self.assertDictEqual(subreddits2[0], subreddits1[1])
 
     def test_get_specific(self):
         resp = requests.get(API_URL + "/subreddits/2qqjc")

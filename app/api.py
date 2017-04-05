@@ -51,7 +51,8 @@ def serve_tests():
 
 @app.route('/api/users')
 def serve_user_list():
-    return createJson(query.getUsers()[0]), 200, DEFAULT_HEADERS
+    args = format_url_args()
+    return createJson(query.getUsers(**args)[0]), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/users/<string:user_id>')
@@ -64,7 +65,8 @@ def serve_user(user_id):
 
 @app.route('/api/posts')
 def serve_post_list():
-    return createJson(query.getPosts()[0]), 200, DEFAULT_HEADERS
+    args = format_url_args()
+    return createJson(query.getPosts(**args)[0]), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/posts/<string:post_id>')
@@ -77,7 +79,8 @@ def serve_post(post_id):
 
 @app.route('/api/comments')
 def serve_comment_list():
-    return createJson(query.getComments()[0]), 200, DEFAULT_HEADERS
+    args = format_url_args()
+    return createJson(query.getComments(**args)[0]), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/comments/<string:comment_id>')
@@ -90,7 +93,8 @@ def serve_comment(comment_id):
 
 @app.route('/api/subreddits')
 def serve_subreddit_list():
-    return createJson(query.getSubs()[0]), 200, DEFAULT_HEADERS
+    args = format_url_args()
+    return createJson(query.getSubs(**args)[0]), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/subreddits/<string:subreddit_id>')
@@ -110,3 +114,12 @@ def serve_index(path):
 @app.route('/')
 def serve_root():
     return flask.send_from_directory('../www', 'index.html')
+
+
+def format_url_args():
+    args = {}
+    if 'page' in flask.request.args:
+        args['page'] = int(flask.request.args['page'])
+    if 'per_page' in flask.request.args:
+        args['per_page'] = int(flask.request.args['per_page'])
+    return args
