@@ -10,7 +10,7 @@ export default function RfCard (props) {
 
   return (
     <div className={cardStyles.rfCard}>
-      <Card style={{width: '250px'}}>
+      <Card>
         <CardTitle
           avatar='https://placeimg.com/80/80/animals'
           title={title}

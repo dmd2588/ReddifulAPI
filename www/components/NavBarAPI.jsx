@@ -1,38 +1,46 @@
 import React from 'react' //eslint-disable-line
 
-import { Navbar, Nav, NavItem } from 'react-bootstrap'
+import AppBar from 'material-ui/AppBar'
+import Drawer from 'material-ui/Drawer'
+import MenuItem from 'material-ui/MenuItem'
+import FontIcon from 'material-ui/FontIcon'
 
-const navbarInstance = (
-  <Navbar fluid>
-    <Navbar.Header>
-      <Navbar.Brand>
-        <a href='/'>Reddiful</a>
-      </Navbar.Brand>
-      <Navbar.Toggle />
+export default class NavBarAPI extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {open: false}
 
-    </Navbar.Header>
-    <Navbar.Collapse>
-      <Nav>
-        <NavItem href='/home'>Home</NavItem>
-        <NavItem href='/about'>About</NavItem>
-        <NavItem href='/users'>Users</NavItem>
-        <NavItem href='/subreddits'>Subreddit</NavItem>
-        <NavItem href='/posts'>Posts</NavItem>
-        <NavItem href='/comments'>Comments</NavItem>
+    this.handleToggle = this.handleToggle.bind(this)
+    this.handleClose = this.handleClose.bind(this)
+  }
 
-      </Nav>
-    </Navbar.Collapse>
+  handleToggle () {
+    console.log(this)
+    this.setState({open: !this.state.open})
+  }
 
-  </Navbar>
+  handleClose () {
+    this.setState({open: false})
+  }
 
-    )
-
-var NavBarAPI = React.createClass({
-  render: function () {
+  render () {
     return (
-            navbarInstance
+      <div>
+        <AppBar title='Reddiful' onLeftIconButtonTouchTap={this.handleToggle} />
+        <Drawer
+          docked={false}
+          width={200}
+          open={this.state.open}
+          onRequestChange={(open) => this.setState({open})}
+        >
+          <MenuItem onTouchTap={this.handleClose} href='/home' leftIcon={<FontIcon className='material-icons'>home</FontIcon>}>Home</MenuItem>
+          <MenuItem onTouchTap={this.handleClose} href='/about' leftIcon={<FontIcon className='material-icons'>info</FontIcon>}>About</MenuItem>
+          <MenuItem onTouchTap={this.handleClose} href='/users' leftIcon={<FontIcon className='material-icons'>account_box</FontIcon>}>Redditors</MenuItem>
+          <MenuItem onTouchTap={this.handleClose} href='/subreddits' leftIcon={<FontIcon className='material-icons'>theaters</FontIcon>}>Subreddits</MenuItem>
+          <MenuItem onTouchTap={this.handleClose} href='/posts' leftIcon={<FontIcon className='material-icons'>list</FontIcon>}>Submissions</MenuItem>
+          <MenuItem onTouchTap={this.handleClose} href='/comments' leftIcon={<FontIcon className='material-icons'>comment</FontIcon>}>Comments</MenuItem>
+        </Drawer>
+      </div>
     )
   }
-})
-
-export default NavBarAPI
+}
