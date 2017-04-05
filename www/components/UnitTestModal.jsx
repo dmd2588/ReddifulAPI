@@ -2,6 +2,8 @@ import React from 'react'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import RaisedButton from 'material-ui/RaisedButton'
+import CircularProgress from 'material-ui/CircularProgress'
+import { getTests } from '../api.js'
 
 export default class UnitTestModal extends React.Component {
   constructor (props) {
@@ -13,7 +15,10 @@ export default class UnitTestModal extends React.Component {
   }
 
   handleOpen () {
-    this.setState({open: true, unit_test_output: 'NULL'})
+    this.setState({open: true, unit_test_output: <CircularProgress size={80} thickness={5} />})
+    getTests().then(function (res) {
+      this.setState({open: true, unit_test_output: res.data})
+    }.bind(this))
   }
 
   handleClose () {
