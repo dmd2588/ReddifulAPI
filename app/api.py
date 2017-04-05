@@ -1,7 +1,6 @@
 import flask
 import logging
 import json
-import dummydata as dummydata
 import query
 import datetime
 import decimal
