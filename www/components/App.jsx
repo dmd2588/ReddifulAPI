@@ -14,6 +14,8 @@ import Home from './Home.jsx'
 
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import { deepOrange500, deepOrange700, grey400 } from 'material-ui/styles/colors'
 import Paper from 'material-ui/Paper'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
@@ -23,6 +25,14 @@ const style = {
   margin: 50,
   display: 'inline-block'
 }
+
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: deepOrange500,
+    primary2Color: deepOrange700,
+    primary3Color: grey400
+  }
+})
 
 ReactDOM.render(
   <MuiThemeProvider>
@@ -52,7 +62,7 @@ ReactDOM.render(
 )
 
 ReactDOM.render(
-  <MuiThemeProvider>
+  <MuiThemeProvider muiTheme={muiTheme}>
     <NavBarAPI />
   </MuiThemeProvider>,
   document.getElementById('nav')

@@ -4,6 +4,7 @@ import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import FontIcon from 'material-ui/FontIcon'
+import {grey50} from 'material-ui/styles/colors'
 
 export default class NavBarAPI extends React.Component {
   constructor (props) {
@@ -26,7 +27,7 @@ export default class NavBarAPI extends React.Component {
   render () {
     return (
       <div>
-        <AppBar title='Reddiful' onLeftIconButtonTouchTap={this.handleToggle} />
+        <AppBar title={<div><span>Reddiful</span> <FontIcon className='fa fa-reddit-alien' color={grey50} /></div>} onLeftIconButtonTouchTap={this.handleToggle} />
         <Drawer
           docked={false}
           width={200}
