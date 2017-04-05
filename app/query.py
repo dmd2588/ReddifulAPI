@@ -2,13 +2,10 @@ from models import Comment, Post, Subreddit, User
 from decimal import Decimal
 import sqlalchemy, json, datetime
 from sqlalchemy.orm.session import sessionmaker
-import config
-
-url = 'postgresql://{}:{}@{}:{}/{}'
-url = url.format(config.user, config.password, config.host, config.port, config.db)
+import os
 
 # The return value of create_engine() is our connection object
-con = sqlalchemy.create_engine(url, client_encoding='utf8')
+con = sqlalchemy.create_engine(os.environ['DB_URL'], client_encoding='utf8')
 
 # We then bind the connection to MetaData()
 meta = sqlalchemy.MetaData(bind=con, reflect=True)
@@ -170,6 +167,7 @@ def key2col_sub(k):
         return Subreddit.icon_img
     if k == "banner_img":
         return Subreddit.banner_img
+    return None
 
 def getSubs(order_by = "subreddit_id", desc = False, **attr):
     session = Session()

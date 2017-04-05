@@ -1,0 +1,6 @@
+flask
+eventlet
+gunicorn
+SQLAlchemy
+psycopg2
+requests

@@ -1,5 +1,14 @@
 language: node_js
-sudo: false
+sudo: required
+services:
+  - docker
 node_js:
-- 6
-script: make build
+  - 6
+python:
+  - 3.5
+install:
+  - pip3 install -r requirements.txt
+  - npm install
+  - docker-compose up -d
+script:
+  - make test

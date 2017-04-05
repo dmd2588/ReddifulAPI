@@ -9,14 +9,9 @@ RUN apt-get install -y python3-pip
 RUN pip3 install --upgrade pip
 
 #the upgrade version of pip runs as `pip` NOT `pip3`
-RUN pip install\
-    Flask\
-    eventlet\
-    gunicorn\
-    SQLAlchemy\
-	psycopg2    
-
-ENV PYTHONPATH=/var/reddiful/
+ADD requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 EXPOSE 8080
-ENTRYPOINT ["gunicorn", "--access-logfile", "-", "--error-logfile", "-", "-b", "0.0.0.0:8080", "--reload", "--worker-class", "eventlet","app.api:app"]
+WORKDIR /var/reddiful/app
+ENTRYPOINT ["gunicorn", "--access-logfile", "-", "--error-logfile", "-", "-b", "0.0.0.0:8080", "--reload", "--worker-class", "eventlet","api:app"]
