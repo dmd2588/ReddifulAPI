@@ -39,7 +39,7 @@ class TestUsers(unittest.TestCase):
         users2 = resp2.json()
         self.assertEqual(type(users2), list)
         self.assertEqual(len(users2), 1)
-        self.assertDictEqual(users2[0], users1[1])
+        self.assertDictEqual(users2[0], users1[0])
 
     def test_get_specific(self):
         resp = requests.get(API_URL + "/users/lcaru")
@@ -90,7 +90,7 @@ class TestComments(unittest.TestCase):
         comments2 = resp2.json()
         self.assertEqual(type(comments2), list)
         self.assertEqual(len(comments2), 1)
-        self.assertDictEqual(comments2[0], comments1[1])
+        self.assertDictEqual(comments2[0], comments1[0])
 
     def test_get_specific(self):
         resp = requests.get(API_URL + "/comments/dezhft9")
@@ -142,7 +142,7 @@ class TestPosts(unittest.TestCase):
         posts2 = resp2.json()
         self.assertEqual(type(posts2), list)
         self.assertEqual(len(posts2), 1)
-        self.assertDictEqual(posts2[0], posts1[1])
+        self.assertDictEqual(posts2[0], posts1[0])
 
     def test_get_specific(self):
         resp = requests.get(API_URL + "/posts/5zmhoe")
@@ -193,7 +193,7 @@ class TestSubreddits(unittest.TestCase):
         subreddits2 = resp2.json()
         self.assertEqual(type(subreddits2), list)
         self.assertEqual(len(subreddits2), 1)
-        self.assertDictEqual(subreddits2[0], subreddits1[1])
+        self.assertDictEqual(subreddits2[0], subreddits1[0])
 
     def test_get_specific(self):
         resp = requests.get(API_URL + "/subreddits/2qqjc")

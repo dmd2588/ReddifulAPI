@@ -59,7 +59,7 @@ def user_query(query, k, v):
     return query
 
 
-def getUsers(order_by="redditor_id", desc=False, page=1, per_page=25, **attr):
+def getUsers(order_by="redditor_id", desc=False, page=0, per_page=25, **attr):
     session = Session()
     query = session.query(User)
     for k, v in attr.items():
