@@ -16,7 +16,6 @@ export default class NavBarAPI extends React.Component {
   }
 
   handleToggle () {
-    console.log(this)
     this.setState({open: !this.state.open})
   }
 

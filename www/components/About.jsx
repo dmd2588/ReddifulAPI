@@ -1,6 +1,7 @@
 import React from 'react'
 import { PageHeader, Button, Panel, Jumbotron, ListGroupItem, ListGroup, Grid, Row, Col, Table } from 'react-bootstrap'
 import FaAngleDown from 'react-icons/lib/fa/angle-down'
+import UnitTestModal from './UnitTestModal.jsx'
 // import Link from 'react-scroll'
 
 var About = React.createClass({
@@ -87,6 +88,8 @@ var About = React.createClass({
           <ListGroupItem>total no. of issues: 27</ListGroupItem>
           <ListGroupItem>total no. of unit tests: 10</ListGroupItem>
         </ListGroup>
+        <UnitTestModal />
+        <br />
         <Panel header={<h3>Data</h3>}>
           Link to the source here: <a href='https://www.reddit.com/dev/api/'>Reddit API</a>
           <h4>Data Collection Process</h4>
