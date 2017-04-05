@@ -6,7 +6,8 @@
 # pylint: disable = too-many-return-statements
 # pylint: disable = too-many-branches
 
-import math, datetime
+import math
+import datetime
 import os
 from app.models import Comment, Post, Subreddit, User
 import sqlalchemy
@@ -35,9 +36,6 @@ def row2dict(row):
         d[column.name] = str(getattr(row, column.name))
     return d
 
-def date2epoch(date):
-    return time.mktime(date.timetuple()) * 1000
-
 
 def user_query(query, k, v):
     if k == "name":
@@ -51,17 +49,17 @@ def user_query(query, k, v):
     if k == "comment_karma_min":
         return query.filter(User.comment_karma > v)
     if k == "created_utc_max":
-        return query.filter(User.created_utc < datetime.datetime.utcfromtimestamp(v/1000))
+        return query.filter(User.created_utc < datetime.datetime.utcfromtimestamp(v / 1000))
     if k == "created_utc_min":
-        return query.filter(User.created_utc > datetime.datetime.utcfromtimestamp(v/1000))
+        return query.filter(User.created_utc > datetime.datetime.utcfromtimestamp(v / 1000))
     if k == "is_gold":
         return query.filter(User.is_gold == v)
     if k == "verified":
         return query.filter(User.verified == v)
     return query
-            
-            
-def getUsers(order_by = "redditor_id", desc = False, page = 1, per_page = 25, **attr):
+
+
+def getUsers(order_by="redditor_id", desc=False, page=1, per_page=25, **attr):
     session = Session()
     query = session.query(User)
     for k, v in attr.items():
@@ -93,9 +91,9 @@ def post_query(query, k, v):
     if k == "score_max":
         return query.filter(Post.score < v)
     if k == "created_utc_min":
-        return query.filter(Post.created > datetime.datetime.utcfromtimestamp(v/1000))
+        return query.filter(Post.created > datetime.datetime.utcfromtimestamp(v / 1000))
     if k == "created_utc_max":
-        return query.filter(Post.created < datetime.datetime.utcfromtimestamp(v/1000))
+        return query.filter(Post.created < datetime.datetime.utcfromtimestamp(v / 1000))
     if k == "over_18":
         return query.filter(Post.over_18 == v)
     if k == "is_self":
@@ -161,9 +159,9 @@ def comment_post(query, k, v):
     if k == "score_max":
         return query.filter(Comment.score < v)
     if k == "created_utc_min":
-        return query.filter(Comment.created_utc > datetime.datetime.utcfromtimestamp(v/1000))
+        return query.filter(Comment.created_utc > datetime.datetime.utcfromtimestamp(v / 1000))
     if k == "created_utc_max":
-        return query.filter(Comment.created_utc < datetime.datetime.utcfromtimestamp(v/1000))
+        return query.filter(Comment.created_utc < datetime.datetime.utcfromtimestamp(v / 1000))
     if k == "edited":
         return query.filter(Comment.edited == v)
     if k == "gilded_min":
@@ -191,6 +189,7 @@ def getComments(order_by="comment_id", desc=False, page=0, per_page=25, **attr):
     page_count = int(math.ceil(query.count() / 25))
     return [row2dict(r) for r in query.offset(page * per_page).limit(per_page)], page_count
 
+
 def getComment(comment_id):
     session = Session()
     query = session.query(Comment).filter(Comment.comment_id == comment_id)
@@ -212,9 +211,9 @@ def sub_query(query, k, v):
     if k == "accounts_active_min":
         return query.filter(Subreddit.accounts_active < v)
     if k == "created_utc_min":
-        return query.filter(Subreddit.created_utc > datetime.datetime.utcfromtimestamp(v/1000))
+        return query.filter(Subreddit.created_utc > datetime.datetime.utcfromtimestamp(v / 1000))
     if k == "created_utc_max":
-        return query.filter(Subreddit.created_utc < datetime.datetime.utcfromtimestamp(v/1000))
+        return query.filter(Subreddit.created_utc < datetime.datetime.utcfromtimestamp(v / 1000))
     if k == "title":
         return query.filter(Subreddit.title == v)
     if k == "icon_img":
