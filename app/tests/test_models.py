@@ -3,7 +3,7 @@
 # imports
 # -------
 
-import models, unittest, flask
+import app.models, unittest, flask
 
 # -----------
 # TestModels

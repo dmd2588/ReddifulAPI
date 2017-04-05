@@ -3,7 +3,11 @@ import decimal
 import json
 import logging
 import flask
-import query
+import unittest
+from io import StringIO
+import app.query as query
+from app.tests.test_http import TestUsers
+from app.tests.test_models import TestModels
 
 logging.getLogger().setLevel(logging.INFO)
 
@@ -11,6 +15,10 @@ app = flask.Flask(__name__)
 
 DEFAULT_HEADERS = {
     'Content-Type': 'application/json; charset=utf-8'
+}
+
+TEXT_HEADER = {
+    'Content-Type': 'text/plain'
 }
 
 
@@ -31,9 +39,20 @@ def serve_statics(path):
     return flask.send_from_directory('../www/dist/', path)
 
 
+@app.route('/api/tests')
+def serve_tests():
+    test_output = StringIO()
+    integration_suite = unittest.TestLoader().loadTestsFromTestCase(TestUsers)
+    models_suite = unittest.TestLoader().loadTestsFromTestCase(TestModels)
+    all_tests = unittest.TestSuite([integration_suite, models_suite])
+    unittest.TextTestRunner(stream=test_output, verbosity=2).run(all_tests)
+    return test_output.getvalue(), 200, TEXT_HEADER
+
+
 @app.route('/api/users')
 def serve_user_list():
-    return createJson(query.getUsers()), 200, DEFAULT_HEADERS
+    args = format_url_args()
+    return createJson(query.getUsers(**args)[0]), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/users/<string:user_id>')
@@ -46,7 +65,8 @@ def serve_user(user_id):
 
 @app.route('/api/posts')
 def serve_post_list():
-    return createJson(query.getPosts()), 200, DEFAULT_HEADERS
+    args = format_url_args()
+    return createJson(query.getPosts(**args)[0]), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/posts/<string:post_id>')
@@ -59,7 +79,8 @@ def serve_post(post_id):
 
 @app.route('/api/comments')
 def serve_comment_list():
-    return createJson(query.getComments()), 200, DEFAULT_HEADERS
+    args = format_url_args()
+    return createJson(query.getComments(**args)[0]), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/comments/<string:comment_id>')
@@ -72,7 +93,8 @@ def serve_comment(comment_id):
 
 @app.route('/api/subreddits')
 def serve_subreddit_list():
-    return createJson(query.getSubs()), 200, DEFAULT_HEADERS
+    args = format_url_args()
+    return createJson(query.getSubs(**args)[0]), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/subreddits/<string:subreddit_id>')
@@ -92,3 +114,12 @@ def serve_index(path):
 @app.route('/')
 def serve_root():
     return flask.send_from_directory('../www', 'index.html')
+
+
+def format_url_args():
+    args = {}
+    if 'page' in flask.request.args:
+        args['page'] = int(flask.request.args['page'])
+    if 'per_page' in flask.request.args:
+        args['per_page'] = int(flask.request.args['per_page'])
+    return args

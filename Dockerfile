@@ -12,6 +12,6 @@ RUN pip3 install --upgrade pip
 ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-EXPOSE 8080
-WORKDIR /var/reddiful/app
-ENTRYPOINT ["gunicorn", "--access-logfile", "-", "--error-logfile", "-", "-b", "0.0.0.0:8080", "--reload", "--worker-class", "eventlet","api:app"]
+EXPOSE 80
+WORKDIR /var/reddiful
+ENTRYPOINT ["gunicorn", "--access-logfile", "-", "--error-logfile", "-", "-b", "0.0.0.0:80", "--reload", "--worker-class", "eventlet","app.api:app"]

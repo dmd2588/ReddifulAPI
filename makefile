@@ -32,7 +32,7 @@ endif
 
 .pylintrc:
 	$(PYLINT) --disable=locally-disabled --reports=no --generate-rcfile > $@
-	
+
 IDB1.html: app/models.py
 	pydoc3 -w app/models.py
 	cp models.html IDB1.html
@@ -59,12 +59,12 @@ standard:
 	node_modules/.bin/standard
 
 pylint:
-	pylint --ignore query.py,models.py,RedditScraper.py app
-	pep8 --exclude models.py,query.py,RedditScraper.py app
+	pylint --ignore query.py,models.py,RedditScraper.py,test_models.py,test_http.py app
+	pep8 --exclude models.py,query.py,RedditScraper.py,test_models.py,test_http.py app
 
 test-client: build
 
 test-server: pylint
-	python3 apptest/test_http.py
+	python3 app/tests/test_http.py
 
 test: test-client test-server
