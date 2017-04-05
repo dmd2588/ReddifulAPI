@@ -11,7 +11,7 @@ export default class Users extends React.Component {
         var users = res.data
         var myp = {
           title: 'Comments',
-          select_values: Object.keys(comments[0]),
+          select_values: ['score', 'gilded', 'author', 'timestamp', 'create_utc'],
           cards: comments.map(c => {
             return {
               title: users.find(u => u.id === c.author).name,
@@ -27,6 +27,6 @@ export default class Users extends React.Component {
   }
 
   render () {
-    return <RfGrid loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+    return <RfGrid filterOptions={[]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
   }
 }

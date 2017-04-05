@@ -3,7 +3,7 @@ import React from 'react' //eslint-disable-line
 import { Navbar, Nav, NavItem } from 'react-bootstrap'
 
 const navbarInstance = (
-  <Navbar fluid>
+  <Navbar fixedTop>
     <Navbar.Header>
       <Navbar.Brand>
         <a href='/'>Reddiful</a>

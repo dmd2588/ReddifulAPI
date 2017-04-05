@@ -9,7 +9,7 @@ export default class Subreddits extends React.Component {
       var subreddits = res.data
       var myp = {
         title: 'Subreddits',
-        select_values: Object.keys(subreddits[0]),
+        select_values: ['title', 'accounts_active', 'subscribers', 'created_utc', 'dispay_name'],
         cards: subreddits.map(s => {
           console.log('S', s.display_name, s)
           return {
@@ -19,11 +19,10 @@ export default class Subreddits extends React.Component {
           }
         })
       }
-
       callback(myp)
     })
   }
   render () {
-    return <RfGrid loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+    return <RfGrid filterOptions={[]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
   }
 }

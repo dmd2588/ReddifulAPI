@@ -10,7 +10,7 @@ export default class Posts extends React.Component {
         var users = res.data
         var myp = {
           title: 'Posts',
-          select_values: Object.keys(posts[0]),
+          select_values: ['score', 'gilded', 'title', 'num_comments', 'author'],
           cards: posts.map(p => {
             return {
               title: p.title,
@@ -28,7 +28,7 @@ export default class Posts extends React.Component {
   render () {
     return (
       <div>
-        <RfGrid loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+        <RfGrid filterOptions={[{name: 'is_self', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
       </div>
     )
   }

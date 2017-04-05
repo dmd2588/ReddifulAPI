@@ -1,41 +1,67 @@
 import React from 'react' //eslint-disable-line
-import {FormGroup, ControlLabel, FormControl, Panel, Button} from 'react-bootstrap'
+import {FormGroup, ControlLabel, FormControl, Panel, Button, Checkbox} from 'react-bootstrap'
 
-export default function SortFilter (props) {
-  var makeOption = function (x) {
+export default class SortFilter extends React.Component {
+  constructor (props) {
+    super(props)
+
+    if (this.props.filterOptions.length !== 0) {
+      this.state = Object.assign.apply(Object, this.props.filterOptions.map(function (c) {
+        var temp = {}
+        temp[c.name] = c.value
+        return temp
+      }))
+    } else {
+      this.state = {}
+    }
+
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  makeOption (x) {
     return <option key={x} value={x}>{x}</option>
   }
 
-  var onApply = function () {
-    let sortSelect = ''
-    let filterSelect = ''
-    let filterText = ''
-    console.log('clicked')
-    console.log(sortSelect.value)
-    console.log(filterSelect.value)
-    console.log(filterText.value)
-    props.updateGrid()
+  handleChange (evt) {
+    console.log(evt.target.checked)
+    this.setState({ selfPost: evt.target.checked })
   }
-  return (
-    <Panel header='Filtering and Sorting'>
-      <FormGroup controlId='filterText'>
-        <ControlLabel>Filter Text</ControlLabel>
-        <FormControl componentClass='input' type='text' placeholder='Search' />
-      </FormGroup>
-      <FormGroup controlId='filterSelect'>
-        <ControlLabel>Filter by Attribute</ControlLabel>
-        <FormControl componentClass='select'>
-          {props.select_values.map(makeOption)}
-        </FormControl>
-      </FormGroup>
-      <FormGroup controlId='sortSelect'>
-        <ControlLabel>Sort by Attribute</ControlLabel>
-        <FormControl componentClass='select'>
-          {props.select_values.map(makeOption)}
-        </FormControl>
-      </FormGroup>
-      <Button type='submit' onClick={onApply}>Apply</Button>
 
-    </Panel>
-  )
+  onApply () {
+    // let sortSelect = ''
+    // let filterText = ''
+    console.log('clicked')
+    for (var property in this.state) {
+      if (this.state.hasOwnProperty(property)) {
+        console.log(property)
+      }
+    }
+    // props.updateGrid()
+  }
+  render () {
+    return (
+      <Panel header='Filtering and Sorting'>
+        <FormGroup controlId='filterText'>
+          <ControlLabel>Filter Text</ControlLabel>
+          <FormControl componentClass='input' type='text' placeholder='Search' />
+        </FormGroup>
+        <ControlLabel>Filter by Attribute</ControlLabel>
+
+        {this.props.filterOptions.map(c => (
+          <Checkbox key={Math.random().toString(16).substr(2)} checked={this.state[c.name]} onChange={this.handleChange} >
+            {c.name}
+          </Checkbox>
+              ))}
+
+        <FormGroup controlId='sortSelect'>
+          <ControlLabel>Sort by Attribute</ControlLabel>
+          <FormControl componentClass='select'>
+            {this.props.select_values.map(this.makeOption)}
+          </FormControl>
+        </FormGroup>
+        <Button onClick={this.onApply.bind(this)}>Apply</Button>
+
+      </Panel>
+    )
+  }
 }
