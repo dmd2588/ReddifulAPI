@@ -12,3 +12,5 @@ install:
   - docker-compose up -d
 script:
   - make test
+notifications:
+  slack: idb3:eVLIH4fI9vghEmPZUxjYdsfl
