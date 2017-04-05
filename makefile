@@ -56,4 +56,5 @@ dev_build:
 	node_modules/.bin/webpack-dev-server -d --watch --inline --content-base www/
 
 test:
-	@echo TODO add tests
+	node_modules/.bin/standard
+	make build

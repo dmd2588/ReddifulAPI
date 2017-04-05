@@ -14,7 +14,8 @@ RUN pip install\
     eventlet\
     gunicorn\
     SQLAlchemy\
-	psycopg2    
+	psycopg2\
+	requests
 
 EXPOSE 8080
 WORKDIR /var/reddiful/app

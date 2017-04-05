@@ -22,7 +22,8 @@ def getUsers():
 
 def getUser(user_id):
     result = con.execute(users.select().where(users.c.redditor_id == user_id))
-    return [dict(r) for r in result]
+    result = [dict(r) for r in result]
+    return result[0] if result else None
 
 def getPosts():
     result = con.execute(posts.select())
@@ -30,7 +31,8 @@ def getPosts():
 
 def getPost(post_id):
     result = con.execute(posts.select().where(posts.c.submission_id == post_id))
-    return [dict(r) for r in result]
+    result = [dict(r) for r in result]
+    return result[0] if result else None
 
 def getComments():
     result = con.execute(comments.select())
@@ -38,7 +40,8 @@ def getComments():
 
 def getComment(comment_id):
     result = con.execute(comments.select().where(comments.c.comment_id == comment_id))
-    return [dict(r) for r in result]
+    result = [dict(r) for r in result]
+    return result[0] if result else None
 
 def getSubs():
     result = con.execute(subs.select())
@@ -46,4 +49,5 @@ def getSubs():
 
 def getSub(subreddit_id):
     result = con.execute(subs.select().where(subs.c.subreddit_id == subreddit_id))
-    return [dict(r) for r in result]
+    result = [dict(r) for r in result]
+    return result[0] if result else None
