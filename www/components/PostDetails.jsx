@@ -17,8 +17,9 @@ export default class PostDetails extends React.Component {
     var self = this
     getPostByID(this.state.post_id).then(function (res) {
       var post = res.data
-      getUserByID(post.author).then(function (res) {
+      getUserByID(post.author_id).then(function (res) {
         var author = res.data
+        console.log(author.redditor_id)
         getSubredditByID(post.subreddit_id).then(function (res) {
           var subreddit = res.data
           self.setState({
@@ -30,6 +31,7 @@ export default class PostDetails extends React.Component {
         })
       })
     })
+    console.log(self.state.author)
   }
 
   render () {
@@ -40,13 +42,14 @@ export default class PostDetails extends React.Component {
         'Score': this.state.post.score,
         'Subreddit': {
           name: this.state.subreddit.display_name || 'NOT_FOUND - FIXME',
-          link: '/subreddits/detail/' + this.state.subreddit.id
+          link: '/subreddits/detail/' + this.state.subreddit.subreddit_id
         },
-        'Author': {
+          'Author': {
           name: this.state.author.name,
-          link: '/users/detail/' + this.state.author.id
+          link: '/users/detail/' + this.state.author.redditor_id
         },
-        'Created': this.state.post.create_utc
+        
+        'Created': this.state.post.created_utc
       }
     })
   }

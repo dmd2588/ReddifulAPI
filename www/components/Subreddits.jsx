@@ -14,7 +14,7 @@ export default class Subreddits extends React.Component {
           // console.log('S', s.display_name, s)
           return {
             title: s.display_name,
-            subtitle: 'Created: ' + moment(new Date(s.created * 1000)).format('LL'),
+            subtitle: 'Created: ' + s.created_utc,
             link: '/subreddits/detail/' + s.subreddit_id
           }
         })

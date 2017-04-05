@@ -13,7 +13,7 @@ export default class Users extends React.Component {
         cards: users.map(u => {
           return {
             title: u.name,
-            subtitle: 'Joined: ' + moment(new Date(u.created * 1000)).format('LL'),
+            subtitle: 'Joined: ' +u.created_utc,
             link: '/users/detail/' + u.redditor_id
           }
         })

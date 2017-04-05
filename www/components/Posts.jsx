@@ -14,7 +14,7 @@ export default class Posts extends React.Component {
           cards: posts.map(p => {
             return {
               title: p.title,
-              subtitle: 'Author: ' + (users.find(u => u.id === p.author) || {}).name,
+              subtitle: 'Author: ' + p.author,
               link: '/posts/detail/' + p.submission_id
             }
           })

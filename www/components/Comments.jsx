@@ -19,7 +19,7 @@ export default class Users extends React.Component {
             console.log(commentUserMatch)
             return {
               title: '',
-              subtitle: 'Commented: ' + moment(new Date(c.created * 1000)).format('LL'),
+              subtitle: 'Commented: ' + c.created_utc,
               link: '/comments/detail/' + c.comment_id
             }
           })
