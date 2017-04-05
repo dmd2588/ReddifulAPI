@@ -14,7 +14,7 @@ export default class Users extends React.Component {
           return {
             title: u.name,
             subtitle: 'Joined: ' + moment(new Date(u.created * 1000)).format('LL'),
-            link: '/users/detail/' + u.id
+            link: '/users/detail/' + u.redditor_id
           }
         })
       }
@@ -24,6 +24,6 @@ export default class Users extends React.Component {
   }
 
   render () {
-    return <RfGrid filterOptions={[{name: 'is_gold', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+    return <RfGrid filterOptions={[{name: 'is_gold', value: false}, {name: 'verified', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
   }
 }

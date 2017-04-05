@@ -10,20 +10,22 @@ export default class UserDetail extends React.Component {
       user: {},
       modSub: {}
     }
+    console.log(props.match.params.user_id)
   }
 
   componentDidMount () {
     var self = this
     getUserByID(self.state.user_id).then(function (res) {
       var user = res.data
+      console.log(user)
       getModerators({}, function (res) {
-        var modSubId = res.find(r => r.user_id === user.id).sr_id
+        // var modSubId = res.find(r => r.user_id === user.id).sr_id
         getSubreddits({}).then(function (res) {
-          var modSub = modSubId ? res.data.find(s => s.id === modSubId) : {} || {}
+          // var modSub = modSubId ? res.data.find(s => s.id === modSubId) : {} || {}
           self.setState({
             user_id: self.state.user_id,
             user: user,
-            modSub: modSub
+            modSub: undefined // modSub
           })
         })
       })
@@ -39,10 +41,15 @@ export default class UserDetail extends React.Component {
         'Comment Karma': this.state.user.comment_karma,
         'Email': this.state.user.email,
         'Moderator of': {
-          name: this.state.modSub.display_name,
-          link: '/subreddits/detail/' + this.state.modSub.id
+          name: 'undefined',
+          link: '/subreddits/detail/' + undefined
         },
-        'Created': new Date(this.state.user.created * 1000).toDateString()
+        // 'Moderator of': {
+        //  name: this.state.modSub.display_name,
+        //  link: '/subreddits/detail/' + this.state.modSub.id
+        // }
+
+        'Created': (this.state.user.created_utc)
       }
     })
   }

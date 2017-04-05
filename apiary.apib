@@ -5,7 +5,7 @@ HOST: http://polls.apiblueprint.org/
 
 Reddiful is a simple API allowing consumers to view reddit metadata
 
-## Subreddit Collection [/subreddits/{subreddit}]
+## Subreddit Collection [/subreddits/{subreddit_id}]
 + Parameters
     + subreddit_id (string) - unique ID of the subreddit
 
@@ -56,7 +56,7 @@ Reddiful is a simple API allowing consumers to view reddit metadata
             }
         ]
 
-## Users Collection [/users/{user}]
+## Users Collection [/users/{redditor_id}]
 + Parameters
     + redditor_id (string) - unique ID of the user
 
@@ -103,7 +103,7 @@ Reddiful is a simple API allowing consumers to view reddit metadata
             }
         ]
 
-## Posts Collection [/posts/{post}]
+## Posts Collection [/posts/{submission_id}]
 + Parameters
     + submission_id (string) - unique ID of the post
 
@@ -190,7 +190,7 @@ Reddiful is a simple API allowing consumers to view reddit metadata
             }
         ]
         
-## Comment Collection [/comments/{comment}]
+## Comment Collection [/comments/{comment_id}]
 + Parameters
     + comment_id (string) - unique ID of this comment
 

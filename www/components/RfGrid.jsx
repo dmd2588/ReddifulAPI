@@ -7,11 +7,13 @@ import ReactPaginate from 'react-paginate'
 export default class RfGrid extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {data: {title: '', select_values: [], cards: []}, pageCount: 5}
+    this.state = {data: {title: '', select_values: [], cards: []}, pageCount: 5, currentPage: 1}
     this.loadDataFromServer = this.props.loadDataFromServer
   }
   handlePageClick (data) {
     console.log('Click')
+    console.log(data.selected)
+    // this.updateGrid({currentPage: data.selected});
   };
 
   componentDidMount () {
@@ -55,7 +57,7 @@ export default class RfGrid extends React.Component {
           nextLabel={'next'}
           breakLabel={<a href=''>...</a>}
           breakClassName={'break-me'}
-          pageCount={5}
+          pageCount={this.state.pageCount}
           marginPagesDisplayed={2}
           pageRangeDisplayed={5}
           onPageChange={this.handlePageClick}

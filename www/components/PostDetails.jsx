@@ -46,7 +46,7 @@ export default class PostDetails extends React.Component {
           name: this.state.author.name,
           link: '/users/detail/' + this.state.author.id
         },
-        'Created': new Date(this.state.post.created * 1000).toDateString()
+        'Created': this.state.post.create_utc
       }
     })
   }
