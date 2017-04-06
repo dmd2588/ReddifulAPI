@@ -69,6 +69,24 @@ def serve_user(user_id):
     return createJson(u), 200, DEFAULT_HEADERS
 
 
+@app.route('/api/users/<string:user_id>/comments')
+def serve_user_comments(user_id):
+    u = query.getUserComments(user_id)
+    return createJson(u), 200, DEFAULT_HEADERS
+
+
+@app.route('/api/users/<string:user_id>/posts')
+def serve_user_posts(user_id):
+    u = query.getUserPosts(user_id)
+    return createJson(u), 200, DEFAULT_HEADERS
+
+
+@app.route('/api/users/<string:user_id>/subs')
+def serve_user_modded_subs(user_id):
+    u = query.getModdedSubs(user_id)
+    return createJson(u), 200, DEFAULT_HEADERS
+
+
 @app.route('/api/posts')
 def serve_post_list():
     args = format_url_args()
@@ -129,6 +147,18 @@ def serve_subreddit(subreddit_id):
     return createJson(s), 200, DEFAULT_HEADERS
 
 
+@app.route('/api/subreddits/<string:subreddit_id>/posts')
+def server_subreddit_submissions(subreddit_id):
+    u = query.getSubredditPosts(subreddit_id)
+    return createJson(u), 200, DEFAULT_HEADERS
+
+
+@app.route('/api/subreddits/<string:subreddit_id>/mods')
+def server_subreddit_mods(subreddit_id):
+    u = query.getSubredditMods(subreddit_id)
+    return createJson(u), 200, DEFAULT_HEADERS
+
+
 @app.route('/<path:path>')
 def serve_index(path):
     # pylint: disable=unused-argument
@@ -140,7 +170,7 @@ def serve_root():
     return flask.send_from_directory('../www', 'index.html')
 
 
-def format_url_args():
+def format_url_args(endpoint = ''):
     args = {}
     if 'page' in flask.request.args:
         args['page'] = int(flask.request.args['page'])

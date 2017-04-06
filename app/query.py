@@ -12,6 +12,7 @@ import os
 from app.models import Comment, Post, Subreddit, User
 import sqlalchemy
 from sqlalchemy.orm.session import sessionmaker
+from sqlalchemy.orm import joinedload
 
 # The return value of create_engine() is our connection object
 con = sqlalchemy.create_engine(os.environ['DB_URL'], client_encoding='utf8')
@@ -79,6 +80,13 @@ def getUser(user_id):
     if row:
         return row2dict(row)
     return {}
+
+
+def getSubredditMods(subreddit_id, limit = 5):
+    session = Session()
+    query = session.query(Subreddit).options(joinedload(Subreddit.users)).filter(Subreddit.subreddit_id == subreddit_id)
+    row = query.first()
+    return [mod.__dict__ for mod in row.users]
 
 
 def post_query(query, k, v):
@@ -149,6 +157,18 @@ def getPost(post_id):
     return {}
 
 
+def getUserPosts(redditor_id, limit = 5):
+    session = Session()
+    query = session.query(Post).filter(Post.author_id == redditor_id)
+    return [row2dict(r) for r in query.limit(limit)]
+
+
+def getSubredditPosts(subreddit_id, limit = 5):
+    session = Session()
+    query = session.query(Post).filter(Post.subreddit_id == subreddit_id)
+    return [row2dict(r) for r in query.limit(limit)]
+
+
 def comment_post(query, k, v):
     if k == "body":
         return query.filter(Comment.body == v)
@@ -199,6 +219,12 @@ def getComment(comment_id):
     return {}
 
 
+def getUserComments(redditor_id, limit = 5):
+    session = Session()
+    query = session.query(Comment).filter(Comment.author_id == redditor_id)
+    return [row2dict(r) for r in query.limit(limit)]
+
+
 def sub_query(query, k, v):
     if k == "display_name":
         return query.filter(Subreddit.display_name == v)
@@ -244,3 +270,10 @@ def getSub(subreddit_id):
     if row:
         return row2dict(row)
     return {}
+
+
+def getModdedSubs(redditor_id, limit = 5):
+    session = Session()
+    query = session.query(User).options(joinedload(User.subreddits)).filter(User.redditor_id == redditor_id)
+    row = query.first()
+    return [sub.__dict__ for sub in row.subreddits]
