@@ -26740,12 +26740,14 @@ var Posts = function (_React$Component) {
             title: 'Posts',
             select_values: ['score', 'gilded', 'title', 'num_comments', 'author'],
             cards: posts.map(function (p) {
+              var thumbnailAvailable = p.thumbnail !== 'self' && p.thumbnail !== 'nsfw' && p.thumbnail !== 'default' && p.thumbnail;
               return {
                 title: p.title,
                 subtitle: 'Author: ' + p.author,
                 link: '/posts/detail/' + p.submission_id,
-                preview: p.thumbnail,
-                icon: ''
+                preview: thumbnailAvailable ? p.thumbnail : '/dist/images/ic_photo_camera_black_48dp_2x.png',
+                icon: '/dist/images/ic_account_circle_black_48dp_2x.png',
+                customClass: thumbnailAvailable ? '' : 'iconMedia'
               };
             })
           };
@@ -27250,7 +27252,7 @@ var Subreddits = function (_React$Component) {
               subtitle: 'Created: ' + s.created_utc,
               link: '/subreddits/detail/' + s.subreddit_id,
               preview: s.banner_img ? s.banner_img : '/dist/images/ic_local_movies_black_48dp_2x.png',
-              icon: s.icon_img,
+              icon: s.icon_img ? s.icon_img : '/dist/images/ic_account_circle_black_48dp_2x.png',
               customClass: s.banner_img ? '' : 'iconMedia'
             };
           })
@@ -27704,8 +27706,8 @@ var Users = function (_React$Component) {
               title: u.name,
               subtitle: 'Joined: ' + u.created_utc,
               link: '/users/detail/' + u.redditor_id,
-              preview: '/dist/images/ic_account_circle_black_48dp_2x.png',
-              icon: '',
+              preview: '/dist/images/ic_face_black_48dp_2x.png',
+              icon: '/dist/images/ic_account_circle_black_48dp_2x.png',
               customClass: 'iconMedia'
             };
           })

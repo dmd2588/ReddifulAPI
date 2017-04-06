@@ -22,7 +22,7 @@ export default class Subreddits extends React.Component {
             subtitle: 'Created: ' + s.created_utc,
             link: '/subreddits/detail/' + s.subreddit_id,
             preview: s.banner_img ? s.banner_img : '/dist/images/ic_local_movies_black_48dp_2x.png',
-            icon: s.icon_img,
+            icon: s.icon_img ? s.icon_img : '/dist/images/ic_account_circle_black_48dp_2x.png',
             customClass: s.banner_img ? '' : 'iconMedia'
           }
         })
