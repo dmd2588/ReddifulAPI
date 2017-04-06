@@ -82,6 +82,64 @@ var About = React.createClass({
           </Grid>
         </Jumbotron>
         <hr />
+        <Jumbotron>
+          <h1>Tools</h1>
+          <Grid>
+            <Row className='show-grid'>
+              <Col lg={4}>
+                <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                <h3>Slack</h3>
+                <p>Slack was used as our main form of communication</p>
+              </Col>
+              <Col lg={4}>
+                <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                <h3>React</h3>
+                <p>React was used as part of the front-end</p>
+              </Col>
+              <Col lg={4}>
+                <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                <h3>Bootstrap</h3>
+                <p>Bootstrap was used as part of the front-end</p>
+              </Col>
+              <Col lg={4}>
+                <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                <h3>Webpack</h3>
+                <p>Webpack was used to bundle our modules</p>
+              </Col>
+              <Col lg={4}>
+                <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                <h3>Docker</h3>
+                <p>Docker was used to generate virtual instances of our server</p>
+              </Col>
+              <Col lg={4}>
+                <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                <h3>Babel</h3>
+                <p>Babel was used to compile Javascript</p>
+              </Col>
+              <Col lg={4}>
+                <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                <h3>PostCSS</h3>
+                <p>PostCSS stuff</p>
+              </Col>
+              <Col lg={4}>
+                <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                <h3>Flask</h3>
+                <p>Flask was used for our backend</p>
+              </Col>
+              <Col lg={4}>
+                <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                <h3>SQLAlchemy</h3>
+                <p>SQLAlchemy was used to build our database</p>
+              </Col>
+              <Col lg={4}>
+                <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                <h3>AWS</h3>
+                <p>AWS was used to host our website</p>
+              </Col>
+            </Row>
+          </Grid>
+        </Jumbotron>
+        <hr />
         <ListGroup>
           <h3>Github Stats - <a href='http://docs.reddiful.apiary.io'>Apiary API</a> - <a href='https://github.com/dmd2588/idb/issues'>GitHubIssueTracker</a> - <a href='https://github.com/dmd2588/idb/'>Github Repo</a></h3>
           <ListGroupItem>total no. of commits: 155</ListGroupItem>
