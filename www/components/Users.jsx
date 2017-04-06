@@ -5,7 +5,7 @@ import { getUsers } from '../api.js'
 
 const style = {
   margin: 50,
-  display: 'inline-block'
+  display: 'block'
 }
 
 export default class Users extends React.Component {
@@ -32,7 +32,7 @@ export default class Users extends React.Component {
     return (
       <div className='container'>
         <Paper style={style} zDepth={2}>
-          <div className='container'>
+          <div className='container-no-width'>
             <RfGrid filterOptions={[{name: 'is_gold', value: false}, {name: 'verified', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
           </div>
         </Paper>

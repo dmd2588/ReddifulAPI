@@ -5,7 +5,7 @@ import { getUserByID, getModerators, getSubreddits } from '../api.js'
 
 const style = {
   margin: 50,
-  display: 'inline-block'
+  display: 'block'
 }
 
 export default class UserDetail extends React.Component {
@@ -61,7 +61,7 @@ export default class UserDetail extends React.Component {
     return (
       <div className='container'>
         <Paper style={style} zDepth={2}>
-          <div className='container'>
+          <div className='container-no-width'>
             {details}
           </div>
         </Paper>

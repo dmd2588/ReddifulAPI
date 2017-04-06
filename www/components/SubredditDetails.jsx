@@ -6,7 +6,7 @@ import Paper from 'material-ui/Paper'
 
 const style = {
   margin: 50,
-  display: 'inline-block'
+  display: 'block'
 }
 
 export default class SubredditDetails extends React.Component {
@@ -66,7 +66,7 @@ export default class SubredditDetails extends React.Component {
     return (
       <div className='container'>
         <Paper style={style} zDepth={2}>
-          <div className='container'>
+          <div className='container-no-width'>
             {details}
           </div>
         </Paper>

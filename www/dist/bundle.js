@@ -23799,7 +23799,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var style = {
   margin: 50,
-  display: 'inline-block'
+  display: 'block'
 };
 
 var About = _react2.default.createClass({
@@ -23824,7 +23824,7 @@ var About = _react2.default.createClass({
         { style: style, zDepth: 2 },
         _react2.default.createElement(
           'div',
-          { className: 'container' },
+          { className: 'container-no-width' },
           _react2.default.createElement(
             _reactBootstrap.PageHeader,
             null,
@@ -25259,7 +25259,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var style = {
   margin: 50,
-  display: 'inline-block'
+  display: 'block'
 };
 
 var CommentDetails = function (_React$Component) {
@@ -25328,7 +25328,7 @@ var CommentDetails = function (_React$Component) {
           { style: style, zDepth: 2 },
           _react2.default.createElement(
             'div',
-            { className: 'container' },
+            { className: 'container-no-width' },
             details
           )
         )
@@ -25379,7 +25379,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var style = {
   margin: 50,
-  display: 'inline-block'
+  display: 'block'
 };
 
 var Users = function (_React$Component) {
@@ -25433,7 +25433,7 @@ var Users = function (_React$Component) {
           { style: style, zDepth: 2 },
           _react2.default.createElement(
             'div',
-            { className: 'container' },
+            { className: 'container-no-width' },
             _react2.default.createElement(_RfGrid2.default, { filterOptions: [], loadDataFromServer: function loadDataFromServer(ops, callback) {
                 return _this2.loadDataFromServer(ops, callback);
               } })
@@ -25759,7 +25759,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var style = {
   margin: 50,
-  display: 'inline-block'
+  display: 'block'
 };
 
 var PostDetails = function (_React$Component) {
@@ -25829,7 +25829,7 @@ var PostDetails = function (_React$Component) {
           { style: style, zDepth: 2 },
           _react2.default.createElement(
             'div',
-            { className: 'container' },
+            { className: 'container-no-width' },
             details
           )
         )
@@ -25880,7 +25880,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var style = {
   margin: 50,
-  display: 'inline-block'
+  display: 'block'
 };
 
 var Posts = function (_React$Component) {
@@ -25928,7 +25928,7 @@ var Posts = function (_React$Component) {
           { style: style, zDepth: 2 },
           _react2.default.createElement(
             'div',
-            { className: 'container' },
+            { className: 'container-no-width' },
             _react2.default.createElement(_RfGrid2.default, { filterOptions: [{ name: 'is_self', value: false }], loadDataFromServer: function loadDataFromServer(ops, callback) {
                 return _this2.loadDataFromServer(ops, callback);
               } })
@@ -26181,7 +26181,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var style = {
   margin: 50,
-  display: 'inline-block'
+  display: 'block'
 };
 
 var SubredditDetails = function (_React$Component) {
@@ -26255,7 +26255,7 @@ var SubredditDetails = function (_React$Component) {
           { style: style, zDepth: 2 },
           _react2.default.createElement(
             'div',
-            { className: 'container' },
+            { className: 'container-no-width' },
             details
           )
         )
@@ -26306,7 +26306,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var style = {
   margin: 50,
-  display: 'inline-block'
+  display: 'block'
 };
 
 var Subreddits = function (_React$Component) {
@@ -26351,7 +26351,7 @@ var Subreddits = function (_React$Component) {
           { style: style, zDepth: 2 },
           _react2.default.createElement(
             'div',
-            { className: 'container' },
+            { className: 'container-no-width' },
             _react2.default.createElement(_RfGrid2.default, { filterOptions: [], loadDataFromServer: function loadDataFromServer(ops, callback) {
                 return _this2.loadDataFromServer(ops, callback);
               } })
@@ -26518,7 +26518,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var style = {
   margin: 50,
-  display: 'inline-block'
+  display: 'block'
 };
 
 var UserDetail = function (_React$Component) {
@@ -26588,7 +26588,7 @@ var UserDetail = function (_React$Component) {
           { style: style, zDepth: 2 },
           _react2.default.createElement(
             'div',
-            { className: 'container' },
+            { className: 'container-no-width' },
             details
           )
         )
@@ -26639,7 +26639,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var style = {
   margin: 50,
-  display: 'inline-block'
+  display: 'block'
 };
 
 var Users = function (_React$Component) {
@@ -26684,7 +26684,7 @@ var Users = function (_React$Component) {
           { style: style, zDepth: 2 },
           _react2.default.createElement(
             'div',
-            { className: 'container' },
+            { className: 'container-no-width' },
             _react2.default.createElement(_RfGrid2.default, { filterOptions: [{ name: 'is_gold', value: false }, { name: 'verified', value: false }], loadDataFromServer: function loadDataFromServer(ops, callback) {
                 return _this2.loadDataFromServer(ops, callback);
               } })

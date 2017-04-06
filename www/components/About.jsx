@@ -7,7 +7,7 @@ import UnitTestModal from './UnitTestModal.jsx'
 
 const style = {
   margin: 50,
-  display: 'inline-block'
+  display: 'block'
 }
 
 var About = React.createClass({
@@ -24,7 +24,7 @@ var About = React.createClass({
     return (
       <div className='container'>
         <Paper style={style} zDepth={2}>
-          <div className='container'>
+          <div className='container-no-width'>
             <PageHeader>About</PageHeader>
             <Jumbotron>
               <h1>Team Name Presents: <small>Reddiful API</small></h1>
