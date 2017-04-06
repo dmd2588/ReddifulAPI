@@ -2,7 +2,7 @@ import React from 'react'
 import Dialog from 'material-ui/Dialog'
 import FlatButton from 'material-ui/FlatButton'
 import RaisedButton from 'material-ui/RaisedButton'
-import CircularProgress from 'material-ui/CircularProgress'
+import LinearProgress from 'material-ui/LinearProgress'
 import { getTests } from '../api.js'
 
 export default class UnitTestModal extends React.Component {
@@ -15,9 +15,9 @@ export default class UnitTestModal extends React.Component {
   }
 
   handleOpen () {
-    this.setState({open: true, unit_test_output: <CircularProgress size={80} thickness={5} />})
+    this.setState({open: true, unit_test_output: <LinearProgress mode='indeterminate' />})
     getTests().then(function (res) {
-      this.setState({open: true, unit_test_output: res.data})
+      this.setState({open: true, unit_test_output: <pre>{res.data}</pre>})
     }.bind(this))
   }
 
@@ -44,8 +44,11 @@ export default class UnitTestModal extends React.Component {
           modal={false}
           open={this.state.open}
           onRequestClose={this.handleClose}
+          autoScrollBodyContent
         >
-          {this.state.unit_test_output}
+          <div style={{paddingTop: 24}}>
+            {this.state.unit_test_output}
+          </div>
         </Dialog>
       </div>
     )
