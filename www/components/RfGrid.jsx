@@ -29,6 +29,8 @@ export default class RfGrid extends React.Component {
     var self = this
     console.log('Click')
     console.log(data.selected)
+    console.log(self.state.ops)
+    // self.props.retainOptions(self.state.ops)
     self.updateGrid({page: data.selected})
   }
   render () {

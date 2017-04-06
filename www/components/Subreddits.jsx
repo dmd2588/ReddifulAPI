@@ -30,12 +30,17 @@ export default class Subreddits extends React.Component {
       callback(myp)
     })
   }
+
+  retainOptions (ops) {
+    var options = ops
+    return options
+  }
   render () {
     return (
       <div className='container'>
         <Paper style={style} zDepth={2}>
           <div className='container-no-width'>
-            <RfGrid filterOptions={[]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+            <RfGrid filterOptions={[]} retainOoptions={(o) => this.retainOptions(o)} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
           </div>
         </Paper>
       </div>

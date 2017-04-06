@@ -7009,6 +7009,8 @@ var RfGrid = function (_React$Component) {
       var self = this;
       console.log('Click');
       console.log(data.selected);
+      console.log(self.state.ops);
+      // self.props.retainOptions(self.state.ops)
       self.updateGrid({ page: data.selected });
     }
   }, {
@@ -27076,7 +27078,7 @@ var SortFilter = function (_React$Component) {
         var temp = {};
         temp[c.name] = c.value;
         return temp;
-      }));
+      }), { order_by: '' });
     } else {
       _this.state = {};
     }
@@ -27107,23 +27109,28 @@ var SortFilter = function (_React$Component) {
   }, {
     key: 'onApply',
     value: function onApply() {
-      var sortSelect = '';
       // let filterText = ''
       var temp = {};
       console.log('clicked');
       for (var property in this.state) {
         if (this.state.hasOwnProperty(property)) {
-          console.log('here ' + property);
           temp[property] = this.state[property];
         }
       }
       console.log(this.state);
 
-      if (sortSelect === '<default>') {
-        sortSelect = '';
+      if (this.state.order_by === '<default>') {
+        this.state.order_by = '';
       }
-      temp['order_by'] = sortSelect;
-      this.props.updateGrid(temp);
+      console.log(this.state.order_by + ' here');
+      temp['order_by'] = this.state.order_by;
+      this.props.updateGrid(this.state);
+    }
+  }, {
+    key: 'handleSelect',
+    value: function handleSelect(e) {
+      console.log(e.target.value);
+      this.setState({ order_by: e.target.value });
     }
   }, {
     key: 'render',
@@ -27167,7 +27174,7 @@ var SortFilter = function (_React$Component) {
           ),
           _react2.default.createElement(
             _reactBootstrap.FormControl,
-            { componentClass: 'select' },
+            { type: 'text', componentClass: 'select', onChange: this.handleSelect.bind(this) },
             this.props.select_values.map(this.makeOption)
           )
         ),
@@ -27458,6 +27465,12 @@ var Subreddits = function (_React$Component) {
       });
     }
   }, {
+    key: 'retainOptions',
+    value: function retainOptions(ops) {
+      var options = ops;
+      return options;
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -27471,7 +27484,9 @@ var Subreddits = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'container-no-width' },
-            _react2.default.createElement(_RfGrid2.default, { filterOptions: [], loadDataFromServer: function loadDataFromServer(ops, callback) {
+            _react2.default.createElement(_RfGrid2.default, { filterOptions: [], retainOoptions: function retainOoptions(o) {
+                return _this2.retainOptions(o);
+              }, loadDataFromServer: function loadDataFromServer(ops, callback) {
                 return _this2.loadDataFromServer(ops, callback);
               } })
           )
