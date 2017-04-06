@@ -1,42 +1,47 @@
 import React from 'react'
 import { Carousel } from 'react-bootstrap'
+import { blueGrey900 } from 'material-ui/styles/colors'
+import { getImages } from '../api.js'
 
-import { Link } from 'react-router-dom'
+export default class Home extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {'submissions': [{'preview': '', 'source': ''}]}
+  }
 
-var Home = React.createClass({
-  render: function () {
+  componentDidMount () {
+    this.getImages()
+  }
+
+  getImages () {
+    getImages().then(function (res) {
+      var submissions = []
+      for (var i in res.data) {
+        var images = res.data[i].preview.images['0'].resolutions
+        submissions.push({'preview': images[images.length - 1]['url'], 'source': res.data[i].url})
+      }
+      this.setState({submissions: submissions})
+    }.bind(this))
+  }
+
+  makeCarouselItem (v, index) {
+    if (v['source'].endsWith('gifv')) {
+      v['source'] = v['source'].slice(0, -1)
+    }
     return (
-      <div>
-        <div><h2>Home</h2></div>
+      <Carousel.Item key={index}>
+        <img width={window.innerWidth} src={v['source']} />
+      </Carousel.Item>
+    )
+  }
+
+  render () {
+    return (
+      <div id='Carousel' style={{position: 'fixed', backgroundColor: blueGrey900}}>
         <Carousel>
-          <Carousel.Item>
-            <img width={1140} height={500} alt='Users' src='https://placeimg.com/1140/500/people' />
-            <Carousel.Caption>
-              <h3><Link to='/users'>Users</Link></h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img width={1140} height={500} alt='Subreddits' src='https://placeimg.com/1140/500/arch' />
-            <Carousel.Caption>
-              <h3><Link to='/subreddits'>Subreddits</Link></h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img width={1140} height={500} alt='Posts' src='https://placeimg.com/1140/500/animals' />
-            <Carousel.Caption>
-              <h3><Link to='/posts'>Posts</Link></h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img width={1140} height={500} alt='Comments' src='https://placeimg.com/1140/500/tech' />
-            <Carousel.Caption>
-              <h3><Link to='/comments'>Comments</Link></h3>
-            </Carousel.Caption>
-          </Carousel.Item>
+          {this.state.submissions.map(this.makeCarouselItem)}
         </Carousel>
       </div>
     )
   }
-})
-
-export default Home
+}

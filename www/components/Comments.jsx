@@ -1,6 +1,12 @@
 import React from 'react' //eslint-disable-line
 import RfGrid from './RfGrid.jsx'
 import { getComments, getUsers } from '../api.js'
+import Paper from 'material-ui/Paper'
+
+const style = {
+  margin: 50,
+  display: 'block'
+}
 
 export default class Users extends React.Component {
   loadDataFromServer (options, callback) {
@@ -10,16 +16,19 @@ export default class Users extends React.Component {
         var users = res.data
         var myp = {
           title: 'Comments',
-          select_values: ['score', 'gilded', 'author', 'timestamp', 'create_utc'],
+          select_values: ['score', 'gilded', 'author', 'create_utc', 'body'],
           cards: comments.map(c => {
               // var commentUserMatch = (typeof users.find(u => u.redditor_id === c.author_id) === 'undefined');
               // console.log(users.find(u => u.redditor_id === "10brol"))
             var commentUserMatch = users.find(u => u.redditor_id === c.author_id)
             console.log(commentUserMatch)
             return {
-              title: '',
-              subtitle: 'Commented: ' + c.created_utc,
-              link: '/comments/detail/' + c.comment_id
+              title: c.author,
+              subtitle: c.created_utc,
+              link: '/comments/detail/' + c.comment_id,
+              preview: '/dist/images/ic_speaker_notes_black_48dp_2x.png',
+              icon: '/dist/images/ic_account_circle_black_48dp_2x.png',
+              customClass: 'iconMedia'
             }
           })
         }
@@ -30,6 +39,14 @@ export default class Users extends React.Component {
   }
 
   render () {
-    return <RfGrid filterOptions={[]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+    return (
+      <div className='container'>
+        <Paper style={style} zDepth={2}>
+          <div className='container-no-width'>
+            <RfGrid filterOptions={[]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+          </div>
+        </Paper>
+      </div>
+    )
   }
 }

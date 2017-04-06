@@ -1,6 +1,12 @@
 import React from 'react' //eslint-disable-line
 import RfGrid from './RfGrid.jsx'
+import Paper from 'material-ui/Paper'
 import { getUsers } from '../api.js'
+
+const style = {
+  margin: 50,
+  display: 'block'
+}
 
 export default class Users extends React.Component {
   loadDataFromServer (options, callback) {
@@ -13,7 +19,10 @@ export default class Users extends React.Component {
           return {
             title: u.name,
             subtitle: 'Joined: ' + u.created_utc,
-            link: '/users/detail/' + u.redditor_id
+            link: '/users/detail/' + u.redditor_id,
+            preview: '/dist/images/ic_face_black_48dp_2x.png',
+            icon: '/dist/images/ic_account_circle_black_48dp_2x.png',
+            customClass: 'iconMedia'
           }
         })
       }
@@ -23,6 +32,14 @@ export default class Users extends React.Component {
   }
 
   render () {
-    return <RfGrid filterOptions={[{name: 'is_gold', value: false}, {name: 'verified', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+    return (
+      <div className='container'>
+        <Paper style={style} zDepth={2}>
+          <div className='container-no-width'>
+            <RfGrid filterOptions={[{name: 'is_gold', value: false}, {name: 'verified', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+          </div>
+        </Paper>
+      </div>
+    )
   }
 }

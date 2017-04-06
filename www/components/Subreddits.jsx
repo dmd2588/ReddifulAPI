@@ -1,6 +1,12 @@
 import React from 'react' //eslint-disable-line
 import RfGrid from './RfGrid.jsx'
 import { getSubreddits } from '../api.js'
+import Paper from 'material-ui/Paper'
+
+const style = {
+  margin: 50,
+  display: 'block'
+}
 
 export default class Subreddits extends React.Component {
   loadDataFromServer (options, callback) {
@@ -14,7 +20,10 @@ export default class Subreddits extends React.Component {
           return {
             title: s.display_name,
             subtitle: 'Created: ' + s.created_utc,
-            link: '/subreddits/detail/' + s.subreddit_id
+            link: '/subreddits/detail/' + s.subreddit_id,
+            preview: s.banner_img ? s.banner_img : '/dist/images/ic_local_movies_black_48dp_2x.png',
+            icon: s.icon_img ? s.icon_img : '/dist/images/ic_account_circle_black_48dp_2x.png',
+            customClass: s.banner_img ? '' : 'iconMedia'
           }
         })
       }
@@ -22,6 +31,14 @@ export default class Subreddits extends React.Component {
     })
   }
   render () {
-    return <RfGrid filterOptions={[]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+    return (
+      <div className='container'>
+        <Paper style={style} zDepth={2}>
+          <div className='container-no-width'>
+            <RfGrid filterOptions={[]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+          </div>
+        </Paper>
+      </div>
+    )
   }
 }

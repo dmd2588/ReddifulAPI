@@ -49,9 +49,20 @@ def serve_tests():
     return test_output.getvalue(), 200, TEXT_HEADER
 
 
+@app.route('/api/top_images')
+def serve_top_images():
+    return createJson(query.getTopImages()), 200, DEFAULT_HEADERS
+
+
 @app.route('/api/users')
 def serve_user_list():
     args = format_url_args()
+    user_order_by = {'name', 'comment_karma', 'link_karma', 'created_utc'}
+    if 'order_by' in args:
+        if args['order_by'] not in user_order_by:
+            args.pop('order_by', None)
+    if 'order_by' not in args and 'desc' in args:
+        args.pop('desc', None)
     return createJson(query.getUsers(**args)[0]), 200, DEFAULT_HEADERS
 
 
@@ -63,9 +74,33 @@ def serve_user(user_id):
     return createJson(u), 200, DEFAULT_HEADERS
 
 
+@app.route('/api/users/<string:user_id>/comments')
+def serve_user_comments(user_id):
+    u = query.getUserComments(user_id)
+    return createJson(u), 200, DEFAULT_HEADERS
+
+
+@app.route('/api/users/<string:user_id>/posts')
+def serve_user_posts(user_id):
+    u = query.getUserPosts(user_id)
+    return createJson(u), 200, DEFAULT_HEADERS
+
+
+@app.route('/api/users/<string:user_id>/subs')
+def serve_user_modded_subs(user_id):
+    u = query.getModdedSubs(user_id)
+    return createJson(u), 200, DEFAULT_HEADERS
+
+
 @app.route('/api/posts')
 def serve_post_list():
     args = format_url_args()
+    user_order_by = {'score', 'gilded', 'title', 'num_comments', 'author'}
+    if 'order_by' in args:
+        if args['order_by'] not in user_order_by:
+            args.pop('order_by', None)
+    if 'order_by' not in args and 'desc' in args:
+        args.pop('desc', None)
     return createJson(query.getPosts(**args)[0]), 200, DEFAULT_HEADERS
 
 
@@ -77,9 +112,21 @@ def serve_post(post_id):
     return createJson(p), 200, DEFAULT_HEADERS
 
 
+@app.route('/api/posts/<string:post_id>/comments')
+def serve_post_comments(post_id):
+    p = query.getPostComments(post_id)
+    return createJson(p), 200, DEFAULT_HEADERS
+
+
 @app.route('/api/comments')
 def serve_comment_list():
     args = format_url_args()
+    user_order_by = {'score', 'gilded', 'title', 'created_utc', 'author', 'body'}
+    if 'order_by' in args:
+        if args['order_by'] not in user_order_by:
+            args.pop('order_by', None)
+    if 'order_by' not in args and 'desc' in args:
+        args.pop('desc', None)
     return createJson(query.getComments(**args)[0]), 200, DEFAULT_HEADERS
 
 
@@ -94,6 +141,12 @@ def serve_comment(comment_id):
 @app.route('/api/subreddits')
 def serve_subreddit_list():
     args = format_url_args()
+    user_order_by = {'accounts_active', 'subscribers', 'title', 'created_utc', 'display_name'}
+    if 'order_by' in args:
+        if args['order_by'] not in user_order_by:
+            args.pop('order_by', None)
+    if 'order_by' not in args and 'desc' in args:
+        args.pop('desc', None)
     return createJson(query.getSubs(**args)[0]), 200, DEFAULT_HEADERS
 
 
@@ -103,6 +156,18 @@ def serve_subreddit(subreddit_id):
     if not s:
         return '', 404
     return createJson(s), 200, DEFAULT_HEADERS
+
+
+@app.route('/api/subreddits/<string:subreddit_id>/posts')
+def server_subreddit_submissions(subreddit_id):
+    u = query.getSubredditPosts(subreddit_id)
+    return createJson(u), 200, DEFAULT_HEADERS
+
+
+@app.route('/api/subreddits/<string:subreddit_id>/mods')
+def server_subreddit_mods(subreddit_id):
+    u = query.getSubredditMods(subreddit_id)
+    return createJson(u), 200, DEFAULT_HEADERS
 
 
 @app.route('/<path:path>')
@@ -122,4 +187,8 @@ def format_url_args():
         args['page'] = int(flask.request.args['page'])
     if 'per_page' in flask.request.args:
         args['per_page'] = int(flask.request.args['per_page'])
+    if 'order_by' in flask.request.args:
+        args['order_by'] = flask.request.args['order_by']
+    if 'desc' in flask.request.args:
+        args['desc'] = True
     return args

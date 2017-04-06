@@ -1,10 +1,8 @@
 import axios from 'axios'
 
-const moderators = [
-  {'user_id': 'hh8mr', 'sr_id': '3imv0'},
-  {'user_id': '74344', 'sr_id': '2tex6'},
-  {'user_id': '4fer6', 'sr_id': '2qh55'}
-]
+export function getImages () {
+  return axios.get('/api/top_images')
+}
 
 export function getTests () {
   return axios.get('/api/tests')
@@ -17,6 +15,18 @@ export function getUsers (options) {
 
 export function getUserByID (ID) {
   return axios.get('/api/users/' + ID)
+}
+
+export function getUserComments (rID) {
+  return axios.get('/api/users/' + rID + '/comments')
+}
+
+export function getUserPosts (rID) {
+  return axios.get('/api/users/' + rID + '/posts')
+}
+
+export function getModdedSubs (rID) {
+  return axios.get('/api/users/' + rID + '/subs')
 }
 
 export function getComments (options, callback) {
@@ -35,6 +45,10 @@ export function getPostByID (ID) {
   return axios.get('/api/posts/' + ID)
 }
 
+export function getPostComments (pID) {
+  return axios.get('/api/posts/' + pID + '/comments')
+}
+
 export function getSubreddits (options) {
   return axios.get('/api/subreddits')
 }
@@ -43,6 +57,10 @@ export function getSubredditByID (ID) {
   return axios.get('/api/subreddits/' + ID)
 }
 
-export function getModerators (options, callback) {
-  callback(moderators)
+export function getSubredditPosts (subID) {
+  return axios.get('/api/subreddits/' + subID + '/posts')
+}
+
+export function getModerators (subID) {
+  return axios.get('/api/subreddits/' + subID + '/mods')
 }

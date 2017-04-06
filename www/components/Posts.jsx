@@ -1,6 +1,12 @@
 import React from 'react' // eslint-disable-line
 import RfGrid from './RfGrid.jsx'
 import { getPosts, getUsers } from '../api.js'
+import Paper from 'material-ui/Paper'
+
+const style = {
+  margin: 50,
+  display: 'block'
+}
 
 export default class Posts extends React.Component {
   loadDataFromServer (options, callback) {
@@ -12,10 +18,17 @@ export default class Posts extends React.Component {
           title: 'Posts',
           select_values: ['score', 'gilded', 'title', 'num_comments', 'author'],
           cards: posts.map(p => {
+            var thumbnailAvailable = p.thumbnail !== 'self' &&
+                                      p.thumbnail !== 'nsfw' &&
+                                      p.thumbnail !== 'default' &&
+                                      p.thumbnail
             return {
               title: p.title,
               subtitle: 'Author: ' + p.author,
-              link: '/posts/detail/' + p.submission_id
+              link: '/posts/detail/' + p.submission_id,
+              preview: thumbnailAvailable ? p.thumbnail : '/dist/images/ic_photo_camera_black_48dp_2x.png',
+              icon: '/dist/images/ic_account_circle_black_48dp_2x.png',
+              customClass: thumbnailAvailable ? '' : 'iconMedia'
             }
           })
         }
@@ -27,8 +40,12 @@ export default class Posts extends React.Component {
 
   render () {
     return (
-      <div>
-        <RfGrid filterOptions={[{name: 'is_self', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+      <div className='container'>
+        <Paper style={style} zDepth={2}>
+          <div className='container-no-width'>
+            <RfGrid filterOptions={[{name: 'is_self', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+          </div>
+        </Paper>
       </div>
     )
   }
