@@ -10,11 +10,6 @@ export default class RfGrid extends React.Component {
     this.state = {data: {title: '', select_values: [], cards: []}, pageCount: 5, page: 1}
     this.loadDataFromServer = this.props.loadDataFromServer
   }
-  handlePageClick (data) {
-    console.log('Click')
-    console.log(data.selected)
-    this.updateGrid({page: data.selected})
-  };
 
   componentDidMount () {
     this.updateGrid()
@@ -28,6 +23,13 @@ export default class RfGrid extends React.Component {
       self.setState({data: newData, pageCount: self.state.pageCount, page: self.state.page})
     })
     console.log('Updating Grid')
+  }
+
+  handlePageClick (data) {
+    var self = this
+    console.log('Click')
+    console.log(data.selected)
+    self.updateGrid({page: data.selected})
   }
   render () {
     return (
@@ -63,7 +65,7 @@ export default class RfGrid extends React.Component {
           pageCount={this.state.pageCount}
           marginPagesDisplayed={2}
           pageRangeDisplayed={5}
-          onPageChange={this.handlePageClick}
+          onPageChange={this.handlePageClick.bind(this)}
           containerClassName={'pagination'}
           subContainerClassName={'pages pagination'}
           activeClassName={'active'} />

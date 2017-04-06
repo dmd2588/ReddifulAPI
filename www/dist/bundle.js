@@ -6988,13 +6988,6 @@ var RfGrid = function (_React$Component) {
   }
 
   _createClass(RfGrid, [{
-    key: 'handlePageClick',
-    value: function handlePageClick(data) {
-      console.log('Click');
-      console.log(data.selected);
-      this.updateGrid({ page: data.selected });
-    }
-  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.updateGrid();
@@ -7009,6 +7002,14 @@ var RfGrid = function (_React$Component) {
         self.setState({ data: newData, pageCount: self.state.pageCount, page: self.state.page });
       });
       console.log('Updating Grid');
+    }
+  }, {
+    key: 'handlePageClick',
+    value: function handlePageClick(data) {
+      var self = this;
+      console.log('Click');
+      console.log(data.selected);
+      self.updateGrid({ page: data.selected });
     }
   }, {
     key: 'render',
@@ -7070,7 +7071,7 @@ var RfGrid = function (_React$Component) {
           pageCount: this.state.pageCount,
           marginPagesDisplayed: 2,
           pageRangeDisplayed: 5,
-          onPageChange: this.handlePageClick,
+          onPageChange: this.handlePageClick.bind(this),
           containerClassName: 'pagination',
           subContainerClassName: 'pages pagination',
           activeClassName: 'active' })
