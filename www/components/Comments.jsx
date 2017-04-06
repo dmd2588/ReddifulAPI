@@ -10,7 +10,7 @@ export default class Users extends React.Component {
         var users = res.data
         var myp = {
           title: 'Comments',
-          select_values: ['score', 'gilded', 'author', 'timestamp', 'create_utc'],
+          select_values: ['score', 'gilded', 'author', 'create_utc', 'body'],
           cards: comments.map(c => {
               // var commentUserMatch = (typeof users.find(u => u.redditor_id === c.author_id) === 'undefined');
               // console.log(users.find(u => u.redditor_id === "10brol"))
