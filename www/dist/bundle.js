@@ -6984,6 +6984,7 @@ var RfGrid = function (_React$Component) {
 
     _this.state = { data: { title: '', select_values: [], cards: [] }, pageCount: 5, page: 1 };
     _this.loadDataFromServer = _this.props.loadDataFromServer;
+    _this.retainOptions = _this.props.retainOptions;
     return _this;
   }
 
@@ -6997,7 +6998,10 @@ var RfGrid = function (_React$Component) {
     key: 'updateGrid',
     value: function updateGrid(options) {
       var self = this;
+      this.props.retainOptions(options);
+      console.log("RfGrid");
       console.log(options);
+      console.log("Captured");
       this.loadDataFromServer(options, function (newData) {
         self.setState({ data: newData, pageCount: self.state.pageCount, page: self.state.page });
       });
@@ -7009,9 +7013,13 @@ var RfGrid = function (_React$Component) {
       var self = this;
       console.log('Click');
       console.log(data.selected);
-      console.log(self.state.ops);
-      // self.props.retainOptions(self.state.ops)
-      self.updateGrid({ page: data.selected });
+      var ops = self.props.retainOptions();
+      var temp = ops == null ? {} : ops;
+      console.log(temp);
+      console.log('Click2');
+      temp["page"] = data.selected;
+      console.log(temp);
+      self.updateGrid(temp);
     }
   }, {
     key: 'render',
@@ -26341,13 +26349,22 @@ var style = {
 var Users = function (_React$Component) {
   _inherits(Users, _React$Component);
 
-  function Users() {
+  function Users(props) {
     _classCallCheck(this, Users);
 
-    return _possibleConstructorReturn(this, (Users.__proto__ || Object.getPrototypeOf(Users)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Users.__proto__ || Object.getPrototypeOf(Users)).call(this, props));
+
+    _this.state = { ops: {} };
+    return _this;
   }
 
   _createClass(Users, [{
+    key: 'retainOptions',
+    value: function retainOptions(ops) {
+      this.setState(ops);
+      return this.state.ops;
+    }
+  }, {
     key: 'loadDataFromServer',
     value: function loadDataFromServer(options, callback) {
       (0, _api.getComments)(options).then(function (res) {
@@ -26393,7 +26410,9 @@ var Users = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'container-no-width' },
-            _react2.default.createElement(_RfGrid2.default, { filterOptions: [], loadDataFromServer: function loadDataFromServer(ops, callback) {
+            _react2.default.createElement(_RfGrid2.default, { retainOptions: function retainOptions(o) {
+                return _this2.retainOptions(o);
+              }, filterOptions: [], loadDataFromServer: function loadDataFromServer(ops, callback) {
                 return _this2.loadDataFromServer(ops, callback);
               } })
           )
@@ -26914,13 +26933,22 @@ var style = {
 var Posts = function (_React$Component) {
   _inherits(Posts, _React$Component);
 
-  function Posts() {
+  function Posts(props) {
     _classCallCheck(this, Posts);
 
-    return _possibleConstructorReturn(this, (Posts.__proto__ || Object.getPrototypeOf(Posts)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Posts.__proto__ || Object.getPrototypeOf(Posts)).call(this, props));
+
+    _this.state = { ops: {} };
+    return _this;
   }
 
   _createClass(Posts, [{
+    key: 'retainOptions',
+    value: function retainOptions(ops) {
+      this.setState(ops);
+      return this.state.ops;
+    }
+  }, {
     key: 'loadDataFromServer',
     value: function loadDataFromServer(options, callback) {
       (0, _api.getPosts)(options).then(function (res) {
@@ -26961,7 +26989,9 @@ var Posts = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'container-no-width' },
-            _react2.default.createElement(_RfGrid2.default, { filterOptions: [{ name: 'is_self', value: false }], loadDataFromServer: function loadDataFromServer(ops, callback) {
+            _react2.default.createElement(_RfGrid2.default, { retainOptions: function retainOptions(o) {
+                return _this2.retainOptions(o);
+              }, filterOptions: [{ name: 'is_self', value: false }], loadDataFromServer: function loadDataFromServer(ops, callback) {
                 return _this2.loadDataFromServer(ops, callback);
               } })
           )
@@ -27078,7 +27108,7 @@ var SortFilter = function (_React$Component) {
         var temp = {};
         temp[c.name] = c.value;
         return temp;
-      }));
+      }), { order_by: '' });
     } else {
       _this.state = {};
     }
@@ -27109,23 +27139,27 @@ var SortFilter = function (_React$Component) {
   }, {
     key: 'onApply',
     value: function onApply() {
-      var sortSelect = '';
       // let filterText = ''
       var temp = {};
       console.log('clicked');
       for (var property in this.state) {
         if (this.state.hasOwnProperty(property)) {
-          console.log('here ' + property);
           temp['filter_' + property] = this.state[property];
         }
       }
       console.log(this.state);
 
-      if (sortSelect === '<default>') {
-        sortSelect = '';
+      if (this.state.order_by === '<default>') {
+        this.state.order_by = '';
       }
       temp['order_by'] = sortSelect;
       this.props.updateGrid(temp);
+    }
+  }, {
+    key: 'handleSelect',
+    value: function handleSelect(e) {
+      console.log(e.target.value);
+      this.setState({ order_by: e.target.value });
     }
   }, {
     key: 'render',
@@ -27169,7 +27203,7 @@ var SortFilter = function (_React$Component) {
           ),
           _react2.default.createElement(
             _reactBootstrap.FormControl,
-            { componentClass: 'select' },
+            { type: 'text', componentClass: 'select', onChange: this.handleSelect.bind(this) },
             this.props.select_values.map(this.makeOption)
           )
         ),
@@ -27430,13 +27464,22 @@ var style = {
 var Subreddits = function (_React$Component) {
   _inherits(Subreddits, _React$Component);
 
-  function Subreddits() {
+  function Subreddits(props) {
     _classCallCheck(this, Subreddits);
 
-    return _possibleConstructorReturn(this, (Subreddits.__proto__ || Object.getPrototypeOf(Subreddits)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Subreddits.__proto__ || Object.getPrototypeOf(Subreddits)).call(this, props));
+
+    _this.state = { ops: {} };
+    return _this;
   }
 
   _createClass(Subreddits, [{
+    key: 'retainOptions',
+    value: function retainOptions(ops) {
+      this.setState(ops);
+      return this.state.ops;
+    }
+  }, {
     key: 'loadDataFromServer',
     value: function loadDataFromServer(options, callback) {
       (0, _api.getSubreddits)(options).then(function (res) {
@@ -27460,12 +27503,6 @@ var Subreddits = function (_React$Component) {
       });
     }
   }, {
-    key: 'retainOptions',
-    value: function retainOptions(ops) {
-      var options = ops;
-      return options;
-    }
-  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -27479,9 +27516,9 @@ var Subreddits = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'container-no-width' },
-            _react2.default.createElement(_RfGrid2.default, { filterOptions: [], retainOoptions: function retainOoptions(o) {
+            _react2.default.createElement(_RfGrid2.default, { retainOptions: function retainOptions(o) {
                 return _this2.retainOptions(o);
-              }, loadDataFromServer: function loadDataFromServer(ops, callback) {
+              }, filterOptions: [], loadDataFromServer: function loadDataFromServer(ops, callback) {
                 return _this2.loadDataFromServer(ops, callback);
               } })
           )
@@ -27894,13 +27931,25 @@ var style = {
 var Users = function (_React$Component) {
   _inherits(Users, _React$Component);
 
-  function Users() {
+  function Users(props) {
     _classCallCheck(this, Users);
 
-    return _possibleConstructorReturn(this, (Users.__proto__ || Object.getPrototypeOf(Users)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Users.__proto__ || Object.getPrototypeOf(Users)).call(this, props));
+
+    _this.state = { ops: {} };
+    return _this;
   }
 
   _createClass(Users, [{
+    key: 'retainOptions',
+    value: function retainOptions(ops) {
+      console.log("options");
+      console.log(ops);
+      this.setState({ ops: ops });
+      console.log(this.state.ops);
+      return this.state.ops;
+    }
+  }, {
     key: 'loadDataFromServer',
     value: function loadDataFromServer(options, callback) {
       (0, _api.getUsers)(options).then(function (res) {
@@ -27937,7 +27986,9 @@ var Users = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'container-no-width' },
-            _react2.default.createElement(_RfGrid2.default, { filterOptions: [{ name: 'is_gold', value: false }, { name: 'verified', value: false }], loadDataFromServer: function loadDataFromServer(ops, callback) {
+            _react2.default.createElement(_RfGrid2.default, { retainOptions: function retainOptions(o) {
+                return _this2.retainOptions(o);
+              }, filterOptions: [{ name: 'is_gold', value: false }, { name: 'verified', value: false }], loadDataFromServer: function loadDataFromServer(ops, callback) {
                 return _this2.loadDataFromServer(ops, callback);
               } })
           )

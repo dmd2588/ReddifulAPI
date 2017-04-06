@@ -9,6 +9,17 @@ const style = {
 }
 
 export default class Users extends React.Component {
+    constructor (props) {
+    super(props)
+    this.state = {ops: {}}
+  }
+     retainOptions(ops){
+         console.log("options")
+         console.log(ops)
+       this.setState({ops: ops})
+       console.log(this.state.ops)
+       return this.state.ops
+   }
   loadDataFromServer (options, callback) {
     getUsers(options).then(function (res) {
       var users = res.data
@@ -30,13 +41,15 @@ export default class Users extends React.Component {
       callback(myp)
     })
   }
+    
+  
 
   render () {
     return (
       <div className='container'>
         <Paper style={style} zDepth={2}>
           <div className='container-no-width'>
-            <RfGrid filterOptions={[{name: 'is_gold', value: false}, {name: 'verified', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+            <RfGrid retainOptions={(o) => this.retainOptions(o)} filterOptions={[{name: 'is_gold', value: false}, {name: 'verified', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
           </div>
         </Paper>
       </div>

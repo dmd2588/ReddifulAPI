@@ -9,6 +9,7 @@ export default class RfGrid extends React.Component {
     super(props)
     this.state = {data: {title: '', select_values: [], cards: []}, pageCount: 5, page: 1}
     this.loadDataFromServer = this.props.loadDataFromServer
+    this.retainOptions = this.props.retainOptions
   }
 
   componentDidMount () {
@@ -18,7 +19,10 @@ export default class RfGrid extends React.Component {
 
   updateGrid (options) {
     var self = this
+    this.props.retainOptions(options)
+    console.log("RfGrid")
     console.log(options)
+    console.log("Captured")
     this.loadDataFromServer(options, function (newData) {
       self.setState({data: newData, pageCount: self.state.pageCount, page: self.state.page})
     })
@@ -29,9 +33,13 @@ export default class RfGrid extends React.Component {
     var self = this
     console.log('Click')
     console.log(data.selected)
-    console.log(self.state.ops)
-    // self.props.retainOptions(self.state.ops)
-    self.updateGrid({page: data.selected})
+    var ops = self.props.retainOptions()
+    var temp = (ops == null) ? {} : ops
+    console.log(temp)
+    console.log('Click2')
+    temp["page"] = data.selected
+    console.log(temp)
+    self.updateGrid(temp)
   }
   render () {
     return (

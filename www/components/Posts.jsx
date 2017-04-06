@@ -9,6 +9,14 @@ const style = {
 }
 
 export default class Posts extends React.Component {
+      constructor (props) {
+    super(props)
+    this.state = {ops: {}}
+  }
+     retainOptions(ops){
+       this.setState(ops)
+       return this.state.ops
+   }
   loadDataFromServer (options, callback) {
     getPosts(options).then(function (res) {
       var posts = res.data
@@ -43,7 +51,7 @@ export default class Posts extends React.Component {
       <div className='container'>
         <Paper style={style} zDepth={2}>
           <div className='container-no-width'>
-            <RfGrid filterOptions={[{name: 'is_self', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+            <RfGrid retainOptions={(o) => this.retainOptions(o)} filterOptions={[{name: 'is_self', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
           </div>
         </Paper>
       </div>
