@@ -16,7 +16,8 @@ from sqlalchemy.orm import joinedload
 from sqlalchemy import or_
 
 # The return value of create_engine() is our connection object
-con = sqlalchemy.create_engine(os.environ['DB_URL'], client_encoding='utf8')
+con = sqlalchemy.create_engine(os.environ['DB_URL'], client_encoding='utf8',
+                               pool_size=20, max_overflow=100)
 
 
 # We then bind the connection to MetaData()
@@ -223,6 +224,12 @@ def getComment(comment_id):
 def getUserComments(redditor_id, limit = 5):
     session = Session()
     query = session.query(Comment).filter(Comment.author_id == redditor_id)
+    return [row2dict(r) for r in query.limit(limit)]
+
+
+def getPostComments(link_id, limit = 5):
+    session = Session()
+    query = session.query(Comment).filter(Comment.link_id == link_id)
     return [row2dict(r) for r in query.limit(limit)]
 
 

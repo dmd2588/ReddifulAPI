@@ -1,7 +1,9 @@
 import React from 'react' //eslint-disable-line
-import Detail from './Details.jsx'
 import Paper from 'material-ui/Paper'
-import { getUserByID, getModerators, getSubreddits } from '../api.js'
+import { getUserByID, getModdedSubs } from '../api.js'
+import {List, ListItem} from 'material-ui/List'
+import Divider from 'material-ui/Divider'
+import Subheader from 'material-ui/Subheader'
 
 const style = {
   margin: 50,
@@ -14,56 +16,75 @@ export default class UserDetail extends React.Component {
     this.state = {
       user_id: props.match.params.user_id,
       user: {},
-      modSub: {}
+      modSub: []
     }
     console.log(props.match.params.user_id)
+  }
+
+  makeListItem (v, index) {
+    return (
+      <div key={index}>
+        <ListItem
+          href={'/subreddits/detail/' + v.subreddit_id}
+          primaryText={'/r/' + v.display_name}
+        />
+        <Divider inset />
+      </div>
+    )
   }
 
   componentDidMount () {
     var self = this
     getUserByID(self.state.user_id).then(function (res) {
-      var user = res.data
-      console.log(user)
-      getModerators({}, function (res) {
-        // var modSubId = res.find(r => r.user_id === user.id).sr_id
-        getSubreddits({}).then(function (res) {
-          // var modSub = modSubId ? res.data.find(s => s.id === modSubId) : {} || {}
-          self.setState({
-            user_id: self.state.user_id,
-            user: user,
-            modSub: undefined // modSub
-          })
+      self.setState({
+        user_id: self.state.user_id,
+        user: res.data,
+        modSub: self.state.modSub
+      })
+      getModdedSubs(self.state.user_id).then(function (res) {
+        self.setState({
+          user_id: self.state.user_id,
+          user: self.state.user,
+          modSub: res.data
         })
       })
     })
   }
 
   render () {
-    var details = Detail({
-      title: 'User - ' + this.state.user.name,
-      details: {
-        'Name': this.state.user.name,
-        'Link Karma': this.state.user.link_karma,
-        'Comment Karma': this.state.user.comment_karma,
-        'Email': this.state.user.email,
-        'Moderator of': {
-          name: 'undefined',
-          link: '/subreddits/detail/' + undefined
-        },
-        // 'Moderator of': {
-        //  name: this.state.modSub.display_name,
-        //  link: '/subreddits/detail/' + this.state.modSub.id
-        // }
-
-        'Created': (this.state.user.created_utc)
-      }
-    })
     return (
       <div className='container'>
         <Paper style={style} zDepth={2}>
           <div className='container-no-width'>
-            {details}
+            <h1>{this.state.user.name}<small> {this.state.user.created_utc}</small></h1>
           </div>
+          <List>
+            <Subheader>Details</Subheader>
+            <ListItem
+              primaryText='comment_karma'
+              secondaryText={this.state.user.comment_karma}
+            />
+            <Divider inset />
+            <ListItem
+              primaryText='link_karma'
+              secondaryText={this.state.user.link_karma}
+            />
+            <Divider inset />
+            <ListItem
+              primaryText='is_gold'
+              secondaryText={this.state.user.is_gold}
+            />
+            <Divider inset />
+            <ListItem
+              primaryText='verified'
+              secondaryText={this.state.user.verified}
+            />
+            <Divider inset />
+          </List>
+          <List>
+            <Subheader>Modded Subs</Subheader>
+            {this.state.modSub.map(this.makeListItem)}
+          </List>
         </Paper>
       </div>
     )

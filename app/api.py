@@ -112,6 +112,12 @@ def serve_post(post_id):
     return createJson(p), 200, DEFAULT_HEADERS
 
 
+@app.route('/api/posts/<string:post_id>/comments')
+def serve_post_comments(post_id):
+    p = query.getPostComments(post_id)
+    return createJson(p), 200, DEFAULT_HEADERS
+
+
 @app.route('/api/comments')
 def serve_comment_list():
     args = format_url_args()
