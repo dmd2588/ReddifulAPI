@@ -72,13 +72,16 @@ def getUsers(order_by="redditor_id", desc=False, page=0, per_page=25, **attr):
     else:
         query = query.order_by(order_by)
     page_count = int(math.ceil(query.count() / 25))
-    return [row2dict(r) for r in query.offset(page * per_page).limit(per_page)], page_count
+    result = [row2dict(r) for r in query.offset(page * per_page).limit(per_page)], page_count
+    session.close()
+    return result
 
 
 def getUser(user_id):
     session = Session()
     query = session.query(User).filter(User.redditor_id == user_id)
     row = query.first()
+    session.close()
     if row:
         return row2dict(row)
     return {}
@@ -147,13 +150,16 @@ def getPosts(order_by="submission_id", desc=False, page=0, per_page=25, **attr):
     else:
         query = query.order_by(order_by)
     page_count = int(math.ceil(query.count() / 25))
-    return [row2dict(r) for r in query.offset(page * per_page).limit(per_page)], page_count
+    result = [row2dict(r) for r in query.offset(page * per_page).limit(per_page)], page_count
+    session.close()
+    return result
 
 
 def getPost(post_id):
     session = Session()
     query = session.query(Post).filter(Post.submission_id == post_id)
     row = query.first()
+    session.close()
     if row:
         return row2dict(row)
     return {}
@@ -209,13 +215,16 @@ def getComments(order_by="comment_id", desc=False, page=0, per_page=25, **attr):
     else:
         query = query.order_by(order_by)
     page_count = int(math.ceil(query.count() / 25))
-    return [row2dict(r) for r in query.offset(page * per_page).limit(per_page)], page_count
+    result = [row2dict(r) for r in query.offset(page * per_page).limit(per_page)], page_count
+    session.close()
+    return result
 
 
 def getComment(comment_id):
     session = Session()
     query = session.query(Comment).filter(Comment.comment_id == comment_id)
     row = query.first()
+    session.close()
     if row:
         return row2dict(row)
     return {}
@@ -267,7 +276,9 @@ def getSubs(order_by="subreddit_id", desc=False, page=0, per_page=25, **attr):
     else:
         query = query.order_by(order_by)
     page_count = int(math.ceil(query.count() / 25))
-    return [row2dict(r) for r in query.offset(page * per_page).limit(per_page)], page_count
+    result = [row2dict(r) for r in query.offset(page * per_page).limit(per_page)], page_count
+    session.close()
+    return result
 
 
 def getSub(subreddit_id):
@@ -275,6 +286,7 @@ def getSub(subreddit_id):
     query = session.query(Subreddit).filter(
         Subreddit.subreddit_id == subreddit_id)
     row = query.first()
+    session.close()
     if row:
         return row2dict(row)
     return {}
