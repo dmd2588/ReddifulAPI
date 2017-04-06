@@ -348,7 +348,7 @@ exports.default = function (self, call) {
 
 exports.__esModule = true;
 
-var _assign = __webpack_require__(119);
+var _assign = __webpack_require__(118);
 
 var _assign2 = _interopRequireDefault(_assign);
 
@@ -2506,13 +2506,13 @@ module.exports = { debugTool: debugTool };
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_2__Redirect__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(264);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_3__Route__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(165);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__Router__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__StaticRouter__ = __webpack_require__(656);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_5__StaticRouter__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Switch__ = __webpack_require__(657);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_6__Switch__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__matchPath__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__matchPath__ = __webpack_require__(166);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_7__matchPath__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__withRouter__ = __webpack_require__(658);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_8__withRouter__["a"]; });
@@ -2593,14 +2593,8 @@ function getTests() {
 }
 
 function getUsers(options) {
-<<<<<<< HEAD
   var query = constructQuery('/api/users', options);
   return _axios2.default.get(query);
-=======
-  console.log(options);
-  // ?page=2&sortOrder=Desc&sortOn=link_karma'
-  return _axios2.default.get('/api/users');
->>>>>>> Adding options parameters
 }
 
 function getUserByID(ID) {
@@ -2664,7 +2658,7 @@ function getModerators(subID) {
 
 var global    = __webpack_require__(42)
   , core      = __webpack_require__(26)
-  , ctx       = __webpack_require__(122)
+  , ctx       = __webpack_require__(121)
   , hide      = __webpack_require__(60)
   , PROTOTYPE = 'prototype';
 
@@ -2728,7 +2722,7 @@ module.exports = $export;
 /* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var store      = __webpack_require__(130)('wks')
+var store      = __webpack_require__(129)('wks')
   , uid        = __webpack_require__(88)
   , Symbol     = __webpack_require__(42).Symbol
   , USE_SYMBOL = typeof Symbol == 'function';
@@ -3458,7 +3452,7 @@ if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
 
 var anObject       = __webpack_require__(58)
   , IE8_DOM_DEFINE = __webpack_require__(183)
-  , toPrimitive    = __webpack_require__(132)
+  , toPrimitive    = __webpack_require__(131)
   , dP             = Object.defineProperty;
 
 exports.f = __webpack_require__(51) ? Object.defineProperty : function defineProperty(O, P, Attributes){
@@ -3479,7 +3473,7 @@ exports.f = __webpack_require__(51) ? Object.defineProperty : function definePro
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
 var IObject = __webpack_require__(184)
-  , defined = __webpack_require__(123);
+  , defined = __webpack_require__(122);
 module.exports = function(it){
   return IObject(defined(it));
 };
@@ -3831,7 +3825,7 @@ var _assign = __webpack_require__(17);
 var ReactCurrentOwner = __webpack_require__(39);
 
 var warning = __webpack_require__(10);
-var canDefineProperty = __webpack_require__(171);
+var canDefineProperty = __webpack_require__(170);
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
 var REACT_ELEMENT_TYPE = __webpack_require__(268);
@@ -4224,7 +4218,7 @@ module.exports = function(it, key){
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
 var $keys       = __webpack_require__(189)
-  , enumBugKeys = __webpack_require__(124);
+  , enumBugKeys = __webpack_require__(123);
 
 module.exports = Object.keys || function keys(O){
   return $keys(O, enumBugKeys);
@@ -4520,7 +4514,7 @@ module.exports = PooledClass;
 var _assign = __webpack_require__(17);
 
 var ReactChildren = __webpack_require__(267);
-var ReactComponent = __webpack_require__(168);
+var ReactComponent = __webpack_require__(167);
 var ReactPureComponent = __webpack_require__(682);
 var ReactClass = __webpack_require__(678);
 var ReactDOMFactories = __webpack_require__(679);
@@ -5254,10 +5248,10 @@ function lighten(color, coefficient) {
 
 
 
-var DOMNamespaces = __webpack_require__(149);
+var DOMNamespaces = __webpack_require__(148);
 var setInnerHTML = __webpack_require__(109);
 
-var createMicrosoftUnsafeLocalFunction = __webpack_require__(156);
+var createMicrosoftUnsafeLocalFunction = __webpack_require__(155);
 var setTextContent = __webpack_require__(256);
 
 var ELEMENT_NODE_TYPE = 1;
@@ -5381,7 +5375,7 @@ var _prodInvariant = __webpack_require__(13);
 
 var EventPluginRegistry = __webpack_require__(103);
 var EventPluginUtils = __webpack_require__(104);
-var ReactErrorUtils = __webpack_require__(153);
+var ReactErrorUtils = __webpack_require__(152);
 
 var accumulateInto = __webpack_require__(250);
 var forEachAccumulated = __webpack_require__(251);
@@ -5977,7 +5971,7 @@ module.exports = ReactReconciler;
 
 var SyntheticEvent = __webpack_require__(41);
 
-var getEventTarget = __webpack_require__(159);
+var getEventTarget = __webpack_require__(158);
 
 /**
  * @interface UIEvent
@@ -6172,7 +6166,7 @@ module.exports = function(bitmap, value){
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
-var defined = __webpack_require__(123);
+var defined = __webpack_require__(122);
 module.exports = function(it){
   return Object(defined(it));
 };
@@ -7280,7 +7274,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = exports.makeSelectable = exports.ListItem = exports.List = undefined;
 
-var _List2 = __webpack_require__(140);
+var _List2 = __webpack_require__(139);
 
 var _List3 = _interopRequireDefault(_List2);
 
@@ -8349,7 +8343,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ControlLabel", function() { return __WEBPACK_IMPORTED_MODULE_12__ControlLabel__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__Col__ = __webpack_require__(495);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Col", function() { return __WEBPACK_IMPORTED_MODULE_13__Col__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__Collapse__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__Collapse__ = __webpack_require__(142);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Collapse", function() { return __WEBPACK_IMPORTED_MODULE_14__Collapse__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__Dropdown__ = __webpack_require__(99);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Dropdown", function() { return __WEBPACK_IMPORTED_MODULE_15__Dropdown__["a"]; });
@@ -8363,7 +8357,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormControl", function() { return __WEBPACK_IMPORTED_MODULE_19__FormControl__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__FormGroup__ = __webpack_require__(503);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "FormGroup", function() { return __WEBPACK_IMPORTED_MODULE_20__FormGroup__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__Glyphicon__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__Glyphicon__ = __webpack_require__(143);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Glyphicon", function() { return __WEBPACK_IMPORTED_MODULE_21__Glyphicon__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__Grid__ = __webpack_require__(224);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Grid", function() { return __WEBPACK_IMPORTED_MODULE_22__Grid__["a"]; });
@@ -8381,7 +8375,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ListGroup", function() { return __WEBPACK_IMPORTED_MODULE_28__ListGroup__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__ListGroupItem__ = __webpack_require__(225);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ListGroupItem", function() { return __WEBPACK_IMPORTED_MODULE_29__ListGroupItem__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__Media__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__Media__ = __webpack_require__(144);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Media", function() { return __WEBPACK_IMPORTED_MODULE_30__Media__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__MenuItem__ = __webpack_require__(518);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MenuItem", function() { return __WEBPACK_IMPORTED_MODULE_31__MenuItem__["a"]; });
@@ -8437,9 +8431,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SplitButton", function() { return __WEBPACK_IMPORTED_MODULE_56__SplitButton__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__Tab__ = __webpack_require__(540);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Tab", function() { return __WEBPACK_IMPORTED_MODULE_57__Tab__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__TabContainer__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__TabContainer__ = __webpack_require__(145);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabContainer", function() { return __WEBPACK_IMPORTED_MODULE_58__TabContainer__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__TabContent__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__TabContent__ = __webpack_require__(146);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TabContent", function() { return __WEBPACK_IMPORTED_MODULE_59__TabContent__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_60__Table__ = __webpack_require__(541);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Table", function() { return __WEBPACK_IMPORTED_MODULE_60__Table__["a"]; });
@@ -8899,7 +8893,7 @@ module.exports = EventPluginRegistry;
 
 var _prodInvariant = __webpack_require__(13);
 
-var ReactErrorUtils = __webpack_require__(153);
+var ReactErrorUtils = __webpack_require__(152);
 
 var invariant = __webpack_require__(9);
 var warning = __webpack_require__(10);
@@ -9133,10 +9127,10 @@ var _assign = __webpack_require__(17);
 
 var EventPluginRegistry = __webpack_require__(103);
 var ReactEventEmitterMixin = __webpack_require__(586);
-var ViewportMetrics = __webpack_require__(155);
+var ViewportMetrics = __webpack_require__(154);
 
 var getVendorPrefixedEventName = __webpack_require__(622);
-var isEventSupported = __webpack_require__(160);
+var isEventSupported = __webpack_require__(159);
 
 /**
  * Summary of `ReactBrowserEventEmitter` event handling:
@@ -9463,9 +9457,9 @@ module.exports = ReactBrowserEventEmitter;
 
 
 var SyntheticUIEvent = __webpack_require__(69);
-var ViewportMetrics = __webpack_require__(155);
+var ViewportMetrics = __webpack_require__(154);
 
-var getEventModifierState = __webpack_require__(158);
+var getEventModifierState = __webpack_require__(157);
 
 /**
  * @interface MouseEvent
@@ -9899,12 +9893,12 @@ module.exports = escapeTextContentForBrowser;
 
 
 var ExecutionEnvironment = __webpack_require__(20);
-var DOMNamespaces = __webpack_require__(149);
+var DOMNamespaces = __webpack_require__(148);
 
 var WHITESPACE_TEST = /^[ \r\n\t\f]/;
 var NONVISIBLE_TEST = /<(!--|link|noscript|meta|script|style)[ \r\n\t\f\/>]/;
 
-var createMicrosoftUnsafeLocalFunction = __webpack_require__(156);
+var createMicrosoftUnsafeLocalFunction = __webpack_require__(155);
 
 // SVG temp container for IE lacking innerHTML
 var reusableSVGContainer;
@@ -10576,33 +10570,6 @@ module.exports = exports['default'];
 
 /***/ }),
 /* 116 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10701,25 +10668,25 @@ module.exports = defaults;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 118 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = { "default": __webpack_require__(313), __esModule: true };
 
 /***/ }),
-/* 119 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = { "default": __webpack_require__(314), __esModule: true };
 
 /***/ }),
-/* 120 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = { "default": __webpack_require__(319), __esModule: true };
 
 /***/ }),
-/* 121 */
+/* 120 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -10729,7 +10696,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 122 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
@@ -10754,7 +10721,7 @@ module.exports = function(fn, that, length){
 };
 
 /***/ }),
-/* 123 */
+/* 122 */
 /***/ (function(module, exports) {
 
 // 7.2.1 RequireObjectCoercible(argument)
@@ -10764,7 +10731,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 124 */
+/* 123 */
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -10773,26 +10740,20 @@ module.exports = (
 ).split(',');
 
 /***/ }),
-/* 125 */
+/* 124 */
 /***/ (function(module, exports) {
 
 module.exports = true;
 
 /***/ }),
-/* 126 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject    = __webpack_require__(58)
-<<<<<<< HEAD
-  , dPs         = __webpack_require__(341)
-  , enumBugKeys = __webpack_require__(124)
-  , IE_PROTO    = __webpack_require__(129)('IE_PROTO')
-=======
   , dPs         = __webpack_require__(340)
   , enumBugKeys = __webpack_require__(123)
   , IE_PROTO    = __webpack_require__(128)('IE_PROTO')
->>>>>>> Adding options parameters
   , Empty       = function(){ /* empty */ }
   , PROTOTYPE   = 'prototype';
 
@@ -10832,13 +10793,13 @@ module.exports = Object.create || function create(O, Properties){
 
 
 /***/ }),
-/* 127 */
+/* 126 */
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 /***/ }),
-/* 128 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var def = __webpack_require__(43).f
@@ -10850,17 +10811,17 @@ module.exports = function(it, tag, stat){
 };
 
 /***/ }),
-/* 129 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(130)('keys')
+var shared = __webpack_require__(129)('keys')
   , uid    = __webpack_require__(88);
 module.exports = function(key){
   return shared[key] || (shared[key] = uid(key));
 };
 
 /***/ }),
-/* 130 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(42)
@@ -10871,7 +10832,7 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 131 */
+/* 130 */
 /***/ (function(module, exports) {
 
 // 7.1.4 ToInteger
@@ -10882,7 +10843,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 132 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
@@ -10899,13 +10860,13 @@ module.exports = function(it, S){
 };
 
 /***/ }),
-/* 133 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global         = __webpack_require__(42)
   , core           = __webpack_require__(26)
-  , LIBRARY        = __webpack_require__(125)
-  , wksExt         = __webpack_require__(134)
+  , LIBRARY        = __webpack_require__(124)
+  , wksExt         = __webpack_require__(133)
   , defineProperty = __webpack_require__(43).f;
 module.exports = function(name){
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -10913,13 +10874,13 @@ module.exports = function(name){
 };
 
 /***/ }),
-/* 134 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports.f = __webpack_require__(36);
 
 /***/ }),
-/* 135 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10950,7 +10911,7 @@ exports.default = off;
 module.exports = exports['default'];
 
 /***/ }),
-/* 136 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11019,7 +10980,7 @@ var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a
 };
 
 /***/ }),
-/* 137 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11110,7 +11071,7 @@ var createTransitionManager = function createTransitionManager() {
 exports.default = createTransitionManager;
 
 /***/ }),
-/* 138 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11128,7 +11089,7 @@ exports.default = function (str) {
 module.exports = exports["default"];
 
 /***/ }),
-/* 139 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11147,7 +11108,7 @@ exports.default = function (value) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 140 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11258,7 +11219,7 @@ exports.default = List;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 141 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var _isPlaceholder = __webpack_require__(218);
@@ -11284,13 +11245,13 @@ module.exports = function _curry1(fn) {
 
 
 /***/ }),
-/* 142 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(684);
 
 /***/ }),
-/* 143 */
+/* 142 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11540,7 +11501,7 @@ Collapse.defaultProps = defaultProps;
 /* harmony default export */ __webpack_exports__["a"] = Collapse;
 
 /***/ }),
-/* 144 */
+/* 143 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11612,7 +11573,7 @@ Glyphicon.propTypes = propTypes;
 /* harmony default export */ __webpack_exports__["a"] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__utils_bootstrapUtils__["bsClass"])('glyphicon', Glyphicon);
 
 /***/ }),
-/* 145 */
+/* 144 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11706,7 +11667,7 @@ Media.ListItem = __WEBPACK_IMPORTED_MODULE_12__MediaListItem__["a" /* default */
 /* harmony default export */ __webpack_exports__["a"] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_14__utils_bootstrapUtils__["bsClass"])('media', Media);
 
 /***/ }),
-/* 146 */
+/* 145 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11851,7 +11812,7 @@ TabContainer.childContextTypes = childContextTypes;
 /* harmony default export */ __webpack_exports__["a"] = __WEBPACK_IMPORTED_MODULE_5_uncontrollable___default()(TabContainer, { activeKey: 'onSelect' });
 
 /***/ }),
-/* 147 */
+/* 146 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12058,7 +12019,7 @@ TabContent.childContextTypes = childContextTypes;
 /* harmony default export */ __webpack_exports__["a"] = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__utils_bootstrapUtils__["bsClass"])('tab', TabContent);
 
 /***/ }),
-/* 148 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12079,7 +12040,7 @@ var Danger = __webpack_require__(558);
 var ReactDOMComponentTree = __webpack_require__(19);
 var ReactInstrumentation = __webpack_require__(32);
 
-var createMicrosoftUnsafeLocalFunction = __webpack_require__(156);
+var createMicrosoftUnsafeLocalFunction = __webpack_require__(155);
 var setInnerHTML = __webpack_require__(109);
 var setTextContent = __webpack_require__(256);
 
@@ -12289,7 +12250,7 @@ module.exports = DOMChildrenOperations;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 149 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12314,7 +12275,7 @@ var DOMNamespaces = {
 module.exports = DOMNamespaces;
 
 /***/ }),
-/* 150 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12378,7 +12339,7 @@ var KeyEscapeUtils = {
 module.exports = KeyEscapeUtils;
 
 /***/ }),
-/* 151 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12519,7 +12480,7 @@ module.exports = LinkedValueUtils;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 152 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12571,7 +12532,7 @@ module.exports = ReactComponentEnvironment;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 153 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12654,7 +12615,7 @@ module.exports = ReactErrorUtils;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 154 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12886,7 +12847,7 @@ module.exports = ReactUpdateQueue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 155 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12918,7 +12879,7 @@ var ViewportMetrics = {
 module.exports = ViewportMetrics;
 
 /***/ }),
-/* 156 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12955,7 +12916,7 @@ var createMicrosoftUnsafeLocalFunction = function (func) {
 module.exports = createMicrosoftUnsafeLocalFunction;
 
 /***/ }),
-/* 157 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13010,7 +12971,7 @@ function getEventCharCode(nativeEvent) {
 module.exports = getEventCharCode;
 
 /***/ }),
-/* 158 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13058,7 +13019,7 @@ function getEventModifierState(nativeEvent) {
 module.exports = getEventModifierState;
 
 /***/ }),
-/* 159 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13098,7 +13059,7 @@ function getEventTarget(nativeEvent) {
 module.exports = getEventTarget;
 
 /***/ }),
-/* 160 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13163,7 +13124,7 @@ function isEventSupported(eventNameSuffix, capture) {
 module.exports = isEventSupported;
 
 /***/ }),
-/* 161 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13210,7 +13171,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 module.exports = shouldUpdateReactComponent;
 
 /***/ }),
-/* 162 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13598,7 +13559,7 @@ module.exports = validateDOMNesting;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 163 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13632,7 +13593,7 @@ var _typeof2 = __webpack_require__(72);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
-var _keys = __webpack_require__(120);
+var _keys = __webpack_require__(119);
 
 var _keys2 = _interopRequireDefault(_keys);
 
@@ -13640,7 +13601,7 @@ var _objectWithoutProperties2 = __webpack_require__(6);
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
-var _assign = __webpack_require__(119);
+var _assign = __webpack_require__(118);
 
 var _assign2 = _interopRequireDefault(_assign);
 
@@ -13831,7 +13792,7 @@ exports.default = EventListener;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 164 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13855,7 +13816,7 @@ function getContainer(container, defaultContainer) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 165 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13893,7 +13854,7 @@ function validate(props, propName, componentName, location, propFullName) {
 exports.default = (0, _createChainableTypeChecker2.default)(validate);
 
 /***/ }),
-/* 166 */
+/* 165 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14009,7 +13970,7 @@ Router.childContextTypes = {
 /* harmony default export */ __webpack_exports__["a"] = Router;
 
 /***/ }),
-/* 167 */
+/* 166 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14084,7 +14045,7 @@ var matchPath = function matchPath(pathname) {
 /* harmony default export */ __webpack_exports__["a"] = matchPath;
 
 /***/ }),
-/* 168 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14102,9 +14063,9 @@ var matchPath = function matchPath(pathname) {
 
 var _prodInvariant = __webpack_require__(50);
 
-var ReactNoopUpdateQueue = __webpack_require__(169);
+var ReactNoopUpdateQueue = __webpack_require__(168);
 
-var canDefineProperty = __webpack_require__(171);
+var canDefineProperty = __webpack_require__(170);
 var emptyObject = __webpack_require__(79);
 var invariant = __webpack_require__(9);
 var warning = __webpack_require__(10);
@@ -14208,7 +14169,7 @@ module.exports = ReactComponent;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 169 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14310,7 +14271,7 @@ module.exports = ReactNoopUpdateQueue;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 170 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14341,7 +14302,7 @@ module.exports = ReactPropTypeLocationNames;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 171 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14373,7 +14334,7 @@ module.exports = canDefineProperty;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 172 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14417,6 +14378,33 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
+
+/***/ }),
+/* 172 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
 
 /***/ }),
 /* 173 */
@@ -14706,7 +14694,7 @@ module.exports = { "default": __webpack_require__(317), __esModule: true };
 
 exports.__esModule = true;
 
-var _from = __webpack_require__(118);
+var _from = __webpack_require__(117);
 
 var _from2 = _interopRequireDefault(_from);
 
@@ -14725,7 +14713,7 @@ exports.default = function (arr) {
 
 exports.__esModule = true;
 
-var _from = __webpack_require__(118);
+var _from = __webpack_require__(117);
 
 var _from2 = _interopRequireDefault(_from);
 
@@ -14768,7 +14756,7 @@ module.exports = !__webpack_require__(51) && !__webpack_require__(59)(function()
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(121);
+var cof = __webpack_require__(120);
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
   return cof(it) == 'String' ? it.split('') : Object(it);
 };
@@ -14779,19 +14767,14 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 
 "use strict";
 
-var LIBRARY        = __webpack_require__(125)
+var LIBRARY        = __webpack_require__(124)
   , $export        = __webpack_require__(35)
   , redefine       = __webpack_require__(192)
   , hide           = __webpack_require__(60)
   , has            = __webpack_require__(52)
   , Iterators      = __webpack_require__(74)
-<<<<<<< HEAD
-  , $iterCreate    = __webpack_require__(335)
-  , setToStringTag = __webpack_require__(128)
-=======
   , $iterCreate    = __webpack_require__(334)
   , setToStringTag = __webpack_require__(127)
->>>>>>> Adding options parameters
   , getPrototypeOf = __webpack_require__(188)
   , ITERATOR       = __webpack_require__(36)('iterator')
   , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
@@ -14861,7 +14844,7 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
 var pIE            = __webpack_require__(75)
   , createDesc     = __webpack_require__(76)
   , toIObject      = __webpack_require__(44)
-  , toPrimitive    = __webpack_require__(132)
+  , toPrimitive    = __webpack_require__(131)
   , has            = __webpack_require__(52)
   , IE8_DOM_DEFINE = __webpack_require__(183)
   , gOPD           = Object.getOwnPropertyDescriptor;
@@ -14881,7 +14864,7 @@ exports.f = __webpack_require__(51) ? gOPD : function getOwnPropertyDescriptor(O
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
 var $keys      = __webpack_require__(189)
-  , hiddenKeys = __webpack_require__(124).concat('length', 'prototype');
+  , hiddenKeys = __webpack_require__(123).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
   return $keys(O, hiddenKeys);
@@ -14894,7 +14877,7 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has         = __webpack_require__(52)
   , toObject    = __webpack_require__(77)
-  , IE_PROTO    = __webpack_require__(129)('IE_PROTO')
+  , IE_PROTO    = __webpack_require__(128)('IE_PROTO')
   , ObjectProto = Object.prototype;
 
 module.exports = Object.getPrototypeOf || function(O){
@@ -14911,13 +14894,8 @@ module.exports = Object.getPrototypeOf || function(O){
 
 var has          = __webpack_require__(52)
   , toIObject    = __webpack_require__(44)
-<<<<<<< HEAD
-  , arrayIndexOf = __webpack_require__(327)(false)
-  , IE_PROTO     = __webpack_require__(129)('IE_PROTO');
-=======
   , arrayIndexOf = __webpack_require__(326)(false)
   , IE_PROTO     = __webpack_require__(128)('IE_PROTO');
->>>>>>> Adding options parameters
 
 module.exports = function(object, names){
   var O      = toIObject(object)
@@ -14979,7 +14957,7 @@ module.exports = __webpack_require__(60);
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
-var toInteger = __webpack_require__(131)
+var toInteger = __webpack_require__(130)
   , min       = Math.min;
 module.exports = function(it){
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -15441,7 +15419,7 @@ module.exports = focusNode;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global) {
+
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -15467,11 +15445,7 @@ module.exports = focusNode;
  * @return {?DOMElement}
  */
 function getActiveElement(doc) /*?DOMElement*/{
-<<<<<<< HEAD
-  doc = doc || global.document;
-=======
   doc = doc || document;
->>>>>>> Adding options parameters
   if (typeof doc === 'undefined') {
     return null;
   }
@@ -15483,7 +15457,6 @@ function getActiveElement(doc) /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(116)))
 
 /***/ }),
 /* 205 */
@@ -19049,7 +19022,7 @@ PagerItem.defaultProps = defaultProps;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_core_js_object_assign__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_core_js_object_assign__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_core_js_object_assign___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_core_js_object_assign__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_objectWithoutProperties__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_objectWithoutProperties___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_objectWithoutProperties__);
@@ -20058,7 +20031,7 @@ module.exports = ReactDOMComponentFlags;
 
 var _assign = __webpack_require__(17);
 
-var LinkedValueUtils = __webpack_require__(151);
+var LinkedValueUtils = __webpack_require__(150);
 var ReactDOMComponentTree = __webpack_require__(19);
 var ReactUpdates = __webpack_require__(38);
 
@@ -20542,14 +20515,14 @@ var ReactInstanceMap = __webpack_require__(84);
 var ReactInstrumentation = __webpack_require__(32);
 var ReactMarkupChecksum = __webpack_require__(591);
 var ReactReconciler = __webpack_require__(68);
-var ReactUpdateQueue = __webpack_require__(154);
+var ReactUpdateQueue = __webpack_require__(153);
 var ReactUpdates = __webpack_require__(38);
 
 var emptyObject = __webpack_require__(79);
 var instantiateReactComponent = __webpack_require__(254);
 var invariant = __webpack_require__(9);
 var setInnerHTML = __webpack_require__(109);
-var shouldUpdateReactComponent = __webpack_require__(161);
+var shouldUpdateReactComponent = __webpack_require__(160);
 var warning = __webpack_require__(10);
 
 var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
@@ -21566,7 +21539,7 @@ var REACT_ELEMENT_TYPE = __webpack_require__(585);
 
 var getIteratorFn = __webpack_require__(619);
 var invariant = __webpack_require__(9);
-var KeyEscapeUtils = __webpack_require__(150);
+var KeyEscapeUtils = __webpack_require__(149);
 var warning = __webpack_require__(10);
 
 var SEPARATOR = '.';
@@ -21743,7 +21716,7 @@ var _reactDom = __webpack_require__(16);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _componentOrElement = __webpack_require__(165);
+var _componentOrElement = __webpack_require__(164);
 
 var _componentOrElement2 = _interopRequireDefault(_componentOrElement);
 
@@ -21751,7 +21724,7 @@ var _ownerDocument = __webpack_require__(85);
 
 var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
 
-var _getContainer = __webpack_require__(164);
+var _getContainer = __webpack_require__(163);
 
 var _getContainer2 = _interopRequireDefault(_getContainer);
 
@@ -22407,7 +22380,7 @@ var _on = __webpack_require__(89);
 
 var _on2 = _interopRequireDefault(_on);
 
-var _off = __webpack_require__(135);
+var _off = __webpack_require__(134);
 
 var _off2 = _interopRequireDefault(_off);
 
@@ -22571,7 +22544,7 @@ Link.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__matchPath__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__matchPath__ = __webpack_require__(166);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23109,8 +23082,8 @@ var ReactElement = __webpack_require__(49);
 
 var checkReactTypeSpec = __webpack_require__(686);
 
-var canDefineProperty = __webpack_require__(171);
-var getIteratorFn = __webpack_require__(172);
+var canDefineProperty = __webpack_require__(170);
+var getIteratorFn = __webpack_require__(171);
 var warning = __webpack_require__(10);
 
 function getDeclarationErrorAddendum() {
@@ -23363,7 +23336,7 @@ var _prodInvariant = __webpack_require__(50);
 var ReactCurrentOwner = __webpack_require__(39);
 var REACT_ELEMENT_TYPE = __webpack_require__(268);
 
-var getIteratorFn = __webpack_require__(172);
+var getIteratorFn = __webpack_require__(171);
 var invariant = __webpack_require__(9);
 var KeyEscapeUtils = __webpack_require__(266);
 var warning = __webpack_require__(10);
@@ -23708,7 +23681,7 @@ module.exports = __webpack_require__(275);
 var utils = __webpack_require__(31);
 var bind = __webpack_require__(177);
 var Axios = __webpack_require__(277);
-var defaults = __webpack_require__(117);
+var defaults = __webpack_require__(116);
 
 /**
  * Create an instance of Axios
@@ -23828,7 +23801,7 @@ module.exports = CancelToken;
 "use strict";
 
 
-var defaults = __webpack_require__(117);
+var defaults = __webpack_require__(116);
 var utils = __webpack_require__(31);
 var InterceptorManager = __webpack_require__(278);
 var dispatchRequest = __webpack_require__(279);
@@ -23982,7 +23955,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(31);
 var transformData = __webpack_require__(282);
 var isCancel = __webpack_require__(175);
-var defaults = __webpack_require__(117);
+var defaults = __webpack_require__(116);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -30493,7 +30466,7 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(116)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(172)))
 
 /***/ }),
 /* 313 */
@@ -30580,13 +30553,8 @@ module.exports = __webpack_require__(26).Symbol;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(194);
-<<<<<<< HEAD
-__webpack_require__(361);
-module.exports = __webpack_require__(134).f('iterator');
-=======
 __webpack_require__(360);
 module.exports = __webpack_require__(133).f('iterator');
->>>>>>> Adding options parameters
 
 /***/ }),
 /* 324 */
@@ -30634,7 +30602,7 @@ module.exports = function(IS_INCLUDES){
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
-var cof = __webpack_require__(121)
+var cof = __webpack_require__(120)
   , TAG = __webpack_require__(36)('toStringTag')
   // ES3 wrong here
   , ARG = cof(function(){ return arguments; }()) == 'Arguments';
@@ -30677,7 +30645,7 @@ module.exports = function(object, index, value){
 
 // all enumerable object keys, includes symbols
 var getKeys = __webpack_require__(53)
-  , gOPS    = __webpack_require__(127)
+  , gOPS    = __webpack_require__(126)
   , pIE     = __webpack_require__(75);
 module.exports = function(it){
   var result     = getKeys(it)
@@ -30715,7 +30683,7 @@ module.exports = function(it){
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
-var cof = __webpack_require__(121);
+var cof = __webpack_require__(120);
 module.exports = Array.isArray || function isArray(arg){
   return cof(arg) == 'Array';
 };
@@ -30743,9 +30711,9 @@ module.exports = function(iterator, fn, value, entries){
 
 "use strict";
 
-var create         = __webpack_require__(126)
+var create         = __webpack_require__(125)
   , descriptor     = __webpack_require__(76)
-  , setToStringTag = __webpack_require__(128)
+  , setToStringTag = __webpack_require__(127)
   , IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
@@ -30871,7 +30839,7 @@ var meta = module.exports = {
 
 // 19.1.2.1 Object.assign(target, source, ...)
 var getKeys  = __webpack_require__(53)
-  , gOPS     = __webpack_require__(127)
+  , gOPS     = __webpack_require__(126)
   , pIE      = __webpack_require__(75)
   , toObject = __webpack_require__(77)
   , IObject  = __webpack_require__(184)
@@ -30961,7 +30929,7 @@ module.exports = {
   set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
     function(test, buggy, set){
       try {
-        set = __webpack_require__(122)(Function.call, __webpack_require__(186).f(Object.prototype, '__proto__').set, 2);
+        set = __webpack_require__(121)(Function.call, __webpack_require__(186).f(Object.prototype, '__proto__').set, 2);
         set(test, []);
         buggy = !(test instanceof Array);
       } catch(e){ buggy = true; }
@@ -30979,8 +30947,8 @@ module.exports = {
 /* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(131)
-  , defined   = __webpack_require__(123);
+var toInteger = __webpack_require__(130)
+  , defined   = __webpack_require__(122);
 // true  -> String#at
 // false -> String#codePointAt
 module.exports = function(TO_STRING){
@@ -31001,7 +30969,7 @@ module.exports = function(TO_STRING){
 /* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(131)
+var toInteger = __webpack_require__(130)
   , max       = Math.max
   , min       = Math.min;
 module.exports = function(index, length){
@@ -31028,7 +30996,7 @@ module.exports = __webpack_require__(26).getIteratorMethod = function(it){
 
 "use strict";
 
-var ctx            = __webpack_require__(122)
+var ctx            = __webpack_require__(121)
   , $export        = __webpack_require__(35)
   , toObject       = __webpack_require__(77)
   , call           = __webpack_require__(333)
@@ -31121,7 +31089,7 @@ $export($export.S + $export.F, 'Object', {assign: __webpack_require__(339)});
 
 var $export = __webpack_require__(35)
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-$export($export.S, 'Object', {create: __webpack_require__(126)});
+$export($export.S, 'Object', {create: __webpack_require__(125)});
 
 /***/ }),
 /* 350 */
@@ -31187,34 +31155,21 @@ var global         = __webpack_require__(42)
   , redefine       = __webpack_require__(192)
   , META           = __webpack_require__(338).KEY
   , $fails         = __webpack_require__(59)
-  , shared         = __webpack_require__(130)
-  , setToStringTag = __webpack_require__(128)
+  , shared         = __webpack_require__(129)
+  , setToStringTag = __webpack_require__(127)
   , uid            = __webpack_require__(88)
   , wks            = __webpack_require__(36)
-<<<<<<< HEAD
-  , wksExt         = __webpack_require__(134)
-  , wksDefine      = __webpack_require__(133)
-  , keyOf          = __webpack_require__(338)
-  , enumKeys       = __webpack_require__(330)
-  , isArray        = __webpack_require__(333)
-=======
   , wksExt         = __webpack_require__(133)
   , wksDefine      = __webpack_require__(132)
   , keyOf          = __webpack_require__(337)
   , enumKeys       = __webpack_require__(329)
   , isArray        = __webpack_require__(332)
->>>>>>> Adding options parameters
   , anObject       = __webpack_require__(58)
   , toIObject      = __webpack_require__(44)
-  , toPrimitive    = __webpack_require__(132)
+  , toPrimitive    = __webpack_require__(131)
   , createDesc     = __webpack_require__(76)
-<<<<<<< HEAD
-  , _create        = __webpack_require__(126)
-  , gOPNExt        = __webpack_require__(342)
-=======
   , _create        = __webpack_require__(125)
   , gOPNExt        = __webpack_require__(341)
->>>>>>> Adding options parameters
   , $GOPD          = __webpack_require__(186)
   , $DP            = __webpack_require__(43)
   , $keys          = __webpack_require__(53)
@@ -31342,9 +31297,9 @@ if(!USE_NATIVE){
   $DP.f   = $defineProperty;
   __webpack_require__(187).f = gOPNExt.f = $getOwnPropertyNames;
   __webpack_require__(75).f  = $propertyIsEnumerable;
-  __webpack_require__(127).f = $getOwnPropertySymbols;
+  __webpack_require__(126).f = $getOwnPropertySymbols;
 
-  if(DESCRIPTORS && !__webpack_require__(125)){
+  if(DESCRIPTORS && !__webpack_require__(124)){
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
   }
 
@@ -31459,13 +31414,13 @@ $export($export.S, 'Object', {
 /* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(133)('asyncIterator');
+__webpack_require__(132)('asyncIterator');
 
 /***/ }),
 /* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(133)('observable');
+__webpack_require__(132)('observable');
 
 /***/ }),
 /* 360 */
@@ -31494,11 +31449,7 @@ exports = module.exports = __webpack_require__(78)(true);
 
 
 // module
-<<<<<<< HEAD
-exports.push([module.i, ".theme--avatar--3OjJzi5y {\n  background-color: rgb(158, 158, 158);\n  border-radius: 50%;\n  color: rgb(255, 255, 255);\n  display: inline-block;\n  font-size: 24px;\n  height: 40px;\n  overflow: hidden;\n  position: relative;\n  text-align: center;\n  vertical-align: middle;\n  width: 40px;\n\n  box-sizing: border-box;\n\n  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n\n  -webkit-font-smoothing: antialiased;\n\n  font-smoothing: antialiased;\n\n  -webkit-text-size-adjust: 100%;\n\n      -ms-text-size-adjust: 100%;\n\n          text-size-adjust: 100%\n}\n.theme--avatar--3OjJzi5y *,\n    .theme--avatar--3OjJzi5y *::after,\n    .theme--avatar--3OjJzi5y *::before {\n  box-sizing: border-box;\n  -webkit-font-smoothing: antialiased;\n  font-smoothing: antialiased;\n  -webkit-text-size-adjust: 100%;\n      -ms-text-size-adjust: 100%;\n          text-size-adjust: 100%;\n  -webkit-touch-callout: none\n}\n.theme--avatar--3OjJzi5y > svg {\n  fill: currentColor;\n  height: 40px;\n  width: 1em\n}\n.theme--avatar--3OjJzi5y > img {\n  height: auto;\n  max-width: 100%\n}\n.theme--image--2Ueo9LOL {\n  background-color: transparent;\n  background-position: center;\n  background-size: cover;\n  border-radius: 50%;\n  display: block;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n}\n.theme--letter--26GdBUCs {\n  display: block;\n  line-height: 40px;\n  width: 100%;\n}\n", "", {"version":3,"sources":["/home/shea/Documents/idb/node_modules/react-toolbox/lib/avatar/theme.css"],"names":[],"mappings":"AA+XA;EACE,qCAA2C;EAC3C,mBAAmB;EACnB,0BAA2B;EAC3B,sBAAsB;EACtB,gBAAmC;EACnC,aAA2B;EAC3B,iBAAiB;EACjB,mBAAmB;EACnB,mBAAmB;EACnB,uBAAuB;EACvB,YAA0B;;EAlCxB,uBAAuB;;EACvB,wDAAmC;;EACnC,oCAAoC;;EACpC,4BAA4B;;EAC5B,+BAAuB;;MAAvB,2BAAuB;;UAAvB,sBAAuB;CA4C1B;AA1CG;;;EAGE,uBAAuB;EACvB,oCAAoC;EACpC,4BAA4B;EAC5B,+BAAuB;MAAvB,2BAAuB;UAAvB,uBAAuB;EACvB,2BAA4B;CAC7B;AAwBH;EACE,mBAAmB;EACnB,aAA2B;EAC3B,UAAW;CACZ;AAED;EACE,aAAa;EACb,eAAgB;CACjB;AAEH;EACE,8BAA8B;EAC9B,4BAA4B;EAC5B,uBAAuB;EACvB,mBAAmB;EACnB,eAAe;EACf,aAAa;EACb,mBAAmB;EACnB,YAAY;CACb;AACD;EACE,eAAe;EACf,kBAAgC;EAChC,YAAY;CACb","file":"theme.css","sourcesContent":[":root {\n  --palette-red-50: rgb(255, 235, 238);\n  --palette-red-100: rgb(255, 205, 210);\n  --palette-red-200: rgb(239, 154, 154);\n  --palette-red-300: rgb(229, 115, 115);\n  --palette-red-400: rgb(239, 83, 80);\n  --palette-red-500: rgb(244, 67, 54);\n  --palette-red-600: rgb(229, 57, 53);\n  --palette-red-700: rgb(211, 47, 47);\n  --palette-red-800: rgb(198, 40, 40);\n  --palette-red-900: rgb(183, 28, 28);\n  --palette-red-a100: rgb(255, 138, 128);\n  --palette-red-a200: rgb(255, 82, 82);\n  --palette-red-a400: rgb(255, 23, 68);\n  --palette-red-a700: rgb(213, 0, 0);\n\n  --palette-pink-50: rgb(252, 228, 236);\n  --palette-pink-100: rgb(248, 187, 208);\n  --palette-pink-200: rgb(244, 143, 177);\n  --palette-pink-300: rgb(240, 98, 146);\n  --palette-pink-400: rgb(236, 64, 122);\n  --palette-pink-500: rgb(233, 30, 99);\n  --palette-pink-600: rgb(216, 27, 96);\n  --palette-pink-700: rgb(194, 24, 91);\n  --palette-pink-800: rgb(173, 20, 87);\n  --palette-pink-900: rgb(136, 14, 79);\n  --palette-pink-a100: rgb(255, 128, 171);\n  --palette-pink-a200: rgb(255, 64, 129);\n  --palette-pink-a400: rgb(245, 0, 87);\n  --palette-pink-a700: rgb(197, 17, 98);\n\n  --palette-purple-50: rgb(243, 229, 245);\n  --palette-purple-100: rgb(225, 190, 231);\n  --palette-purple-200: rgb(206, 147, 216);\n  --palette-purple-300: rgb(186, 104, 200);\n  --palette-purple-400: rgb(171, 71, 188);\n  --palette-purple-500: rgb(156, 39, 176);\n  --palette-purple-600: rgb(142, 36, 170);\n  --palette-purple-700: rgb(123, 31, 162);\n  --palette-purple-800: rgb(106, 27, 154);\n  --palette-purple-900: rgb(74, 20, 140);\n  --palette-purple-a100: rgb(234, 128, 252);\n  --palette-purple-a200: rgb(224, 64, 251);\n  --palette-purple-a400: rgb(213, 0, 249);\n  --palette-purple-a700: rgb(170, 0, 255);\n\n  --palette-deep-purple-50: rgb(237, 231, 246);\n  --palette-deep-purple-100: rgb(209, 196, 233);\n  --palette-deep-purple-200: rgb(179, 157, 219);\n  --palette-deep-purple-300: rgb(149, 117, 205);\n  --palette-deep-purple-400: rgb(126, 87, 194);\n  --palette-deep-purple-500: rgb(103, 58, 183);\n  --palette-deep-purple-600: rgb(94, 53, 177);\n  --palette-deep-purple-700: rgb(81, 45, 168);\n  --palette-deep-purple-800: rgb(69, 39, 160);\n  --palette-deep-purple-900: rgb(49, 27, 146);\n  --palette-deep-purple-a100: rgb(179, 136, 255);\n  --palette-deep-purple-a200: rgb(124, 77, 255);\n  --palette-deep-purple-a400: rgb(101, 31, 255);\n  --palette-deep-purple-a700: rgb(98, 0, 234);\n\n  --palette-indigo-50: rgb(232, 234, 246);\n  --palette-indigo-100: rgb(197, 202, 233);\n  --palette-indigo-200: rgb(159, 168, 218);\n  --palette-indigo-300: rgb(121, 134, 203);\n  --palette-indigo-400: rgb(92, 107, 192);\n  --palette-indigo-500: rgb(63, 81, 181);\n  --palette-indigo-600: rgb(57, 73, 171);\n  --palette-indigo-700: rgb(48, 63, 159);\n  --palette-indigo-800: rgb(40, 53, 147);\n  --palette-indigo-900: rgb(26, 35, 126);\n  --palette-indigo-a100: rgb(140, 158, 255);\n  --palette-indigo-a200: rgb(83, 109, 254);\n  --palette-indigo-a400: rgb(61, 90, 254);\n  --palette-indigo-a700: rgb(48, 79, 254);\n\n  --palette-blue-50: rgb(227, 242, 253);\n  --palette-blue-100: rgb(187, 222, 251);\n  --palette-blue-200: rgb(144, 202, 249);\n  --palette-blue-300: rgb(100, 181, 246);\n  --palette-blue-400: rgb(66, 165, 245);\n  --palette-blue-500: rgb(33, 150, 243);\n  --palette-blue-600: rgb(30, 136, 229);\n  --palette-blue-700: rgb(25, 118, 210);\n  --palette-blue-800: rgb(21, 101, 192);\n  --palette-blue-900: rgb(13, 71, 161);\n  --palette-blue-a100: rgb(130, 177, 255);\n  --palette-blue-a200: rgb(68, 138, 255);\n  --palette-blue-a400: rgb(41, 121, 255);\n  --palette-blue-a700: rgb(41, 98, 255);\n\n  --palette-light-blue-50: rgb(225, 245, 254);\n  --palette-light-blue-100: rgb(179, 229, 252);\n  --palette-light-blue-200: rgb(129, 212, 250);\n  --palette-light-blue-300: rgb(79, 195, 247);\n  --palette-light-blue-400: rgb(41, 182, 246);\n  --palette-light-blue-500: rgb(3, 169, 244);\n  --palette-light-blue-600: rgb(3, 155, 229);\n  --palette-light-blue-700: rgb(2, 136, 209);\n  --palette-light-blue-800: rgb(2, 119, 189);\n  --palette-light-blue-900: rgb(1, 87, 155);\n  --palette-light-blue-a100: rgb(128, 216, 255);\n  --palette-light-blue-a200: rgb(64, 196, 255);\n  --palette-light-blue-a400: rgb(0, 176, 255);\n  --palette-light-blue-a700: rgb(0, 145, 234);\n\n  --palette-cyan-50: rgb(224, 247, 250);\n  --palette-cyan-100: rgb(178, 235, 242);\n  --palette-cyan-200: rgb(128, 222, 234);\n  --palette-cyan-300: rgb(77, 208, 225);\n  --palette-cyan-400: rgb(38, 198, 218);\n  --palette-cyan-500: rgb(0, 188, 212);\n  --palette-cyan-600: rgb(0, 172, 193);\n  --palette-cyan-700: rgb(0, 151, 167);\n  --palette-cyan-800: rgb(0, 131, 143);\n  --palette-cyan-900: rgb(0, 96, 100);\n  --palette-cyan-a100: rgb(132, 255, 255);\n  --palette-cyan-a200: rgb(24, 255, 255);\n  --palette-cyan-a400: rgb(0, 229, 255);\n  --palette-cyan-a700: rgb(0, 184, 212);\n\n  --palette-teal-50: rgb(224, 242, 241);\n  --palette-teal-100: rgb(178, 223, 219);\n  --palette-teal-200: rgb(128, 203, 196);\n  --palette-teal-300: rgb(77, 182, 172);\n  --palette-teal-400: rgb(38, 166, 154);\n  --palette-teal-500: rgb(0, 150, 136);\n  --palette-teal-600: rgb(0, 137, 123);\n  --palette-teal-700: rgb(0, 121, 107);\n  --palette-teal-800: rgb(0, 105, 92);\n  --palette-teal-900: rgb(0, 77, 64);\n  --palette-teal-a100: rgb(167, 255, 235);\n  --palette-teal-a200: rgb(100, 255, 218);\n  --palette-teal-a400: rgb(29, 233, 182);\n  --palette-teal-a700: rgb(0, 191, 165);\n\n  --palette-green-50: rgb(232, 245, 233);\n  --palette-green-100: rgb(200, 230, 201);\n  --palette-green-200: rgb(165, 214, 167);\n  --palette-green-300: rgb(129, 199, 132);\n  --palette-green-400: rgb(102, 187, 106);\n  --palette-green-500: rgb(76, 175, 80);\n  --palette-green-600: rgb(67, 160, 71);\n  --palette-green-700: rgb(56, 142, 60);\n  --palette-green-800: rgb(46, 125, 50);\n  --palette-green-900: rgb(27, 94, 32);\n  --palette-green-a100: rgb(185, 246, 202);\n  --palette-green-a200: rgb(105, 240, 174);\n  --palette-green-a400: rgb(0, 230, 118);\n  --palette-green-a700: rgb(0, 200, 83);\n\n  --palette-light-green-50: rgb(241, 248, 233);\n  --palette-light-green-100: rgb(220, 237, 200);\n  --palette-light-green-200: rgb(197, 225, 165);\n  --palette-light-green-300: rgb(174, 213, 129);\n  --palette-light-green-400: rgb(156, 204, 101);\n  --palette-light-green-500: rgb(139, 195, 74);\n  --palette-light-green-600: rgb(124, 179, 66);\n  --palette-light-green-700: rgb(104, 159, 56);\n  --palette-light-green-800: rgb(85, 139, 47);\n  --palette-light-green-900: rgb(51, 105, 30);\n  --palette-light-green-a100: rgb(204, 255, 144);\n  --palette-light-green-a200: rgb(178, 255, 89);\n  --palette-light-green-a400: rgb(118, 255, 3);\n  --palette-light-green-a700: rgb(100, 221, 23);\n\n  --palette-lime-50: rgb(249, 251, 231);\n  --palette-lime-100: rgb(240, 244, 195);\n  --palette-lime-200: rgb(230, 238, 156);\n  --palette-lime-300: rgb(220, 231, 117);\n  --palette-lime-400: rgb(212, 225, 87);\n  --palette-lime-500: rgb(205, 220, 57);\n  --palette-lime-600: rgb(192, 202, 51);\n  --palette-lime-700: rgb(175, 180, 43);\n  --palette-lime-800: rgb(158, 157, 36);\n  --palette-lime-900: rgb(130, 119, 23);\n  --palette-lime-a100: rgb(244, 255, 129);\n  --palette-lime-a200: rgb(238, 255, 65);\n  --palette-lime-a400: rgb(198, 255, 0);\n  --palette-lime-a700: rgb(174, 234, 0);\n\n  --palette-yellow-50: rgb(255, 253, 231);\n  --palette-yellow-100: rgb(255, 249, 196);\n  --palette-yellow-200: rgb(255, 245, 157);\n  --palette-yellow-300: rgb(255, 241, 118);\n  --palette-yellow-400: rgb(255, 238, 88);\n  --palette-yellow-500: rgb(255, 235, 59);\n  --palette-yellow-600: rgb(253, 216, 53);\n  --palette-yellow-700: rgb(251, 192, 45);\n  --palette-yellow-800: rgb(249, 168, 37);\n  --palette-yellow-900: rgb(245, 127, 23);\n  --palette-yellow-a100: rgb(255, 255, 141);\n  --palette-yellow-a200: rgb(255, 255, 0);\n  --palette-yellow-a400: rgb(255, 234, 0);\n  --palette-yellow-a700: rgb(255, 214, 0);\n\n  --palette-amber-50: rgb(255, 248, 225);\n  --palette-amber-100: rgb(255, 236, 179);\n  --palette-amber-200: rgb(255, 224, 130);\n  --palette-amber-300: rgb(255, 213, 79);\n  --palette-amber-400: rgb(255, 202, 40);\n  --palette-amber-500: rgb(255, 193, 7);\n  --palette-amber-600: rgb(255, 179, 0);\n  --palette-amber-700: rgb(255, 160, 0);\n  --palette-amber-800: rgb(255, 143, 0);\n  --palette-amber-900: rgb(255, 111, 0);\n  --palette-amber-a100: rgb(255, 229, 127);\n  --palette-amber-a200: rgb(255, 215, 64);\n  --palette-amber-a400: rgb(255, 196, 0);\n  --palette-amber-a700: rgb(255, 171, 0);\n\n  --palette-orange-50: rgb(255, 243, 224);\n  --palette-orange-100: rgb(255, 224, 178);\n  --palette-orange-200: rgb(255, 204, 128);\n  --palette-orange-300: rgb(255, 183, 77);\n  --palette-orange-400: rgb(255, 167, 38);\n  --palette-orange-500: rgb(255, 152, 0);\n  --palette-orange-600: rgb(251, 140, 0);\n  --palette-orange-700: rgb(245, 124, 0);\n  --palette-orange-800: rgb(239, 108, 0);\n  --palette-orange-900: rgb(230, 81, 0);\n  --palette-orange-a100: rgb(255, 209, 128);\n  --palette-orange-a200: rgb(255, 171, 64);\n  --palette-orange-a400: rgb(255, 145, 0);\n  --palette-orange-a700: rgb(255, 109, 0);\n\n  --palette-deep-orange-50: rgb(251, 233, 231);\n  --palette-deep-orange-100: rgb(255, 204, 188);\n  --palette-deep-orange-200: rgb(255, 171, 145);\n  --palette-deep-orange-300: rgb(255, 138, 101);\n  --palette-deep-orange-400: rgb(255, 112, 67);\n  --palette-deep-orange-500: rgb(255, 87, 34);\n  --palette-deep-orange-600: rgb(244, 81, 30);\n  --palette-deep-orange-700: rgb(230, 74, 25);\n  --palette-deep-orange-800: rgb(216, 67, 21);\n  --palette-deep-orange-900: rgb(191, 54, 12);\n  --palette-deep-orange-a100: rgb(255, 158, 128);\n  --palette-deep-orange-a200: rgb(255, 110, 64);\n  --palette-deep-orange-a400: rgb(255, 61, 0);\n  --palette-deep-orange-a700: rgb(221, 44, 0);\n\n  --palette-brown-50: rgb(239, 235, 233);\n  --palette-brown-100: rgb(215, 204, 200);\n  --palette-brown-200: rgb(188, 170, 164);\n  --palette-brown-300: rgb(161, 136, 127);\n  --palette-brown-400: rgb(141, 110, 99);\n  --palette-brown-500: rgb(121, 85, 72);\n  --palette-brown-600: rgb(109, 76, 65);\n  --palette-brown-700: rgb(93, 64, 55);\n  --palette-brown-800: rgb(78, 52, 46);\n  --palette-brown-900: rgb(62, 39, 35);\n\n  --palette-grey-50: rgb(250, 250, 250);\n  --palette-grey-100: rgb(245, 245, 245);\n  --palette-grey-200: rgb(238, 238, 238);\n  --palette-grey-300: rgb(224, 224, 224);\n  --palette-grey-400: rgb(189, 189, 189);\n  --palette-grey-500: rgb(158, 158, 158);\n  --palette-grey-600: rgb(117, 117, 117);\n  --palette-grey-700: rgb(97, 97, 97);\n  --palette-grey-800: rgb(66, 66, 66);\n  --palette-grey-900: rgb(33, 33, 33);\n\n  --palette-blue-grey-50: rgb(236, 239, 241);\n  --palette-blue-grey-100: rgb(207, 216, 220);\n  --palette-blue-grey-200: rgb(176, 190, 197);\n  --palette-blue-grey-300: rgb(144, 164, 174);\n  --palette-blue-grey-400: rgb(120, 144, 156);\n  --palette-blue-grey-500: rgb(96, 125, 139);\n  --palette-blue-grey-600: rgb(84, 110, 122);\n  --palette-blue-grey-700: rgb(69, 90, 100);\n  --palette-blue-grey-800: rgb(55, 71, 79);\n  --palette-blue-grey-900: rgb(38, 50, 56);\n\n  --color-black: rgb(0, 0, 0);\n  --color-white: rgb(255, 255, 255);\n  --color-dark-contrast: var(--color-white);\n  --color-light-contrast: var(--color-black);\n}\n:root {\n  --color-divider: var(--palette-grey-200);\n  --color-background: var(--color-white);\n  --color-text: var(--palette-grey-900);\n  --color-text-secondary: var(--palette-grey-600);\n\n  --color-primary: var(--palette-indigo-500);\n  --color-primary-dark: var(--palette-indigo-700);\n  --color-accent: var(--palette-pink-a200);\n  --color-accent-dark: var(--palette-pink-700);\n  --color-primary-contrast: var(--color-dark-contrast);\n  --color-accent-contrast: var(--color-dark-contrast);\n\n  --unit: 10px;\n\n  --preferred-font: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n  --font-size: calc(1.6 * var(--unit));\n  --font-size-tiny: calc(1.2 * var(--unit));\n  --font-size-small: calc(1.4 * var(--unit));\n  --font-size-normal: var(--font-size);\n  --font-size-big: calc(1.8 * var(--unit));\n  --font-weight-thin: 300;\n  --font-weight-normal: 400;\n  --font-weight-semi-bold: 500;\n  --font-weight-bold: 700;\n\n  --shadow-2p:\n    0 2px 2px 0 rgba(0, 0, 0, 0.14),\n    0 3px 1px -2px rgba(0, 0, 0, 0.2),\n    0 1px 5px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-3p:\n    0 3px 4px 0 rgba(0, 0, 0, 0.14),\n    0 3px 3px -2px rgba(0, 0, 0, 0.2),\n    0 1px 8px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-4p:\n    0 4px 5px 0 rgba(0, 0, 0, 0.14),\n    0 1px 10px 0 rgba(0, 0, 0, 0.12),\n    0 2px 4px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-6p:\n    0 6px 10px 0 rgba(0, 0, 0, 0.14),\n    0 1px 18px 0 rgba(0, 0, 0, 0.12),\n    0 3px 5px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-8p:\n    0 8px 10px 1px rgba(0, 0, 0, 0.14),\n    0 3px 14px 2px rgba(0, 0, 0, 0.12),\n    0 5px 5px -3px rgba(0, 0, 0, 0.2);\n\n  --shadow-16p:\n    0 16px 24px 2px rgba(0, 0, 0, 0.14),\n    0 6px 30px 5px rgba(0, 0, 0, 0.12),\n    0 8px 10px -5px rgba(0, 0, 0, 0.2);\n\n  --shadow-key-umbra-opacity: 0.2;\n  --shadow-key-penumbra-opacity: 0.14;\n  --shadow-ambient-shadow-opacity: 0.12;\n\n  --zdepth-shadow-1: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);\n  --zdepth-shadow-2: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-3: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-4: 0 14px 45px rgba(0, 0, 0, 0.25), 0 10px 18px rgba(0, 0, 0, 0.22);\n  --zdepth-shadow-5: 0 19px 60px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.22);\n\n  --animation-duration: 0.35s;\n  --animation-delay: calc(var(--animation-duration) / 5);\n  --animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);\n  --animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);\n  --animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);\n  --animation-curve-default: var(--animation-curve-fast-out-slow-in);\n\n  --z-index-highest: 300;\n  --z-index-higher: 200;\n  --z-index-high: 100;\n  --z-index-normal: 1;\n  --z-index-low: -100;\n  --z-index-lower: -200;\n\n  --reset: {\n    box-sizing: border-box;\n    font-family: var(--preferred-font);\n    -webkit-font-smoothing: antialiased;\n    font-smoothing: antialiased;\n    text-size-adjust: 100%;\n\n    & *,\n    & *::after,\n    & *::before {\n      box-sizing: border-box;\n      -webkit-font-smoothing: antialiased;\n      font-smoothing: antialiased;\n      text-size-adjust: 100%;\n      -webkit-touch-callout: none;\n    }\n  }\n}\n:root {\n  --avatar-color: var(--color-white);\n  --avatar-background: var(--palette-grey-500);\n  --avatar-size: calc(4 * var(--unit));\n  --avatar-font-size: calc(2.4 * var(--unit));\n}\n.avatar {\n  background-color: var(--avatar-background);\n  border-radius: 50%;\n  color: var(--avatar-color);\n  display: inline-block;\n  font-size: var(--avatar-font-size);\n  height: var(--avatar-size);\n  overflow: hidden;\n  position: relative;\n  text-align: center;\n  vertical-align: middle;\n  width: var(--avatar-size);\n\n  @apply --reset;\n\n  & > svg {\n    fill: currentColor;\n    height: var(--avatar-size);\n    width: 1em;\n  }\n\n  & > img {\n    height: auto;\n    max-width: 100%;\n  }\n}\n.image {\n  background-color: transparent;\n  background-position: center;\n  background-size: cover;\n  border-radius: 50%;\n  display: block;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n}\n.letter {\n  display: block;\n  line-height: var(--avatar-size);\n  width: 100%;\n}\n"],"sourceRoot":""}]);
-=======
 exports.push([module.i, ".theme--avatar--3OjJzi5y {\n  background-color: rgb(158, 158, 158);\n  border-radius: 50%;\n  color: rgb(255, 255, 255);\n  display: inline-block;\n  font-size: 24px;\n  height: 40px;\n  overflow: hidden;\n  position: relative;\n  text-align: center;\n  vertical-align: middle;\n  width: 40px;\n\n  box-sizing: border-box;\n\n  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n\n  -webkit-font-smoothing: antialiased;\n\n  font-smoothing: antialiased;\n\n  -webkit-text-size-adjust: 100%;\n\n      -ms-text-size-adjust: 100%;\n\n          text-size-adjust: 100%\n}\n.theme--avatar--3OjJzi5y *,\n    .theme--avatar--3OjJzi5y *::after,\n    .theme--avatar--3OjJzi5y *::before {\n  box-sizing: border-box;\n  -webkit-font-smoothing: antialiased;\n  font-smoothing: antialiased;\n  -webkit-text-size-adjust: 100%;\n      -ms-text-size-adjust: 100%;\n          text-size-adjust: 100%;\n  -webkit-touch-callout: none\n}\n.theme--avatar--3OjJzi5y > svg {\n  fill: currentColor;\n  height: 40px;\n  width: 1em\n}\n.theme--avatar--3OjJzi5y > img {\n  height: auto;\n  max-width: 100%\n}\n.theme--image--2Ueo9LOL {\n  background-color: transparent;\n  background-position: center;\n  background-size: cover;\n  border-radius: 50%;\n  display: block;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n}\n.theme--letter--26GdBUCs {\n  display: block;\n  line-height: 40px;\n  width: 100%;\n}\n", "", {"version":3,"sources":["/Users/jeremylim/Documents/ReddifulAPI/node_modules/react-toolbox/lib/avatar/theme.css"],"names":[],"mappings":"AA+XA;EACE,qCAA2C;EAC3C,mBAAmB;EACnB,0BAA2B;EAC3B,sBAAsB;EACtB,gBAAmC;EACnC,aAA2B;EAC3B,iBAAiB;EACjB,mBAAmB;EACnB,mBAAmB;EACnB,uBAAuB;EACvB,YAA0B;;EAlCxB,uBAAuB;;EACvB,wDAAmC;;EACnC,oCAAoC;;EACpC,4BAA4B;;EAC5B,+BAAuB;;MAAvB,2BAAuB;;UAAvB,sBAAuB;CA4C1B;AA1CG;;;EAGE,uBAAuB;EACvB,oCAAoC;EACpC,4BAA4B;EAC5B,+BAAuB;MAAvB,2BAAuB;UAAvB,uBAAuB;EACvB,2BAA4B;CAC7B;AAwBH;EACE,mBAAmB;EACnB,aAA2B;EAC3B,UAAW;CACZ;AAED;EACE,aAAa;EACb,eAAgB;CACjB;AAEH;EACE,8BAA8B;EAC9B,4BAA4B;EAC5B,uBAAuB;EACvB,mBAAmB;EACnB,eAAe;EACf,aAAa;EACb,mBAAmB;EACnB,YAAY;CACb;AACD;EACE,eAAe;EACf,kBAAgC;EAChC,YAAY;CACb","file":"theme.css","sourcesContent":[":root {\n  --palette-red-50: rgb(255, 235, 238);\n  --palette-red-100: rgb(255, 205, 210);\n  --palette-red-200: rgb(239, 154, 154);\n  --palette-red-300: rgb(229, 115, 115);\n  --palette-red-400: rgb(239, 83, 80);\n  --palette-red-500: rgb(244, 67, 54);\n  --palette-red-600: rgb(229, 57, 53);\n  --palette-red-700: rgb(211, 47, 47);\n  --palette-red-800: rgb(198, 40, 40);\n  --palette-red-900: rgb(183, 28, 28);\n  --palette-red-a100: rgb(255, 138, 128);\n  --palette-red-a200: rgb(255, 82, 82);\n  --palette-red-a400: rgb(255, 23, 68);\n  --palette-red-a700: rgb(213, 0, 0);\n\n  --palette-pink-50: rgb(252, 228, 236);\n  --palette-pink-100: rgb(248, 187, 208);\n  --palette-pink-200: rgb(244, 143, 177);\n  --palette-pink-300: rgb(240, 98, 146);\n  --palette-pink-400: rgb(236, 64, 122);\n  --palette-pink-500: rgb(233, 30, 99);\n  --palette-pink-600: rgb(216, 27, 96);\n  --palette-pink-700: rgb(194, 24, 91);\n  --palette-pink-800: rgb(173, 20, 87);\n  --palette-pink-900: rgb(136, 14, 79);\n  --palette-pink-a100: rgb(255, 128, 171);\n  --palette-pink-a200: rgb(255, 64, 129);\n  --palette-pink-a400: rgb(245, 0, 87);\n  --palette-pink-a700: rgb(197, 17, 98);\n\n  --palette-purple-50: rgb(243, 229, 245);\n  --palette-purple-100: rgb(225, 190, 231);\n  --palette-purple-200: rgb(206, 147, 216);\n  --palette-purple-300: rgb(186, 104, 200);\n  --palette-purple-400: rgb(171, 71, 188);\n  --palette-purple-500: rgb(156, 39, 176);\n  --palette-purple-600: rgb(142, 36, 170);\n  --palette-purple-700: rgb(123, 31, 162);\n  --palette-purple-800: rgb(106, 27, 154);\n  --palette-purple-900: rgb(74, 20, 140);\n  --palette-purple-a100: rgb(234, 128, 252);\n  --palette-purple-a200: rgb(224, 64, 251);\n  --palette-purple-a400: rgb(213, 0, 249);\n  --palette-purple-a700: rgb(170, 0, 255);\n\n  --palette-deep-purple-50: rgb(237, 231, 246);\n  --palette-deep-purple-100: rgb(209, 196, 233);\n  --palette-deep-purple-200: rgb(179, 157, 219);\n  --palette-deep-purple-300: rgb(149, 117, 205);\n  --palette-deep-purple-400: rgb(126, 87, 194);\n  --palette-deep-purple-500: rgb(103, 58, 183);\n  --palette-deep-purple-600: rgb(94, 53, 177);\n  --palette-deep-purple-700: rgb(81, 45, 168);\n  --palette-deep-purple-800: rgb(69, 39, 160);\n  --palette-deep-purple-900: rgb(49, 27, 146);\n  --palette-deep-purple-a100: rgb(179, 136, 255);\n  --palette-deep-purple-a200: rgb(124, 77, 255);\n  --palette-deep-purple-a400: rgb(101, 31, 255);\n  --palette-deep-purple-a700: rgb(98, 0, 234);\n\n  --palette-indigo-50: rgb(232, 234, 246);\n  --palette-indigo-100: rgb(197, 202, 233);\n  --palette-indigo-200: rgb(159, 168, 218);\n  --palette-indigo-300: rgb(121, 134, 203);\n  --palette-indigo-400: rgb(92, 107, 192);\n  --palette-indigo-500: rgb(63, 81, 181);\n  --palette-indigo-600: rgb(57, 73, 171);\n  --palette-indigo-700: rgb(48, 63, 159);\n  --palette-indigo-800: rgb(40, 53, 147);\n  --palette-indigo-900: rgb(26, 35, 126);\n  --palette-indigo-a100: rgb(140, 158, 255);\n  --palette-indigo-a200: rgb(83, 109, 254);\n  --palette-indigo-a400: rgb(61, 90, 254);\n  --palette-indigo-a700: rgb(48, 79, 254);\n\n  --palette-blue-50: rgb(227, 242, 253);\n  --palette-blue-100: rgb(187, 222, 251);\n  --palette-blue-200: rgb(144, 202, 249);\n  --palette-blue-300: rgb(100, 181, 246);\n  --palette-blue-400: rgb(66, 165, 245);\n  --palette-blue-500: rgb(33, 150, 243);\n  --palette-blue-600: rgb(30, 136, 229);\n  --palette-blue-700: rgb(25, 118, 210);\n  --palette-blue-800: rgb(21, 101, 192);\n  --palette-blue-900: rgb(13, 71, 161);\n  --palette-blue-a100: rgb(130, 177, 255);\n  --palette-blue-a200: rgb(68, 138, 255);\n  --palette-blue-a400: rgb(41, 121, 255);\n  --palette-blue-a700: rgb(41, 98, 255);\n\n  --palette-light-blue-50: rgb(225, 245, 254);\n  --palette-light-blue-100: rgb(179, 229, 252);\n  --palette-light-blue-200: rgb(129, 212, 250);\n  --palette-light-blue-300: rgb(79, 195, 247);\n  --palette-light-blue-400: rgb(41, 182, 246);\n  --palette-light-blue-500: rgb(3, 169, 244);\n  --palette-light-blue-600: rgb(3, 155, 229);\n  --palette-light-blue-700: rgb(2, 136, 209);\n  --palette-light-blue-800: rgb(2, 119, 189);\n  --palette-light-blue-900: rgb(1, 87, 155);\n  --palette-light-blue-a100: rgb(128, 216, 255);\n  --palette-light-blue-a200: rgb(64, 196, 255);\n  --palette-light-blue-a400: rgb(0, 176, 255);\n  --palette-light-blue-a700: rgb(0, 145, 234);\n\n  --palette-cyan-50: rgb(224, 247, 250);\n  --palette-cyan-100: rgb(178, 235, 242);\n  --palette-cyan-200: rgb(128, 222, 234);\n  --palette-cyan-300: rgb(77, 208, 225);\n  --palette-cyan-400: rgb(38, 198, 218);\n  --palette-cyan-500: rgb(0, 188, 212);\n  --palette-cyan-600: rgb(0, 172, 193);\n  --palette-cyan-700: rgb(0, 151, 167);\n  --palette-cyan-800: rgb(0, 131, 143);\n  --palette-cyan-900: rgb(0, 96, 100);\n  --palette-cyan-a100: rgb(132, 255, 255);\n  --palette-cyan-a200: rgb(24, 255, 255);\n  --palette-cyan-a400: rgb(0, 229, 255);\n  --palette-cyan-a700: rgb(0, 184, 212);\n\n  --palette-teal-50: rgb(224, 242, 241);\n  --palette-teal-100: rgb(178, 223, 219);\n  --palette-teal-200: rgb(128, 203, 196);\n  --palette-teal-300: rgb(77, 182, 172);\n  --palette-teal-400: rgb(38, 166, 154);\n  --palette-teal-500: rgb(0, 150, 136);\n  --palette-teal-600: rgb(0, 137, 123);\n  --palette-teal-700: rgb(0, 121, 107);\n  --palette-teal-800: rgb(0, 105, 92);\n  --palette-teal-900: rgb(0, 77, 64);\n  --palette-teal-a100: rgb(167, 255, 235);\n  --palette-teal-a200: rgb(100, 255, 218);\n  --palette-teal-a400: rgb(29, 233, 182);\n  --palette-teal-a700: rgb(0, 191, 165);\n\n  --palette-green-50: rgb(232, 245, 233);\n  --palette-green-100: rgb(200, 230, 201);\n  --palette-green-200: rgb(165, 214, 167);\n  --palette-green-300: rgb(129, 199, 132);\n  --palette-green-400: rgb(102, 187, 106);\n  --palette-green-500: rgb(76, 175, 80);\n  --palette-green-600: rgb(67, 160, 71);\n  --palette-green-700: rgb(56, 142, 60);\n  --palette-green-800: rgb(46, 125, 50);\n  --palette-green-900: rgb(27, 94, 32);\n  --palette-green-a100: rgb(185, 246, 202);\n  --palette-green-a200: rgb(105, 240, 174);\n  --palette-green-a400: rgb(0, 230, 118);\n  --palette-green-a700: rgb(0, 200, 83);\n\n  --palette-light-green-50: rgb(241, 248, 233);\n  --palette-light-green-100: rgb(220, 237, 200);\n  --palette-light-green-200: rgb(197, 225, 165);\n  --palette-light-green-300: rgb(174, 213, 129);\n  --palette-light-green-400: rgb(156, 204, 101);\n  --palette-light-green-500: rgb(139, 195, 74);\n  --palette-light-green-600: rgb(124, 179, 66);\n  --palette-light-green-700: rgb(104, 159, 56);\n  --palette-light-green-800: rgb(85, 139, 47);\n  --palette-light-green-900: rgb(51, 105, 30);\n  --palette-light-green-a100: rgb(204, 255, 144);\n  --palette-light-green-a200: rgb(178, 255, 89);\n  --palette-light-green-a400: rgb(118, 255, 3);\n  --palette-light-green-a700: rgb(100, 221, 23);\n\n  --palette-lime-50: rgb(249, 251, 231);\n  --palette-lime-100: rgb(240, 244, 195);\n  --palette-lime-200: rgb(230, 238, 156);\n  --palette-lime-300: rgb(220, 231, 117);\n  --palette-lime-400: rgb(212, 225, 87);\n  --palette-lime-500: rgb(205, 220, 57);\n  --palette-lime-600: rgb(192, 202, 51);\n  --palette-lime-700: rgb(175, 180, 43);\n  --palette-lime-800: rgb(158, 157, 36);\n  --palette-lime-900: rgb(130, 119, 23);\n  --palette-lime-a100: rgb(244, 255, 129);\n  --palette-lime-a200: rgb(238, 255, 65);\n  --palette-lime-a400: rgb(198, 255, 0);\n  --palette-lime-a700: rgb(174, 234, 0);\n\n  --palette-yellow-50: rgb(255, 253, 231);\n  --palette-yellow-100: rgb(255, 249, 196);\n  --palette-yellow-200: rgb(255, 245, 157);\n  --palette-yellow-300: rgb(255, 241, 118);\n  --palette-yellow-400: rgb(255, 238, 88);\n  --palette-yellow-500: rgb(255, 235, 59);\n  --palette-yellow-600: rgb(253, 216, 53);\n  --palette-yellow-700: rgb(251, 192, 45);\n  --palette-yellow-800: rgb(249, 168, 37);\n  --palette-yellow-900: rgb(245, 127, 23);\n  --palette-yellow-a100: rgb(255, 255, 141);\n  --palette-yellow-a200: rgb(255, 255, 0);\n  --palette-yellow-a400: rgb(255, 234, 0);\n  --palette-yellow-a700: rgb(255, 214, 0);\n\n  --palette-amber-50: rgb(255, 248, 225);\n  --palette-amber-100: rgb(255, 236, 179);\n  --palette-amber-200: rgb(255, 224, 130);\n  --palette-amber-300: rgb(255, 213, 79);\n  --palette-amber-400: rgb(255, 202, 40);\n  --palette-amber-500: rgb(255, 193, 7);\n  --palette-amber-600: rgb(255, 179, 0);\n  --palette-amber-700: rgb(255, 160, 0);\n  --palette-amber-800: rgb(255, 143, 0);\n  --palette-amber-900: rgb(255, 111, 0);\n  --palette-amber-a100: rgb(255, 229, 127);\n  --palette-amber-a200: rgb(255, 215, 64);\n  --palette-amber-a400: rgb(255, 196, 0);\n  --palette-amber-a700: rgb(255, 171, 0);\n\n  --palette-orange-50: rgb(255, 243, 224);\n  --palette-orange-100: rgb(255, 224, 178);\n  --palette-orange-200: rgb(255, 204, 128);\n  --palette-orange-300: rgb(255, 183, 77);\n  --palette-orange-400: rgb(255, 167, 38);\n  --palette-orange-500: rgb(255, 152, 0);\n  --palette-orange-600: rgb(251, 140, 0);\n  --palette-orange-700: rgb(245, 124, 0);\n  --palette-orange-800: rgb(239, 108, 0);\n  --palette-orange-900: rgb(230, 81, 0);\n  --palette-orange-a100: rgb(255, 209, 128);\n  --palette-orange-a200: rgb(255, 171, 64);\n  --palette-orange-a400: rgb(255, 145, 0);\n  --palette-orange-a700: rgb(255, 109, 0);\n\n  --palette-deep-orange-50: rgb(251, 233, 231);\n  --palette-deep-orange-100: rgb(255, 204, 188);\n  --palette-deep-orange-200: rgb(255, 171, 145);\n  --palette-deep-orange-300: rgb(255, 138, 101);\n  --palette-deep-orange-400: rgb(255, 112, 67);\n  --palette-deep-orange-500: rgb(255, 87, 34);\n  --palette-deep-orange-600: rgb(244, 81, 30);\n  --palette-deep-orange-700: rgb(230, 74, 25);\n  --palette-deep-orange-800: rgb(216, 67, 21);\n  --palette-deep-orange-900: rgb(191, 54, 12);\n  --palette-deep-orange-a100: rgb(255, 158, 128);\n  --palette-deep-orange-a200: rgb(255, 110, 64);\n  --palette-deep-orange-a400: rgb(255, 61, 0);\n  --palette-deep-orange-a700: rgb(221, 44, 0);\n\n  --palette-brown-50: rgb(239, 235, 233);\n  --palette-brown-100: rgb(215, 204, 200);\n  --palette-brown-200: rgb(188, 170, 164);\n  --palette-brown-300: rgb(161, 136, 127);\n  --palette-brown-400: rgb(141, 110, 99);\n  --palette-brown-500: rgb(121, 85, 72);\n  --palette-brown-600: rgb(109, 76, 65);\n  --palette-brown-700: rgb(93, 64, 55);\n  --palette-brown-800: rgb(78, 52, 46);\n  --palette-brown-900: rgb(62, 39, 35);\n\n  --palette-grey-50: rgb(250, 250, 250);\n  --palette-grey-100: rgb(245, 245, 245);\n  --palette-grey-200: rgb(238, 238, 238);\n  --palette-grey-300: rgb(224, 224, 224);\n  --palette-grey-400: rgb(189, 189, 189);\n  --palette-grey-500: rgb(158, 158, 158);\n  --palette-grey-600: rgb(117, 117, 117);\n  --palette-grey-700: rgb(97, 97, 97);\n  --palette-grey-800: rgb(66, 66, 66);\n  --palette-grey-900: rgb(33, 33, 33);\n\n  --palette-blue-grey-50: rgb(236, 239, 241);\n  --palette-blue-grey-100: rgb(207, 216, 220);\n  --palette-blue-grey-200: rgb(176, 190, 197);\n  --palette-blue-grey-300: rgb(144, 164, 174);\n  --palette-blue-grey-400: rgb(120, 144, 156);\n  --palette-blue-grey-500: rgb(96, 125, 139);\n  --palette-blue-grey-600: rgb(84, 110, 122);\n  --palette-blue-grey-700: rgb(69, 90, 100);\n  --palette-blue-grey-800: rgb(55, 71, 79);\n  --palette-blue-grey-900: rgb(38, 50, 56);\n\n  --color-black: rgb(0, 0, 0);\n  --color-white: rgb(255, 255, 255);\n  --color-dark-contrast: var(--color-white);\n  --color-light-contrast: var(--color-black);\n}\n:root {\n  --color-divider: var(--palette-grey-200);\n  --color-background: var(--color-white);\n  --color-text: var(--palette-grey-900);\n  --color-text-secondary: var(--palette-grey-600);\n\n  --color-primary: var(--palette-indigo-500);\n  --color-primary-dark: var(--palette-indigo-700);\n  --color-accent: var(--palette-pink-a200);\n  --color-accent-dark: var(--palette-pink-700);\n  --color-primary-contrast: var(--color-dark-contrast);\n  --color-accent-contrast: var(--color-dark-contrast);\n\n  --unit: 10px;\n\n  --preferred-font: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n  --font-size: calc(1.6 * var(--unit));\n  --font-size-tiny: calc(1.2 * var(--unit));\n  --font-size-small: calc(1.4 * var(--unit));\n  --font-size-normal: var(--font-size);\n  --font-size-big: calc(1.8 * var(--unit));\n  --font-weight-thin: 300;\n  --font-weight-normal: 400;\n  --font-weight-semi-bold: 500;\n  --font-weight-bold: 700;\n\n  --shadow-2p:\n    0 2px 2px 0 rgba(0, 0, 0, 0.14),\n    0 3px 1px -2px rgba(0, 0, 0, 0.2),\n    0 1px 5px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-3p:\n    0 3px 4px 0 rgba(0, 0, 0, 0.14),\n    0 3px 3px -2px rgba(0, 0, 0, 0.2),\n    0 1px 8px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-4p:\n    0 4px 5px 0 rgba(0, 0, 0, 0.14),\n    0 1px 10px 0 rgba(0, 0, 0, 0.12),\n    0 2px 4px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-6p:\n    0 6px 10px 0 rgba(0, 0, 0, 0.14),\n    0 1px 18px 0 rgba(0, 0, 0, 0.12),\n    0 3px 5px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-8p:\n    0 8px 10px 1px rgba(0, 0, 0, 0.14),\n    0 3px 14px 2px rgba(0, 0, 0, 0.12),\n    0 5px 5px -3px rgba(0, 0, 0, 0.2);\n\n  --shadow-16p:\n    0 16px 24px 2px rgba(0, 0, 0, 0.14),\n    0 6px 30px 5px rgba(0, 0, 0, 0.12),\n    0 8px 10px -5px rgba(0, 0, 0, 0.2);\n\n  --shadow-key-umbra-opacity: 0.2;\n  --shadow-key-penumbra-opacity: 0.14;\n  --shadow-ambient-shadow-opacity: 0.12;\n\n  --zdepth-shadow-1: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);\n  --zdepth-shadow-2: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-3: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-4: 0 14px 45px rgba(0, 0, 0, 0.25), 0 10px 18px rgba(0, 0, 0, 0.22);\n  --zdepth-shadow-5: 0 19px 60px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.22);\n\n  --animation-duration: 0.35s;\n  --animation-delay: calc(var(--animation-duration) / 5);\n  --animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);\n  --animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);\n  --animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);\n  --animation-curve-default: var(--animation-curve-fast-out-slow-in);\n\n  --z-index-highest: 300;\n  --z-index-higher: 200;\n  --z-index-high: 100;\n  --z-index-normal: 1;\n  --z-index-low: -100;\n  --z-index-lower: -200;\n\n  --reset: {\n    box-sizing: border-box;\n    font-family: var(--preferred-font);\n    -webkit-font-smoothing: antialiased;\n    font-smoothing: antialiased;\n    text-size-adjust: 100%;\n\n    & *,\n    & *::after,\n    & *::before {\n      box-sizing: border-box;\n      -webkit-font-smoothing: antialiased;\n      font-smoothing: antialiased;\n      text-size-adjust: 100%;\n      -webkit-touch-callout: none;\n    }\n  }\n}\n:root {\n  --avatar-color: var(--color-white);\n  --avatar-background: var(--palette-grey-500);\n  --avatar-size: calc(4 * var(--unit));\n  --avatar-font-size: calc(2.4 * var(--unit));\n}\n.avatar {\n  background-color: var(--avatar-background);\n  border-radius: 50%;\n  color: var(--avatar-color);\n  display: inline-block;\n  font-size: var(--avatar-font-size);\n  height: var(--avatar-size);\n  overflow: hidden;\n  position: relative;\n  text-align: center;\n  vertical-align: middle;\n  width: var(--avatar-size);\n\n  @apply --reset;\n\n  & > svg {\n    fill: currentColor;\n    height: var(--avatar-size);\n    width: 1em;\n  }\n\n  & > img {\n    height: auto;\n    max-width: 100%;\n  }\n}\n.image {\n  background-color: transparent;\n  background-position: center;\n  background-size: cover;\n  border-radius: 50%;\n  display: block;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n}\n.letter {\n  display: block;\n  line-height: var(--avatar-size);\n  width: 100%;\n}\n"],"sourceRoot":""}]);
->>>>>>> Adding options parameters
 
 // exports
 exports.locals = {
@@ -31516,11 +31467,7 @@ exports = module.exports = __webpack_require__(78)(true);
 
 
 // module
-<<<<<<< HEAD
-exports.push([module.i, ".theme--button--2AgdxWh4 {\n  -ms-flex-line-pack: center;\n      align-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-block;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  font-size: 14px;\n  font-weight: 500;\n  height: 36px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  letter-spacing: 0;\n  line-height: 36px;\n  outline: none;\n  padding: 0;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  text-transform: uppercase;\n  -webkit-transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),\n    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),\n    color 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),\n    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),\n    color 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  white-space: nowrap;\n\n  box-sizing: border-box;\n\n  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n\n  -webkit-font-smoothing: antialiased;\n\n  font-smoothing: antialiased;\n\n  -webkit-text-size-adjust: 100%;\n\n      -ms-text-size-adjust: 100%;\n\n          text-size-adjust: 100%\n}\n.theme--button--2AgdxWh4 *,\n    .theme--button--2AgdxWh4 *::after,\n    .theme--button--2AgdxWh4 *::before {\n  box-sizing: border-box;\n  -webkit-font-smoothing: antialiased;\n  font-smoothing: antialiased;\n  -webkit-text-size-adjust: 100%;\n      -ms-text-size-adjust: 100%;\n          text-size-adjust: 100%;\n  -webkit-touch-callout: none\n}\n.theme--button--2AgdxWh4 > input {\n  height: 0.1px;\n  margin: 0;\n  opacity: 0;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 0.1px;\n  z-index: 0\n}\n.theme--button--2AgdxWh4::-moz-focus-inner {\n  border: 0\n}\n.theme--button--2AgdxWh4 > span:not([data-react-toolbox='tooltip']) {\n  display: inline-block;\n  line-height: 36px;\n  vertical-align: middle\n}\n.theme--button--2AgdxWh4 > svg {\n  display: inline-block;\n  fill: currentColor;\n  font-size: 120%;\n  height: 36px;\n  vertical-align: top;\n  width: 1em\n}\n.theme--button--2AgdxWh4 > * {\n  pointer-events: none\n}\n.theme--button--2AgdxWh4 > .theme--rippleWrapper--3AVBixZJ {\n  overflow: hidden\n}\n.theme--button--2AgdxWh4[disabled] {\n  color: rgba(0, 0, 0, 0.26);\n  cursor: auto;\n  pointer-events: none\n}\n.theme--squared--2GH_LI4r {\n  border-radius: 2px;\n  min-width: 90px;\n  padding: 0 12px\n}\n.theme--squared--2GH_LI4r .theme--icon--3aBSXDLw {\n  font-size: 120%;\n  margin-right: 6px;\n  vertical-align: middle\n}\n.theme--squared--2GH_LI4r > svg {\n  margin-right: 5px\n}\n.theme--solid--1ZxqC96o {\n}\n.theme--solid--1ZxqC96o[disabled] {\n  background-color: rgba(0, 0, 0, 0.12);\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),\n    0 3px 1px -2px rgba(0, 0, 0, .2),\n    0 1px 5px 0 rgba(0, 0, 0, .12)\n}\n.theme--solid--1ZxqC96o:active {\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),\n    0 3px 1px -2px rgba(0, 0, 0, .2),\n    0 1px 5px 0 rgba(0, 0, 0, .12)\n}\n.theme--solid--1ZxqC96o:focus:not(:active) {\n  box-shadow: 0 0 8px rgba(0, 0, 0, .18),\n      0 8px 16px rgba(0, 0, 0, .36)\n}\n.theme--raised--221icDvl {\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),\n    0 3px 1px -2px rgba(0, 0, 0, .2),\n    0 1px 5px 0 rgba(0, 0, 0, .12);\n}\n.theme--flat--1jWAQA6f {\n  background: transparent;\n}\n.theme--floating--3IRMZ7-n {\n  border-radius: 50%;\n  box-shadow:\n    0 1px 1.5px 0 rgba(0, 0, 0, .12),\n    0 1px 1px 0 rgba(0, 0, 0, .24);\n  font-size: 24px;\n  height: 56px;\n  width: 56px\n}\n.theme--floating--3IRMZ7-n .theme--icon--3aBSXDLw:not([data-react-toolbox='tooltip']) {\n  line-height: 56px\n}\n.theme--floating--3IRMZ7-n > .theme--rippleWrapper--3AVBixZJ {\n  border-radius: 50%\n}\n.theme--floating--3IRMZ7-n.theme--mini--2DCN-0B2 {\n  font-size: 17.77778px;\n  height: 40px;\n  width: 40px\n}\n.theme--floating--3IRMZ7-n.theme--mini--2DCN-0B2 .theme--icon--3aBSXDLw {\n  line-height: 40px\n}\n.theme--toggle--hC5Z2BVI {\n  background: transparent;\n  border-radius: 50%;\n  vertical-align: middle;\n  width: 36px\n}\n.theme--toggle--hC5Z2BVI > .theme--icon--3aBSXDLw,\n  .theme--toggle--hC5Z2BVI svg {\n  font-size: 20px;\n  line-height: 36px;\n  vertical-align: top\n}\n.theme--toggle--hC5Z2BVI > .theme--rippleWrapper--3AVBixZJ {\n  border-radius: 50%\n}\n.theme--primary--3tTAWEo9:not([disabled]) {\n}\n.theme--primary--3tTAWEo9:not([disabled]).theme--raised--221icDvl,\n  .theme--primary--3tTAWEo9:not([disabled]).theme--floating--3IRMZ7-n {\n  background: rgb(63, 81, 181);\n  color: rgb(255, 255, 255)\n}\n.theme--primary--3tTAWEo9:not([disabled]).theme--flat--1jWAQA6f,\n  .theme--primary--3tTAWEo9:not([disabled]).theme--toggle--hC5Z2BVI {\n  color: rgb(63, 81, 181)\n}\n.theme--primary--3tTAWEo9:not([disabled]).theme--flat--1jWAQA6f:focus:not(:active), .theme--primary--3tTAWEo9:not([disabled]).theme--toggle--hC5Z2BVI:focus:not(:active) {\n  background: rgba(63, 81, 181, 0.2)\n}\n.theme--primary--3tTAWEo9:not([disabled]).theme--flat--1jWAQA6f:hover {\n  background: rgba(63, 81, 181, 0.2)\n}\n.theme--accent--2wp6F0vq:not([disabled]) {\n}\n.theme--accent--2wp6F0vq:not([disabled]).theme--raised--221icDvl,\n  .theme--accent--2wp6F0vq:not([disabled]).theme--floating--3IRMZ7-n {\n  background: rgb(255, 64, 129);\n  color: rgb(255, 255, 255)\n}\n.theme--accent--2wp6F0vq:not([disabled]).theme--flat--1jWAQA6f,\n  .theme--accent--2wp6F0vq:not([disabled]).theme--toggle--hC5Z2BVI {\n  color: rgb(255, 64, 129)\n}\n.theme--accent--2wp6F0vq:not([disabled]).theme--flat--1jWAQA6f:focus:not(:active), .theme--accent--2wp6F0vq:not([disabled]).theme--toggle--hC5Z2BVI:focus:not(:active) {\n  background: rgba(255, 64, 129, 0.2)\n}\n.theme--accent--2wp6F0vq:not([disabled]).theme--flat--1jWAQA6f:hover {\n  background: rgba(255, 64, 129, 0.2)\n}\n.theme--neutral--2CPs4al7:not([disabled]) {\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--raised--221icDvl,\n  .theme--neutral--2CPs4al7:not([disabled]).theme--floating--3IRMZ7-n {\n  background-color: rgb(255, 255, 255);\n  color: rgb(33, 33, 33)\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--flat--1jWAQA6f,\n  .theme--neutral--2CPs4al7:not([disabled]).theme--toggle--hC5Z2BVI {\n  color: rgb(33, 33, 33)\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--flat--1jWAQA6f:focus:not(:active), .theme--neutral--2CPs4al7:not([disabled]).theme--toggle--hC5Z2BVI:focus:not(:active) {\n  background: rgba(33, 33, 33, 0.2)\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--flat--1jWAQA6f:hover {\n  background: rgba(33, 33, 33, 0.2)\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1 {\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1.theme--raised--221icDvl,\n    .theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1.theme--floating--3IRMZ7-n {\n  background-color: rgb(33, 33, 33);\n  color: rgb(255, 255, 255)\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1.theme--flat--1jWAQA6f,\n    .theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1.theme--toggle--hC5Z2BVI {\n  color: rgb(255, 255, 255)\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1.theme--flat--1jWAQA6f:focus:not(:active), .theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1.theme--toggle--hC5Z2BVI:focus:not(:active) {\n  background: rgba(33, 33, 33, 0.2)\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1.theme--flat--1jWAQA6f:hover {\n  background: rgba(33, 33, 33, 0.2)\n}\n.theme--neutral--2CPs4al7.theme--inverse--2SPZrzR1[disabled] {\n  background-color: rgba(0, 0, 0, 0.08);\n  color: rgba(0, 0, 0, 0.54);\n}\n", "", {"version":3,"sources":["/home/shea/Documents/idb/node_modules/react-toolbox/lib/button/theme.css"],"names":[],"mappings":"AAkZA;EACE,2BAAsB;MAAtB,sBAAsB;EACtB,0BAAoB;MAApB,uBAAoB;UAApB,oBAAoB;EACpB,UAAU;EACV,gBAAgB;EAChB,sBAAsB;EACtB,+BAAoB;EAApB,8BAAoB;MAApB,wBAAoB;UAApB,oBAAoB;EACpB,gBAAmC;EACnC,iBAAiB;EACjB,aAA6B;EAC7B,yBAAwB;MAAxB,sBAAwB;UAAxB,wBAAwB;EACxB,kBAAkB;EAClB,kBAAkC;EAClC,cAAc;EACd,WAAW;EACX,mBAAmB;EACnB,mBAAmB;EACnB,sBAAsB;EACtB,0BAA0B;EAC1B;;4CAG4C;EAH5C;;4CAG4C;EAC5C,oBAAoB;;EAjElB,uBAAuB;;EACvB,wDAAmC;;EACnC,oCAAoC;;EACpC,4BAA4B;;EAC5B,+BAAuB;;MAAvB,2BAAuB;;UAAvB,sBAAuB;CA4G1B;AA1GG;;;EAGE,uBAAuB;EACvB,oCAAoC;EACpC,4BAA4B;EAC5B,+BAAuB;MAAvB,2BAAuB;UAAvB,uBAAuB;EACvB,2BAA4B;CAC7B;AAuDH;EACE,cAAc;EACd,UAAU;EACV,WAAW;EACX,iBAAiB;EACjB,WAAW;EACX,mBAAmB;EACnB,aAAa;EACb,UAAW;CACZ;AAED;EACE,SAAU;CACX;AAED;EACE,sBAAsB;EACtB,kBAAkC;EAClC,sBAAuB;CACxB;AAED;EACE,sBAAsB;EACtB,mBAAmB;EACnB,gBAAgB;EAChB,aAA6B;EAC7B,oBAAoB;EACpB,UAAW;CACZ;AAED;EACE,oBAAqB;CACtB;AAED;EACE,gBAAiB;CAClB;AAED;EACE,2BAAyC;EACzC,aAAa;EACb,oBAAqB;CACtB;AAEH;EACE,mBAA2C;EAC3C,gBAA2C;EAC3C,eAAuC;CAWxC;AATC;EACE,gBAAgB;EAChB,kBAAgD;EAChD,sBAAuB;CACxB;AAED;EACE,iBAAsC;CACvC;AAEH;CAeC;AAdC;EACE,sCAA0D;EAC1D;;kCAA6B;CAC9B;AAED;EACE;;kCAA6B;CAC9B;AAED;EACE;mCAEiC;CAClC;AAEH;EACE;;mCAA6B;CAI9B;AACD;EACE,wBAAwB;CAGzB;AACD;EACE,mBAAmB;EACnB;;mCAEkC;EAGlC,gBAA4C;EAC5C,aAAsC;EACtC,WAAqC;CAmBtC;AAjBC;EACE,iBAA2C;CAC5C;AAED;EACE,kBAAmB;CACpB;AAED;EACE,sBAAiD;EACjD,aAA2C;EAC3C,WAA0C;CAK3C;AAHC;EACE,iBAAgD;CACjD;AAGL;EACE,wBAAwB;EACxB,mBAAmB;EAEnB,uBAAuB;EACvB,WAA4B;CAY7B;AAVC;;EAEE,gBAA0C;EAC1C,kBAAkC;EAClC,mBAAoB;CACrB;AAED;EACE,kBAAmB;CACpB;AAEH;CAmBC;AAlBC;;EAEE,6BAAwC;EACxC,yBAA4C;CAC7C;AAED;;EAEE,uBAAmC;CAKpC;AAHC;EACE,kCAA8C;CAC/C;AAGH;EACE,kCAA8C;CAC/C;AAEH;CAmBC;AAlBC;;EAEE,8BAAuC;EACvC,yBAA2C;CAC5C;AAED;;EAEE,wBAAkC;CAKnC;AAHC;EACE,mCAA6C;CAC9C;AAGH;EACE,mCAA6C;CAC9C;AAEH;CAwCC;AAvCC;;EAEE,qCAA8C;EAC9C,sBAA4C;CAC7C;AAED;;EAEE,sBAA4C;CAK7C;AAHC;EACE,iCAA8C;CAC/C;AAGH;EACE,iCAA8C;CAC/C;AAED;CAmBC;AAlBC;;EAEE,kCAAuD;EACvD,yBAAmC;CACpC;AAED;;EAEE,yBAAmC;CAKpC;AAHC;EACE,iCAA8C;CAC/C;AAGH;EACE,iCAA8C;CAC/C;AAGL;EACE,sCAA4D;EAC5D,2BAAiD;CAClD","file":"theme.css","sourcesContent":[":root {\n  --palette-red-50: rgb(255, 235, 238);\n  --palette-red-100: rgb(255, 205, 210);\n  --palette-red-200: rgb(239, 154, 154);\n  --palette-red-300: rgb(229, 115, 115);\n  --palette-red-400: rgb(239, 83, 80);\n  --palette-red-500: rgb(244, 67, 54);\n  --palette-red-600: rgb(229, 57, 53);\n  --palette-red-700: rgb(211, 47, 47);\n  --palette-red-800: rgb(198, 40, 40);\n  --palette-red-900: rgb(183, 28, 28);\n  --palette-red-a100: rgb(255, 138, 128);\n  --palette-red-a200: rgb(255, 82, 82);\n  --palette-red-a400: rgb(255, 23, 68);\n  --palette-red-a700: rgb(213, 0, 0);\n\n  --palette-pink-50: rgb(252, 228, 236);\n  --palette-pink-100: rgb(248, 187, 208);\n  --palette-pink-200: rgb(244, 143, 177);\n  --palette-pink-300: rgb(240, 98, 146);\n  --palette-pink-400: rgb(236, 64, 122);\n  --palette-pink-500: rgb(233, 30, 99);\n  --palette-pink-600: rgb(216, 27, 96);\n  --palette-pink-700: rgb(194, 24, 91);\n  --palette-pink-800: rgb(173, 20, 87);\n  --palette-pink-900: rgb(136, 14, 79);\n  --palette-pink-a100: rgb(255, 128, 171);\n  --palette-pink-a200: rgb(255, 64, 129);\n  --palette-pink-a400: rgb(245, 0, 87);\n  --palette-pink-a700: rgb(197, 17, 98);\n\n  --palette-purple-50: rgb(243, 229, 245);\n  --palette-purple-100: rgb(225, 190, 231);\n  --palette-purple-200: rgb(206, 147, 216);\n  --palette-purple-300: rgb(186, 104, 200);\n  --palette-purple-400: rgb(171, 71, 188);\n  --palette-purple-500: rgb(156, 39, 176);\n  --palette-purple-600: rgb(142, 36, 170);\n  --palette-purple-700: rgb(123, 31, 162);\n  --palette-purple-800: rgb(106, 27, 154);\n  --palette-purple-900: rgb(74, 20, 140);\n  --palette-purple-a100: rgb(234, 128, 252);\n  --palette-purple-a200: rgb(224, 64, 251);\n  --palette-purple-a400: rgb(213, 0, 249);\n  --palette-purple-a700: rgb(170, 0, 255);\n\n  --palette-deep-purple-50: rgb(237, 231, 246);\n  --palette-deep-purple-100: rgb(209, 196, 233);\n  --palette-deep-purple-200: rgb(179, 157, 219);\n  --palette-deep-purple-300: rgb(149, 117, 205);\n  --palette-deep-purple-400: rgb(126, 87, 194);\n  --palette-deep-purple-500: rgb(103, 58, 183);\n  --palette-deep-purple-600: rgb(94, 53, 177);\n  --palette-deep-purple-700: rgb(81, 45, 168);\n  --palette-deep-purple-800: rgb(69, 39, 160);\n  --palette-deep-purple-900: rgb(49, 27, 146);\n  --palette-deep-purple-a100: rgb(179, 136, 255);\n  --palette-deep-purple-a200: rgb(124, 77, 255);\n  --palette-deep-purple-a400: rgb(101, 31, 255);\n  --palette-deep-purple-a700: rgb(98, 0, 234);\n\n  --palette-indigo-50: rgb(232, 234, 246);\n  --palette-indigo-100: rgb(197, 202, 233);\n  --palette-indigo-200: rgb(159, 168, 218);\n  --palette-indigo-300: rgb(121, 134, 203);\n  --palette-indigo-400: rgb(92, 107, 192);\n  --palette-indigo-500: rgb(63, 81, 181);\n  --palette-indigo-600: rgb(57, 73, 171);\n  --palette-indigo-700: rgb(48, 63, 159);\n  --palette-indigo-800: rgb(40, 53, 147);\n  --palette-indigo-900: rgb(26, 35, 126);\n  --palette-indigo-a100: rgb(140, 158, 255);\n  --palette-indigo-a200: rgb(83, 109, 254);\n  --palette-indigo-a400: rgb(61, 90, 254);\n  --palette-indigo-a700: rgb(48, 79, 254);\n\n  --palette-blue-50: rgb(227, 242, 253);\n  --palette-blue-100: rgb(187, 222, 251);\n  --palette-blue-200: rgb(144, 202, 249);\n  --palette-blue-300: rgb(100, 181, 246);\n  --palette-blue-400: rgb(66, 165, 245);\n  --palette-blue-500: rgb(33, 150, 243);\n  --palette-blue-600: rgb(30, 136, 229);\n  --palette-blue-700: rgb(25, 118, 210);\n  --palette-blue-800: rgb(21, 101, 192);\n  --palette-blue-900: rgb(13, 71, 161);\n  --palette-blue-a100: rgb(130, 177, 255);\n  --palette-blue-a200: rgb(68, 138, 255);\n  --palette-blue-a400: rgb(41, 121, 255);\n  --palette-blue-a700: rgb(41, 98, 255);\n\n  --palette-light-blue-50: rgb(225, 245, 254);\n  --palette-light-blue-100: rgb(179, 229, 252);\n  --palette-light-blue-200: rgb(129, 212, 250);\n  --palette-light-blue-300: rgb(79, 195, 247);\n  --palette-light-blue-400: rgb(41, 182, 246);\n  --palette-light-blue-500: rgb(3, 169, 244);\n  --palette-light-blue-600: rgb(3, 155, 229);\n  --palette-light-blue-700: rgb(2, 136, 209);\n  --palette-light-blue-800: rgb(2, 119, 189);\n  --palette-light-blue-900: rgb(1, 87, 155);\n  --palette-light-blue-a100: rgb(128, 216, 255);\n  --palette-light-blue-a200: rgb(64, 196, 255);\n  --palette-light-blue-a400: rgb(0, 176, 255);\n  --palette-light-blue-a700: rgb(0, 145, 234);\n\n  --palette-cyan-50: rgb(224, 247, 250);\n  --palette-cyan-100: rgb(178, 235, 242);\n  --palette-cyan-200: rgb(128, 222, 234);\n  --palette-cyan-300: rgb(77, 208, 225);\n  --palette-cyan-400: rgb(38, 198, 218);\n  --palette-cyan-500: rgb(0, 188, 212);\n  --palette-cyan-600: rgb(0, 172, 193);\n  --palette-cyan-700: rgb(0, 151, 167);\n  --palette-cyan-800: rgb(0, 131, 143);\n  --palette-cyan-900: rgb(0, 96, 100);\n  --palette-cyan-a100: rgb(132, 255, 255);\n  --palette-cyan-a200: rgb(24, 255, 255);\n  --palette-cyan-a400: rgb(0, 229, 255);\n  --palette-cyan-a700: rgb(0, 184, 212);\n\n  --palette-teal-50: rgb(224, 242, 241);\n  --palette-teal-100: rgb(178, 223, 219);\n  --palette-teal-200: rgb(128, 203, 196);\n  --palette-teal-300: rgb(77, 182, 172);\n  --palette-teal-400: rgb(38, 166, 154);\n  --palette-teal-500: rgb(0, 150, 136);\n  --palette-teal-600: rgb(0, 137, 123);\n  --palette-teal-700: rgb(0, 121, 107);\n  --palette-teal-800: rgb(0, 105, 92);\n  --palette-teal-900: rgb(0, 77, 64);\n  --palette-teal-a100: rgb(167, 255, 235);\n  --palette-teal-a200: rgb(100, 255, 218);\n  --palette-teal-a400: rgb(29, 233, 182);\n  --palette-teal-a700: rgb(0, 191, 165);\n\n  --palette-green-50: rgb(232, 245, 233);\n  --palette-green-100: rgb(200, 230, 201);\n  --palette-green-200: rgb(165, 214, 167);\n  --palette-green-300: rgb(129, 199, 132);\n  --palette-green-400: rgb(102, 187, 106);\n  --palette-green-500: rgb(76, 175, 80);\n  --palette-green-600: rgb(67, 160, 71);\n  --palette-green-700: rgb(56, 142, 60);\n  --palette-green-800: rgb(46, 125, 50);\n  --palette-green-900: rgb(27, 94, 32);\n  --palette-green-a100: rgb(185, 246, 202);\n  --palette-green-a200: rgb(105, 240, 174);\n  --palette-green-a400: rgb(0, 230, 118);\n  --palette-green-a700: rgb(0, 200, 83);\n\n  --palette-light-green-50: rgb(241, 248, 233);\n  --palette-light-green-100: rgb(220, 237, 200);\n  --palette-light-green-200: rgb(197, 225, 165);\n  --palette-light-green-300: rgb(174, 213, 129);\n  --palette-light-green-400: rgb(156, 204, 101);\n  --palette-light-green-500: rgb(139, 195, 74);\n  --palette-light-green-600: rgb(124, 179, 66);\n  --palette-light-green-700: rgb(104, 159, 56);\n  --palette-light-green-800: rgb(85, 139, 47);\n  --palette-light-green-900: rgb(51, 105, 30);\n  --palette-light-green-a100: rgb(204, 255, 144);\n  --palette-light-green-a200: rgb(178, 255, 89);\n  --palette-light-green-a400: rgb(118, 255, 3);\n  --palette-light-green-a700: rgb(100, 221, 23);\n\n  --palette-lime-50: rgb(249, 251, 231);\n  --palette-lime-100: rgb(240, 244, 195);\n  --palette-lime-200: rgb(230, 238, 156);\n  --palette-lime-300: rgb(220, 231, 117);\n  --palette-lime-400: rgb(212, 225, 87);\n  --palette-lime-500: rgb(205, 220, 57);\n  --palette-lime-600: rgb(192, 202, 51);\n  --palette-lime-700: rgb(175, 180, 43);\n  --palette-lime-800: rgb(158, 157, 36);\n  --palette-lime-900: rgb(130, 119, 23);\n  --palette-lime-a100: rgb(244, 255, 129);\n  --palette-lime-a200: rgb(238, 255, 65);\n  --palette-lime-a400: rgb(198, 255, 0);\n  --palette-lime-a700: rgb(174, 234, 0);\n\n  --palette-yellow-50: rgb(255, 253, 231);\n  --palette-yellow-100: rgb(255, 249, 196);\n  --palette-yellow-200: rgb(255, 245, 157);\n  --palette-yellow-300: rgb(255, 241, 118);\n  --palette-yellow-400: rgb(255, 238, 88);\n  --palette-yellow-500: rgb(255, 235, 59);\n  --palette-yellow-600: rgb(253, 216, 53);\n  --palette-yellow-700: rgb(251, 192, 45);\n  --palette-yellow-800: rgb(249, 168, 37);\n  --palette-yellow-900: rgb(245, 127, 23);\n  --palette-yellow-a100: rgb(255, 255, 141);\n  --palette-yellow-a200: rgb(255, 255, 0);\n  --palette-yellow-a400: rgb(255, 234, 0);\n  --palette-yellow-a700: rgb(255, 214, 0);\n\n  --palette-amber-50: rgb(255, 248, 225);\n  --palette-amber-100: rgb(255, 236, 179);\n  --palette-amber-200: rgb(255, 224, 130);\n  --palette-amber-300: rgb(255, 213, 79);\n  --palette-amber-400: rgb(255, 202, 40);\n  --palette-amber-500: rgb(255, 193, 7);\n  --palette-amber-600: rgb(255, 179, 0);\n  --palette-amber-700: rgb(255, 160, 0);\n  --palette-amber-800: rgb(255, 143, 0);\n  --palette-amber-900: rgb(255, 111, 0);\n  --palette-amber-a100: rgb(255, 229, 127);\n  --palette-amber-a200: rgb(255, 215, 64);\n  --palette-amber-a400: rgb(255, 196, 0);\n  --palette-amber-a700: rgb(255, 171, 0);\n\n  --palette-orange-50: rgb(255, 243, 224);\n  --palette-orange-100: rgb(255, 224, 178);\n  --palette-orange-200: rgb(255, 204, 128);\n  --palette-orange-300: rgb(255, 183, 77);\n  --palette-orange-400: rgb(255, 167, 38);\n  --palette-orange-500: rgb(255, 152, 0);\n  --palette-orange-600: rgb(251, 140, 0);\n  --palette-orange-700: rgb(245, 124, 0);\n  --palette-orange-800: rgb(239, 108, 0);\n  --palette-orange-900: rgb(230, 81, 0);\n  --palette-orange-a100: rgb(255, 209, 128);\n  --palette-orange-a200: rgb(255, 171, 64);\n  --palette-orange-a400: rgb(255, 145, 0);\n  --palette-orange-a700: rgb(255, 109, 0);\n\n  --palette-deep-orange-50: rgb(251, 233, 231);\n  --palette-deep-orange-100: rgb(255, 204, 188);\n  --palette-deep-orange-200: rgb(255, 171, 145);\n  --palette-deep-orange-300: rgb(255, 138, 101);\n  --palette-deep-orange-400: rgb(255, 112, 67);\n  --palette-deep-orange-500: rgb(255, 87, 34);\n  --palette-deep-orange-600: rgb(244, 81, 30);\n  --palette-deep-orange-700: rgb(230, 74, 25);\n  --palette-deep-orange-800: rgb(216, 67, 21);\n  --palette-deep-orange-900: rgb(191, 54, 12);\n  --palette-deep-orange-a100: rgb(255, 158, 128);\n  --palette-deep-orange-a200: rgb(255, 110, 64);\n  --palette-deep-orange-a400: rgb(255, 61, 0);\n  --palette-deep-orange-a700: rgb(221, 44, 0);\n\n  --palette-brown-50: rgb(239, 235, 233);\n  --palette-brown-100: rgb(215, 204, 200);\n  --palette-brown-200: rgb(188, 170, 164);\n  --palette-brown-300: rgb(161, 136, 127);\n  --palette-brown-400: rgb(141, 110, 99);\n  --palette-brown-500: rgb(121, 85, 72);\n  --palette-brown-600: rgb(109, 76, 65);\n  --palette-brown-700: rgb(93, 64, 55);\n  --palette-brown-800: rgb(78, 52, 46);\n  --palette-brown-900: rgb(62, 39, 35);\n\n  --palette-grey-50: rgb(250, 250, 250);\n  --palette-grey-100: rgb(245, 245, 245);\n  --palette-grey-200: rgb(238, 238, 238);\n  --palette-grey-300: rgb(224, 224, 224);\n  --palette-grey-400: rgb(189, 189, 189);\n  --palette-grey-500: rgb(158, 158, 158);\n  --palette-grey-600: rgb(117, 117, 117);\n  --palette-grey-700: rgb(97, 97, 97);\n  --palette-grey-800: rgb(66, 66, 66);\n  --palette-grey-900: rgb(33, 33, 33);\n\n  --palette-blue-grey-50: rgb(236, 239, 241);\n  --palette-blue-grey-100: rgb(207, 216, 220);\n  --palette-blue-grey-200: rgb(176, 190, 197);\n  --palette-blue-grey-300: rgb(144, 164, 174);\n  --palette-blue-grey-400: rgb(120, 144, 156);\n  --palette-blue-grey-500: rgb(96, 125, 139);\n  --palette-blue-grey-600: rgb(84, 110, 122);\n  --palette-blue-grey-700: rgb(69, 90, 100);\n  --palette-blue-grey-800: rgb(55, 71, 79);\n  --palette-blue-grey-900: rgb(38, 50, 56);\n\n  --color-black: rgb(0, 0, 0);\n  --color-white: rgb(255, 255, 255);\n  --color-dark-contrast: var(--color-white);\n  --color-light-contrast: var(--color-black);\n}\n:root {\n  --color-divider: var(--palette-grey-200);\n  --color-background: var(--color-white);\n  --color-text: var(--palette-grey-900);\n  --color-text-secondary: var(--palette-grey-600);\n\n  --color-primary: var(--palette-indigo-500);\n  --color-primary-dark: var(--palette-indigo-700);\n  --color-accent: var(--palette-pink-a200);\n  --color-accent-dark: var(--palette-pink-700);\n  --color-primary-contrast: var(--color-dark-contrast);\n  --color-accent-contrast: var(--color-dark-contrast);\n\n  --unit: 10px;\n\n  --preferred-font: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n  --font-size: calc(1.6 * var(--unit));\n  --font-size-tiny: calc(1.2 * var(--unit));\n  --font-size-small: calc(1.4 * var(--unit));\n  --font-size-normal: var(--font-size);\n  --font-size-big: calc(1.8 * var(--unit));\n  --font-weight-thin: 300;\n  --font-weight-normal: 400;\n  --font-weight-semi-bold: 500;\n  --font-weight-bold: 700;\n\n  --shadow-2p:\n    0 2px 2px 0 rgba(0, 0, 0, 0.14),\n    0 3px 1px -2px rgba(0, 0, 0, 0.2),\n    0 1px 5px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-3p:\n    0 3px 4px 0 rgba(0, 0, 0, 0.14),\n    0 3px 3px -2px rgba(0, 0, 0, 0.2),\n    0 1px 8px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-4p:\n    0 4px 5px 0 rgba(0, 0, 0, 0.14),\n    0 1px 10px 0 rgba(0, 0, 0, 0.12),\n    0 2px 4px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-6p:\n    0 6px 10px 0 rgba(0, 0, 0, 0.14),\n    0 1px 18px 0 rgba(0, 0, 0, 0.12),\n    0 3px 5px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-8p:\n    0 8px 10px 1px rgba(0, 0, 0, 0.14),\n    0 3px 14px 2px rgba(0, 0, 0, 0.12),\n    0 5px 5px -3px rgba(0, 0, 0, 0.2);\n\n  --shadow-16p:\n    0 16px 24px 2px rgba(0, 0, 0, 0.14),\n    0 6px 30px 5px rgba(0, 0, 0, 0.12),\n    0 8px 10px -5px rgba(0, 0, 0, 0.2);\n\n  --shadow-key-umbra-opacity: 0.2;\n  --shadow-key-penumbra-opacity: 0.14;\n  --shadow-ambient-shadow-opacity: 0.12;\n\n  --zdepth-shadow-1: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);\n  --zdepth-shadow-2: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-3: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-4: 0 14px 45px rgba(0, 0, 0, 0.25), 0 10px 18px rgba(0, 0, 0, 0.22);\n  --zdepth-shadow-5: 0 19px 60px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.22);\n\n  --animation-duration: 0.35s;\n  --animation-delay: calc(var(--animation-duration) / 5);\n  --animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);\n  --animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);\n  --animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);\n  --animation-curve-default: var(--animation-curve-fast-out-slow-in);\n\n  --z-index-highest: 300;\n  --z-index-higher: 200;\n  --z-index-high: 100;\n  --z-index-normal: 1;\n  --z-index-low: -100;\n  --z-index-lower: -200;\n\n  --reset: {\n    box-sizing: border-box;\n    font-family: var(--preferred-font);\n    -webkit-font-smoothing: antialiased;\n    font-smoothing: antialiased;\n    text-size-adjust: 100%;\n\n    & *,\n    & *::after,\n    & *::before {\n      box-sizing: border-box;\n      -webkit-font-smoothing: antialiased;\n      font-smoothing: antialiased;\n      text-size-adjust: 100%;\n      -webkit-touch-callout: none;\n    }\n  }\n}\n:root {\n  --button-border-radius: calc(0.2 * var(--unit));\n  --button-height: calc(3.6 * var(--unit));\n  --button-toggle-font-size: calc(2 * var(--unit));\n  --button-primary-color: var(--color-primary);\n  --button-primary-color-hover: color(var(--color-primary) a(20%));\n  --button-primary-color-contrast: var(--color-primary-contrast);\n  --button-accent-color-contrast: var(--color-primary-contrast);\n  --button-accent-color-hover: color(var(--color-accent) a(20%));\n  --button-accent-color: var(--color-accent);\n  --button-neutral-color: var(--color-white);\n  --button-neutral-color-contrast: var(--palette-grey-900);\n  --button-neutral-color-hover: color(var(--palette-grey-900) a(20%));\n  --button-floating-font-size: calc(2.4 * var(--unit));\n  --button-floating-height: calc(5.6 * var(--unit));\n  --button-floating-mini-height: calc(4 * var(--unit));\n  --button-floating-mini-font-size: calc(var(--button-floating-mini-height) / 2.25);\n  --button-disabled-text-color: color(var(--color-black) a(26%));\n  --button-disabled-background-color: color(var(--color-black) a(12%));\n  --button-disabled-text-color-inverse: color(var(--color-black) a(54%));\n  --button-disabled-background-inverse: color(var(--color-black) a(8%));\n  --button-squared-icon-margin: calc(0.6 * var(--unit));\n  --button-squared-min-width: calc(9 * var(--unit));\n  --button-squared-padding: 0 calc(1.2 * var(--unit));\n}\n.button {\n  align-content: center;\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-block;\n  flex-direction: row;\n  font-size: calc(1.4 * var(--unit));\n  font-weight: 500;\n  height: var(--button-height);\n  justify-content: center;\n  letter-spacing: 0;\n  line-height: var(--button-height);\n  outline: none;\n  padding: 0;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  text-transform: uppercase;\n  transition:\n    box-shadow 0.2s var(--animation-curve-fast-out-linear-in),\n    background-color 0.2s var(--animation-curve-default),\n    color 0.2s var(--animation-curve-default);\n  white-space: nowrap;\n\n  @apply --reset;\n\n  & > input {\n    height: 0.1px;\n    margin: 0;\n    opacity: 0;\n    overflow: hidden;\n    padding: 0;\n    position: absolute;\n    width: 0.1px;\n    z-index: 0;\n  }\n\n  &::-moz-focus-inner {\n    border: 0;\n  }\n\n  & > span:not([data-react-toolbox='tooltip']) {\n    display: inline-block;\n    line-height: var(--button-height);\n    vertical-align: middle;\n  }\n\n  & > svg {\n    display: inline-block;\n    fill: currentColor;\n    font-size: 120%;\n    height: var(--button-height);\n    vertical-align: top;\n    width: 1em;\n  }\n\n  & > * {\n    pointer-events: none;\n  }\n\n  & > .rippleWrapper {\n    overflow: hidden;\n  }\n\n  &[disabled] {\n    color: var(--button-disabled-text-color);\n    cursor: auto;\n    pointer-events: none;\n  }\n}\n.squared {\n  border-radius: var(--button-border-radius);\n  min-width: var(--button-squared-min-width);\n  padding: var(--button-squared-padding);\n\n  & .icon {\n    font-size: 120%;\n    margin-right: var(--button-squared-icon-margin);\n    vertical-align: middle;\n  }\n\n  & > svg {\n    margin-right: calc(0.5 * var(--unit));\n  }\n}\n.solid {\n  &[disabled] {\n    background-color: var(--button-disabled-background-color);\n    box-shadow: var(--shadow-2p);\n  }\n\n  &:active {\n    box-shadow: var(--shadow-2p);\n  }\n\n  &:focus:not(:active) {\n    box-shadow:\n      0 0 8px rgba(0, 0, 0, 0.18),\n      0 8px 16px rgba(0, 0, 0, 0.36);\n  }\n}\n.raised {\n  box-shadow: var(--shadow-2p);\n  composes: button;\n  composes: squared;\n  composes: solid;\n}\n.flat {\n  background: transparent;\n  composes: button;\n  composes: squared;\n}\n.floating {\n  border-radius: 50%;\n  box-shadow:\n    0 1px 1.5px 0 rgba(0, 0, 0, 0.12),\n    0 1px 1px 0 rgba(0, 0, 0, 0.24);\n  composes: button;\n  composes: solid;\n  font-size: var(--button-floating-font-size);\n  height: var(--button-floating-height);\n  width: var(--button-floating-height);\n\n  & .icon:not([data-react-toolbox='tooltip']) {\n    line-height: var(--button-floating-height);\n  }\n\n  & > .rippleWrapper {\n    border-radius: 50%;\n  }\n\n  &.mini {\n    font-size: var(--button-floating-mini-font-size);\n    height: var(--button-floating-mini-height);\n    width: var(--button-floating-mini-height);\n\n    & .icon {\n      line-height: var(--button-floating-mini-height);\n    }\n  }\n}\n.toggle {\n  background: transparent;\n  border-radius: 50%;\n  composes: button;\n  vertical-align: middle;\n  width: var(--button-height);\n\n  & > .icon,\n  & svg {\n    font-size: var(--button-toggle-font-size);\n    line-height: var(--button-height);\n    vertical-align: top;\n  }\n\n  & > .rippleWrapper {\n    border-radius: 50%;\n  }\n}\n.primary:not([disabled]) {\n  &.raised,\n  &.floating {\n    background: var(--button-primary-color);\n    color: var(--button-primary-color-contrast);\n  }\n\n  &.flat,\n  &.toggle {\n    color: var(--button-primary-color);\n\n    &:focus:not(:active) {\n      background: var(--button-primary-color-hover);\n    }\n  }\n\n  &.flat:hover {\n    background: var(--button-primary-color-hover);\n  }\n}\n.accent:not([disabled]) {\n  &.raised,\n  &.floating {\n    background: var(--button-accent-color);\n    color: var(--button-accent-color-contrast);\n  }\n\n  &.flat,\n  &.toggle {\n    color: var(--button-accent-color);\n\n    &:focus:not(:active) {\n      background: var(--button-accent-color-hover);\n    }\n  }\n\n  &.flat:hover {\n    background: var(--button-accent-color-hover);\n  }\n}\n.neutral:not([disabled]) {\n  &.raised,\n  &.floating {\n    background-color: var(--button-neutral-color);\n    color: var(--button-neutral-color-contrast);\n  }\n\n  &.flat,\n  &.toggle {\n    color: var(--button-neutral-color-contrast);\n\n    &:focus:not(:active) {\n      background: var(--button-neutral-color-hover);\n    }\n  }\n\n  &.flat:hover {\n    background: var(--button-neutral-color-hover);\n  }\n\n  &.inverse {\n    &.raised,\n    &.floating {\n      background-color: var(--button-neutral-color-contrast);\n      color: var(--button-neutral-color);\n    }\n\n    &.flat,\n    &.toggle {\n      color: var(--button-neutral-color);\n\n      &:focus:not(:active) {\n        background: var(--button-neutral-color-hover);\n      }\n    }\n\n    &.flat:hover {\n      background: var(--button-neutral-color-hover);\n    }\n  }\n}\n.neutral.inverse[disabled] {\n  background-color: var(--button-disabled-background-inverse);\n  color: var(--button-disabled-text-color-inverse);\n}\n"],"sourceRoot":""}]);
-=======
 exports.push([module.i, ".theme--button--2AgdxWh4 {\n  -ms-flex-line-pack: center;\n      align-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-block;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  font-size: 14px;\n  font-weight: 500;\n  height: 36px;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  letter-spacing: 0;\n  line-height: 36px;\n  outline: none;\n  padding: 0;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  text-transform: uppercase;\n  -webkit-transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),\n    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),\n    color 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),\n    background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),\n    color 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  white-space: nowrap;\n\n  box-sizing: border-box;\n\n  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n\n  -webkit-font-smoothing: antialiased;\n\n  font-smoothing: antialiased;\n\n  -webkit-text-size-adjust: 100%;\n\n      -ms-text-size-adjust: 100%;\n\n          text-size-adjust: 100%\n}\n.theme--button--2AgdxWh4 *,\n    .theme--button--2AgdxWh4 *::after,\n    .theme--button--2AgdxWh4 *::before {\n  box-sizing: border-box;\n  -webkit-font-smoothing: antialiased;\n  font-smoothing: antialiased;\n  -webkit-text-size-adjust: 100%;\n      -ms-text-size-adjust: 100%;\n          text-size-adjust: 100%;\n  -webkit-touch-callout: none\n}\n.theme--button--2AgdxWh4 > input {\n  height: 0.1px;\n  margin: 0;\n  opacity: 0;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 0.1px;\n  z-index: 0\n}\n.theme--button--2AgdxWh4::-moz-focus-inner {\n  border: 0\n}\n.theme--button--2AgdxWh4 > span:not([data-react-toolbox='tooltip']) {\n  display: inline-block;\n  line-height: 36px;\n  vertical-align: middle\n}\n.theme--button--2AgdxWh4 > svg {\n  display: inline-block;\n  fill: currentColor;\n  font-size: 120%;\n  height: 36px;\n  vertical-align: top;\n  width: 1em\n}\n.theme--button--2AgdxWh4 > * {\n  pointer-events: none\n}\n.theme--button--2AgdxWh4 > .theme--rippleWrapper--3AVBixZJ {\n  overflow: hidden\n}\n.theme--button--2AgdxWh4[disabled] {\n  color: rgba(0, 0, 0, 0.26);\n  cursor: auto;\n  pointer-events: none\n}\n.theme--squared--2GH_LI4r {\n  border-radius: 2px;\n  min-width: 90px;\n  padding: 0 12px\n}\n.theme--squared--2GH_LI4r .theme--icon--3aBSXDLw {\n  font-size: 120%;\n  margin-right: 6px;\n  vertical-align: middle\n}\n.theme--squared--2GH_LI4r > svg {\n  margin-right: 5px\n}\n.theme--solid--1ZxqC96o {\n}\n.theme--solid--1ZxqC96o[disabled] {\n  background-color: rgba(0, 0, 0, 0.12);\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),\n    0 3px 1px -2px rgba(0, 0, 0, .2),\n    0 1px 5px 0 rgba(0, 0, 0, .12)\n}\n.theme--solid--1ZxqC96o:active {\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),\n    0 3px 1px -2px rgba(0, 0, 0, .2),\n    0 1px 5px 0 rgba(0, 0, 0, .12)\n}\n.theme--solid--1ZxqC96o:focus:not(:active) {\n  box-shadow: 0 0 8px rgba(0, 0, 0, .18),\n      0 8px 16px rgba(0, 0, 0, .36)\n}\n.theme--raised--221icDvl {\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),\n    0 3px 1px -2px rgba(0, 0, 0, .2),\n    0 1px 5px 0 rgba(0, 0, 0, .12);\n}\n.theme--flat--1jWAQA6f {\n  background: transparent;\n}\n.theme--floating--3IRMZ7-n {\n  border-radius: 50%;\n  box-shadow:\n    0 1px 1.5px 0 rgba(0, 0, 0, .12),\n    0 1px 1px 0 rgba(0, 0, 0, .24);\n  font-size: 24px;\n  height: 56px;\n  width: 56px\n}\n.theme--floating--3IRMZ7-n .theme--icon--3aBSXDLw:not([data-react-toolbox='tooltip']) {\n  line-height: 56px\n}\n.theme--floating--3IRMZ7-n > .theme--rippleWrapper--3AVBixZJ {\n  border-radius: 50%\n}\n.theme--floating--3IRMZ7-n.theme--mini--2DCN-0B2 {\n  font-size: 17.77778px;\n  height: 40px;\n  width: 40px\n}\n.theme--floating--3IRMZ7-n.theme--mini--2DCN-0B2 .theme--icon--3aBSXDLw {\n  line-height: 40px\n}\n.theme--toggle--hC5Z2BVI {\n  background: transparent;\n  border-radius: 50%;\n  vertical-align: middle;\n  width: 36px\n}\n.theme--toggle--hC5Z2BVI > .theme--icon--3aBSXDLw,\n  .theme--toggle--hC5Z2BVI svg {\n  font-size: 20px;\n  line-height: 36px;\n  vertical-align: top\n}\n.theme--toggle--hC5Z2BVI > .theme--rippleWrapper--3AVBixZJ {\n  border-radius: 50%\n}\n.theme--primary--3tTAWEo9:not([disabled]) {\n}\n.theme--primary--3tTAWEo9:not([disabled]).theme--raised--221icDvl,\n  .theme--primary--3tTAWEo9:not([disabled]).theme--floating--3IRMZ7-n {\n  background: rgb(63, 81, 181);\n  color: rgb(255, 255, 255)\n}\n.theme--primary--3tTAWEo9:not([disabled]).theme--flat--1jWAQA6f,\n  .theme--primary--3tTAWEo9:not([disabled]).theme--toggle--hC5Z2BVI {\n  color: rgb(63, 81, 181)\n}\n.theme--primary--3tTAWEo9:not([disabled]).theme--flat--1jWAQA6f:focus:not(:active), .theme--primary--3tTAWEo9:not([disabled]).theme--toggle--hC5Z2BVI:focus:not(:active) {\n  background: rgba(63, 81, 181, 0.2)\n}\n.theme--primary--3tTAWEo9:not([disabled]).theme--flat--1jWAQA6f:hover {\n  background: rgba(63, 81, 181, 0.2)\n}\n.theme--accent--2wp6F0vq:not([disabled]) {\n}\n.theme--accent--2wp6F0vq:not([disabled]).theme--raised--221icDvl,\n  .theme--accent--2wp6F0vq:not([disabled]).theme--floating--3IRMZ7-n {\n  background: rgb(255, 64, 129);\n  color: rgb(255, 255, 255)\n}\n.theme--accent--2wp6F0vq:not([disabled]).theme--flat--1jWAQA6f,\n  .theme--accent--2wp6F0vq:not([disabled]).theme--toggle--hC5Z2BVI {\n  color: rgb(255, 64, 129)\n}\n.theme--accent--2wp6F0vq:not([disabled]).theme--flat--1jWAQA6f:focus:not(:active), .theme--accent--2wp6F0vq:not([disabled]).theme--toggle--hC5Z2BVI:focus:not(:active) {\n  background: rgba(255, 64, 129, 0.2)\n}\n.theme--accent--2wp6F0vq:not([disabled]).theme--flat--1jWAQA6f:hover {\n  background: rgba(255, 64, 129, 0.2)\n}\n.theme--neutral--2CPs4al7:not([disabled]) {\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--raised--221icDvl,\n  .theme--neutral--2CPs4al7:not([disabled]).theme--floating--3IRMZ7-n {\n  background-color: rgb(255, 255, 255);\n  color: rgb(33, 33, 33)\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--flat--1jWAQA6f,\n  .theme--neutral--2CPs4al7:not([disabled]).theme--toggle--hC5Z2BVI {\n  color: rgb(33, 33, 33)\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--flat--1jWAQA6f:focus:not(:active), .theme--neutral--2CPs4al7:not([disabled]).theme--toggle--hC5Z2BVI:focus:not(:active) {\n  background: rgba(33, 33, 33, 0.2)\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--flat--1jWAQA6f:hover {\n  background: rgba(33, 33, 33, 0.2)\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1 {\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1.theme--raised--221icDvl,\n    .theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1.theme--floating--3IRMZ7-n {\n  background-color: rgb(33, 33, 33);\n  color: rgb(255, 255, 255)\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1.theme--flat--1jWAQA6f,\n    .theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1.theme--toggle--hC5Z2BVI {\n  color: rgb(255, 255, 255)\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1.theme--flat--1jWAQA6f:focus:not(:active), .theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1.theme--toggle--hC5Z2BVI:focus:not(:active) {\n  background: rgba(33, 33, 33, 0.2)\n}\n.theme--neutral--2CPs4al7:not([disabled]).theme--inverse--2SPZrzR1.theme--flat--1jWAQA6f:hover {\n  background: rgba(33, 33, 33, 0.2)\n}\n.theme--neutral--2CPs4al7.theme--inverse--2SPZrzR1[disabled] {\n  background-color: rgba(0, 0, 0, 0.08);\n  color: rgba(0, 0, 0, 0.54);\n}\n", "", {"version":3,"sources":["/Users/jeremylim/Documents/ReddifulAPI/node_modules/react-toolbox/lib/button/theme.css"],"names":[],"mappings":"AAkZA;EACE,2BAAsB;MAAtB,sBAAsB;EACtB,0BAAoB;MAApB,uBAAoB;UAApB,oBAAoB;EACpB,UAAU;EACV,gBAAgB;EAChB,sBAAsB;EACtB,+BAAoB;EAApB,8BAAoB;MAApB,wBAAoB;UAApB,oBAAoB;EACpB,gBAAmC;EACnC,iBAAiB;EACjB,aAA6B;EAC7B,yBAAwB;MAAxB,sBAAwB;UAAxB,wBAAwB;EACxB,kBAAkB;EAClB,kBAAkC;EAClC,cAAc;EACd,WAAW;EACX,mBAAmB;EACnB,mBAAmB;EACnB,sBAAsB;EACtB,0BAA0B;EAC1B;;4CAG4C;EAH5C;;4CAG4C;EAC5C,oBAAoB;;EAjElB,uBAAuB;;EACvB,wDAAmC;;EACnC,oCAAoC;;EACpC,4BAA4B;;EAC5B,+BAAuB;;MAAvB,2BAAuB;;UAAvB,sBAAuB;CA4G1B;AA1GG;;;EAGE,uBAAuB;EACvB,oCAAoC;EACpC,4BAA4B;EAC5B,+BAAuB;MAAvB,2BAAuB;UAAvB,uBAAuB;EACvB,2BAA4B;CAC7B;AAuDH;EACE,cAAc;EACd,UAAU;EACV,WAAW;EACX,iBAAiB;EACjB,WAAW;EACX,mBAAmB;EACnB,aAAa;EACb,UAAW;CACZ;AAED;EACE,SAAU;CACX;AAED;EACE,sBAAsB;EACtB,kBAAkC;EAClC,sBAAuB;CACxB;AAED;EACE,sBAAsB;EACtB,mBAAmB;EACnB,gBAAgB;EAChB,aAA6B;EAC7B,oBAAoB;EACpB,UAAW;CACZ;AAED;EACE,oBAAqB;CACtB;AAED;EACE,gBAAiB;CAClB;AAED;EACE,2BAAyC;EACzC,aAAa;EACb,oBAAqB;CACtB;AAEH;EACE,mBAA2C;EAC3C,gBAA2C;EAC3C,eAAuC;CAWxC;AATC;EACE,gBAAgB;EAChB,kBAAgD;EAChD,sBAAuB;CACxB;AAED;EACE,iBAAsC;CACvC;AAEH;CAeC;AAdC;EACE,sCAA0D;EAC1D;;kCAA6B;CAC9B;AAED;EACE;;kCAA6B;CAC9B;AAED;EACE;mCAEiC;CAClC;AAEH;EACE;;mCAA6B;CAI9B;AACD;EACE,wBAAwB;CAGzB;AACD;EACE,mBAAmB;EACnB;;mCAEkC;EAGlC,gBAA4C;EAC5C,aAAsC;EACtC,WAAqC;CAmBtC;AAjBC;EACE,iBAA2C;CAC5C;AAED;EACE,kBAAmB;CACpB;AAED;EACE,sBAAiD;EACjD,aAA2C;EAC3C,WAA0C;CAK3C;AAHC;EACE,iBAAgD;CACjD;AAGL;EACE,wBAAwB;EACxB,mBAAmB;EAEnB,uBAAuB;EACvB,WAA4B;CAY7B;AAVC;;EAEE,gBAA0C;EAC1C,kBAAkC;EAClC,mBAAoB;CACrB;AAED;EACE,kBAAmB;CACpB;AAEH;CAmBC;AAlBC;;EAEE,6BAAwC;EACxC,yBAA4C;CAC7C;AAED;;EAEE,uBAAmC;CAKpC;AAHC;EACE,kCAA8C;CAC/C;AAGH;EACE,kCAA8C;CAC/C;AAEH;CAmBC;AAlBC;;EAEE,8BAAuC;EACvC,yBAA2C;CAC5C;AAED;;EAEE,wBAAkC;CAKnC;AAHC;EACE,mCAA6C;CAC9C;AAGH;EACE,mCAA6C;CAC9C;AAEH;CAwCC;AAvCC;;EAEE,qCAA8C;EAC9C,sBAA4C;CAC7C;AAED;;EAEE,sBAA4C;CAK7C;AAHC;EACE,iCAA8C;CAC/C;AAGH;EACE,iCAA8C;CAC/C;AAED;CAmBC;AAlBC;;EAEE,kCAAuD;EACvD,yBAAmC;CACpC;AAED;;EAEE,yBAAmC;CAKpC;AAHC;EACE,iCAA8C;CAC/C;AAGH;EACE,iCAA8C;CAC/C;AAGL;EACE,sCAA4D;EAC5D,2BAAiD;CAClD","file":"theme.css","sourcesContent":[":root {\n  --palette-red-50: rgb(255, 235, 238);\n  --palette-red-100: rgb(255, 205, 210);\n  --palette-red-200: rgb(239, 154, 154);\n  --palette-red-300: rgb(229, 115, 115);\n  --palette-red-400: rgb(239, 83, 80);\n  --palette-red-500: rgb(244, 67, 54);\n  --palette-red-600: rgb(229, 57, 53);\n  --palette-red-700: rgb(211, 47, 47);\n  --palette-red-800: rgb(198, 40, 40);\n  --palette-red-900: rgb(183, 28, 28);\n  --palette-red-a100: rgb(255, 138, 128);\n  --palette-red-a200: rgb(255, 82, 82);\n  --palette-red-a400: rgb(255, 23, 68);\n  --palette-red-a700: rgb(213, 0, 0);\n\n  --palette-pink-50: rgb(252, 228, 236);\n  --palette-pink-100: rgb(248, 187, 208);\n  --palette-pink-200: rgb(244, 143, 177);\n  --palette-pink-300: rgb(240, 98, 146);\n  --palette-pink-400: rgb(236, 64, 122);\n  --palette-pink-500: rgb(233, 30, 99);\n  --palette-pink-600: rgb(216, 27, 96);\n  --palette-pink-700: rgb(194, 24, 91);\n  --palette-pink-800: rgb(173, 20, 87);\n  --palette-pink-900: rgb(136, 14, 79);\n  --palette-pink-a100: rgb(255, 128, 171);\n  --palette-pink-a200: rgb(255, 64, 129);\n  --palette-pink-a400: rgb(245, 0, 87);\n  --palette-pink-a700: rgb(197, 17, 98);\n\n  --palette-purple-50: rgb(243, 229, 245);\n  --palette-purple-100: rgb(225, 190, 231);\n  --palette-purple-200: rgb(206, 147, 216);\n  --palette-purple-300: rgb(186, 104, 200);\n  --palette-purple-400: rgb(171, 71, 188);\n  --palette-purple-500: rgb(156, 39, 176);\n  --palette-purple-600: rgb(142, 36, 170);\n  --palette-purple-700: rgb(123, 31, 162);\n  --palette-purple-800: rgb(106, 27, 154);\n  --palette-purple-900: rgb(74, 20, 140);\n  --palette-purple-a100: rgb(234, 128, 252);\n  --palette-purple-a200: rgb(224, 64, 251);\n  --palette-purple-a400: rgb(213, 0, 249);\n  --palette-purple-a700: rgb(170, 0, 255);\n\n  --palette-deep-purple-50: rgb(237, 231, 246);\n  --palette-deep-purple-100: rgb(209, 196, 233);\n  --palette-deep-purple-200: rgb(179, 157, 219);\n  --palette-deep-purple-300: rgb(149, 117, 205);\n  --palette-deep-purple-400: rgb(126, 87, 194);\n  --palette-deep-purple-500: rgb(103, 58, 183);\n  --palette-deep-purple-600: rgb(94, 53, 177);\n  --palette-deep-purple-700: rgb(81, 45, 168);\n  --palette-deep-purple-800: rgb(69, 39, 160);\n  --palette-deep-purple-900: rgb(49, 27, 146);\n  --palette-deep-purple-a100: rgb(179, 136, 255);\n  --palette-deep-purple-a200: rgb(124, 77, 255);\n  --palette-deep-purple-a400: rgb(101, 31, 255);\n  --palette-deep-purple-a700: rgb(98, 0, 234);\n\n  --palette-indigo-50: rgb(232, 234, 246);\n  --palette-indigo-100: rgb(197, 202, 233);\n  --palette-indigo-200: rgb(159, 168, 218);\n  --palette-indigo-300: rgb(121, 134, 203);\n  --palette-indigo-400: rgb(92, 107, 192);\n  --palette-indigo-500: rgb(63, 81, 181);\n  --palette-indigo-600: rgb(57, 73, 171);\n  --palette-indigo-700: rgb(48, 63, 159);\n  --palette-indigo-800: rgb(40, 53, 147);\n  --palette-indigo-900: rgb(26, 35, 126);\n  --palette-indigo-a100: rgb(140, 158, 255);\n  --palette-indigo-a200: rgb(83, 109, 254);\n  --palette-indigo-a400: rgb(61, 90, 254);\n  --palette-indigo-a700: rgb(48, 79, 254);\n\n  --palette-blue-50: rgb(227, 242, 253);\n  --palette-blue-100: rgb(187, 222, 251);\n  --palette-blue-200: rgb(144, 202, 249);\n  --palette-blue-300: rgb(100, 181, 246);\n  --palette-blue-400: rgb(66, 165, 245);\n  --palette-blue-500: rgb(33, 150, 243);\n  --palette-blue-600: rgb(30, 136, 229);\n  --palette-blue-700: rgb(25, 118, 210);\n  --palette-blue-800: rgb(21, 101, 192);\n  --palette-blue-900: rgb(13, 71, 161);\n  --palette-blue-a100: rgb(130, 177, 255);\n  --palette-blue-a200: rgb(68, 138, 255);\n  --palette-blue-a400: rgb(41, 121, 255);\n  --palette-blue-a700: rgb(41, 98, 255);\n\n  --palette-light-blue-50: rgb(225, 245, 254);\n  --palette-light-blue-100: rgb(179, 229, 252);\n  --palette-light-blue-200: rgb(129, 212, 250);\n  --palette-light-blue-300: rgb(79, 195, 247);\n  --palette-light-blue-400: rgb(41, 182, 246);\n  --palette-light-blue-500: rgb(3, 169, 244);\n  --palette-light-blue-600: rgb(3, 155, 229);\n  --palette-light-blue-700: rgb(2, 136, 209);\n  --palette-light-blue-800: rgb(2, 119, 189);\n  --palette-light-blue-900: rgb(1, 87, 155);\n  --palette-light-blue-a100: rgb(128, 216, 255);\n  --palette-light-blue-a200: rgb(64, 196, 255);\n  --palette-light-blue-a400: rgb(0, 176, 255);\n  --palette-light-blue-a700: rgb(0, 145, 234);\n\n  --palette-cyan-50: rgb(224, 247, 250);\n  --palette-cyan-100: rgb(178, 235, 242);\n  --palette-cyan-200: rgb(128, 222, 234);\n  --palette-cyan-300: rgb(77, 208, 225);\n  --palette-cyan-400: rgb(38, 198, 218);\n  --palette-cyan-500: rgb(0, 188, 212);\n  --palette-cyan-600: rgb(0, 172, 193);\n  --palette-cyan-700: rgb(0, 151, 167);\n  --palette-cyan-800: rgb(0, 131, 143);\n  --palette-cyan-900: rgb(0, 96, 100);\n  --palette-cyan-a100: rgb(132, 255, 255);\n  --palette-cyan-a200: rgb(24, 255, 255);\n  --palette-cyan-a400: rgb(0, 229, 255);\n  --palette-cyan-a700: rgb(0, 184, 212);\n\n  --palette-teal-50: rgb(224, 242, 241);\n  --palette-teal-100: rgb(178, 223, 219);\n  --palette-teal-200: rgb(128, 203, 196);\n  --palette-teal-300: rgb(77, 182, 172);\n  --palette-teal-400: rgb(38, 166, 154);\n  --palette-teal-500: rgb(0, 150, 136);\n  --palette-teal-600: rgb(0, 137, 123);\n  --palette-teal-700: rgb(0, 121, 107);\n  --palette-teal-800: rgb(0, 105, 92);\n  --palette-teal-900: rgb(0, 77, 64);\n  --palette-teal-a100: rgb(167, 255, 235);\n  --palette-teal-a200: rgb(100, 255, 218);\n  --palette-teal-a400: rgb(29, 233, 182);\n  --palette-teal-a700: rgb(0, 191, 165);\n\n  --palette-green-50: rgb(232, 245, 233);\n  --palette-green-100: rgb(200, 230, 201);\n  --palette-green-200: rgb(165, 214, 167);\n  --palette-green-300: rgb(129, 199, 132);\n  --palette-green-400: rgb(102, 187, 106);\n  --palette-green-500: rgb(76, 175, 80);\n  --palette-green-600: rgb(67, 160, 71);\n  --palette-green-700: rgb(56, 142, 60);\n  --palette-green-800: rgb(46, 125, 50);\n  --palette-green-900: rgb(27, 94, 32);\n  --palette-green-a100: rgb(185, 246, 202);\n  --palette-green-a200: rgb(105, 240, 174);\n  --palette-green-a400: rgb(0, 230, 118);\n  --palette-green-a700: rgb(0, 200, 83);\n\n  --palette-light-green-50: rgb(241, 248, 233);\n  --palette-light-green-100: rgb(220, 237, 200);\n  --palette-light-green-200: rgb(197, 225, 165);\n  --palette-light-green-300: rgb(174, 213, 129);\n  --palette-light-green-400: rgb(156, 204, 101);\n  --palette-light-green-500: rgb(139, 195, 74);\n  --palette-light-green-600: rgb(124, 179, 66);\n  --palette-light-green-700: rgb(104, 159, 56);\n  --palette-light-green-800: rgb(85, 139, 47);\n  --palette-light-green-900: rgb(51, 105, 30);\n  --palette-light-green-a100: rgb(204, 255, 144);\n  --palette-light-green-a200: rgb(178, 255, 89);\n  --palette-light-green-a400: rgb(118, 255, 3);\n  --palette-light-green-a700: rgb(100, 221, 23);\n\n  --palette-lime-50: rgb(249, 251, 231);\n  --palette-lime-100: rgb(240, 244, 195);\n  --palette-lime-200: rgb(230, 238, 156);\n  --palette-lime-300: rgb(220, 231, 117);\n  --palette-lime-400: rgb(212, 225, 87);\n  --palette-lime-500: rgb(205, 220, 57);\n  --palette-lime-600: rgb(192, 202, 51);\n  --palette-lime-700: rgb(175, 180, 43);\n  --palette-lime-800: rgb(158, 157, 36);\n  --palette-lime-900: rgb(130, 119, 23);\n  --palette-lime-a100: rgb(244, 255, 129);\n  --palette-lime-a200: rgb(238, 255, 65);\n  --palette-lime-a400: rgb(198, 255, 0);\n  --palette-lime-a700: rgb(174, 234, 0);\n\n  --palette-yellow-50: rgb(255, 253, 231);\n  --palette-yellow-100: rgb(255, 249, 196);\n  --palette-yellow-200: rgb(255, 245, 157);\n  --palette-yellow-300: rgb(255, 241, 118);\n  --palette-yellow-400: rgb(255, 238, 88);\n  --palette-yellow-500: rgb(255, 235, 59);\n  --palette-yellow-600: rgb(253, 216, 53);\n  --palette-yellow-700: rgb(251, 192, 45);\n  --palette-yellow-800: rgb(249, 168, 37);\n  --palette-yellow-900: rgb(245, 127, 23);\n  --palette-yellow-a100: rgb(255, 255, 141);\n  --palette-yellow-a200: rgb(255, 255, 0);\n  --palette-yellow-a400: rgb(255, 234, 0);\n  --palette-yellow-a700: rgb(255, 214, 0);\n\n  --palette-amber-50: rgb(255, 248, 225);\n  --palette-amber-100: rgb(255, 236, 179);\n  --palette-amber-200: rgb(255, 224, 130);\n  --palette-amber-300: rgb(255, 213, 79);\n  --palette-amber-400: rgb(255, 202, 40);\n  --palette-amber-500: rgb(255, 193, 7);\n  --palette-amber-600: rgb(255, 179, 0);\n  --palette-amber-700: rgb(255, 160, 0);\n  --palette-amber-800: rgb(255, 143, 0);\n  --palette-amber-900: rgb(255, 111, 0);\n  --palette-amber-a100: rgb(255, 229, 127);\n  --palette-amber-a200: rgb(255, 215, 64);\n  --palette-amber-a400: rgb(255, 196, 0);\n  --palette-amber-a700: rgb(255, 171, 0);\n\n  --palette-orange-50: rgb(255, 243, 224);\n  --palette-orange-100: rgb(255, 224, 178);\n  --palette-orange-200: rgb(255, 204, 128);\n  --palette-orange-300: rgb(255, 183, 77);\n  --palette-orange-400: rgb(255, 167, 38);\n  --palette-orange-500: rgb(255, 152, 0);\n  --palette-orange-600: rgb(251, 140, 0);\n  --palette-orange-700: rgb(245, 124, 0);\n  --palette-orange-800: rgb(239, 108, 0);\n  --palette-orange-900: rgb(230, 81, 0);\n  --palette-orange-a100: rgb(255, 209, 128);\n  --palette-orange-a200: rgb(255, 171, 64);\n  --palette-orange-a400: rgb(255, 145, 0);\n  --palette-orange-a700: rgb(255, 109, 0);\n\n  --palette-deep-orange-50: rgb(251, 233, 231);\n  --palette-deep-orange-100: rgb(255, 204, 188);\n  --palette-deep-orange-200: rgb(255, 171, 145);\n  --palette-deep-orange-300: rgb(255, 138, 101);\n  --palette-deep-orange-400: rgb(255, 112, 67);\n  --palette-deep-orange-500: rgb(255, 87, 34);\n  --palette-deep-orange-600: rgb(244, 81, 30);\n  --palette-deep-orange-700: rgb(230, 74, 25);\n  --palette-deep-orange-800: rgb(216, 67, 21);\n  --palette-deep-orange-900: rgb(191, 54, 12);\n  --palette-deep-orange-a100: rgb(255, 158, 128);\n  --palette-deep-orange-a200: rgb(255, 110, 64);\n  --palette-deep-orange-a400: rgb(255, 61, 0);\n  --palette-deep-orange-a700: rgb(221, 44, 0);\n\n  --palette-brown-50: rgb(239, 235, 233);\n  --palette-brown-100: rgb(215, 204, 200);\n  --palette-brown-200: rgb(188, 170, 164);\n  --palette-brown-300: rgb(161, 136, 127);\n  --palette-brown-400: rgb(141, 110, 99);\n  --palette-brown-500: rgb(121, 85, 72);\n  --palette-brown-600: rgb(109, 76, 65);\n  --palette-brown-700: rgb(93, 64, 55);\n  --palette-brown-800: rgb(78, 52, 46);\n  --palette-brown-900: rgb(62, 39, 35);\n\n  --palette-grey-50: rgb(250, 250, 250);\n  --palette-grey-100: rgb(245, 245, 245);\n  --palette-grey-200: rgb(238, 238, 238);\n  --palette-grey-300: rgb(224, 224, 224);\n  --palette-grey-400: rgb(189, 189, 189);\n  --palette-grey-500: rgb(158, 158, 158);\n  --palette-grey-600: rgb(117, 117, 117);\n  --palette-grey-700: rgb(97, 97, 97);\n  --palette-grey-800: rgb(66, 66, 66);\n  --palette-grey-900: rgb(33, 33, 33);\n\n  --palette-blue-grey-50: rgb(236, 239, 241);\n  --palette-blue-grey-100: rgb(207, 216, 220);\n  --palette-blue-grey-200: rgb(176, 190, 197);\n  --palette-blue-grey-300: rgb(144, 164, 174);\n  --palette-blue-grey-400: rgb(120, 144, 156);\n  --palette-blue-grey-500: rgb(96, 125, 139);\n  --palette-blue-grey-600: rgb(84, 110, 122);\n  --palette-blue-grey-700: rgb(69, 90, 100);\n  --palette-blue-grey-800: rgb(55, 71, 79);\n  --palette-blue-grey-900: rgb(38, 50, 56);\n\n  --color-black: rgb(0, 0, 0);\n  --color-white: rgb(255, 255, 255);\n  --color-dark-contrast: var(--color-white);\n  --color-light-contrast: var(--color-black);\n}\n:root {\n  --color-divider: var(--palette-grey-200);\n  --color-background: var(--color-white);\n  --color-text: var(--palette-grey-900);\n  --color-text-secondary: var(--palette-grey-600);\n\n  --color-primary: var(--palette-indigo-500);\n  --color-primary-dark: var(--palette-indigo-700);\n  --color-accent: var(--palette-pink-a200);\n  --color-accent-dark: var(--palette-pink-700);\n  --color-primary-contrast: var(--color-dark-contrast);\n  --color-accent-contrast: var(--color-dark-contrast);\n\n  --unit: 10px;\n\n  --preferred-font: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n  --font-size: calc(1.6 * var(--unit));\n  --font-size-tiny: calc(1.2 * var(--unit));\n  --font-size-small: calc(1.4 * var(--unit));\n  --font-size-normal: var(--font-size);\n  --font-size-big: calc(1.8 * var(--unit));\n  --font-weight-thin: 300;\n  --font-weight-normal: 400;\n  --font-weight-semi-bold: 500;\n  --font-weight-bold: 700;\n\n  --shadow-2p:\n    0 2px 2px 0 rgba(0, 0, 0, 0.14),\n    0 3px 1px -2px rgba(0, 0, 0, 0.2),\n    0 1px 5px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-3p:\n    0 3px 4px 0 rgba(0, 0, 0, 0.14),\n    0 3px 3px -2px rgba(0, 0, 0, 0.2),\n    0 1px 8px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-4p:\n    0 4px 5px 0 rgba(0, 0, 0, 0.14),\n    0 1px 10px 0 rgba(0, 0, 0, 0.12),\n    0 2px 4px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-6p:\n    0 6px 10px 0 rgba(0, 0, 0, 0.14),\n    0 1px 18px 0 rgba(0, 0, 0, 0.12),\n    0 3px 5px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-8p:\n    0 8px 10px 1px rgba(0, 0, 0, 0.14),\n    0 3px 14px 2px rgba(0, 0, 0, 0.12),\n    0 5px 5px -3px rgba(0, 0, 0, 0.2);\n\n  --shadow-16p:\n    0 16px 24px 2px rgba(0, 0, 0, 0.14),\n    0 6px 30px 5px rgba(0, 0, 0, 0.12),\n    0 8px 10px -5px rgba(0, 0, 0, 0.2);\n\n  --shadow-key-umbra-opacity: 0.2;\n  --shadow-key-penumbra-opacity: 0.14;\n  --shadow-ambient-shadow-opacity: 0.12;\n\n  --zdepth-shadow-1: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);\n  --zdepth-shadow-2: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-3: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-4: 0 14px 45px rgba(0, 0, 0, 0.25), 0 10px 18px rgba(0, 0, 0, 0.22);\n  --zdepth-shadow-5: 0 19px 60px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.22);\n\n  --animation-duration: 0.35s;\n  --animation-delay: calc(var(--animation-duration) / 5);\n  --animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);\n  --animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);\n  --animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);\n  --animation-curve-default: var(--animation-curve-fast-out-slow-in);\n\n  --z-index-highest: 300;\n  --z-index-higher: 200;\n  --z-index-high: 100;\n  --z-index-normal: 1;\n  --z-index-low: -100;\n  --z-index-lower: -200;\n\n  --reset: {\n    box-sizing: border-box;\n    font-family: var(--preferred-font);\n    -webkit-font-smoothing: antialiased;\n    font-smoothing: antialiased;\n    text-size-adjust: 100%;\n\n    & *,\n    & *::after,\n    & *::before {\n      box-sizing: border-box;\n      -webkit-font-smoothing: antialiased;\n      font-smoothing: antialiased;\n      text-size-adjust: 100%;\n      -webkit-touch-callout: none;\n    }\n  }\n}\n:root {\n  --button-border-radius: calc(0.2 * var(--unit));\n  --button-height: calc(3.6 * var(--unit));\n  --button-toggle-font-size: calc(2 * var(--unit));\n  --button-primary-color: var(--color-primary);\n  --button-primary-color-hover: color(var(--color-primary) a(20%));\n  --button-primary-color-contrast: var(--color-primary-contrast);\n  --button-accent-color-contrast: var(--color-primary-contrast);\n  --button-accent-color-hover: color(var(--color-accent) a(20%));\n  --button-accent-color: var(--color-accent);\n  --button-neutral-color: var(--color-white);\n  --button-neutral-color-contrast: var(--palette-grey-900);\n  --button-neutral-color-hover: color(var(--palette-grey-900) a(20%));\n  --button-floating-font-size: calc(2.4 * var(--unit));\n  --button-floating-height: calc(5.6 * var(--unit));\n  --button-floating-mini-height: calc(4 * var(--unit));\n  --button-floating-mini-font-size: calc(var(--button-floating-mini-height) / 2.25);\n  --button-disabled-text-color: color(var(--color-black) a(26%));\n  --button-disabled-background-color: color(var(--color-black) a(12%));\n  --button-disabled-text-color-inverse: color(var(--color-black) a(54%));\n  --button-disabled-background-inverse: color(var(--color-black) a(8%));\n  --button-squared-icon-margin: calc(0.6 * var(--unit));\n  --button-squared-min-width: calc(9 * var(--unit));\n  --button-squared-padding: 0 calc(1.2 * var(--unit));\n}\n.button {\n  align-content: center;\n  align-items: center;\n  border: 0;\n  cursor: pointer;\n  display: inline-block;\n  flex-direction: row;\n  font-size: calc(1.4 * var(--unit));\n  font-weight: 500;\n  height: var(--button-height);\n  justify-content: center;\n  letter-spacing: 0;\n  line-height: var(--button-height);\n  outline: none;\n  padding: 0;\n  position: relative;\n  text-align: center;\n  text-decoration: none;\n  text-transform: uppercase;\n  transition:\n    box-shadow 0.2s var(--animation-curve-fast-out-linear-in),\n    background-color 0.2s var(--animation-curve-default),\n    color 0.2s var(--animation-curve-default);\n  white-space: nowrap;\n\n  @apply --reset;\n\n  & > input {\n    height: 0.1px;\n    margin: 0;\n    opacity: 0;\n    overflow: hidden;\n    padding: 0;\n    position: absolute;\n    width: 0.1px;\n    z-index: 0;\n  }\n\n  &::-moz-focus-inner {\n    border: 0;\n  }\n\n  & > span:not([data-react-toolbox='tooltip']) {\n    display: inline-block;\n    line-height: var(--button-height);\n    vertical-align: middle;\n  }\n\n  & > svg {\n    display: inline-block;\n    fill: currentColor;\n    font-size: 120%;\n    height: var(--button-height);\n    vertical-align: top;\n    width: 1em;\n  }\n\n  & > * {\n    pointer-events: none;\n  }\n\n  & > .rippleWrapper {\n    overflow: hidden;\n  }\n\n  &[disabled] {\n    color: var(--button-disabled-text-color);\n    cursor: auto;\n    pointer-events: none;\n  }\n}\n.squared {\n  border-radius: var(--button-border-radius);\n  min-width: var(--button-squared-min-width);\n  padding: var(--button-squared-padding);\n\n  & .icon {\n    font-size: 120%;\n    margin-right: var(--button-squared-icon-margin);\n    vertical-align: middle;\n  }\n\n  & > svg {\n    margin-right: calc(0.5 * var(--unit));\n  }\n}\n.solid {\n  &[disabled] {\n    background-color: var(--button-disabled-background-color);\n    box-shadow: var(--shadow-2p);\n  }\n\n  &:active {\n    box-shadow: var(--shadow-2p);\n  }\n\n  &:focus:not(:active) {\n    box-shadow:\n      0 0 8px rgba(0, 0, 0, 0.18),\n      0 8px 16px rgba(0, 0, 0, 0.36);\n  }\n}\n.raised {\n  box-shadow: var(--shadow-2p);\n  composes: button;\n  composes: squared;\n  composes: solid;\n}\n.flat {\n  background: transparent;\n  composes: button;\n  composes: squared;\n}\n.floating {\n  border-radius: 50%;\n  box-shadow:\n    0 1px 1.5px 0 rgba(0, 0, 0, 0.12),\n    0 1px 1px 0 rgba(0, 0, 0, 0.24);\n  composes: button;\n  composes: solid;\n  font-size: var(--button-floating-font-size);\n  height: var(--button-floating-height);\n  width: var(--button-floating-height);\n\n  & .icon:not([data-react-toolbox='tooltip']) {\n    line-height: var(--button-floating-height);\n  }\n\n  & > .rippleWrapper {\n    border-radius: 50%;\n  }\n\n  &.mini {\n    font-size: var(--button-floating-mini-font-size);\n    height: var(--button-floating-mini-height);\n    width: var(--button-floating-mini-height);\n\n    & .icon {\n      line-height: var(--button-floating-mini-height);\n    }\n  }\n}\n.toggle {\n  background: transparent;\n  border-radius: 50%;\n  composes: button;\n  vertical-align: middle;\n  width: var(--button-height);\n\n  & > .icon,\n  & svg {\n    font-size: var(--button-toggle-font-size);\n    line-height: var(--button-height);\n    vertical-align: top;\n  }\n\n  & > .rippleWrapper {\n    border-radius: 50%;\n  }\n}\n.primary:not([disabled]) {\n  &.raised,\n  &.floating {\n    background: var(--button-primary-color);\n    color: var(--button-primary-color-contrast);\n  }\n\n  &.flat,\n  &.toggle {\n    color: var(--button-primary-color);\n\n    &:focus:not(:active) {\n      background: var(--button-primary-color-hover);\n    }\n  }\n\n  &.flat:hover {\n    background: var(--button-primary-color-hover);\n  }\n}\n.accent:not([disabled]) {\n  &.raised,\n  &.floating {\n    background: var(--button-accent-color);\n    color: var(--button-accent-color-contrast);\n  }\n\n  &.flat,\n  &.toggle {\n    color: var(--button-accent-color);\n\n    &:focus:not(:active) {\n      background: var(--button-accent-color-hover);\n    }\n  }\n\n  &.flat:hover {\n    background: var(--button-accent-color-hover);\n  }\n}\n.neutral:not([disabled]) {\n  &.raised,\n  &.floating {\n    background-color: var(--button-neutral-color);\n    color: var(--button-neutral-color-contrast);\n  }\n\n  &.flat,\n  &.toggle {\n    color: var(--button-neutral-color-contrast);\n\n    &:focus:not(:active) {\n      background: var(--button-neutral-color-hover);\n    }\n  }\n\n  &.flat:hover {\n    background: var(--button-neutral-color-hover);\n  }\n\n  &.inverse {\n    &.raised,\n    &.floating {\n      background-color: var(--button-neutral-color-contrast);\n      color: var(--button-neutral-color);\n    }\n\n    &.flat,\n    &.toggle {\n      color: var(--button-neutral-color);\n\n      &:focus:not(:active) {\n        background: var(--button-neutral-color-hover);\n      }\n    }\n\n    &.flat:hover {\n      background: var(--button-neutral-color-hover);\n    }\n  }\n}\n.neutral.inverse[disabled] {\n  background-color: var(--button-disabled-background-inverse);\n  color: var(--button-disabled-text-color-inverse);\n}\n"],"sourceRoot":""}]);
->>>>>>> Adding options parameters
 
 // exports
 exports.locals = {
@@ -31549,11 +31496,7 @@ exports = module.exports = __webpack_require__(78)(true);
 
 
 // module
-<<<<<<< HEAD
-exports.push([module.i, ".theme--card--8pay8nO5 {\n  background: rgb(255, 255, 255);\n  border-radius: 2px;\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),\n    0 3px 1px -2px rgba(0, 0, 0, .2),\n    0 1px 5px 0 rgba(0, 0, 0, .12);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  font-size: 14px;\n  overflow: hidden;\n  width: 100%;\n\n  box-sizing: border-box;\n\n  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n\n  -webkit-font-smoothing: antialiased;\n\n  font-smoothing: antialiased;\n\n  -webkit-text-size-adjust: 100%;\n\n      -ms-text-size-adjust: 100%;\n\n          text-size-adjust: 100%\n}\n.theme--card--8pay8nO5 *,\n    .theme--card--8pay8nO5 *::after,\n    .theme--card--8pay8nO5 *::before {\n  box-sizing: border-box;\n  -webkit-font-smoothing: antialiased;\n  font-smoothing: antialiased;\n  -webkit-text-size-adjust: 100%;\n      -ms-text-size-adjust: 100%;\n          text-size-adjust: 100%;\n  -webkit-touch-callout: none\n}\n.theme--card--8pay8nO5.theme--raised--1AHwB_mq {\n  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14),\n    0 3px 14px 2px rgba(0, 0, 0, .12),\n    0 5px 5px -3px rgba(0, 0, 0, .2)\n}\n.theme--cardMedia--3Yc6zOS9 {\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  position: relative\n}\n.theme--cardMedia--3Yc6zOS9.theme--wide--35NNepyA,\n  .theme--cardMedia--3Yc6zOS9.theme--square--1HBxg4PW {\n  width: 100%\n}\n.theme--cardMedia--3Yc6zOS9.theme--wide--35NNepyA .theme--content--ewAVMhto, .theme--cardMedia--3Yc6zOS9.theme--square--1HBxg4PW .theme--content--ewAVMhto {\n  height: 100%;\n  position: absolute\n}\n.theme--cardMedia--3Yc6zOS9.theme--wide--35NNepyA .theme--content--ewAVMhto > iframe,\n    .theme--cardMedia--3Yc6zOS9.theme--wide--35NNepyA .theme--content--ewAVMhto > video,\n    .theme--cardMedia--3Yc6zOS9.theme--wide--35NNepyA .theme--content--ewAVMhto > img,\n    .theme--cardMedia--3Yc6zOS9.theme--square--1HBxg4PW .theme--content--ewAVMhto > iframe,\n    .theme--cardMedia--3Yc6zOS9.theme--square--1HBxg4PW .theme--content--ewAVMhto > video,\n    .theme--cardMedia--3Yc6zOS9.theme--square--1HBxg4PW .theme--content--ewAVMhto > img {\n  max-width: 100%\n}\n.theme--cardMedia--3Yc6zOS9::after {\n  content: '';\n  display: block;\n  height: 0\n}\n.theme--cardMedia--3Yc6zOS9.theme--wide--35NNepyA::after {\n  padding-top: 56.25%\n}\n.theme--cardMedia--3Yc6zOS9.theme--square--1HBxg4PW::after {\n  padding-top: 100%\n}\n.theme--cardMedia--3Yc6zOS9 .theme--content--ewAVMhto {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  left: 0;\n  overflow: hidden;\n  position: relative;\n  top: 0;\n  width: 100%\n}\n.theme--cardMedia--3Yc6zOS9 .theme--contentOverlay--1bBKzO69 {}\n.theme--cardMedia--3Yc6zOS9 .theme--contentOverlay--1bBKzO69 .theme--cardTitle--1dU3odV8,\n    .theme--cardMedia--3Yc6zOS9 .theme--contentOverlay--1bBKzO69 .theme--cardActions--ZoLIGszz,\n    .theme--cardMedia--3Yc6zOS9 .theme--contentOverlay--1bBKzO69 .theme--cardText--K_kzHLM5 {\n  background-color: rgba(0, 0, 0, 0.35)\n}\n.theme--cardMedia--3Yc6zOS9 .theme--cardTitle--1dU3odV8 {}\n.theme--cardMedia--3Yc6zOS9 .theme--cardTitle--1dU3odV8 .theme--title--3qCP34Lv,\n    .theme--cardMedia--3Yc6zOS9 .theme--cardTitle--1dU3odV8 .theme--subtitle--3p3mONMY {\n  color: rgb(255, 255, 255)\n}\n.theme--cardTitle--1dU3odV8 {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex\n}\n.theme--cardTitle--1dU3odV8 [data-react-toolbox='avatar'] {\n  margin-right: 13px\n}\n.theme--cardTitle--1dU3odV8 .theme--title--3qCP34Lv {\n  font-size: 20px;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  line-height: 1;\n  margin: 0;\n  padding: 0\n}\n.theme--cardTitle--1dU3odV8 .theme--subtitle--3p3mONMY {\n  color: rgb(117, 117, 117);\n  font-size: 14px;\n  font-weight: 400;\n  letter-spacing: 0;\n  line-height: 24px;\n  margin: 0;\n  padding: 0\n}\n.theme--cardTitle--1dU3odV8.theme--large--2iwOKGgf {\n  padding: 20px 16px 14px\n}\n.theme--cardTitle--1dU3odV8.theme--large--2iwOKGgf .theme--title--3qCP34Lv {\n  font-size: 24px;\n  -moz-osx-font-smoothing: grayscale;\n  font-weight: 400;\n  line-height: 1.25\n}\n.theme--cardTitle--1dU3odV8.theme--small--1RHxebyV {\n  padding: 16px\n}\n.theme--cardTitle--1dU3odV8.theme--small--1RHxebyV .theme--title--3qCP34Lv {\n  font-size: 22.4px;\n  font-size: 1.4rem;\n  letter-spacing: 0;\n  line-height: 1.4\n}\n.theme--cardTitle--1dU3odV8.theme--small--1RHxebyV .theme--subtitle--3p3mONMY {\n  font-weight: 500;\n  line-height: 1.4\n}\n.theme--cardTitle--1dU3odV8,\n.theme--cardText--K_kzHLM5 {\n  padding: 14px 16px\n}\n.theme--cardTitle--1dU3odV8 p, .theme--cardText--K_kzHLM5 p {\n  font-size: 14px;\n  font-weight: 400;\n  letter-spacing: 0;\n  line-height: 24px;\n  margin: 0\n}\n.theme--cardTitle--1dU3odV8:last-child, .theme--cardText--K_kzHLM5:last-child {\n  padding-bottom: 20px\n}\n.theme--cardTitle--1dU3odV8 + .theme--cardText--K_kzHLM5, .theme--cardText--K_kzHLM5 + .theme--cardText--K_kzHLM5 {\n  padding-top: 0\n}\n.theme--cardActions--ZoLIGszz {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  padding: 8px\n}\n.theme--cardActions--ZoLIGszz [data-react-toolbox='button'] {\n  margin: 0 4px;\n  min-width: 0;\n  padding: 0 8px\n}\n.theme--cardActions--ZoLIGszz [data-react-toolbox='button']:first-child {\n  margin-left: 0\n}\n.theme--cardActions--ZoLIGszz [data-react-toolbox='button']:last-child {\n  margin-right: 0\n}\n", "", {"version":3,"sources":["/home/shea/Documents/idb/node_modules/react-toolbox/lib/card/theme.css"],"names":[],"mappings":"AAkYA;EACE,+BAAyC;EACzC,mBAAuC;EACvC;;mCAA6B;EAC7B,qBAAc;EAAd,qBAAc;EAAd,cAAc;EACd,6BAAuB;EAAvB,8BAAuB;MAAvB,2BAAuB;UAAvB,uBAAuB;EACvB,gBAAiC;EACjC,iBAAiB;EACjB,YAAY;;EAlCV,uBAAuB;;EACvB,wDAAmC;;EACnC,oCAAoC;;EACpC,4BAA4B;;EAC5B,+BAAuB;;MAAvB,2BAAuB;;UAAvB,sBAAuB;CAqC1B;AAnCG;;;EAGE,uBAAuB;EACvB,oCAAoC;EACpC,4BAA4B;EAC5B,+BAAuB;MAAvB,2BAAuB;UAAvB,uBAAuB;EACvB,2BAA4B;CAC7B;AAwBH;EACE;;oCAA6B;CAC9B;AAEH;EACE,mCAAmC;EACnC,6BAA6B;EAC7B,uBAAuB;EACvB,kBAAmB;CAyDpB;AAvDC;;EAEE,WAAY;CAYb;AAVC;EACE,aAAa;EACb,kBAAmB;CACpB;AAED;;;;;;EAGE,eAAgB;CACjB;AAGH;EACE,YAAY;EACZ,eAAe;EACf,SAAU;CACX;AAED;EACE,mBAAoB;CACrB;AAED;EACE,iBAAkB;CACnB;AAED;EACE,qBAAc;EAAd,qBAAc;EAAd,cAAc;EACd,6BAAuB;EAAvB,8BAAuB;MAAvB,2BAAuB;UAAvB,uBAAuB;EACvB,sBAA0B;MAA1B,mBAA0B;UAA1B,0BAA0B;EAC1B,QAAQ;EACR,iBAAiB;EACjB,mBAAmB;EACnB,OAAO;EACP,WAAY;CACb;AAED,+DAMC;AALC;;;EAGE,qCAA2C;CAC5C;AAGH,0DAKC;AAJC;;EAEE,yBAA+B;CAChC;AAGL;EACE,0BAAoB;MAApB,uBAAoB;UAApB,oBAAoB;EACpB,qBAAc;EAAd,qBAAc;EAAd,aAAc;CAkDf;AAhDC;EACE,kBAAsC;CACvC;AAED;EACE,gBAAiC;EACjC,iBAAiB;EACjB,uBAAuB;EACvB,eAAe;EACf,UAAU;EACV,UAAW;CACZ;AAED;EACE,0BAAmC;EACnC,gBAAmC;EACnC,iBAAiB;EACjB,kBAAkB;EAClB,kBAAqC;EACrC,UAAU;EACV,UAAW;CACZ;AAED;EACE,uBAAkG;CAQnG;AANC;EACE,gBAAmC;EACnC,mCAAmC;EACnC,iBAAiB;EACjB,iBAAkB;CACnB;AAGH;EACE,aAA6B;CAY9B;AAVC;EACE,kBAAkB;EAAlB,kBAAkB;EAClB,kBAAkB;EAClB,gBAAiB;CAClB;AAED;EACE,iBAAiB;EACjB,gBAAiB;CAClB;AAGL;;EAEE,kBAA2E;CAiB5E;AAfC;EACE,gBAAmC;EACnC,iBAAiB;EACjB,kBAAkB;EAClB,kBAAqC;EACrC,SAAU;CACX;AAED;EACE,oBAAuC;CACxC;AAED;EACE,cAAe;CAChB;AAEH;EACE,0BAAoB;MAApB,uBAAoB;UAApB,oBAAoB;EACpB,qBAAc;EAAd,qBAAc;EAAd,cAAc;EACd,wBAA4B;MAA5B,qBAA4B;UAA5B,4BAA4B;EAC5B,YAAgC;CAejC;AAbC;EACE,cAA2C;EAC3C,aAAa;EACb,cAAkC;CASnC;AAPC;EACE,cAAe;CAChB;AAED;EACE,eAAgB;CACjB","file":"theme.css","sourcesContent":[":root {\n  --palette-red-50: rgb(255, 235, 238);\n  --palette-red-100: rgb(255, 205, 210);\n  --palette-red-200: rgb(239, 154, 154);\n  --palette-red-300: rgb(229, 115, 115);\n  --palette-red-400: rgb(239, 83, 80);\n  --palette-red-500: rgb(244, 67, 54);\n  --palette-red-600: rgb(229, 57, 53);\n  --palette-red-700: rgb(211, 47, 47);\n  --palette-red-800: rgb(198, 40, 40);\n  --palette-red-900: rgb(183, 28, 28);\n  --palette-red-a100: rgb(255, 138, 128);\n  --palette-red-a200: rgb(255, 82, 82);\n  --palette-red-a400: rgb(255, 23, 68);\n  --palette-red-a700: rgb(213, 0, 0);\n\n  --palette-pink-50: rgb(252, 228, 236);\n  --palette-pink-100: rgb(248, 187, 208);\n  --palette-pink-200: rgb(244, 143, 177);\n  --palette-pink-300: rgb(240, 98, 146);\n  --palette-pink-400: rgb(236, 64, 122);\n  --palette-pink-500: rgb(233, 30, 99);\n  --palette-pink-600: rgb(216, 27, 96);\n  --palette-pink-700: rgb(194, 24, 91);\n  --palette-pink-800: rgb(173, 20, 87);\n  --palette-pink-900: rgb(136, 14, 79);\n  --palette-pink-a100: rgb(255, 128, 171);\n  --palette-pink-a200: rgb(255, 64, 129);\n  --palette-pink-a400: rgb(245, 0, 87);\n  --palette-pink-a700: rgb(197, 17, 98);\n\n  --palette-purple-50: rgb(243, 229, 245);\n  --palette-purple-100: rgb(225, 190, 231);\n  --palette-purple-200: rgb(206, 147, 216);\n  --palette-purple-300: rgb(186, 104, 200);\n  --palette-purple-400: rgb(171, 71, 188);\n  --palette-purple-500: rgb(156, 39, 176);\n  --palette-purple-600: rgb(142, 36, 170);\n  --palette-purple-700: rgb(123, 31, 162);\n  --palette-purple-800: rgb(106, 27, 154);\n  --palette-purple-900: rgb(74, 20, 140);\n  --palette-purple-a100: rgb(234, 128, 252);\n  --palette-purple-a200: rgb(224, 64, 251);\n  --palette-purple-a400: rgb(213, 0, 249);\n  --palette-purple-a700: rgb(170, 0, 255);\n\n  --palette-deep-purple-50: rgb(237, 231, 246);\n  --palette-deep-purple-100: rgb(209, 196, 233);\n  --palette-deep-purple-200: rgb(179, 157, 219);\n  --palette-deep-purple-300: rgb(149, 117, 205);\n  --palette-deep-purple-400: rgb(126, 87, 194);\n  --palette-deep-purple-500: rgb(103, 58, 183);\n  --palette-deep-purple-600: rgb(94, 53, 177);\n  --palette-deep-purple-700: rgb(81, 45, 168);\n  --palette-deep-purple-800: rgb(69, 39, 160);\n  --palette-deep-purple-900: rgb(49, 27, 146);\n  --palette-deep-purple-a100: rgb(179, 136, 255);\n  --palette-deep-purple-a200: rgb(124, 77, 255);\n  --palette-deep-purple-a400: rgb(101, 31, 255);\n  --palette-deep-purple-a700: rgb(98, 0, 234);\n\n  --palette-indigo-50: rgb(232, 234, 246);\n  --palette-indigo-100: rgb(197, 202, 233);\n  --palette-indigo-200: rgb(159, 168, 218);\n  --palette-indigo-300: rgb(121, 134, 203);\n  --palette-indigo-400: rgb(92, 107, 192);\n  --palette-indigo-500: rgb(63, 81, 181);\n  --palette-indigo-600: rgb(57, 73, 171);\n  --palette-indigo-700: rgb(48, 63, 159);\n  --palette-indigo-800: rgb(40, 53, 147);\n  --palette-indigo-900: rgb(26, 35, 126);\n  --palette-indigo-a100: rgb(140, 158, 255);\n  --palette-indigo-a200: rgb(83, 109, 254);\n  --palette-indigo-a400: rgb(61, 90, 254);\n  --palette-indigo-a700: rgb(48, 79, 254);\n\n  --palette-blue-50: rgb(227, 242, 253);\n  --palette-blue-100: rgb(187, 222, 251);\n  --palette-blue-200: rgb(144, 202, 249);\n  --palette-blue-300: rgb(100, 181, 246);\n  --palette-blue-400: rgb(66, 165, 245);\n  --palette-blue-500: rgb(33, 150, 243);\n  --palette-blue-600: rgb(30, 136, 229);\n  --palette-blue-700: rgb(25, 118, 210);\n  --palette-blue-800: rgb(21, 101, 192);\n  --palette-blue-900: rgb(13, 71, 161);\n  --palette-blue-a100: rgb(130, 177, 255);\n  --palette-blue-a200: rgb(68, 138, 255);\n  --palette-blue-a400: rgb(41, 121, 255);\n  --palette-blue-a700: rgb(41, 98, 255);\n\n  --palette-light-blue-50: rgb(225, 245, 254);\n  --palette-light-blue-100: rgb(179, 229, 252);\n  --palette-light-blue-200: rgb(129, 212, 250);\n  --palette-light-blue-300: rgb(79, 195, 247);\n  --palette-light-blue-400: rgb(41, 182, 246);\n  --palette-light-blue-500: rgb(3, 169, 244);\n  --palette-light-blue-600: rgb(3, 155, 229);\n  --palette-light-blue-700: rgb(2, 136, 209);\n  --palette-light-blue-800: rgb(2, 119, 189);\n  --palette-light-blue-900: rgb(1, 87, 155);\n  --palette-light-blue-a100: rgb(128, 216, 255);\n  --palette-light-blue-a200: rgb(64, 196, 255);\n  --palette-light-blue-a400: rgb(0, 176, 255);\n  --palette-light-blue-a700: rgb(0, 145, 234);\n\n  --palette-cyan-50: rgb(224, 247, 250);\n  --palette-cyan-100: rgb(178, 235, 242);\n  --palette-cyan-200: rgb(128, 222, 234);\n  --palette-cyan-300: rgb(77, 208, 225);\n  --palette-cyan-400: rgb(38, 198, 218);\n  --palette-cyan-500: rgb(0, 188, 212);\n  --palette-cyan-600: rgb(0, 172, 193);\n  --palette-cyan-700: rgb(0, 151, 167);\n  --palette-cyan-800: rgb(0, 131, 143);\n  --palette-cyan-900: rgb(0, 96, 100);\n  --palette-cyan-a100: rgb(132, 255, 255);\n  --palette-cyan-a200: rgb(24, 255, 255);\n  --palette-cyan-a400: rgb(0, 229, 255);\n  --palette-cyan-a700: rgb(0, 184, 212);\n\n  --palette-teal-50: rgb(224, 242, 241);\n  --palette-teal-100: rgb(178, 223, 219);\n  --palette-teal-200: rgb(128, 203, 196);\n  --palette-teal-300: rgb(77, 182, 172);\n  --palette-teal-400: rgb(38, 166, 154);\n  --palette-teal-500: rgb(0, 150, 136);\n  --palette-teal-600: rgb(0, 137, 123);\n  --palette-teal-700: rgb(0, 121, 107);\n  --palette-teal-800: rgb(0, 105, 92);\n  --palette-teal-900: rgb(0, 77, 64);\n  --palette-teal-a100: rgb(167, 255, 235);\n  --palette-teal-a200: rgb(100, 255, 218);\n  --palette-teal-a400: rgb(29, 233, 182);\n  --palette-teal-a700: rgb(0, 191, 165);\n\n  --palette-green-50: rgb(232, 245, 233);\n  --palette-green-100: rgb(200, 230, 201);\n  --palette-green-200: rgb(165, 214, 167);\n  --palette-green-300: rgb(129, 199, 132);\n  --palette-green-400: rgb(102, 187, 106);\n  --palette-green-500: rgb(76, 175, 80);\n  --palette-green-600: rgb(67, 160, 71);\n  --palette-green-700: rgb(56, 142, 60);\n  --palette-green-800: rgb(46, 125, 50);\n  --palette-green-900: rgb(27, 94, 32);\n  --palette-green-a100: rgb(185, 246, 202);\n  --palette-green-a200: rgb(105, 240, 174);\n  --palette-green-a400: rgb(0, 230, 118);\n  --palette-green-a700: rgb(0, 200, 83);\n\n  --palette-light-green-50: rgb(241, 248, 233);\n  --palette-light-green-100: rgb(220, 237, 200);\n  --palette-light-green-200: rgb(197, 225, 165);\n  --palette-light-green-300: rgb(174, 213, 129);\n  --palette-light-green-400: rgb(156, 204, 101);\n  --palette-light-green-500: rgb(139, 195, 74);\n  --palette-light-green-600: rgb(124, 179, 66);\n  --palette-light-green-700: rgb(104, 159, 56);\n  --palette-light-green-800: rgb(85, 139, 47);\n  --palette-light-green-900: rgb(51, 105, 30);\n  --palette-light-green-a100: rgb(204, 255, 144);\n  --palette-light-green-a200: rgb(178, 255, 89);\n  --palette-light-green-a400: rgb(118, 255, 3);\n  --palette-light-green-a700: rgb(100, 221, 23);\n\n  --palette-lime-50: rgb(249, 251, 231);\n  --palette-lime-100: rgb(240, 244, 195);\n  --palette-lime-200: rgb(230, 238, 156);\n  --palette-lime-300: rgb(220, 231, 117);\n  --palette-lime-400: rgb(212, 225, 87);\n  --palette-lime-500: rgb(205, 220, 57);\n  --palette-lime-600: rgb(192, 202, 51);\n  --palette-lime-700: rgb(175, 180, 43);\n  --palette-lime-800: rgb(158, 157, 36);\n  --palette-lime-900: rgb(130, 119, 23);\n  --palette-lime-a100: rgb(244, 255, 129);\n  --palette-lime-a200: rgb(238, 255, 65);\n  --palette-lime-a400: rgb(198, 255, 0);\n  --palette-lime-a700: rgb(174, 234, 0);\n\n  --palette-yellow-50: rgb(255, 253, 231);\n  --palette-yellow-100: rgb(255, 249, 196);\n  --palette-yellow-200: rgb(255, 245, 157);\n  --palette-yellow-300: rgb(255, 241, 118);\n  --palette-yellow-400: rgb(255, 238, 88);\n  --palette-yellow-500: rgb(255, 235, 59);\n  --palette-yellow-600: rgb(253, 216, 53);\n  --palette-yellow-700: rgb(251, 192, 45);\n  --palette-yellow-800: rgb(249, 168, 37);\n  --palette-yellow-900: rgb(245, 127, 23);\n  --palette-yellow-a100: rgb(255, 255, 141);\n  --palette-yellow-a200: rgb(255, 255, 0);\n  --palette-yellow-a400: rgb(255, 234, 0);\n  --palette-yellow-a700: rgb(255, 214, 0);\n\n  --palette-amber-50: rgb(255, 248, 225);\n  --palette-amber-100: rgb(255, 236, 179);\n  --palette-amber-200: rgb(255, 224, 130);\n  --palette-amber-300: rgb(255, 213, 79);\n  --palette-amber-400: rgb(255, 202, 40);\n  --palette-amber-500: rgb(255, 193, 7);\n  --palette-amber-600: rgb(255, 179, 0);\n  --palette-amber-700: rgb(255, 160, 0);\n  --palette-amber-800: rgb(255, 143, 0);\n  --palette-amber-900: rgb(255, 111, 0);\n  --palette-amber-a100: rgb(255, 229, 127);\n  --palette-amber-a200: rgb(255, 215, 64);\n  --palette-amber-a400: rgb(255, 196, 0);\n  --palette-amber-a700: rgb(255, 171, 0);\n\n  --palette-orange-50: rgb(255, 243, 224);\n  --palette-orange-100: rgb(255, 224, 178);\n  --palette-orange-200: rgb(255, 204, 128);\n  --palette-orange-300: rgb(255, 183, 77);\n  --palette-orange-400: rgb(255, 167, 38);\n  --palette-orange-500: rgb(255, 152, 0);\n  --palette-orange-600: rgb(251, 140, 0);\n  --palette-orange-700: rgb(245, 124, 0);\n  --palette-orange-800: rgb(239, 108, 0);\n  --palette-orange-900: rgb(230, 81, 0);\n  --palette-orange-a100: rgb(255, 209, 128);\n  --palette-orange-a200: rgb(255, 171, 64);\n  --palette-orange-a400: rgb(255, 145, 0);\n  --palette-orange-a700: rgb(255, 109, 0);\n\n  --palette-deep-orange-50: rgb(251, 233, 231);\n  --palette-deep-orange-100: rgb(255, 204, 188);\n  --palette-deep-orange-200: rgb(255, 171, 145);\n  --palette-deep-orange-300: rgb(255, 138, 101);\n  --palette-deep-orange-400: rgb(255, 112, 67);\n  --palette-deep-orange-500: rgb(255, 87, 34);\n  --palette-deep-orange-600: rgb(244, 81, 30);\n  --palette-deep-orange-700: rgb(230, 74, 25);\n  --palette-deep-orange-800: rgb(216, 67, 21);\n  --palette-deep-orange-900: rgb(191, 54, 12);\n  --palette-deep-orange-a100: rgb(255, 158, 128);\n  --palette-deep-orange-a200: rgb(255, 110, 64);\n  --palette-deep-orange-a400: rgb(255, 61, 0);\n  --palette-deep-orange-a700: rgb(221, 44, 0);\n\n  --palette-brown-50: rgb(239, 235, 233);\n  --palette-brown-100: rgb(215, 204, 200);\n  --palette-brown-200: rgb(188, 170, 164);\n  --palette-brown-300: rgb(161, 136, 127);\n  --palette-brown-400: rgb(141, 110, 99);\n  --palette-brown-500: rgb(121, 85, 72);\n  --palette-brown-600: rgb(109, 76, 65);\n  --palette-brown-700: rgb(93, 64, 55);\n  --palette-brown-800: rgb(78, 52, 46);\n  --palette-brown-900: rgb(62, 39, 35);\n\n  --palette-grey-50: rgb(250, 250, 250);\n  --palette-grey-100: rgb(245, 245, 245);\n  --palette-grey-200: rgb(238, 238, 238);\n  --palette-grey-300: rgb(224, 224, 224);\n  --palette-grey-400: rgb(189, 189, 189);\n  --palette-grey-500: rgb(158, 158, 158);\n  --palette-grey-600: rgb(117, 117, 117);\n  --palette-grey-700: rgb(97, 97, 97);\n  --palette-grey-800: rgb(66, 66, 66);\n  --palette-grey-900: rgb(33, 33, 33);\n\n  --palette-blue-grey-50: rgb(236, 239, 241);\n  --palette-blue-grey-100: rgb(207, 216, 220);\n  --palette-blue-grey-200: rgb(176, 190, 197);\n  --palette-blue-grey-300: rgb(144, 164, 174);\n  --palette-blue-grey-400: rgb(120, 144, 156);\n  --palette-blue-grey-500: rgb(96, 125, 139);\n  --palette-blue-grey-600: rgb(84, 110, 122);\n  --palette-blue-grey-700: rgb(69, 90, 100);\n  --palette-blue-grey-800: rgb(55, 71, 79);\n  --palette-blue-grey-900: rgb(38, 50, 56);\n\n  --color-black: rgb(0, 0, 0);\n  --color-white: rgb(255, 255, 255);\n  --color-dark-contrast: var(--color-white);\n  --color-light-contrast: var(--color-black);\n}\n:root {\n  --color-divider: var(--palette-grey-200);\n  --color-background: var(--color-white);\n  --color-text: var(--palette-grey-900);\n  --color-text-secondary: var(--palette-grey-600);\n\n  --color-primary: var(--palette-indigo-500);\n  --color-primary-dark: var(--palette-indigo-700);\n  --color-accent: var(--palette-pink-a200);\n  --color-accent-dark: var(--palette-pink-700);\n  --color-primary-contrast: var(--color-dark-contrast);\n  --color-accent-contrast: var(--color-dark-contrast);\n\n  --unit: 10px;\n\n  --preferred-font: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n  --font-size: calc(1.6 * var(--unit));\n  --font-size-tiny: calc(1.2 * var(--unit));\n  --font-size-small: calc(1.4 * var(--unit));\n  --font-size-normal: var(--font-size);\n  --font-size-big: calc(1.8 * var(--unit));\n  --font-weight-thin: 300;\n  --font-weight-normal: 400;\n  --font-weight-semi-bold: 500;\n  --font-weight-bold: 700;\n\n  --shadow-2p:\n    0 2px 2px 0 rgba(0, 0, 0, 0.14),\n    0 3px 1px -2px rgba(0, 0, 0, 0.2),\n    0 1px 5px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-3p:\n    0 3px 4px 0 rgba(0, 0, 0, 0.14),\n    0 3px 3px -2px rgba(0, 0, 0, 0.2),\n    0 1px 8px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-4p:\n    0 4px 5px 0 rgba(0, 0, 0, 0.14),\n    0 1px 10px 0 rgba(0, 0, 0, 0.12),\n    0 2px 4px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-6p:\n    0 6px 10px 0 rgba(0, 0, 0, 0.14),\n    0 1px 18px 0 rgba(0, 0, 0, 0.12),\n    0 3px 5px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-8p:\n    0 8px 10px 1px rgba(0, 0, 0, 0.14),\n    0 3px 14px 2px rgba(0, 0, 0, 0.12),\n    0 5px 5px -3px rgba(0, 0, 0, 0.2);\n\n  --shadow-16p:\n    0 16px 24px 2px rgba(0, 0, 0, 0.14),\n    0 6px 30px 5px rgba(0, 0, 0, 0.12),\n    0 8px 10px -5px rgba(0, 0, 0, 0.2);\n\n  --shadow-key-umbra-opacity: 0.2;\n  --shadow-key-penumbra-opacity: 0.14;\n  --shadow-ambient-shadow-opacity: 0.12;\n\n  --zdepth-shadow-1: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);\n  --zdepth-shadow-2: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-3: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-4: 0 14px 45px rgba(0, 0, 0, 0.25), 0 10px 18px rgba(0, 0, 0, 0.22);\n  --zdepth-shadow-5: 0 19px 60px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.22);\n\n  --animation-duration: 0.35s;\n  --animation-delay: calc(var(--animation-duration) / 5);\n  --animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);\n  --animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);\n  --animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);\n  --animation-curve-default: var(--animation-curve-fast-out-slow-in);\n\n  --z-index-highest: 300;\n  --z-index-higher: 200;\n  --z-index-high: 100;\n  --z-index-normal: 1;\n  --z-index-low: -100;\n  --z-index-lower: -200;\n\n  --reset: {\n    box-sizing: border-box;\n    font-family: var(--preferred-font);\n    -webkit-font-smoothing: antialiased;\n    font-smoothing: antialiased;\n    text-size-adjust: 100%;\n\n    & *,\n    & *::after,\n    & *::before {\n      box-sizing: border-box;\n      -webkit-font-smoothing: antialiased;\n      font-smoothing: antialiased;\n      text-size-adjust: 100%;\n      -webkit-touch-callout: none;\n    }\n  }\n}\n:root {\n  --card-color-white: var(--color-white);\n  --card-text-overlay: color(var(--color-black) a(35%));\n  --card-background-color: var(--card-color-white);\n  --card-padding-sm: calc(0.8 * var(--unit));\n  --card-padding: calc(1.6 * var(--unit));\n  --card-padding-lg: calc(2 * var(--unit));\n  --card-font-size: var(--font-size-small);\n}\n.card {\n  background: var(--card-background-color);\n  border-radius: calc(0.2 * var(--unit));\n  box-shadow: var(--shadow-2p);\n  display: flex;\n  flex-direction: column;\n  font-size: var(--card-font-size);\n  overflow: hidden;\n  width: 100%;\n\n  @apply --reset;\n\n  &.raised {\n    box-shadow: var(--shadow-8p);\n  }\n}\n.cardMedia {\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  position: relative;\n\n  &.wide,\n  &.square {\n    width: 100%;\n\n    & .content {\n      height: 100%;\n      position: absolute;\n    }\n\n    & .content > iframe,\n    & .content > video,\n    & .content > img {\n      max-width: 100%;\n    }\n  }\n\n  &::after {\n    content: '';\n    display: block;\n    height: 0;\n  }\n\n  &.wide::after {\n    padding-top: 56.25%;\n  }\n\n  &.square::after {\n    padding-top: 100%;\n  }\n\n  & .content {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end;\n    left: 0;\n    overflow: hidden;\n    position: relative;\n    top: 0;\n    width: 100%;\n  }\n\n  & .contentOverlay {\n    & .cardTitle,\n    & .cardActions,\n    & .cardText {\n      background-color: var(--card-text-overlay);\n    }\n  }\n\n  & .cardTitle {\n    & .title,\n    & .subtitle {\n      color: var(--card-color-white);\n    }\n  }\n}\n.cardTitle {\n  align-items: center;\n  display: flex;\n\n  & [data-react-toolbox='avatar'] {\n    margin-right: calc(1.3 * var(--unit));\n  }\n\n  & .title {\n    font-size: calc(2 * var(--unit));\n    font-weight: 500;\n    letter-spacing: 0.02em;\n    line-height: 1;\n    margin: 0;\n    padding: 0;\n  }\n\n  & .subtitle {\n    color: var(--color-text-secondary);\n    font-size: calc(1.4 * var(--unit));\n    font-weight: 400;\n    letter-spacing: 0;\n    line-height: calc(2.4 * var(--unit));\n    margin: 0;\n    padding: 0;\n  }\n\n  &.large {\n    padding: var(--card-padding-lg) var(--card-padding) calc(var(--card-padding) - 0.2 * var(--unit));\n\n    & .title {\n      font-size: calc(2.4 * var(--unit));\n      -moz-osx-font-smoothing: grayscale;\n      font-weight: 400;\n      line-height: 1.25;\n    }\n  }\n\n  &.small {\n    padding: var(--card-padding);\n\n    & .title {\n      font-size: 1.4rem;\n      letter-spacing: 0;\n      line-height: 1.4;\n    }\n\n    & .subtitle {\n      font-weight: 500;\n      line-height: 1.4;\n    }\n  }\n}\n.cardTitle,\n.cardText {\n  padding: calc(var(--card-padding) - 0.2 * var(--unit)) var(--card-padding);\n\n  & p {\n    font-size: calc(1.4 * var(--unit));\n    font-weight: 400;\n    letter-spacing: 0;\n    line-height: calc(2.4 * var(--unit));\n    margin: 0;\n  }\n\n  &:last-child {\n    padding-bottom: var(--card-padding-lg);\n  }\n\n  & + .cardText {\n    padding-top: 0;\n  }\n}\n.cardActions {\n  align-items: center;\n  display: flex;\n  justify-content: flex-start;\n  padding: var(--card-padding-sm);\n\n  & [data-react-toolbox='button'] {\n    margin: 0 calc(var(--card-padding-sm) / 2);\n    min-width: 0;\n    padding: 0 var(--card-padding-sm);\n\n    &:first-child {\n      margin-left: 0;\n    }\n\n    &:last-child {\n      margin-right: 0;\n    }\n  }\n}\n"],"sourceRoot":""}]);
-=======
 exports.push([module.i, ".theme--card--8pay8nO5 {\n  background: rgb(255, 255, 255);\n  border-radius: 2px;\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),\n    0 3px 1px -2px rgba(0, 0, 0, .2),\n    0 1px 5px 0 rgba(0, 0, 0, .12);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  font-size: 14px;\n  overflow: hidden;\n  width: 100%;\n\n  box-sizing: border-box;\n\n  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n\n  -webkit-font-smoothing: antialiased;\n\n  font-smoothing: antialiased;\n\n  -webkit-text-size-adjust: 100%;\n\n      -ms-text-size-adjust: 100%;\n\n          text-size-adjust: 100%\n}\n.theme--card--8pay8nO5 *,\n    .theme--card--8pay8nO5 *::after,\n    .theme--card--8pay8nO5 *::before {\n  box-sizing: border-box;\n  -webkit-font-smoothing: antialiased;\n  font-smoothing: antialiased;\n  -webkit-text-size-adjust: 100%;\n      -ms-text-size-adjust: 100%;\n          text-size-adjust: 100%;\n  -webkit-touch-callout: none\n}\n.theme--card--8pay8nO5.theme--raised--1AHwB_mq {\n  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14),\n    0 3px 14px 2px rgba(0, 0, 0, .12),\n    0 5px 5px -3px rgba(0, 0, 0, .2)\n}\n.theme--cardMedia--3Yc6zOS9 {\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  position: relative\n}\n.theme--cardMedia--3Yc6zOS9.theme--wide--35NNepyA,\n  .theme--cardMedia--3Yc6zOS9.theme--square--1HBxg4PW {\n  width: 100%\n}\n.theme--cardMedia--3Yc6zOS9.theme--wide--35NNepyA .theme--content--ewAVMhto, .theme--cardMedia--3Yc6zOS9.theme--square--1HBxg4PW .theme--content--ewAVMhto {\n  height: 100%;\n  position: absolute\n}\n.theme--cardMedia--3Yc6zOS9.theme--wide--35NNepyA .theme--content--ewAVMhto > iframe,\n    .theme--cardMedia--3Yc6zOS9.theme--wide--35NNepyA .theme--content--ewAVMhto > video,\n    .theme--cardMedia--3Yc6zOS9.theme--wide--35NNepyA .theme--content--ewAVMhto > img,\n    .theme--cardMedia--3Yc6zOS9.theme--square--1HBxg4PW .theme--content--ewAVMhto > iframe,\n    .theme--cardMedia--3Yc6zOS9.theme--square--1HBxg4PW .theme--content--ewAVMhto > video,\n    .theme--cardMedia--3Yc6zOS9.theme--square--1HBxg4PW .theme--content--ewAVMhto > img {\n  max-width: 100%\n}\n.theme--cardMedia--3Yc6zOS9::after {\n  content: '';\n  display: block;\n  height: 0\n}\n.theme--cardMedia--3Yc6zOS9.theme--wide--35NNepyA::after {\n  padding-top: 56.25%\n}\n.theme--cardMedia--3Yc6zOS9.theme--square--1HBxg4PW::after {\n  padding-top: 100%\n}\n.theme--cardMedia--3Yc6zOS9 .theme--content--ewAVMhto {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  left: 0;\n  overflow: hidden;\n  position: relative;\n  top: 0;\n  width: 100%\n}\n.theme--cardMedia--3Yc6zOS9 .theme--contentOverlay--1bBKzO69 {}\n.theme--cardMedia--3Yc6zOS9 .theme--contentOverlay--1bBKzO69 .theme--cardTitle--1dU3odV8,\n    .theme--cardMedia--3Yc6zOS9 .theme--contentOverlay--1bBKzO69 .theme--cardActions--ZoLIGszz,\n    .theme--cardMedia--3Yc6zOS9 .theme--contentOverlay--1bBKzO69 .theme--cardText--K_kzHLM5 {\n  background-color: rgba(0, 0, 0, 0.35)\n}\n.theme--cardMedia--3Yc6zOS9 .theme--cardTitle--1dU3odV8 {}\n.theme--cardMedia--3Yc6zOS9 .theme--cardTitle--1dU3odV8 .theme--title--3qCP34Lv,\n    .theme--cardMedia--3Yc6zOS9 .theme--cardTitle--1dU3odV8 .theme--subtitle--3p3mONMY {\n  color: rgb(255, 255, 255)\n}\n.theme--cardTitle--1dU3odV8 {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex\n}\n.theme--cardTitle--1dU3odV8 [data-react-toolbox='avatar'] {\n  margin-right: 13px\n}\n.theme--cardTitle--1dU3odV8 .theme--title--3qCP34Lv {\n  font-size: 20px;\n  font-weight: 500;\n  letter-spacing: 0.02em;\n  line-height: 1;\n  margin: 0;\n  padding: 0\n}\n.theme--cardTitle--1dU3odV8 .theme--subtitle--3p3mONMY {\n  color: rgb(117, 117, 117);\n  font-size: 14px;\n  font-weight: 400;\n  letter-spacing: 0;\n  line-height: 24px;\n  margin: 0;\n  padding: 0\n}\n.theme--cardTitle--1dU3odV8.theme--large--2iwOKGgf {\n  padding: 20px 16px 14px\n}\n.theme--cardTitle--1dU3odV8.theme--large--2iwOKGgf .theme--title--3qCP34Lv {\n  font-size: 24px;\n  -moz-osx-font-smoothing: grayscale;\n  font-weight: 400;\n  line-height: 1.25\n}\n.theme--cardTitle--1dU3odV8.theme--small--1RHxebyV {\n  padding: 16px\n}\n.theme--cardTitle--1dU3odV8.theme--small--1RHxebyV .theme--title--3qCP34Lv {\n  font-size: 22.4px;\n  font-size: 1.4rem;\n  letter-spacing: 0;\n  line-height: 1.4\n}\n.theme--cardTitle--1dU3odV8.theme--small--1RHxebyV .theme--subtitle--3p3mONMY {\n  font-weight: 500;\n  line-height: 1.4\n}\n.theme--cardTitle--1dU3odV8,\n.theme--cardText--K_kzHLM5 {\n  padding: 14px 16px\n}\n.theme--cardTitle--1dU3odV8 p, .theme--cardText--K_kzHLM5 p {\n  font-size: 14px;\n  font-weight: 400;\n  letter-spacing: 0;\n  line-height: 24px;\n  margin: 0\n}\n.theme--cardTitle--1dU3odV8:last-child, .theme--cardText--K_kzHLM5:last-child {\n  padding-bottom: 20px\n}\n.theme--cardTitle--1dU3odV8 + .theme--cardText--K_kzHLM5, .theme--cardText--K_kzHLM5 + .theme--cardText--K_kzHLM5 {\n  padding-top: 0\n}\n.theme--cardActions--ZoLIGszz {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start;\n  padding: 8px\n}\n.theme--cardActions--ZoLIGszz [data-react-toolbox='button'] {\n  margin: 0 4px;\n  min-width: 0;\n  padding: 0 8px\n}\n.theme--cardActions--ZoLIGszz [data-react-toolbox='button']:first-child {\n  margin-left: 0\n}\n.theme--cardActions--ZoLIGszz [data-react-toolbox='button']:last-child {\n  margin-right: 0\n}\n", "", {"version":3,"sources":["/Users/jeremylim/Documents/ReddifulAPI/node_modules/react-toolbox/lib/card/theme.css"],"names":[],"mappings":"AAkYA;EACE,+BAAyC;EACzC,mBAAuC;EACvC;;mCAA6B;EAC7B,qBAAc;EAAd,qBAAc;EAAd,cAAc;EACd,6BAAuB;EAAvB,8BAAuB;MAAvB,2BAAuB;UAAvB,uBAAuB;EACvB,gBAAiC;EACjC,iBAAiB;EACjB,YAAY;;EAlCV,uBAAuB;;EACvB,wDAAmC;;EACnC,oCAAoC;;EACpC,4BAA4B;;EAC5B,+BAAuB;;MAAvB,2BAAuB;;UAAvB,sBAAuB;CAqC1B;AAnCG;;;EAGE,uBAAuB;EACvB,oCAAoC;EACpC,4BAA4B;EAC5B,+BAAuB;MAAvB,2BAAuB;UAAvB,uBAAuB;EACvB,2BAA4B;CAC7B;AAwBH;EACE;;oCAA6B;CAC9B;AAEH;EACE,mCAAmC;EACnC,6BAA6B;EAC7B,uBAAuB;EACvB,kBAAmB;CAyDpB;AAvDC;;EAEE,WAAY;CAYb;AAVC;EACE,aAAa;EACb,kBAAmB;CACpB;AAED;;;;;;EAGE,eAAgB;CACjB;AAGH;EACE,YAAY;EACZ,eAAe;EACf,SAAU;CACX;AAED;EACE,mBAAoB;CACrB;AAED;EACE,iBAAkB;CACnB;AAED;EACE,qBAAc;EAAd,qBAAc;EAAd,cAAc;EACd,6BAAuB;EAAvB,8BAAuB;MAAvB,2BAAuB;UAAvB,uBAAuB;EACvB,sBAA0B;MAA1B,mBAA0B;UAA1B,0BAA0B;EAC1B,QAAQ;EACR,iBAAiB;EACjB,mBAAmB;EACnB,OAAO;EACP,WAAY;CACb;AAED,+DAMC;AALC;;;EAGE,qCAA2C;CAC5C;AAGH,0DAKC;AAJC;;EAEE,yBAA+B;CAChC;AAGL;EACE,0BAAoB;MAApB,uBAAoB;UAApB,oBAAoB;EACpB,qBAAc;EAAd,qBAAc;EAAd,aAAc;CAkDf;AAhDC;EACE,kBAAsC;CACvC;AAED;EACE,gBAAiC;EACjC,iBAAiB;EACjB,uBAAuB;EACvB,eAAe;EACf,UAAU;EACV,UAAW;CACZ;AAED;EACE,0BAAmC;EACnC,gBAAmC;EACnC,iBAAiB;EACjB,kBAAkB;EAClB,kBAAqC;EACrC,UAAU;EACV,UAAW;CACZ;AAED;EACE,uBAAkG;CAQnG;AANC;EACE,gBAAmC;EACnC,mCAAmC;EACnC,iBAAiB;EACjB,iBAAkB;CACnB;AAGH;EACE,aAA6B;CAY9B;AAVC;EACE,kBAAkB;EAAlB,kBAAkB;EAClB,kBAAkB;EAClB,gBAAiB;CAClB;AAED;EACE,iBAAiB;EACjB,gBAAiB;CAClB;AAGL;;EAEE,kBAA2E;CAiB5E;AAfC;EACE,gBAAmC;EACnC,iBAAiB;EACjB,kBAAkB;EAClB,kBAAqC;EACrC,SAAU;CACX;AAED;EACE,oBAAuC;CACxC;AAED;EACE,cAAe;CAChB;AAEH;EACE,0BAAoB;MAApB,uBAAoB;UAApB,oBAAoB;EACpB,qBAAc;EAAd,qBAAc;EAAd,cAAc;EACd,wBAA4B;MAA5B,qBAA4B;UAA5B,4BAA4B;EAC5B,YAAgC;CAejC;AAbC;EACE,cAA2C;EAC3C,aAAa;EACb,cAAkC;CASnC;AAPC;EACE,cAAe;CAChB;AAED;EACE,eAAgB;CACjB","file":"theme.css","sourcesContent":[":root {\n  --palette-red-50: rgb(255, 235, 238);\n  --palette-red-100: rgb(255, 205, 210);\n  --palette-red-200: rgb(239, 154, 154);\n  --palette-red-300: rgb(229, 115, 115);\n  --palette-red-400: rgb(239, 83, 80);\n  --palette-red-500: rgb(244, 67, 54);\n  --palette-red-600: rgb(229, 57, 53);\n  --palette-red-700: rgb(211, 47, 47);\n  --palette-red-800: rgb(198, 40, 40);\n  --palette-red-900: rgb(183, 28, 28);\n  --palette-red-a100: rgb(255, 138, 128);\n  --palette-red-a200: rgb(255, 82, 82);\n  --palette-red-a400: rgb(255, 23, 68);\n  --palette-red-a700: rgb(213, 0, 0);\n\n  --palette-pink-50: rgb(252, 228, 236);\n  --palette-pink-100: rgb(248, 187, 208);\n  --palette-pink-200: rgb(244, 143, 177);\n  --palette-pink-300: rgb(240, 98, 146);\n  --palette-pink-400: rgb(236, 64, 122);\n  --palette-pink-500: rgb(233, 30, 99);\n  --palette-pink-600: rgb(216, 27, 96);\n  --palette-pink-700: rgb(194, 24, 91);\n  --palette-pink-800: rgb(173, 20, 87);\n  --palette-pink-900: rgb(136, 14, 79);\n  --palette-pink-a100: rgb(255, 128, 171);\n  --palette-pink-a200: rgb(255, 64, 129);\n  --palette-pink-a400: rgb(245, 0, 87);\n  --palette-pink-a700: rgb(197, 17, 98);\n\n  --palette-purple-50: rgb(243, 229, 245);\n  --palette-purple-100: rgb(225, 190, 231);\n  --palette-purple-200: rgb(206, 147, 216);\n  --palette-purple-300: rgb(186, 104, 200);\n  --palette-purple-400: rgb(171, 71, 188);\n  --palette-purple-500: rgb(156, 39, 176);\n  --palette-purple-600: rgb(142, 36, 170);\n  --palette-purple-700: rgb(123, 31, 162);\n  --palette-purple-800: rgb(106, 27, 154);\n  --palette-purple-900: rgb(74, 20, 140);\n  --palette-purple-a100: rgb(234, 128, 252);\n  --palette-purple-a200: rgb(224, 64, 251);\n  --palette-purple-a400: rgb(213, 0, 249);\n  --palette-purple-a700: rgb(170, 0, 255);\n\n  --palette-deep-purple-50: rgb(237, 231, 246);\n  --palette-deep-purple-100: rgb(209, 196, 233);\n  --palette-deep-purple-200: rgb(179, 157, 219);\n  --palette-deep-purple-300: rgb(149, 117, 205);\n  --palette-deep-purple-400: rgb(126, 87, 194);\n  --palette-deep-purple-500: rgb(103, 58, 183);\n  --palette-deep-purple-600: rgb(94, 53, 177);\n  --palette-deep-purple-700: rgb(81, 45, 168);\n  --palette-deep-purple-800: rgb(69, 39, 160);\n  --palette-deep-purple-900: rgb(49, 27, 146);\n  --palette-deep-purple-a100: rgb(179, 136, 255);\n  --palette-deep-purple-a200: rgb(124, 77, 255);\n  --palette-deep-purple-a400: rgb(101, 31, 255);\n  --palette-deep-purple-a700: rgb(98, 0, 234);\n\n  --palette-indigo-50: rgb(232, 234, 246);\n  --palette-indigo-100: rgb(197, 202, 233);\n  --palette-indigo-200: rgb(159, 168, 218);\n  --palette-indigo-300: rgb(121, 134, 203);\n  --palette-indigo-400: rgb(92, 107, 192);\n  --palette-indigo-500: rgb(63, 81, 181);\n  --palette-indigo-600: rgb(57, 73, 171);\n  --palette-indigo-700: rgb(48, 63, 159);\n  --palette-indigo-800: rgb(40, 53, 147);\n  --palette-indigo-900: rgb(26, 35, 126);\n  --palette-indigo-a100: rgb(140, 158, 255);\n  --palette-indigo-a200: rgb(83, 109, 254);\n  --palette-indigo-a400: rgb(61, 90, 254);\n  --palette-indigo-a700: rgb(48, 79, 254);\n\n  --palette-blue-50: rgb(227, 242, 253);\n  --palette-blue-100: rgb(187, 222, 251);\n  --palette-blue-200: rgb(144, 202, 249);\n  --palette-blue-300: rgb(100, 181, 246);\n  --palette-blue-400: rgb(66, 165, 245);\n  --palette-blue-500: rgb(33, 150, 243);\n  --palette-blue-600: rgb(30, 136, 229);\n  --palette-blue-700: rgb(25, 118, 210);\n  --palette-blue-800: rgb(21, 101, 192);\n  --palette-blue-900: rgb(13, 71, 161);\n  --palette-blue-a100: rgb(130, 177, 255);\n  --palette-blue-a200: rgb(68, 138, 255);\n  --palette-blue-a400: rgb(41, 121, 255);\n  --palette-blue-a700: rgb(41, 98, 255);\n\n  --palette-light-blue-50: rgb(225, 245, 254);\n  --palette-light-blue-100: rgb(179, 229, 252);\n  --palette-light-blue-200: rgb(129, 212, 250);\n  --palette-light-blue-300: rgb(79, 195, 247);\n  --palette-light-blue-400: rgb(41, 182, 246);\n  --palette-light-blue-500: rgb(3, 169, 244);\n  --palette-light-blue-600: rgb(3, 155, 229);\n  --palette-light-blue-700: rgb(2, 136, 209);\n  --palette-light-blue-800: rgb(2, 119, 189);\n  --palette-light-blue-900: rgb(1, 87, 155);\n  --palette-light-blue-a100: rgb(128, 216, 255);\n  --palette-light-blue-a200: rgb(64, 196, 255);\n  --palette-light-blue-a400: rgb(0, 176, 255);\n  --palette-light-blue-a700: rgb(0, 145, 234);\n\n  --palette-cyan-50: rgb(224, 247, 250);\n  --palette-cyan-100: rgb(178, 235, 242);\n  --palette-cyan-200: rgb(128, 222, 234);\n  --palette-cyan-300: rgb(77, 208, 225);\n  --palette-cyan-400: rgb(38, 198, 218);\n  --palette-cyan-500: rgb(0, 188, 212);\n  --palette-cyan-600: rgb(0, 172, 193);\n  --palette-cyan-700: rgb(0, 151, 167);\n  --palette-cyan-800: rgb(0, 131, 143);\n  --palette-cyan-900: rgb(0, 96, 100);\n  --palette-cyan-a100: rgb(132, 255, 255);\n  --palette-cyan-a200: rgb(24, 255, 255);\n  --palette-cyan-a400: rgb(0, 229, 255);\n  --palette-cyan-a700: rgb(0, 184, 212);\n\n  --palette-teal-50: rgb(224, 242, 241);\n  --palette-teal-100: rgb(178, 223, 219);\n  --palette-teal-200: rgb(128, 203, 196);\n  --palette-teal-300: rgb(77, 182, 172);\n  --palette-teal-400: rgb(38, 166, 154);\n  --palette-teal-500: rgb(0, 150, 136);\n  --palette-teal-600: rgb(0, 137, 123);\n  --palette-teal-700: rgb(0, 121, 107);\n  --palette-teal-800: rgb(0, 105, 92);\n  --palette-teal-900: rgb(0, 77, 64);\n  --palette-teal-a100: rgb(167, 255, 235);\n  --palette-teal-a200: rgb(100, 255, 218);\n  --palette-teal-a400: rgb(29, 233, 182);\n  --palette-teal-a700: rgb(0, 191, 165);\n\n  --palette-green-50: rgb(232, 245, 233);\n  --palette-green-100: rgb(200, 230, 201);\n  --palette-green-200: rgb(165, 214, 167);\n  --palette-green-300: rgb(129, 199, 132);\n  --palette-green-400: rgb(102, 187, 106);\n  --palette-green-500: rgb(76, 175, 80);\n  --palette-green-600: rgb(67, 160, 71);\n  --palette-green-700: rgb(56, 142, 60);\n  --palette-green-800: rgb(46, 125, 50);\n  --palette-green-900: rgb(27, 94, 32);\n  --palette-green-a100: rgb(185, 246, 202);\n  --palette-green-a200: rgb(105, 240, 174);\n  --palette-green-a400: rgb(0, 230, 118);\n  --palette-green-a700: rgb(0, 200, 83);\n\n  --palette-light-green-50: rgb(241, 248, 233);\n  --palette-light-green-100: rgb(220, 237, 200);\n  --palette-light-green-200: rgb(197, 225, 165);\n  --palette-light-green-300: rgb(174, 213, 129);\n  --palette-light-green-400: rgb(156, 204, 101);\n  --palette-light-green-500: rgb(139, 195, 74);\n  --palette-light-green-600: rgb(124, 179, 66);\n  --palette-light-green-700: rgb(104, 159, 56);\n  --palette-light-green-800: rgb(85, 139, 47);\n  --palette-light-green-900: rgb(51, 105, 30);\n  --palette-light-green-a100: rgb(204, 255, 144);\n  --palette-light-green-a200: rgb(178, 255, 89);\n  --palette-light-green-a400: rgb(118, 255, 3);\n  --palette-light-green-a700: rgb(100, 221, 23);\n\n  --palette-lime-50: rgb(249, 251, 231);\n  --palette-lime-100: rgb(240, 244, 195);\n  --palette-lime-200: rgb(230, 238, 156);\n  --palette-lime-300: rgb(220, 231, 117);\n  --palette-lime-400: rgb(212, 225, 87);\n  --palette-lime-500: rgb(205, 220, 57);\n  --palette-lime-600: rgb(192, 202, 51);\n  --palette-lime-700: rgb(175, 180, 43);\n  --palette-lime-800: rgb(158, 157, 36);\n  --palette-lime-900: rgb(130, 119, 23);\n  --palette-lime-a100: rgb(244, 255, 129);\n  --palette-lime-a200: rgb(238, 255, 65);\n  --palette-lime-a400: rgb(198, 255, 0);\n  --palette-lime-a700: rgb(174, 234, 0);\n\n  --palette-yellow-50: rgb(255, 253, 231);\n  --palette-yellow-100: rgb(255, 249, 196);\n  --palette-yellow-200: rgb(255, 245, 157);\n  --palette-yellow-300: rgb(255, 241, 118);\n  --palette-yellow-400: rgb(255, 238, 88);\n  --palette-yellow-500: rgb(255, 235, 59);\n  --palette-yellow-600: rgb(253, 216, 53);\n  --palette-yellow-700: rgb(251, 192, 45);\n  --palette-yellow-800: rgb(249, 168, 37);\n  --palette-yellow-900: rgb(245, 127, 23);\n  --palette-yellow-a100: rgb(255, 255, 141);\n  --palette-yellow-a200: rgb(255, 255, 0);\n  --palette-yellow-a400: rgb(255, 234, 0);\n  --palette-yellow-a700: rgb(255, 214, 0);\n\n  --palette-amber-50: rgb(255, 248, 225);\n  --palette-amber-100: rgb(255, 236, 179);\n  --palette-amber-200: rgb(255, 224, 130);\n  --palette-amber-300: rgb(255, 213, 79);\n  --palette-amber-400: rgb(255, 202, 40);\n  --palette-amber-500: rgb(255, 193, 7);\n  --palette-amber-600: rgb(255, 179, 0);\n  --palette-amber-700: rgb(255, 160, 0);\n  --palette-amber-800: rgb(255, 143, 0);\n  --palette-amber-900: rgb(255, 111, 0);\n  --palette-amber-a100: rgb(255, 229, 127);\n  --palette-amber-a200: rgb(255, 215, 64);\n  --palette-amber-a400: rgb(255, 196, 0);\n  --palette-amber-a700: rgb(255, 171, 0);\n\n  --palette-orange-50: rgb(255, 243, 224);\n  --palette-orange-100: rgb(255, 224, 178);\n  --palette-orange-200: rgb(255, 204, 128);\n  --palette-orange-300: rgb(255, 183, 77);\n  --palette-orange-400: rgb(255, 167, 38);\n  --palette-orange-500: rgb(255, 152, 0);\n  --palette-orange-600: rgb(251, 140, 0);\n  --palette-orange-700: rgb(245, 124, 0);\n  --palette-orange-800: rgb(239, 108, 0);\n  --palette-orange-900: rgb(230, 81, 0);\n  --palette-orange-a100: rgb(255, 209, 128);\n  --palette-orange-a200: rgb(255, 171, 64);\n  --palette-orange-a400: rgb(255, 145, 0);\n  --palette-orange-a700: rgb(255, 109, 0);\n\n  --palette-deep-orange-50: rgb(251, 233, 231);\n  --palette-deep-orange-100: rgb(255, 204, 188);\n  --palette-deep-orange-200: rgb(255, 171, 145);\n  --palette-deep-orange-300: rgb(255, 138, 101);\n  --palette-deep-orange-400: rgb(255, 112, 67);\n  --palette-deep-orange-500: rgb(255, 87, 34);\n  --palette-deep-orange-600: rgb(244, 81, 30);\n  --palette-deep-orange-700: rgb(230, 74, 25);\n  --palette-deep-orange-800: rgb(216, 67, 21);\n  --palette-deep-orange-900: rgb(191, 54, 12);\n  --palette-deep-orange-a100: rgb(255, 158, 128);\n  --palette-deep-orange-a200: rgb(255, 110, 64);\n  --palette-deep-orange-a400: rgb(255, 61, 0);\n  --palette-deep-orange-a700: rgb(221, 44, 0);\n\n  --palette-brown-50: rgb(239, 235, 233);\n  --palette-brown-100: rgb(215, 204, 200);\n  --palette-brown-200: rgb(188, 170, 164);\n  --palette-brown-300: rgb(161, 136, 127);\n  --palette-brown-400: rgb(141, 110, 99);\n  --palette-brown-500: rgb(121, 85, 72);\n  --palette-brown-600: rgb(109, 76, 65);\n  --palette-brown-700: rgb(93, 64, 55);\n  --palette-brown-800: rgb(78, 52, 46);\n  --palette-brown-900: rgb(62, 39, 35);\n\n  --palette-grey-50: rgb(250, 250, 250);\n  --palette-grey-100: rgb(245, 245, 245);\n  --palette-grey-200: rgb(238, 238, 238);\n  --palette-grey-300: rgb(224, 224, 224);\n  --palette-grey-400: rgb(189, 189, 189);\n  --palette-grey-500: rgb(158, 158, 158);\n  --palette-grey-600: rgb(117, 117, 117);\n  --palette-grey-700: rgb(97, 97, 97);\n  --palette-grey-800: rgb(66, 66, 66);\n  --palette-grey-900: rgb(33, 33, 33);\n\n  --palette-blue-grey-50: rgb(236, 239, 241);\n  --palette-blue-grey-100: rgb(207, 216, 220);\n  --palette-blue-grey-200: rgb(176, 190, 197);\n  --palette-blue-grey-300: rgb(144, 164, 174);\n  --palette-blue-grey-400: rgb(120, 144, 156);\n  --palette-blue-grey-500: rgb(96, 125, 139);\n  --palette-blue-grey-600: rgb(84, 110, 122);\n  --palette-blue-grey-700: rgb(69, 90, 100);\n  --palette-blue-grey-800: rgb(55, 71, 79);\n  --palette-blue-grey-900: rgb(38, 50, 56);\n\n  --color-black: rgb(0, 0, 0);\n  --color-white: rgb(255, 255, 255);\n  --color-dark-contrast: var(--color-white);\n  --color-light-contrast: var(--color-black);\n}\n:root {\n  --color-divider: var(--palette-grey-200);\n  --color-background: var(--color-white);\n  --color-text: var(--palette-grey-900);\n  --color-text-secondary: var(--palette-grey-600);\n\n  --color-primary: var(--palette-indigo-500);\n  --color-primary-dark: var(--palette-indigo-700);\n  --color-accent: var(--palette-pink-a200);\n  --color-accent-dark: var(--palette-pink-700);\n  --color-primary-contrast: var(--color-dark-contrast);\n  --color-accent-contrast: var(--color-dark-contrast);\n\n  --unit: 10px;\n\n  --preferred-font: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n  --font-size: calc(1.6 * var(--unit));\n  --font-size-tiny: calc(1.2 * var(--unit));\n  --font-size-small: calc(1.4 * var(--unit));\n  --font-size-normal: var(--font-size);\n  --font-size-big: calc(1.8 * var(--unit));\n  --font-weight-thin: 300;\n  --font-weight-normal: 400;\n  --font-weight-semi-bold: 500;\n  --font-weight-bold: 700;\n\n  --shadow-2p:\n    0 2px 2px 0 rgba(0, 0, 0, 0.14),\n    0 3px 1px -2px rgba(0, 0, 0, 0.2),\n    0 1px 5px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-3p:\n    0 3px 4px 0 rgba(0, 0, 0, 0.14),\n    0 3px 3px -2px rgba(0, 0, 0, 0.2),\n    0 1px 8px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-4p:\n    0 4px 5px 0 rgba(0, 0, 0, 0.14),\n    0 1px 10px 0 rgba(0, 0, 0, 0.12),\n    0 2px 4px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-6p:\n    0 6px 10px 0 rgba(0, 0, 0, 0.14),\n    0 1px 18px 0 rgba(0, 0, 0, 0.12),\n    0 3px 5px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-8p:\n    0 8px 10px 1px rgba(0, 0, 0, 0.14),\n    0 3px 14px 2px rgba(0, 0, 0, 0.12),\n    0 5px 5px -3px rgba(0, 0, 0, 0.2);\n\n  --shadow-16p:\n    0 16px 24px 2px rgba(0, 0, 0, 0.14),\n    0 6px 30px 5px rgba(0, 0, 0, 0.12),\n    0 8px 10px -5px rgba(0, 0, 0, 0.2);\n\n  --shadow-key-umbra-opacity: 0.2;\n  --shadow-key-penumbra-opacity: 0.14;\n  --shadow-ambient-shadow-opacity: 0.12;\n\n  --zdepth-shadow-1: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);\n  --zdepth-shadow-2: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-3: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-4: 0 14px 45px rgba(0, 0, 0, 0.25), 0 10px 18px rgba(0, 0, 0, 0.22);\n  --zdepth-shadow-5: 0 19px 60px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.22);\n\n  --animation-duration: 0.35s;\n  --animation-delay: calc(var(--animation-duration) / 5);\n  --animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);\n  --animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);\n  --animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);\n  --animation-curve-default: var(--animation-curve-fast-out-slow-in);\n\n  --z-index-highest: 300;\n  --z-index-higher: 200;\n  --z-index-high: 100;\n  --z-index-normal: 1;\n  --z-index-low: -100;\n  --z-index-lower: -200;\n\n  --reset: {\n    box-sizing: border-box;\n    font-family: var(--preferred-font);\n    -webkit-font-smoothing: antialiased;\n    font-smoothing: antialiased;\n    text-size-adjust: 100%;\n\n    & *,\n    & *::after,\n    & *::before {\n      box-sizing: border-box;\n      -webkit-font-smoothing: antialiased;\n      font-smoothing: antialiased;\n      text-size-adjust: 100%;\n      -webkit-touch-callout: none;\n    }\n  }\n}\n:root {\n  --card-color-white: var(--color-white);\n  --card-text-overlay: color(var(--color-black) a(35%));\n  --card-background-color: var(--card-color-white);\n  --card-padding-sm: calc(0.8 * var(--unit));\n  --card-padding: calc(1.6 * var(--unit));\n  --card-padding-lg: calc(2 * var(--unit));\n  --card-font-size: var(--font-size-small);\n}\n.card {\n  background: var(--card-background-color);\n  border-radius: calc(0.2 * var(--unit));\n  box-shadow: var(--shadow-2p);\n  display: flex;\n  flex-direction: column;\n  font-size: var(--card-font-size);\n  overflow: hidden;\n  width: 100%;\n\n  @apply --reset;\n\n  &.raised {\n    box-shadow: var(--shadow-8p);\n  }\n}\n.cardMedia {\n  background-position: center center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  position: relative;\n\n  &.wide,\n  &.square {\n    width: 100%;\n\n    & .content {\n      height: 100%;\n      position: absolute;\n    }\n\n    & .content > iframe,\n    & .content > video,\n    & .content > img {\n      max-width: 100%;\n    }\n  }\n\n  &::after {\n    content: '';\n    display: block;\n    height: 0;\n  }\n\n  &.wide::after {\n    padding-top: 56.25%;\n  }\n\n  &.square::after {\n    padding-top: 100%;\n  }\n\n  & .content {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end;\n    left: 0;\n    overflow: hidden;\n    position: relative;\n    top: 0;\n    width: 100%;\n  }\n\n  & .contentOverlay {\n    & .cardTitle,\n    & .cardActions,\n    & .cardText {\n      background-color: var(--card-text-overlay);\n    }\n  }\n\n  & .cardTitle {\n    & .title,\n    & .subtitle {\n      color: var(--card-color-white);\n    }\n  }\n}\n.cardTitle {\n  align-items: center;\n  display: flex;\n\n  & [data-react-toolbox='avatar'] {\n    margin-right: calc(1.3 * var(--unit));\n  }\n\n  & .title {\n    font-size: calc(2 * var(--unit));\n    font-weight: 500;\n    letter-spacing: 0.02em;\n    line-height: 1;\n    margin: 0;\n    padding: 0;\n  }\n\n  & .subtitle {\n    color: var(--color-text-secondary);\n    font-size: calc(1.4 * var(--unit));\n    font-weight: 400;\n    letter-spacing: 0;\n    line-height: calc(2.4 * var(--unit));\n    margin: 0;\n    padding: 0;\n  }\n\n  &.large {\n    padding: var(--card-padding-lg) var(--card-padding) calc(var(--card-padding) - 0.2 * var(--unit));\n\n    & .title {\n      font-size: calc(2.4 * var(--unit));\n      -moz-osx-font-smoothing: grayscale;\n      font-weight: 400;\n      line-height: 1.25;\n    }\n  }\n\n  &.small {\n    padding: var(--card-padding);\n\n    & .title {\n      font-size: 1.4rem;\n      letter-spacing: 0;\n      line-height: 1.4;\n    }\n\n    & .subtitle {\n      font-weight: 500;\n      line-height: 1.4;\n    }\n  }\n}\n.cardTitle,\n.cardText {\n  padding: calc(var(--card-padding) - 0.2 * var(--unit)) var(--card-padding);\n\n  & p {\n    font-size: calc(1.4 * var(--unit));\n    font-weight: 400;\n    letter-spacing: 0;\n    line-height: calc(2.4 * var(--unit));\n    margin: 0;\n  }\n\n  &:last-child {\n    padding-bottom: var(--card-padding-lg);\n  }\n\n  & + .cardText {\n    padding-top: 0;\n  }\n}\n.cardActions {\n  align-items: center;\n  display: flex;\n  justify-content: flex-start;\n  padding: var(--card-padding-sm);\n\n  & [data-react-toolbox='button'] {\n    margin: 0 calc(var(--card-padding-sm) / 2);\n    min-width: 0;\n    padding: 0 var(--card-padding-sm);\n\n    &:first-child {\n      margin-left: 0;\n    }\n\n    &:last-child {\n      margin-right: 0;\n    }\n  }\n}\n"],"sourceRoot":""}]);
->>>>>>> Adding options parameters
 
 // exports
 exports.locals = {
@@ -31582,11 +31525,7 @@ exports = module.exports = __webpack_require__(78)(true);
 
 
 // module
-<<<<<<< HEAD
-exports.push([module.i, ".theme--rippleWrapper--16N7otiF {\n  bottom: 0;\n  left: 0;\n  pointer-events: none;\n  position: absolute;\n  right: 0;\n  top: 0;\n  z-index: 1;\n}\n.theme--ripple--3SV_uZxJ {\n  background-color: currentColor;\n  border-radius: 50%;\n  left: 50%;\n  pointer-events: none;\n  position: absolute;\n  top: 50%;\n  -webkit-transform-origin: 50% 50%;\n          transform-origin: 50% 50%;\n  -webkit-transition-duration: 800ms;\n          transition-duration: 800ms;\n  z-index: 100\n}\n.theme--ripple--3SV_uZxJ.theme--rippleRestarting--2OZWaagQ {\n  opacity: 0.3;\n  -webkit-transition-property: none;\n  transition-property: none;\n}\n.theme--ripple--3SV_uZxJ.theme--rippleActive--3O2Ue7k9 {\n  opacity: 0.3;\n  -webkit-transition-property: -webkit-transform;\n  transition-property: -webkit-transform;\n  transition-property: transform;\n  transition-property: transform, -webkit-transform;\n}\n.theme--ripple--3SV_uZxJ:not(.theme--rippleActive--3O2Ue7k9):not(.theme--rippleRestarting--2OZWaagQ) {\n  opacity: 0;\n  -webkit-transition-property: opacity, -webkit-transform;\n  transition-property: opacity, -webkit-transform;\n  transition-property: opacity, transform;\n  transition-property: opacity, transform, -webkit-transform;\n}\n", "", {"version":3,"sources":["/home/shea/Documents/idb/node_modules/react-toolbox/lib/ripple/theme.css"],"names":[],"mappings":"AAuGA;EACE,UAAU;EACV,QAAQ;EACR,qBAAqB;EACrB,mBAAmB;EACnB,SAAS;EACT,OAAO;EACP,WAA+B;CAChC;AACD;EACE,+BAA+B;EAC/B,mBAAmB;EACnB,UAAU;EACV,qBAAqB;EACrB,mBAAmB;EACnB,SAAS;EACT,kCAA0B;UAA1B,0BAA0B;EAC1B,mCAA4C;UAA5C,2BAA4C;EAC5C,YAA6B;CAgB9B;AAdC;EACE,aAAqC;EACrC,kCAA0B;EAA1B,0BAA0B;CAC3B;AAED;EACE,aAAqC;EACrC,+CAA+B;EAA/B,uCAA+B;EAA/B,+BAA+B;EAA/B,kDAA+B;CAChC;AAED;EACE,WAAW;EACX,wDAAwC;EAAxC,gDAAwC;EAAxC,wCAAwC;EAAxC,2DAAwC;CACzC","file":"theme.css","sourcesContent":[":root {\n  --color-divider: var(--palette-grey-200);\n  --color-background: var(--color-white);\n  --color-text: var(--palette-grey-900);\n  --color-text-secondary: var(--palette-grey-600);\n\n  --color-primary: var(--palette-indigo-500);\n  --color-primary-dark: var(--palette-indigo-700);\n  --color-accent: var(--palette-pink-a200);\n  --color-accent-dark: var(--palette-pink-700);\n  --color-primary-contrast: var(--color-dark-contrast);\n  --color-accent-contrast: var(--color-dark-contrast);\n\n  --unit: 10px;\n\n  --preferred-font: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n  --font-size: calc(1.6 * var(--unit));\n  --font-size-tiny: calc(1.2 * var(--unit));\n  --font-size-small: calc(1.4 * var(--unit));\n  --font-size-normal: var(--font-size);\n  --font-size-big: calc(1.8 * var(--unit));\n  --font-weight-thin: 300;\n  --font-weight-normal: 400;\n  --font-weight-semi-bold: 500;\n  --font-weight-bold: 700;\n\n  --shadow-2p:\n    0 2px 2px 0 rgba(0, 0, 0, 0.14),\n    0 3px 1px -2px rgba(0, 0, 0, 0.2),\n    0 1px 5px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-3p:\n    0 3px 4px 0 rgba(0, 0, 0, 0.14),\n    0 3px 3px -2px rgba(0, 0, 0, 0.2),\n    0 1px 8px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-4p:\n    0 4px 5px 0 rgba(0, 0, 0, 0.14),\n    0 1px 10px 0 rgba(0, 0, 0, 0.12),\n    0 2px 4px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-6p:\n    0 6px 10px 0 rgba(0, 0, 0, 0.14),\n    0 1px 18px 0 rgba(0, 0, 0, 0.12),\n    0 3px 5px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-8p:\n    0 8px 10px 1px rgba(0, 0, 0, 0.14),\n    0 3px 14px 2px rgba(0, 0, 0, 0.12),\n    0 5px 5px -3px rgba(0, 0, 0, 0.2);\n\n  --shadow-16p:\n    0 16px 24px 2px rgba(0, 0, 0, 0.14),\n    0 6px 30px 5px rgba(0, 0, 0, 0.12),\n    0 8px 10px -5px rgba(0, 0, 0, 0.2);\n\n  --shadow-key-umbra-opacity: 0.2;\n  --shadow-key-penumbra-opacity: 0.14;\n  --shadow-ambient-shadow-opacity: 0.12;\n\n  --zdepth-shadow-1: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);\n  --zdepth-shadow-2: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-3: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-4: 0 14px 45px rgba(0, 0, 0, 0.25), 0 10px 18px rgba(0, 0, 0, 0.22);\n  --zdepth-shadow-5: 0 19px 60px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.22);\n\n  --animation-duration: 0.35s;\n  --animation-delay: calc(var(--animation-duration) / 5);\n  --animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);\n  --animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);\n  --animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);\n  --animation-curve-default: var(--animation-curve-fast-out-slow-in);\n\n  --z-index-highest: 300;\n  --z-index-higher: 200;\n  --z-index-high: 100;\n  --z-index-normal: 1;\n  --z-index-low: -100;\n  --z-index-lower: -200;\n\n  --reset: {\n    box-sizing: border-box;\n    font-family: var(--preferred-font);\n    -webkit-font-smoothing: antialiased;\n    font-smoothing: antialiased;\n    text-size-adjust: 100%;\n\n    & *,\n    & *::after,\n    & *::before {\n      box-sizing: border-box;\n      -webkit-font-smoothing: antialiased;\n      font-smoothing: antialiased;\n      text-size-adjust: 100%;\n      -webkit-touch-callout: none;\n    }\n  }\n}\n:root {\n  --ripple-duration: 800ms;\n  --ripple-final-opacity: 0.3;\n  --ripple-size: calc(15 * var(--unit));\n}\n.rippleWrapper {\n  bottom: 0;\n  left: 0;\n  pointer-events: none;\n  position: absolute;\n  right: 0;\n  top: 0;\n  z-index: var(--z-index-normal);\n}\n.ripple {\n  background-color: currentColor;\n  border-radius: 50%;\n  left: 50%;\n  pointer-events: none;\n  position: absolute;\n  top: 50%;\n  transform-origin: 50% 50%;\n  transition-duration: var(--ripple-duration);\n  z-index: var(--z-index-high);\n\n  &.rippleRestarting {\n    opacity: var(--ripple-final-opacity);\n    transition-property: none;\n  }\n\n  &.rippleActive {\n    opacity: var(--ripple-final-opacity);\n    transition-property: transform;\n  }\n\n  &:not(.rippleActive):not(.rippleRestarting) {\n    opacity: 0;\n    transition-property: opacity, transform;\n  }\n}\n"],"sourceRoot":""}]);
-=======
 exports.push([module.i, ".theme--rippleWrapper--16N7otiF {\n  bottom: 0;\n  left: 0;\n  pointer-events: none;\n  position: absolute;\n  right: 0;\n  top: 0;\n  z-index: 1;\n}\n.theme--ripple--3SV_uZxJ {\n  background-color: currentColor;\n  border-radius: 50%;\n  left: 50%;\n  pointer-events: none;\n  position: absolute;\n  top: 50%;\n  -webkit-transform-origin: 50% 50%;\n          transform-origin: 50% 50%;\n  -webkit-transition-duration: 800ms;\n          transition-duration: 800ms;\n  z-index: 100\n}\n.theme--ripple--3SV_uZxJ.theme--rippleRestarting--2OZWaagQ {\n  opacity: 0.3;\n  -webkit-transition-property: none;\n  transition-property: none;\n}\n.theme--ripple--3SV_uZxJ.theme--rippleActive--3O2Ue7k9 {\n  opacity: 0.3;\n  -webkit-transition-property: -webkit-transform;\n  transition-property: -webkit-transform;\n  transition-property: transform;\n  transition-property: transform, -webkit-transform;\n}\n.theme--ripple--3SV_uZxJ:not(.theme--rippleActive--3O2Ue7k9):not(.theme--rippleRestarting--2OZWaagQ) {\n  opacity: 0;\n  -webkit-transition-property: opacity, -webkit-transform;\n  transition-property: opacity, -webkit-transform;\n  transition-property: opacity, transform;\n  transition-property: opacity, transform, -webkit-transform;\n}\n", "", {"version":3,"sources":["/Users/jeremylim/Documents/ReddifulAPI/node_modules/react-toolbox/lib/ripple/theme.css"],"names":[],"mappings":"AAuGA;EACE,UAAU;EACV,QAAQ;EACR,qBAAqB;EACrB,mBAAmB;EACnB,SAAS;EACT,OAAO;EACP,WAA+B;CAChC;AACD;EACE,+BAA+B;EAC/B,mBAAmB;EACnB,UAAU;EACV,qBAAqB;EACrB,mBAAmB;EACnB,SAAS;EACT,kCAA0B;UAA1B,0BAA0B;EAC1B,mCAA4C;UAA5C,2BAA4C;EAC5C,YAA6B;CAgB9B;AAdC;EACE,aAAqC;EACrC,kCAA0B;EAA1B,0BAA0B;CAC3B;AAED;EACE,aAAqC;EACrC,+CAA+B;EAA/B,uCAA+B;EAA/B,+BAA+B;EAA/B,kDAA+B;CAChC;AAED;EACE,WAAW;EACX,wDAAwC;EAAxC,gDAAwC;EAAxC,wCAAwC;EAAxC,2DAAwC;CACzC","file":"theme.css","sourcesContent":[":root {\n  --color-divider: var(--palette-grey-200);\n  --color-background: var(--color-white);\n  --color-text: var(--palette-grey-900);\n  --color-text-secondary: var(--palette-grey-600);\n\n  --color-primary: var(--palette-indigo-500);\n  --color-primary-dark: var(--palette-indigo-700);\n  --color-accent: var(--palette-pink-a200);\n  --color-accent-dark: var(--palette-pink-700);\n  --color-primary-contrast: var(--color-dark-contrast);\n  --color-accent-contrast: var(--color-dark-contrast);\n\n  --unit: 10px;\n\n  --preferred-font: 'Roboto', 'Helvetica', 'Arial', sans-serif;\n  --font-size: calc(1.6 * var(--unit));\n  --font-size-tiny: calc(1.2 * var(--unit));\n  --font-size-small: calc(1.4 * var(--unit));\n  --font-size-normal: var(--font-size);\n  --font-size-big: calc(1.8 * var(--unit));\n  --font-weight-thin: 300;\n  --font-weight-normal: 400;\n  --font-weight-semi-bold: 500;\n  --font-weight-bold: 700;\n\n  --shadow-2p:\n    0 2px 2px 0 rgba(0, 0, 0, 0.14),\n    0 3px 1px -2px rgba(0, 0, 0, 0.2),\n    0 1px 5px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-3p:\n    0 3px 4px 0 rgba(0, 0, 0, 0.14),\n    0 3px 3px -2px rgba(0, 0, 0, 0.2),\n    0 1px 8px 0 rgba(0, 0, 0, 0.12);\n\n  --shadow-4p:\n    0 4px 5px 0 rgba(0, 0, 0, 0.14),\n    0 1px 10px 0 rgba(0, 0, 0, 0.12),\n    0 2px 4px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-6p:\n    0 6px 10px 0 rgba(0, 0, 0, 0.14),\n    0 1px 18px 0 rgba(0, 0, 0, 0.12),\n    0 3px 5px -1px rgba(0, 0, 0, 0.2);\n\n  --shadow-8p:\n    0 8px 10px 1px rgba(0, 0, 0, 0.14),\n    0 3px 14px 2px rgba(0, 0, 0, 0.12),\n    0 5px 5px -3px rgba(0, 0, 0, 0.2);\n\n  --shadow-16p:\n    0 16px 24px 2px rgba(0, 0, 0, 0.14),\n    0 6px 30px 5px rgba(0, 0, 0, 0.12),\n    0 8px 10px -5px rgba(0, 0, 0, 0.2);\n\n  --shadow-key-umbra-opacity: 0.2;\n  --shadow-key-penumbra-opacity: 0.14;\n  --shadow-ambient-shadow-opacity: 0.12;\n\n  --zdepth-shadow-1: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);\n  --zdepth-shadow-2: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-3: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);\n  --zdepth-shadow-4: 0 14px 45px rgba(0, 0, 0, 0.25), 0 10px 18px rgba(0, 0, 0, 0.22);\n  --zdepth-shadow-5: 0 19px 60px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.22);\n\n  --animation-duration: 0.35s;\n  --animation-delay: calc(var(--animation-duration) / 5);\n  --animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);\n  --animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);\n  --animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);\n  --animation-curve-default: var(--animation-curve-fast-out-slow-in);\n\n  --z-index-highest: 300;\n  --z-index-higher: 200;\n  --z-index-high: 100;\n  --z-index-normal: 1;\n  --z-index-low: -100;\n  --z-index-lower: -200;\n\n  --reset: {\n    box-sizing: border-box;\n    font-family: var(--preferred-font);\n    -webkit-font-smoothing: antialiased;\n    font-smoothing: antialiased;\n    text-size-adjust: 100%;\n\n    & *,\n    & *::after,\n    & *::before {\n      box-sizing: border-box;\n      -webkit-font-smoothing: antialiased;\n      font-smoothing: antialiased;\n      text-size-adjust: 100%;\n      -webkit-touch-callout: none;\n    }\n  }\n}\n:root {\n  --ripple-duration: 800ms;\n  --ripple-final-opacity: 0.3;\n  --ripple-size: calc(15 * var(--unit));\n}\n.rippleWrapper {\n  bottom: 0;\n  left: 0;\n  pointer-events: none;\n  position: absolute;\n  right: 0;\n  top: 0;\n  z-index: var(--z-index-normal);\n}\n.ripple {\n  background-color: currentColor;\n  border-radius: 50%;\n  left: 50%;\n  pointer-events: none;\n  position: absolute;\n  top: 50%;\n  transform-origin: 50% 50%;\n  transition-duration: var(--ripple-duration);\n  z-index: var(--z-index-high);\n\n  &.rippleRestarting {\n    opacity: var(--ripple-final-opacity);\n    transition-property: none;\n  }\n\n  &.rippleActive {\n    opacity: var(--ripple-final-opacity);\n    transition-property: transform;\n  }\n\n  &:not(.rippleActive):not(.rippleRestarting) {\n    opacity: 0;\n    transition-property: opacity, transform;\n  }\n}\n"],"sourceRoot":""}]);
->>>>>>> Adding options parameters
 
 // exports
 exports.locals = {
@@ -31605,11 +31544,7 @@ exports = module.exports = __webpack_require__(78)(true);
 
 
 // module
-<<<<<<< HEAD
-exports.push([module.i, ".rfCardStyles--rfCard--2NKity46{\n    margin: 0 0 5% 0;\n}\n\n.rfCardStyles--themedCardTitle--AyIoypcO.rfCardStyles--cardTitle--P6hFEv3M {\n  .rfCardStyles--avatar--1RkKbL3w {\n    background-color: rgb(255, 255, 255);\n  }\n}\n\n.rfCardStyles--avatar--1RkKbL3w {\n  background-color: rgb(255, 255, 255);\n}\n", "", {"version":3,"sources":["/home/shea/Documents/idb/www/components/rfCardStyles.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;CACpB;;AAED;EACE;IACE,qCAAqC;GACtC;CACF;;AAED;EACE,qCAAqC;CACtC","file":"rfCardStyles.css","sourcesContent":[".rfCard{\n    margin: 0 0 5% 0;\n}\n\n.themedCardTitle.cardTitle {\n  .avatar {\n    background-color: rgb(255, 255, 255);\n  }\n}\n\n.avatar {\n  background-color: rgb(255, 255, 255);\n}\n"],"sourceRoot":""}]);
-=======
 exports.push([module.i, ".rfCardStyles--rfCard--2NKity46{\n    margin: 0 0 5% 0;\n}\n\n.rfCardStyles--themedCardTitle--AyIoypcO.rfCardStyles--cardTitle--P6hFEv3M {\n  .rfCardStyles--avatar--1RkKbL3w {\n    background-color: rgb(255, 255, 255);\n  }\n}\n\n.rfCardStyles--avatar--1RkKbL3w {\n  background-color: rgb(255, 255, 255);\n}\n", "", {"version":3,"sources":["/Users/jeremylim/Documents/ReddifulAPI/www/components/rfCardStyles.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;CACpB;;AAED;EACE;IACE,qCAAqC;GACtC;CACF;;AAED;EACE,qCAAqC;CACtC","file":"rfCardStyles.css","sourcesContent":[".rfCard{\n    margin: 0 0 5% 0;\n}\n\n.themedCardTitle.cardTitle {\n  .avatar {\n    background-color: rgb(255, 255, 255);\n  }\n}\n\n.avatar {\n  background-color: rgb(255, 255, 255);\n}\n"],"sourceRoot":""}]);
->>>>>>> Adding options parameters
 
 // exports
 exports.locals = {
@@ -31735,7 +31670,7 @@ var _on = __webpack_require__(89);
 
 var _on2 = _interopRequireDefault(_on);
 
-var _off = __webpack_require__(135);
+var _off = __webpack_require__(134);
 
 var _off2 = _interopRequireDefault(_off);
 
@@ -31774,7 +31709,7 @@ var _on = __webpack_require__(89);
 
 var _on2 = _interopRequireDefault(_on);
 
-var _off = __webpack_require__(135);
+var _off = __webpack_require__(134);
 
 var _off2 = _interopRequireDefault(_off);
 
@@ -32928,11 +32863,11 @@ var _invariant = __webpack_require__(46);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _LocationUtils = __webpack_require__(136);
+var _LocationUtils = __webpack_require__(135);
 
 var _PathUtils = __webpack_require__(81);
 
-var _createTransitionManager = __webpack_require__(137);
+var _createTransitionManager = __webpack_require__(136);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
@@ -33240,11 +33175,11 @@ var _invariant = __webpack_require__(46);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _LocationUtils = __webpack_require__(136);
+var _LocationUtils = __webpack_require__(135);
 
 var _PathUtils = __webpack_require__(81);
 
-var _createTransitionManager = __webpack_require__(137);
+var _createTransitionManager = __webpack_require__(136);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
@@ -33568,9 +33503,9 @@ var _warning2 = _interopRequireDefault(_warning);
 
 var _PathUtils = __webpack_require__(81);
 
-var _LocationUtils = __webpack_require__(136);
+var _LocationUtils = __webpack_require__(135);
 
-var _createTransitionManager = __webpack_require__(137);
+var _createTransitionManager = __webpack_require__(136);
 
 var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
@@ -33842,7 +33777,7 @@ var _getPrefixedKeyframes = __webpack_require__(424);
 
 var _getPrefixedKeyframes2 = _interopRequireDefault(_getPrefixedKeyframes);
 
-var _capitalizeString = __webpack_require__(138);
+var _capitalizeString = __webpack_require__(137);
 
 var _capitalizeString2 = _interopRequireDefault(_capitalizeString);
 
@@ -34549,7 +34484,7 @@ var _joinPrefixedValue = __webpack_require__(92);
 
 var _joinPrefixedValue2 = _interopRequireDefault(_joinPrefixedValue);
 
-var _isPrefixedValue = __webpack_require__(139);
+var _isPrefixedValue = __webpack_require__(138);
 
 var _isPrefixedValue2 = _interopRequireDefault(_isPrefixedValue);
 
@@ -34714,7 +34649,7 @@ var _joinPrefixedValue = __webpack_require__(92);
 
 var _joinPrefixedValue2 = _interopRequireDefault(_joinPrefixedValue);
 
-var _isPrefixedValue = __webpack_require__(139);
+var _isPrefixedValue = __webpack_require__(138);
 
 var _isPrefixedValue2 = _interopRequireDefault(_isPrefixedValue);
 
@@ -34805,11 +34740,11 @@ var _hyphenateStyleName = __webpack_require__(206);
 
 var _hyphenateStyleName2 = _interopRequireDefault(_hyphenateStyleName);
 
-var _capitalizeString = __webpack_require__(138);
+var _capitalizeString = __webpack_require__(137);
 
 var _capitalizeString2 = _interopRequireDefault(_capitalizeString);
 
-var _isPrefixedValue = __webpack_require__(139);
+var _isPrefixedValue = __webpack_require__(138);
 
 var _isPrefixedValue2 = _interopRequireDefault(_isPrefixedValue);
 
@@ -34893,7 +34828,7 @@ var _prefixProps = __webpack_require__(207);
 
 var _prefixProps2 = _interopRequireDefault(_prefixProps);
 
-var _capitalizeString = __webpack_require__(138);
+var _capitalizeString = __webpack_require__(137);
 
 var _capitalizeString2 = _interopRequireDefault(_capitalizeString);
 
@@ -37396,7 +37331,7 @@ function stubFalse() {
 
 module.exports = merge;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(116), __webpack_require__(709)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(172), __webpack_require__(709)(module)))
 
 /***/ }),
 /* 429 */
@@ -37842,7 +37777,7 @@ function toNumber(value) {
 
 module.exports = throttle;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(116)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(172)))
 
 /***/ }),
 /* 430 */
@@ -37859,7 +37794,7 @@ var _extends2 = __webpack_require__(5);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _keys = __webpack_require__(120);
+var _keys = __webpack_require__(119);
 
 var _keys2 = _interopRequireDefault(_keys);
 
@@ -38302,7 +38237,7 @@ var _reactDom = __webpack_require__(16);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactEventListener = __webpack_require__(163);
+var _reactEventListener = __webpack_require__(162);
 
 var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
@@ -38326,7 +38261,7 @@ var _Paper = __webpack_require__(24);
 
 var _Paper2 = _interopRequireDefault(_Paper);
 
-var _reactAddonsTransitionGroup = __webpack_require__(142);
+var _reactAddonsTransitionGroup = __webpack_require__(141);
 
 var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
 
@@ -38984,7 +38919,7 @@ var _reactDom = __webpack_require__(16);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactEventListener = __webpack_require__(163);
+var _reactEventListener = __webpack_require__(162);
 
 var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
@@ -40719,7 +40654,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _List = __webpack_require__(140);
+var _List = __webpack_require__(139);
 
 var _List2 = _interopRequireDefault(_List);
 
@@ -41005,7 +40940,7 @@ var _propTypes = __webpack_require__(47);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _List = __webpack_require__(140);
+var _List = __webpack_require__(139);
 
 var _List2 = _interopRequireDefault(_List);
 
@@ -42290,7 +42225,7 @@ var _reactDom = __webpack_require__(16);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactEventListener = __webpack_require__(163);
+var _reactEventListener = __webpack_require__(162);
 
 var _reactEventListener2 = _interopRequireDefault(_reactEventListener);
 
@@ -44389,7 +44324,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactAddonsTransitionGroup = __webpack_require__(142);
+var _reactAddonsTransitionGroup = __webpack_require__(141);
 
 var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
 
@@ -44929,7 +44864,7 @@ var _reactDom = __webpack_require__(16);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactAddonsTransitionGroup = __webpack_require__(142);
+var _reactAddonsTransitionGroup = __webpack_require__(141);
 
 var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
 
@@ -45714,7 +45649,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _keys = __webpack_require__(120);
+var _keys = __webpack_require__(119);
 
 var _keys2 = _interopRequireDefault(_keys);
 
@@ -46284,7 +46219,7 @@ module.exports = _curry2(function dissoc(prop, obj) {
 /* 481 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _curry1 = __webpack_require__(141);
+var _curry1 = __webpack_require__(140);
 var _isPlaceholder = __webpack_require__(218);
 
 
@@ -46333,7 +46268,7 @@ module.exports = (function() {
 /* 483 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _curry1 = __webpack_require__(141);
+var _curry1 = __webpack_require__(140);
 var _has = __webpack_require__(217);
 var _isArguments = __webpack_require__(482);
 
@@ -46412,7 +46347,7 @@ module.exports = (function() {
 /* 484 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _curry1 = __webpack_require__(141);
+var _curry1 = __webpack_require__(140);
 var keys = __webpack_require__(483);
 
 
@@ -46867,7 +46802,7 @@ var ButtonToolbar = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__CarouselCaption__ = __webpack_require__(492);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__CarouselItem__ = __webpack_require__(222);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Glyphicon__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Glyphicon__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__SafeAnchor__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__utils_bootstrapUtils__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils_ValidComponentChildren__ = __webpack_require__(28);
@@ -48070,7 +48005,7 @@ DropdownButton.propTypes = propTypes;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_objectWithoutProperties__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_objectWithoutProperties___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_objectWithoutProperties__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_core_js_array_from__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_core_js_array_from__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_babel_runtime_core_js_array_from___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_babel_runtime_core_js_array_from__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_classCallCheck__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_classCallCheck___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_classCallCheck__);
@@ -48490,7 +48425,7 @@ FormControl.Static = __WEBPACK_IMPORTED_MODULE_10__FormControlStatic__["a" /* de
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Glyphicon__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Glyphicon__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_bootstrapUtils__ = __webpack_require__(8);
 
 
@@ -49550,7 +49485,7 @@ MediaHeading.defaultProps = defaultProps;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Media__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Media__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_bootstrapUtils__ = __webpack_require__(8);
 
 
@@ -49747,7 +49682,7 @@ var MediaListItem = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Media__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Media__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_bootstrapUtils__ = __webpack_require__(8);
 
 
@@ -50857,7 +50792,7 @@ UncontrollableNavbar.Link = createSimpleWrapper('a', 'link', 'NavbarLink');
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_inherits__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Collapse__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Collapse__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_bootstrapUtils__ = __webpack_require__(8);
 
 
@@ -52006,7 +51941,7 @@ PaginationButton.defaultProps = defaultProps;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_classnames__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Collapse__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Collapse__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_bootstrapUtils__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_StyleConfig__ = __webpack_require__(23);
 
@@ -53052,8 +52987,8 @@ SplitToggle.defaultProps = __WEBPACK_IMPORTED_MODULE_5__DropdownToggle__["a" /* 
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_extends___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_extends__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__TabContainer__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__TabContent__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__TabContainer__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__TabContent__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__TabPane__ = __webpack_require__(236);
 
 
@@ -53227,8 +53162,8 @@ Table.defaultProps = defaultProps;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_uncontrollable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_uncontrollable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Nav__ = __webpack_require__(230);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__NavItem__ = __webpack_require__(231);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__TabContainer__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__TabContent__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__TabContainer__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__TabContent__ = __webpack_require__(146);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils_bootstrapUtils__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__utils_ValidComponentChildren__ = __webpack_require__(28);
 
@@ -55037,8 +54972,8 @@ var ReactDOMComponentTree = __webpack_require__(19);
 var ReactUpdates = __webpack_require__(38);
 var SyntheticEvent = __webpack_require__(41);
 
-var getEventTarget = __webpack_require__(159);
-var isEventSupported = __webpack_require__(160);
+var getEventTarget = __webpack_require__(158);
+var isEventSupported = __webpack_require__(159);
 var isTextInputElement = __webpack_require__(255);
 
 var eventTypes = {
@@ -55963,8 +55898,8 @@ module.exports = HTMLDOMPropertyConfig;
 var ReactReconciler = __webpack_require__(68);
 
 var instantiateReactComponent = __webpack_require__(254);
-var KeyEscapeUtils = __webpack_require__(150);
-var shouldUpdateReactComponent = __webpack_require__(161);
+var KeyEscapeUtils = __webpack_require__(149);
+var shouldUpdateReactComponent = __webpack_require__(160);
 var traverseAllChildren = __webpack_require__(257);
 var warning = __webpack_require__(10);
 
@@ -56120,7 +56055,7 @@ module.exports = ReactChildReconciler;
 
 
 
-var DOMChildrenOperations = __webpack_require__(148);
+var DOMChildrenOperations = __webpack_require__(147);
 var ReactDOMIDOperations = __webpack_require__(572);
 
 /**
@@ -56159,9 +56094,9 @@ var _prodInvariant = __webpack_require__(13),
     _assign = __webpack_require__(17);
 
 var React = __webpack_require__(56);
-var ReactComponentEnvironment = __webpack_require__(152);
+var ReactComponentEnvironment = __webpack_require__(151);
 var ReactCurrentOwner = __webpack_require__(39);
-var ReactErrorUtils = __webpack_require__(153);
+var ReactErrorUtils = __webpack_require__(152);
 var ReactInstanceMap = __webpack_require__(84);
 var ReactInstrumentation = __webpack_require__(32);
 var ReactNodeTypes = __webpack_require__(248);
@@ -56174,7 +56109,7 @@ if (process.env.NODE_ENV !== 'production') {
 var emptyObject = __webpack_require__(79);
 var invariant = __webpack_require__(9);
 var shallowEqual = __webpack_require__(80);
-var shouldUpdateReactComponent = __webpack_require__(161);
+var shouldUpdateReactComponent = __webpack_require__(160);
 var warning = __webpack_require__(10);
 
 var CompositeTypes = {
@@ -57188,7 +57123,7 @@ var _prodInvariant = __webpack_require__(13),
 var AutoFocusUtils = __webpack_require__(554);
 var CSSPropertyOperations = __webpack_require__(556);
 var DOMLazyTree = __webpack_require__(65);
-var DOMNamespaces = __webpack_require__(149);
+var DOMNamespaces = __webpack_require__(148);
 var DOMProperty = __webpack_require__(48);
 var DOMPropertyOperations = __webpack_require__(240);
 var EventPluginHub = __webpack_require__(66);
@@ -57207,9 +57142,9 @@ var ReactServerRenderingTransaction = __webpack_require__(597);
 var emptyFunction = __webpack_require__(27);
 var escapeTextContentForBrowser = __webpack_require__(108);
 var invariant = __webpack_require__(9);
-var isEventSupported = __webpack_require__(160);
+var isEventSupported = __webpack_require__(159);
 var shallowEqual = __webpack_require__(80);
-var validateDOMNesting = __webpack_require__(162);
+var validateDOMNesting = __webpack_require__(161);
 var warning = __webpack_require__(10);
 
 var Flags = ReactDOMComponentFlags;
@@ -58187,7 +58122,7 @@ module.exports = ReactDOMComponent;
 
 
 
-var validateDOMNesting = __webpack_require__(162);
+var validateDOMNesting = __webpack_require__(161);
 
 var DOC_NODE_TYPE = 9;
 
@@ -58315,7 +58250,7 @@ module.exports = ReactDOMFeatureFlags;
 
 
 
-var DOMChildrenOperations = __webpack_require__(148);
+var DOMChildrenOperations = __webpack_require__(147);
 var ReactDOMComponentTree = __webpack_require__(19);
 
 /**
@@ -58358,7 +58293,7 @@ var _prodInvariant = __webpack_require__(13),
     _assign = __webpack_require__(17);
 
 var DOMPropertyOperations = __webpack_require__(240);
-var LinkedValueUtils = __webpack_require__(151);
+var LinkedValueUtils = __webpack_require__(150);
 var ReactDOMComponentTree = __webpack_require__(19);
 var ReactUpdates = __webpack_require__(38);
 
@@ -59135,13 +59070,13 @@ module.exports = ReactDOMSelection;
 var _prodInvariant = __webpack_require__(13),
     _assign = __webpack_require__(17);
 
-var DOMChildrenOperations = __webpack_require__(148);
+var DOMChildrenOperations = __webpack_require__(147);
 var DOMLazyTree = __webpack_require__(65);
 var ReactDOMComponentTree = __webpack_require__(19);
 
 var escapeTextContentForBrowser = __webpack_require__(108);
 var invariant = __webpack_require__(9);
-var validateDOMNesting = __webpack_require__(162);
+var validateDOMNesting = __webpack_require__(161);
 
 /**
  * Text nodes violate a couple assumptions that React makes about components:
@@ -59305,7 +59240,7 @@ module.exports = ReactDOMTextComponent;
 var _prodInvariant = __webpack_require__(13),
     _assign = __webpack_require__(17);
 
-var LinkedValueUtils = __webpack_require__(151);
+var LinkedValueUtils = __webpack_require__(150);
 var ReactDOMComponentTree = __webpack_require__(19);
 var ReactUpdates = __webpack_require__(38);
 
@@ -60330,13 +60265,8 @@ var PooledClass = __webpack_require__(55);
 var ReactDOMComponentTree = __webpack_require__(19);
 var ReactUpdates = __webpack_require__(38);
 
-<<<<<<< HEAD
-var getEventTarget = __webpack_require__(159);
-var getUnboundedScrollPosition = __webpack_require__(389);
-=======
 var getEventTarget = __webpack_require__(158);
 var getUnboundedScrollPosition = __webpack_require__(388);
->>>>>>> Adding options parameters
 
 /**
  * Find the deepest React component completely containing the root of the
@@ -60529,7 +60459,7 @@ module.exports = ReactHostOperationHistoryHook;
 var DOMProperty = __webpack_require__(48);
 var EventPluginHub = __webpack_require__(66);
 var EventPluginUtils = __webpack_require__(104);
-var ReactComponentEnvironment = __webpack_require__(152);
+var ReactComponentEnvironment = __webpack_require__(151);
 var ReactEmptyComponent = __webpack_require__(243);
 var ReactBrowserEventEmitter = __webpack_require__(105);
 var ReactHostComponent = __webpack_require__(245);
@@ -60665,7 +60595,7 @@ module.exports = ReactMarkupChecksum;
 
 var _prodInvariant = __webpack_require__(13);
 
-var ReactComponentEnvironment = __webpack_require__(152);
+var ReactComponentEnvironment = __webpack_require__(151);
 var ReactInstanceMap = __webpack_require__(84);
 var ReactInstrumentation = __webpack_require__(32);
 
@@ -61258,7 +61188,7 @@ var ReactBrowserEventEmitter = __webpack_require__(105);
 var ReactInputSelection = __webpack_require__(246);
 var ReactInstrumentation = __webpack_require__(32);
 var Transaction = __webpack_require__(107);
-var ReactUpdateQueue = __webpack_require__(154);
+var ReactUpdateQueue = __webpack_require__(153);
 
 /**
  * Ensures that, when possible, the selection range (currently selected text
@@ -61627,7 +61557,7 @@ module.exports = ReactServerRenderingTransaction;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ReactUpdateQueue = __webpack_require__(154);
+var ReactUpdateQueue = __webpack_require__(153);
 
 var warning = __webpack_require__(10);
 
@@ -62310,7 +62240,7 @@ var SyntheticUIEvent = __webpack_require__(69);
 var SyntheticWheelEvent = __webpack_require__(612);
 
 var emptyFunction = __webpack_require__(27);
-var getEventCharCode = __webpack_require__(157);
+var getEventCharCode = __webpack_require__(156);
 var invariant = __webpack_require__(9);
 
 /**
@@ -62779,9 +62709,9 @@ module.exports = SyntheticInputEvent;
 
 var SyntheticUIEvent = __webpack_require__(69);
 
-var getEventCharCode = __webpack_require__(157);
+var getEventCharCode = __webpack_require__(156);
 var getEventKey = __webpack_require__(618);
-var getEventModifierState = __webpack_require__(158);
+var getEventModifierState = __webpack_require__(157);
 
 /**
  * @interface KeyboardEvent
@@ -62868,7 +62798,7 @@ module.exports = SyntheticKeyboardEvent;
 
 var SyntheticUIEvent = __webpack_require__(69);
 
-var getEventModifierState = __webpack_require__(158);
+var getEventModifierState = __webpack_require__(157);
 
 /**
  * @interface TouchEvent
@@ -63313,7 +63243,7 @@ module.exports = findDOMNode;
 
 
 
-var KeyEscapeUtils = __webpack_require__(150);
+var KeyEscapeUtils = __webpack_require__(149);
 var traverseAllChildren = __webpack_require__(257);
 var warning = __webpack_require__(10);
 
@@ -63394,7 +63324,7 @@ module.exports = flattenChildren;
 
 
 
-var getEventCharCode = __webpack_require__(157);
+var getEventCharCode = __webpack_require__(156);
 
 /**
  * Normalization of deprecated HTML5 `key` values
@@ -63992,7 +63922,7 @@ var _warning = __webpack_require__(18);
 
 var _warning2 = _interopRequireDefault(_warning);
 
-var _componentOrElement = __webpack_require__(165);
+var _componentOrElement = __webpack_require__(164);
 
 var _componentOrElement2 = _interopRequireDefault(_componentOrElement);
 
@@ -64032,7 +63962,7 @@ var _contains = __webpack_require__(62);
 
 var _contains2 = _interopRequireDefault(_contains);
 
-var _getContainer = __webpack_require__(164);
+var _getContainer = __webpack_require__(163);
 
 var _getContainer2 = _interopRequireDefault(_getContainer);
 
@@ -64981,7 +64911,7 @@ var _reactDom = __webpack_require__(16);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _componentOrElement = __webpack_require__(165);
+var _componentOrElement = __webpack_require__(164);
 
 var _componentOrElement2 = _interopRequireDefault(_componentOrElement);
 
@@ -64989,7 +64919,7 @@ var _calculatePosition = __webpack_require__(634);
 
 var _calculatePosition2 = _interopRequireDefault(_calculatePosition);
 
-var _getContainer = __webpack_require__(164);
+var _getContainer = __webpack_require__(163);
 
 var _getContainer2 = _interopRequireDefault(_getContainer);
 
@@ -66147,7 +66077,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_history_createMemoryHistory__ = __webpack_require__(399);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_history_createMemoryHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_history_createMemoryHistory__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Router__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Router__ = __webpack_require__(165);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -66372,7 +66302,7 @@ Redirect.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_history_PathUtils__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_history_PathUtils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_history_PathUtils__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Router__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Router__ = __webpack_require__(165);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -66543,7 +66473,7 @@ StaticRouter.childContextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_warning__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_warning__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__matchPath__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__matchPath__ = __webpack_require__(166);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -66676,7 +66606,7 @@ var EventPluginUtils = __webpack_require__(104);
 var EventPropagators = __webpack_require__(67);
 var SyntheticUIEvent = __webpack_require__(69);
 var TouchEventUtils = __webpack_require__(660);
-var ViewportMetrics = __webpack_require__(155);
+var ViewportMetrics = __webpack_require__(154);
 
 var keyOf = __webpack_require__(393);
 var topLevelTypes = EventConstants.topLevelTypes;
@@ -68233,10 +68163,10 @@ module.exports = PooledClass;
 var _prodInvariant = __webpack_require__(50),
     _assign = __webpack_require__(17);
 
-var ReactComponent = __webpack_require__(168);
+var ReactComponent = __webpack_require__(167);
 var ReactElement = __webpack_require__(49);
-var ReactPropTypeLocationNames = __webpack_require__(170);
-var ReactNoopUpdateQueue = __webpack_require__(169);
+var ReactPropTypeLocationNames = __webpack_require__(169);
+var ReactNoopUpdateQueue = __webpack_require__(168);
 
 var emptyObject = __webpack_require__(79);
 var invariant = __webpack_require__(9);
@@ -69205,11 +69135,11 @@ module.exports = ReactFragment;
 
 
 var ReactElement = __webpack_require__(49);
-var ReactPropTypeLocationNames = __webpack_require__(170);
+var ReactPropTypeLocationNames = __webpack_require__(169);
 var ReactPropTypesSecret = __webpack_require__(270);
 
 var emptyFunction = __webpack_require__(27);
-var getIteratorFn = __webpack_require__(172);
+var getIteratorFn = __webpack_require__(171);
 var warning = __webpack_require__(10);
 
 /**
@@ -69646,8 +69576,8 @@ module.exports = ReactPropTypes;
 
 var _assign = __webpack_require__(17);
 
-var ReactComponent = __webpack_require__(168);
-var ReactNoopUpdateQueue = __webpack_require__(169);
+var ReactComponent = __webpack_require__(167);
+var ReactNoopUpdateQueue = __webpack_require__(168);
 
 var emptyObject = __webpack_require__(79);
 
@@ -70055,7 +69985,7 @@ module.exports = '15.4.2';
 
 var _prodInvariant = __webpack_require__(50);
 
-var ReactPropTypeLocationNames = __webpack_require__(170);
+var ReactPropTypeLocationNames = __webpack_require__(169);
 var ReactPropTypesSecret = __webpack_require__(270);
 
 var invariant = __webpack_require__(9);
