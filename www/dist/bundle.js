@@ -27239,7 +27239,9 @@ var SortFilter = function (_React$Component) {
       console.log('clicked');
       for (var property in this.state) {
         if (this.state.hasOwnProperty(property)) {
-          temp['filter_' + property] = this.state[property];
+          if (property !== "order_by") {
+            temp['filter_' + property] = this.state[property];
+          }
         }
       }
       console.log(this.state);
