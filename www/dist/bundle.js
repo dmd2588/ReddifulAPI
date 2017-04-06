@@ -25433,7 +25433,7 @@ var Home = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
 
-    _this.state = { submissions: [] };
+    _this.state = { 'submissions': [{ 'preview': '', 'source': '' }] };
     return _this;
   }
 
@@ -25450,22 +25450,20 @@ var Home = function (_React$Component) {
         for (var i in res.data) {
           var images = res.data[i].preview.images['0'].resolutions;
           submissions.push({ 'preview': images[images.length - 1]['url'], 'source': res.data[i].url });
-          console.log(images);
         }
         this.setState({ submissions: submissions });
-        console.log(submissions);
       }.bind(this));
     }
   }, {
     key: 'makeCarouselItem',
-    value: function makeCarouselItem(v) {
-      if (v.source.endsWith('gifv')) {
-        v.source = v.source.slice(0, -1);
+    value: function makeCarouselItem(v, index) {
+      if (v['source'].endsWith('gifv')) {
+        v['source'] = v['source'].slice(0, -1);
       }
       return _react2.default.createElement(
         _reactBootstrap.Carousel.Item,
-        null,
-        _react2.default.createElement('img', { width: window.innerWidth, src: v.source })
+        { key: index },
+        _react2.default.createElement('img', { width: window.innerWidth, src: v['source'] })
       );
     }
   }, {

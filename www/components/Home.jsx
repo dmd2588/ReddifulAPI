@@ -6,7 +6,7 @@ import { getImages } from '../api.js'
 export default class Home extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {submissions: []}
+    this.state = {'submissions': [{'preview': '', 'source': ''}]}
   }
 
   componentDidMount () {
@@ -19,20 +19,18 @@ export default class Home extends React.Component {
       for (var i in res.data) {
         var images = res.data[i].preview.images['0'].resolutions
         submissions.push({'preview': images[images.length - 1]['url'], 'source': res.data[i].url})
-        console.log(images)
       }
       this.setState({submissions: submissions})
-      console.log(submissions)
     }.bind(this))
   }
 
-  makeCarouselItem (v) {
-    if (v.source.endsWith('gifv')) {
-      v.source = v.source.slice(0, -1)
+  makeCarouselItem (v, index) {
+    if (v['source'].endsWith('gifv')) {
+      v['source'] = v['source'].slice(0, -1)
     }
     return (
-      <Carousel.Item>
-        <img width={window.innerWidth} src={v.source} />
+      <Carousel.Item key={index}>
+        <img width={window.innerWidth} src={v['source']} />
       </Carousel.Item>
     )
   }
