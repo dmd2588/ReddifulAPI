@@ -6,6 +6,10 @@ const moderators = [
   {'user_id': '4fer6', 'sr_id': '2qh55'}
 ]
 
+export function getImages () {
+  return axios.get('/api/top_images')
+}
+
 export function getTests () {
   return axios.get('/api/tests')
 }

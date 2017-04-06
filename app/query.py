@@ -13,6 +13,7 @@ from app.models import Comment, Post, Subreddit, User
 import sqlalchemy
 from sqlalchemy.orm.session import sessionmaker
 from sqlalchemy.orm import joinedload
+from sqlalchemy import or_
 
 # The return value of create_engine() is our connection object
 con = sqlalchemy.create_engine(os.environ['DB_URL'], client_encoding='utf8')
@@ -277,3 +278,11 @@ def getModdedSubs(redditor_id, limit = 5):
     query = session.query(User).options(joinedload(User.subreddits)).filter(User.redditor_id == redditor_id)
     row = query.first()
     return [sub.__dict__ for sub in row.subreddits]
+
+
+def getTopImages(limit = 5):
+    session = Session()
+    query = session.query(Post).filter(Post.upvote_ratio > 0.8)
+    query = query.filter(or_(or_(Post.url.like("http://i.imgur%"), Post.url.like("http://imgur")), Post.url.like("https://i.redd%")))
+    query = query.order_by(sqlalchemy.desc('score'))
+    return [{'preview': getattr(r, 'preview'), 'url': getattr(r, 'url')} for r in query.limit(limit)]

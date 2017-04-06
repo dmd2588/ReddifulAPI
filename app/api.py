@@ -49,6 +49,11 @@ def serve_tests():
     return test_output.getvalue(), 200, TEXT_HEADER
 
 
+@app.route('/api/top_images')
+def serve_top_images():
+    return createJson(query.getTopImages()), 200, DEFAULT_HEADERS
+
+
 @app.route('/api/users')
 def serve_user_list():
     args = format_url_args()
