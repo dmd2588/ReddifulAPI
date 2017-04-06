@@ -23798,7 +23798,7 @@ var About = _react2.default.createClass({
                 _react2.default.createElement(
                   _reactBootstrap.Col,
                   { lg: 4 },
-                  _react2.default.createElement('img', { src: '/dist/images/David.jpg', height: '310', width: '310' }),
+                  _react2.default.createElement('img', { src: '/dist/images/David.jpg', className: 'img-responsive center-block' }),
                   _react2.default.createElement(
                     'h3',
                     null,
@@ -23833,7 +23833,7 @@ var About = _react2.default.createClass({
                 _react2.default.createElement(
                   _reactBootstrap.Col,
                   { lg: 4 },
-                  _react2.default.createElement('img', { src: '/dist/images/Johnny.jpg', height: '310', width: '310' }),
+                  _react2.default.createElement('img', { src: '/dist/images/Johnny.jpg', className: 'img-responsive center-block' }),
                   _react2.default.createElement(
                     'h3',
                     null,
@@ -23907,7 +23907,7 @@ var About = _react2.default.createClass({
                 _react2.default.createElement(
                   _reactBootstrap.Col,
                   { lg: 4 },
-                  _react2.default.createElement('img', { src: '/dist/images/Jeremy.jpeg', height: '310', width: '310' }),
+                  _react2.default.createElement('img', { src: '/dist/images/Jeremy.jpeg', className: 'img-responsive center-block' }),
                   _react2.default.createElement(
                     'h3',
                     null,
@@ -23942,7 +23942,7 @@ var About = _react2.default.createClass({
                 _react2.default.createElement(
                   _reactBootstrap.Col,
                   { lg: 4 },
-                  _react2.default.createElement('img', { src: '/dist/images/austinm.jpg', height: '310', width: '310' }),
+                  _react2.default.createElement('img', { src: '/dist/images/austinm.jpg', className: 'img-responsive center-block' }),
                   _react2.default.createElement(
                     'h3',
                     null,
@@ -23977,7 +23977,7 @@ var About = _react2.default.createClass({
                 _react2.default.createElement(
                   _reactBootstrap.Col,
                   { lg: 4 },
-                  _react2.default.createElement('img', { src: '/dist/images/Shea.jpeg', height: '310', width: '310' }),
+                  _react2.default.createElement('img', { src: '/dist/images/Shea.jpeg', className: 'img-responsive center-block' }),
                   _react2.default.createElement(
                     'h3',
                     null,

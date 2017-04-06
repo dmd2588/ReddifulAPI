@@ -31,7 +31,7 @@ var About = React.createClass({
               <Grid>
                 <Row className='show-grid'>
                   <Col lg={4}>
-                    <img src='/dist/images/David.jpg' height='310' width='310' />
+                    <img src='/dist/images/David.jpg' className='img-responsive center-block' />
                     <h3>David Du</h3>
                     <p>I'm a junior majoring in Computer Science. I like to game, which is closely related to why I want to go into the game development industry.</p>
                     <p>Responsibilities: Documentation, Front-end</p>
@@ -40,7 +40,7 @@ var About = React.createClass({
                     <p>No. Unit Tests: 0</p>
                   </Col>
                   <Col lg={4}>
-                    <img src='/dist/images/Johnny.jpg' height='310' width='310' />
+                    <img src='/dist/images/Johnny.jpg' className='img-responsive center-block' />
                     <h3>Johnny Knoebel</h3>
                     <p>I'm a junior majoring in Computer Science. I enjoy watching TV, video games, and making Pylint happy.</p>
                     <p>Responsibilities: Models, Unit Tests</p>
@@ -60,7 +60,7 @@ var About = React.createClass({
                 </Row>
                 <Row className='show-grid'>
                   <Col lg={4}>
-                    <img src='/dist/images/Jeremy.jpeg' height='310' width='310' />
+                    <img src='/dist/images/Jeremy.jpeg' className='img-responsive center-block' />
                     <h3>Jeremy Lim</h3>
                     <p>Computer Science Major. Likes books and Battlestar Galatica. Hobby is to read online web novels.</p>
                     <p>Responsibilities: Front-end boilerplate code, Coordination, Coding React Components</p>
@@ -69,7 +69,7 @@ var About = React.createClass({
                     <p>No. Unit Tests: 0</p>
                   </Col>
                   <Col lg={4}>
-                    <img src='/dist/images/austinm.jpg' height='310' width='310' />
+                    <img src='/dist/images/austinm.jpg' className='img-responsive center-block' />
                     <h3>Austin Middleton</h3>
                     <p>I am an avid rock climber with an interest in peer-to-peer tech</p>
                     <p>Responsibilities: Flask, Docker, and some React components</p>
@@ -78,7 +78,7 @@ var About = React.createClass({
                     <p>No. Unit Tests: 0</p>
                   </Col>
                   <Col lg={4}>
-                    <img src='/dist/images/Shea.jpeg' height='310' width='310' />
+                    <img src='/dist/images/Shea.jpeg' className='img-responsive center-block' />
                     <h3>Shea Rozmiarek</h3>
                     <p>I'm a junior CS major from Liberty Hill, Texas. I love to game and pet fluffy animals.</p>
                     <p>Responsibilities: Front-end</p>
