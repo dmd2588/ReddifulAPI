@@ -25,13 +25,16 @@ var About = React.createClass({
       <div className='container'>
         <Paper style={style} zDepth={2}>
           <div className='container-no-width'>
-            <PageHeader>About</PageHeader>
+            <h1>About Reddiful API</h1>
+            <hr />
+            <br />
+            <h2>Team Name Members</h2>
+            <hr />
             <Jumbotron>
-              <h1>Team Name Presents: <small>Reddiful API</small></h1>
               <Grid>
                 <Row className='show-grid'>
                   <Col lg={4}>
-                    <img src='/dist/images/David.jpg' className='img-responsive center-block' />
+                    <img src='/dist/images/David.jpg' className='img-responsive' />
                     <h3>David Du</h3>
                     <p>I'm a junior majoring in Computer Science. I like to game, which is closely related to why I want to go into the game development industry.</p>
                     <p>Responsibilities: Documentation, Front-end</p>
@@ -49,7 +52,7 @@ var About = React.createClass({
                     <p>No. Unit Tests: 10</p>
                   </Col>
                   <Col lg={4}>
-                    <img src='/dist/images/Thomas.jpg' className='img-responsive center-block' />
+                    <img src='/dist/images/Thomas.jpg' className='img-responsive' />
                     <h3>Thomas Lam</h3>
                     <p>I'm a Junior CS Major from Cypress, Texas.</p>
                     <p>Responsibilities: Data Collection, Front-end and Back-end bug fixes</p>
@@ -90,64 +93,83 @@ var About = React.createClass({
               </Grid>
             </Jumbotron>
             <hr />
+            <br />
+            <h2>Tools</h2>
+            <hr />
             <Jumbotron>
-              <h1>Tools</h1>
               <Grid>
                 <Row className='show-grid'>
                   <Col lg={4}>
-                    <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                    <img src='/dist/images/Slack.jpg' height='155' width='155' />
                     <h3>Slack</h3>
-                    <p>Slack was used as our main form of communication</p>
+                    <p>Slack is used as our main form of communication. We integrated other services: Travis CI and Github, so that we are able to keep track of commits and builds. These are all separated into a different channel, and we have other channels to keep track of general work, emails, and schedules.</p>
                   </Col>
                   <Col lg={4}>
-                    <img src='/dist/images/Slack.jpg' height='310' width='310' />
-                    <h3>React</h3>
-                    <p>React was used as part of the front-end</p>
-                  </Col>
-                  <Col lg={4}>
-                    <img src='/dist/images/Slack.jpg' height='310' width='310' />
-                    <h3>Bootstrap</h3>
-                    <p>Bootstrap was used as part of the front-end</p>
-                  </Col>
-                  <Col lg={4}>
-                    <img src='/dist/images/Slack.jpg' height='310' width='310' />
-                    <h3>Webpack</h3>
-                    <p>Webpack was used to bundle our modules</p>
-                  </Col>
-                  <Col lg={4}>
-                    <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                    <img src='/dist/images/Docker.jpeg' height='155' width='155' />
                     <h3>Docker</h3>
-                    <p>Docker was used to generate virtual instances of our server</p>
+                    <p>Docker is used to generate local instances of our server. This allowed us to preview our webpage, test it, modify it, and change the layout locally before pushing and viewing on the website. This allows for much easier and fluid testing instead of having to wait for other people to finish their work.</p>
                   </Col>
                   <Col lg={4}>
-                    <img src='/dist/images/Slack.jpg' height='310' width='310' />
-                    <h3>Babel</h3>
-                    <p>Babel was used to compile Javascript</p>
+                    <img src='/dist/images/Bootstrap.png' height='155' width='155' />
+                    <h3>Bootstrap</h3>
+                    <p>Bootstrap is used as part of the front-end. It's another Javascript library based in React that allows us to use "prettier" design: things like the Navigation bar, the Panels, and Grids are all done through Bootstrap.</p>
+                  </Col>
+                </Row>
+                <Row className='show-grid'>
+                  <Col lg={4}>
+                    <img src='/dist/images/Webpack.png' height='155' width='155' />
+                    <h3>Webpack</h3>
+                    <p>Webpack is used to bundle our modules that works with Babel to transpile the code.</p>
                   </Col>
                   <Col lg={4}>
-                    <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                    <img src='/dist/images/PostCSS.png' height='155' width='155' />
                     <h3>PostCSS</h3>
-                    <p>PostCSS stuff</p>
+                    <p>PostCSS is needed for some modules. It allows us to bundle Javascript and CSS.</p>
                   </Col>
                   <Col lg={4}>
-                    <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                    <img src='/dist/images/Babel.png' height='155' width='155' />
+                    <h3>Babel</h3>
+                    <p>Babel is used to transpile the Javascript files after Webpack finishes bundling them. It makes code work.</p>
+                  </Col>
+                </Row>
+                <Row className='show-grid'>
+                  <Col lg={4}>
+                    <img src='/dist/images/React.svg' height='155' width='155' />
+                    <h3>React</h3>
+                    <p>React is used as part of the front-end. This Javascript library allows us to not only design our websites in a more user-friendly manner, but also to use other integrations like Bootstrap.</p>
+                  </Col>
+                  <Col lg={4}>
+                    <img src='/dist/images/Flask.png' height='155' width='155' />
                     <h3>Flask</h3>
-                    <p>Flask was used for our backend</p>
+                    <p>Flask is used for our backend. It handles HTTP requests and responses for RESTful request dispatching.</p>
                   </Col>
                   <Col lg={4}>
-                    <img src='/dist/images/Slack.jpg' height='310' width='310' />
+                    <img src='/dist/images/SQLAlchemy.png' height='155' width='155' />
                     <h3>SQLAlchemy</h3>
-                    <p>SQLAlchemy was used to build our database</p>
+                    <p>SQLAlchemy is used to build our database. We use it to format and define relationships, models, and attributes of our database tables.</p>
+                  </Col>
+                </Row>
+                <Row className='show-grid'>
+                  <Col lg={4}>
+                    <img src='/dist/images/AWS.png' height='155' width='155' />
+                    <h3>AWS</h3>
+                    <p>AWS is used to host our website.</p>
                   </Col>
                   <Col lg={4}>
-                    <img src='/dist/images/Slack.jpg' height='310' width='310' />
-                    <h3>AWS</h3>
-                    <p>AWS was used to host our website</p>
+                    <img src='/dist/images/Github.png' height='155' width='155' />
+                    <h3>Github</h3>
+                    <p>Github is used to share our code. This is connected to Travis CI so that we can check to make our builds are passing.</p>
+                  </Col>
+                  <Col lg={4}>
+                    <img src='/dist/images/TravisCI.jpeg' height='155' width='155' />
+                    <h3>Travis CI</h3>
+                    <p>Travis CI is used to check if our code is building properly.</p>
                   </Col>
                 </Row>
               </Grid>
             </Jumbotron>
             <hr />
+            <br />
             <ListGroup>
               <h3>Github Stats - <a href='http://docs.reddiful.apiary.io'>Apiary API</a> - <a href='https://github.com/dmd2588/idb/issues'>GitHubIssueTracker</a> - <a href='https://github.com/dmd2588/idb/'>Github Repo</a></h3>
               <ListGroupItem>total no. of commits: 155</ListGroupItem>
@@ -166,6 +188,7 @@ var About = React.createClass({
             <Panel header={<h3>Tools</h3>}>
               <p>Used React and Bootstrap for main frontend. Webpack to compile ES6 jsx files. Babel to translate ES6 to javascript. React-toolbox, modernize, material-ui for touch up components. Docker used to manage back-end dependencies. Python for the back-end logic. Flask as the API logic server. Makefile to encode the workflow. Gunicorn for the flask webserver. For more info see the Tools section of the Technical Report below.</p>
             </Panel>
+            <hr />
             <br />
             <PageHeader>Technical Report</PageHeader>
             <Button onClick={() => this.setState({ open: !this.state.open })}>
@@ -315,7 +338,25 @@ var About = React.createClass({
               </Panel>
             </Panel>
             <Panel id='database' header='Database' bsStyle='info'>
-              <p>Placeholder</p>
+              <p>The Database is interfaced with SQLAlchemy. He</p>
+              <Button id='setup2' onClick={() => this.setState({ open11: !this.state.open11 })}>
+                Set-up <FaAngleDown />
+              </Button>
+              <Panel collapsible expanded={this.state.open11}>
+                <p>Stuff</p>
+              </Panel>
+              <Button id='implementation' onClick={() => this.setState({ open12: !this.state.open12 })}>
+                Implementation <FaAngleDown />
+              </Button>
+              <Panel collapsible expanded={this.state.open12}>
+                <p>Stuff</p>
+              </Panel>
+              <Button id='issuessol' onClick={() => this.setState({ open13: !this.state.open13 })}>
+                Issues and Solutions <FaAngleDown />
+              </Button>
+              <Panel collapsible expanded={this.state.open13}>
+                <p>Stuff</p>
+              </Panel>
             </Panel>
             <Panel id='api' header='API' bsStyle='info'>
               <p>Placeholder</p>
