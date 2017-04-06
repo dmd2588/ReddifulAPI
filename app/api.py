@@ -56,6 +56,8 @@ def serve_user_list():
     if 'order_by' in args:
         if args['order_by'] not in user_order_by:
             args.pop('order_by', None)
+    if 'order_by' not in args and 'desc' in args:
+        args.pop('desc', None)
     return createJson(query.getUsers(**args)[0]), 200, DEFAULT_HEADERS
 
 
@@ -74,6 +76,8 @@ def serve_post_list():
     if 'order_by' in args:
         if args['order_by'] not in user_order_by:
             args.pop('order_by', None)
+    if 'order_by' not in args and 'desc' in args:
+        args.pop('desc', None)
     return createJson(query.getPosts(**args)[0]), 200, DEFAULT_HEADERS
 
 
@@ -92,6 +96,8 @@ def serve_comment_list():
     if 'order_by' in args:
         if args['order_by'] not in user_order_by:
             args.pop('order_by', None)
+    if 'order_by' not in args and 'desc' in args:
+        args.pop('desc', None)
     return createJson(query.getComments(**args)[0]), 200, DEFAULT_HEADERS
 
 
@@ -110,6 +116,8 @@ def serve_subreddit_list():
     if 'order_by' in args:
         if args['order_by'] not in user_order_by:
             args.pop('order_by', None)
+    if 'order_by' not in args and 'desc' in args:
+        args.pop('desc', None)
     return createJson(query.getSubs(**args)[0]), 200, DEFAULT_HEADERS
 
 
@@ -141,5 +149,5 @@ def format_url_args():
     if 'order_by' in flask.request.args:
         args['order_by'] = flask.request.args['order_by']
     if 'desc' in flask.request.args:
-        args['desc'] = int(flask.request.args['desc']) == 1
+        args['desc'] = True
     return args
