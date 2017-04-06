@@ -9,17 +9,17 @@ const style = {
 }
 
 export default class Users extends React.Component {
-    constructor (props) {
+  constructor (props) {
     super(props)
     this.state = {ops: {}}
   }
-     retainOptions(ops){
-         console.log("options")
-         console.log(ops)
-       this.setState({ops: ops})
-       console.log(this.state.ops)
-       return this.state.ops
-   }
+  retainOptions (ops) {
+    console.log('options')
+    console.log(ops)
+    this.setState({ops: ops})
+    console.log(this.state.ops)
+    return this.state.ops
+  }
   loadDataFromServer (options, callback) {
     getUsers(options).then(function (res) {
       var users = res.data
@@ -41,8 +41,6 @@ export default class Users extends React.Component {
       callback(myp)
     })
   }
-    
-  
 
   render () {
     return (

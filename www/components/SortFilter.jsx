@@ -43,15 +43,15 @@ export default class SortFilter extends React.Component {
 
     if (this.state.order_by === '<default>') {
       this.state.order_by = ''
-      }
-    temp['order_by'] = sortSelect
+    }
+    temp['order_by'] = this.state.order_by
     this.props.updateGrid(temp)
   }
-   
-    handleSelect (e) {
-     console.log(e.target.value)
-     this.setState({order_by: e.target.value})
-    }
+
+  handleSelect (e) {
+    console.log(e.target.value)
+    this.setState({order_by: e.target.value})
+  }
   render () {
     return (
       <Panel header='Filtering and Sorting'>
@@ -70,7 +70,7 @@ export default class SortFilter extends React.Component {
 
         <FormGroup controlId='sortSelect'>
           <ControlLabel>Sort by Attribute</ControlLabel>
-          <FormControl type = "text" componentClass='select' onChange={this.handleSelect.bind(this)}>
+          <FormControl type='text' componentClass='select' onChange={this.handleSelect.bind(this)}>
             {this.props.select_values.map(this.makeOption)}
           </FormControl>
         </FormGroup>

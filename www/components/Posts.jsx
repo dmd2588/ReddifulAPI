@@ -9,14 +9,14 @@ const style = {
 }
 
 export default class Posts extends React.Component {
-      constructor (props) {
+  constructor (props) {
     super(props)
     this.state = {ops: {}}
   }
-     retainOptions(ops){
-       this.setState(ops)
-       return this.state.ops
-   }
+  retainOptions (ops) {
+    this.setState(ops)
+    return this.state.ops
+  }
   loadDataFromServer (options, callback) {
     getPosts(options).then(function (res) {
       var posts = res.data

@@ -9,15 +9,15 @@ const style = {
 }
 
 export default class Users extends React.Component {
-      constructor (props) {
+  constructor (props) {
     super(props)
     this.state = {ops: {}}
   }
-     retainOptions(ops){
-       this.setState(ops)
-       return this.state.ops
-   }
-    
+  retainOptions (ops) {
+    this.setState(ops)
+    return this.state.ops
+  }
+
   loadDataFromServer (options, callback) {
     getComments(options).then(function (res) {
       var comments = res.data
@@ -52,7 +52,7 @@ export default class Users extends React.Component {
       <div className='container'>
         <Paper style={style} zDepth={2}>
           <div className='container-no-width'>
-            <RfGrid retainOptions={(o) => this.retainOptions(o)}  filterOptions={[]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+            <RfGrid retainOptions={(o) => this.retainOptions(o)} filterOptions={[]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
           </div>
         </Paper>
       </div>

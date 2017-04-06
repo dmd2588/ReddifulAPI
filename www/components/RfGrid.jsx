@@ -20,9 +20,9 @@ export default class RfGrid extends React.Component {
   updateGrid (options) {
     var self = this
     this.props.retainOptions(options)
-    console.log("RfGrid")
+    console.log('RfGrid')
     console.log(options)
-    console.log("Captured")
+    console.log('Captured')
     this.loadDataFromServer(options, function (newData) {
       self.setState({data: newData, pageCount: self.state.pageCount, page: self.state.page})
     })
@@ -37,7 +37,7 @@ export default class RfGrid extends React.Component {
     var temp = (ops == null) ? {} : ops
     console.log(temp)
     console.log('Click2')
-    temp["page"] = data.selected
+    temp['page'] = data.selected
     console.log(temp)
     self.updateGrid(temp)
   }
