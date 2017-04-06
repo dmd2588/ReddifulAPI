@@ -191,4 +191,18 @@ def format_url_args():
         args['order_by'] = flask.request.args['order_by']
     if 'desc' in flask.request.args:
         args['desc'] = True
+    for k, v in flask.request.args.items():
+        if k.startswith('filter_'):
+            # pylint: disable=redefined-variable-type
+            column = k.replace('filter_', '')
+            value = v
+            if column.endswith('_max'):
+                value = float(value)
+            elif column.endswith('_min'):
+                value = float(value)
+            elif value == 'true':
+                value = True
+            elif value == 'false':
+                value = False
+            args[column] = value
     return args
