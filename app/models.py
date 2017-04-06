@@ -16,8 +16,9 @@ Base = declarative_base()
 # association table for the many-to-many relationship between User and
 # Subreddit
 mods_table = Table('Mods', Base.metadata,
-                       Column('redditor_id', Integer, ForeignKey('Redditors.redditor_id')),
-                       Column('subreddit_id', Integer, ForeignKey('Subreddits.subreddit_id')))
+                   Column('redditor_id', Integer, ForeignKey(
+                       'Redditors.redditor_id')),
+                   Column('subreddit_id', Integer, ForeignKey('Subreddits.subreddit_id')))
 
 # ------------
 # User
@@ -46,7 +47,8 @@ class User(Base):
         assert isinstance(attr["redditor_id"], str)
         assert isinstance(attr["name"], str)
         assert isinstance(attr["link_karma"], int) and attr["link_karma"] >= 0
-        assert isinstance(attr["comment_karma"], int) and attr["comment_karma"] >= 0
+        assert isinstance(attr["comment_karma"], int) and attr[
+            "comment_karma"] >= 0
         assert isinstance(attr["created_utc"], datetime)
         assert isinstance(attr["is_gold"], bool)
         assert isinstance(attr["verified"], bool)
@@ -125,8 +127,10 @@ class Subreddit(Base):
         """
         assert isinstance(attr["subreddit_id"], str)
         assert isinstance(attr["display_name"], str)
-        assert isinstance(attr["subscribers"], int) and attr["subscribers"] >= 0
-        assert isinstance(attr["accounts_active"], int) and attr["accounts_active"] >= 0
+        assert isinstance(attr["subscribers"], int) and attr[
+            "subscribers"] >= 0
+        assert isinstance(attr["accounts_active"], int) and attr[
+            "accounts_active"] >= 0
         assert isinstance(attr["created_utc"], datetime)
         assert isinstance(attr["title"], str)
         assert isinstance(attr["icon_img"], str)
@@ -405,7 +409,7 @@ class Comment(Base):
         self.created_utc = attr["created_utc"]
         self.gilded = attr["gilded"]
         self.edited = attr["edited"]
-        self.author= attr["author"]
+        self.author = attr["author"]
         self.link_id = attr["link_id"]
         self.subreddit_id = attr["subreddit_id"]
         self.author_id = attr["author_id"]
