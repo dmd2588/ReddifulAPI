@@ -23,9 +23,12 @@ export default class Users extends React.Component {
             var commentUserMatch = users.find(u => u.redditor_id === c.author_id)
             console.log(commentUserMatch)
             return {
-              title: '',
-              subtitle: 'Commented: ' + c.created_utc,
-              link: '/comments/detail/' + c.comment_id
+              title: c.author,
+              subtitle: c.created_utc,
+              link: '/comments/detail/' + c.comment_id,
+              preview: '/dist/images/ic_speaker_notes_black_48dp_2x.png',
+              icon: '/dist/images/ic_account_circle_black_48dp_2x.png',
+              customClass: 'iconMedia'
             }
           })
         }

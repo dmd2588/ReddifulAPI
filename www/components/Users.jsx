@@ -19,7 +19,10 @@ export default class Users extends React.Component {
           return {
             title: u.name,
             subtitle: 'Joined: ' + u.created_utc,
-            link: '/users/detail/' + u.redditor_id
+            link: '/users/detail/' + u.redditor_id,
+            preview: '/dist/images/ic_account_circle_black_48dp_2x.png',
+            icon: '',
+            customClass: 'iconMedia'
           }
         })
       }

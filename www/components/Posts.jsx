@@ -21,7 +21,9 @@ export default class Posts extends React.Component {
             return {
               title: p.title,
               subtitle: 'Author: ' + p.author,
-              link: '/posts/detail/' + p.submission_id
+              link: '/posts/detail/' + p.submission_id,
+              preview: p.thumbnail,
+              icon: ''
             }
           })
         }

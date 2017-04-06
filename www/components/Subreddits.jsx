@@ -20,7 +20,10 @@ export default class Subreddits extends React.Component {
           return {
             title: s.display_name,
             subtitle: 'Created: ' + s.created_utc,
-            link: '/subreddits/detail/' + s.subreddit_id
+            link: '/subreddits/detail/' + s.subreddit_id,
+            preview: s.banner_img ? s.banner_img : '/dist/images/ic_local_movies_black_48dp_2x.png',
+            icon: s.icon_img,
+            customClass: s.banner_img ? '' : 'iconMedia'
           }
         })
       }

@@ -7035,7 +7035,10 @@ var RfGrid = function (_React$Component) {
                     _react2.default.createElement(_RfCard2.default, {
                       title: c.title,
                       subtitle: c.subtitle,
-                      link: c.link })
+                      link: c.link,
+                      preview: c.preview,
+                      icon: c.icon,
+                      customClass: c.customClass })
                   );
                 })
               )
@@ -25355,9 +25358,12 @@ var Users = function (_React$Component) {
               });
               console.log(commentUserMatch);
               return {
-                title: '',
-                subtitle: 'Commented: ' + c.created_utc,
-                link: '/comments/detail/' + c.comment_id
+                title: c.author,
+                subtitle: c.created_utc,
+                link: '/comments/detail/' + c.comment_id,
+                preview: '/dist/images/ic_speaker_notes_black_48dp_2x.png',
+                icon: '/dist/images/ic_account_circle_black_48dp_2x.png',
+                customClass: 'iconMedia'
               };
             })
           };
@@ -25832,7 +25838,9 @@ var Posts = function (_React$Component) {
               return {
                 title: p.title,
                 subtitle: 'Author: ' + p.author,
-                link: '/posts/detail/' + p.submission_id
+                link: '/posts/detail/' + p.submission_id,
+                preview: p.thumbnail,
+                icon: ''
               };
             })
           };
@@ -25897,9 +25905,12 @@ var _rfCardStyles2 = _interopRequireDefault(_rfCardStyles);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function RfCard(props) {
-  var maxLength = 20;
+  var maxLength = 17;
   var title = props.title;
   if (props.title.length > maxLength) title = title.substr(0, maxLength) + '...';
+
+  var subtitle = props.subtitle;
+  if (props.subtitle.length > maxLength) subtitle = subtitle.substr(0, maxLength) + '...';
 
   return _react2.default.createElement(
     'div',
@@ -25908,13 +25919,16 @@ function RfCard(props) {
       _card.Card,
       null,
       _react2.default.createElement(_card.CardTitle, {
-        avatar: 'https://placeimg.com/80/80/animals',
+        className: _rfCardStyles2.default.themedCardTitle,
+        avatar: props.icon ? props.icon : 'https://placeimg.com/80/80/animals',
         title: title,
-        subtitle: props.subtitle
+        subtitle: subtitle,
+        theme: _rfCardStyles2.default
       }),
       _react2.default.createElement(_card.CardMedia, {
         aspectRatio: 'wide',
-        image: 'https://placeimg.com/800/450/nature'
+        image: props.preview,
+        className: props.customClass
       }),
       _react2.default.createElement(
         _card.CardActions,
@@ -26257,7 +26271,10 @@ var Subreddits = function (_React$Component) {
             return {
               title: s.display_name,
               subtitle: 'Created: ' + s.created_utc,
-              link: '/subreddits/detail/' + s.subreddit_id
+              link: '/subreddits/detail/' + s.subreddit_id,
+              preview: s.banner_img ? s.banner_img : '/dist/images/ic_local_movies_black_48dp_2x.png',
+              icon: s.icon_img,
+              customClass: s.banner_img ? '' : 'iconMedia'
             };
           })
         };
@@ -26589,7 +26606,10 @@ var Users = function (_React$Component) {
             return {
               title: u.name,
               subtitle: 'Joined: ' + u.created_utc,
-              link: '/users/detail/' + u.redditor_id
+              link: '/users/detail/' + u.redditor_id,
+              preview: '/dist/images/ic_account_circle_black_48dp_2x.png',
+              icon: '',
+              customClass: 'iconMedia'
             };
           })
         };
@@ -30240,11 +30260,14 @@ exports = module.exports = __webpack_require__(77)(true);
 
 
 // module
-exports.push([module.i, ".rfCardStyles--rfCard--2NKity46{\n    margin: 0 0 5% 0;\n}", "", {"version":3,"sources":["/home/tholam/cs373/idb/www/components/rfCardStyles.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;CACpB","file":"rfCardStyles.css","sourcesContent":[".rfCard{\n    margin: 0 0 5% 0;\n}"],"sourceRoot":""}]);
+exports.push([module.i, ".rfCardStyles--rfCard--2NKity46{\n    margin: 0 0 5% 0;\n}\n\n.rfCardStyles--themedCardTitle--AyIoypcO.rfCardStyles--cardTitle--P6hFEv3M {\n  .rfCardStyles--avatar--1RkKbL3w {\n    background-color: rgb(255, 255, 255);\n  }\n}\n\n.rfCardStyles--avatar--1RkKbL3w {\n  background-color: rgb(255, 255, 255);\n}\n", "", {"version":3,"sources":["/home/tholam/cs373/idb/www/components/rfCardStyles.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;CACpB;;AAED;EACE;IACE,qCAAqC;GACtC;CACF;;AAED;EACE,qCAAqC;CACtC","file":"rfCardStyles.css","sourcesContent":[".rfCard{\n    margin: 0 0 5% 0;\n}\n\n.themedCardTitle.cardTitle {\n  .avatar {\n    background-color: rgb(255, 255, 255);\n  }\n}\n\n.avatar {\n  background-color: rgb(255, 255, 255);\n}\n"],"sourceRoot":""}]);
 
 // exports
 exports.locals = {
-	"rfCard": "rfCardStyles--rfCard--2NKity46"
+	"rfCard": "rfCardStyles--rfCard--2NKity46",
+	"themedCardTitle": "rfCardStyles--themedCardTitle--AyIoypcO",
+	"cardTitle": "rfCardStyles--cardTitle--P6hFEv3M",
+	"avatar": "rfCardStyles--avatar--1RkKbL3w"
 };
 
 /***/ }),

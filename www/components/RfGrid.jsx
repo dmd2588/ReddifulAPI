@@ -44,10 +44,12 @@ export default class RfGrid extends React.Component {
                     <RfCard
                       title={c.title}
                       subtitle={c.subtitle}
-                      link={c.link} />
+                      link={c.link}
+                      preview={c.preview}
+                      icon={c.icon}
+                      customClass={c.customClass} />
                   </Col>
-              ))}
-
+                ))}
               </Row>
             </Grid>
           </Col>
