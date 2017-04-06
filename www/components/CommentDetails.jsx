@@ -1,6 +1,12 @@
 import React from 'react' //eslint-disable-line
 import Detail from './Details.jsx'
 import { getUserByID, getPostByID, getCommentByID } from '../api.js'
+import Paper from 'material-ui/Paper'
+
+const style = {
+  margin: 50,
+  display: 'inline-block'
+}
 
 export default class CommentDetails extends React.Component {
   constructor (props) {
@@ -33,7 +39,7 @@ export default class CommentDetails extends React.Component {
   }
 
   render () {
-    return Detail({
+    var details = Detail({
       title: 'Comment',
       details: {
         'Author': {
@@ -51,5 +57,14 @@ export default class CommentDetails extends React.Component {
         'Body': this.state.comment.body
       }
     })
+    return (
+      <div className='container'>
+        <Paper style={style} zDepth={2}>
+          <div className='container'>
+            {details}
+          </div>
+        </Paper>
+      </div>
+    )
   }
 }

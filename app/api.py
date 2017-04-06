@@ -170,7 +170,7 @@ def serve_root():
     return flask.send_from_directory('../www', 'index.html')
 
 
-def format_url_args(endpoint = ''):
+def format_url_args():
     args = {}
     if 'page' in flask.request.args:
         args['page'] = int(flask.request.args['page'])

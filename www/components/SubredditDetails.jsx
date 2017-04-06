@@ -2,6 +2,12 @@ import React from 'react' //eslint-disable-line
 import Detail from './Details.jsx'
 // import { getSubredditByID, getModerators, getUserByID } from '../api.js'
 import { getSubredditByID } from '../api.js'
+import Paper from 'material-ui/Paper'
+
+const style = {
+  margin: 50,
+  display: 'inline-block'
+}
 
 export default class SubredditDetails extends React.Component {
   constructor (props) {
@@ -39,7 +45,7 @@ export default class SubredditDetails extends React.Component {
   }
 
   render () {
-    return Detail({
+    var details = Detail({
       title: 'Subreddit - ' + this.state.subreddit.display_name,
       details: {
         'Name': this.state.subreddit.display_name,
@@ -57,5 +63,14 @@ export default class SubredditDetails extends React.Component {
         'Created': this.state.subreddit.created_utc
       }
     })
+    return (
+      <div className='container'>
+        <Paper style={style} zDepth={2}>
+          <div className='container'>
+            {details}
+          </div>
+        </Paper>
+      </div>
+    )
   }
 }

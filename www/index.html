@@ -10,17 +10,27 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <script src="https://use.fontawesome.com/8af05dfa7f.js"></script>
   <style>
+    html {
+      height: 100%;
+    }
     body {
-        background-color: #90A4AE;
+      background-color: #ECEFF1;
+      min-height: 100%;
+    }
+    #content {
+      position: fixed;
+      width: 100%;
+      height: calc(100% - 64px);
+      display: block;
+    }
+    #Carousel {
+      height: calc(100% - 64px);
     }
   </style>
 </head>
 <body>
     <div id="nav"></div>
-    <div class="container">
-        <div id="nav"></div>
-        <div id="content" style="padding-top:5%"></div>
-    </div>
+    <div id="content"></div>
     <script src="/dist/bundle.js"></script>
   </body>
 </html>

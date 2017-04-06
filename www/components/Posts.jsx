@@ -1,6 +1,12 @@
 import React from 'react' // eslint-disable-line
 import RfGrid from './RfGrid.jsx'
 import { getPosts, getUsers } from '../api.js'
+import Paper from 'material-ui/Paper'
+
+const style = {
+  margin: 50,
+  display: 'inline-block'
+}
 
 export default class Posts extends React.Component {
   loadDataFromServer (options, callback) {
@@ -27,8 +33,12 @@ export default class Posts extends React.Component {
 
   render () {
     return (
-      <div>
-        <RfGrid filterOptions={[{name: 'is_self', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+      <div className='container'>
+        <Paper style={style} zDepth={2}>
+          <div className='container'>
+            <RfGrid filterOptions={[{name: 'is_self', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+          </div>
+        </Paper>
       </div>
     )
   }

@@ -1,6 +1,12 @@
 import React from 'react' // eslint-disable-line
 import Detail from './Details.jsx'
 import { getPostByID, getUserByID, getSubredditByID } from '../api.js'
+import Paper from 'material-ui/Paper'
+
+const style = {
+  margin: 50,
+  display: 'inline-block'
+}
 
 export default class PostDetails extends React.Component {
   constructor (props) {
@@ -35,7 +41,7 @@ export default class PostDetails extends React.Component {
   }
 
   render () {
-    return Detail({
+    var details = Detail({
       title: 'Post - ' + this.state.post.title,
       details: {
         'Title': this.state.post.title,
@@ -52,5 +58,14 @@ export default class PostDetails extends React.Component {
         'Created': this.state.post.created_utc
       }
     })
+    return (
+      <div className='container'>
+        <Paper style={style} zDepth={2}>
+          <div className='container'>
+            {details}
+          </div>
+        </Paper>
+      </div>
+    )
   }
 }
