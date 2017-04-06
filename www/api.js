@@ -1,5 +1,21 @@
 import axios from 'axios'
 
+function constructQuery (base, options) {
+  var first = true
+  if (!options) {
+    return base
+  }
+  Object.keys(options).forEach((key) => {
+    if (options[key] !== '') {
+      base += (first ? '?' : '&') + key + '=' + options[key]
+      first = false
+    }
+  })
+  console.log(options)
+  console.log(base)
+  return base
+}
+
 export function getImages () {
   return axios.get('/api/top_images')
 }
@@ -9,8 +25,8 @@ export function getTests () {
 }
 
 export function getUsers (options) {
-   // ?page=2&sortOrder=Desc&sortOn=link_karma'
-  return axios.get('/api/users')
+  var query = constructQuery('/api/users', options)
+  return axios.get(query)
 }
 
 export function getUserByID (ID) {
@@ -29,8 +45,9 @@ export function getModdedSubs (rID) {
   return axios.get('/api/users/' + rID + '/subs')
 }
 
-export function getComments (options, callback) {
-  return axios.get('/api/comments')
+export function getComments (options) {
+  var query = constructQuery('/api/comments', options)
+  return axios.get(query)
 }
 
 export function getCommentByID (ID) {
@@ -38,7 +55,8 @@ export function getCommentByID (ID) {
 }
 
 export function getPosts (options) {
-  return axios.get('/api/posts')
+  var query = constructQuery('/api/posts', options)
+  return axios.get(query)
 }
 
 export function getPostByID (ID) {
@@ -50,7 +68,8 @@ export function getPostComments (pID) {
 }
 
 export function getSubreddits (options) {
-  return axios.get('/api/subreddits')
+  var query = constructQuery('/api/subreddits', options)
+  return axios.get(query)
 }
 
 export function getSubredditByID (ID) {
