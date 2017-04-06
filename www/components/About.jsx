@@ -102,7 +102,7 @@ var About = React.createClass({
                   <Col lg={4}>
                     <img src='/dist/images/Slack.jpg' height='155' width='155' />
                     <h3>Slack</h3>
-                    <p>Slack is used as our main form of communication. We integrated other services: Travis CI and Github, so that we are able to keep track of commits and builds. These are all separated into a different channel, and we have other channels to keep track of general work, emails, and schedules.</p>
+                    <p>Slack is used as our main form of communication. We integrated other services: Travis CI and Github, so that we can keep track of commits and builds. These are all separated into a different channel, and we have other channels to keep track of general work, emails, and schedules.</p>
                   </Col>
                   <Col lg={4}>
                     <img src='/dist/images/Docker.jpeg' height='155' width='155' />
@@ -366,7 +366,7 @@ var About = React.createClass({
                 UML Diagram <FaAngleDown />
               </Button>
               <Panel collapsible expanded={this.state.open9}>
-                <img src='/dist/images/UML.jpg' height='1573' width='306' />
+                <img src='/dist/images/UML.png' height='1573' width='306' />
               </Panel>
               <Button id='tablec' onClick={() => this.setState({ open0: !this.state.open0 })}>
                 Table of Components <FaAngleDown />
