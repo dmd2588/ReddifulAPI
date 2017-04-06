@@ -7,13 +7,13 @@ import ReactPaginate from 'react-paginate'
 export default class RfGrid extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {data: {title: '', select_values: [], cards: []}, pageCount: 5, currentPage: 1}
+    this.state = {data: {title: '', select_values: [], cards: []}, pageCount: 5, page: 1}
     this.loadDataFromServer = this.props.loadDataFromServer
   }
   handlePageClick (data) {
     console.log('Click')
     console.log(data.selected)
-    // this.updateGrid({currentPage: data.selected});
+    this.updateGrid({page: data.selected})
   };
 
   componentDidMount () {
@@ -23,8 +23,9 @@ export default class RfGrid extends React.Component {
 
   updateGrid (options) {
     var self = this
+    console.log(options)
     this.loadDataFromServer(options, function (newData) {
-      self.setState({data: newData, pageCount: self.state.pageCount})
+      self.setState({data: newData, pageCount: self.state.pageCount, page: self.state.page})
     })
     console.log('Updating Grid')
   }

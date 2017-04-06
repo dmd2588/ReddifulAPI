@@ -31,15 +31,23 @@ export default class SortFilter extends React.Component {
   }
 
   onApply () {
-    // let sortSelect = ''
+    let sortSelect = ''
     // let filterText = ''
+    var temp = {}
     console.log('clicked')
     for (var property in this.state) {
       if (this.state.hasOwnProperty(property)) {
-        console.log(property)
+        console.log('here ' + property)
+        temp[property] = this.state[property]
       }
     }
-    // props.updateGrid()
+    console.log(this.state)
+
+    if (sortSelect === '<default>') {
+      sortSelect = ''
+    }
+    temp['order_by'] = sortSelect
+    this.props.updateGrid(temp)
   }
   render () {
     return (

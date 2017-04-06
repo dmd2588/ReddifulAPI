@@ -14,7 +14,7 @@ export default class Users extends React.Component {
       var users = res.data
       var myp = {
         title: 'Users',
-        select_values: ['name', 'comment_karma', 'link_karma', 'created_utc'],
+        select_values: ['<default>', 'name', 'comment_karma', 'link_karma', 'created_utc'],
         cards: users.map(u => {
           return {
             title: u.name,
