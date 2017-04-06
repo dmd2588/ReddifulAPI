@@ -89,15 +89,18 @@ export default class PostDetails extends React.Component {
               <Subheader>Details</Subheader>
               <ListItem
                 href={'/users/detail/' + this.state.author.redditor_id}
-                primaryText={'Author - ' + this.state.author.name}
+                primaryText='Author'
+                secondaryText={this.state.author.name}
               />
               <Divider inset />
               <ListItem
-                primaryText={'Score - ' + this.state.post.score}
+                primaryText='Score'
+                secondaryText={this.state.post.score}
               />
               <Divider inset />
               <ListItem
-                primaryText={'Upvote Ratio - ' + this.state.post.upvote_ratio}
+                primaryText='Upvote Ratio'
+                secondaryText={this.state.post.upvote_ratio}
               />
               <Divider inset />
             </List>

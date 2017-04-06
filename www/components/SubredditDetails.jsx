@@ -1,8 +1,9 @@
 import React from 'react' //eslint-disable-line
-import Detail from './Details.jsx'
-// import { getSubredditByID, getModerators, getUserByID } from '../api.js'
-import { getSubredditByID } from '../api.js'
+import { getSubredditByID, getModerators, getSubredditPosts } from '../api.js'
 import Paper from 'material-ui/Paper'
+import {List, ListItem} from 'material-ui/List'
+import Divider from 'material-ui/Divider'
+import Subheader from 'material-ui/Subheader'
 
 const style = {
   margin: 50,
@@ -15,59 +16,99 @@ export default class SubredditDetails extends React.Component {
     this.state = {
       subreddit_id: props.match.params.subreddit_id,
       subreddit: {},
-      modUser: {}
+      posts: [],
+      modUser: []
     }
     console.log(props.match.params.subreddit_id)
+  }
+
+  makePostListItem (v, index) {
+    return (
+      <div key={index}>
+        <ListItem
+          href={'/posts/detail/' + v.submission_id}
+          primaryText={v.title}
+          secondaryText={v.author}
+        />
+        <Divider inset />
+      </div>
+    )
+  }
+
+  makeModListItem (v, index) {
+    return (
+      <div key={index}>
+        <ListItem
+          href={'/users/detail/' + v.redditor_id}
+          primaryText={v.name}
+        />
+        <Divider inset />
+      </div>
+    )
   }
 
   componentDidMount () {
     var self = this
     getSubredditByID(this.state.subreddit_id).then(function (res) {
-      var subreddit = res.data
-
       self.setState({
         subreddit_id: self.state.subreddit_id,
-        subreddit: subreddit,
-        modUser: 'undefined'
+        subreddit: res.data,
+        posts: self.state.posts,
+        modUser: self.state.modUser
       })
-     // getModerators({}, function (res) {
-        // var modUserId = res.find(r => r.sr_id === subreddit.id).user_id
-       // getUserByID(modUserId).then(function (res) {
-        //  var user = res.data
-        //  self.setState({
-        //    subreddit_id: self.state.subreddit_id,
-        //    subreddit: subreddit,
-        //    modUser: user
-        //  })
-       // })
-     // })
+      getSubredditPosts(self.state.subreddit_id).then(function (res) {
+        self.setState({
+          subreddit_id: self.state.subreddit_id,
+          subreddit: self.state.subreddit,
+          posts: res.data,
+          modUser: self.state.modUser
+        })
+      })
+      getModerators(self.state.subreddit_id).then(function (res) {
+        self.setState({
+          subreddit_id: self.state.subreddit_id,
+          subreddit: self.state.subreddit,
+          posts: self.state.posts,
+          modUser: res.data
+        })
+      })
     })
   }
 
   render () {
-    var details = Detail({
-      title: 'Subreddit - ' + this.state.subreddit.display_name,
-      details: {
-        'Name': this.state.subreddit.display_name,
-        'Title': this.state.subreddit.title,
-        'Subscribers': this.state.subreddit.subscribers,
-        'Moderator': {
-          name: 'undefined',
-          link: '/users/detail/' + undefined
-        },
-        // 'Moderator': {
-        //  name: this.state.modUser.name,
-        //  link: '/users/detail/' + this.state.modUser.id
-        // },
-
-        'Created': this.state.subreddit.created_utc
-      }
-    })
     return (
       <div className='container'>
         <Paper style={style} zDepth={2}>
           <div className='container-no-width'>
-            {details}
+            <h1>{'/r/' + this.state.subreddit.display_name}&nbsp;
+              <small>{this.state.subreddit.created_utc}</small>
+            </h1>
+            <List>
+              <Subheader>Details</Subheader>
+              <ListItem
+                primaryText='title'
+                secondaryText={this.state.subreddit.title}
+              />
+              <Divider inset />
+              <ListItem
+                primaryText='accounts_active'
+                secondaryText={this.state.subreddit.accounts_active}
+              />
+              <Divider inset />
+              <ListItem
+                primaryText='subscribers'
+                secondaryText={this.state.subreddit.subscribers}
+              />
+              <Divider inset />
+            </List>
+            <List>
+              <Subheader>Posts</Subheader>
+              {this.state.posts.map(this.makePostListItem)}
+            </List>
+            <List>
+              <Subheader>Mods</Subheader>
+              {this.state.modUser.map(this.makeModListItem)}
+            </List>
           </div>
         </Paper>
       </div>
