@@ -22,6 +22,7 @@ export default class Subreddits extends React.Component {
       var subreddits = res.data[0]
       var myp = {
         title: 'Subreddits',
+        pages: res.data[1],
         select_values: ['<default>', 'title', 'accounts_active', 'subscribers', 'created_utc', 'display_name'],
         cards: subreddits.map(s => {
           // console.log('S', s.display_name, s)
@@ -43,7 +44,7 @@ export default class Subreddits extends React.Component {
       <div className='container'>
         <Paper style={style} zDepth={2}>
           <div className='container-no-width'>
-            <RfGrid retainOptions={(o) => this.retainOptions(o)} filterOptions={[]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+            <RfGrid pages={this.state.pages} retainOptions={(o) => this.retainOptions(o)} filterOptions={[]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
           </div>
         </Paper>
       </div>

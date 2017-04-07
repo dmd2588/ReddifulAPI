@@ -190,7 +190,7 @@ def format_url_args():
     if 'order_by' in flask.request.args:
         args['order_by'] = flask.request.args['order_by']
     if 'desc' in flask.request.args:
-        args['desc'] = True
+        args['desc'] = flask.request.args['desc'] != 'false'
     for k, v in flask.request.args.items():
         if k.startswith('filter_'):
             # pylint: disable=redefined-variable-type
