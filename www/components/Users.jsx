@@ -25,6 +25,7 @@ export default class Users extends React.Component {
       var users = res.data[0]
       var myp = {
         title: 'Users',
+        pages: res.data[1],
         select_values: ['<default>', 'name', 'comment_karma', 'link_karma', 'created_utc'],
         cards: users.map(u => {
           return {
@@ -47,7 +48,7 @@ export default class Users extends React.Component {
       <div className='container'>
         <Paper style={style} zDepth={2}>
           <div className='container-no-width'>
-            <RfGrid retainOptions={(o) => this.retainOptions(o)} filterOptions={[{name: 'is_gold', value: false}, {name: 'verified', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
+            <RfGrid pages={this.state.pages} retainOptions={(o) => this.retainOptions(o)} filterOptions={[{name: 'is_gold', value: false}, {name: 'verified', value: false}]} loadDataFromServer={(ops, callback) => this.loadDataFromServer(ops, callback)} />
           </div>
         </Paper>
       </div>

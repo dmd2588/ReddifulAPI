@@ -6982,7 +6982,7 @@ var RfGrid = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (RfGrid.__proto__ || Object.getPrototypeOf(RfGrid)).call(this, props));
 
-    _this.state = { data: { title: '', select_values: [], cards: [] }, pageCount: 5, page: 1 };
+    _this.state = { data: { title: '', select_values: [], cards: [] }, pageCount: 0, page: 1 };
     _this.loadDataFromServer = _this.props.loadDataFromServer;
     _this.retainOptions = _this.props.retainOptions;
     return _this;
@@ -6998,13 +6998,13 @@ var RfGrid = function (_React$Component) {
     key: 'updateGrid',
     value: function updateGrid(options) {
       var self = this;
-      var op = options == null ? {} : options;
-      this.props.retainOptions(op);
+      var ops = options == null ? {} : options;
+      this.props.retainOptions(ops);
       console.log('RfGrid');
       console.log(options);
       console.log('Captured');
       this.loadDataFromServer(options, function (newData) {
-        self.setState({ data: newData, pageCount: self.state.pageCount, page: self.state.page });
+        self.setState({ data: newData, pageCount: newData.pages, page: self.state.page });
       });
       console.log('Updating Grid');
     }
@@ -7014,7 +7014,7 @@ var RfGrid = function (_React$Component) {
       var self = this;
       console.log('Click');
       console.log(data.selected);
-      var ops = self.props.retainOptions();
+      var ops = self.props.retainOptions({});
       var temp = ops == null ? {} : ops;
       console.log(temp);
       console.log('Click2');
@@ -26519,6 +26519,7 @@ var Users = function (_React$Component) {
         var comments = res.data[0];
         var myp = {
           title: 'Comments',
+          pages: res.data[1],
           select_values: ['<default>', 'score', 'gilded', 'author', 'create_utc', 'body'],
           cards: comments.map(function (c) {
             return {
@@ -27093,6 +27094,7 @@ var Posts = function (_React$Component) {
         var posts = res.data[0];
         var myp = {
           title: 'Posts',
+          pages: res.data[1],
           select_values: ['<default>', 'score', 'gilded', 'title', 'num_comments', 'author'],
           cards: posts.map(function (p) {
             var thumbnailAvailable = p.thumbnail !== 'self' && p.thumbnail !== 'nsfw' && p.thumbnail !== 'default' && p.thumbnail;
@@ -27623,6 +27625,7 @@ var Subreddits = function (_React$Component) {
         var subreddits = res.data[0];
         var myp = {
           title: 'Subreddits',
+          pages: res.data[1],
           select_values: ['<default>', 'title', 'accounts_active', 'subscribers', 'created_utc', 'display_name'],
           cards: subreddits.map(function (s) {
             // console.log('S', s.display_name, s)
@@ -27653,7 +27656,7 @@ var Subreddits = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'container-no-width' },
-            _react2.default.createElement(_RfGrid2.default, { retainOptions: function retainOptions(o) {
+            _react2.default.createElement(_RfGrid2.default, { pages: this.state.pages, retainOptions: function retainOptions(o) {
                 return _this2.retainOptions(o);
               }, filterOptions: [], loadDataFromServer: function loadDataFromServer(ops, callback) {
                 return _this2.loadDataFromServer(ops, callback);
@@ -28093,6 +28096,7 @@ var Users = function (_React$Component) {
         var users = res.data[0];
         var myp = {
           title: 'Users',
+          pages: res.data[1],
           select_values: ['<default>', 'name', 'comment_karma', 'link_karma', 'created_utc'],
           cards: users.map(function (u) {
             return {
@@ -28123,7 +28127,7 @@ var Users = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'container-no-width' },
-            _react2.default.createElement(_RfGrid2.default, { retainOptions: function retainOptions(o) {
+            _react2.default.createElement(_RfGrid2.default, { pages: this.state.pages, retainOptions: function retainOptions(o) {
                 return _this2.retainOptions(o);
               }, filterOptions: [{ name: 'is_gold', value: false }, { name: 'verified', value: false }], loadDataFromServer: function loadDataFromServer(ops, callback) {
                 return _this2.loadDataFromServer(ops, callback);
