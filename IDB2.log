@@ -1,3 +1,45 @@
+commit 13b05eb0ef6e3c02e3f6668edc40f7cc39cc3ceb
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 21:38:58 2017 -0500
+
+    Fixed if there is no attributes to filter by
+
+commit 1e9198aa86160d94dbdcd38b410beab1ca79ea23
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 21:37:46 2017 -0500
+
+    Filer by attribute will not appear if there is none
+
+commit 2f5a1cca3dee075354c166556e2af5ba9d17f7f2
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Apr 6 21:37:42 2017 -0500
+
+    Edited attribute in technical report corrected
+
+commit 9455664aceab77c278acc3d2340c71843b3644c5
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Apr 6 21:37:02 2017 -0500
+
+    Edited attribute corrected
+
+commit f05eef3b22d926990859e39fa29cd97ac02cbaaf
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Apr 6 21:25:34 2017 -0500
+
+    build
+
+commit c1910de37166e9c9eebad71505c03ecec5b9f4af
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Apr 6 21:22:07 2017 -0500
+
+    Changed name back to TestServer.tmp
+
+commit 8675385d6222bb6c6b75d7f049be5398b043d4c8
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Apr 6 21:20:26 2017 -0500
+
+    Adding git log
+
 commit fe3c675b75774baa3bc2634ccdd9ee5efbe0b0e7
 Author: David Du <daviddu@utexas.edu>
 Date:   Thu Apr 6 21:14:52 2017 -0500
