@@ -71,7 +71,7 @@ export default class SortFilter extends React.Component {
         <FormGroup controlId='sortSelect'>
           <ControlLabel>Sort by Attribute</ControlLabel>
           <Checkbox label='desc' onChange={(e) => this.handleChange('desc', e)} >
-            desc
+            descending
           </Checkbox>
           <FormControl type='text' componentClass='select' onChange={this.handleSelect.bind(this)}>
             {this.props.select_values.map(this.makeOption)}
