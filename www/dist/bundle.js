@@ -27280,7 +27280,10 @@ var SortFilter = function (_React$Component) {
       for (var property in this.state) {
         if (this.state.hasOwnProperty(property)) {
           if (property !== 'order_by') {
-            temp['filter_' + property] = this.state[property];
+            if (property !== 'desc') {
+              temp['filter_' + property] = this.state[property];
+            }
+            temp[property] = this.state[property];
           }
         }
       }
@@ -27337,6 +27340,13 @@ var SortFilter = function (_React$Component) {
             _reactBootstrap.ControlLabel,
             null,
             'Sort by Attribute'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Checkbox,
+            { label: 'desc', onChange: function onChange(e) {
+                return _this2.handleChange('desc', e);
+              } },
+            'desc'
           ),
           _react2.default.createElement(
             _reactBootstrap.FormControl,

@@ -37,7 +37,10 @@ export default class SortFilter extends React.Component {
     for (var property in this.state) {
       if (this.state.hasOwnProperty(property)) {
         if (property !== 'order_by') {
-          temp['filter_' + property] = this.state[property]
+          if (property !== 'desc') {
+            temp['filter_' + property] = this.state[property]
+          }
+          temp[property] = this.state[property]
         }
       }
     }
@@ -72,6 +75,9 @@ export default class SortFilter extends React.Component {
 
         <FormGroup controlId='sortSelect'>
           <ControlLabel>Sort by Attribute</ControlLabel>
+          <Checkbox label='desc' onChange={(e) => this.handleChange('desc', e)} >
+            desc
+          </Checkbox>
           <FormControl type='text' componentClass='select' onChange={this.handleSelect.bind(this)}>
             {this.props.select_values.map(this.makeOption)}
           </FormControl>
