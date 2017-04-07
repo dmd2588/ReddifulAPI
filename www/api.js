@@ -6,7 +6,7 @@ function constructQuery (base, options) {
     return base
   }
   Object.keys(options).forEach((key) => {
-    if (options[key] !== '') {
+    if ((options[key] !== '') || (options[key] == null)) {
       base += (first ? '?' : '&') + key + '=' + options[key]
       first = false
     }
