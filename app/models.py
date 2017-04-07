@@ -119,7 +119,7 @@ class Subreddit(Base):
     icon_img = Column(String)
     banner_img = Column(String)
     posts = relationship("Post", back_populates="sub")
-    users = relationship("User", secondary=mods_table, lazy='joined')
+    users = relationship("User", secondary=mods_table)
 
     def __init__(self, **attr):
         """
