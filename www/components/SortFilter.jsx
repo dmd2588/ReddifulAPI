@@ -60,12 +60,7 @@ export default class SortFilter extends React.Component {
   render () {
     return (
       <Panel header='Filtering and Sorting'>
-        <FormGroup controlId='filterText'>
-          <ControlLabel>Filter Text</ControlLabel>
-          <FormControl componentClass='input' type='text' placeholder='Search' />
-        </FormGroup>
         <ControlLabel>Filter by Attribute</ControlLabel>
-
         {this.props.filterOptions.map(c => {
           return (
             <Checkbox label={c.name} key={Math.random().toString(16).substr(2)} checked={this.state[c.name]} onChange={(e) => this.handleChange(c.name, e)} >

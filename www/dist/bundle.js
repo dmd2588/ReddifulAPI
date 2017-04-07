@@ -27310,16 +27310,6 @@ var SortFilter = function (_React$Component) {
         _reactBootstrap.Panel,
         { header: 'Filtering and Sorting' },
         _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          { controlId: 'filterText' },
-          _react2.default.createElement(
-            _reactBootstrap.ControlLabel,
-            null,
-            'Filter Text'
-          ),
-          _react2.default.createElement(_reactBootstrap.FormControl, { componentClass: 'input', type: 'text', placeholder: 'Search' })
-        ),
-        _react2.default.createElement(
           _reactBootstrap.ControlLabel,
           null,
           'Filter by Attribute'
