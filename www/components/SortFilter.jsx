@@ -38,15 +38,15 @@ export default class SortFilter extends React.Component {
     console.log('clicked')
     for (var property in this.state) {
       if (this.state.hasOwnProperty(property)) {
-        if (property !== 'order_by') {
-          if (property !== 'desc') {
-            temp['filter_' + property] = this.state[property]
-          }
+        if (property !== 'order_by' && property !== 'desc') {
+          temp['filter_' + property] = this.state[property]
+        }
+        if (property === 'desc') {
           temp[property] = this.state[property]
         }
       }
     }
-    console.log(this.state)
+    console.log(temp)
 
     if (this.state.order_by === '<default>') {
       this.state.order_by = ''
