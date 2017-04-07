@@ -16,8 +16,7 @@ from sqlalchemy.orm import joinedload
 from sqlalchemy import or_
 
 # The return value of create_engine() is our connection object
-con = sqlalchemy.create_engine(os.environ['DB_URL'], client_encoding='utf8',
-                               pool_size=20, max_overflow=100)
+con = sqlalchemy.create_engine(os.environ['DB_URL'], client_encoding='utf8')
 
 
 # We then bind the connection to MetaData()
@@ -25,12 +24,6 @@ meta = sqlalchemy.MetaData(bind=con, reflect=True)
 
 # We bind the connection to sessionmaker to make sessions later
 Session = sessionmaker(bind=con)
-
-comments = meta.tables["Comments"]
-mods = meta.tables["Mods"]
-users = meta.tables["Redditors"]
-posts = meta.tables["Submissions"]
-subs = meta.tables["Subreddits"]
 
 
 def row2dict(row):
@@ -72,7 +65,8 @@ def getUsers(order_by="redditor_id", desc=False, page=0, per_page=25, **attr):
     else:
         query = query.order_by(order_by)
     page_count = int(math.ceil(query.count() / 25))
-    result = [row2dict(r) for r in query.offset(page * per_page).limit(per_page)], page_count
+    result = [row2dict(r) for r in query.offset(
+        page * per_page).limit(per_page)], page_count
     session.close()
     return result
 
@@ -87,9 +81,10 @@ def getUser(user_id):
     return {}
 
 
-def getSubredditMods(subreddit_id, limit = 5):
+def getSubredditMods(subreddit_id):
     session = Session()
-    query = session.query(Subreddit).options(joinedload(Subreddit.users)).filter(Subreddit.subreddit_id == subreddit_id)
+    query = session.query(Subreddit).options(joinedload(Subreddit.users)).filter(
+        Subreddit.subreddit_id == subreddit_id)
     row = query.first()
     return [mod.__dict__ for mod in row.users]
 
@@ -104,9 +99,9 @@ def post_query(query, k, v):
     if k == "score_max":
         return query.filter(Post.score < v)
     if k == "created_utc_min":
-        return query.filter(Post.created > datetime.datetime.utcfromtimestamp(v / 1000))
+        return query.filter(Post.created_utc > datetime.datetime.utcfromtimestamp(v / 1000))
     if k == "created_utc_max":
-        return query.filter(Post.created < datetime.datetime.utcfromtimestamp(v / 1000))
+        return query.filter(Post.created_utc < datetime.datetime.utcfromtimestamp(v / 1000))
     if k == "over_18":
         return query.filter(Post.over_18 == v)
     if k == "is_self":
@@ -150,7 +145,8 @@ def getPosts(order_by="submission_id", desc=False, page=0, per_page=25, **attr):
     else:
         query = query.order_by(order_by)
     page_count = int(math.ceil(query.count() / 25))
-    result = [row2dict(r) for r in query.offset(page * per_page).limit(per_page)], page_count
+    result = [row2dict(r) for r in query.offset(
+        page * per_page).limit(per_page)], page_count
     session.close()
     return result
 
@@ -165,13 +161,13 @@ def getPost(post_id):
     return {}
 
 
-def getUserPosts(redditor_id, limit = 5):
+def getUserPosts(redditor_id, limit=5):
     session = Session()
     query = session.query(Post).filter(Post.author_id == redditor_id)
     return [row2dict(r) for r in query.limit(limit)]
 
 
-def getSubredditPosts(subreddit_id, limit = 5):
+def getSubredditPosts(subreddit_id, limit=5):
     session = Session()
     query = session.query(Post).filter(Post.subreddit_id == subreddit_id)
     return [row2dict(r) for r in query.limit(limit)]
@@ -190,8 +186,10 @@ def comment_post(query, k, v):
         return query.filter(Comment.created_utc > datetime.datetime.utcfromtimestamp(v / 1000))
     if k == "created_utc_max":
         return query.filter(Comment.created_utc < datetime.datetime.utcfromtimestamp(v / 1000))
-    if k == "edited":
-        return query.filter(Comment.edited == v)
+    if k == "edited_min":
+        return query.filter(Comment.edited > datetime.datetime.utcfromtimestamp(v / 1000))
+    if k == "edited_max":
+        return query.filter(Comment.edited < datetime.datetime.utcfromtimestamp(v / 1000))
     if k == "gilded_min":
         return query.filter(Comment.gilded > v)
     if k == "gilded_max":
@@ -215,7 +213,8 @@ def getComments(order_by="comment_id", desc=False, page=0, per_page=25, **attr):
     else:
         query = query.order_by(order_by)
     page_count = int(math.ceil(query.count() / 25))
-    result = [row2dict(r) for r in query.offset(page * per_page).limit(per_page)], page_count
+    result = [row2dict(r) for r in query.offset(
+        page * per_page).limit(per_page)], page_count
     session.close()
     return result
 
@@ -230,13 +229,13 @@ def getComment(comment_id):
     return {}
 
 
-def getUserComments(redditor_id, limit = 5):
+def getUserComments(redditor_id, limit=5):
     session = Session()
     query = session.query(Comment).filter(Comment.author_id == redditor_id)
     return [row2dict(r) for r in query.limit(limit)]
 
 
-def getPostComments(link_id, limit = 5):
+def getPostComments(link_id, limit=5):
     session = Session()
     query = session.query(Comment).filter(Comment.link_id == link_id)
     return [row2dict(r) for r in query.limit(limit)]
@@ -276,7 +275,8 @@ def getSubs(order_by="subreddit_id", desc=False, page=0, per_page=25, **attr):
     else:
         query = query.order_by(order_by)
     page_count = int(math.ceil(query.count() / 25))
-    result = [row2dict(r) for r in query.offset(page * per_page).limit(per_page)], page_count
+    result = [row2dict(r) for r in query.offset(
+        page * per_page).limit(per_page)], page_count
     session.close()
     return result
 
@@ -292,16 +292,20 @@ def getSub(subreddit_id):
     return {}
 
 
-def getModdedSubs(redditor_id, limit = 5):
+def getModdedSubs(redditor_id):
     session = Session()
-    query = session.query(User).options(joinedload(User.subreddits)).filter(User.redditor_id == redditor_id)
+    query = session.query(User).options(joinedload(
+        User.subreddits)).filter(User.redditor_id == redditor_id)
     row = query.first()
     return [sub.__dict__ for sub in row.subreddits]
 
+print(getModdedSubs(redditor_id="7u0qw"))
 
-def getTopImages(limit = 5):
+
+def getTopImages(limit=5):
     session = Session()
     query = session.query(Post).filter(Post.upvote_ratio > 0.8)
-    query = query.filter(or_(or_(Post.url.like("http://i.imgur%"), Post.url.like("http://imgur")), Post.url.like("https://i.redd%")))
+    query = query.filter(or_(or_(Post.url.like("http://i.imgur%"),
+                                 Post.url.like("http://imgur")), Post.url.like("https://i.redd%")))
     query = query.order_by(sqlalchemy.desc('score'))
-    return [{'preview': getattr(r, 'preview'), 'url': getattr(r, 'url')} for r in query.limit(limit)]
+    return [{'preview': getattr(r, 'preview'), 'url': getattr(r,'url')} for r in query.limit(limit)]

@@ -59,12 +59,13 @@ standard:
 	node_modules/.bin/standard
 
 pylint:
-	pylint --ignore query.py,RedditScraper.py,test_models.py app
+	pylint --ignore RedditScraper.py app
 	pep8 --ignore E501 --exclude query.py,RedditScraper.py,test_models.py app
 
 test-client: build
 
 test-server: pylint
 	python3 app/tests/test_http.py
+	python3 app/tests/test_models.py
 
 test: test-client test-server
