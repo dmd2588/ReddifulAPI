@@ -6998,6 +6998,7 @@ var RfGrid = function (_React$Component) {
     key: 'updateGrid',
     value: function updateGrid(options) {
       var self = this;
+      var options = options == null ? {} : options;
       this.props.retainOptions(options);
       console.log('RfGrid');
       console.log(options);
