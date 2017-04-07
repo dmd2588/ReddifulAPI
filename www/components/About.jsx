@@ -178,13 +178,6 @@ var About = React.createClass({
             </ListGroup>
             <UnitTestModal />
             <br />
-            <Panel header={<h3>Data</h3>}>
-              Link to the source here: <a href='https://www.reddit.com/dev/api/'>Reddit API</a>
-              <h4>Data Collection Process</h4>
-              <p>For the example models used in the first phase of the project, data was scraped using the Reddit API.  The official reddit git repository lists several <a href='https://github.com/reddit/reddit/wiki/API-Wrappers'>wrappers for the API</a>.  For the scraper written for our project, PRAW, a python wrapper around the API was used.</p>
-              <p>In order to keep the example data set at three examples for each model as well as having linked examples, the data was gathered in a specific way.  Three subreddits were chosen and from each of those subreddits one of the moderators was chosen and for each of those moderators their most recent comment was chosen and for each comment the submission it resided in was chosen.</p>
-              <p>Data was scraped for the chosen examples using PRAW's built in classes for each model as well as GET requests to the API endpoints because not all the attributes we wanted were available through the wrapper's built in classes.  The example data was stored as lists of dictionaries and dumped as json to be used in the front end.</p>
-            </Panel>
             <Panel header={<h3>Tools</h3>}>
               <p>Used React and Bootstrap for main frontend. Webpack to compile ES6 jsx files. Babel to translate ES6 to javascript. React-toolbox, modernize, material-ui for touch up components. Docker used to manage back-end dependencies. Python for the back-end logic. Flask as the API logic server. Makefile to encode the workflow. Gunicorn for the flask webserver. For more info see the Tools section of the Technical Report below.</p>
             </Panel>
@@ -222,6 +215,12 @@ var About = React.createClass({
                 </ListGroupItem>
                 <ListGroupItem>
                   <p><a href='#database'>Database</a></p>
+                  <ul>
+                    <li><a href='#phase1' onClick={() => this.setState({ open14: true })}>Phase 1 Implementation</a></li>
+                    <li><a href='#setup2' onClick={() => this.setState({ open11: true })}>Set-up</a></li>
+                    <li><a href='#implementation' onClick={() => this.setState({ open12: true })}>Implementation</a></li>
+                    <li><a href='#issuessol' onClick={() => this.setState({ open13: true })}>Issues and Solutions</a></li>
+                  </ul>
                 </ListGroupItem>
                 <ListGroupItem>
                   <p><a href='#api'>API</a></p>
@@ -339,6 +338,16 @@ var About = React.createClass({
             </Panel>
             <Panel id='database' header='Database' bsStyle='info'>
               <p>The Database is interfaced with SQLAlchemy. He</p>
+              <Button id='phase1' onClick={() => this.setState({ open14: !this.state.open14 })}>
+                Set-up <FaAngleDown />
+              </Button>
+              <Panel collapsible expanded={this.state.open14}>
+                Link to the source here: <a href='https://www.reddit.com/dev/api/'>Reddit API</a>
+                <h4>Data Collection Process</h4>
+                <p>For the example models used in the first phase of the project, data was scraped using the Reddit API.  The official reddit git repository lists several <a href='https://github.com/reddit/reddit/wiki/API-Wrappers'>wrappers for the API</a>.  For the scraper written for our project, PRAW, a python wrapper around the API was used.</p>
+                <p>In order to keep the example data set at three examples for each model as well as having linked examples, the data was gathered in a specific way.  Three subreddits were chosen and from each of those subreddits one of the moderators was chosen and for each of those moderators their most recent comment was chosen and for each comment the submission it resided in was chosen.</p>
+                <p>Data was scraped for the chosen examples using PRAW's built in classes for each model as well as GET requests to the API endpoints because not all the attributes we wanted were available through the wrapper's built in classes.  The example data was stored as lists of dictionaries and dumped as json to be used in the front end.</p>
+              </Panel>
               <Button id='setup2' onClick={() => this.setState({ open11: !this.state.open11 })}>
                 Set-up <FaAngleDown />
               </Button>
