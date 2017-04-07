@@ -26704,7 +26704,7 @@ var Users = function (_React$Component) {
         var myp = {
           title: 'Comments',
           pages: res.data[1],
-          select_values: ['<default>', 'score', 'gilded', 'author', 'create_utc', 'body'],
+          select_values: ['default', 'score', 'gilded', 'author', 'create_utc', 'body'],
           cards: comments.map(function (c) {
             return {
               title: c.author,
@@ -27279,7 +27279,7 @@ var Posts = function (_React$Component) {
         var myp = {
           title: 'Posts',
           pages: res.data[1],
-          select_values: ['<default>', 'score', 'gilded', 'title', 'num_comments', 'author'],
+          select_values: ['default', 'score', 'gilded', 'title', 'num_comments', 'author'],
           cards: posts.map(function (p) {
             var thumbnailAvailable = p.thumbnail !== 'self' && p.thumbnail !== 'nsfw' && p.thumbnail !== 'default' && p.thumbnail;
             return {
@@ -27429,10 +27429,12 @@ var SortFilter = function (_React$Component) {
         var temp = {};
         temp[c.name] = c.value;
         return temp;
-      }), { order_by: '' });
+      }));
+      _this.state = Object.assign(_this.state, { order_by: '' });
     } else {
       _this.state = {};
     }
+    console.log('Constructor');
     console.log(_this.state);
     // this.handleChange = this.handleChange.bind(this)
     return _this;
@@ -27478,6 +27480,7 @@ var SortFilter = function (_React$Component) {
       if (this.state.order_by === '<default>') {
         this.state.order_by = '';
       }
+      console.log(this.state.order_by);
       temp['order_by'] = this.state.order_by;
       this.props.updateGrid(temp);
     }
@@ -27810,7 +27813,7 @@ var Subreddits = function (_React$Component) {
         var myp = {
           title: 'Subreddits',
           pages: res.data[1],
-          select_values: ['<default>', 'title', 'accounts_active', 'subscribers', 'created_utc', 'display_name'],
+          select_values: ['default', 'title', 'accounts_active', 'subscribers', 'created_utc', 'display_name'],
           cards: subreddits.map(function (s) {
             // console.log('S', s.display_name, s)
             return {
@@ -28281,7 +28284,7 @@ var Users = function (_React$Component) {
         var myp = {
           title: 'Users',
           pages: res.data[1],
-          select_values: ['<default>', 'name', 'comment_karma', 'link_karma', 'created_utc'],
+          select_values: ['default', 'name', 'comment_karma', 'link_karma', 'created_utc'],
           cards: users.map(function (u) {
             return {
               title: u.name,

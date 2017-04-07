@@ -24,7 +24,7 @@ export default class Users extends React.Component {
       var myp = {
         title: 'Comments',
         pages: res.data[1],
-        select_values: ['<default>', 'score', 'gilded', 'author', 'create_utc', 'body'],
+        select_values: ['default', 'score', 'gilded', 'author', 'create_utc', 'body'],
         cards: comments.map(c => {
           return {
             title: c.author,

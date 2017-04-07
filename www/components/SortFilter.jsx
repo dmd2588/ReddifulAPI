@@ -9,10 +9,12 @@ export default class SortFilter extends React.Component {
         var temp = {}
         temp[c.name] = c.value
         return temp
-      }), {order_by: ''})
+      }))
+      this.state = Object.assign(this.state, {order_by: ''})
     } else {
       this.state = {}
     }
+    console.log('Constructor')
     console.log(this.state)
     // this.handleChange = this.handleChange.bind(this)
   }
@@ -49,6 +51,7 @@ export default class SortFilter extends React.Component {
     if (this.state.order_by === '<default>') {
       this.state.order_by = ''
     }
+    console.log(this.state.order_by)
     temp['order_by'] = this.state.order_by
     this.props.updateGrid(temp)
   }

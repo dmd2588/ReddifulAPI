@@ -23,7 +23,7 @@ export default class Posts extends React.Component {
       var myp = {
         title: 'Posts',
         pages: res.data[1],
-        select_values: ['<default>', 'score', 'gilded', 'title', 'num_comments', 'author'],
+        select_values: ['default', 'score', 'gilded', 'title', 'num_comments', 'author'],
         cards: posts.map(p => {
           var thumbnailAvailable = p.thumbnail !== 'self' &&
                                     p.thumbnail !== 'nsfw' &&

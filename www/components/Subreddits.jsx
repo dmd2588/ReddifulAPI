@@ -23,7 +23,7 @@ export default class Subreddits extends React.Component {
       var myp = {
         title: 'Subreddits',
         pages: res.data[1],
-        select_values: ['<default>', 'title', 'accounts_active', 'subscribers', 'created_utc', 'display_name'],
+        select_values: ['default', 'title', 'accounts_active', 'subscribers', 'created_utc', 'display_name'],
         cards: subreddits.map(s => {
           // console.log('S', s.display_name, s)
           return {
