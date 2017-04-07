@@ -1,0 +1,1980 @@
+commit fe3c675b75774baa3bc2634ccdd9ee5efbe0b0e7
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Apr 6 21:14:52 2017 -0500
+
+    lol bundle
+
+commit 2ef1abc8b46ab7b3c411d5a0b1c9e56ca8a17171
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Apr 6 21:14:40 2017 -0500
+
+    Finished About page
+
+commit 93183aeee09f7bf7c69d1c2f3b85206b9a7c26d1
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Apr 6 21:14:26 2017 -0500
+
+    Renamed TestServer.tmp to test.out
+
+commit e2fdd4ba5304f221b90a97d7bbfb2ef3414d3835
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 21:12:44 2017 -0500
+
+    Fixed the query string and some naming
+
+commit 7f3f32a8753c088cab50e6306317000426955af3
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Apr 6 21:03:21 2017 -0500
+
+    Pydoc done closes #71
+
+commit baa2f2059e254d4bade7741b6a27ab58b1bfa3b1
+Author: Shea Rozmiarek <rozlette@cs.utexas.edu>
+Date:   Thu Apr 6 21:01:57 2017 -0500
+
+    Ignore null options in api calls
+
+commit 06dd319b295a8ce2c8a7a8d67c41d3940cc4bec4
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 21:01:43 2017 -0500
+
+    Fixed the order_by undefined
+
+commit 0fb619e70db3b3a0f6b40a2e07c0ff5e7e8bd2d7
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Apr 6 20:54:09 2017 -0500
+
+    Change desc to descending in sort/filter panel
+
+commit cdfe89dffd726ce825a49f3b55ce3cd39514cf4c
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Apr 6 20:55:24 2017 -0500
+
+    Technical Report Done
+
+commit c117caee10ce3e48c959e8ce97d56b9e4374b754
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 20:52:28 2017 -0500
+
+    Retains state properly now
+
+commit fc19e226b99d896d45dc6485f806d0312a84cd9c
+Author: rozlette <rozlette@utexas.edu>
+Date:   Thu Apr 6 20:51:06 2017 -0500
+
+    Update host api path
+
+commit c228105a8f41e81693b33ddadf7f84fd8f31d17b
+Merge: ef72c06 e18935b
+Author: Johnny Knoebel <jeknoebel@utexas.edu>
+Date:   Thu Apr 6 20:48:43 2017 -0500
+
+    Merge branch 'master' of https://github.com/dmd2588/ReddifulAPI
+
+commit ef72c064bda8dca96bb1a285dc9b90130771ff34
+Author: Johnny Knoebel <jeknoebel@utexas.edu>
+Date:   Thu Apr 6 20:48:11 2017 -0500
+
+    added test.out, fixed coverage run
+
+commit e18935b72c6a4fea66139d0f22ed99f37d235f5f
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 20:47:25 2017 -0500
+
+    Fixed pagination
+
+commit b59d6a81152a792afc0fc1898ae8307d1fe7b39c
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 19:25:10 2017 -0500
+
+    Fixing standard errors
+
+commit 1a064f7d4b74dd39526f47bd0cbe1f5b90e89bae
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Apr 6 20:46:12 2017 -0500
+
+    Interpret ?desc=false as ascending in API
+
+commit 34d96a37fb94719c9c4b3d3843b161dd187aacf4
+Author: rozlette <rozlette@utexas.edu>
+Date:   Thu Apr 6 20:24:16 2017 -0500
+
+    Updated apiary documentation
+
+commit 7583e4a3842c67434042b9539d19365165b9c530
+Author: Johnny Knoebel <jeknoebel@utexas.edu>
+Date:   Thu Apr 6 20:19:11 2017 -0500
+
+    fixed coverage makefile
+
+commit 4ff1c5d3647db46d8cf67eddd52fe2883e6a4397
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 20:15:46 2017 -0500
+
+    Remove filter text for now
+
+commit c71727b95ee08d4d997601dbaea38076301cdf6e
+Merge: dbdf4f6 9fc1933
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 20:12:54 2017 -0500
+
+    Merge branch 'master' of github.com:dmd2588/idb
+
+commit dbdf4f6f3cd62ad63295119b45a3a7e9d8ea8280
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 20:12:44 2017 -0500
+
+    Add descending order by
+
+commit 9fc1933b304197b3540178bafd68321a7c76b16c
+Author: Johnny Knoebel <jeknoebel@utexas.edu>
+Date:   Thu Apr 6 20:11:17 2017 -0500
+
+    added coverage dependency
+
+commit 2f0c961eec6b06ad6d7c038ef81e78127f88c947
+Author: Johnny Knoebel <jeknoebel@utexas.edu>
+Date:   Thu Apr 6 20:08:55 2017 -0500
+
+    added coverage to makefile
+
+commit 8f54f8de6990429df568a38d567ed4b2f1de6758
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 19:54:30 2017 -0500
+
+    Get rid of extra getUsers call in Posts
+
+commit 0535682aad81ca03631253c5f5437d5fdd8829a5
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Apr 6 19:46:42 2017 -0500
+
+    Fix imports with test
+
+commit a88d5ff17fc28718caa64193ee3daa05c379a011
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Apr 6 19:44:04 2017 -0500
+
+    Information
+
+commit 9d50b914f8189813ee5d9dca471a92da32f9d067
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Thu Apr 6 19:35:28 2017 -0500
+
+    updated models test
+
+commit c13d89aff75f876b86a1ddbcda7482fc546364ef
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 19:32:42 2017 -0500
+
+    Fix unit tests for api changes
+
+commit ee5119a7589d241d455c1e11c1e32af765eb7275
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 19:23:19 2017 -0500
+
+    Added page_count to grid api calls
+
+commit 97067bbd33a18050c43ea69bbe9c2720610cfeb1
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 19:15:35 2017 -0500
+
+    Fix the undefined state
+
+commit 45d533dad3b4cdb229f9e2b679925dbb4105f7c3
+Merge: e0e8140 7b9513e
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 19:15:37 2017 -0500
+
+    Merge branch 'master' of github.com:dmd2588/idb
+
+commit e0e8140194c01a53e29cd96996bb61ee071dc513
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 19:15:22 2017 -0500
+
+    Fix subreddit sort problem
+
+commit 7b9513e4e64d8d01cf2b9b9f715123966af03374
+Author: rozlette <rozlette@utexas.edu>
+Date:   Thu Apr 6 19:09:27 2017 -0500
+
+    Updated apiary documentation
+
+commit 8f8adf36edf394121c0dccc1d96b5c3bce1275ad
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 19:03:52 2017 -0500
+
+    Fixing standard
+
+commit c5d111880c6a6fb6ff15abe1ab9225d3f9e40fef
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 18:57:21 2017 -0500
+
+    Fixed order by bug
+
+commit 6dfa45011b0acf0df53e02abcc074176d541891e
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Apr 6 18:56:21 2017 -0500
+
+    UML image changed
+
+commit 6aed8514fdaaada3148f013f233515214bc8676c
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 18:47:23 2017 -0500
+
+    Fixing the Eye of Standard
+
+commit 5cfbd038dd00327d2d70a9587f4feb9c316ddfb0
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Apr 6 18:41:55 2017 -0500
+
+    Tools finished, more words
+
+commit 7190714f25f7090fbcbe99644cf2dfa328848031
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 18:40:33 2017 -0500
+
+    Fixed the state carry over problem
+
+commit 2c20427f55658acc3d22748b000276ff3dd4a824
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Apr 6 17:21:54 2017 -0500
+
+    Autopep models.py and add pylint check for it to makefile
+
+commit 5c3396200dcbfd76dca303157022df90c2f3aea0
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 16:42:41 2017 -0500
+
+    Fixed bug in filtering
+
+commit 72c3624d3ee1e15e6065c94e22c8eec6859ca35b
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 16:36:01 2017 -0500
+
+    Fixed the sorting
+
+commit e4772af9de068fc568954614f3e959263f12822d
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Apr 6 15:59:11 2017 -0500
+
+    Add filtering support to url queries in api.py
+    
+    closes #62
+
+commit d3fef712bfcf91f8b59d9a16ab4020585673aeb8
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 15:50:25 2017 -0500
+
+    Fixed pagination, pagination works
+
+commit 9ed60cec63a31100ca7ecf22b77e82264ec62031
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 15:38:53 2017 -0500
+
+    Adding options parameters
+
+commit f4607044aa08d09883e51ebb6ae1aeaad19d6e2c
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Apr 6 15:39:19 2017 -0500
+
+    Fixing merge
+
+commit c1ab556399d7eb44b14fa17293bbbbb20541abb6
+Author: Shea Rozmiarek <rozlette@cs.utexas.edu>
+Date:   Thu Apr 6 15:35:27 2017 -0500
+
+    Parse options in api.js
+
+commit 91781192373106b29d33c523851a735acbe709ad
+Merge: c95a3ba 5a1278a
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Apr 6 13:25:58 2017 -0500
+
+    Merge remote-tracking branch 'origin/master'
+
+commit c95a3ba9242524f9478f55cbb125ce343d6f5417
+Merge: 7035503 e1387e9
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Apr 6 13:25:56 2017 -0500
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       www/components/About.jsx
+    #       www/dist/bundle.js
+
+commit 5a1278adce5391659bf22fc4a7a151c014a6f769
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Thu Apr 6 13:09:03 2017 -0500
+
+    made sessions close
+
+commit 7035503019327579e8603ead8027e7883cf682c2
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Apr 6 11:06:10 2017 -0500
+
+    Updated placeholders for the tools section
+
+commit e1387e9518ac9666dda47bd4c9c9d78c5e84b6b1
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 06:33:39 2017 -0500
+
+    Forgot to add images
+
+commit 616e36a86e51b693b0bb98914975f8950b419f22
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 06:33:01 2017 -0500
+
+    Updated Media on all grids
+
+commit 682e21180111daaf9d823692361077422177d1a0
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 06:04:13 2017 -0500
+
+    All details pages updated
+
+commit f6705c087c19687dd056d7f4ab5c691843121875
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 05:46:08 2017 -0500
+
+    Update index.html title
+
+commit f122361ba5a6eca25dd481a8faa0983f5455120d
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 05:43:31 2017 -0500
+
+    Subreddit Details Updated, slight Posts change
+
+commit 1cda03be5d0ab6e022c559365e8c8eb489b56a5b
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 05:25:58 2017 -0500
+
+    Post and User Details Updated
+
+commit 7cf9105d0dc18e30d59c12d9220135886dc9d188
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 02:47:01 2017 -0500
+
+    Add Custom Media to Cards
+
+commit 9c65113ddf0351ffa2529c679eb5eec6d74333a1
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 01:49:30 2017 -0500
+
+    Make about images responsive
+
+commit e7838d9036617d7bca2c0c58ddd3f28ffa3121f1
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 01:36:24 2017 -0500
+
+    Fix Carousel Client Side Error
+
+commit faa101e8946ee6f9ec191e5501c0292c21b7bbf1
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 01:29:16 2017 -0500
+
+    Added Actual Content to Carousel
+
+commit 9b1271bbe7fa71b20c7c7b5c800566b29587b1bf
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Apr 6 00:13:35 2017 -0500
+
+    Change paper to block instead of inline-block
+
+commit bf3fbeca1c1567007bc170de171e711c0c8471ba
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Apr 5 23:55:24 2017 -0500
+
+    Updated Style.  Home has no paper component
+
+commit 653d4fd5ac54fa37d1d048844b4f5094e129a8b7
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Apr 5 22:47:49 2017 -0500
+
+    New api endpoints and queries for relationships
+
+commit 77752a0302b18c8e20c60132af8dcc07aea33842
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Apr 5 21:04:54 2017 -0500
+
+    Change desc parameter handling
+
+commit 63b094ea81014da4b7737f5add5eb5466e070746
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Apr 5 20:57:08 2017 -0500
+
+    API endpoints sorting handling
+
+commit 01c9989e30baebf8034518fc52717f35c560095c
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Apr 5 19:09:40 2017 -0500
+
+    Fix formatting for unit test output
+
+commit 4689e1c9a5e797291014fc86397064e0667556ab
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Wed Apr 5 18:52:29 2017 -0500
+
+    added range for date and num attributes
+
+commit 5333b958ed02b532ad0d8e5b236e8cc25ba45173
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Wed Apr 5 18:20:56 2017 -0500
+
+    added range for date and num attributes
+
+commit 9c6265c2206226d926d952faf35a39e23f02926d
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Wed Apr 5 18:20:13 2017 -0500
+
+    added range for date and num attributes
+
+commit 691e63d32a1f9fa0f0fe6c2e73c526ee652a5172
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Wed Apr 5 18:42:24 2017 -0500
+
+    Fixed standard'
+
+commit 6aaf8316903c320f56def0950c786bfd0638fcf3
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Apr 5 18:39:56 2017 -0500
+
+    Placeholders for Database and API in the report
+
+commit d618a5bf5f2fb47d40c9fb81ca778076250a95d0
+Merge: 4a308d6 47c4a18
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Wed Apr 5 18:39:46 2017 -0500
+
+    Last merge before i use rebase
+
+commit 4a308d62e0e2883af369cbbba7ed86695e4a4b29
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Wed Apr 5 18:39:26 2017 -0500
+
+    Fixed the undefined stuff where I could
+
+commit 47c4a18f62906cb1d4e14ca400955d561de4b932
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Apr 5 18:34:30 2017 -0500
+
+    Get output from tests endpoint
+
+commit c17575393188d8a6f43159718b61b208ca3bb5ff
+Merge: 4fedbfd 0b03d30
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Apr 5 18:17:37 2017 -0500
+
+    Merge branch 'master' of github.com:dmd2588/idb
+
+commit 4fedbfdd502d12f3f502f84b880b084338cc8756
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Apr 5 18:17:26 2017 -0500
+
+    Add modal for unit test ouput
+
+commit 0b03d30e50da61649263f3b0680d28a8ca8e9f64
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Wed Apr 5 18:06:25 2017 -0500
+
+    Pep8 and pylint test_http.py
+
+commit 8ebedfe081a5afc6d92480cd5c6fbf36d36c04cc
+Merge: a370760 b35cc07
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Wed Apr 5 18:15:57 2017 -0500
+
+    Merge branch 'master' of github.com:dmd2588/ReddifulAPI
+
+commit a37076043e51b37e0bc67c4dc1295eed5ffbcfcd
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Wed Apr 5 18:15:49 2017 -0500
+
+    Merge
+
+commit b35cc07fb782ed6da88eb82910250086fa9f0b71
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Apr 5 18:11:35 2017 -0500
+
+    Fixed semantic issues
+
+commit c7bb4e4327ca4693127cb2f63dd3bdc4fb9e8e07
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Apr 5 18:10:43 2017 -0500
+
+    Updated Posts correctly and Comments
+
+commit 5362badda2328a36911468a32d256e1a58c1ad18
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Apr 5 18:02:30 2017 -0500
+
+    Updated Posts correctly
+
+commit 13c5eeb008db769acab8da2ee32097c28eafe806
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Wed Apr 5 17:59:41 2017 -0500
+
+    Add pagination support to api.py
+    
+    track #50
+
+commit 922c599462ed2545f93d5adbe181918ca0ce4c72
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Apr 5 17:55:21 2017 -0500
+
+    Updated Posts
+
+commit 81fba5b1424557e244cab83bb985ee0eca06dde1
+Merge: d9427fa 9818bb8
+Author: EC2 Default User <ec2-user@ip-172-31-2-141.us-west-2.compute.internal>
+Date:   Wed Apr 5 22:51:07 2017 +0000
+
+    Merge branch 'master' of https://github.com/dmd2588/idb
+
+commit d9427fa90c7c4a0623d00563d85fb3f54e06f094
+Author: EC2 Default User <ec2-user@ip-172-31-2-141.us-west-2.compute.internal>
+Date:   Wed Apr 5 22:50:49 2017 +0000
+
+    Updated Docker to use port 80
+
+commit 9818bb86c606f2820410c9b9977b0d0563531332
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Apr 5 17:43:17 2017 -0500
+
+    Updated Subreddits and Users
+
+commit c8142ffa51ce107802b2e01ced5212371766c1a9
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Wed Apr 5 17:19:19 2017 -0500
+
+    Switch to using app.<module> imports
+
+commit ce354c3654402dfad0ded5f7e9aaf7bdf1c4e3b5
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Apr 5 17:17:15 2017 -0500
+
+    fix pylint errors
+
+commit 1d2999e8a3273ae806997f6354a804b7cfec378e
+Merge: e36df6c 97d08ae
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Apr 5 16:52:08 2017 -0500
+
+    Merge branch 'master' of github.com:dmd2588/idb
+
+commit 97d08ae9bd273f53ed7d59cb22694e1a688a59e5
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Apr 5 17:04:16 2017 -0500
+
+    Placeholder for react-scroll
+
+commit e36df6c99c29ff6fca9d3439750455b78daf9f0b
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Apr 5 16:51:50 2017 -0500
+
+    Fix makefile for new test location
+
+commit 0e0324ee47f4b317b8e02bb85945e030e004ac69
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Apr 5 16:49:31 2017 -0500
+
+    Added api endpoint for unit tests
+
+commit a7eb3bf9d08f53a2df4e9456286a8487c5942c04
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Wed Apr 5 16:11:39 2017 -0500
+
+    Add tests for webpages on the api
+
+commit 9e5b561f571fb88e0b00d8a74bdab49cb1536b25
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Wed Apr 5 16:11:09 2017 -0500
+
+    fixed issue with page count
+
+commit 411c51e3aa62cf6b609d7d3565906a233fe05456
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Wed Apr 5 15:56:48 2017 -0500
+
+    Fixed pylint
+
+commit 0f7f7f6464420805c4ffed1293baf4d57c2e55cc
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Wed Apr 5 15:53:13 2017 -0500
+
+    Delete pylint error
+
+commit 8931ea7f1353c71092aa66c7f7cb756d370b3f21
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Wed Apr 5 15:50:09 2017 -0500
+
+    Fixed merging and tests
+
+commit 6405d59bcacad3de82253f9ba6bddf18a7686511
+Merge: 5b3fcd4 de292a0
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Wed Apr 5 13:45:06 2017 -0500
+
+    Merge API and frontend changes to master
+
+commit de292a0632e9d786fa86c79ac3e88dfd9f9680ff
+Merge: ba73a8e d2476ca
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Wed Apr 5 13:28:10 2017 -0500
+
+    Done with merge to api
+
+commit 5b3fcd41245bfa5d2a1f0d35a700f89f41dc9fa9
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Wed Apr 5 13:26:54 2017 -0500
+
+    Add pylint to requirements.txt
+
+commit 8b8bf3ac1538249ac13816de52c04e783f177830
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Wed Apr 5 00:11:23 2017 -0500
+
+    Add pylint and pep8 check to 'make test'
+    
+    Only api.py is checked, the other files are ignored by the lint checker.
+    This will have to change soon.
+    
+    track #53
+
+commit 3dfaac8ebdc20d3eaa6f23a6e571d3229a424421
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Wed Apr 5 13:03:14 2017 -0500
+
+    resolved build errors
+
+commit 1d2e4f05c084c41bed7196905130cdbd099ce8b6
+Merge: 99229c3 847969d
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Apr 5 12:13:41 2017 -0500
+
+    Merge branch 'master' into tholam_style_changes
+
+commit d2476ca7610602f6879e0fa07403e7bb7f45be44
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Wed Apr 5 07:56:19 2017 -0500
+
+    Added sorting and filtering for certain attributes, need to hook up to api
+
+commit 99229c39d38a035d275d3cb5c65cf55d9d1d4e80
+Author: EC2 Default User <ec2-user@ip-172-31-2-141.us-west-2.compute.internal>
+Date:   Wed Apr 5 06:57:44 2017 +0000
+
+    Update Colors
+
+commit b0373584b1725a7996687c90f9d308d674e41937
+Author: EC2 Default User <ec2-user@ip-172-31-2-141.us-west-2.compute.internal>
+Date:   Wed Apr 5 06:30:11 2017 +0000
+
+    Change styling of site
+
+commit 847969d7706cb6fa5f4517a43d3b71bc2e9ab71e
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Tue Apr 4 23:31:13 2017 -0500
+
+    Add slack notifications to .travis.yml
+
+commit 5739ab5e90555b137e64d5313d28b3f989273b2c
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Tue Apr 4 23:02:29 2017 -0500
+
+    added functions to get page count
+
+commit 8c5b7e503999971d9d6a12a2ca960b8a472ca973
+Merge: ef8591a 6a0a212
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Tue Apr 4 22:49:37 2017 -0500
+
+    resolved merge conflict
+
+commit ef8591abb0ea4f523846e9248b56bc23cad934f0
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Tue Apr 4 22:45:26 2017 -0500
+
+    Added pagination, sorting, and filtering, closes #49
+
+commit 6a0a2125aae9704fb1c22ba70f4ee708563a71ba
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Tue Apr 4 21:54:26 2017 -0500
+
+    Update README with test info
+
+commit 9d5ad7decffaf481e0d32a9fe81fec1fabb7b4a8
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Tue Apr 4 21:45:51 2017 -0500
+
+    Explicitly use pip3 in travis
+
+commit 094a07329a3e6bc1b1eee9c3d81f38cceb67a58f
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Tue Apr 4 21:33:51 2017 -0500
+
+    Add python integration tests to travis
+
+commit 4e2b0029077a76b1c9418732ff139041ef4db4f5
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Tue Apr 4 21:10:38 2017 -0500
+
+    Add http integration tests
+
+commit ba73a8e49f4dae76f857aa44996abee9039f632f
+Author: Shea Rozmiarek <rozlette@cs.utexas.edu>
+Date:   Tue Apr 4 18:10:24 2017 -0500
+
+    Converted api functions to return promisses
+
+commit b419248588d78e74b9f9fc7af3a998954bb83114
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Tue Apr 4 18:07:28 2017 -0500
+
+    Updated UML Diagram
+
+commit 49b7cd15c7cc99368e03f64240d97d2f7290754c
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Tue Apr 4 17:32:53 2017 -0500
+
+    Update README.md
+
+commit 5229ac5a6c0608000e7ca069fa2b8cdbaa1224d3
+Author: Shea Rozmiarek <rozlette@cs.utexas.edu>
+Date:   Tue Apr 4 17:08:20 2017 -0500
+
+    Made callback the last parameter in api functions
+
+commit 7791c827419220d7c5c04ae848969e9fba0ef94c
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Tue Apr 4 16:40:39 2017 -0500
+
+    Add DB_URL env variable and fix Dockerfile workdir
+    
+    The DB_URL environment variable must be set on the host for the
+    api to connect to the DB.
+
+commit b5e6a0a754b33c575129e85e42a14f04548a6ea9
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Tue Apr 4 16:08:15 2017 -0500
+
+    removed db credentials
+
+commit 0d4a007655b31c689fa30d116407577ab8856ac3
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Tue Apr 4 13:48:31 2017 -0500
+
+    api now gets data from database
+
+commit 8030c8fe8a06c950f5285b7471ced1d8888f06a6
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Tue Apr 4 13:37:30 2017 -0500
+
+    Working on the posts details page:
+
+commit 13ffa3dbed8b41cd3f285aabd67fa495c77f8cd3
+Merge: 082398f 67ca8e1
+Author: Shea Rozmiarek <rozlette@cs.utexas.edu>
+Date:   Tue Apr 4 00:13:53 2017 -0500
+
+    Fix merge conflicts
+
+commit 082398fb67224914040018bd2d39e95f57e854eb
+Author: Shea Rozmiarek <rozlette@cs.utexas.edu>
+Date:   Tue Apr 4 00:09:16 2017 -0500
+
+    Fully moved over to using api endpoints
+
+commit d03b5d6b89329b902647abcf787e05c51a4831e9
+Author: Shea Rozmiarek <rozlette@cs.utexas.edu>
+Date:   Sun Apr 2 22:19:05 2017 -0500
+
+    Switched state updates to be only in RfGrid
+
+commit b4ae5885613172bcc0883901e48fff198ddd19e5
+Author: Shea Rozmiarek <rozlette@cs.utexas.edu>
+Date:   Sun Apr 2 20:47:08 2017 -0500
+
+    Initial attempt at using the API
+
+commit cbde23de1c3fda9e16e30b9212546c6d2bad085f
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Mon Apr 3 22:02:54 2017 -0500
+
+    fixed bugs in models
+
+commit 5cf8d9cff9ff7afaf2fb97e0d444b6b3c2580e98
+Author: johnnyk <jeknoebel@utexas.edu>
+Date:   Mon Apr 3 19:59:52 2017 -0500
+
+    updated models to match schema
+
+commit 03fe84c44a94df28ea26d09ae6ca1b6fa7ce13ec
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Mon Apr 3 18:05:30 2017 -0500
+
+    Add api endpoints that return dummy data
+    
+    List of added endpoints:
+    
+    * GET /api/users
+    * GET /api/users/<string:user_id>
+    * GET /api/posts
+    * GET /api/posts/<string:post_id>
+    * GET /api/comments
+    * GET /api/comments/<string:comment_id>
+    * GET /api/subreddits
+    * GET /api/subreddits/<string:subreddit_id>
+
+commit cfd908b0fbce2b8233478fc57f1981abc4060197
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Mon Apr 3 16:29:22 2017 -0500
+
+    Merge 'reddiful' directory into 'app'
+    
+    The project spec wants the python code in 'app'
+
+commit 67ca8e1b188867e22fd9f6e38504aa16a3bb1d65
+Author: Shea Rozmiarek <rozlette@cs.utexas.edu>
+Date:   Sun Apr 2 22:19:05 2017 -0500
+
+    Switched state updates to be only in RfGrid
+
+commit 0c266d364b6716aea81ca66da6f24ead7562b04a
+Author: Shea Rozmiarek <rozlette@cs.utexas.edu>
+Date:   Sun Apr 2 20:47:08 2017 -0500
+
+    Initial attempt at using the API
+
+commit 6180cfc15dba7364b26891ee5f6309e795952cc0
+Author: David Du <daviddu@utexas.edu>
+Date:   Sun Apr 2 20:28:34 2017 -0500
+
+    Links work for everything, they open the collapsible panel now, but still need scroll functions for some
+
+commit 063362847ea7535625eb6ebe67a61e25b316492a
+Author: David Du <daviddu@utexas.edu>
+Date:   Sun Apr 2 03:06:07 2017 -0500
+
+    Added links (not all work yet, the ones for the accordion don't work yet)
+
+commit 9d624388c11c43121bc0ef60421b85fdf5662ea9
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Sun Apr 2 02:29:24 2017 -0500
+
+    Scraping Done
+
+commit 82092a940dde91aa1db91d444871898fbc7beeca
+Merge: 6965b69 4e5117b
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Sat Apr 1 20:16:19 2017 -0500
+
+    Merge branch 'master' of github.com:dmd2588/ReddifulAPI
+
+commit 6965b697ce73853de7be4f15968db3f9376dc7bf
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Sat Apr 1 20:16:03 2017 -0500
+
+    Update to handle suspended users
+
+commit 4e5117b49953521d6dc631915603b32a790b0242
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Sat Apr 1 12:57:30 2017 -0500
+
+    Hooked up sortfilter panel with callbacks to change grid state
+
+commit 47363964b4ce366cd568dccd5c0424933c20af35
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Sat Apr 1 11:05:05 2017 -0500
+
+    Added css style to fix padding with cards:
+
+commit 6b25d74e4ae55d8a97f2a95d0314758a268d4815
+Merge: d3c5f36 e8e060c
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Sat Apr 1 11:04:24 2017 -0500
+
+    Merge branch 'master' of github.com:dmd2588/ReddifulAPI
+
+commit d3c5f3677c06aaf557bedc9b332390a5e33f9993
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Sat Apr 1 11:04:11 2017 -0500
+
+    Made fixes to the grid, changed Navbar to be responsive, changed structure for api call
+
+commit e8e060ce7027a54e4c938c6920d32fc2bdc37a8b
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Sat Apr 1 04:56:37 2017 -0500
+
+    Updated Scraper to make it easier to run in parts
+
+commit 77b05a24e768f94e54c9386249b894f07b7da7ae
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 30 21:51:26 2017 -0500
+
+    Changed ToC to List-Style
+
+commit 9e76d6d5a3a98a4ee42a7d94525ad0471efbfe13
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 30 21:42:45 2017 -0500
+
+    Fixed standards
+
+commit e7a0ad1ad8fc991e8f294e26c905fecda0865505
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 30 21:34:23 2017 -0500
+
+    Fixed pagination placement
+
+commit 7ac65fa36895060da9d1a83ecf6eb0e14f4aa746
+Merge: cfdac9b bab747c
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 30 21:19:32 2017 -0500
+
+    Merge branch 'master' of github.com:dmd2588/ReddifulAPI
+
+commit cfdac9b66ca333df0a22e121551584a41c6ffca9
+Merge: 4a921cf c1d1dfa
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 30 21:19:22 2017 -0500
+
+    Working on pagination and sorting panel
+
+commit bab747c5b4e6599dfd523bee8c2bf028589870d9
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 30 21:15:07 2017 -0500
+
+    Changed ToC style
+
+commit 4a921cfcae313c1c05aec5bccefabadd8f481e88
+Merge: 5383098 4287502
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 30 20:05:35 2017 -0500
+
+    Fixed state of pages
+
+commit c1d1dfa337d0e95d0f4867836a16f588bec42b0c
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 30 19:23:23 2017 -0500
+
+    Adding Table of Contents Placeholder
+
+commit 53830988cdea330c060f5e2d5964c4b32188cc6d
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 30 19:22:20 2017 -0500
+
+    Fixing structure of component state
+
+commit 428750278c1885ea0cd540e405a916b12f7fd410
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 30 01:12:58 2017 -0500
+
+    Remove _fetched attribute and move foreign keys to bottom
+
+commit fb90a2b63d1418e5c29b8d820039b7c0b41fe532
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 30 00:59:57 2017 -0500
+
+    Added more attributes
+
+commit 951614f48d05d4581793af91b274b2ff4e3c9069
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Mar 29 05:31:49 2017 -0500
+
+    Add 2 more attributes to user
+
+commit 5f86d4e5c4619c39af960ca2cd6ad9a95313c49a
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Mar 29 05:27:02 2017 -0500
+
+    Added Top Level Comments to Scraping
+
+commit 0df8231fcd1e79d07e9691f7624667d25fd42d11
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Mar 29 04:58:03 2017 -0500
+
+    Updated Scraper
+
+commit 5a3383987f414cdf0414ce29ded7f1f298b216c1
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Mar 29 03:15:39 2017 -0500
+
+    Basic RedditScraper Implemented
+
+commit acb0ac50ae5ef5abbf64173d07f57a2a291550c4
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 20:56:51 2017 -0500
+
+    build
+
+commit a421fad740a8321ce35dd5ba085d9abcadef1a4c
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 20:49:58 2017 -0500
+
+    Last thing
+
+commit 86685755276bda8dcdecb87ff810fcd8631198e9
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 20:41:15 2017 -0500
+
+    Trying to fix this
+
+commit bd89e92575206676ffa3b92064a36ee383990c16
+Merge: 79b45de 88fbc03
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 20:34:27 2017 -0500
+
+    Merged for link fix
+
+commit 79b45de1db40182c389f1289b11ff4cd9946fc45
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 20:33:24 2017 -0500
+
+    Fixed apiary link
+
+commit 88fbc03104bb123b0fcfe9f08632120e2cc0b21b
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 20:23:56 2017 -0500
+
+    Final commit changes
+
+commit cd350acf12fb2bc4efdef9512a1dd3ad193c4ccb
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 20:18:09 2017 -0500
+
+    build
+
+commit baf65f8bb11a859c5cf06c229b5229ce06e891e3
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 20:12:38 2017 -0500
+
+    Add standard style checker
+
+commit 5a3eb7935d9927c75a0f7d9726025051f38cd91e
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 20:09:38 2017 -0500
+
+    Updated github commits/issues/unittests
+
+commit 9c1c01fec564d972e31bf6d29571fa33e376ac4e
+Merge: 92e657a 155771b
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 19:57:24 2017 -0500
+
+    Merge branch 'master' of github.com:dmd2588/ReddifulAPI
+
+commit 92e657a16686e5e8328eee4b7223ebcca15210c8
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 19:57:17 2017 -0500
+
+    fixed About urls
+
+commit 155771b29229b2a6e1169b115bc5d45bc91dbec6
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 19:56:22 2017 -0500
+
+    Proofreading
+
+commit 6cb61175a5ac5ad31c3e699225f99e98b2d11240
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 19:47:37 2017 -0500
+
+    Ensure all ids are ids in the dummy date
+
+commit b42beb8588502b39b2aa72f898bd0856daea19b2
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 19:40:40 2017 -0500
+
+    Add Austins info to about section
+
+commit 301279ced02d69dcc2ab715a57d3e4adc1216316
+Merge: 3f128a7 b5d33b1
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Thu Mar 23 19:36:53 2017 -0500
+
+    Merge branch 'master' of https://github.com/dmd2588/ReddifulAPI
+
+commit 3f128a72b20e322f5fc155620e0d293ca660f351
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Thu Mar 23 19:36:41 2017 -0500
+
+    ran autopep8 on models
+
+commit b5d33b1d60de8bb65844838c4957e1c2a184b161
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 19:24:21 2017 -0500
+
+    Finished Grid
+
+commit b4631fd1f76e61f90cbeaddb3143af5811478b60
+Merge: ffa12a7 2966831
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Thu Mar 23 19:03:02 2017 -0500
+
+    Merge branch 'master' of https://github.com/dmd2588/ReddifulAPI
+
+commit ffa12a7106c4eaac2b97ffab5e29c29288d3c983
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Thu Mar 23 19:02:54 2017 -0500
+
+    added bio
+
+commit 29668316b6c583dcf63302a8c6ecb23dbf7f5611
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 18:19:05 2017 -0500
+
+    Delete UML.pdf
+
+commit fc4310352f62cba1eb2a8c4f0f355360dd58d827
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 18:18:58 2017 -0500
+
+    Delete UML.txt
+
+commit ee5231ae990ebe09973da6ca5addf062d4ea382d
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 18:15:20 2017 -0500
+
+    Filled table except for Rf
+
+commit 8ae823d694fccca3d367dcd278caac88d50a06c7
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 18:08:58 2017 -0500
+
+    Proofreading
+
+commit 3356dbf43e8311929ce044befe004024af34de78
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 17:50:45 2017 -0500
+
+    build
+
+commit 88076083fa10d60b0feabc7a01243af5462bdbde
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 17:49:49 2017 -0500
+
+    Add links between details pages
+    
+    closes #21
+
+commit 7b827e6015ff15c8a5232cca07b040425bb29646
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 17:36:52 2017 -0500
+
+    Add ability to link content in Details
+
+commit ec3c96d3e0dfb597c754a7a19f254895f437bdc2
+Merge: 5d0de3b d1d02a6
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 17:46:37 2017 -0500
+
+    Merge branch 'master' of github.com:dmd2588/ReddifulAPI
+
+commit 5d0de3b33ec48bedae391fc5a0ee2691390aeb27
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 17:46:31 2017 -0500
+
+    Started the table diagram
+
+commit d1d02a6e394672cdf0c860a65c51abf0912cfeb4
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Thu Mar 23 17:46:13 2017 -0500
+
+    pushing unit tests
+
+commit 99dc926a6407f43efda2289fd41fbf91fe722d3b
+Merge: beb7c38 5a9fad4
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 17:38:43 2017 -0500
+
+    Merge branch 'master' of github.com:dmd2588/ReddifulAPI
+
+commit beb7c389ef2122e90d2d8a514dbebc838f8098ec
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 17:38:35 2017 -0500
+
+    Added the pydoc html file generated:
+
+commit 5a9fad4e9084e4738b2ced4496d0bc1e1803fde8
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 17:38:13 2017 -0500
+
+    Adding UML diagram
+
+commit 06a4e95d7c047c5f5df46c62c04e1e8e89482fd4
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Thu Mar 23 17:33:33 2017 -0500
+
+    passing ppylint and update makefile
+
+commit 53e1ab32c521d1ccd5171b9315f9acabafad38bf
+Merge: bb9a3fc a58fceb
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Thu Mar 23 17:31:09 2017 -0500
+
+    Merge branch 'master' of https://github.com/dmd2588/ReddifulAPI
+
+commit a58fceb5201e9c6998af98afee8fed70f8dda380
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 17:28:22 2017 -0500
+
+    Added diagrams section to report
+
+commit 4c7fed4849322fa8c578f258db56dc8d8e1fc127
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 17:22:11 2017 -0500
+
+    Added Tools section for About page
+
+commit bd866e724cf37156f7a6d8fcb9eeead847864315
+Merge: 6317ad1 11d9cbe
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 17:02:59 2017 -0500
+
+    Fix merge
+
+commit 6317ad133113646cbb32343b7f499da0a55f062b
+Merge: b64727e 60e921d
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 17:02:08 2017 -0500
+
+    Added my bio and images
+
+commit 11d9cbe486c87d7e5e195300caeefa3c9ce67b89
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 16:55:28 2017 -0500
+
+    Enable RfGrid to use any arbtriary number of RfCard instances
+
+commit 5142b1f689bc65e923f0b65bd22a3a8a0e8a9021
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 16:51:00 2017 -0500
+
+    Set max length to RfCard titles
+
+commit c51ccd616ed37dfebc6cac69719692f001351e5d
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 16:52:43 2017 -0500
+
+    Updated about
+
+commit 374226a98321ce6f22e0a1bc2a516d40d45adf10
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 23 16:50:28 2017 -0500
+
+    Make Bio Picture Responsive
+
+commit b64727eb8ae8a6bf577b7debb8cca823b57a6469
+Merge: f229f4a 245d3dd
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 16:46:50 2017 -0500
+
+    Merge and added more to the intro
+
+commit 60e921d17172e480fcb20ef5b377fe85c560a5ba
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 23 16:46:37 2017 -0500
+
+    Added Thomas Bio
+
+commit e21e6110819746e9806c664f0f1ca4d7b9381015
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 23 16:45:08 2017 -0500
+
+    Add Thomas Bio Picture
+
+commit 619b6ace916d770f95544c127ce5498705695023
+Author: Rozelette <Uberpanzermensch@gmail.com>
+Date:   Thu Mar 23 16:42:26 2017 -0500
+
+    use correct name
+
+commit 421e569a136c9707b915d98a9be70993a256b971
+Author: Rozelette <Uberpanzermensch@gmail.com>
+Date:   Thu Mar 23 16:40:49 2017 -0500
+
+    Editted .gitignore so git can see the image files
+
+commit f229f4ac7ffdb47a5c1faa3ca52417b3b1f74362
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 16:39:14 2017 -0500
+
+    Added touch ups to about page sections
+
+commit 245d3dd245a8d78c42265abb1eff35b5c4bfec1d
+Author: Rozelette <Uberpanzermensch@gmail.com>
+Date:   Thu Mar 23 16:30:39 2017 -0500
+
+    Moved images into dist
+
+commit c98a347e7a3accd14914e4485a65c82a3bc8a8b2
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 16:18:33 2017 -0500
+
+    build
+
+commit e11cce88ae22ca302d45520c17892ec939679f7d
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 16:17:11 2017 -0500
+
+    Add details page for comments
+
+commit 3b973dcffe27db39fad54cced543c9000df2e198
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 16:07:13 2017 -0500
+
+    Add details page for Posts
+
+commit 8b566da36d6e595c117f483a82e99611baf10a31
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 16:16:56 2017 -0500
+
+    Spice up Hosting
+
+commit 1ef4ab4a74db53eae70188f2c789648b0d6adedc
+Merge: d30b81a 2568031
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 23 16:15:19 2017 -0500
+
+    Merge branch 'master' of github.com:dmd2588/ReddifulAPI
+
+commit d30b81a6676ac58d09057324ae1f23b4a9bfdf09
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 23 16:14:28 2017 -0500
+
+    Added data collection paragraph
+
+commit 25680314cd38c7b8fd1c9e0e9a286994f180edea
+Author: Rozelette <Uberpanzermensch@gmail.com>
+Date:   Thu Mar 23 16:11:57 2017 -0500
+
+    Add member section to about page
+
+commit 9f9e8303f40cc3880f5191c686e91f1090acd44d
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 16:07:55 2017 -0500
+
+    Fixing oops
+
+commit f657140d97d573e2cd807d24d98b283b1720cad7
+Merge: 7bea59e 0e94d52
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 16:05:23 2017 -0500
+
+    Resolving conflicts in About
+    
+    # Conflicts:
+    #       www/components/About.jsx
+
+commit 7bea59e67536db606b52e7abad65b1f17423c91c
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 16:04:18 2017 -0500
+
+    Added icons to accordion section
+
+commit 0e94d52ea3ab080a9a565cc95c0416bba0a0e420
+Merge: 20ec569 3043de1
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 15:58:56 2017 -0500
+
+    Merge branch 'master' of github.com:dmd2588/ReddifulAPI
+
+commit 20ec56919de75fee289e925729ab2c9afab174b3
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 15:58:49 2017 -0500
+
+    Added more things to Tools section
+
+commit 3043de1ea7fc6aeb9cb11bcdaef6ba56672b1f72
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 15:37:55 2017 -0500
+
+    Add subreddit details page
+
+commit 7ea5a8291892c07210a3293ecebd5bfb85c61c9f
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 15:21:18 2017 -0500
+
+    Use extensible details page for User Details page
+
+commit 7b89edc2c5f8c575115f283519629cb685857426
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 15:21:00 2017 -0500
+
+    Add extensible Details page
+
+commit 813443064a9fa8272ed890024ba61db427de433b
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 15:47:29 2017 -0500
+
+    Fix html tag escape characters
+
+commit e45ba9820407f40a503951bc84b888d2d0a38bde
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 15:40:55 2017 -0500
+
+    Added icons
+
+commit bb9a3fc7ec593a370c1fe3f03943ca5616fc3d6f
+Merge: 8cf2245 20a45f8
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Thu Mar 23 15:37:20 2017 -0500
+
+    Merge branch 'master' of https://github.com/dmd2588/ReddifulAPI
+
+commit 20a45f8e2c8456d1ac45ccbb478e7d04ab70737f
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 15:03:03 2017 -0500
+
+    Resolved Travis CI errors and added more to report
+
+commit 7de95691ed104b229aa1169bd13e5dee0fcf6808
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 15:00:50 2017 -0500
+
+    Fixed color scheme
+
+commit 8cf2245219cc8b54d61db4b45b668de84ceb4684
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Thu Mar 23 14:53:46 2017 -0500
+
+    finished unit tests, closes#16
+
+commit b0896358390338e0f35efaab09a3e0d64f6307e5
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 14:52:42 2017 -0500
+
+    Changed coloring scheme
+
+commit f4a47788c023dae2345d3d58797000634d1d3b73
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 14:49:25 2017 -0500
+
+    build
+
+commit c4301abb5c655b9812bdd1214ba22fc2d64cbed6
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 14:49:01 2017 -0500
+
+    Add dummy data and RfGrid to Posts page
+
+commit e6075eddf867fd429076d727ead05b4c8c8f3738
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 14:45:07 2017 -0500
+
+    Add dummy data and RfGrid to Subreddits page
+
+commit be34a1c2bf3a5b289312c011ec933a80d19e49aa
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 14:44:22 2017 -0500
+
+    Colors
+
+commit 99d8c78f1a04494391409e4b0928d65edbe27b97
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 14:34:23 2017 -0500
+
+    Bootstrap About page
+
+commit bed2fc9a405c36d0f40ae2108f0e01e26831be2f
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 14:32:37 2017 -0500
+
+    Use RfGrid and dummy data with comments grid
+
+commit 05b0f7e0762a8858d5cd9622416e1f56cacab527
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 14:25:25 2017 -0500
+
+    Fix wrong unit passed into Date
+
+commit cfca700a6f0b0fbc70101719251e672b5414a0b3
+Author: David Du <daviddu@utexas.edu>
+Date:   Thu Mar 23 14:10:15 2017 -0500
+
+    Renamed UML, added more to report
+
+commit 7fa1beeec43bff21d208cb4a30911550a557f952
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Thu Mar 23 13:54:21 2017 -0500
+
+    added 9 unit tests, 10th in progress
+
+commit b99beb13e14ab2b346e4c613dd3126887b0a9e94
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Thu Mar 23 13:18:58 2017 -0500
+
+    Working on formatting About page
+
+commit 7ef695bf4e2555e70265b327c075c9100b4a6b00
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 23 12:39:29 2017 -0500
+
+    Added functions to get related model data
+
+commit c731e3a5722d24aebf2815936236e67a541d6692
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 23 12:03:57 2017 -0500
+
+    Added association table for user/subreddit rel
+
+commit 0cb43b24edd8b4b392834445742b16aae6a964e9
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 23 11:27:31 2017 -0500
+
+    Updated SortFilter Component to dynamically generate select
+
+commit 054cbcce435702759c06710bd70bfbc69a7f8166
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 10:49:16 2017 -0500
+
+    build
+
+commit 081dda9f98e65f5df330271540814a8f7a0672af
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 10:48:11 2017 -0500
+
+    Store all dummy data in one file
+
+commit e213d04b585066dd65af4591823c07b4ab993288
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 10:37:57 2017 -0500
+
+    Use extensible grid for users
+
+commit 676b5eafef62dbd070323f7bedb6c6d01bc23532
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 10:37:28 2017 -0500
+
+    Improve extensible grid
+
+commit f0446097aff99aae2f908c99eb6ff3c782d170fe
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 10:15:15 2017 -0500
+
+    Moved sort/filter panel to it's own file
+
+commit db3c31bc30c9bdb4d8fd24d6bc76901033a58125
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Thu Mar 23 08:55:19 2017 -0500
+
+    Fix 404 for root index.html
+    
+    `GET /` returned a http 404 error
+
+commit b156b0fd488e6220e7b3aa75c8c0c765c08c796f
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 23 03:29:52 2017 -0500
+
+    Fix Input Field in Sidebar
+
+commit 28e067158b7406a394f64b4d867cff0910878869
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 23 03:28:17 2017 -0500
+
+    Added Filter Sidebar on Users Page
+
+commit 54f8b1a649bf6e79edbbd995d97bd35cc7285609
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 23 01:44:54 2017 -0500
+
+    Users Grid Using Sample Data
+
+commit 3e2893da607c1f5c07b952ff40a41893695304a2
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 23 01:23:48 2017 -0500
+
+    Fix Error when user id not found
+
+commit 1199caa37e7d2f469a7859407009dcdf4002c07c
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Thu Mar 23 01:20:56 2017 -0500
+
+    User Detail Page Implemented
+
+commit 5b95817fbf67079d4a44775b7032b38247739852
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Mar 22 23:33:23 2017 -0500
+
+    Redid some of the routing and added sample details page
+
+commit e500dc2357f78b81c283836e5ba61f75ba17d9d9
+Author: Thomas Lam <t.lam@lamsinfosystem.com>
+Date:   Wed Mar 22 22:23:55 2017 -0500
+
+    Fixed Routing Issue
+
+commit a3bf5fe050784239f445383cfc34887a0d4f83a5
+Merge: 8e772d2 8f31562
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Wed Mar 22 22:12:11 2017 -0500
+
+    Merge branch 'master' of https://github.com/dmd2588/ReddifulAPI
+
+commit 8f3156219fd6584ca1772a9e36e4c3b8223321ab
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Mar 22 22:10:43 2017 -0500
+
+    Fixed UML and Report to reflect changes
+
+commit 8e772d20fd1b3b2d01f2c02b3870d099f1379e03
+Merge: e5c090a 8e9d60a
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Wed Mar 22 22:09:43 2017 -0500
+
+    Merge branch 'master' of https://github.com/dmd2588/ReddifulAPI
+
+commit e5c090a88711ae251ca7ed163bc701664b83099c
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Wed Mar 22 22:08:24 2017 -0500
+
+    updated model attributes and relationships
+
+commit 8e9d60aeab3dcfc8f6b59fc626e758d72e940bec
+Author: John Knoebel <johnnyboy266@gmail.com>
+Date:   Wed Mar 22 21:44:09 2017 -0500
+
+    added edited flag to comments
+
+commit 30c30fa320da9b76782b3ab678d0c379723466c4
+Author: John Knoebel <johnnyboy266@gmail.com>
+Date:   Wed Mar 22 21:40:55 2017 -0500
+
+    Added subreddit_id to posts, minor name changes to match models.py
+
+commit 36b2f23fde691facbaf244fe839ca0200e6c0662
+Author: Rozelette <Uberpanzermensch@gmail.com>
+Date:   Wed Mar 22 20:59:05 2017 -0500
+
+    Created home page
+
+commit 7099e13feac33a49679f938c6d5f70088a26dda6
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Mar 22 20:51:14 2017 -0500
+
+    Fixed documentation and examples
+
+commit 5e7f1c5108fe4c4a775478e065a55f75a773dfea
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Mar 22 20:27:39 2017 -0500
+
+    Updated UML files
+
+commit 1ba5072cda5b881f704dd97ec803110a711a65f1
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Mar 22 20:11:46 2017 -0500
+
+    Finishing up the sections of the report
+
+commit a704e9f9a493448f3a708c978db6973664e3a296
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Wed Mar 22 19:58:03 2017 -0500
+
+    build
+
+commit 2bbc83b6b5120a4602b0253f68392cb1917819f1
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Wed Mar 22 19:56:32 2017 -0500
+
+    Add dummy content to comments and users
+
+commit c464155041a6541a7ca683b25685dcccdd6882e0
+Merge: 86d1504 3f395aa
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Mar 22 19:22:14 2017 -0500
+
+    Merging & adding Design section
+
+commit 86d1504440d296301673b58e93d9fbc4b74611c7
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Mar 22 18:56:46 2017 -0500
+
+    Adding more the design
+
+commit 3f395aaff9418274ca7bf788954cf5ee784df1d9
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Wed Mar 22 18:54:20 2017 -0500
+
+    Added tools section of report
+
+commit 33343e548974c94d52ed94eb5416c5d5236c429b
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Wed Mar 22 18:41:25 2017 -0500
+
+    Add customizable grid react component
+
+commit d84e6fbecba3cbb07adc7bcf06506635e18ded1d
+Author: Johnny Knoebel <Johnny Knoebel>
+Date:   Wed Mar 22 16:32:58 2017 -0500
+
+    created models.py, closes #7
+
+commit 0f1420505fea0c8b952651826902c4afb5bd0d90
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Wed Mar 22 16:19:38 2017 -0500
+
+    Test `make build` in CI
+
+commit ca26f7f8e47573f6be39fc54f81b938c72d03f4e
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Wed Mar 22 16:16:14 2017 -0500
+
+    Add missing dependencies
+
+commit 8ea290c0f036411a0a976604b924a0b96eb23b88
+Merge: 213126e f313222
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Wed Mar 22 16:05:06 2017 -0500
+
+    Merge branch 'master' of github.com:dmd2588/ReddifulAPI
+
+commit 213126e66a6b1ba173c3df038b810b99bed6291f
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Wed Mar 22 16:04:56 2017 -0500
+
+    Experimental Grid
+
+commit f31322215ac8e8361ca776db1d90cbd15f43a7ad
+Author: David Du <daviddu@utexas.edu>
+Date:   Tue Mar 21 19:34:44 2017 -0500
+
+    More of the Report
+
+commit 6178623031c64c9f875ef2d59875e805ea4105b2
+Merge: d05f799 90ff33b
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Tue Mar 21 19:07:40 2017 -0500
+
+    Fixing merging
+
+commit d05f799ffbe63f99e53d563c5880619e3a2ae117
+Merge: 29d9f56 50bd855
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Tue Mar 21 19:04:18 2017 -0500
+
+    Merge branch 'dev0'
+
+commit 50bd8555bcb486255f9099d646332c0548b91945
+Merge: a6e0339 29d9f56
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Tue Mar 21 19:04:00 2017 -0500
+
+    Fixed merging
+
+commit a6e03391cfb8c9be815b85cbfaf635bd881f799b
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Tue Mar 21 18:53:54 2017 -0500
+
+    Updated git ignore
+
+commit 90ff33b5248430b1fe4e3b4be350e30667a464bc
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Tue Mar 21 18:52:33 2017 -0500
+
+    build
+
+commit dc84e37b7156617807c07dc970e60f4b3d6a58e0
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Tue Mar 21 18:49:32 2017 -0500
+
+    Fixed structural splash page issue
+
+commit ac1b9d09786f6d243d524ac8020147991bff7240
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Tue Mar 21 18:42:41 2017 -0500
+
+    Use webpack found in node_modules
+
+commit 5d75c48ded22e11dbac808749727ded6903114d2
+Author: David Du <daviddu@utexas.edu>
+Date:   Tue Mar 21 18:29:11 2017 -0500
+
+    About page testing
+
+commit 29d9f5661a805ece4e056f30d225382b1c433b32
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Tue Mar 21 18:23:17 2017 -0500
+
+    Forgot comments jsx
+
+commit e8090e311bd3bbada720230f5d83adebde4d8cc9
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Tue Mar 21 18:20:47 2017 -0500
+
+    Forgot comments
+
+commit 2c3b04180af3b605985029a5b7e2a045e8c1452a
+Author: Jeremy <jeremylim995@utexas.edu>
+Date:   Tue Mar 21 18:16:58 2017 -0500
+
+    Merging new Navigation Changes for empty dummy models (#12)
+    
+    * Basic Navigation Bar that switches components, closes #9
+    
+    * Clean up some, closes #10, Dummy pages are empty, dont know if anchor warning affects us a lot
+
+commit cb8f3b789d60ac01040da589774848a45756885f
+Author: David Du <daviddu@utexas.edu>
+Date:   Tue Mar 21 18:07:25 2017 -0500
+
+    Update README.md
+
+commit c85476d5d045effc9dc6fa85d2ea6418c38a9bbe
+Author: David Du <daviddu@utexas.edu>
+Date:   Tue Mar 21 18:07:17 2017 -0500
+
+    Update README.md
+
+commit 6a242bd104d884423980412bab10aa6fe56889ca
+Author: David Du <daviddu@utexas.edu>
+Date:   Tue Mar 21 18:07:07 2017 -0500
+
+    Update README.md
+
+commit bcbdd8bfc89537677c916cd97371d747df51660f
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Tue Mar 21 17:52:46 2017 -0500
+
+    Clean up some, closes #10, Dummy pages are empty, dont know if anchor warning affects us a lot
+
+commit f3b64ccf7920bee28412d25e6bb8363769c93860
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Tue Mar 21 13:41:09 2017 -0500
+
+    Basic Navigation Bar that switches components, closes #9
+
+commit 89fc42d4e8f569857c2a3a3e819f3d76ef701be0
+Author: Jeremy <jeremylim995@utexas.edu>
+Date:   Mon Mar 20 17:36:07 2017 -0500
+
+    Updated Readme with build instructions
+
+commit 84143cfec64cbd6ab5ac98719857d07aaf4b9393
+Merge: dbeddce 051b0b1
+Author: Jeremy <jeremylim995@utexas.edu>
+Date:   Mon Mar 20 17:27:39 2017 -0500
+
+    Merge pull request #5 from dmd2588/dev0
+    
+    Closes #4 added a makefile, and setup react development environ along…
+
+commit dbeddce6400191e988c840bffce0072a980b0d19
+Author: David Du <daviddu@utexas.edu>
+Date:   Mon Mar 20 17:14:46 2017 -0500
+
+    Typoes
+
+commit ac0fb932114db0a0a4b689da28a81d26303daf65
+Author: David Du <daviddu@utexas.edu>
+Date:   Mon Mar 20 17:14:30 2017 -0500
+
+    Closed quotes
+
+commit 0ce1384fbe1746012e2df0bb1b9c98dcc52147ed
+Author: David Du <daviddu@utexas.edu>
+Date:   Mon Mar 20 17:10:49 2017 -0500
+
+    Added Examples
+
+commit 051b0b1e13f2de3036bcb4252ededc3f2801f124
+Author: phalax4 <jeremylim995@gmail.com>
+Date:   Mon Mar 20 16:14:46 2017 -0500
+
+    Closes #4 added a makefile, and setup react development environ along with boilerplate
+
+commit 2a23d92d8b9d904f73036a6ebc3576bc080c9df2
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Sun Mar 19 15:00:28 2017 -0500
+
+    Appease travis by adding a dummy .travis.yml
+    
+    No tests are being run at the moment. It is just a place holder.
+
+commit d08d5e4f1b71e374c20955945860b07692c977f0
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Sun Mar 19 14:50:56 2017 -0500
+
+    Update README to reflect port change
+
+commit 9632494691deed4f1c081f5892e8b589b611820d
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Sun Mar 19 14:48:40 2017 -0500
+
+    Add text source for UML
+    
+    track #2
+
+commit 949ae9c84c22e9ea069a8aae6767901ef967adde
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Sun Mar 19 14:46:43 2017 -0500
+
+    Switch to port 80
+    
+    Originally port 8080 was used because I thought there might be issues
+    using a priviledged port in developement, but it seems to work fine.
+
+commit 7be21354d8b0344e5158718b3b77dcd58c172913
+Author: David Du <daviddu@utexas.edu>
+Date:   Sun Mar 19 13:57:59 2017 -0500
+
+    Updated parameters and attributes for all models
+
+commit 8fd9b711c66e47185bca4f3c2e2bb3a88104fe6b
+Author: Jeremy <jeremylim995@utexas.edu>
+Date:   Sun Mar 19 12:40:54 2017 -0500
+
+    UML class diagram closes #2
+
+commit 73bb625fa13e89afd4cd1c28146b7754a00203ac
+Author: Jeremy Lim <jeremylim995@utexas.edu>
+Date:   Fri Mar 17 19:26:00 2017 -0500
+
+    Added attributes for subreddit, working on json example for subreddit portion
+
+commit 4da0209c594a1952e3b3c856b5b4ed4bf74593b4
+Author: Jeremy Lim <jeremylim995@utexas.edu>
+Date:   Wed Mar 15 18:59:23 2017 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 050b211a8c3577c6613dbc7b6bdf89d57e48a039
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Mar 15 18:50:21 2017 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 03aeab1761e97e1941dd4d3ca18f062f5c012d38
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Mar 15 18:49:38 2017 -0500
+
+    Update apiary.apib
+
+commit 32a08edaf3dac0bf003f9bc6459b14890eb55f86
+Author: David Du <daviddu@utexas.edu>
+Date:   Wed Mar 15 18:47:13 2017 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit 935214d9010ab1503fb9524c344142d379b0b57b
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Wed Mar 8 20:28:52 2017 -0600
+
+    Add docker support
+
+commit c8d56a728bfd3d0bd063181f00116990061407b2
+Author: Austin Middleton <xuset1@gmail.com>
+Date:   Wed Mar 8 20:27:46 2017 -0600
+
+    Add flask app that serves static files
+
+commit fa691837bbc0e0246b8d207c03746c4398ba2f1b
+Author: David Du <daviddu@utexas.edu>
+Date:   Tue Mar 7 17:11:55 2017 -0600
+
+    Update README.md
+
+commit 88cf450fd5321baba5d5d8c37ee3005586b3180d
+Author: David Du <daviddu@utexas.edu>
+Date:   Tue Mar 7 16:58:45 2017 -0600
+
+    Initial commit
