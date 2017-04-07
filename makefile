@@ -65,7 +65,7 @@ pylint:
 test-client: build
 
 test-server: pylint
-	python3 app/tests/test_http.py
-	python3 app/tests/test_models.py
+	python3 -m app.tests.test_http
+	python3 -m app.tests.test_models
 
 test: test-client test-server
