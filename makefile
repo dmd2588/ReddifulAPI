@@ -33,9 +33,9 @@ endif
 .pylintrc:
 	$(PYLINT) --disable=locally-disabled --reports=no --generate-rcfile > $@
 
-IDB1.html: app/models.py
+IDB2.html: app/models.py
 	pydoc3 -w app/models.py
-	cp models.html IDB1.html
+	cp models.html IDB2.html
 	rm models.html
 
 config:
