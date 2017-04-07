@@ -24848,7 +24848,7 @@ var About = _react2.default.createClass({
                   _react2.default.createElement(
                     'p',
                     null,
-                    'Slack is used as our main form of communication. We integrated other services: Travis CI and Github, so that we are able to keep track of commits and builds. These are all separated into a different channel, and we have other channels to keep track of general work, emails, and schedules.'
+                    'Slack is used as our main form of communication. We integrated other services: Travis CI and Github, so that we can keep track of commits and builds. These are all separated into a different channel, and we have other channels to keep track of general work, emails, and schedules.'
                   )
                 ),
                 _react2.default.createElement(
@@ -25966,7 +25966,7 @@ var About = _react2.default.createClass({
             _react2.default.createElement(
               _reactBootstrap.Panel,
               { collapsible: true, expanded: this.state.open9 },
-              _react2.default.createElement('img', { src: '/dist/images/UML.jpg', height: '1573', width: '306' })
+              _react2.default.createElement('img', { src: '/dist/images/UML.png', height: '1573', width: '306' })
             ),
             _react2.default.createElement(
               _reactBootstrap.Button,
@@ -27239,7 +27239,7 @@ var SortFilter = function (_React$Component) {
       console.log('clicked');
       for (var property in this.state) {
         if (this.state.hasOwnProperty(property)) {
-          if (property !== "order_by") {
+          if (property !== 'order_by') {
             temp['filter_' + property] = this.state[property];
           }
         }
