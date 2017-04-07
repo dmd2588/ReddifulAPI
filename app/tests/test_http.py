@@ -15,7 +15,7 @@ class TestUsers(unittest.TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(resp.headers['content-type'],
                          'application/json; charset=utf-8')
-        users = resp.json()
+        users = resp.json()[0]
         self.assertEqual(type(users), list)
         self.assertGreater(len(users), 0)
         for u in users:
@@ -26,7 +26,7 @@ class TestUsers(unittest.TestCase):
         self.assertEqual(resp1.status_code, 200)
         self.assertEqual(
             resp1.headers['content-type'], 'application/json; charset=utf-8')
-        users1 = resp1.json()
+        users1 = resp1.json()[0]
         self.assertEqual(type(users1), list)
         self.assertEqual(len(users1), 2)
         for u in users1:
@@ -36,7 +36,7 @@ class TestUsers(unittest.TestCase):
         self.assertEqual(resp2.status_code, 200)
         self.assertEqual(
             resp2.headers['content-type'], 'application/json; charset=utf-8')
-        users2 = resp2.json()
+        users2 = resp2.json()[0]
         self.assertEqual(type(users2), list)
         self.assertEqual(len(users2), 1)
         self.assertDictEqual(users2[0], users1[0])
@@ -66,7 +66,7 @@ class TestComments(unittest.TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(resp.headers['content-type'],
                          'application/json; charset=utf-8')
-        comments = resp.json()
+        comments = resp.json()[0]
         self.assertEqual(type(comments), list)
         self.assertGreater(len(comments), 0)
         for c in comments:
@@ -77,7 +77,7 @@ class TestComments(unittest.TestCase):
         self.assertEqual(resp1.status_code, 200)
         self.assertEqual(
             resp1.headers['content-type'], 'application/json; charset=utf-8')
-        comments1 = resp1.json()
+        comments1 = resp1.json()[0]
         self.assertEqual(type(comments1), list)
         self.assertEqual(len(comments1), 2)
         for u in comments1:
@@ -87,7 +87,7 @@ class TestComments(unittest.TestCase):
         self.assertEqual(resp2.status_code, 200)
         self.assertEqual(
             resp2.headers['content-type'], 'application/json; charset=utf-8')
-        comments2 = resp2.json()
+        comments2 = resp2.json()[0]
         self.assertEqual(type(comments2), list)
         self.assertEqual(len(comments2), 1)
         self.assertDictEqual(comments2[0], comments1[0])
@@ -118,7 +118,7 @@ class TestPosts(unittest.TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(resp.headers['content-type'],
                          'application/json; charset=utf-8')
-        posts = resp.json()
+        posts = resp.json()[0]
         self.assertEqual(type(posts), list)
         self.assertGreater(len(posts), 0)
         for p in posts:
@@ -129,7 +129,7 @@ class TestPosts(unittest.TestCase):
         self.assertEqual(resp1.status_code, 200)
         self.assertEqual(
             resp1.headers['content-type'], 'application/json; charset=utf-8')
-        posts1 = resp1.json()
+        posts1 = resp1.json()[0]
         self.assertEqual(type(posts1), list)
         self.assertEqual(len(posts1), 2)
         for u in posts1:
@@ -139,7 +139,7 @@ class TestPosts(unittest.TestCase):
         self.assertEqual(resp2.status_code, 200)
         self.assertEqual(
             resp2.headers['content-type'], 'application/json; charset=utf-8')
-        posts2 = resp2.json()
+        posts2 = resp2.json()[0]
         self.assertEqual(type(posts2), list)
         self.assertEqual(len(posts2), 1)
         self.assertDictEqual(posts2[0], posts1[0])
@@ -169,7 +169,7 @@ class TestSubreddits(unittest.TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(resp.headers['content-type'],
                          'application/json; charset=utf-8')
-        subreddits = resp.json()
+        subreddits = resp.json()[0]
         self.assertEqual(type(subreddits), list)
         self.assertGreater(len(subreddits), 0)
         for r in subreddits:
@@ -180,7 +180,7 @@ class TestSubreddits(unittest.TestCase):
         self.assertEqual(resp1.status_code, 200)
         self.assertEqual(
             resp1.headers['content-type'], 'application/json; charset=utf-8')
-        subreddits1 = resp1.json()
+        subreddits1 = resp1.json()[0]
         self.assertEqual(type(subreddits1), list)
         self.assertEqual(len(subreddits1), 2)
         for u in subreddits1:
@@ -190,7 +190,7 @@ class TestSubreddits(unittest.TestCase):
         self.assertEqual(resp2.status_code, 200)
         self.assertEqual(
             resp2.headers['content-type'], 'application/json; charset=utf-8')
-        subreddits2 = resp2.json()
+        subreddits2 = resp2.json()[0]
         self.assertEqual(type(subreddits2), list)
         self.assertEqual(len(subreddits2), 1)
         self.assertDictEqual(subreddits2[0], subreddits1[0])
