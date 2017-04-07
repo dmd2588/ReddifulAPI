@@ -63,7 +63,7 @@ def serve_user_list():
             args.pop('order_by', None)
     if 'order_by' not in args and 'desc' in args:
         args.pop('desc', None)
-    return createJson(query.getUsers(**args)[0]), 200, DEFAULT_HEADERS
+    return createJson(query.getUsers(**args)), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/users/<string:user_id>')
@@ -101,7 +101,7 @@ def serve_post_list():
             args.pop('order_by', None)
     if 'order_by' not in args and 'desc' in args:
         args.pop('desc', None)
-    return createJson(query.getPosts(**args)[0]), 200, DEFAULT_HEADERS
+    return createJson(query.getPosts(**args)), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/posts/<string:post_id>')
@@ -127,7 +127,7 @@ def serve_comment_list():
             args.pop('order_by', None)
     if 'order_by' not in args and 'desc' in args:
         args.pop('desc', None)
-    return createJson(query.getComments(**args)[0]), 200, DEFAULT_HEADERS
+    return createJson(query.getComments(**args)), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/comments/<string:comment_id>')
@@ -147,7 +147,7 @@ def serve_subreddit_list():
             args.pop('order_by', None)
     if 'order_by' not in args and 'desc' in args:
         args.pop('desc', None)
-    return createJson(query.getSubs(**args)[0]), 200, DEFAULT_HEADERS
+    return createJson(query.getSubs(**args)), 200, DEFAULT_HEADERS
 
 
 @app.route('/api/subreddits/<string:subreddit_id>')

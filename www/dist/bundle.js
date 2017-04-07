@@ -6998,7 +6998,7 @@ var RfGrid = function (_React$Component) {
     key: 'updateGrid',
     value: function updateGrid(options) {
       var self = this;
-      var options = options == null ? {} : options;
+      options = options == null ? {} : options;
       this.props.retainOptions(options);
       console.log('RfGrid');
       console.log(options);
@@ -26464,32 +26464,22 @@ var Users = function (_React$Component) {
     key: 'loadDataFromServer',
     value: function loadDataFromServer(options, callback) {
       (0, _api.getComments)(options).then(function (res) {
-        var comments = res.data;
-        (0, _api.getUsers)({}).then(function (res) {
-          var users = res.data;
-          var myp = {
-            title: 'Comments',
-            select_values: ['<default>', 'score', 'gilded', 'author', 'create_utc', 'body'],
-            cards: comments.map(function (c) {
-              // var commentUserMatch = (typeof users.find(u => u.redditor_id === c.author_id) === 'undefined');
-              // console.log(users.find(u => u.redditor_id === "10brol"))
-              var commentUserMatch = users.find(function (u) {
-                return u.redditor_id === c.author_id;
-              });
-              console.log(commentUserMatch);
-              return {
-                title: c.author,
-                subtitle: c.created_utc,
-                link: '/comments/detail/' + c.comment_id,
-                preview: '/dist/images/ic_speaker_notes_black_48dp_2x.png',
-                icon: '/dist/images/ic_account_circle_black_48dp_2x.png',
-                customClass: 'iconMedia'
-              };
-            })
-          };
-
-          callback(myp);
-        });
+        var comments = res.data[0];
+        var myp = {
+          title: 'Comments',
+          select_values: ['<default>', 'score', 'gilded', 'author', 'create_utc', 'body'],
+          cards: comments.map(function (c) {
+            return {
+              title: c.author,
+              subtitle: c.created_utc,
+              link: '/comments/detail/' + c.comment_id,
+              preview: '/dist/images/ic_speaker_notes_black_48dp_2x.png',
+              icon: '/dist/images/ic_account_circle_black_48dp_2x.png',
+              customClass: 'iconMedia'
+            };
+          })
+        };
+        callback(myp);
       });
     }
   }, {
@@ -27048,7 +27038,7 @@ var Posts = function (_React$Component) {
     key: 'loadDataFromServer',
     value: function loadDataFromServer(options, callback) {
       (0, _api.getPosts)(options).then(function (res) {
-        var posts = res.data;
+        var posts = res.data[0];
         (0, _api.getUsers)({}).then(function (res) {
           // var users = res.data
           var myp = {
@@ -27581,7 +27571,7 @@ var Subreddits = function (_React$Component) {
     key: 'loadDataFromServer',
     value: function loadDataFromServer(options, callback) {
       (0, _api.getSubreddits)(options).then(function (res) {
-        var subreddits = res.data;
+        var subreddits = res.data[0];
         var myp = {
           title: 'Subreddits',
           select_values: ['<default>', 'title', 'accounts_active', 'subscribers', 'created_utc', 'display_name'],
@@ -28051,7 +28041,7 @@ var Users = function (_React$Component) {
     key: 'loadDataFromServer',
     value: function loadDataFromServer(options, callback) {
       (0, _api.getUsers)(options).then(function (res) {
-        var users = res.data;
+        var users = res.data[0];
         var myp = {
           title: 'Users',
           select_values: ['<default>', 'name', 'comment_karma', 'link_karma', 'created_utc'],

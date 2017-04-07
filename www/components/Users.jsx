@@ -22,7 +22,7 @@ export default class Users extends React.Component {
   }
   loadDataFromServer (options, callback) {
     getUsers(options).then(function (res) {
-      var users = res.data
+      var users = res.data[0]
       var myp = {
         title: 'Users',
         select_values: ['<default>', 'name', 'comment_karma', 'link_karma', 'created_utc'],

@@ -19,7 +19,7 @@ export default class Posts extends React.Component {
   }
   loadDataFromServer (options, callback) {
     getPosts(options).then(function (res) {
-      var posts = res.data
+      var posts = res.data[0]
       getUsers({}).then(function (res) {
         // var users = res.data
         var myp = {

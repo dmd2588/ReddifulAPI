@@ -19,7 +19,7 @@ export default class Subreddits extends React.Component {
   }
   loadDataFromServer (options, callback) {
     getSubreddits(options).then(function (res) {
-      var subreddits = res.data
+      var subreddits = res.data[0]
       var myp = {
         title: 'Subreddits',
         select_values: ['<default>', 'title', 'accounts_active', 'subscribers', 'created_utc', 'display_name'],

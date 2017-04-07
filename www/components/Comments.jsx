@@ -1,6 +1,6 @@
 import React from 'react' //eslint-disable-line
 import RfGrid from './RfGrid.jsx'
-import { getComments, getUsers } from '../api.js'
+import { getComments } from '../api.js'
 import Paper from 'material-ui/Paper'
 
 const style = {
@@ -20,30 +20,22 @@ export default class Users extends React.Component {
 
   loadDataFromServer (options, callback) {
     getComments(options).then(function (res) {
-      var comments = res.data
-      getUsers({}).then(function (res) {
-        var users = res.data
-        var myp = {
-          title: 'Comments',
-          select_values: ['<default>', 'score', 'gilded', 'author', 'create_utc', 'body'],
-          cards: comments.map(c => {
-              // var commentUserMatch = (typeof users.find(u => u.redditor_id === c.author_id) === 'undefined');
-              // console.log(users.find(u => u.redditor_id === "10brol"))
-            var commentUserMatch = users.find(u => u.redditor_id === c.author_id)
-            console.log(commentUserMatch)
-            return {
-              title: c.author,
-              subtitle: c.created_utc,
-              link: '/comments/detail/' + c.comment_id,
-              preview: '/dist/images/ic_speaker_notes_black_48dp_2x.png',
-              icon: '/dist/images/ic_account_circle_black_48dp_2x.png',
-              customClass: 'iconMedia'
-            }
-          })
-        }
-
-        callback(myp)
-      })
+      var comments = res.data[0]
+      var myp = {
+        title: 'Comments',
+        select_values: ['<default>', 'score', 'gilded', 'author', 'create_utc', 'body'],
+        cards: comments.map(c => {
+          return {
+            title: c.author,
+            subtitle: c.created_utc,
+            link: '/comments/detail/' + c.comment_id,
+            preview: '/dist/images/ic_speaker_notes_black_48dp_2x.png',
+            icon: '/dist/images/ic_account_circle_black_48dp_2x.png',
+            customClass: 'iconMedia'
+          }
+        })
+      }
+      callback(myp)
     })
   }
 
