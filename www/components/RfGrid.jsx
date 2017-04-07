@@ -19,8 +19,8 @@ export default class RfGrid extends React.Component {
 
   updateGrid (options) {
     var self = this
-    options = (options == null) ? {} : options
-    this.props.retainOptions(options)
+    var op = (options == null) ? {} : options
+    this.props.retainOptions(op)
     console.log('RfGrid')
     console.log(options)
     console.log('Captured')
