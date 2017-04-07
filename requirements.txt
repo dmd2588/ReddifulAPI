@@ -7,3 +7,4 @@ requests
 autopep8
 pep8
 pylint
+coverage
