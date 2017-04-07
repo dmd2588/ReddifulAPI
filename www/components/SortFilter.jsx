@@ -63,7 +63,7 @@ export default class SortFilter extends React.Component {
   render () {
     return (
       <Panel header='Filtering and Sorting'>
-            {this.props.filterOptions.length ? <ControlLabel>Filter by Attribute</ControlLabel> : null}
+        {this.props.filterOptions.length ? <ControlLabel>Filter by Attribute</ControlLabel> : null}
         {this.props.filterOptions.map(c => {
           return (
             <Checkbox label={c.name} key={Math.random().toString(16).substr(2)} checked={this.state[c.name]} onChange={(e) => this.handleChange(c.name, e)} >
