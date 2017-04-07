@@ -299,8 +299,6 @@ def getModdedSubs(redditor_id):
     row = query.first()
     return [sub.__dict__ for sub in row.subreddits]
 
-print(getModdedSubs(redditor_id="7u0qw"))
-
 
 def getTopImages(limit=5):
     session = Session()

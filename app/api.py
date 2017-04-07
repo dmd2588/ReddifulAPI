@@ -204,5 +204,6 @@ def format_url_args():
                 value = True
             elif value == 'false':
                 value = False
+                continue
             args[column] = value
     return args
