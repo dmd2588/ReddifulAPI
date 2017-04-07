@@ -14,7 +14,7 @@ export default class Posts extends React.Component {
     this.state = {ops: {}}
   }
   retainOptions (ops) {
-    this.setState(ops)
+    this.setState({ops: ops})
     return this.state.ops
   }
   loadDataFromServer (options, callback) {

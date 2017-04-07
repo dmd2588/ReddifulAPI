@@ -14,7 +14,7 @@ export default class Users extends React.Component {
     this.state = {ops: {}}
   }
   retainOptions (ops) {
-    this.setState(ops)
+    this.setState({ops: ops})
     return this.state.ops
   }
 

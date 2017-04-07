@@ -26509,7 +26509,7 @@ var Users = function (_React$Component) {
   _createClass(Users, [{
     key: 'retainOptions',
     value: function retainOptions(ops) {
-      this.setState(ops);
+      this.setState({ ops: ops });
       return this.state.ops;
     }
   }, {
@@ -27084,7 +27084,7 @@ var Posts = function (_React$Component) {
   _createClass(Posts, [{
     key: 'retainOptions',
     value: function retainOptions(ops) {
-      this.setState(ops);
+      this.setState({ ops: ops });
       return this.state.ops;
     }
   }, {
@@ -27615,7 +27615,7 @@ var Subreddits = function (_React$Component) {
   _createClass(Subreddits, [{
     key: 'retainOptions',
     value: function retainOptions(ops) {
-      this.setState(ops);
+      this.setState({ ops: ops });
       return this.state.ops;
     }
   }, {
