@@ -65,10 +65,10 @@ pylint:
 test-client: build
 
 test-server: pylint
-	python3 -m app.tests.test_http
-	python3 -m app.tests.test_models
+	python3 -m app.tests.test_http 						  > TestServer.tmp 2>&1
+	-$(COVERAGE) run    --branch app/tests/test_models.py >> TestServer.tmp 2>&1
+	-$(COVERAGE) report -m                      		  >> TestServer.tmp
+	cat TestServer.tmp
 
 test: test-client test-server
-	-$(COVERAGE) run    --branch app/tests/test_models.py >  TestModels.tmp 2>&1
-	-$(COVERAGE) report -m                      		  >> TestModels.tmp
-	cat TestModels.tmp
+
