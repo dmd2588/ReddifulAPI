@@ -5,10 +5,13 @@ HOST: http://polls.apiblueprint.org/
 
 Reddiful is a simple API allowing consumers to view reddit metadata
 
-## Subreddit Collection [/subreddits/{subreddit_id}]
-+ Parameters
-    + subreddit_id (string) - unique ID of the subreddit
+## Test [/tests]
+    
+### Get Test Results [GET]
 
++ Response 200  (application/json)
+
+## Subreddit Collection [/subreddits]
 + Attributes
     + subreddit_id (string) - unique ID of the subreddit
     + display_name: news (string) - subreddit name
@@ -55,11 +58,172 @@ Reddiful is a simple API allowing consumers to view reddit metadata
                 "banner_img": "img6.jpg"
             }
         ]
-
-## Users Collection [/users/{redditor_id}]
+        
+## Subreddit [/subreddits/{subreddit_id}]
 + Parameters
-    + redditor_id (string) - unique ID of the user
+    + subreddit_id (string) - unique ID of the subreddit
 
++ Attributes
+    + subreddit_id (string) - unique ID of the subreddit
+    + display_name: news (string) - subreddit name
+    + subscribers (number) - number of subscribers to subreddit
+    + accounts_active (number) - number of visitors on the subreddit
+    + title (string) - title of the subreddit
+    + created_utc: '2015-05-05 20:20:20' (string) - time of creation of the subreddit
+    + icon_img (string) - image of the subreddit icon
+    + banner_img (string) - image of the subreddit banner
+    
+### Get Subreddit [GET]
+
++ Response 200 (application/json)
+
+        {
+            "subreddit_id": "2qh55",
+            "display_name": "food",
+            "subscribers": 10979227,
+            "accounts_active": 1338,
+            "title": "food"
+            "created_utc": "2008-01-25 07:33:11",
+            "icon_img": "img5.jpg",
+            "banner_img": "img6.jpg"
+        }
+        
+## Subreddit Posts [/subreddits/{subreddit_id}/posts]
++ Parameters
+    + subreddit_id (string) - unique ID of the subreddit
+    
++ Attributes
+    + submission_id (string) - unique ID of this post
+    + title: me_irl (string) - title of the post
+    + url (string) - URL linking to where you go when you click the title
+    + score (number) - karma count of this post
+    + over_18 (boolean) - is this post nsfw
+    + is_self (boolean) - is this a text post
+    + self_text (string) - text of the post is it's a self post
+    + created_utc: '2015-05-05 20:20:20' (string) - time of creation
+    + gilded (number) - number of times this post is gilded
+    + upvote_ratio (number) - float percentage of upvotes
+    + num_comments (number) - number of comments
+    + preview (string) - preview in JSON form
+    + thumbnail (string) - thumbnail of the post
+    + author (string) - name of the author of the post
+    + subreddit (string) - name of the overall subreddit
+    + author_id (string) - unique ID of the author of the post (foreign key to author)
+    + subreddit_id (string) - unique ID of the overall subreddit (foreign key to subreddit)
+
+### List Subreddit Posts [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "submission_id": "5th7sz",
+                "title": "Test",
+                "url": "https://www.reddit.com/r/FireEmblemHeroesTest/comments/5th7sz/test/",
+                "score": 1,
+                "over_18": False,
+                "is_self": True,
+                "self_text": "Test Text",
+                "created_utc": "2015-05-05 05:05:05",
+                "gilded": 0,
+                "upvote_ratio": .75,
+                "num_comments": 50,
+                "preview": "Test Text",
+                "thumbnail": "thumbnail1.jpg",
+                "author": "batman_jr",
+                "subreddit": "FireEmblemHeroes",
+                "author_id": "hh8mr",
+                "subreddit": "t5_3imxi"
+            },
+            {
+                "submission_id": "60on5c",
+                "title": "existentialSort",
+                "url": "https://i.redd.it/gdoviw37hsmy.jpg",
+                "score": 756,
+                "over_18": False,
+                "is_self": False,
+                "self_text": "",
+                "created_utc": "2016-06-06 06:06:06",
+                "gilded": 0,
+                "upvote_ratio": .77,
+                "num_comments": 55,
+                "preview": "link1.jpg",
+                "thumbnail": "thumbnail2.jpg",
+                "author": "poizan42",
+                "subreddit": "ProgrammerHumor",
+                "author": "74344",
+                "subreddit": "t5_2tex6"
+            },
+            {
+                "submission_id": "60tlfl",
+                "title": "Planning on getting Captain Sonar to the table with the full 8-players. Would love some advice",
+                "url": "https://www.reddit.com/r/boardgames/comments/60tlfl/planning_on_getting_captain_sonar_to_the_table/",
+                "score": 13,
+                "over_18": False,
+                "is_self": True,
+                "self_text": "Hey everyone!\n\nThis Friday there will be 8 people at my place including me, all of us have played board games before, and i am excited to introduce **Captain Sonar**. This will be my first play as well, but i think i know the rules. The thing is, 8 people is a lot to manage. Im worried that i might mess up some rules. I want the game to run as smoothly as possible since its not often that i get 8 players. Are there any commonly missed rules or any advice that you guys can give me?\n\nAlso did you all enjoy the game? What did you think about it? How was your experience?",
+                "created_utc": "2017-07-07 07:07:07",
+                "gilded": 0,
+                "upvote_ratio": .88,
+                "num_comments": 66,
+                "preview": "Hey everyone!\n\nThis Friday there will be 8 people at my place including me,",
+                "thumbnail": "thumbnail3.jpg",
+                "author": "Ooer",
+                "subreddit": "BoardGame",
+                "author": "4fer6",
+                "subreddit": "t5_2qmjp"
+            }
+        ]
+        
+## Subreddit Mods [/subreddits/{subreddit_id}/mods]
++ Parameters
+    + subreddit_id (string) - unique ID of the subreddit
+    
++ Attributes
+    + redditor_id (string) - unique ID of the user
+    + name: john_doe (string) - account name
+    + link_karma (number) - total post karma generated by this user
+    + comment_karma (number) - total comment karma generated by this user
+    + created_utc: '2015-05-05 20:20:20' (string) - date/time the account was registered
+    + is_gold (boolean) - is the redditor gilded
+    + verified (boolean) - is the redditor verified
+
+### List Subreddit Mods [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "redditor_id": "hh8mr",
+                "name": "batman_jr",
+                "link_karma": 335,
+                "comment_karma": 190,
+                "created_utc": "2014-07-19 19:56:58",
+                "is_gold": False,
+                "verified": False
+            },
+            {
+                "redditor_id": "74344",
+                "name": "poizan42",
+                "link_karma": 768,
+                "comment_karma": 25495,
+                "created_utc": "2012-03-07 17:46:52",
+                "is_gold": False,
+                "verified": False
+            },
+            {
+                "redditor_id": "4fer6",
+                "name": "Ooer",
+                "link_karma": 19170,
+                "comment_karma": 58181,
+                "created_utc": "2010-10-14 00:23:36",
+                "is_gold": True,
+                "verified": False
+            }
+        ]
+    
+
+## Users Collection [/users]
 + Attributes
     + redditor_id (string) - unique ID of the user
     + name: john_doe (string) - account name
@@ -103,10 +267,231 @@ Reddiful is a simple API allowing consumers to view reddit metadata
             }
         ]
 
-## Posts Collection [/posts/{submission_id}]
+## User [/users/{redditor_id}]
 + Parameters
-    + submission_id (string) - unique ID of the post
+    + redditor_id (string) - unique ID of the user
 
++ Attributes
+    + redditor_id (string) - unique ID of the user
+    + name: john_doe (string) - account name
+    + link_karma (number) - total post karma generated by this user
+    + comment_karma (number) - total comment karma generated by this user
+    + created_utc: '2015-05-05 20:20:20' (string) - date/time the account was registered
+    + is_gold (boolean) - is the redditor gilded
+    + verified (boolean) - is the redditor verified
+
+### Get User [GET]
+
++ Response 200 (application/json)
+
+        {
+            "redditor_id": "hh8mr",
+            "name": "batman_jr",
+            "link_karma": 335,
+            "comment_karma": 190,
+            "created_utc": "2014-07-19 19:56:58",
+            "is_gold": False,
+            "verified": False
+        }
+
+## User Comments [/users/{redditor_id}/comments]
++ Parameters
+    + redditor_id (string) - unique ID of the user
+    
++ Attributes
+    + comment_id (string) - unique ID of this comment
+    + body: this is a comment (string) - body of the comment
+    + body_html (string) - html representation of the body of the comment
+    + score (number) - karma of the comment
+    + created_utc: '2015-05-05 20:20:20' (string) - time of the comment's post
+    + gilded (number) - number of times this comment is gilded
+    + edited (boolean) - was this comment edited
+    + author (string) - name of the author of the comment
+    + link_id (string) - unique ID of the overall post (foreign key to Post)
+    + author_id (string) - unique ID of the author of the comment (foreign key to User)
+
+### List User Comments [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "comment_id": "deaw2vi",
+                "body": "comment 2",
+                "body_html": "placeholder1",
+                "score": 1,
+                "created_utc": "2014-04-04 04:04:04",
+                "gilded": 0,
+                "edited": False,
+                "author": "batman_jr",
+                "link_id": "t3_5th7sz",
+                "author_id": "hh8mr"
+            },
+            {
+                "comment_id": "df7d781",
+                "body": "> Despite claiming ownership, Canada provides no medical or social services to any of the inhabitants of Hans Island.\n\nYou could also say that they do provide medical and social services to all the inhabitants though.",
+                "body_html": "placeholder2",
+                "score": 2,
+                "created_utc": "2013-03-03 03:03:03",
+                "gilded": 0,
+                "edited": False,
+                "author": "poizan42",
+                "link_id": "t3_60h6ga",
+                "author_id": "74344"
+            },
+            {
+                "comment_id": "df8425r",
+                "body": "Spilled a glass of diet Pepsi all over Cash 'n' Guns (first time playing). It was of course an accident and they immediately offered to help clean them, and failing that buy me the game again.\n\nThankfully, because it was diet (no sugar) the cards were able to be saved and now you couldn't tell it ever happened.",
+                "body_html": "placeholder3",
+                "score": 3,
+                "created_utc": "2012-02-02 02:02:02",
+                "gilded": 0,
+                "edited": False,
+                "author": "Ooer",
+                "link_id": "t3_60nyom",
+                "author_id": "4fer6"
+            }
+        ]
+
+## User Posts [/users/{redditor_id}/posts]
++ Parameters
+    + redditor_id (string) - unique ID of the user
+    
++ Attributes
+    + submission_id (string) - unique ID of this post
+    + title: me_irl (string) - title of the post
+    + url (string) - URL linking to where you go when you click the title
+    + score (number) - karma count of this post
+    + over_18 (boolean) - is this post nsfw
+    + is_self (boolean) - is this a text post
+    + self_text (string) - text of the post is it's a self post
+    + created_utc: '2015-05-05 20:20:20' (string) - time of creation
+    + gilded (number) - number of times this post is gilded
+    + upvote_ratio (number) - float percentage of upvotes
+    + num_comments (number) - number of comments
+    + preview (string) - preview in JSON form
+    + thumbnail (string) - thumbnail of the post
+    + author (string) - name of the author of the post
+    + subreddit (string) - name of the overall subreddit
+    + author_id (string) - unique ID of the author of the post (foreign key to author)
+    + subreddit_id (string) - unique ID of the overall subreddit (foreign key to subreddit)
+
+### List User Posts [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "submission_id": "5th7sz",
+                "title": "Test",
+                "url": "https://www.reddit.com/r/FireEmblemHeroesTest/comments/5th7sz/test/",
+                "score": 1,
+                "over_18": False,
+                "is_self": True,
+                "self_text": "Test Text",
+                "created_utc": "2015-05-05 05:05:05",
+                "gilded": 0,
+                "upvote_ratio": .75,
+                "num_comments": 50,
+                "preview": "Test Text",
+                "thumbnail": "thumbnail1.jpg",
+                "author": "batman_jr",
+                "subreddit": "FireEmblemHeroes",
+                "author_id": "hh8mr",
+                "subreddit": "t5_3imxi"
+            },
+            {
+                "submission_id": "60on5c",
+                "title": "existentialSort",
+                "url": "https://i.redd.it/gdoviw37hsmy.jpg",
+                "score": 756,
+                "over_18": False,
+                "is_self": False,
+                "self_text": "",
+                "created_utc": "2016-06-06 06:06:06",
+                "gilded": 0,
+                "upvote_ratio": .77,
+                "num_comments": 55,
+                "preview": "link1.jpg",
+                "thumbnail": "thumbnail2.jpg",
+                "author": "poizan42",
+                "subreddit": "ProgrammerHumor",
+                "author": "74344",
+                "subreddit": "t5_2tex6"
+            },
+            {
+                "submission_id": "60tlfl",
+                "title": "Planning on getting Captain Sonar to the table with the full 8-players. Would love some advice",
+                "url": "https://www.reddit.com/r/boardgames/comments/60tlfl/planning_on_getting_captain_sonar_to_the_table/",
+                "score": 13,
+                "over_18": False,
+                "is_self": True,
+                "self_text": "Hey everyone!\n\nThis Friday there will be 8 people at my place including me, all of us have played board games before, and i am excited to introduce **Captain Sonar**. This will be my first play as well, but i think i know the rules. The thing is, 8 people is a lot to manage. Im worried that i might mess up some rules. I want the game to run as smoothly as possible since its not often that i get 8 players. Are there any commonly missed rules or any advice that you guys can give me?\n\nAlso did you all enjoy the game? What did you think about it? How was your experience?",
+                "created_utc": "2017-07-07 07:07:07",
+                "gilded": 0,
+                "upvote_ratio": .88,
+                "num_comments": 66,
+                "preview": "Hey everyone!\n\nThis Friday there will be 8 people at my place including me,",
+                "thumbnail": "thumbnail3.jpg",
+                "author": "Ooer",
+                "subreddit": "BoardGame",
+                "author": "4fer6",
+                "subreddit": "t5_2qmjp"
+            }
+        ]
+
+## User Modded Subreddits [/users/{redditor_id}/subs]
++ Parameters
+    + redditor_id (string) - unique ID of the user
+    
++ Attributes
+    + subreddit_id (string) - unique ID of the subreddit
+    + display_name: news (string) - subreddit name
+    + subscribers (number) - number of subscribers to subreddit
+    + accounts_active (number) - number of visitors on the subreddit
+    + title (string) - title of the subreddit
+    + created_utc: '2015-05-05 20:20:20' (string) - time of creation of the subreddit
+    + icon_img (string) - image of the subreddit icon
+    + banner_img (string) - image of the subreddit banner
+
+### Get Modded Subreddits [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "subreddit_id": "3imv0",
+                "display_name": "FireEmblemHeroes",
+                "subscribers": 52790,
+                "accounts_active": 921,
+                "title": "Fire Emblem Heroes - Nintendo's Latest Mobile Game"
+                "created_utc": "2017-01-18 22:09:57",
+                "icon_img": "img1.jpg",
+                "banner_img": "img2.jpg"
+            },
+            {
+                "subreddit_id": "2tex6",
+                "display_name": "ProgrammerHumor",
+                "subscribers": 199848,
+                "accounts_active": 603,
+                "title": "Programmer Humor"
+                "created_utc": "2012-01-22 13:11:51",
+                "icon_img": "img3.jpg",
+                "banner_img": "img4.jpg"
+            },
+            {
+                "subreddit_id": "2qh55",
+                "display_name": "food",
+                "subscribers": 10979227,
+                "accounts_active": 1338,
+                "title": "food"
+                "created_utc": "2008-01-25 07:33:11",
+                "icon_img": "img5.jpg",
+                "banner_img": "img6.jpg"
+            }
+        ]
+
+## Posts Collection [/posts]
 + Attributes
     + submission_id (string) - unique ID of this post
     + title: me_irl (string) - title of the post
@@ -189,11 +574,58 @@ Reddiful is a simple API allowing consumers to view reddit metadata
                 "subreddit": "t5_2qmjp"
             }
         ]
-        
-## Comment Collection [/comments/{comment_id}]
+    
+## Post [/posts/{submission_id}]
 + Parameters
-    + comment_id (string) - unique ID of this comment
+    + submission_id (string) - unique ID of the post
 
++ Attributes
+    + submission_id (string) - unique ID of this post
+    + title: me_irl (string) - title of the post
+    + url (string) - URL linking to where you go when you click the title
+    + score (number) - karma count of this post
+    + over_18 (boolean) - is this post nsfw
+    + is_self (boolean) - is this a text post
+    + self_text (string) - text of the post is it's a self post
+    + created_utc: '2015-05-05 20:20:20' (string) - time of creation
+    + gilded (number) - number of times this post is gilded
+    + upvote_ratio (number) - float percentage of upvotes
+    + num_comments (number) - number of comments
+    + preview (string) - preview in JSON form
+    + thumbnail (string) - thumbnail of the post
+    + author (string) - name of the author of the post
+    + subreddit (string) - name of the overall subreddit
+    + author_id (string) - unique ID of the author of the post (foreign key to author)
+    + subreddit_id (string) - unique ID of the overall subreddit (foreign key to subreddit)
+
+### Get Post [GET]
+
++ Response 200 (application/json)
+
+        {
+            "submission_id": "5th7sz",
+            "title": "Test",
+            "url": "https://www.reddit.com/r/FireEmblemHeroesTest/comments/5th7sz/test/",
+            "score": 1,
+            "over_18": False,
+            "is_self": True,
+            "self_text": "Test Text",
+            "created_utc": "2015-05-05 05:05:05",
+            "gilded": 0,
+            "upvote_ratio": .75,
+            "num_comments": 50,
+            "preview": "Test Text",
+            "thumbnail": "thumbnail1.jpg",
+            "author": "batman_jr",
+            "subreddit": "FireEmblemHeroes",
+            "author_id": "hh8mr",
+            "subreddit": "t5_3imxi"
+        }
+    
+## Post Comments [/posts/{submission_id}/comments]
++ Parameters
+    + submission_id (string) - unique ID of the post
+    
 + Attributes
     + comment_id (string) - unique ID of this comment
     + body: this is a comment (string) - body of the comment
@@ -205,9 +637,62 @@ Reddiful is a simple API allowing consumers to view reddit metadata
     + author (string) - name of the author of the comment
     + link_id (string) - unique ID of the overall post (foreign key to Post)
     + author_id (string) - unique ID of the author of the comment (foreign key to User)
-    
-    
-    
+
+### List Post Comments [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "comment_id": "deaw2vi",
+                "body": "comment 2",
+                "body_html": "placeholder1",
+                "score": 1,
+                "created_utc": "2014-04-04 04:04:04",
+                "gilded": 0,
+                "edited": False,
+                "author": "batman_jr",
+                "link_id": "t3_5th7sz",
+                "author_id": "hh8mr"
+            },
+            {
+                "comment_id": "df7d781",
+                "body": "> Despite claiming ownership, Canada provides no medical or social services to any of the inhabitants of Hans Island.\n\nYou could also say that they do provide medical and social services to all the inhabitants though.",
+                "body_html": "placeholder2",
+                "score": 2,
+                "created_utc": "2013-03-03 03:03:03",
+                "gilded": 0,
+                "edited": False,
+                "author": "poizan42",
+                "link_id": "t3_60h6ga",
+                "author_id": "74344"
+            },
+            {
+                "comment_id": "df8425r",
+                "body": "Spilled a glass of diet Pepsi all over Cash 'n' Guns (first time playing). It was of course an accident and they immediately offered to help clean them, and failing that buy me the game again.\n\nThankfully, because it was diet (no sugar) the cards were able to be saved and now you couldn't tell it ever happened.",
+                "body_html": "placeholder3",
+                "score": 3,
+                "created_utc": "2012-02-02 02:02:02",
+                "gilded": 0,
+                "edited": False,
+                "author": "Ooer",
+                "link_id": "t3_60nyom",
+                "author_id": "4fer6"
+            }
+        ]
+        
+## Comment Collection [/comments]
++ Attributes
+    + comment_id (string) - unique ID of this comment
+    + body: this is a comment (string) - body of the comment
+    + body_html (string) - html representation of the body of the comment
+    + score (number) - karma of the comment
+    + created_utc: '2015-05-05 20:20:20' (string) - time of the comment's post
+    + gilded (number) - number of times this comment is gilded
+    + edited (boolean) - was this comment edited
+    + author (string) - name of the author of the comment
+    + link_id (string) - unique ID of the overall post (foreign key to Post)
+    + author_id (string) - unique ID of the author of the comment (foreign key to User)
 
 ### List All Comments [GET]
 
@@ -251,3 +736,39 @@ Reddiful is a simple API allowing consumers to view reddit metadata
                 "author_id": "4fer6"
             }
         ]
+        
+## Comment [/comments/{comment_id}]
++ Parameters
+    + comment_id (string) - unique ID of this comment
+
++ Attributes
+    + comment_id (string) - unique ID of this comment
+    + body: this is a comment (string) - body of the comment
+    + body_html (string) - html representation of the body of the comment
+    + score (number) - karma of the comment
+    + created_utc: '2015-05-05 20:20:20' (string) - time of the comment's post
+    + gilded (number) - number of times this comment is gilded
+    + edited (boolean) - was this comment edited
+    + author (string) - name of the author of the comment
+    + link_id (string) - unique ID of the overall post (foreign key to Post)
+    + author_id (string) - unique ID of the author of the comment (foreign key to User)
+    
+    
+    
+
+### Get Comment [GET]
+
++ Response 200 (application/json)
+
+        {
+            "comment_id": "deaw2vi",
+            "body": "comment 2",
+            "body_html": "placeholder1",
+            "score": 1,
+            "created_utc": "2014-04-04 04:04:04",
+            "gilded": 0,
+            "edited": False,
+            "author": "batman_jr",
+            "link_id": "t3_5th7sz",
+            "author_id": "hh8mr"
+        }
