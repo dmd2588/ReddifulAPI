@@ -38,8 +38,8 @@ var About = React.createClass({
                     <h3>David Du</h3>
                     <p>I'm a junior majoring in Computer Science. I like to game, which is closely related to why I want to go into the game development industry.</p>
                     <p>Responsibilities: Documentation, Front-end</p>
-                    <p>No. Commits: 39</p>
-                    <p>No. Issues: 9</p>
+                    <p>No. Commits: 61</p>
+                    <p>No. Issues: 18</p>
                     <p>No. Unit Tests: 0</p>
                   </Col>
                   <Col lg={4}>
@@ -47,8 +47,8 @@ var About = React.createClass({
                     <h3>Johnny Knoebel</h3>
                     <p>I'm a junior majoring in Computer Science. I enjoy watching TV, video games, and making Pylint happy.</p>
                     <p>Responsibilities: Models, Unit Tests</p>
-                    <p>No. Commits: 10</p>
-                    <p>No. Issues: 2</p>
+                    <p>No. Commits: 41</p>
+                    <p>No. Issues: 4</p>
                     <p>No. Unit Tests: 10</p>
                   </Col>
                   <Col lg={4}>
@@ -56,8 +56,8 @@ var About = React.createClass({
                     <h3>Thomas Lam</h3>
                     <p>I'm a Junior CS Major from Cypress, Texas.</p>
                     <p>Responsibilities: Data Collection, Front-end and Back-end bug fixes</p>
-                    <p>No. Commits: 14</p>
-                    <p>No. Issues: 5</p>
+                    <p>No. Commits: 60</p>
+                    <p>No. Issues: 10</p>
                     <p>No. Unit Tests: 0</p>
                   </Col>
                 </Row>
@@ -67,8 +67,8 @@ var About = React.createClass({
                     <h3>Jeremy Lim</h3>
                     <p>Computer Science Major. Likes books and Battlestar Galatica. Hobby is to read online web novels.</p>
                     <p>Responsibilities: Front-end boilerplate code, Coordination, Coding React Components</p>
-                    <p>No. Commits: 25</p>
-                    <p>No. Issues: 9</p>
+                    <p>No. Commits: 74</p>
+                    <p>No. Issues: 18</p>
                     <p>No. Unit Tests: 0</p>
                   </Col>
                   <Col lg={4}>
@@ -76,17 +76,17 @@ var About = React.createClass({
                     <h3>Austin Middleton</h3>
                     <p>I am an avid rock climber with an interest in peer-to-peer tech</p>
                     <p>Responsibilities: Flask, Docker, and some React components</p>
-                    <p>No. Commits: 40</p>
-                    <p>No. Issues: 8</p>
-                    <p>No. Unit Tests: 0</p>
+                    <p>No. Commits: 62</p>
+                    <p>No. Issues: 16</p>
+                    <p>No. Unit Tests: 13</p>
                   </Col>
                   <Col lg={4}>
                     <img src='/dist/images/Shea.jpeg' className='img-responsive center-block' />
                     <h3>Shea Rozmiarek</h3>
                     <p>I'm a junior CS major from Liberty Hill, Texas. I love to game and pet fluffy animals.</p>
                     <p>Responsibilities: Front-end</p>
-                    <p>No. Commits: 5</p>
-                    <p>No. Issues: 4</p>
+                    <p>No. Commits: 18</p>
+                    <p>No. Issues: 8</p>
                     <p>No. Unit Tests: 0</p>
                   </Col>
                 </Row>
@@ -172,9 +172,9 @@ var About = React.createClass({
             <br />
             <ListGroup>
               <h3>Github Stats - <a href='http://docs.reddiful.apiary.io'>Apiary API</a> - <a href='https://github.com/dmd2588/idb/issues'>GitHubIssueTracker</a> - <a href='https://github.com/dmd2588/idb/'>Github Repo</a></h3>
-              <ListGroupItem>total no. of commits: 155</ListGroupItem>
-              <ListGroupItem>total no. of issues: 27</ListGroupItem>
-              <ListGroupItem>total no. of unit tests: 10</ListGroupItem>
+              <ListGroupItem>total no. of commits: 314</ListGroupItem>
+              <ListGroupItem>total no. of issues: 70</ListGroupItem>
+              <ListGroupItem>total no. of unit tests: 23</ListGroupItem>
             </ListGroup>
             <UnitTestModal />
             <br />
