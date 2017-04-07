@@ -2574,7 +2574,7 @@ function constructQuery(base, options) {
     return base;
   }
   Object.keys(options).forEach(function (key) {
-    if (options[key] !== '') {
+    if (options[key] !== '' || options[key] == null) {
       base += (first ? '?' : '&') + key + '=' + options[key];
       first = false;
     }
@@ -24625,12 +24625,12 @@ var About = _react2.default.createClass({
                   _react2.default.createElement(
                     'p',
                     null,
-                    'No. Commits: 39'
+                    'No. Commits: 61'
                   ),
                   _react2.default.createElement(
                     'p',
                     null,
-                    'No. Issues: 9'
+                    'No. Issues: 18'
                   ),
                   _react2.default.createElement(
                     'p',
@@ -24660,12 +24660,12 @@ var About = _react2.default.createClass({
                   _react2.default.createElement(
                     'p',
                     null,
-                    'No. Commits: 10'
+                    'No. Commits: 41'
                   ),
                   _react2.default.createElement(
                     'p',
                     null,
-                    'No. Issues: 2'
+                    'No. Issues: 4'
                   ),
                   _react2.default.createElement(
                     'p',
@@ -24695,12 +24695,12 @@ var About = _react2.default.createClass({
                   _react2.default.createElement(
                     'p',
                     null,
-                    'No. Commits: 14'
+                    'No. Commits: 60'
                   ),
                   _react2.default.createElement(
                     'p',
                     null,
-                    'No. Issues: 5'
+                    'No. Issues: 10'
                   ),
                   _react2.default.createElement(
                     'p',
@@ -24734,12 +24734,12 @@ var About = _react2.default.createClass({
                   _react2.default.createElement(
                     'p',
                     null,
-                    'No. Commits: 25'
+                    'No. Commits: 74'
                   ),
                   _react2.default.createElement(
                     'p',
                     null,
-                    'No. Issues: 9'
+                    'No. Issues: 18'
                   ),
                   _react2.default.createElement(
                     'p',
@@ -24769,17 +24769,17 @@ var About = _react2.default.createClass({
                   _react2.default.createElement(
                     'p',
                     null,
-                    'No. Commits: 40'
+                    'No. Commits: 62'
                   ),
                   _react2.default.createElement(
                     'p',
                     null,
-                    'No. Issues: 8'
+                    'No. Issues: 16'
                   ),
                   _react2.default.createElement(
                     'p',
                     null,
-                    'No. Unit Tests: 0'
+                    'No. Unit Tests: 13'
                   )
                 ),
                 _react2.default.createElement(
@@ -24804,12 +24804,12 @@ var About = _react2.default.createClass({
                   _react2.default.createElement(
                     'p',
                     null,
-                    'No. Commits: 5'
+                    'No. Commits: 18'
                   ),
                   _react2.default.createElement(
                     'p',
                     null,
-                    'No. Issues: 4'
+                    'No. Issues: 8'
                   ),
                   _react2.default.createElement(
                     'p',
@@ -25062,17 +25062,17 @@ var About = _react2.default.createClass({
             _react2.default.createElement(
               _reactBootstrap.ListGroupItem,
               null,
-              'total no. of commits: 155'
+              'total no. of commits: 314'
             ),
             _react2.default.createElement(
               _reactBootstrap.ListGroupItem,
               null,
-              'total no. of issues: 27'
+              'total no. of issues: 70'
             ),
             _react2.default.createElement(
               _reactBootstrap.ListGroupItem,
               null,
-              'total no. of unit tests: 10'
+              'total no. of unit tests: 23'
             )
           ),
           _react2.default.createElement(_UnitTestModal2.default, null),
