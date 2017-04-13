@@ -73,7 +73,7 @@ test: test-client test-server
 
 install:
 	npm install
-	-$(PIP) install --upgrade -r requirements.txt
+	pip3 install --upgrade -r requirements.txt
 
 start:
 	gunicorn --access-logfile - --error-logfile - -b 0.0.0.0:$(FLASK_PORT) --reload --worker-class eventlet app.api:app
