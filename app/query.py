@@ -54,10 +54,11 @@ def getContainer(model, order_by=None, desc=False, page=0, per_page=25, filterar
     elif order_by:
         query = query.order_by(order_by)
 
+
     # Paginate the query
+    page_count = int(math.ceil(query.count() / per_page))
     query = query.offset(page * per_page).limit(per_page)
 
-    page_count = int(math.ceil(query.count() / per_page))
     result = [{c.name: getattr(r, c.name) for c in r.__table__.columns} for r in query]
     session.close()
     return result, page_count
