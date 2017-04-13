@@ -5,6 +5,7 @@
 # pylint: disable = missing-docstring
 # pylint: disable = too-many-return-statements
 # pylint: disable = too-many-branches
+# pylint: disable = too-many-arguments
 
 import math
 import datetime
@@ -33,52 +34,49 @@ def row2dict(row):
     return d
 
 
-def user_query(query, k, v):
-    if k == "name":
-        return query.filter(User.name == v)
-    if k == "link_karma_max":
-        return query.filter(User.link_karma < v)
-    if k == "link_karma_min":
-        return query.filter(User.link_karma > v)
-    if k == "comment_karma_max":
-        return query.filter(User.comment_karma < v)
-    if k == "comment_karma_min":
-        return query.filter(User.comment_karma > v)
-    if k == "created_utc_max":
-        return query.filter(User.created_utc < datetime.datetime.utcfromtimestamp(v / 1000))
-    if k == "created_utc_min":
-        return query.filter(User.created_utc > datetime.datetime.utcfromtimestamp(v / 1000))
-    if k == "is_gold":
-        return query.filter(User.is_gold == v)
-    if k == "verified":
-        return query.filter(User.verified == v)
-    return query
-
-
-def getUsers(order_by="redditor_id", desc=False, page=0, per_page=25, **attr):
+def getContainer(model, order_by=None, desc=False, page=0, per_page=25, filterargs=None):
     session = Session()
-    query = session.query(User)
-    for k, v in attr.items():
-        query = user_query(query, k, v)
-    if desc:
-        query = query.order_by(sqlalchemy.desc(order_by))
-    else:
-        query = query.order_by(order_by)
-    page_count = int(math.ceil(query.count() / 25))
-    result = [row2dict(r) for r in query.offset(
-        page * per_page).limit(per_page)], page_count
-    session.close()
-    return result
+    query = session.query(model)
 
+    # Filter the query
+    filterargs = filterargs if filterargs is not None else dict()
+    for k, v in filterargs.items():
+        if k.endswith('_max'):
+            query = query.filter(getattr(model, k.replace('_max', '')) < float(v))
+        elif k.endswith('_min'):
+            query = query.filter(getattr(model, k.replace('_min', '')) > float(v))
+        else:
+            query = query.filter(getattr(model, k) == v)
+
+    # Sort the query
+    if order_by and desc:
+        query = query.order_by(sqlalchemy.desc(order_by))
+    elif order_by:
+        query = query.order_by(order_by)
+
+    # Paginate the query
+    query = query.offset(page * per_page).limit(per_page)
+
+    page_count = int(math.ceil(query.count() / per_page))
+    result = [{c.name: getattr(r, c.name) for c in r.__table__.columns} for r in query]
+    session.close()
+    return result, page_count
+
+def getInstance(model, key, ID):
+    session = Session()
+    query = session.query(model).filter(getattr(model, key) == ID)
+    r = query.first()
+    session.close()
+    if r:
+        return {c.name: getattr(r, c.name) for c in r.__table__.columns}
+    return {}
+
+
+def getUsers(order_by="redditor_id", **kwargs):
+    return getContainer(User, order_by, **kwargs)
 
 def getUser(user_id):
-    session = Session()
-    query = session.query(User).filter(User.redditor_id == user_id)
-    row = query.first()
-    session.close()
-    if row:
-        return row2dict(row)
-    return {}
+    return getInstance(User, 'redditor_id', user_id)
 
 
 def getSubredditMods(subreddit_id):
