@@ -28,10 +28,7 @@ Session = sessionmaker(bind=con)
 
 
 def row2dict(row):
-    d = {}
-    for column in row.__table__.columns:
-        d[column.name] = str(getattr(row, column.name))
-    return d
+    return {c.name: getattr(row, c.name) for c in row.__table__.columns}
 
 
 def getContainer(model, order_by=None, desc=False, page=0, per_page=25, filterargs=None):
@@ -59,7 +56,7 @@ def getContainer(model, order_by=None, desc=False, page=0, per_page=25, filterar
     page_count = int(math.ceil(query.count() / per_page))
     query = query.offset(page * per_page).limit(per_page)
 
-    result = [{c.name: getattr(r, c.name) for c in r.__table__.columns} for r in query]
+    result = [row2dict(r) for r in query]
     session.close()
     return result, page_count
 
@@ -69,7 +66,7 @@ def getInstance(model, key, ID):
     r = query.first()
     session.close()
     if r:
-        return {c.name: getattr(r, c.name) for c in r.__table__.columns}
+        return row2dict(r)
     return {}
 
 
