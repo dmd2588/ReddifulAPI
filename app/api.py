@@ -6,7 +6,7 @@ import flask
 import unittest
 from io import StringIO
 import app.query as query
-from app.tests.test_http import TestUsers
+from app.tests.test_http import HttpModelsTest
 from app.tests.test_models import TestModels
 
 logging.getLogger().setLevel(logging.INFO)
@@ -42,7 +42,7 @@ def serve_statics(path):
 @app.route('/api/tests')
 def serve_tests():
     test_output = StringIO()
-    integration_suite = unittest.TestLoader().loadTestsFromTestCase(TestUsers)
+    integration_suite = unittest.TestLoader().loadTestsFromTestCase(HttpModelsTest)
     models_suite = unittest.TestLoader().loadTestsFromTestCase(TestModels)
     all_tests = unittest.TestSuite([integration_suite, models_suite])
     unittest.TextTestRunner(stream=test_output, verbosity=2).run(all_tests)
