@@ -181,7 +181,6 @@ def format_url_args():
         args['desc'] = flask.request.args['desc'] != 'false'
     for k, v in flask.request.args.items():
         if k.startswith('filter_'):
-            # pylint: disable=redefined-variable-type
             column = k.replace('filter_', '')
             value = v
             if column.endswith('_max'):
