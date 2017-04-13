@@ -56,7 +56,7 @@ def serve_top_images():
 
 @app.route('/api/users')
 def serve_user_list():
-    args = new_format_url_args()
+    args = format_url_args()
     return createJson(query.getUsers(**args)), 200, DEFAULT_HEADERS
 
 
@@ -89,12 +89,6 @@ def serve_user_modded_subs(user_id):
 @app.route('/api/posts')
 def serve_post_list():
     args = format_url_args()
-    user_order_by = {'score', 'gilded', 'title', 'num_comments', 'author'}
-    if 'order_by' in args:
-        if args['order_by'] not in user_order_by:
-            args.pop('order_by', None)
-    if 'order_by' not in args and 'desc' in args:
-        args.pop('desc', None)
     return createJson(query.getPosts(**args)), 200, DEFAULT_HEADERS
 
 
@@ -175,7 +169,7 @@ def serve_root():
     return flask.send_from_directory('../www', 'index.html')
 
 
-def new_format_url_args():
+def format_url_args():
     args = {'filterargs': {}}
     if 'page' in flask.request.args:
         args['page'] = int(flask.request.args['page'])
@@ -200,32 +194,4 @@ def new_format_url_args():
                 value = False
                 continue
             args['filterargs'][column] = value
-    return args
-
-
-def format_url_args():
-    args = {}
-    if 'page' in flask.request.args:
-        args['page'] = int(flask.request.args['page'])
-    if 'per_page' in flask.request.args:
-        args['per_page'] = int(flask.request.args['per_page'])
-    if 'order_by' in flask.request.args:
-        args['order_by'] = flask.request.args['order_by']
-    if 'desc' in flask.request.args:
-        args['desc'] = flask.request.args['desc'] != 'false'
-    for k, v in flask.request.args.items():
-        if k.startswith('filter_'):
-            # pylint: disable=redefined-variable-type
-            column = k.replace('filter_', '')
-            value = v
-            if column.endswith('_max'):
-                value = float(value)
-            elif column.endswith('_min'):
-                value = float(value)
-            elif value == 'true':
-                value = True
-            elif value == 'false':
-                value = False
-                continue
-            args[column] = value
     return args
