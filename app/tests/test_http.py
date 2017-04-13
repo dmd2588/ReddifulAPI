@@ -1,7 +1,9 @@
 import unittest
 import requests
+import os
 
-HOST_URL = 'http://localhost'
+PORT = '80' if 'FLASK_PORT' not in os.environ else os.environ['FLASK_PORT']
+HOST_URL = 'http://localhost:' + PORT
 API_URL = HOST_URL + '/api'
 
 

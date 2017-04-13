@@ -1,16 +1,14 @@
 language: node_js
-sudo: required
-services:
-  - docker
 node_js:
   - 6
 python:
   - 3.5
 install:
-  - pip3 install -r requirements.txt
-  - npm install
-  - docker-compose up -d
+  - make install
 script:
+  - make start &
   - make test
 notifications:
   slack: idb3:eVLIH4fI9vghEmPZUxjYdsfl
+env:
+  - FLASK_PORT=8080
