@@ -122,12 +122,12 @@ export default class UserDetail extends React.Component {
             <Divider inset />
             <ListItem
               primaryText='is_gold'
-              secondaryText={this.state.user.is_gold}
+              secondaryText={String(this.state.user.is_gold)}
             />
             <Divider inset />
             <ListItem
               primaryText='verified'
-              secondaryText={this.state.user.verified}
+              secondaryText={String(this.state.user.verified)}
             />
             <Divider inset />
           </List>

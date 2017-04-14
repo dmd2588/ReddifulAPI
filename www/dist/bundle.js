@@ -28272,12 +28272,12 @@ var UserDetail = function (_React$Component) {
             _react2.default.createElement(_Divider2.default, { inset: true }),
             _react2.default.createElement(_List.ListItem, {
               primaryText: 'is_gold',
-              secondaryText: this.state.user.is_gold
+              secondaryText: String(this.state.user.is_gold)
             }),
             _react2.default.createElement(_Divider2.default, { inset: true }),
             _react2.default.createElement(_List.ListItem, {
               primaryText: 'verified',
-              secondaryText: this.state.user.verified
+              secondaryText: String(this.state.user.verified)
             }),
             _react2.default.createElement(_Divider2.default, { inset: true })
           ),
