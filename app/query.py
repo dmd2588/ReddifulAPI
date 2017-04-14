@@ -147,7 +147,6 @@ def getTopImages(limit=5):
 
 
 def search_model(model, session, keywords):
-    print('KEYWORDS', keywords)
     columns = [c.name for c in model.__table__.columns if isinstance(c.type, String)]
     ors = (getattr(model, c) == k for c in columns for k in keywords)
     query = session.query(model).filter(or_(ors)).limit(10)
@@ -158,11 +157,10 @@ def search_model(model, session, keywords):
 def search(text):
     session = Session()
     keywords = text.split(' ')
-    result = {
-        'posts': search_model(Post, session, keywords),
-        'comments': search_model(Comment, session, keywords),
-        'subreddits': search_model(Subreddit, session, keywords),
-        'users': search_model(User, session, keywords),
-    }
+    result = []
+    result.extend(search_model(Post, session, keywords))
+    result.extend(search_model(Comment, session, keywords))
+    result.extend(search_model(Subreddit, session, keywords))
+    result.extend(search_model(User, session, keywords))
     session.close()
     return result

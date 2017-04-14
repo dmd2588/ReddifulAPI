@@ -97,9 +97,8 @@ class TestSearch(unittest.TestCase):
         self.assertEqual(resp.headers['content-type'],
                          'application/json; charset=utf-8')
         results = resp.json()
-        self.assertEqual(type(results), dict)
-        self.assertSetEqual(set(results.keys()), {'users', 'comments', 'posts', 'subreddits'})
-        self.assertGreater(sum(len(v) for v in results.values()), 0)
+        self.assertEqual(type(results), list)
+        self.assertGreater(len(results), 0)
 
     def test_results_not_found(self):
         resp = requests.get(API_URL + '/search/foobarfoobarfoobarfoobar')
@@ -107,9 +106,8 @@ class TestSearch(unittest.TestCase):
         self.assertEqual(resp.headers['content-type'],
                          'application/json; charset=utf-8')
         results = resp.json()
-        self.assertEqual(type(results), dict)
-        self.assertSetEqual(set(results.keys()), {'users', 'comments', 'posts', 'subreddits'})
-        self.assertEqual(sum(len(v) for v in results.values()), 0)
+        self.assertEqual(type(results), list)
+        self.assertEqual(len(results), 0)
 
 
 class TestWebPages(unittest.TestCase):
