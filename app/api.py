@@ -158,6 +158,12 @@ def server_subreddit_mods(subreddit_id):
     return createJson(u), 200, DEFAULT_HEADERS
 
 
+@app.route('/api/search/<string:text>')
+def serve_search(text):
+    result = query.search(text)
+    return createJson(result), 200, DEFAULT_HEADERS
+
+
 @app.route('/<path:path>')
 def serve_index(path):
     # pylint: disable=unused-argument

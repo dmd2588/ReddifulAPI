@@ -4,7 +4,7 @@ from app.models import Comment, Post, Subreddit, User
 import sqlalchemy
 from sqlalchemy.orm.session import sessionmaker
 from sqlalchemy.orm import joinedload
-from sqlalchemy import or_
+from sqlalchemy import or_, String
 
 # pylint: disable = too-many-arguments
 
@@ -144,3 +144,25 @@ def getTopImages(limit=5):
     results = [{'preview': r.preview, 'url': r.url} for r in query]
     session.close()
     return results
+
+
+def search_model(model, session, keywords):
+    print('KEYWORDS', keywords)
+    columns = [c.name for c in model.__table__.columns if isinstance(c.type, String)]
+    ors = (getattr(model, c) == k for c in columns for k in keywords)
+    query = session.query(model).filter(or_(ors)).limit(10)
+    result = [row2dict(r) for r in query]
+    return result
+
+
+def search(text):
+    session = Session()
+    keywords = text.split(' ')
+    result = {
+        'posts': search_model(Post, session, keywords),
+        'comments': search_model(Comment, session, keywords),
+        'subreddits': search_model(Subreddit, session, keywords),
+        'users': search_model(User, session, keywords),
+    }
+    session.close()
+    return result
