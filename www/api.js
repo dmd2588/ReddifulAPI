@@ -16,6 +16,11 @@ function constructQuery (base, options) {
   return base
 }
 
+export function getSearch (keywords) {
+  // Do some processing here
+  return axios.get('/api/search')
+}
+
 export function getImages () {
   return axios.get('/api/top_images')
 }
