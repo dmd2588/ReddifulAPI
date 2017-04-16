@@ -146,21 +146,27 @@ def getTopImages(limit=5):
     return results
 
 
-def search_model(model, session, keywords):
+def search_model(model, session, keywords, page, per_page):
     columns = [c.name for c in model.__table__.columns if isinstance(c.type, String)]
     ors = (getattr(model, c) == k for c in columns for k in keywords)
-    query = session.query(model).filter(or_(ors)).limit(10)
+    query = session.query(model).filter(or_(ors))
+    
+    # Paginate the query
+    page_count = int(math.ceil(query.count() / per_page))
+    query = query.offset(page * per_page).limit(per_page)
+    
     result = [row2dict(r) for r in query]
     return result
 
 
-def search(text):
+def search(text, page=0, per_page=10):
     session = Session()
     keywords = text.split(' ')
     result = []
-    result.extend(search_model(Post, session, keywords))
-    result.extend(search_model(Comment, session, keywords))
-    result.extend(search_model(Subreddit, session, keywords))
-    result.extend(search_model(User, session, keywords))
+    result.extend(search_model(Post, session, keywords, page, per_page))
+    result.extend(search_model(Comment, session, keywords, page, per_page))
+    result.extend(search_model(Subreddit, session, keywords, page, per_page))
+    result.extend(search_model(User, session, keywords, page, per_page))
     session.close()
     return result
+

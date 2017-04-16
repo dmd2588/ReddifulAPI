@@ -108,6 +108,15 @@ class TestSearch(unittest.TestCase):
         results = resp.json()
         self.assertEqual(type(results), list)
         self.assertEqual(len(results), 0)
+        
+    def test_paging(self):
+        resp = requests.get(API_URL + '/search/IHaeTypos?page=1')
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.headers['content-type'],
+                         'application/json; charset=utf-8')
+        results = resp.json()
+        self.assertEqual(type(results), list)
+        self.assertGreater(len(results), 0)
 
 
 class TestWebPages(unittest.TestCase):
