@@ -168,17 +168,14 @@ def search(text, page=0, per_page=10):
     keywords = text.split(' ')
     result = []
     page_count = 0
-    post_result = search_model(Post, session, keywords, page, per_page)
-    result.extend(post_result[0])
-    page_count += post_result[1]
-    comment_result = search_model(Comment, session, keywords, page, per_page)
-    result.extend(comment_result[0])
-    page_count += comment_result[1]
-    sub_result = search_model(Subreddit, session, keywords, page, per_page)
-    result.extend(sub_result[0])
-    page_count += sub_result[1]
-    user_result = search_model(User, session, keywords, page, per_page)
-    result.extend(user_result[0])
-    page_count += user_result[1]
+    models = [Post, Comment, Subreddit, User]
+    for i in range(0, 4):
+        search_result = search_model(
+            models[i], session, keywords, page, per_page)
+        page_count += search_result[1]
+        if len(result) == 0:
+            result.extend(search_result[0])
+            page -= search_result[1]
+            page = page if page >= 0 else 0
     session.close()
     return result, page_count
