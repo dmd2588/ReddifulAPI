@@ -32,7 +32,6 @@
     "css-loader": "^0.27.3",
     "jss-theme-reactor": "^0.10.0",
     "material-ui": "^0.17.1",
-    "moment": "^2.18.1",
     "muicss": "^0.9.13",
     "postcss-cssnext": "^2.10.0",
     "postcss-each": "^0.9.3",
