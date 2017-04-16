@@ -17,8 +17,8 @@ function constructQuery (base, options) {
 }
 
 export function getSearch (keywords) {
-  // Do some processing here
-  return axios.get('/api/search')
+  // Do some processing here if needed
+  return axios.get('/api/search' + '/' + keywords)
 }
 
 export function getImages () {
