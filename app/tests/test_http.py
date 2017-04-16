@@ -91,6 +91,7 @@ class HttpModelsTest(unittest.TestCase):
 
 
 class TestSearch(unittest.TestCase):
+
     def test_results_found(self):
         resp = requests.get(API_URL + '/search/ixhni')
         self.assertEqual(resp.status_code, 200)
@@ -98,7 +99,7 @@ class TestSearch(unittest.TestCase):
                          'application/json; charset=utf-8')
         results = resp.json()
         self.assertEqual(type(results), list)
-        self.assertGreater(len(results), 0)
+        self.assertGreater(len(results[0]), 0)
 
     def test_results_not_found(self):
         resp = requests.get(API_URL + '/search/foobarfoobarfoobarfoobar')
@@ -107,8 +108,8 @@ class TestSearch(unittest.TestCase):
                          'application/json; charset=utf-8')
         results = resp.json()
         self.assertEqual(type(results), list)
-        self.assertEqual(len(results), 0)
-        
+        self.assertEqual(len(results[0]), 0)
+
     def test_paging(self):
         resp = requests.get(API_URL + '/search/IHaeTypos?page=1')
         self.assertEqual(resp.status_code, 200)
@@ -116,7 +117,17 @@ class TestSearch(unittest.TestCase):
                          'application/json; charset=utf-8')
         results = resp.json()
         self.assertEqual(type(results), list)
-        self.assertGreater(len(results), 0)
+        self.assertGreater(len(results[0]), 0)
+        self.assertEqual(results[1], 5)
+
+    def test_partial_match(self):
+        resp = requests.get(API_URL + '/search/imgur foobarfoobarfoobarfoobar')
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.headers['content-type'],
+                         'application/json; charset=utf-8')
+        results = resp.json()
+        self.assertEqual(type(results), list)
+        self.assertGreater(len(results[0]), 0)
 
 
 class TestWebPages(unittest.TestCase):

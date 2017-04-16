@@ -160,8 +160,7 @@ def server_subreddit_mods(subreddit_id):
 
 @app.route('/api/search/<string:text>')
 def serve_search(text):
-    result = query.search(text)
-    return createJson(result), 200, DEFAULT_HEADERS
+    return createJson(query.search(text)), 200, DEFAULT_HEADERS
 
 
 @app.route('/<path:path>')
