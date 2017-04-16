@@ -1,7 +1,11 @@
 import React from 'react'
 import D3Shape from 'd3-shape'
 import D3Scale from 'd3-scale'
-
+/**
+ * Based off of Pie Component from React d3 library
+ * https://github.com/react-d3/react-d3-shape
+ */
+ 
 const width = 960
 const height = 500
 const margins = {top: 0, right: 0, bottom: 0, left: 0}
