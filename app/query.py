@@ -173,7 +173,7 @@ def search(text, page=0, per_page=10):
         search_result = search_model(
             models[i], session, keywords, page, per_page)
         page_count += search_result[1]
-        if len(result) == 0:
+        if not result:
             result.extend(search_result[0])
             page -= search_result[1]
             page = page if page >= 0 else 0
