@@ -39,6 +39,7 @@ export default class NavBarAPI extends React.Component {
           <MenuItem onTouchTap={this.handleClose} href='/subreddits' leftIcon={<FontIcon className='material-icons'>theaters</FontIcon>}>Subreddits</MenuItem>
           <MenuItem onTouchTap={this.handleClose} href='/posts' leftIcon={<FontIcon className='material-icons'>list</FontIcon>}>Submissions</MenuItem>
           <MenuItem onTouchTap={this.handleClose} href='/comments' leftIcon={<FontIcon className='material-icons'>comment</FontIcon>}>Comments</MenuItem>
+          <MenuItem onTouchTap={this.handleClose} href='/visual' leftIcon={<FontIcon className='material-icons'>camera_enhance</FontIcon>}>Visualization</MenuItem>
         </Drawer>
       </div>
     )

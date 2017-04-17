@@ -12,6 +12,7 @@ import Comments from './Comments.jsx'
 import CommentDetails from './CommentDetails.jsx'
 import Home from './Home.jsx'
 import Search from './Search.jsx'
+import Visualization from './Visualization.jsx'
 
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
@@ -49,6 +50,7 @@ ReactDOM.render(
         <Route exact path='/comments' component={Comments} />
         <Route path='/comments/detail/:comment_id' component={CommentDetails} />
         <Route exact path='/search' component={Search} />
+        <Route exact path='/visual' component={Visualization} />
       </div>
     </Router>
   </MuiThemeProvider>,
