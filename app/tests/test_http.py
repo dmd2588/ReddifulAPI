@@ -111,14 +111,14 @@ class TestSearch(unittest.TestCase):
         self.assertEqual(len(results[0]), 0)
 
     def test_paging(self):
-        resp = requests.get(API_URL + '/search/IHaeTypos?page=3')
+        resp = requests.get(API_URL + '/search/IHaeTypos?page=2')
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(resp.headers['content-type'],
                          'application/json; charset=utf-8')
         results = resp.json()
         self.assertEqual(type(results), list)
-        self.assertEqual(len(results[0]), 1)
-        self.assertEqual(results[1], 5)
+        self.assertEqual(len(results[0]), 7)
+        self.assertEqual(results[1], 3)
 
     def test_partial_match(self):
         resp = requests.get(API_URL + '/search/imgur foobarfoobarfoobarfoobar')

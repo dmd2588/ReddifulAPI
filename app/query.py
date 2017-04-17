@@ -148,7 +148,7 @@ def getTopImages(limit=5):
     return results
 
 
-def search_model(model, session, keywords, page, per_page):
+def search_model(model, session, keywords, offset, limit):
     columns = [
         c.name for c in model.__table__.columns if isinstance(c.type, String)]
     ors = (getattr(model, c).ilike('%' + k + '%')
@@ -156,26 +156,33 @@ def search_model(model, session, keywords, page, per_page):
     query = session.query(model).filter(or_(ors))
 
     # Paginate the query
-    page_count = int(math.ceil(query.count() / per_page))
-    query = query.offset(page * per_page).limit(per_page)
+    count = query.count()
+    query = query.offset(offset).limit(limit)
 
     result = [row2dict(r) for r in query]
-    return result, page_count
+    return result, count
 
 
 def search(text, page=0, per_page=10):
     session = Session()
     keywords = text.split(' ')
     result = []
-    page_count = 0
+    count = 0
+    offset = page * per_page
+    limit = per_page
     models = [Post, Comment, Subreddit, User]
     for i in range(0, 4):
         search_result = search_model(
-            models[i], session, keywords, page, per_page)
-        page_count += search_result[1]
-        if not result:
-            result.extend(search_result[0])
-            page -= search_result[1]
-            page = page if page >= 0 else 0
+            models[i], session, keywords, offset, limit)
+        r = search_result[0]
+        c = search_result[1]
+        if r:
+            result.extend(r)
+        limit -= len(r)
+        offset -= c
+        offset = offset if offset >= 0 else 0
+        count += c
+
+    page_count = int(math.ceil(count / per_page))
     session.close()
     return result, page_count
