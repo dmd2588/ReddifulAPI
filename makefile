@@ -47,13 +47,13 @@ status:
 	git status
 
 build: standard
-	node_modules/.bin/webpack --progress --colors
+	node_modules/.bin/webpack -p --progress --colors --optimize-minimize --config ./webpack.production.config.js
 
 watch:
 	node_modules/.bin/webpack --progress --colors --watch
 
-dev_build:
-	node_modules/.bin/webpack-dev-server -d --watch --inline --content-base www/
+dev_build: standard
+	node_modules/.bin/webpack --progress --colors --config ./webpack.config.js
 
 standard:
 	node_modules/.bin/standard

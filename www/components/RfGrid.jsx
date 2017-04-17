@@ -21,9 +21,6 @@ export default class RfGrid extends React.Component {
     var self = this
     var ops = (options == null) ? {} : options
     this.props.retainOptions(ops)
-    console.log('RfGrid')
-    console.log(options)
-    console.log('Captured')
     this.loadDataFromServer(options, function (newData) {
       self.setState({data: newData, pageCount: newData.pages, page: self.state.page})
     })
@@ -32,14 +29,9 @@ export default class RfGrid extends React.Component {
 
   handlePageClick (data) {
     var self = this
-    console.log('Click')
-    console.log(data.selected)
     var ops = self.props.retainOptions({})
     var temp = (ops == null) ? {} : ops
-    console.log(temp)
-    console.log('Click2')
     temp['page'] = data.selected
-    console.log(temp)
     self.updateGrid(temp)
   }
   render () {
