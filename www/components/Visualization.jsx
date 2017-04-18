@@ -1,46 +1,58 @@
 'use strict'
 import React from 'react'
 import Aster from './Aster.jsx'
+import axios from 'axios'
+import qs from 'qs'
+import Paper from 'material-ui/Paper'
+
+const style = {
+  margin: 50,
+  display: 'block'
+}
 
 export default class Visualization extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
       'generalChartData': [
-        {age: '<5', population: 1, percent: 0.5},
-        {age: '5-13', population: 1, percent: 0.25},
-        {age: '14-17', population: 1, percent: 0.5},
-        {age: '18-24', population: 1, percent: 1},
-        {age: '25-44', population: 1, percent: 0.75},
-        {age: '45-64', population: 1, percent: 0.1},
-        {age: '≥65', population: 1, percent: 0.2}
+        {name: 'loading', percent: 1}
       ],
       'chartSeries': [
-        {
-          'field': '<5',
-          'name': 'less than 5'
-        },
-        {
-          'field': '5-13',
-          'name': '5 to 13'
-        },
-        {
-          'field': '14-17',
-          'name': '14 to 17'
-        },
-        {
-          'field': '18-24',
-          'name': '18 to 24'
-        },
-        {
-          'field': '25-44',
-          'name': '25 to 44'
-        },
-        {
-          'field': '45-64',
-          'name': '45 to 64'
-        }
+        {field: 'loading', name: 'loading'}
       ]}
+    var self = this
+    this.getData().then(function (res) {
+      var chartData = []
+      var chartSeries = []
+      var max = 0
+      for (var i in res.data) {
+        chartData.push({name: res.data[i].name,
+          numSeries: res.data[i].numSeries,
+          numComics: res.data[i].numComics})
+        if (res.data[i].numComics > max) {
+          max = res.data[i].numComics
+        }
+        chartSeries.push({field: res.data[i].name,
+          name: res.data[i].name})
+      }
+      for (i in chartData) {
+        chartData[i].percent = chartData[i].numComics / max
+      }
+      self.setState({
+        'generalChartData': chartData,
+        'chartSeries': chartSeries
+      })
+    })
+  }
+
+  getData () {
+    var endpoint = 'https://marveldb-162206.appspot.com/api/characters'
+    var params = {
+      'pagination': JSON.stringify({'page': 0, 'pageSize': 15}),
+      'sortOptions': JSON.stringify({'order': 'desc', 'field': 'numSeries'}),
+      'filterOptions': JSON.stringify([])
+    }
+    return axios.get(endpoint + '?' + qs.stringify(params))
   }
 
   value (d) {
@@ -48,7 +60,7 @@ export default class Visualization extends React.Component {
   }
 
   name (d) {
-    return d.age
+    return d.name
   }
 
   percent (d) {
@@ -57,14 +69,18 @@ export default class Visualization extends React.Component {
 
   render () {
     return (
-      <Aster
-        innerRadius={50}
-        data={this.state.generalChartData}
-        chartSeries={this.state.chartSeries}
-        value={this.value}
-        name={this.name}
-        percent={this.percent}
-      />
+      <div className='container'>
+        <Paper style={style} zDepth={2}>
+          <Aster
+            innerRadius={50}
+            data={this.state.generalChartData}
+            chartSeries={this.state.chartSeries}
+            value={this.value}
+            name={this.name}
+            percent={this.percent}
+          />
+        </Paper>
+      </div>
     )
   }
 }

@@ -54,12 +54,10 @@ export default class Aster extends React.Component {
       innerRadius,
       outerRadius,
       pieSort,
-      value,
       radius,
       pieTextShow
     } = this.props
 
-    console.log(value)
     const that = this
     radius = this.props.radius || Math.min(width - 100, height - 100) / 2
     outerRadius = outerRadius || (radius - 10)

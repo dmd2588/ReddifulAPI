@@ -17,6 +17,7 @@
   "devDependencies": {
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.2.2",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
@@ -42,6 +43,7 @@
     "postcss-import": "^9.1.0",
     "postcss-loader": "^1.3.3",
     "postcss-mixins": "^5.4.1",
+    "qs": "^6.4.0",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.8",
     "react-dom": "^15.4.2",
