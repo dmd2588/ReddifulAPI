@@ -1,7 +1,10 @@
 from io import BytesIO
 import flask
 import gzip
-import functools 
+import functools
+
+# pylint: disable = unused-variable
+
 
 def gzipped(f):
     @functools.wraps(f)
@@ -16,11 +19,11 @@ def gzipped(f):
             response.direct_passthrough = False
 
             if (response.status_code < 200 or
-                response.status_code >= 300 or
-                'Content-Encoding' in response.headers):
+                    response.status_code >= 300 or
+                    'Content-Encoding' in response.headers):
                 return response
             gzip_buffer = BytesIO()
-            gzip_file = gzip.GzipFile(mode='wb', 
+            gzip_file = gzip.GzipFile(mode='wb',
                                       fileobj=gzip_buffer)
             gzip_file.write(response.data)
             gzip_file.close()
