@@ -134,21 +134,17 @@ def getModdedSubs(redditor_id):
     return [sub.__dict__ for sub in row.subreddits]
 
 
-def getTopImages(limit=5):
+def getTopImages():
     session = Session()
-    query = (session.query(Post)
-             .filter(Post.upvote_ratio > 0.8)
-             .filter(or_(or_(Post.url.like("http://i.imgur%"),
-                             Post.url.like("http://imgur")),
-                         Post.url.like("https://i.redd%")))
-             .order_by(sqlalchemy.desc('score'))
-             .limit(limit))
+    submissions = ["5xdfbc", "5xk6g3", "5xmlp1", "5x86qp"]
+
+    query = session.query(Post).filter(or_(Post.submission_id == s for s in submissions))
     results = [{'preview': r.preview, 'url': r.url} for r in query]
     session.close()
     return results
 
 
-def search_model(model, session, keywords, page, per_page):
+def search_model(model, session, keywords, offset, limit):
     columns = [
         c.name for c in model.__table__.columns if isinstance(c.type, String)]
     ors = (getattr(model, c).ilike('%' + k + '%')
@@ -156,29 +152,33 @@ def search_model(model, session, keywords, page, per_page):
     query = session.query(model).filter(or_(ors))
 
     # Paginate the query
-    page_count = int(math.ceil(query.count() / per_page))
-    query = query.offset(page * per_page).limit(per_page)
+    count = query.count()
+    query = query.offset(offset).limit(limit)
 
     result = [row2dict(r) for r in query]
-    return result, page_count
+    return result, count
 
 
 def search(text, page=0, per_page=10):
     session = Session()
     keywords = text.split(' ')
     result = []
-    page_count = 0
-    post_result = search_model(Post, session, keywords, page, per_page)
-    result.extend(post_result[0])
-    page_count += post_result[1]
-    comment_result = search_model(Comment, session, keywords, page, per_page)
-    result.extend(comment_result[0])
-    page_count += comment_result[1]
-    sub_result = search_model(Subreddit, session, keywords, page, per_page)
-    result.extend(sub_result[0])
-    page_count += sub_result[1]
-    user_result = search_model(User, session, keywords, page, per_page)
-    result.extend(user_result[0])
-    page_count += user_result[1]
+    count = 0
+    offset = page * per_page
+    limit = per_page
+    models = [Post, Comment, Subreddit, User]
+    for i in range(0, 4):
+        search_result = search_model(
+            models[i], session, keywords, offset, limit)
+        r = search_result[0]
+        c = search_result[1]
+        if r:
+            result.extend(r)
+        limit -= len(r)
+        offset -= c
+        offset = offset if offset >= 0 else 0
+        count += c
+
+    page_count = int(math.ceil(count / per_page))
     session.close()
     return result, page_count

@@ -3,7 +3,6 @@ import { PageHeader, Button, Panel, Jumbotron, ListGroupItem, ListGroup, Grid, R
 import Paper from 'material-ui/Paper'
 import FaAngleDown from 'react-icons/lib/fa/angle-down'
 import UnitTestModal from './UnitTestModal.jsx'
-// import Link from 'react-scroll'
 
 const style = {
   margin: 50,
@@ -25,9 +24,16 @@ var About = React.createClass({
       <div className='container'>
         <Paper style={style} zDepth={2}>
           <div className='container-no-width'>
+
+            {/* ---------
+                BEGINNING
+                ---------
+            */}
             <h1>About Reddiful API</h1>
             <hr />
             <br />
+
+            {/* TEAM MEMBERS */}
             <h2>Team Name Members</h2>
             <hr />
             <Jumbotron>
@@ -94,6 +100,8 @@ var About = React.createClass({
             </Jumbotron>
             <hr />
             <br />
+
+            {/* THIRD PARTY TOOLS */}
             <h2>Tools</h2>
             <hr />
             <Jumbotron>
@@ -170,20 +178,33 @@ var About = React.createClass({
             </Jumbotron>
             <hr />
             <br />
+
+            {/* GITHUB INFO */}
             <ListGroup>
               <h3>Github Stats - <a href='http://docs.reddiful.apiary.io'>Apiary API</a> - <a href='https://github.com/dmd2588/idb/issues'>GitHubIssueTracker</a> - <a href='https://github.com/dmd2588/idb/'>Github Repo</a></h3>
               <ListGroupItem>total no. of commits: 314</ListGroupItem>
               <ListGroupItem>total no. of issues: 70</ListGroupItem>
               <ListGroupItem>total no. of unit tests: 23</ListGroupItem>
             </ListGroup>
+
+            {/* UNIT TESTS */}
             <UnitTestModal />
             <br />
+
+            {/* EXTRA TOOLS */}
             <Panel header={<h3>Tools</h3>}>
               <p>Used React and Bootstrap for main frontend. Webpack to compile ES6 jsx files. Babel to translate ES6 to javascript. React-toolbox, modernize, material-ui for touch up components. Docker used to manage back-end dependencies. Python for the back-end logic. Flask as the API logic server. Makefile to encode the workflow. Gunicorn for the flask webserver. For more info see the Tools section of the Technical Report below.</p>
             </Panel>
             <hr />
             <br />
+
+            {/* ------------
+                REPORT START
+                ------------
+            */}
             <PageHeader>Technical Report</PageHeader>
+
+            {/* TOC */}
             <Button onClick={() => this.setState({ open: !this.state.open })}>
               Table of Contents <FaAngleDown />
             </Button>
@@ -233,6 +254,20 @@ var About = React.createClass({
                   </ul>
                 </ListGroupItem>
                 <ListGroupItem>
+                  <p><a href='#search'>Search</a></p>
+                  <ul>
+                    <li><a href='#implementation1' onClick={() => this.setState({ open23: true })}>Implementation</a></li>
+                  </ul>
+                </ListGroupItem>
+                <ListGroupItem>
+                  <p><a href='#pp'>Planning Poker</a></p>
+                  <ul>
+                    <li><a href='#choice3' onClick={() => this.setState({ open20: true })}>Choice</a></li>
+                    <li><a href='#us1' onClick={() => this.setState({ open21: true })}>User Stories</a></li>
+                    <li><a href='#other2' onClick={() => this.setState({ open22: true })}>Other</a></li>
+                  </ul>
+                </ListGroupItem>
+                <ListGroupItem>
                   <p><a href='#diagrams'>Diagrams and Other</a></p>
                   <ul>
                     <li><a onClick={() => this.setState({ open9: true })} href='#uml'>UML Diagram</a></li>
@@ -241,12 +276,18 @@ var About = React.createClass({
                 </ListGroupItem>
               </ListGroup>
             </Panel>
+
+            {/* INFORMATION */}
             <h3>Group Name: <small>Team Name</small></h3>
             <h3>Members: <small>David Du, Johnny Knoebel, Thomas Lam, Jeremy Lim, Austin Middleton, Shea Rozmiarek</small></h3>
             <br />
+
+            {/* INTRO */}
             <Panel id='intro' header='Introduction' bsStyle='info'>
               <p>This is an analytical compilation of Reddit. We are providing a top-level view of Reddit. This top level view includes metadata, summary data and the relationships for most of the top information on Reddit. Since Reddit has a vast variety of content it can be hard for a user to explore Reddit in a succinct manner from a top-down approach. This API allows for a quick browse, with supplemented analytics to concisely explore the range of content that Reddit fields. This can be used for anything from data analysis of information like the "toxicity" of a subreddit to creating personas of certain groups of people to better market products to that demographic.</p>
             </Panel>
+
+            {/* DESIGN */}
             <Panel id='design' header='Design' bsStyle='info'>
               <p>We are using the Reddit API to define our models and attributes. For the structure, we first used UML to plan how the models would look and interact with one another. We have four models we are working with: Subreddits, Users, Posts, and Comments. For the UML diagram see at the end of the report in the Diagrams section.</p>
               <p>These models define most of the characteristics, but we are thinking of defining a separate model for the trophies in the user profiles. This is because each trophy has several attributes and will be more easily represented in a separate model from the user. After defining several characteristics, we scraped some data and found that certain attributes would be infeasible while other, new ones could be added. This allowed us to redefine several attributes to more accurately reflect the information provided by the Reddit API.</p>
@@ -294,6 +335,8 @@ var About = React.createClass({
                 <p>Similarly to posts, comments can also be deleted or have a deleted commenter, so the sections will be substituted with [deleted].</p>
               </Panel>
             </Panel>
+
+            {/* TOOLS */}
             <Panel id='tools' header='Tools' bsStyle='info'>
               <p>This section describes the tools and resources we used to both help design the site and to make it easier on the eyes.</p>
               <Button id='front' onClick={() => this.setState({ open4: !this.state.open4 })}>
@@ -323,6 +366,8 @@ var About = React.createClass({
                 <p> Docker container is used to install the preliminary dependencies for the back-end. Please see above for installing the front-end dependencies via npm. The docker container is used to ensure that all back-end dependencies are the same for every environment. The Docker configuration for the installation of said dependencies is done in the Dockerfile file. This specifies the OS and other installation software. The docker-compose.yml file is the file that defines and initiates the web server using Flask.</p>
               </Panel>
             </Panel>
+
+            {/* HOSTING */}
             <Panel id='hosting' header='Hosting' bsStyle='info'>
               <Button id='choice' onClick={() => this.setState({ open6: !this.state.open6 })}>
                 Choice <FaAngleDown />
@@ -343,6 +388,8 @@ var About = React.createClass({
                 <p>An elastic IPv4 IP was allocated and assigned to the instance and added to the DNS record on Namecheap by navigating to Elastic IPs under Network & Security on the AWS console. To allow all group members access to the instance, public key information for each group member was added to the .ssh/authorized_keys file. The application is deployed on AWS simply by pulling the repository from GitHub and running Docker with the settings we have in the repo.</p>
               </Panel>
             </Panel>
+
+            {/* DATABASE */}
             <Panel id='database' header='Database' bsStyle='info'>
               <p>The Database is interfaced with SQLAlchemy. He</p>
               <Button id='phase1' onClick={() => this.setState({ open14: !this.state.open14 })}>
@@ -374,6 +421,8 @@ var About = React.createClass({
                 <p>SQLAlchemy is used to extract data from the database. We query the database by using the models from the previous part to build a dictionary for each row of the data and return the list of rows. The queries can be filtered by any attribute of the models. Integers, floats, and date-times are filtered by giving a min and max range; all other data types, like bools and strings, are filtered by finding an exact match. It can sort by any attribute in ascending or descending order, and it defaults to sorting by the unique id in ascending order. It supports pagination by taking in several results per page and a page to return to, 25 results per page and which defaults to page 0, respectively. It also returns the number of pages that a query would fill. Finally, there are functions that perform joins on relationships, such as for users and posts, which returns all the posts that a given user has made.</p>
               </Panel>
             </Panel>
+
+            {/* API */}
             <Panel id='api' header='API' bsStyle='info'>
               <p>The API is comprised of 4 main categories: users, posts, comments, and subreddits.</p>
               <p>The API presents a RESTful interface that allows for easy understanding of the API. The API also supports pagination, sorting, and filtering for the endpoints that return a collection of objects. These features are specified in the query part of the request URL. The pagination allows for specifying the current page and the page size. The filtering allows for filtering based on integer ranges and exact matches. Sorting sorts on a column and can be ascending or descending.</p>
@@ -415,11 +464,49 @@ var About = React.createClass({
                 <p>/comments/(string:comment_id) gets a specific comment. You can check other attributes of this comment from here. Since there aren’t any relationships that have this is a parent, you must check the data inside of this ID to reference back to other models.</p>
               </Panel>
             </Panel>
+
+            {/* SEARCH */}
+            <Panel id='search' header='Search' bsStyle='info'>
+              <p>This section outlines the addition of a search capability and what it entails.</p>
+              <Button id='implementation1' onClick={() => this.setState({ open23: !this.state.open23 })}>
+                Implementation <FaAngleDown />
+              </Button>
+              <Panel collapsible expanded={this.state.open23}>
+                <p>For our implementation,</p>
+              </Panel>
+            </Panel>
+
+            {/* PLANNING POKER */}
+            <Panel id='pp' header='Planning Poker' bsStyle='info'>
+              <p>This section describes the site we used to do our planning poker, the user stories that we went through, and some description of how it went down.</p>
+              <Button id='choice3' onClick={() => this.setState({ open20: !this.state.open20 })}>
+                Choice <FaAngleDown />
+              </Button>
+              <Panel collapsible expanded={this.state.open20}>
+                <p>The site that we chose to use was <a href='https://www.planningpoker.com/'>planningpoker.com</a>. We chose this site for no particular reason.</p>
+              </Panel>
+              <Button id='us1' onClick={() => this.setState({ open21: !this.state.open21 })}>
+                User Stories <FaAngleDown />
+              </Button>
+              <Panel collapsible expanded={this.state.open21}>
+                <p>We have a lot of user stories yay!</p>
+              </Panel>
+              <Button id='other2' onClick={() => this.setState({ open22: !this.state.open22 })}>
+                Other <FaAngleDown />
+              </Button>
+              <Panel collapsible expanded={this.state.open22}>
+                <p>Do we need more words?</p>
+              </Panel>
+            </Panel>
+
+            {/* DIAGRAMS */}
             <Panel id='diagrams' header='Diagrams & Other' bsStyle='info'>
               <Button id='uml' onClick={() => this.setState({ open9: !this.state.open9 })}>
                 UML Diagram <FaAngleDown />
               </Button>
               <Panel collapsible expanded={this.state.open9}>
+                <p>Here is our UML Diagram</p>
+                <br />
                 <img src='/dist/images/UML.png' height='1573' width='306' />
               </Panel>
               <Button id='tablec' onClick={() => this.setState({ open0: !this.state.open0 })}>

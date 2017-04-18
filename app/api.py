@@ -5,6 +5,8 @@ import logging
 import flask
 import unittest
 from io import StringIO
+
+from app.gzipped import gzipped
 import app.query as query
 from app.tests.test_http import HttpModelsTest
 from app.tests.test_models import TestModels
@@ -35,6 +37,7 @@ def createJson(r):
 
 
 @app.route('/dist/<path:path>')
+@gzipped
 def serve_statics(path):
     return flask.send_from_directory('../www/dist/', path)
 
@@ -109,7 +112,8 @@ def serve_post_comments(post_id):
 @app.route('/api/comments')
 def serve_comment_list():
     args = format_url_args()
-    user_order_by = {'score', 'gilded', 'title', 'created_utc', 'author', 'body'}
+    user_order_by = {'score', 'gilded', 'title',
+                     'created_utc', 'author', 'body'}
     if 'order_by' in args:
         if args['order_by'] not in user_order_by:
             args.pop('order_by', None)
@@ -129,7 +133,8 @@ def serve_comment(comment_id):
 @app.route('/api/subreddits')
 def serve_subreddit_list():
     args = format_url_args()
-    user_order_by = {'accounts_active', 'subscribers', 'title', 'created_utc', 'display_name'}
+    user_order_by = {'accounts_active', 'subscribers',
+                     'title', 'created_utc', 'display_name'}
     if 'order_by' in args:
         if args['order_by'] not in user_order_by:
             args.pop('order_by', None)
@@ -160,7 +165,10 @@ def server_subreddit_mods(subreddit_id):
 
 @app.route('/api/search/<string:text>')
 def serve_search(text):
-    return createJson(query.search(text)), 200, DEFAULT_HEADERS
+    page = 0
+    if 'page' in flask.request.args:
+        page = int(flask.request.args['page'])
+    return createJson(query.search(text, page)), 200, DEFAULT_HEADERS
 
 
 @app.route('/<path:path>')
@@ -199,3 +207,9 @@ def format_url_args():
                 continue
             args['filterargs'][column] = value
     return args
+
+
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
