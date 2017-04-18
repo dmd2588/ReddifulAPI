@@ -5,6 +5,8 @@ import logging
 import flask
 import unittest
 from io import StringIO
+
+from app.gzipped import gzipped
 import app.query as query
 from app.tests.test_http import HttpModelsTest
 from app.tests.test_models import TestModels
@@ -35,6 +37,7 @@ def createJson(r):
 
 
 @app.route('/dist/<path:path>')
+@gzipped
 def serve_statics(path):
     return flask.send_from_directory('../www/dist/', path)
 
