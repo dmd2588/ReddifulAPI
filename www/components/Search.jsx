@@ -6,6 +6,7 @@ import ReactPaginate from 'react-paginate'
 import { Row } from 'react-bootstrap'
 import {List, ListItem} from 'material-ui/List'
 import Subheader from 'material-ui/Subheader'
+import searchStyle from './searchStyles.css'
 
 const style = {
   margin: 50,
@@ -20,20 +21,33 @@ export default class Search extends React.Component {
   }
 
   componentWillMount () {
+    this.updateSearchPage()
+    console.log('API call Data Finished')
+  }
+
+  updateSearchPage (page) {
+    var toPage
+    if (page === undefined) {
+      toPage = this.state.page
+    } else {
+      toPage = page
+    }
+
     var self = this
     var keywords = this.state.keywords
-    getSearch(keywords).then(function (res) {
+    getSearch(keywords, toPage).then(function (res) {
       // for (var result in res.data) {
         // console.log(JSON.stringify(res.data[result]))
       // }
+      console.log(res.data)
       self.setState({
         results: res.data[0],
         andResults: res.data[0].filter(function (r) {
           var pattAnd = new RegExp('^' + keywords.split(' ').map(function (r2) {
             return '(?=.*\\b' + r2 + '\\b)'
           }).join('') + ('.*$'), 'i')
-          console.log(pattAnd)
-          console.log(pattAnd.test(JSON.stringify(r)))
+          // console.log(pattAnd)
+          // console.log(pattAnd.test(JSON.stringify(r)))
           return pattAnd.test(JSON.stringify(r))
         }),
         orResults: res.data[0].filter(function (r) {
@@ -48,38 +62,16 @@ export default class Search extends React.Component {
         pageCount: res.data[1]
       })
     })
-    console.log('API call Data Finished')
-  }
-
-  /*
-  updateSearchPage (options) {
-    var self = this
-    var ops = (options == null) ? {} : options
-    this.props.retainOptions(ops)
-    console.log('RfGrid')
-    console.log(options)
-    console.log('Captured')
-    this.loadDataFromServer(options, function (newData) {
-      self.setState({data: newData, pageCount: newData.pages, page: self.state.page})
-    })
     console.log('Updating Grid')
   }
 
-handlePageClick (data) {
-    var self = this
-    var ops = self.props.retainOptions({})
-    var temp = (ops == null) ? {} : ops
-    temp['page'] = data.selected
-    console.log(temp)
-   // self.updateGrid(temp)
-  }
-   */
   handlePageClick (data) {
     console.log(data.selected)
+    this.setState({page: data.selected})
+    this.updateSearchPage(data.selected)
   }
 
   handleItemClick (data, evt) {
-    console.log(data)
     if (data.hasOwnProperty('submission_id')) {
       this.props.history.push('/posts/detail/' + data['submission_id'])
     } else if (data.hasOwnProperty('subreddit_id')) {
@@ -109,7 +101,7 @@ handlePageClick (data) {
                   var resultsStr = JSON.stringify(r)
                   return (
                     <div key={Math.random().toString(16).substr(2)}>
-                      <ListItem primaryText={resultsStr} onClick={(e) => this.handleItemClick(r, e)} />
+                      <ListItem className={searchStyle.textStyle} primaryText={resultsStr} onClick={(e) => this.handleItemClick(r, e)} />
                       <Divider />
 
                     </div>
@@ -122,11 +114,13 @@ handlePageClick (data) {
 
               <List>
                 <Subheader>Or Results</Subheader>
+
                 {this.state.orResults.map(r => {
                   var resultsStr = JSON.stringify(r)
+
                   return (
                     <div key={Math.random().toString(16).substr(2)}>
-                      <ListItem primaryText={resultsStr} onClick={(e) => this.handleItemClick(r, e)} />
+                      <ListItem className={searchStyle.textStyle} primaryText={resultsStr} onClick={(e) => this.handleItemClick(r, e)} />
                       <Divider />
 
                     </div>
