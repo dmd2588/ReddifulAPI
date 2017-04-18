@@ -33,7 +33,7 @@ export default class Visualization extends React.Component {
           max = res.data[i].numComics
         }
         chartSeries.push({field: res.data[i].name,
-          name: res.data[i].name})
+          name: res.data[i].name + ' - ' + res.data[i].numComics})
       }
       for (i in chartData) {
         chartData[i].percent = chartData[i].numComics / max
@@ -71,14 +71,19 @@ export default class Visualization extends React.Component {
     return (
       <div className='container'>
         <Paper style={style} zDepth={2}>
-          <Aster
-            innerRadius={50}
-            data={this.state.generalChartData}
-            chartSeries={this.state.chartSeries}
-            value={this.value}
-            name={this.name}
-            percent={this.percent}
-          />
+          <div className='container-no-width'>
+            <h1>Character Comic Appearances</h1>
+            <hr />
+            <br />
+            <Aster
+              innerRadius={50}
+              data={this.state.generalChartData}
+              chartSeries={this.state.chartSeries}
+              value={this.value}
+              name={this.name}
+              percent={this.percent}
+            />
+          </div>
         </Paper>
       </div>
     )

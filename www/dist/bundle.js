@@ -32530,7 +32530,7 @@ var Visualization = function (_React$Component) {
           max = res.data[i].numComics;
         }
         chartSeries.push({ field: res.data[i].name,
-          name: res.data[i].name });
+          name: res.data[i].name + ' - ' + res.data[i].numComics });
       }
       for (i in chartData) {
         chartData[i].percent = chartData[i].numComics / max;
@@ -32578,14 +32578,25 @@ var Visualization = function (_React$Component) {
         _react2.default.createElement(
           _Paper2.default,
           { style: style, zDepth: 2 },
-          _react2.default.createElement(_Aster2.default, {
-            innerRadius: 50,
-            data: this.state.generalChartData,
-            chartSeries: this.state.chartSeries,
-            value: this.value,
-            name: this.name,
-            percent: this.percent
-          })
+          _react2.default.createElement(
+            'div',
+            { className: 'container-no-width' },
+            _react2.default.createElement(
+              'h1',
+              null,
+              'Character Comic Appearances'
+            ),
+            _react2.default.createElement('hr', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(_Aster2.default, {
+              innerRadius: 50,
+              data: this.state.generalChartData,
+              chartSeries: this.state.chartSeries,
+              value: this.value,
+              name: this.name,
+              percent: this.percent
+            })
+          )
         )
       );
     }
