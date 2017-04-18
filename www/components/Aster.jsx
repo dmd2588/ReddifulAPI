@@ -6,7 +6,7 @@ import D3Scale from 'd3-scale'
  * https://github.com/react-d3/react-d3-shape
  */
 
-const width = 960
+const width = 620
 const height = 500
 const margins = {top: 0, right: 0, bottom: 0, left: 0}
 
@@ -153,6 +153,7 @@ export default class Aster extends React.Component {
 
     return (
       <svg
+        style={{display: 'block', margin: 'auto'}}
         height={height}
         width={width}
         ref='svgContainer'

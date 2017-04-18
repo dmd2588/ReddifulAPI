@@ -30223,7 +30223,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * https://github.com/react-d3/react-d3-shape
  */
 
-var width = 960;
+var width = 620;
 var height = 500;
 var margins = { top: 0, right: 0, bottom: 0, left: 0 };
 
@@ -30381,6 +30381,7 @@ var Aster = function (_React$Component) {
       return _react2.default.createElement(
         'svg',
         {
+          style: { display: 'block', margin: 'auto' },
           height: height,
           width: width,
           ref: 'svgContainer'
