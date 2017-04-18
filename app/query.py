@@ -134,15 +134,11 @@ def getModdedSubs(redditor_id):
     return [sub.__dict__ for sub in row.subreddits]
 
 
-def getTopImages(limit=5):
+def getTopImages():
     session = Session()
-    query = (session.query(Post)
-             .filter(Post.upvote_ratio > 0.8)
-             .filter(or_(or_(Post.url.like("http://i.imgur%"),
-                             Post.url.like("http://imgur")),
-                         Post.url.like("https://i.redd%")))
-             .order_by(sqlalchemy.desc('score'))
-             .limit(limit))
+    submissions = ["5xdfbc", "5xk6g3", "5xmlp1", "5x86qp"]
+
+    query = session.query(Post).filter(or_(Post.submission_id == s for s in submissions))
     results = [{'preview': r.preview, 'url': r.url} for r in query]
     session.close()
     return results
