@@ -7,17 +7,21 @@ import { Row } from 'react-bootstrap'
 import {List, ListItem} from 'material-ui/List'
 import Subheader from 'material-ui/Subheader'
 import searchStyle from './searchStyles.css'
+import Highlighter from 'react-highlight-words'
 
 const style = {
   margin: 50,
   display: 'block'
 }
 
+const highlightStyle = {
+  backgroundColor: '#FFFF99'
+}
 export default class Search extends React.Component {
   constructor (props) {
     super(props)
     // trim whitespaces from keywords
-    this.state = {results: [], pageCount: 5, page: 0, keywords: 'deathakissaway slime', andResults: [], orResults: []}
+    this.state = {results: [], pageCount: 5, page: 0, keywords: 'loyal offer', andResults: [], orResults: []}
   }
 
   componentWillMount () {
@@ -101,7 +105,11 @@ export default class Search extends React.Component {
                   var resultsStr = JSON.stringify(r)
                   return (
                     <div key={Math.random().toString(16).substr(2)}>
-                      <ListItem className={searchStyle.textStyle} primaryText={resultsStr} onClick={(e) => this.handleItemClick(r, e)} />
+                      <ListItem className={searchStyle.textStyle} primaryText={<Highlighter
+                        highlightStyle={highlightStyle}
+                        searchWords={this.state.keywords.split(' ')}
+                        textToHighlight={resultsStr} />}
+                        onClick={(e) => this.handleItemClick(r, e)} />
                       <Divider />
 
                     </div>
@@ -120,7 +128,10 @@ export default class Search extends React.Component {
 
                   return (
                     <div key={Math.random().toString(16).substr(2)}>
-                      <ListItem className={searchStyle.textStyle} primaryText={resultsStr} onClick={(e) => this.handleItemClick(r, e)} />
+                      <ListItem className={searchStyle.textStyle} primaryText={<Highlighter
+                        highlightStyle={highlightStyle}
+                        searchWords={this.state.keywords.split(' ')}
+                        textToHighlight={resultsStr} />} onClick={(e) => this.handleItemClick(r, e)} />
                       <Divider />
 
                     </div>
