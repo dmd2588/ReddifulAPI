@@ -207,3 +207,9 @@ def format_url_args():
                 continue
             args['filterargs'][column] = value
     return args
+
+
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
