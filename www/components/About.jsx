@@ -256,7 +256,11 @@ var About = React.createClass({
                 <ListGroupItem>
                   <p><a href='#search'>Search</a></p>
                   <ul>
-                    <li><a href='#implementation1' onClick={() => this.setState({ open23: true })}>Implementation</a></li>
+                    <li><a href='#intro3' onClick={() => this.setState({ open23: true })}>Introduction</a></li>
+                    <li><a href='#ep' onClick={() => this.setState({ open24: true })}>Endpoints</a></li>
+                    <li><a href='#query' onClick={() => this.setState({ open25: true })}>Query Algorithm</a></li>
+                    <li><a href='#preview' onClick={() => this.setState({ open26: true })}>Preview and Highlighting</a></li>
+                    <li><a href='#org' onClick={() => this.setState({ open27: true })}>Organization of Search Results</a></li>
                   </ul>
                 </ListGroupItem>
                 <ListGroupItem>
@@ -468,11 +472,43 @@ var About = React.createClass({
             {/* SEARCH */}
             <Panel id='search' header='Search' bsStyle='info'>
               <p>This section outlines the addition of a search capability and what it entails.</p>
-              <Button id='implementation1' onClick={() => this.setState({ open23: !this.state.open23 })}>
-                Implementation <FaAngleDown />
+              <Button id='intro3' onClick={() => this.setState({ open23: !this.state.open23 })}>
+                Introduction <FaAngleDown />
               </Button>
               <Panel collapsible expanded={this.state.open23}>
-                <p>For our implementation,</p>
+                <p>The most time that we spent on phase three was on the search algorithm. This was definitely the big thing to do in this section and required quite a bit of work. There were many steps that were needed to get the whole thing working.</p>
+                <p>Outside of the sections listed below: endpoints, the query algorithm, the preview and highlighting, and the organization of search results, there were many hours put into making sure that everything ran smoothly. Bug testing and fixing was a big deal in making sure that searching worked as intended.</p>
+              </Panel>
+              <Button id='ep' onClick={() => this.setState({ open24: !this.state.open24 })}>
+                Endpoints <FaAngleDown />
+              </Button>
+              <Panel collapsible expanded={this.state.open24}>
+                <p>This section outlines how the endpoints were set up and where they pointed to.</p>
+                <p>Connecting to the database...</p>
+                <p>Connecting to the search results page...</p>
+                <p>Connecting to the search bar...</p>
+              </Panel>
+              <Button id='query' onClick={() => this.setState({ open25: !this.state.open25 })}>
+                Query Algorithm <FaAngleDown />
+              </Button>
+              <Panel collapsible expanded={this.state.open25}>
+                <p>Our algorithm started off as a basic query. As it evolved, it was able to do x, y, and z.</p>
+                <p>We chose to do x because...</p>
+                <p>While keeping this all in mind, we needed to make sure that the preview would be done during this time as well.</p>
+              </Panel>
+              <Button id='preview' onClick={() => this.setState({ open26: !this.state.open26 })}>
+                Preview and Highlighting <FaAngleDown />
+              </Button>
+              <Panel collapsible expanded={this.state.open26}>
+                <p>Each search result has a preview section. This section is meant to provide a quick peek into what the search result is all about. During the query, if there was a match in the search result, we needed to make sure to grab a portion of the result to display as the preview. Our ideal algorithm would grab the section or sections of the result that would display the most keywords while also giving enough context around the words. ... We also wanted to make sure that those keywords were highlighted.</p>
+                <p>In each preview, we highlighted the keywords that were displayed in each section. We used ...</p>
+              </Panel>
+              <Button id='org' onClick={() => this.setState({ open27: !this.state.open27 })}>
+                Organization of Search Results <FaAngleDown />
+              </Button>
+              <Panel collapsible expanded={this.state.open27}>
+                <p>For the basic organization, we were required to separate the search results into "AND" and "OR" results. This separation was pretty easy (were all the keywords in it or were they not), and mostly boiled down to how to format it in the front-end. Since this wasn't as organized as it could be, we decided to make it so that the search results would be organized by number of keywords.</p>
+                <p>Organizing by number of keywords wasn't too difficult but required us to keep track of that number while going through the query algorithm. ...</p>
               </Panel>
             </Panel>
 
