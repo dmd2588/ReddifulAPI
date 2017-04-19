@@ -483,13 +483,35 @@ var About = React.createClass({
                 Choice <FaAngleDown />
               </Button>
               <Panel collapsible expanded={this.state.open20}>
-                <p>The site that we chose to use was <a href='https://www.planningpoker.com/'>planningpoker.com</a>. We chose this site for no particular reason.</p>
+                <p>The site that we chose to use was <a href='https://www.planningpoker.com/'>planningpoker.com</a>. There wasn't much discrepancy between the sites and this section didn't take very long. The longest portion of time was eaten up when coming up with user stories, not actually rating them.</p>
               </Panel>
               <Button id='us1' onClick={() => this.setState({ open21: !this.state.open21 })}>
                 User Stories <FaAngleDown />
               </Button>
               <Panel collapsible expanded={this.state.open21}>
-                <p>We have a lot of user stories yay!</p>
+                <p>Coming up with the user stories took up the most time in this section. Here are the user stories that we came up with for planning poker:</p>
+                <ul>
+                  <li>Have the search page display search results.
+                  This is just for the search page to send you to a page that shows up relevant results.</li>
+                  <li>Search page endpoints.
+                  Have the search page connect to the database and the front-end properly with endpoints.</li>
+                  <li>Search page queries.
+                  Have the queries actually search through information in the database and return relevant information. This is for a minimally satisfactory query.</li>
+                  <li>Have the search page highlight.
+                  This encompasses both the preview and highlighting words such that they show up in the preview.</li>
+                  <li>Have the search page organize results properly.
+                  This is making the search results display in an organized fashion in order of number of keywords</li>
+                  <li>Add more filtering options.
+                  The current set of filtering options could be expanded more.</li>
+                  <li>Talk to other group about their project.
+                  This includes all the talking time needed to communicate information effectively between groups as well as actually implementing a page on our website that displays a visualization of something related to their group's project.</li>
+                  <li>Presentation.
+                  This encompasses creating the presentation and creating the critique of the other group's project.</li>
+                  <li>Update the technical report.
+                  It's happening right now, but essentially adding in all the information (Planning poker, search, etc.) related to anything being done as part of this phase of the project.</li>
+                  <li>Getting 10 User Stories.
+                  As one of the first user stories thought up, it was one of the more difficult to estimate (since we were coming up with user stories before we played the game and when we actually evaluated it, it was already completed).</li>
+                </ul>
               </Panel>
               <Button id='other2' onClick={() => this.setState({ open22: !this.state.open22 })}>
                 Other <FaAngleDown />
