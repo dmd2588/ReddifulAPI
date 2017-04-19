@@ -52,6 +52,7 @@ export default class Search extends React.Component {
           }).join('') + ('.*$'), 'i')
           // console.log(pattAnd)
           // console.log(pattAnd.test(JSON.stringify(r)))
+
           return pattAnd.test(JSON.stringify(r))
         }),
         orResults: res.data[0].filter(function (r) {
@@ -102,7 +103,29 @@ export default class Search extends React.Component {
                 <Subheader>And Results</Subheader>
 
                 {this.state.andResults.map(r => {
-                  var resultsStr = JSON.stringify(r)
+                  // var resultsStr = JSON.stringify(r)
+                  var resultsStr = ''
+                  for (var property in r) {
+                    if (r.hasOwnProperty(property)) {
+                      var compareStr = ''
+                      if (typeof (r[property]) === 'object') {
+                        compareStr = JSON.stringify(r[property])
+                      } else {
+                        compareStr = String(r[property])
+                      }
+                      var keywords = this.state.keywords.split(' ')
+                      if (String(property).indexOf('id') !== -1) {
+                        resultsStr = resultsStr + ' ' + r[property] + '. . .'
+                      }
+                      for (var i = 0; i < keywords.length; i++) {
+                        if (compareStr.indexOf(keywords[i]) !== -1) {
+                          resultsStr = resultsStr + ' '
+                          resultsStr = resultsStr + r[property]
+                          break
+                        }
+                      }
+                    }
+                  }
                   return (
                     <div key={Math.random().toString(16).substr(2)}>
                       <ListItem className={searchStyle.textStyle} primaryText={<Highlighter
@@ -124,8 +147,29 @@ export default class Search extends React.Component {
                 <Subheader>Or Results</Subheader>
 
                 {this.state.orResults.map(r => {
-                  var resultsStr = JSON.stringify(r)
-
+                  // var resultsStr = JSON.stringify(r)
+                  var resultsStr = ''
+                  for (var property in r) {
+                    if (r.hasOwnProperty(property)) {
+                      var compareStr = ''
+                      if (typeof (r[property]) === 'object') {
+                        compareStr = JSON.stringify(r[property])
+                      } else {
+                        compareStr = String(r[property])
+                      }
+                      var keywords = this.state.keywords.split(' ')
+                      if (String(property).indexOf('id') !== -1) {
+                        resultsStr = resultsStr + ' ' + r[property] + '. . .'
+                      }
+                      for (var i = 0; i < keywords.length; i++) {
+                        if (compareStr.indexOf(keywords[i]) !== -1) {
+                          resultsStr = resultsStr + ' '
+                          resultsStr = resultsStr + r[property]
+                          break
+                        }
+                      }
+                    }
+                  }
                   return (
                     <div key={Math.random().toString(16).substr(2)}>
                       <ListItem className={searchStyle.textStyle} primaryText={<Highlighter
