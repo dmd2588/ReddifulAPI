@@ -491,26 +491,46 @@ var About = React.createClass({
               <Panel collapsible expanded={this.state.open21}>
                 <p>Coming up with the user stories took up the most time in this section. Here are the user stories that we came up with for planning poker:</p>
                 <ul>
-                  <li>Have the search page display search results.
-                  This is just for the search page to send you to a page that shows up relevant results.</li>
-                  <li>Search page endpoints.
-                  Have the search page connect to the database and the front-end properly with endpoints.</li>
-                  <li>Search page queries.
-                  Have the queries actually search through information in the database and return relevant information. This is for a minimally satisfactory query.</li>
-                  <li>Have the search page highlight.
-                  This encompasses both the preview and highlighting words such that they show up in the preview.</li>
-                  <li>Have the search page organize results properly.
-                  This is making the search results display in an organized fashion in order of number of keywords</li>
-                  <li>Add more filtering options.
-                  The current set of filtering options could be expanded more.</li>
-                  <li>Talk to other group about their project.
-                  This includes all the talking time needed to communicate information effectively between groups as well as actually implementing a page on our website that displays a visualization of something related to their group's project.</li>
-                  <li>Presentation.
-                  This encompasses creating the presentation and creating the critique of the other group's project.</li>
-                  <li>Update the technical report.
-                  It's happening right now, but essentially adding in all the information (Planning poker, search, etc.) related to anything being done as part of this phase of the project.</li>
-                  <li>Getting 10 User Stories.
-                  As one of the first user stories thought up, it was one of the more difficult to estimate (since we were coming up with user stories before we played the game and when we actually evaluated it, it was already completed).</li>
+                  <li>
+                    <p>Have the search page display search results.</p>
+                    <p>This is just for the search page to send you to a page that shows up relevant results.</p>
+                  </li>
+                  <li>
+                    <p>Search page endpoints.</p>
+                    <p>Have the search page connect to the database and the front-end properly with endpoints.</p>
+                  </li>
+                  <li>
+                    <p>Search page queries.</p>
+                    <p>Have the queries actually search through information in the database and return relevant information. This is for a minimally satisfactory query.</p>
+                  </li>
+                  <li>
+                    <p>Have the search page highlight.</p>
+                    <p>This encompasses both the preview and highlighting words such that they show up in the preview.</p>
+                  </li>
+                  <li>
+                    <p>Have the search page organize results properly.</p>
+                    <p>This is making the search results display in an organized fashion in order of number of keywords.</p>
+                  </li>
+                  <li>
+                    <p>Add more filtering options.</p>
+                    <p>The current set of filtering options could be expanded more. We're looking to add some options that are useful that aren't yet in (like date filters).</p>
+                  </li>
+                  <li>
+                    <p>Talk to other group about their project.</p>
+                    <p>This includes all the talking time needed to communicate information effectively between groups as well as actually implementing a page on our website that displays a visualization of something related to their group's project.</p>
+                  </li>
+                  <li>
+                    <p>Presentation.</p>
+                    <p>This encompasses creating the presentation and creating the critique of the other group's project.</p>
+                  </li>
+                  <li>
+                    <p>Update the technical report.</p>
+                    <p>This is all about adding in all the information (Planning poker, search, etc.) related to anything being done as part of this phase of the project. This also refers to the aesthetic changes made in the About page during this phase.</p>
+                  </li>
+                  <li>
+                    <p>Getting 10 User Stories.</p>
+                    <p>As one of the first user stories thought up, it was one of the more difficult to estimate. This is because we were coming up with user stories before we started thinking about how long it would take. In addition, when we actually evaluated it, it was already completed.</p>
+                  </li>
                 </ul>
               </Panel>
               <Button id='other2' onClick={() => this.setState({ open22: !this.state.open22 })}>
