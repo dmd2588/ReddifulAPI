@@ -166,7 +166,7 @@ function generatePreview (item, keywords) {
   .map(k => item[k])
   .filter(v => typeof v === 'string')
   .filter(v => keywords.find(kw => v.indexOf(kw) !== -1) != null)
-  .map(v => v.replace(/\[(.+)\]\(.+\)/g, "$1")) // Replace markdown url syntax with title
+  .map(v => v.replace(/\[(.+)\]\(.+\)/g, '$1')) // Replace markdown url syntax with title
   .map(v => {
     // Trim search results
     var included = keywords.filter(kw => v.indexOf(kw) !== -1)
