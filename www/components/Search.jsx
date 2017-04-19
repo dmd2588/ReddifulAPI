@@ -103,29 +103,7 @@ export default class Search extends React.Component {
                 <Subheader>And Results</Subheader>
 
                 {this.state.andResults.map(r => {
-                  // var resultsStr = JSON.stringify(r)
-                  var resultsStr = ''
-                  for (var property in r) {
-                    if (r.hasOwnProperty(property)) {
-                      var compareStr = ''
-                      if (typeof (r[property]) === 'object') {
-                        compareStr = JSON.stringify(r[property])
-                      } else {
-                        compareStr = String(r[property])
-                      }
-                      var keywords = this.state.keywords.split(' ')
-                      if (String(property).indexOf('id') !== -1) {
-                        resultsStr = resultsStr + ' ' + r[property] + '. . .'
-                      }
-                      for (var i = 0; i < keywords.length; i++) {
-                        if (compareStr.indexOf(keywords[i]) !== -1) {
-                          resultsStr = resultsStr + ' '
-                          resultsStr = resultsStr + r[property]
-                          break
-                        }
-                      }
-                    }
-                  }
+                  var resultsStr = generatePreview(r, this.state.keywords.split(' '))
                   return (
                     <div key={Math.random().toString(16).substr(2)}>
                       <ListItem className={searchStyle.textStyle} primaryText={<Highlighter
@@ -147,29 +125,7 @@ export default class Search extends React.Component {
                 <Subheader>Or Results</Subheader>
 
                 {this.state.orResults.map(r => {
-                  // var resultsStr = JSON.stringify(r)
-                  var resultsStr = ''
-                  for (var property in r) {
-                    if (r.hasOwnProperty(property)) {
-                      var compareStr = ''
-                      if (typeof (r[property]) === 'object') {
-                        compareStr = JSON.stringify(r[property])
-                      } else {
-                        compareStr = String(r[property])
-                      }
-                      var keywords = this.state.keywords.split(' ')
-                      if (String(property).indexOf('id') !== -1) {
-                        resultsStr = resultsStr + ' ' + r[property] + '. . .'
-                      }
-                      for (var i = 0; i < keywords.length; i++) {
-                        if (compareStr.indexOf(keywords[i]) !== -1) {
-                          resultsStr = resultsStr + ' '
-                          resultsStr = resultsStr + r[property]
-                          break
-                        }
-                      }
-                    }
-                  }
+                  var resultsStr = generatePreview(r, this.state.keywords.split(' '))
                   return (
                     <div key={Math.random().toString(16).substr(2)}>
                       <ListItem className={searchStyle.textStyle} primaryText={<Highlighter
@@ -204,3 +160,19 @@ export default class Search extends React.Component {
     )
   }
 };
+
+function generatePreview (item, keywords) {
+  return Object.keys(item)
+  .map(k => item[k])
+  .filter(v => typeof v === 'string')
+  .filter(v => keywords.find(kw => v.indexOf(kw) !== -1) != null)
+  .map(v => v.replace(/\[(.+)\]\(.+\)/g, "$1")) // Replace markdown url syntax with title
+  .map(v => {
+    // Trim search results
+    var included = keywords.filter(kw => v.indexOf(kw) !== -1)
+    var start = included.reduce((min, kw) => Math.min(v.indexOf(kw), min), v.length)
+    var end = included.reduce((max, kw) => Math.max(v.indexOf(kw) + kw.length, max), 0)
+    return v.substring(start - 100, end + 100)
+  })
+  .join('... ')
+}
