@@ -257,7 +257,7 @@ var About = React.createClass({
                   <p><a href='#search'>Search</a></p>
                   <ul>
                     <li><a href='#intro3' onClick={() => this.setState({ open23: true })}>Introduction</a></li>
-                    <li><a href='#ep' onClick={() => this.setState({ open24: true })}>Endpoints</a></li>
+                    <li><a href='#ep' onClick={() => this.setState({ open24: true })}>Inside the Mind of a Search Call</a></li>
                     <li><a href='#query' onClick={() => this.setState({ open25: true })}>Query Algorithm</a></li>
                     <li><a href='#preview' onClick={() => this.setState({ open26: true })}>Preview and Highlighting</a></li>
                     <li><a href='#org' onClick={() => this.setState({ open27: true })}>Organization of Search Results</a></li>
@@ -268,7 +268,13 @@ var About = React.createClass({
                   <ul>
                     <li><a href='#choice3' onClick={() => this.setState({ open20: true })}>Choice</a></li>
                     <li><a href='#us1' onClick={() => this.setState({ open21: true })}>User Stories</a></li>
-                    <li><a href='#other2' onClick={() => this.setState({ open22: true })}>Other</a></li>
+                  </ul>
+                </ListGroupItem>
+                <ListGroupItem>
+                  <p><a href='#viz'>Visualization</a></p>
+                  <ul>
+                    <li><a href='#bg2' onClick={() => this.setState({ open28: true })}>Background</a></li>
+                    <li><a href='#wwd' onClick={() => this.setState({ open29: true })}>What We Did</a></li>
                   </ul>
                 </ListGroupItem>
                 <ListGroupItem>
@@ -476,39 +482,42 @@ var About = React.createClass({
                 Introduction <FaAngleDown />
               </Button>
               <Panel collapsible expanded={this.state.open23}>
-                <p>The most time that we spent on phase three was on the search algorithm. This was definitely the big thing to do in this section and required quite a bit of work. There were many steps that were needed to get the whole thing working.</p>
+                <p>The most time that we spent on phase three was on the search algorithm. This was the big thing to do in this section and required quite a bit of work. There were many steps that were needed to get the whole thing working.</p>
                 <p>Outside of the sections listed below: endpoints, the query algorithm, the preview and highlighting, and the organization of search results, there were many hours put into making sure that everything ran smoothly. Bug testing and fixing was a big deal in making sure that searching worked as intended.</p>
               </Panel>
               <Button id='ep' onClick={() => this.setState({ open24: !this.state.open24 })}>
-                Endpoints <FaAngleDown />
+                Inside the Mind of a Search Call <FaAngleDown />
               </Button>
               <Panel collapsible expanded={this.state.open24}>
                 <p>This section outlines how the endpoints were set up and where they pointed to.</p>
-                <p>Connecting to the database...</p>
-                <p>Connecting to the search results page...</p>
-                <p>Connecting to the search bar...</p>
+                <p>Searching starts at the front-end with the user. From here, after the user requests a search through the search bar, the front-end code sends this request to the getSearch method in api.js. The request is routed through api.py and axiom - a JavaScript library that wraps the http request in a user-friendly way - to query.py, where the algorithm takes place.</p>
+                <p>The results from query.py encompass all models - as in, the search query searches through each model for any hits with keywords. After the result is sent back up to the front-end, the rest of the work happens. Here is where regex and filtering code is used to separate "AND" and "OR" results from one another. Follow this is some logic to determine the preview.</p>
+                <p>After the preview is determined, the results are rendered into a Component that returns highlighting for keywords through a React library. After all this is finished, the user is finally able to view the results on the screen. All these results have special IDs that determine which model they came from. When clicking on a result, the logic routes you to the correct model page.</p>
               </Panel>
               <Button id='query' onClick={() => this.setState({ open25: !this.state.open25 })}>
                 Query Algorithm <FaAngleDown />
               </Button>
               <Panel collapsible expanded={this.state.open25}>
-                <p>Our algorithm started off as a basic query. As it evolved, it was able to do x, y, and z.</p>
-                <p>We chose to do x because...</p>
-                <p>While keeping this all in mind, we needed to make sure that the preview would be done during this time as well.</p>
+                <p>Our algorithm started off as a basic query. As it evolved, we added the ability for pagination and cleaned up the parsing and trimming.</p>
+                <p>First, we set up a basic algorithm. In query.py, all it does is loops through each model to check for any matches. These matches are sent to the front-end where it splits the results into "AND" and "OR" using regular expressions.</p>
+                <p>Later, we added the pagination through the search page. Pages were limited to 10 search results per page, but the code in place would allow us to give an option to show more results per page. In addition, the regular expression parsing was cleaned up and the preview was trimmed such that the results would be more readable for the user.</p>
+                <p>While keeping this in mind, we needed to make sure that the preview would be done during this time as well. The algorithm sets up all the information such that the preview and rendering will happen smoothly.</p>
               </Panel>
               <Button id='preview' onClick={() => this.setState({ open26: !this.state.open26 })}>
                 Preview and Highlighting <FaAngleDown />
               </Button>
               <Panel collapsible expanded={this.state.open26}>
-                <p>Each search result has a preview section. This section is meant to provide a quick peek into what the search result is all about. During the query, if there was a match in the search result, we needed to make sure to grab a portion of the result to display as the preview. Our ideal algorithm would grab the section or sections of the result that would display the most keywords while also giving enough context around the words. ... We also wanted to make sure that those keywords were highlighted.</p>
-                <p>In each preview, we highlighted the keywords that were displayed in each section. We used ...</p>
+                <p>Each search result has a preview section. This section is meant to provide a quick peek into what the search result is all about. During the query, if there was a match in the search result, we needed to make sure to grab a portion of the result to display as the preview. Our ideal algorithm would grab the section or sections of the result that would display the most keywords while also giving enough context around the words. We also wanted to make sure that those keywords were highlighted.</p>
+                <p>What we decided to do was to have the query run in the back-end and have the preview algorithm be done in the front-end, after the results are returned. The preview is found by finding the most matches of keywords in 100 characters before and after the highest density of keywords. The way we calculated density was by TODO</p>
+                <p>In each preview, we highlighted the keywords that were displayed in each section. We used a React library called react-highlight-words that checks for words in the preview that are keywords and highlights them. The library allows us to create a Highlighter object that just highlights specified words for us.</p>
               </Panel>
               <Button id='org' onClick={() => this.setState({ open27: !this.state.open27 })}>
                 Organization of Search Results <FaAngleDown />
               </Button>
               <Panel collapsible expanded={this.state.open27}>
-                <p>For the basic organization, we were required to separate the search results into "AND" and "OR" results. This separation was pretty easy (were all the keywords in it or were they not), and mostly boiled down to how to format it in the front-end. Since this wasn't as organized as it could be, we decided to make it so that the search results would be organized by number of keywords.</p>
-                <p>Organizing by number of keywords wasn't too difficult but required us to keep track of that number while going through the query algorithm. ...</p>
+                <p>For the basic organization, we were required to separate the search results into "AND" and "OR" results. This separation was easy (were all the keywords in it or were they not), and mostly boiled down to how to format it in the front-end.</p>
+                <p>To split up the search results, we first returned the search results from the query to the front-end. In the front-end, the first thing we do is separate the results using regular expressions. Using some of the information that we saw in class with parsing example strings, we could parse the JSON results very effectively and quickly into two different sets of results.</p>
+                <p>Results are then sent to containers which are grouped with ten per page. We did have a problem with the pagination where the search page would show five pages of results regardless of the actual number of results, but we pinpointed the problem and fixed it without much hassle.</p>
               </Panel>
             </Panel>
 
@@ -519,7 +528,7 @@ var About = React.createClass({
                 Choice <FaAngleDown />
               </Button>
               <Panel collapsible expanded={this.state.open20}>
-                <p>The site that we chose to use was <a href='https://www.planningpoker.com/'>planningpoker.com</a>. There wasn't much discrepancy between the sites and this section didn't take very long. The longest portion of time was eaten up when coming up with user stories, not actually rating them.</p>
+                <p>The site that we chose to use was <a href='https://www.planningpoker.com/'>planningpoker.com</a>. There weren't many discrepancies between the sites and this section didn't take very long. The longest portion of time was eaten up when coming up with user stories, not actually rating them.</p>
               </Panel>
               <Button id='us1' onClick={() => this.setState({ open21: !this.state.open21 })}>
                 User Stories <FaAngleDown />
@@ -530,50 +539,71 @@ var About = React.createClass({
                   <li>
                     <p>Have the search page display search results.</p>
                     <p>This is just for the search page to send you to a page that shows up relevant results.</p>
+                    <p>We estimated this to take around 5 hours and it took around 2 or 3 hours. The page itself was not as hard to create as we expected: we ended up knowing how to do most of it since we have created several pages already.</p>
                   </li>
                   <li>
                     <p>Search page endpoints.</p>
                     <p>Have the search page connect to the database and the front-end properly with endpoints.</p>
+                    <p>We estimated this to take around 8 hours and it took around 1 hour. I am not sure why we decided it would take 8 hours, but it did not.</p>
                   </li>
                   <li>
                     <p>Search page queries.</p>
-                    <p>Have the queries actually search through information in the database and return relevant information. This is for a minimally satisfactory query.</p>
+                    <p>Have the queries search through information in the database and return relevant information. This is for a minimally satisfactory query.</p>
+                    <p>We estimated this to take around 13 hours and it took around 15 hours.</p>
                   </li>
                   <li>
                     <p>Have the search page highlight.</p>
                     <p>This encompasses both the preview and highlighting words such that they show up in the preview.</p>
+                    <p>We estimated this to take around 8 hours and it took around 4 or 5 hours. This was not as hard to do since we found a convenient library that did most of the work for us.</p>
                   </li>
                   <li>
                     <p>Have the search page organize results properly.</p>
-                    <p>This is making the search results display in an organized fashion in order of number of keywords.</p>
+                    <p>This is making the search results display in an organized fashion separating results with "AND" keywords and "OR" keywords; in other words, separating results with all the keywords and some of the keywords.</p>
+                    <p>We estimated this to take around 3 hours and it took around 4 or 5 hours. This took a little longer than we expected since parsing the information took a bit of work.</p>
                   </li>
                   <li>
                     <p>Add more filtering options.</p>
                     <p>The current set of filtering options could be expanded more. We're looking to add some options that are useful that aren't yet in (like date filters).</p>
+                    <p>We estimated this to take around 8 hours and it took around 3 hours. We ended up not having too think to hard when adding the new filtering options since we already had a couple already implemented for the last phase.</p>
                   </li>
                   <li>
                     <p>Talk to other group about their project.</p>
-                    <p>This includes all the talking time needed to communicate information effectively between groups as well as actually implementing a page on our website that displays a visualization of something related to their group's project.</p>
+                    <p>This includes all the talking time needed to communicate information effectively between groups as well as implement a page on our website that displays a visualization of something related to their group's project.</p>
+                    <p>We estimated this to take around 40 hours and it took around 15 hours. I felt like we miscommunicated a little bit here since we were thinking that just talking to the group would take a while, but in the end, it didn't since we were able to get their API endpoint and make a visualization in not too much time.</p>
                   </li>
                   <li>
                     <p>Presentation.</p>
                     <p>This encompasses creating the presentation and creating the critique of the other group's project.</p>
+                    <p>We estimated this to take around 8 hours and to be decided on the number of hours it will take.</p>
                   </li>
                   <li>
                     <p>Update the technical report.</p>
                     <p>This is all about adding in all the information (Planning poker, search, etc.) related to anything being done as part of this phase of the project. This also refers to the aesthetic changes made in the About page during this phase.</p>
+                    <p>We estimated this to take around 3 hours and it took around 8 or 9 hours. Writing and proofreading took more hours than normal, but even then, the estimation was on the lower side.</p>
                   </li>
                   <li>
                     <p>Getting 10 User Stories.</p>
-                    <p>As one of the first user stories thought up, it was one of the more difficult to estimate. This is because we were coming up with user stories before we started thinking about how long it would take. In addition, when we actually evaluated it, it was already completed.</p>
+                    <p>As one of the first user stories thought up, it was one of the more difficult to estimate. This is because we were coming up with user stories before we started thinking about how long it would take. In addition, when we evaluated it, it was already completed.</p>
+                    <p>We estimated this to take around 100 hours and it took around half an hour. After looking back carefully, we might have overestimated the time it would take to complete the user stories. With the requirements listed out for us, it didn't take us long to look through each part that was needed to be done and figure out the checkpoints for each section.</p>
                   </li>
                 </ul>
               </Panel>
-              <Button id='other2' onClick={() => this.setState({ open22: !this.state.open22 })}>
-                Other <FaAngleDown />
+            </Panel>
+
+            {/* Visualization */}
+            <Panel id='viz' header='Visualization' bsStyle='info'>
+              <p>In this section, we're going to talk a little bit about the visualization that we did: where it came from and how we did it.</p>
+              <Button id='bg2' onClick={() => this.setState({ open28: !this.state.open28 })}>
+                Background <FaAngleDown />
               </Button>
-              <Panel collapsible expanded={this.state.open22}>
-                <p>Do we need more words?</p>
+              <Panel collapsible expanded={this.state.open28}>
+                <p>The group that we based our visualization on was the MarvelDB group (TODO link and more words).</p>
+              </Panel>
+              <Button id='wwd' onClick={() => this.setState({ open29: !this.state.open29 })}>
+                What We Did <FaAngleDown />
+              </Button>
+              <Panel collapsible expanded={this.state.open29}>
+                <p>We decided to TODO</p>
               </Panel>
             </Panel>
 
