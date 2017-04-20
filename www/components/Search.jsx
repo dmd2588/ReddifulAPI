@@ -42,30 +42,12 @@ export default class Search extends React.Component {
     var self = this
     var keywords = this.state.keywords
     getSearch(keywords, toPage).then(function (res) {
-      // for (var result in res.data) {
-        // console.log(JSON.stringify(res.data[result]))
-      // }
-      console.log(res.data)
+      var kwArray = keywords.split(' ')
+      var containsAll = str => kwArray.reduce((all, kw) => all && str.indexOf(kw) !== -1, true)
       self.setState({
         results: res.data[0],
-        andResults: res.data[0].filter(function (r) {
-          var pattAnd = new RegExp('^' + keywords.split(' ').map(function (r2) {
-            return '(?=.*\\b' + r2 + '\\b)'
-          }).join('') + ('.*$'), 'i')
-          // console.log(pattAnd)
-          // console.log(pattAnd.test(JSON.stringify(r)))
-
-          return pattAnd.test(JSON.stringify(r))
-        }),
-        orResults: res.data[0].filter(function (r) {
-          var pattOr = new RegExp('(' + keywords.replace(/ /g, '|') + ')', 'i')
-          var pattAnd = new RegExp('^' + keywords.split(' ').map(function (r2) {
-            return '(?=.*\\b' + r2 + '\\b)'
-          }).join('') + ('.*$'), 'i')
-          // console.log(pattOr)
-          // console.log(pattOr.test(JSON.stringify(r)))
-          return pattOr.test(JSON.stringify(r)) && !pattAnd.test(JSON.stringify(r))
-        }),
+        andResults: res.data[0].filter(r => containsAll(JSON.stringify(r))),
+        orResults: res.data[0].filter(r => !containsAll(JSON.stringify(r))),
         pageCount: res.data[1]
       })
     })
