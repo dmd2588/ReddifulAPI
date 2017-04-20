@@ -44,8 +44,8 @@ var About = React.createClass({
                     <h3>David Du</h3>
                     <p>I'm a junior majoring in Computer Science. I like to game, which is closely related to why I want to go into the game development industry.</p>
                     <p>Responsibilities: Documentation, Front-end</p>
-                    <p>No. Commits: 61</p>
-                    <p>No. Issues: 18</p>
+                    <p>No. Commits: 70</p>
+                    <p>No. Issues: 23</p>
                     <p>No. Unit Tests: 0</p>
                   </Col>
                   <Col lg={4}>
@@ -53,17 +53,17 @@ var About = React.createClass({
                     <h3>Johnny Knoebel</h3>
                     <p>I'm a junior majoring in Computer Science. I enjoy watching TV, video games, and making Pylint happy.</p>
                     <p>Responsibilities: Models, Unit Tests</p>
-                    <p>No. Commits: 41</p>
-                    <p>No. Issues: 4</p>
-                    <p>No. Unit Tests: 10</p>
+                    <p>No. Commits: 49</p>
+                    <p>No. Issues: 12</p>
+                    <p>No. Unit Tests: 11</p>
                   </Col>
                   <Col lg={4}>
                     <img src='/dist/images/Thomas.jpg' className='img-responsive' />
                     <h3>Thomas Lam</h3>
                     <p>I'm a Junior CS Major from Cypress, Texas.</p>
                     <p>Responsibilities: Data Collection, Front-end and Back-end bug fixes</p>
-                    <p>No. Commits: 60</p>
-                    <p>No. Issues: 10</p>
+                    <p>No. Commits: 67</p>
+                    <p>No. Issues: 15</p>
                     <p>No. Unit Tests: 0</p>
                   </Col>
                 </Row>
@@ -73,8 +73,8 @@ var About = React.createClass({
                     <h3>Jeremy Lim</h3>
                     <p>Computer Science Major. Likes books and Battlestar Galatica. Hobby is to read online web novels.</p>
                     <p>Responsibilities: Front-end boilerplate code, Coordination, Coding React Components</p>
-                    <p>No. Commits: 74</p>
-                    <p>No. Issues: 18</p>
+                    <p>No. Commits: 82</p>
+                    <p>No. Issues: 25</p>
                     <p>No. Unit Tests: 0</p>
                   </Col>
                   <Col lg={4}>
@@ -82,17 +82,17 @@ var About = React.createClass({
                     <h3>Austin Middleton</h3>
                     <p>I am an avid rock climber with an interest in peer-to-peer tech</p>
                     <p>Responsibilities: Flask, Docker, and some React components</p>
-                    <p>No. Commits: 62</p>
-                    <p>No. Issues: 16</p>
-                    <p>No. Unit Tests: 13</p>
+                    <p>No. Commits: 93</p>
+                    <p>No. Issues: 31</p>
+                    <p>No. Unit Tests: 16</p>
                   </Col>
                   <Col lg={4}>
                     <img src='/dist/images/Shea.jpeg' className='img-responsive center-block' />
                     <h3>Shea Rozmiarek</h3>
                     <p>I'm a junior CS major from Liberty Hill, Texas. I love to game and pet fluffy animals.</p>
                     <p>Responsibilities: Front-end</p>
-                    <p>No. Commits: 18</p>
-                    <p>No. Issues: 8</p>
+                    <p>No. Commits: 19</p>
+                    <p>No. Issues: 13</p>
                     <p>No. Unit Tests: 0</p>
                   </Col>
                 </Row>
@@ -182,9 +182,9 @@ var About = React.createClass({
             {/* GITHUB INFO */}
             <ListGroup>
               <h3>Github Stats - <a href='http://docs.reddiful.apiary.io'>Apiary API</a> - <a href='https://github.com/dmd2588/idb/issues'>GitHubIssueTracker</a> - <a href='https://github.com/dmd2588/idb/'>Github Repo</a></h3>
-              <ListGroupItem>total no. of commits: 314</ListGroupItem>
-              <ListGroupItem>total no. of issues: 70</ListGroupItem>
-              <ListGroupItem>total no. of unit tests: 23</ListGroupItem>
+              <ListGroupItem>total no. of commits: 382</ListGroupItem>
+              <ListGroupItem>total no. of issues: 99</ListGroupItem>
+              <ListGroupItem>total no. of unit tests: 27</ListGroupItem>
             </ListGroup>
 
             {/* UNIT TESTS */}
@@ -539,7 +539,7 @@ var About = React.createClass({
                   <li>
                     <p>Have the search page display search results.</p>
                     <p>This is just for the search page to send you to a page that shows up relevant results.</p>
-                    <p>We estimated this to take around 5 hours and it took around 2 or 3 hours. The page itself was not as hard to create as we expected: we ended up knowing how to do most of it since we have created several pages already.</p>
+                    <p>We estimated this to take around 5 hours and it took around 5 hours. This first user story was also our most accurately estimated one.</p>
                   </li>
                   <li>
                     <p>Search page endpoints.</p>
@@ -549,27 +549,27 @@ var About = React.createClass({
                   <li>
                     <p>Search page queries.</p>
                     <p>Have the queries search through information in the database and return relevant information. This is for a minimally satisfactory query.</p>
-                    <p>We estimated this to take around 13 hours and it took around 15 hours.</p>
+                    <p>We estimated this to take around 13 hours and it took around 5 hours. We are really good at programming.</p>
                   </li>
                   <li>
                     <p>Have the search page highlight.</p>
                     <p>This encompasses both the preview and highlighting words such that they show up in the preview.</p>
-                    <p>We estimated this to take around 8 hours and it took around 4 or 5 hours. This was not as hard to do since we found a convenient library that did most of the work for us.</p>
+                    <p>We estimated this to take around 8 hours and it took around 3 hours. This was not as hard to do since we found a convenient library that did most of the work for us.</p>
                   </li>
                   <li>
                     <p>Have the search page organize results properly.</p>
                     <p>This is making the search results display in an organized fashion separating results with "AND" keywords and "OR" keywords; in other words, separating results with all the keywords and some of the keywords.</p>
-                    <p>We estimated this to take around 3 hours and it took around 4 or 5 hours. This took a little longer than we expected since parsing the information took a bit of work.</p>
+                    <p>We estimated this to take around 3 hours and it took around 5 hours. This took a little longer than we expected since parsing the information took a bit of work.</p>
                   </li>
                   <li>
-                    <p>Add more filtering options.</p>
+                    <p>Add more filtering options</p>
                     <p>The current set of filtering options could be expanded more. We're looking to add some options that are useful that aren't yet in (like date filters).</p>
-                    <p>We estimated this to take around 8 hours and it took around 3 hours. We ended up not having too think to hard when adding the new filtering options since we already had a couple already implemented for the last phase.</p>
+                    <p>We estimated this to take around 8 hours and we spent 0 hours. We ended up not doing this since we found that it wasn't necessary to add those extra filtering options.</p>
                   </li>
                   <li>
                     <p>Talk to other group about their project.</p>
                     <p>This includes all the talking time needed to communicate information effectively between groups as well as implement a page on our website that displays a visualization of something related to their group's project.</p>
-                    <p>We estimated this to take around 40 hours and it took around 15 hours. I felt like we miscommunicated a little bit here since we were thinking that just talking to the group would take a while, but in the end, it didn't since we were able to get their API endpoint and make a visualization in not too much time.</p>
+                    <p>We estimated this to take around 40 hours and it took around 5 hours. I felt like we miscommunicated a little bit here since we were thinking that just talking to the group would take a while, but in the end, it didn't since we were able to get their API endpoint and make a visualization in not too much time.</p>
                   </li>
                   <li>
                     <p>Presentation.</p>
