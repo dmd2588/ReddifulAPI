@@ -49,7 +49,7 @@ ReactDOM.render(
 
         <Route exact path='/comments' component={Comments} />
         <Route path='/comments/detail/:comment_id' component={CommentDetails} />
-        <Route exact path='/search' component={Search} />
+        <Route path='/search/:query' component={Search} />
         <Route exact path='/visual' component={Visualization} />
       </div>
     </Router>

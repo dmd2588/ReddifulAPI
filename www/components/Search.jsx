@@ -21,7 +21,9 @@ export default class Search extends React.Component {
   constructor (props) {
     super(props)
     // trim whitespaces from keywords
-    this.state = {results: [], pageCount: 5, page: 0, keywords: 'loyal offer', andResults: [], orResults: []}
+    var query = decodeURIComponent(this.props.match.params.query)
+    console.log(query)
+    this.state = {results: [], pageCount: 5, page: 0, keywords: query, andResults: [], orResults: []}
   }
 
   componentWillMount () {

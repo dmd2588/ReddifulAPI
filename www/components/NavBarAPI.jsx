@@ -5,11 +5,13 @@ import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import FontIcon from 'material-ui/FontIcon'
 import {grey50} from 'material-ui/styles/colors'
+import TextField from 'material-ui/TextField'
+import IconButton from 'material-ui/IconButton'
 
 export default class NavBarAPI extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {open: false}
+    this.state = {open: false, searchString: ''}
 
     this.handleToggle = this.handleToggle.bind(this)
     this.handleClose = this.handleClose.bind(this)
@@ -23,10 +25,23 @@ export default class NavBarAPI extends React.Component {
     this.setState({open: false})
   }
 
+  handleSearchChange (that, event, text) {
+    that.setState({searchString: text})
+  }
+
   render () {
+    const searchField = (
+      <div>
+        <IconButton href={'/search/' + encodeURIComponent(this.state.searchString)} disabled={!(this.state.searchString)}>
+          <FontIcon className='material-icons'>search</FontIcon>
+        </IconButton>
+        <TextField hintText='Search' onChange={(event, text) => this.handleSearchChange(this, event, text)} />
+      </div>
+    )
+
     return (
       <div>
-        <AppBar title={<div><span>Reddiful</span> <FontIcon className='fa fa-reddit-alien' color={grey50} /></div>} onLeftIconButtonTouchTap={this.handleToggle} />
+        <AppBar title={<div><span>Reddiful</span> <FontIcon className='fa fa-reddit-alien' color={grey50} /></div>} onLeftIconButtonTouchTap={this.handleToggle} iconElementRight={searchField} />
         <Drawer
           docked={false}
           width={200}
