@@ -43,24 +43,53 @@ class TestModels(unittest.TestCase):
     # database
     def test_posts(self):
         with self.app.test_request_context():
-
+            post = Post(submission_id='test',
+                        title='title',
+                        url='url',
+                        score=10,
+                        over_18=False,
+                        is_self=True,
+                        selftext='text',
+                        created_utc=datetime.now(),
+                        gilded=0,
+                        upvote_ratio=.2,
+                        num_comments=3,
+                        preview='[{}]',
+                        thumbnail='imgur.com',
+                        author='person',
+                        author_id='012',
+                        subreddit='test',
+                        subreddit_id='324')
+            self.assertIsNotNone(post)
             post_query = self.session.query(Post).filter_by(
                 title="He's all pupped out").first()
-            self.assertEqual(post_query.getURL(),
+            self.assertEqual(post_query.url,
                              "https://i.imgur.com/r10bZfA.gifv")
-            self.assertEqual(str(post_query.getTime()), "2017-03-02 17:37:39")
-            self.assertEqual(post_query.getKarma(), 68770)
-            self.assertEqual(post_query.getID(), "5x6v4g")
-            self.assertFalse(post_query.isOver_18())
-            self.assertFalse(post_query.isText())
-            self.assertEqual(post_query.getText(), "")
-            self.assertEqual(post_query.getGilded(), 0)
+            self.assertEqual(str(post_query.created_utc),
+                             "2017-03-02 17:37:39")
+            self.assertEqual(post_query.score, 68770)
+            self.assertEqual(post_query.submission_id, "5x6v4g")
+            self.assertFalse(post_query.over_18)
+            self.assertFalse(post_query.is_self)
+            self.assertEqual(post_query.selftext, "")
+            self.assertEqual(post_query.gilded, 0)
 
     # test simple case to make sure it properly gets a Comment model from the
     # database
     def test_comments(self):
         with self.app.test_request_context():
-
+            comment = Comment(comment_id='test',
+                              body='hi',
+                              body_html='<html></html>',
+                              score=12,
+                              created_utc=datetime.now,
+                              gilded=1,
+                              edited=datetime.now,
+                              author='person',
+                              author_id='123',
+                              subreddit_id='234',
+                              link_id='342')
+            self.assertIsNotNone(comment)
             comment_query = self.session.query(Comment).filter_by(
                 body="10 steps from a corgi is like 2 steps for most other dog breeds.  :)").first()
             self.assertEqual(str(comment_query.created_utc),
@@ -76,6 +105,14 @@ class TestModels(unittest.TestCase):
     # database
     def test_users(self):
         with self.app.test_request_context():
+            user = User(redditor_id='123',
+                        name='person',
+                        link_karma=166,
+                        comment_karma=0,
+                        created_utc=datetime.now,
+                        is_gold=False,
+                        verified=False)
+            self.assertIsNotNone(user)
             user_query = self.session.query(
                 User).filter_by(name="SilverwingHD").first()
             self.assertEqual(user_query.is_gold, False)
@@ -90,7 +127,15 @@ class TestModels(unittest.TestCase):
     # the database
     def test_subreddits(self):
         with self.app.test_request_context():
-
+            sub = Subreddit(subreddit_id='123',
+                            display_name='display',
+                            subscribers=10,
+                            accounts_active=4,
+                            title='test',
+                            created_utc=datetime.now,
+                            icon_img='icon_url',
+                            banner_img='banner_url')
+            self.assertIsNotNone(sub)
             subreddit_query = self.session.query(
                 Subreddit).filter_by(display_name="politics").first()
             self.assertEqual(subreddit_query.title, "Politics")
@@ -108,17 +153,17 @@ class TestModels(unittest.TestCase):
                 Comment).filter_by(comment_id="defrfhq").first()
             comment_post = comment_query.post
 
-            self.assertEqual(comment_post.getURL(),
+            self.assertEqual(comment_post.url,
                              "https://i.imgur.com/r10bZfA.gifv")
-            self.assertEqual(str(comment_post.getTime()),
+            self.assertEqual(str(comment_post.created_utc),
                              "2017-03-02 17:37:39")
-            self.assertEqual(comment_post.getKarma(), 68770)
-            self.assertFalse(comment_post.isOver_18())
-            self.assertFalse(comment_post.isText())
-            self.assertEqual(comment_post.getText(), "")
-            self.assertEqual(comment_post.getGilded(), 0)
-            self.assertEqual(comment_post.getSubredditID(), "2qh1o")
-            self.assertEqual(comment_post.getAuthorID(), "4imfm")
+            self.assertEqual(comment_post.score, 68770)
+            self.assertFalse(comment_post.over_18)
+            self.assertFalse(comment_post.is_self)
+            self.assertEqual(comment_post.selftext, "")
+            self.assertEqual(comment_post.gilded, 0)
+            self.assertEqual(comment_post.subreddit_id, "2qh1o")
+            self.assertEqual(comment_post.author_id, "4imfm")
 
     # test the many-to-many relationship between User and Subreddit
     def test_users_subreddits(self):

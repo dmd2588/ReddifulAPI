@@ -4,6 +4,7 @@
 # pylint: disable = invalid-name
 # pylint: disable = missing-docstring
 # pylint: disable = too-many-instance-attributes
+# pylint: disable = too-few-public-methods
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey, DateTime, Float, JSON
@@ -60,48 +61,6 @@ class User(Base):
         self.is_gold = attr["is_gold"]
         self.verified = attr["verified"]
 
-    def getID(self):
-        """
-        returns ID of the user
-        """
-        return self.redditor_id
-
-    def getName(self):
-        """
-        returns name of the user
-        """
-        return self.name
-
-    def getLKarma(self):
-        """
-        returns link karma of the user
-        """
-        return self.link_karma
-
-    def getCKarma(self):
-        """
-        returns comment karma of the user
-        """
-        return self.comment_karma
-
-    def getAge(self):
-        """
-        returns time created of the user
-        """
-        return self.created_utc
-
-    def isGilded(self):
-        """
-        returns if the user is gilded
-        """
-        return self.is_gold
-
-    def isVerified(self):
-        """
-        returns if the user is verified
-        """
-        return self.verified
-
 # ------------
 # Subreddit
 # ------------
@@ -144,54 +103,6 @@ class Subreddit(Base):
         self.title = attr["title"]
         self.icon_img = attr["icon_img"]
         self.banner_img = attr["banner_img"]
-
-    def getID(self):
-        """
-        returns ID of the subreddit
-        """
-        return self.subreddit_id
-
-    def getName(self):
-        """
-        returns name of the subreddit
-        """
-        return self.display_name
-
-    def getSubscribers(self):
-        """
-        returns number of subscribers of the subreddit
-        """
-        return self.subscribers
-
-    def getVisitors(self):
-        """
-        returns number of current visitors of the subreddit
-        """
-        return self.accounts_active
-
-    def getTitle(self):
-        """
-        returns the title of the subreddit
-        """
-        return self.title
-
-    def getAge(self):
-        """
-        returns the time created of the subreddit
-        """
-        return self.created_utc
-
-    def getIconImg(self):
-        """
-        returns the url of the icon image of the subreddit
-        """
-        return self.icon_img
-
-    def getBannerImg(self):
-        """
-        returns the url of the banner image of the subreddit
-        """
-        return self.banner_img
 
 # ------------
 # Post
@@ -263,108 +174,6 @@ class Post(Base):
         self.author = attr["author"]
         self.subreddit = attr["subreddit"]
 
-    def getID(self):
-        """
-        returns ID of the post
-        """
-        return self.submission_id
-
-    def getTitle(self):
-        """
-        returns title of the post
-        """
-        return self.title
-
-    def getURL(self):
-        """
-        returns URL of the post
-        """
-        return self.url
-
-    def getKarma(self):
-        """
-        returns karma of the post
-        """
-        return self.score
-
-    def isOver_18(self):
-        """
-        returns if the post is over_18
-        """
-        return self.over_18
-
-    def isText(self):
-        """
-        returns if the post is a self-post (text only)
-        """
-        return self.is_self
-
-    def getText(self):
-        """
-        returns the text of the post if it is a self-post
-        """
-        return self.selftext
-
-    def getTime(self):
-        """
-        returns the time created of the post
-        """
-        return self.created_utc
-
-    def getGilded(self):
-        """
-        returns how many times the post was gilded
-        """
-        return self.gilded
-
-    def getSubreddit(self):
-        """
-        returns name of the post's subreddit
-        """
-        return self.subreddit
-
-    def getAuthor(self):
-        """
-        returns username of the post's author
-        """
-        return self.author
-
-    def getSubredditID(self):
-        """
-        returns ID of the post's subreddit
-        """
-        return self.subreddit_id
-
-    def getAuthorID(self):
-        """
-        returns ID of the post's author
-        """
-        return self.author_id
-
-    def getUpvoteRatio(self):
-        """
-        returns the upvote ratio of the post
-        """
-        return self.upvote_ratio
-
-    def getNumComments(self):
-        """
-        returns number of comments of the post
-        """
-        return self.num_comments
-
-    def getPreview(self):
-        """
-        returns JSON of the preview of the post
-        """
-        return self.preview
-
-    def getThumbnail(self):
-        """
-        returns the url of the thumbnail of the post
-        """
-        return self.thumbnail
-
 # ------------
 # Comment
 # ------------
@@ -413,63 +222,3 @@ class Comment(Base):
         self.link_id = attr["link_id"]
         self.subreddit_id = attr["subreddit_id"]
         self.author_id = attr["author_id"]
-
-    def getID(self):
-        """
-        returns ID of the comment
-        """
-        return self.comment_id
-
-    def getText(self):
-        """
-        returns the text of the comment
-        """
-        return self.body
-
-    def getHTML(self):
-        """
-        returns the html representation of the body
-        """
-        return self.body_html
-
-    def getKarma(self):
-        """
-        returns karma of the comment
-        """
-        return self.score
-
-    def getTime(self):
-        """
-        returns time created of the comment
-        """
-        return self.created_utc
-
-    def getGilded(self):
-        """
-        returns how many times the comment was gilded
-        """
-        return self.gilded
-
-    def getEdited(self):
-        """
-        returns when the comment was edited
-        """
-        return self.edited
-
-    def getAuthor(self):
-        """
-        returns the username of the author of the comment
-        """
-        return self.author
-
-    def getLinkID(self):
-        """
-        returns ID of the comment's post
-        """
-        return self.link_id
-
-    def getAuthorID(self):
-        """
-        returns ID of the comment's author
-        """
-        return self.redditor_id
