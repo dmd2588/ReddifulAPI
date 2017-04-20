@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module models</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/xuset/code/ReddifulAPI/app/models.py">/Users/xuset/code/ReddifulAPI/app/models.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;pylint:&nbsp;disable&nbsp;=&nbsp;bad-whitespace<br>
+#&nbsp;pylint:&nbsp;disable&nbsp;=&nbsp;invalid-name<br>
+#&nbsp;pylint:&nbsp;disable&nbsp;=&nbsp;missing-docstring<br>
+#&nbsp;pylint:&nbsp;disable&nbsp;=&nbsp;too-many-instance-attributes<br>
+#&nbsp;pylint:&nbsp;disable&nbsp;=&nbsp;too-few-public-methods</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial">sqlalchemy.ext.declarative.api.Base(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="models.html#Comment">Comment</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Post">Post</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Subreddit">Subreddit</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#User">User</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Comment">class <strong>Comment</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;most&nbsp;base&nbsp;type<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Comment">Comment</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Comment-__init__"><strong>__init__</strong></a>(self, **attr)</dt><dd><tt>creates&nbsp;a&nbsp;<a href="#Comment">Comment</a>&nbsp;with&nbsp;the&nbsp;given&nbsp;attributes</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>author</strong></dt>
+</dl>
+<dl><dt><strong>author_id</strong></dt>
+</dl>
+<dl><dt><strong>body</strong></dt>
+</dl>
+<dl><dt><strong>body_html</strong></dt>
+</dl>
+<dl><dt><strong>comment_id</strong></dt>
+</dl>
+<dl><dt><strong>created_utc</strong></dt>
+</dl>
+<dl><dt><strong>edited</strong></dt>
+</dl>
+<dl><dt><strong>gilded</strong></dt>
+</dl>
+<dl><dt><strong>link_id</strong></dt>
+</dl>
+<dl><dt><strong>post</strong></dt>
+</dl>
+<dl><dt><strong>score</strong></dt>
+</dl>
+<dl><dt><strong>user</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x106baaac8; Comment&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('Comments', MetaData(bind=None), Column('c...rs.redditor_id'), table=&lt;Comments&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'Comments'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Post">class <strong>Post</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;most&nbsp;base&nbsp;type<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Post">Post</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Post-__init__"><strong>__init__</strong></a>(self, **attr)</dt><dd><tt>creates&nbsp;a&nbsp;<a href="#Post">Post</a>&nbsp;with&nbsp;the&nbsp;given&nbsp;attributes</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>author</strong></dt>
+</dl>
+<dl><dt><strong>author_id</strong></dt>
+</dl>
+<dl><dt><strong>comments</strong></dt>
+</dl>
+<dl><dt><strong>created_utc</strong></dt>
+</dl>
+<dl><dt><strong>gilded</strong></dt>
+</dl>
+<dl><dt><strong>is_self</strong></dt>
+</dl>
+<dl><dt><strong>num_comments</strong></dt>
+</dl>
+<dl><dt><strong>over_18</strong></dt>
+</dl>
+<dl><dt><strong>preview</strong></dt>
+</dl>
+<dl><dt><strong>score</strong></dt>
+</dl>
+<dl><dt><strong>selftext</strong></dt>
+</dl>
+<dl><dt><strong>sub</strong></dt>
+</dl>
+<dl><dt><strong>submission_id</strong></dt>
+</dl>
+<dl><dt><strong>subreddit</strong></dt>
+</dl>
+<dl><dt><strong>subreddit_id</strong></dt>
+</dl>
+<dl><dt><strong>thumbnail</strong></dt>
+</dl>
+<dl><dt><strong>title</strong></dt>
+</dl>
+<dl><dt><strong>upvote_ratio</strong></dt>
+</dl>
+<dl><dt><strong>url</strong></dt>
+</dl>
+<dl><dt><strong>user</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x106b99cf8; Post&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('Submissions', MetaData(bind=None), Column...redditor_id'), table=&lt;Submissions&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'Submissions'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Subreddit">class <strong>Subreddit</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;most&nbsp;base&nbsp;type<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Subreddit">Subreddit</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Subreddit-__init__"><strong>__init__</strong></a>(self, **attr)</dt><dd><tt>creates&nbsp;a&nbsp;<a href="#Subreddit">Subreddit</a>&nbsp;with&nbsp;given&nbsp;attributes</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>accounts_active</strong></dt>
+</dl>
+<dl><dt><strong>banner_img</strong></dt>
+</dl>
+<dl><dt><strong>created_utc</strong></dt>
+</dl>
+<dl><dt><strong>display_name</strong></dt>
+</dl>
+<dl><dt><strong>icon_img</strong></dt>
+</dl>
+<dl><dt><strong>posts</strong></dt>
+</dl>
+<dl><dt><strong>subreddit_id</strong></dt>
+</dl>
+<dl><dt><strong>subscribers</strong></dt>
+</dl>
+<dl><dt><strong>title</strong></dt>
+</dl>
+<dl><dt><strong>users</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x106b990f0; Subreddit&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('Subreddits', MetaData(bind=None), Column(...img', String(), table=&lt;Subreddits&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'Subreddits'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="User">class <strong>User</strong></a>(sqlalchemy.ext.declarative.api.Base)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;most&nbsp;base&nbsp;type<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#User">User</a></dd>
+<dd>sqlalchemy.ext.declarative.api.Base</dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="User-__init__"><strong>__init__</strong></a>(self, **attr)</dt><dd><tt>creates&nbsp;a&nbsp;<a href="#User">User</a>&nbsp;with&nbsp;given&nbsp;attributes</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>comment_karma</strong></dt>
+</dl>
+<dl><dt><strong>comments</strong></dt>
+</dl>
+<dl><dt><strong>created_utc</strong></dt>
+</dl>
+<dl><dt><strong>is_gold</strong></dt>
+</dl>
+<dl><dt><strong>link_karma</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>posts</strong></dt>
+</dl>
+<dl><dt><strong>redditor_id</strong></dt>
+</dl>
+<dl><dt><strong>subreddits</strong></dt>
+</dl>
+<dl><dt><strong>verified</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x106b79588; User&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('Redditors', MetaData(bind=None), Column('...ied', Boolean(), table=&lt;Redditors&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'Redditors'</dl>
+
+<hr>
+Data descriptors inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from sqlalchemy.ext.declarative.api.Base:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>mods_table</strong> = Table('Mods', MetaData(bind=None), Column('reddi...ddits.subreddit_id'), table=&lt;Mods&gt;), schema=None)</td></tr></table>
+</body></html>
