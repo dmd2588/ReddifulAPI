@@ -508,7 +508,7 @@ var About = React.createClass({
               </Button>
               <Panel collapsible expanded={this.state.open26}>
                 <p>Each search result has a preview section. This section is meant to provide a quick peek into what the search result is all about. During the query, if there was a match in the search result, we needed to make sure to grab a portion of the result to display as the preview. Our ideal algorithm would grab the section or sections of the result that would display the most keywords while also giving enough context around the words. We also wanted to make sure that those keywords were highlighted.</p>
-                <p>What we decided to do was to have the query run in the back-end and have the preview algorithm be done in the front-end, after the results are returned. The preview is found by finding the most matches of keywords in 100 characters before and after the highest density of keywords. The way we calculated density was by TODO</p>
+                <p>What we decided to do was to have the query run in the back-end and have the preview algorithm be done in the front-end, after the results are returned. The preview is found by finding the first and last keywords present in the result and including everything in between. In addition, we show the 100 characters before the first keyword and after the last keyword to give context to the information.</p>
                 <p>In each preview, we highlighted the keywords that were displayed in each section. We used a React library called react-highlight-words that checks for words in the preview that are keywords and highlights them. The library allows us to create a Highlighter object that just highlights specified words for us.</p>
               </Panel>
               <Button id='org' onClick={() => this.setState({ open27: !this.state.open27 })}>
@@ -597,13 +597,13 @@ var About = React.createClass({
                 Background <FaAngleDown />
               </Button>
               <Panel collapsible expanded={this.state.open28}>
-                <p>The group that we based our visualization on was the MarvelDB group (TODO link and more words).</p>
+                <p>The group that we based our visualization on is the MarvelDB group. The following endpoint: <a href='https://marveldb-162206.appspot.com/api/characters'>endpoint</a>, takes 3 parameters - pagination, sorting options and filter options.</p>
               </Panel>
               <Button id='wwd' onClick={() => this.setState({ open29: !this.state.open29 })}>
                 What We Did <FaAngleDown />
               </Button>
               <Panel collapsible expanded={this.state.open29}>
-                <p>We decided to TODO</p>
+                <p>The visualization sorts by the number of series appearances of each character in descending order.  The top 15 are taken and the data is used to produce an Aster chart using d3.  The Aster component we wrote is based on the Aster chart in the sample gallery on d3's website and the pie chart in the d3-react library.  The d3-react library hasn't been updated in 9 months so the Aster component while it extends the functionality of the pie chart, also was slightly rewritten to work with the newest version of react.</p>
               </Panel>
             </Panel>
 
