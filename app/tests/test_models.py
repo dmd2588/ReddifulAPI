@@ -50,7 +50,7 @@ class TestModels(unittest.TestCase):
                         over_18=False,
                         is_self=True,
                         selftext='text',
-                        created_utc=datetime.now(),
+                        created_utc=datetime(2012, 4, 2),
                         gilded=0,
                         upvote_ratio=.2,
                         num_comments=3,
@@ -82,9 +82,9 @@ class TestModels(unittest.TestCase):
                               body='hi',
                               body_html='<html></html>',
                               score=12,
-                              created_utc=datetime.now,
+                              created_utc=datetime(2012, 4, 2),
                               gilded=1,
-                              edited=datetime.now,
+                              edited=datetime(2012, 4, 2),
                               author='person',
                               author_id='123',
                               subreddit_id='234',
@@ -109,7 +109,7 @@ class TestModels(unittest.TestCase):
                         name='person',
                         link_karma=166,
                         comment_karma=0,
-                        created_utc=datetime.now,
+                        created_utc=datetime(2012, 4, 2),
                         is_gold=False,
                         verified=False)
             self.assertIsNotNone(user)
@@ -132,7 +132,7 @@ class TestModels(unittest.TestCase):
                             subscribers=10,
                             accounts_active=4,
                             title='test',
-                            created_utc=datetime.now,
+                            created_utc=datetime(2012, 4, 2),
                             icon_img='icon_url',
                             banner_img='banner_url')
             self.assertIsNotNone(sub)
