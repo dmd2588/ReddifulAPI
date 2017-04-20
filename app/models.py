@@ -10,7 +10,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey, DateTime, Float, JSON
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql.schema import Table
-from datetime import datetime
+from datetime import date
 
 Base = declarative_base()
 
@@ -50,7 +50,7 @@ class User(Base):
         assert isinstance(attr["link_karma"], int) and attr["link_karma"] >= 0
         assert isinstance(attr["comment_karma"], int) and attr[
             "comment_karma"] >= 0
-        assert isinstance(attr["created_utc"], datetime)
+        assert isinstance(attr["created_utc"], date)
         assert isinstance(attr["is_gold"], bool)
         assert isinstance(attr["verified"], bool)
         self.redditor_id = attr["redditor_id"]
@@ -90,7 +90,7 @@ class Subreddit(Base):
             "subscribers"] >= 0
         assert isinstance(attr["accounts_active"], int) and attr[
             "accounts_active"] >= 0
-        assert isinstance(attr["created_utc"], datetime)
+        assert isinstance(attr["created_utc"], date)
         assert isinstance(attr["title"], str)
         assert isinstance(attr["icon_img"], str)
         assert isinstance(attr["banner_img"], str)
@@ -142,7 +142,7 @@ class Post(Base):
         assert isinstance(attr["title"], str)
         assert isinstance(attr["url"], str)
         assert isinstance(attr["score"], int) and attr["score"] >= 0
-        assert isinstance(attr["created_utc"], datetime)
+        assert isinstance(attr["created_utc"], date)
         assert isinstance(attr["over_18"], bool)
         assert isinstance(attr["is_self"], bool)
         assert isinstance(attr["selftext"], str)
@@ -203,8 +203,8 @@ class Comment(Base):
         assert isinstance(attr["body"], str)
         assert isinstance(attr["body_html"], str)
         assert isinstance(attr["score"], int) and attr["score"] >= 0
-        assert isinstance(attr["created_utc"], datetime)
-        assert isinstance(attr["edited"], datetime)
+        assert isinstance(attr["created_utc"], date)
+        assert isinstance(attr["edited"], date)
         assert isinstance(attr["gilded"], int) and attr["gilded"] >= 0
         assert isinstance(attr["author"], str)
         assert isinstance(attr["link_id"], str)
