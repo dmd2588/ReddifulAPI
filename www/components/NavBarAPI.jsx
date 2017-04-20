@@ -31,12 +31,12 @@ export default class NavBarAPI extends React.Component {
 
   render () {
     const searchField = (
-      <div>
+      <form action={'/search/' + encodeURIComponent(this.state.searchString)} method='get'>
         <IconButton href={'/search/' + encodeURIComponent(this.state.searchString)} disabled={!(this.state.searchString)}>
           <FontIcon className='material-icons'>search</FontIcon>
         </IconButton>
         <TextField hintText='Search' onChange={(event, text) => this.handleSearchChange(this, event, text)} />
-      </div>
+      </form>
     )
 
     return (
