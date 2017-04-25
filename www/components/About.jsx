@@ -198,6 +198,9 @@ var About = React.createClass({
             <hr />
             <br />
 
+            {/* Link to Presentation */}
+            <PageHeader><a href='https://docs.google.com/presentation/d/1x9av_lsApHfdcOL1BOjBQVrrVDW798kpb6AqtIF7zw4/edit?usp=sharing'>Link to Presentation</a></PageHeader>
+
             {/* ------------
                 REPORT START
                 ------------
